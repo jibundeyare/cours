@@ -2,13 +2,11 @@
 
 Twig est un moteur de « template ». Un « template » est un fichier dans lequel on définit la façon dont des données vont être affichées.
 
-Dans le modèle « MVC », le template correspond au « V », la vue.
+Dans le modèle « MVC », le template correspond au « V », la vue (View en anglais).
 
-## Sans framework (PHP brut)
+## Sans framework (en PHP brut)
 
-Exemple en php sans framework.
-
-`hello-twig.php`
+`public/hello-twig.php` :
 
     <?php
 
@@ -24,7 +22,36 @@ Exemple en php sans framework.
         'greeting' => $greeting,
     ]);
 
-`hello-twig.html.twig`
+`templates/hello-twig.html.twig` :
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>{{ greeting }}</title>
+        </head>
+        <body>
+            <h1>{{ greeting }}</h1>
+        </body>
+    </html>
+
+## Avec le framework Silex
+
+`public/index.php` :
+
+    $app->register(new Silex\Provider\TwigServiceProvider(), [
+        'twig.path' => __DIR__.'/../templates',
+    ]);
+
+    $app->get('/', function() use($app) {
+        $greeting = 'Hello Twig!';
+
+        return $app['twig']->render('hello-twig.html.twig'[
+            'greeting' => $greeting,
+        ]);
+    });
+
+`templates/hello-twig.html.twig` :
 
     <!DOCTYPE html>
     <html>
@@ -42,11 +69,11 @@ Exemple en php sans framework.
 - [Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/)
 - [Installation - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/installation.html)
 - [Twig for Developers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/api.html)
-- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
-- [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
+- [Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/templates.html)
 - [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/for.html)
 - [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/if.html)
+- [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
+- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
 
 - [PHP: date - Manual](http://php.net/manual/en/function.date.php)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)
-

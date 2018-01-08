@@ -32,6 +32,12 @@
         composer.lock
         README.md
 
+## Syntaxe
+
+`=` est impératif (c'est un ordre).
+
+`==` est interrogatif (c'est une question).
+
 ## Commandes
 
 Afficher la version utilisée :
