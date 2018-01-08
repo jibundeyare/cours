@@ -270,6 +270,10 @@ Attention :
 - jQuery doit être intégré avant Bootstrap
 - votre code javascript doit être intégré après Bootstrap
 
+## Skeleton
+
+Voir [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton).
+
 ## Doc
 
 - [Homepage - Silex - The PHP micro-framework based on the Symfony Components](https://silex.symfony.com/)
