@@ -2,7 +2,7 @@
 
 ## Installation
 
-    composer require symfony/var-dumper
+    composer require symfony/var-dumper ^3.4
 
 ## Utilisation
 

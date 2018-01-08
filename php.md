@@ -44,7 +44,7 @@ Afficher la version utilisée :
 
     php -v
 
-Conseil : si vous utilisez encore php 5, mettez à jour votre système et utilisez php 7.
+Conseil : si vous utilisez encore Php 5, mettez à jour votre système et utilisez Php 7.
 
 Afficher la liste des fichier `.ini` utilisés :
 
