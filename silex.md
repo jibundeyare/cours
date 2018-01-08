@@ -44,18 +44,21 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
 
 Note : le document root est le dossier qui est rendu accessible par le serveur web. Tout ce qui se trouve dans ce dossier et ses sous-dossier est accessible avec un navigateur web.
 
-## Installation
+## Installation des composants
 
     cd my_project
     composer require silex/silex
+    composer require symfony/debug ^3.4
     composer require symfony/var-dumper ^3.4
     composer require symfony/yaml ^3.4
     composer require doctrine/dbal ^2.0
     composer require jibundeyare/silex-php-view
 
-## Point d'entrée
+## Création de l'application
 
-Pour créer le point d'entrée de l'application, insérer le code suivant dans le fichier `public/index.php` :
+Le fichier `public/index.php` est le point d'entrée de l'application.
+
+Pour créer l'application, insérer le code suivant dans le fichier `public/index.php` :
 
     <?php
 
@@ -86,9 +89,9 @@ Pour créer le point d'entrée de l'application, insérer le code suivant dans l
 
     $app->run();
 
-## Template de la home page
+## Template de la page d'accueil
 
-Pour créer le template dont l'application a besoin, insérer le code suivant dans le fichier `templates/home.php` :
+Pour créer le template de la page d'accueil, insérer le code suivant dans le fichier `templates/home.php` :
 
     <!DOCTYPE html>
     <html lang="fr">
@@ -105,13 +108,13 @@ Pour créer le template dont l'application a besoin, insérer le code suivant da
 
 Pour activater le mode debug, enlever les slashs `//` devant les lignes `Debug::enable();` et `$app['debug'] = true;` dans le fichier `public/index.php` pour obtenir :
 
-    Debug::enable(); // <= ici
+    Debug::enable();            // <= modif
 
     $app = new Application();
 
-    $app['debug'] = true; // <= ici
+    $app['debug'] = true;       // <= modif
 
-Attention : ce mode doit impérativement être désactivé quand l'application est déployée en production.
+Attention : ce mode doit impérativement être désactivé quand l'application est déployée en production. Pour désactiver le mode  debug, il suffit de remettre les slashs `//` supprimés.
 
 ## Ajout d'une nouvelle page
 
@@ -123,13 +126,22 @@ Pour ajouter une nouvelle page, il faut ajouter :
 
 ### Ajout d'une nouvelle route et d'un nouveau contrôleur
 
-Pour ajouter une page `contact`, modifier le fichier `public/index.php` pour obtenir :
+Pour ajouter la page `contact`, modifier la fin du fichier `public/index.php` pour obtenir :
 
-    // contact
-    $app->get('/contact', function() use($app) {
-        return $app['view']->render('contact.php', [
+    // home
+    $app->get('/', function() use($app) {
+        $message = 'Hello Silex!';
+
+        return $app['view']->render('home.php', [
+            'message' => $message,
         ]);
     });
+
+    // contact                                          // <= modif
+    $app->get('/contact', function() use($app) {        // <= modif
+        return $app['view']->render('contact.php', [    // <= modif
+        ]);                                             // <= modif
+    });                                                 // <= modif
 
     $app->run();
 
@@ -250,6 +262,7 @@ Attention :
 ## Doc
 
 - [Homepage - Silex - The PHP micro-framework based on the Symfony Components](https://silex.symfony.com/)
+- [The Debug Component (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/components/debug.html)
 - [The VarDumper Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/var_dumper.html)
 - [The Yaml Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/yaml.html)
 - [Welcome to Doctrine DBAL’s documentation! — Doctrine DBAL 2 documentation](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/)
