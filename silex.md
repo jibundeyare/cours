@@ -38,6 +38,7 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
             cache/          <= stockage du cache
             logs/           <= stockage des logs
         vendor/             <= paquets gérés par composer
+        .gitignore          <= liste des fichiers que git doit ignorer
         composer.json       <= liste des paquets gérés par composer
         composer.lock       <= liste des paquets gérés par composer
         README.md           <= documentation du projet
@@ -103,6 +104,16 @@ Pour créer le template de la page d'accueil, insérer le code suivant dans le f
           <h1><?= $message ?></h1>
       </body>
     </html>
+
+## Test de l'application
+
+Depuis le terminal, lancer un serveur web de développement :
+
+    php -S localhost:8000 -t public
+
+puis dans un navigateur web, entrer l'url :
+
+    http://localhost:8000
 
 ## Mode debug
 
@@ -267,3 +278,5 @@ Attention :
 - [The Yaml Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/yaml.html)
 - [Welcome to Doctrine DBAL’s documentation! — Doctrine DBAL 2 documentation](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/)
 - [jibundeyare/silex-php-view: A minimal php view service for silex framework](https://github.com/jibundeyare/silex-php-view)
+- [silexphp/Silex-Skeleton: A skeleton to get started with Silex](https://github.com/silexphp/Silex-Skeleton)
+- [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton).
