@@ -11,7 +11,7 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
             *.yml
         data/               <= vos fichiers de données
             *.sql
-        public/             <= document root
+        public/             <= document root (anciennement appelé web)
             css/            <= vos feuilles de style
                 *.css
             fonts/          <= vos typos
@@ -31,7 +31,7 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
             package.lock    <= liste des paquets gérés par npm
         src/                <= vos fichiers php
             *.php
-        templates/          <= vos templates
+        templates/          <= vos templates (anciennement appelé views)
             *.php
             *.twig
         var/
@@ -187,7 +187,7 @@ Ou pour créer un lien qui pointe vers la page d'accueil :
 
 ## Ajout d'une feuille de style et de javascript
 
-Toutes les fichiers `css` et `js` doivent être stockés dans un sous-dossier de `public`.
+Tous les fichiers `css` et `js` doivent être stockés dans un sous-dossier de `public`.
 
 ### Votre feuille de style
 
@@ -215,20 +215,26 @@ Pour intégrer votre code javascript dans vos templates, modifier la fin du docu
       </body>
     </html>
 
-### Installation de jQuery
+### Installation et intégration de jQuery
 
 Créer le dossier `public/js` s'il n'existe pas encore.
 
 Téléchargez le fichier [jquery-3.2.1.min.js](https://code.jquery.com/jquery-3.2.1.min.js) dans le dossier `public/js`.
 
-Pour intégrer votre jQuery dans vos templates, modifier la fin du document html pour obtenir :
+Vous devriez avoir le fichier suivant : `public/js/jquery-3.2.1.min.js`.
+
+Pour utiliser jQuery dans vos templates, modifier la fin du document html pour obtenir :
 
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/main.js"></script>
       </body>
     </html>
 
-### Installation de Bootstrap
+Attention :
+
+- votre code javascript doit être intégré après jQuery
+
+### Installation et intégration de Bootstrap
 
 Téléchargez [bootstrap-3.3.7-dist.zip](https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip) et dézipper l'archive dans le dossier `public`.
 
@@ -237,8 +243,6 @@ Vous devriez avoir les trois dossiers suivants :
 - `public/bootstrap-3.3.7-dist/css`
 - `public/bootstrap-3.3.7-dist/fonts`
 - `public/bootstrap-3.3.7-dist/js`
-
-### Intégration de Bootstrap
 
 Pour utiliser Bootstrap dans vos templates, modifier le début du document html pour obtenir :
 
@@ -272,7 +276,9 @@ Attention :
 
 ## Skeleton
 
-Voir [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton).
+Voir [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton) pour une version opérationnelle.
+
+Ou voir [silexphp/Silex-Skeleton](https://github.com/silexphp/Silex-Skeleton) qui est le skeleton officiel.
 
 ## Doc
 
@@ -282,5 +288,7 @@ Voir [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton)
 - [The Yaml Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/yaml.html)
 - [Welcome to Doctrine DBAL’s documentation! — Doctrine DBAL 2 documentation](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/)
 - [jibundeyare/silex-php-view: A minimal php view service for silex framework](https://github.com/jibundeyare/silex-php-view)
+- [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
+- [jQuery](http://jquery.com/)
+- [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton)
 - [silexphp/Silex-Skeleton: A skeleton to get started with Silex](https://github.com/silexphp/Silex-Skeleton)
-- [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton).
