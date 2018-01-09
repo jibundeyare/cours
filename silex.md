@@ -211,7 +211,7 @@ Créer votre code javascript dans `public/js/main.js`.
 
 Pour intégrer votre code javascript dans vos templates, modifier la fin du document html pour obtenir :
 
-        <script src="js/main.js"></script>
+        <script src="/js/main.js"></script>
       </body>
     </html>
 
@@ -225,8 +225,8 @@ Vous devriez avoir le fichier suivant : `public/js/jquery-3.2.1.min.js`.
 
 Pour utiliser jQuery dans vos templates, modifier la fin du document html pour obtenir :
 
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/js/main.js"></script>
       </body>
     </html>
 
@@ -251,8 +251,8 @@ Pour utiliser Bootstrap dans vos templates, modifier le début du document html 
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Titre</title>
-      <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/main.css" rel="stylesheet">
     </head>
 
@@ -263,9 +263,9 @@ Attention :
 
 Puis modifier la fin du document html pour obtenir :
 
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="/js/main.js"></script>
       </body>
     </html>
 
