@@ -48,11 +48,11 @@ Note : le document root est le dossier qui est rendu accessible par le serveur w
 ## Installation des composants
 
     cd my_project
-    composer require silex/silex
-    composer require symfony/debug ^3.4
-    composer require symfony/var-dumper ^3.4
-    composer require symfony/yaml ^3.4
-    composer require doctrine/dbal ^2.0
+    composer require silex/silex ~2.0
+    composer require symfony/debug ~3.4
+    composer require symfony/var-dumper ~3.4
+    composer require symfony/yaml ~3.4
+    composer require doctrine/dbal ~2.0
     composer require jibundeyare/silex-php-view
 
 ## Création de l'application
