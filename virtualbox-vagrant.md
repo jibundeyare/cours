@@ -4,6 +4,9 @@ Virtualbox est une application d'émulation de machine (machine virtuelle).
 
 Vagrant est un outil de gestion de machines virtuelles.
 
+VM = virtual machine (machine virtuelle)
+box = boîte (c-à-d un serveur)
+
 ## Installation
 
 Installer :
@@ -52,11 +55,30 @@ Pour sortir de la box et l'éteindre :
 
 ### Avec Windows, Vagrant bloque après `vagrant up`
 
-Il se peut qu'il faille mettre à jour PowerShell.
+Solution : mettre à jour PowerShell.
 
 La page [Install and configure WMF 5.1 | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/wmf/5.1/install-configure) permet de télécharger PowerShell 5.1.
 
 Dans le PowerShell, la commande `$PSVersionTable` affiche le numéro de version actuel.
+
+### Affichage de l'écran de la box
+
+D'abord stopez la vm si elle tourne.
+Ensuite lancez la manuellement depuis virtualbox.
+
+Dans virtualbox, la vm devrait porter un nom semblable à `my_project_default_...`.
+
+Les messages d'erreur qui s'affichent permettent de diagnostiquer les problèmes.
+
+### Erreur `VT-x is disabled` ou `VT-x is not available`
+
+Solution : activer la virtualisation dans le BIOS (VT-x pour Intel et AMD-V pour AMD)
+
+- [BIOS : Forum Aux Questions - Aide de Windows](http://windows.microsoft.com/fr-fr/windows/bios-faq#1TC=windows-7)
+- [BIOS - Accéder au setup du Bios](http://www.commentcamarche.net/faq/389-bios-acceder-au-setup-du-bios)
+- [How to Enable Intel Virtualization Technology (vt-x) and amd-v in BIOS - Updated](http://www.sysprobs.com/disable-enable-virtualization-technology-bios)
+
+Si aucune option VT-x ou AMD-V n'est disponible dans le BIOS, c'est que le PC ne gère pas la virtualisation.
 
 ## Doc
 
