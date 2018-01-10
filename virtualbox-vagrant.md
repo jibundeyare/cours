@@ -11,8 +11,8 @@ box = boîte (c-à-d un serveur)
 
 Installer :
 
-- [Git - Downloads](https://www.git-scm.com/downloads)
-- [RubyInstaller](https://rubyinstaller.org/downloads/) (seulement pour Windows)
+- [Git](git.md)
+- [Ruby](ruby.md) (seulement pour Windows)
 - [VirtualBox](https://www.virtualbox.org/) (seul « VirtualBox 5.x.x platform packages » est nécessaire)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) (seulement pour Windows et seul « MSI (‘Windows Installer’) » est nécessaire)
