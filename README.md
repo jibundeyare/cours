@@ -14,6 +14,7 @@ Ce repo contient des supports de cours.
 
 ## Sujets annexes
 
+- Apache
 - Code Sniffer
 - MAMP
 - Markdown
