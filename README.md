@@ -21,6 +21,7 @@ Ce repo contient des supports de cours.
 - les raccourcis clavier
 - Var Dumper
 - le versioning
+- Virtualbox et Vagrant
 
 ## Licence
 
