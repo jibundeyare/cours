@@ -1,16 +1,18 @@
 # Framework
 
+Un framework est à la fois une structure de fichiers et un ensemble de code sources à partir duquel il est possible de créer une application.
+
 ## Quelques frameworks
 
-- Symfony
-- Laravel
-- Phalcon
+- [Symfony](http://symfony.com/)
+- [Laravel](https://laravel.com/)
+- [Phalcon](https://phalconphp.com/)
 
 ## Quelques microframeworks
 
-- Silex (version light de Symfony)
-- Enlighten (version light de Laravel)
-- Slim
+- [Silex](https://silex.symfony.com/) (version light de Symfony)
+- [Lumen](https://lumen.laravel.com/) (version light de Laravel)
+- [Slim](https://www.slimframework.com/)
 
 ## Inconvénients
 
@@ -28,3 +30,7 @@
 - facilite le travail en équipe (grâce à l'architecture MVC)
 - renforce la sécurité
 - raccourcit le temps de production
+
+## Doc
+
+- [Software framework - Wikipedia](https://en.wikipedia.org/wiki/Software_framework)
