@@ -2,19 +2,19 @@
 
 ## Windows
 
-Se déplacer dans un dossier :
+Se rendre dans un dossier :
 
     cd [nom du dossier]
 
-Par exemple, pour aller dans le dossier `mon-projet` (avec Wamp) :
+Par exemple, pour se rendre dans le dossier `my_project` (avec Wamp) :
 
-    cd C:\wamp64\www\mon-projet
+    cd C:\wamp64\www\my_project
 
 Si le nom du chemin comporte des espaces, il faut l'entourer de guillemets.
 
-Par exemple, pour aller dans le dossier `C:\Program Files`:
+Par exemple, pour se rendre dans le dossier `C:\Users\user\my project`:
 
-    cd "C:\Program Files"
+    cd "C:\Users\user\my project"
 
 Changer de disque (sur Windows) :
 
@@ -50,19 +50,19 @@ Supprimer un dossier
 
 ## Macos et Linux
 
-Se déplacer dans un dossier :
+Se rendre dans un dossier :
 
     cd [nom du dossier]
 
-Par exemple, pour aller dans le dossier `mon-projet` (avec MAMP) :
+Par exemple, pour se rendre dans le dossier `my_project` (avec MAMP) :
 
-    cd /Applications/MAMP/htdocs/mon-projet
+    cd /Applications/MAMP/htdocs/my_project
 
 Si le nom du chemin comporte des espaces, il faut l'entourer de guillemets.
 
-Par exemple, pour aller dans le dossier `/home/user/mon dossier` :
+Par exemple, pour se rendre dans le dossier `/home/user/my project` :
 
-    cd "/home/user/mon dossier"
+    cd "/home/user/my project"
 
 Afficher le chemin du dossier actuel :
 
