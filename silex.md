@@ -274,6 +274,49 @@ Attention :
 - jQuery doit être intégré avant Bootstrap
 - votre code javascript doit être intégré après Bootstrap
 
+## Stockage des identifiants de base de données
+
+### Création du fichier de config
+
+Pour stocker les identifiants dans un fichier à part, insérer le code suivant dans le fichier `config/db.yml.dist` :
+
+    host: ~
+    dbname: ~
+    user: ~
+    password: ~
+    driver: pdo_mysql
+    charset: utf8mb4
+
+puis copier le fichier `config/db.yml.dist` vers `config/db.yml` et l'adapter avec les identifiants :
+
+    host: 127.0.0.1
+    dbname: my_project
+    user: my_user
+    password: my_password
+    driver: pdo_mysql
+    charset: utf8mb4
+
+### Lecture du fichier de config
+
+Pour lire le fichier de config, adapter le fichier `public/index.php` pour obtenir :
+
+    use Symfony\Component\Debug\Debug;
+    use Symfony\Component\Yaml\Yaml;                                    // <= modif
+
+    require __DIR__.'/../vendor/autoload.php';
+
+    Debug::enable();
+
+    $connectionParams = Yaml::parseFile(__DIR__.'/../config/db.yml');   // <= modif
+
+## Autoloading
+
+Pour activer l'autoloading, ajouter le bloc suivant au fichier `composer.json` :
+
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+
 ## Skeleton
 
 Voir [jibundeyare/silex-skeleton](https://github.com/jibundeyare/silex-skeleton) pour une version opérationnelle.

@@ -1,10 +1,10 @@
 # Php
 
-## Concepts
+## Notions
 
-- la programmation procédurale
-- la programmation orientée objet (POO)
-- le modèle MVC (Modèle, Vue, Contrôleur)
+- programmation procédurale
+- programmation orientée objet (POO)
+- architecture MVC (Modèle, Vue, Contrôleur)
 
 ## Outils
 
@@ -15,28 +15,41 @@
 ## Arborescence d'un projet
 
     my_project/
-        config/
+        config/             <= vos fichiers de config
             *.yml
-        public/
-            .htaccess
+        data/               <= vos fichiers de données
+            *.sql
+        public/             <= document root
+            .htaccess       <= config pour apache
+            *.php           <= les pages de votre applications
+            index.php       <= le point d'entrée de votre application
+        src/                <= vos fichiers php
             *.php
-            index.php
-        src/
+        templates/          <= vos templates
             *.php
-        templates/
             *.twig
         var/
-            cache/
-        vendor/
-        composer.json
-        composer.lock
-        README.md
+            cache/          <= stockage du cache
+            logs/           <= stockage des logs
+        vendor/             <= paquets gérés par composer
+        .gitignore          <= liste des fichiers que git doit ignorer
+        composer.json       <= liste des paquets gérés par composer
+        composer.lock       <= liste des paquets gérés par composer
+        README.md           <= documentation du projet
 
-## Syntaxe
+## Server web de développement
 
-`=` est impératif (c'est un ordre).
+Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
 
-`==` est interrogatif (c'est une question).
+    cd [dossier du projet web]
+
+Pour lancer le serveur web, taper :
+
+    php -S localhost:8000 -t public
+
+Puis dans barre d'adresse d'un navigateur web, taper :
+
+    http://localhost:8000/
 
 ## Commandes
 
@@ -58,7 +71,11 @@ Afficher une liste d'info complète :
 
     php -i
 
-Lancer le serveur web de développement :
+Lancer le serveur web de développement avec le dossier actuel comme document root :
+
+    php -S localhost:8000
+
+Lancer le serveur web de développement avec le sous-dossier `public` comme document root :
 
     php -S localhost:8000 -t public
 
