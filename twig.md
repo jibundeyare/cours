@@ -4,7 +4,7 @@ Twig est un moteur de « template ». Un « template » est un fichier dans lequ
 
 Dans le modèle « MVC », le template correspond au « V », la vue (View en anglais).
 
-## installation
+## Installation
 
 Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
 
