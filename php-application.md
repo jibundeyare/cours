@@ -1,5 +1,3 @@
-@todo [PHP: Filtres de nettoyage - Manual](http://php.net/manual/fr/filter.filters.sanitize.php)
-
 # Php application
 
 ## Notions
