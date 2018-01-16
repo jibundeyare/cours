@@ -1,6 +1,4 @@
-# framework
-
-@todo définition
+# Framework
 
 ## Quelques frameworks
 
