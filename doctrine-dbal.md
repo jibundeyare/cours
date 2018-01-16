@@ -1,5 +1,7 @@
 # Doctrine DBAL
 
+Doctrine DBAL est une librairie php qui permet de communiquer avec un serveur de base de données (BDD). Cette librairie peut communiquer avec plusieurs types de BDD, dont MySQL.
+
 ## Installation
 
 Dans un terminal, taper :
@@ -14,14 +16,16 @@ Pour installer le paquet :
 
 ## Utilisation sans framework
 
-Taper le code suivant dans un nouveau fichier nommé `items.php` :
+Taper le code suivant dans un nouveau fichier :
 
     <?php
 
+    use Doctrine\DBAL\Configuration;
+    use Doctrine\DBAL\DriverManager;
+
     require __DIR__.'/../vendor/autoload.php';
 
-    $config = new \Doctrine\DBAL\Configuration();
-
+    $config = new Configuration();
     $connectionParams = array(
         'driver'    => 'pdo_mysql',
         'host'      => '127.0.0.1',
@@ -30,9 +34,9 @@ Taper le code suivant dans un nouveau fichier nommé `items.php` :
         'password'  => '123',
         'charset'   => 'utf8mb4',
     );
+    $conn = DriverManager::getConnection($connectionParams, $config);
 
-    $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
-
+    // récupération de tous les éléments de la table `item` dans un tableau php
     $items = $conn->fetchAll('SELECT * FROM item');
 
     foreach ($items as $item) {

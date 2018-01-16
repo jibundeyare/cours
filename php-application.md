@@ -81,6 +81,10 @@ Lancer le serveur web de développement avec le sous-dossier `public` comme docu
 
     php -S localhost:8000 -t public
 
+## Communication avec la base de données
+
+Je recommande fortement l'utilisation de Doctrine DBAL. Pour en savoir plus, voir [doctrine-dbal.md](doctrine-dbal.md).
+
 ## Doc
 
 - [PHP: Hypertext Preprocessor](http://php.net/)

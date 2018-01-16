@@ -106,4 +106,3 @@ Mettre à jour composer :
 - [Basic usage - Composer](https://getcomposer.org/doc/01-basic-usage.md#autoloading)
 - [Versions and constraints - Composer](https://getcomposer.org/doc/articles/versions.md)
 - [The composer.json Schema - Composer](https://getcomposer.org/doc/04-schema.md#psr-4)
-
