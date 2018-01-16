@@ -67,11 +67,19 @@ Par exemple, installer remg/generator-bundle :
 
 Installer une version particulière d'un paquet :
 
-    composer require [nom du paquet] ^[numéro de version]
+    composer require [nom du paquet] [numéro de version]
 
-Par exemple, installer la version 1.35 de twig :
+Par exemple, installer précisément la version 1.3.0 de twig :
 
-    composer require twig/twig ^1.35
+    composer require twig/twig 1.35
+
+Installer une version minimum d'un paquet :
+
+    composer require [nom du paquet] ~[numéro de version]
+
+Par exemple, installer la version 1.35 minimum (mais pas la version 2.x) de twig :
+
+    composer require twig/twig ~1.35
 
 Supprimer un paquet installé :
 

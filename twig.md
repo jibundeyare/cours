@@ -4,6 +4,16 @@ Twig est un moteur de « template ». Un « template » est un fichier dans lequ
 
 Dans le modèle « MVC », le template correspond au « V », la vue (View en anglais).
 
+## installation
+
+Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
+
+    cd [dossier du projet web]
+
+Pour installer le paquet :
+
+    composer require twig/twig ~2.0
+
 ## Sans framework (en PHP brut)
 
 `public/hello-twig.php` :
@@ -74,6 +84,5 @@ Dans le modèle « MVC », le template correspond au « V », la vue (View en an
 - [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/if.html)
 - [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
 - [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
-
 - [PHP: date - Manual](http://php.net/manual/en/function.date.php)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)

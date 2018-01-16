@@ -34,3 +34,7 @@ Ne pas fermer le bloc php avec `?>` si la page ne contient que du php.
 - [PHP: Hypertext Preprocessor](https://secure.php.net/)
 - [PHP: Operators - Manual](https://secure.php.net/manual/en/language.operators.php)
 - [operators - Reference — What does this symbol mean in PHP? - Stack Overflow](https://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php?rq=1)
+- [PHP: String Functions - Manual](https://secure.php.net/manual/en/ref.strings.php)
+- [PHP: Date/Time - Manual](https://secure.php.net/manual/en/book.datetime.php)
+- [PHP: date - Manual](http://php.net/manual/en/function.date.php)
+- [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)

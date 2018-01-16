@@ -4,8 +4,6 @@ Doctrine DBAL est une librairie php qui permet de communiquer avec un serveur de
 
 ## Installation
 
-Dans un terminal, taper :
-
 Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
 
     cd [dossier du projet web]

@@ -45,9 +45,14 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
 
 Note : le document root est le dossier qui est rendu accessible par le serveur web. Tout ce qui se trouve dans ce dossier et ses sous-dossier est accessible avec un navigateur web.
 
-## Installation des composants
+## Installation
 
-    cd my_project
+Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
+
+    cd [dossier du projet web]
+
+Pour installer les paquet :
+
     composer require silex/silex ~2.0
     composer require symfony/debug ~3.4
     composer require symfony/var-dumper ~3.4
