@@ -20,6 +20,8 @@ Ne pas fermer le bloc php avec `?>` si la page ne contient que du php.
 
 `<?=` et `<?php echo ` sont équivalent
 
+`include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
+
 ## Types de données
 
 - chaîne de caractères (string)

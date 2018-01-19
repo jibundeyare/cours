@@ -166,8 +166,23 @@ Afficher la liste des events et leur degré de priorité :
 ### Entity
 
 - [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
+- [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
+- [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
+
+### Form
+
+- [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
+- [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
 
 ### Route
 
 - [Routing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/routing.html)
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
+
+## Bootstrap
+
+- [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
+- [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
+- [jQuery](http://jquery.com/)
+- [Getting started · Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/)
+- [jQuery CDN](https://code.jquery.com/)

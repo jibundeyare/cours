@@ -4,4 +4,4 @@
 `~` => alt n
 `|` => alt shift L
 `[` => alt shift (
-`{` => shift (
+`{` => alt (
