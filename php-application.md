@@ -90,3 +90,5 @@ Je recommande fortement l'utilisation de Doctrine DBAL. Pour en savoir plus, voi
 - [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 - [PHP: Options - Manual](http://php.net/manual/en/features.commandline.options.php)
 - [SitePoint – Learn HTML, CSS, JavaScript, PHP, Ruby & Responsive Design](https://www.sitepoint.com/)
+- [OWASP](https://www.owasp.org/index.php/Main_Page)
+- [Category:PHP - OWASP](https://www.owasp.org/index.php/Category:PHP#tab=Main)
