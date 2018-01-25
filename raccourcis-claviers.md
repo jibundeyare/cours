@@ -24,3 +24,4 @@
 | `PAGE_DOWN`             | scroller d'une page vers le bas                           |
 | `F12`                   | dans un navigateur, afficher le panneau de développement  |
 | `F1`                    | afficher l'aide en ligne                                  |
+| `CTRL SHIFT DELETE`     | supprimer le cache du navigateur                          |

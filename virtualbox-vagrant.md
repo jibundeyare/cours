@@ -17,6 +17,12 @@ Installer :
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) (seulement pour Windows et seul « MSI (‘Windows Installer’) » est nécessaire)
 
+## Plugin
+
+Installer un plugin qui installe automatiquement les `virtualbox-guest-additions` :
+
+    vagrant plugin install vagrant-vbguest
+
 ## Création d'une box linux Debian Stretch
 
 Attention : prévoir au moins 3 Go d'espace libre sur la machine pour pouvoir travailler sereinement.
@@ -50,6 +56,56 @@ Pour sortir de la box et l'éteindre :
 
     exit
     vagrant halt
+
+## Commandes utiles
+
+Construire la VM ou la démarrer si elle existe déjà :
+
+    vagrant up
+
+Arrêter la VM :
+
+    vagrant halt
+
+Afficher l'état de la VM :
+
+    vagrant status
+
+Se connecter en ssh avec la VM :
+
+    vagrant ssh
+
+Provisionner la VM :
+
+    vagrant provision
+
+Détruire définitivement la machine (attention : pas récupérable) :
+
+    vagrant destroy -f
+
+Afficher des informations sur la connexion ssh avec la VM :
+
+    vagrant ssh-config
+
+## Fichier `Vagrantfile`
+
+### Réseau privé
+
+    config.vm.network "private_network", ip: "192.168.33.10"
+
+### Accès au répertoire du projet
+
+    config.vm.synced_folder ".", "/var/www/html", owner: "root", group: "root"
+
+### Provisionning
+
+    config.vm.provision "shell", path: "provision/setup.sh"
+
+## Test du serveur web
+
+Ouvrir l'url suivante dans un navigateur web :
+
+    http://192.168.33.10/
 
 ## Trouble shooting
 
@@ -86,6 +142,7 @@ Si aucune option VT-x ou AMD-V n'est disponible dans le BIOS, c'est que le PC ne
 - [Oracle VM VirtualBox](https://www.virtualbox.org/)
 - [Le langage Ruby](https://www.ruby-lang.org/fr/)
 - [Vagrant by HashiCorp](https://www.vagrantup.com/)
+- [dotless-de/vagrant-vbguest: A Vagrant plugin to keep your VirtualBox Guest Additions up to date](https://github.com/dotless-de/vagrant-vbguest)
 - [Vagrant box debian/stretch64 - Vagrant Cloud](https://app.vagrantup.com/debian/boxes/stretch64)
 - [PuTTY: a free SSH and Telnet client](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
 - [Determine installed PowerShell version - Stack Overflow](https://stackoverflow.com/questions/1825585/determine-installed-powershell-version)
