@@ -87,3 +87,11 @@ Créer un dossier :
 Supprimer un dossier
 
     rmdir [nom du dossier]
+
+## Fichiers cachés
+
+### Macos et Linux
+
+Les fichiers dont le nom commence par un point sont cachés.
+
+Exemple : `.htaccess`
