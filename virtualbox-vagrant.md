@@ -148,3 +148,4 @@ Si aucune option VT-x ou AMD-V n'est disponible dans le BIOS, c'est que le PC ne
 - [Determine installed PowerShell version - Stack Overflow](https://stackoverflow.com/questions/1825585/determine-installed-powershell-version)
 - [Installing Windows PowerShell | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-5.1)
 - [Install and configure WMF 5.1 | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/wmf/5.1/install-configure)
+- [Laravel Homestead - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/master/homestead)
