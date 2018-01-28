@@ -105,6 +105,12 @@ Mettre à jour composer :
 
     composer self-update
 
+## Symfony Flex
+
+Symfony Flex est un plugin Composer qui permet d'installer Symfony et des Bundles.
+
+Cet outil est utilisable à partir de Symfony 3.4.
+
 ## Doc
 
 - [Composer](https://getcomposer.org/)
