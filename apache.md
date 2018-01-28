@@ -104,10 +104,12 @@ Exemple : `sudo a2enconf php7.0-fpm`
 ## Doc
 
 - [Welcome! - The Apache HTTP Server Project](http://httpd.apache.org/)
+- [Modules multi-processus (MPMs) - Serveur Apache HTTP Version 2.4](http://httpd.apache.org/docs/2.4/mpm.html)
 - [Document de référence rapide des directives - Serveur Apache HTTP Version 2.4](http://httpd.apache.org/docs/2.4/mod/quickreference.html)
 - [Tutoriel du serveur HTTP Apache : fichiers .htaccess - Serveur Apache HTTP Version 2.4](http://httpd.apache.org/docs/2.4/howto/htaccess.html)
 - [Authentification et autorisation - Serveur Apache HTTP Version 2.4](http://httpd.apache.org/docs/2.4/howto/auth.html)
 - [Oublions mod_php - Remi Collet - PHP Tour 2016 - YouTube](https://www.youtube.com/watch?time_continue=2454&v=onSzYyv4yj8)
+- [Ma station de travail PHP - Remi's RPM repository - Blog](https://blog.remirepo.net/post/2016/04/16/Ma-station-de-travail-PHP)
 - [How To Create a Self-Signed SSL Certificate for Apache in Ubuntu 16.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04)
 - [HowTo: Create CSR using OpenSSL Without Prompt (Non-Interactive) - ShellHacks](https://www.shellhacks.com/create-csr-openssl-without-prompt-non-interactive/)
 - [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
