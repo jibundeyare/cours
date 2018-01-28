@@ -1,26 +1,26 @@
-# Html & Css
+# HTML & CSS
 
 ## Arborescence d'un projet
 
-    my_project/
-        css/
+    my_project/         <= document root
+        css/            <= vos feuilles de style
             *.css
-        fonts/
-        img/
+        fonts/          <= vos typos
+        img/            <= vos images
             *.gif
             *.jpg
             *.png
-        js/
+        js/             <= vos fichiers JavaScript
             *.js
-            bundle.min.js
-            main.js
-        node_modules/
-        sass/
+        node_modules/   <= paquets gérés par npm
+        sass/           <= vos feuilles de style
             *.sass
             *.scss
             main.sass
-        package.json
-        package.lock
+        .gitignore      <= liste des fichiers que git doit ignorer
+        package.json    <= liste des paquets gérés par npm
+        package.lock    <= liste des paquets gérés par npm
+        README.md       <= documentation du projet
 
 ## Ordre d'intégration des feuilles de style et des fichiers JavaScript
 

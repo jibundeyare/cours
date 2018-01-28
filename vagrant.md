@@ -1,11 +1,9 @@
-# Virtualbox & Vagrant
+# Vagrant
 
-Virtualbox est une application d'émulation de machine (machine virtuelle).
-
-Vagrant est un outil de gestion de machines virtuelles.
+Vagrant est un outil de gestion de machines virtuelles. Cet outil permet de notamment de manipuler simplement VM Virtualbox.
 
 VM = virtual machine (machine virtuelle)
-box = boîte (c-à-d un serveur)
+box = boîte (c-à-d un serveur, ou l'image disque d'un serveur)
 
 ## Installation
 

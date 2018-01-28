@@ -53,11 +53,11 @@ Conseil : si vous rencontrer des problèmes à cette étape, consultez « Erreur
 
 Avec PhpMyAdmin, créer une nouvelle base de données.
 
-Le nom de la base de données ne doit comporter aucun espace ` `, ni tiret `-`, ni accent.
+Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
 
-Conseil : choisissez le même nom que votre projet.
+Pour le nom de la BDD, choisissez le même nom que votre projet.
 
-L'interclassement doit être `utf8mb4_unicode_ci`.
+L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
 
 ### Configuration de Symfony
 
@@ -73,12 +73,18 @@ afin d'obtenir :
     database_user: root
     database_password: null
 
-Vous devez utiliser le user et la password que vous utilisez quand vous vous connectez avec PhpMyAdmin.
+Adapter le `database_user` et le `database_password` avec ceux que vous utilisez quand vous vous connectez à PhpMyAdmin.
 
-Conseil : avec MAMP, le mot de passe par défaut est `root`.
-Conseil : si vous avez une erreur de connexion avec MAMP, consultez « Erreur de connexion à la base de données avec MAMP » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md).
+Conseils :
 
-## Installation du bundle remg/generator-bundle
+- avec MAMP, le `database_user` et le `database_password` par défaut sont tout les deux `root`
+- si vous avez une erreur de connexion avec MAMP, consultez « Erreur de connexion à la base de données avec MAMP » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md)
+
+## Bundles
+
+Les Bundles sont des plugins.
+
+### Bundle `remg/generator-bundle`
 
 Installer le bundle :
 
@@ -99,22 +105,53 @@ afin d'obtenir :
         $bundles[] = new Remg\GeneratorBundle\RemgGeneratorBundle();
     }
 
-Pour configurer bundle, ajouter à la fin du fichier `app/config/config_dev.yml` :
+Pour configurer le bundle, ajouter à la fin du fichier `app/config/config_dev.yml` :
 
     remg_generator:
         entity:
             # available configuration formats are: 'annotation', 'yaml', 'xml' and 'php'.
             configuration_format: annotation
 
-## Création d'entités avec le bundle remg/generator-bundle
+### Bundle `doctrine/doctrine-migrations-bundle`
+
+Installer le bundle :
+
+    composer require doctrine/doctrine-migrations-bundle ~1.0
+
+## Entités
+
+### Création avec `remg/generator-bundle`
 
 Créer une entité :
 
     php bin/console remg:generate:entity
 
+### Configuration de valeurs par défaut
+
+Les valeurs par défaut sont définies dans le constructeur.
+
+Par convention, le constructeur est toujours situé entre le dernier attribut (variable) et la première méthode (fonction).
+
+    private $category;              // <= dernier attribut
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->isDone = false;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId() {       // <= première méthode
+
 ## Validation de formulaire
 
-Pour désactiver la validation côté client, modifier la fonction `configureOptions()` du form type afin d'obtenir :
+Pour désactiver la validation côté client (dans le navigateur web), modifier la fonction `configureOptions()` du form type afin d'obtenir :
 
     class PostType extends AbstractType
     {
@@ -143,17 +180,13 @@ Afficher la liste des services disponibles dans le container :
 
     php bin/console debug:container
 
-Afficher la liste des services qui peuvent être utilisés en « type hinting » :
+Afficher la correspondance entre les services et le nom des classes PHP qui peuvent être utilisés en « type hinting » :
 
     php bin/console debug:autowiring
 
 Afficher la liste des events et leur degré de priorité :
 
     php bin/console debug:event-dispatcher
-
-## Bundles
-
-    composer require --dev remg/generator-bundle dev-master
 
 ## Doc
 
@@ -165,21 +198,21 @@ Afficher la liste des events et leur degré de priorité :
 
 ### Entity
 
-- [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
 - [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
-- [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
+- [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
 
 ### Form
 
 - [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
 - [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
+- [Validation Constraints Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/constraints.html)
 
 ### Route
 
 - [Routing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/routing.html)
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
 
-## Bootstrap
+## Bootstrap et jQuery
 
 - [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
 - [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)

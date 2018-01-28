@@ -1,9 +1,8 @@
 # PHP application
 
-## Notions
+## Architecture
 
-- programmation procédurale
-- programmation orientée objet (POO)
+- programmation procédurale VS programmation orientée objet (POO)
 - architecture MVC (Modèle, Vue, Contrôleur)
 
 ## Outils
@@ -20,9 +19,24 @@
         data/               <= vos fichiers de données
             *.sql
         public/             <= document root
+            css/            <= vos feuilles de style
+                *.css
+            fonts/          <= vos typos
+            img/            <= vos images
+                *.gif
+                *.jpg
+                *.png
+            js/             <= vos fichiers JavaScript
+                *.js
+            node_modules/   <= paquets gérés par npm
+            sass/           <= vos feuilles de style
+                *.sass
+                *.scss
             .htaccess       <= config pour apache
             *.php           <= les pages de votre applications
             index.php       <= le point d'entrée de votre application
+            package.json    <= liste des paquets gérés par npm
+            package.lock    <= liste des paquets gérés par npm
         src/                <= vos fichiers PHP
             *.php
         templates/          <= vos templates

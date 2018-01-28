@@ -19,7 +19,7 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
                 *.gif
                 *.jpg
                 *.png
-            js/             <= vos fichiers javascript
+            js/             <= vos fichiers JavaScript
                 *.js
             node_modules/   <= paquets gérés par npm
             sass/           <= vos feuilles de style
@@ -200,7 +200,7 @@ Créer le dossier `public/css` s'il n'existe pas encore.
 
 Créer votre feuille de style `public/css/main.css`.
 
-Pour intégrer votre feuille de style dans vos templates, modifier le début du document html afin d'obtenir :
+Pour intégrer votre feuille de style dans vos templates, modifier le début du document HTML afin d'obtenir :
 
     <head>
       <meta charset="utf-8" />
@@ -214,7 +214,7 @@ Créer le dossier `public/js` s'il n'existe pas encore.
 
 Créer votre code javascript dans `public/js/main.js`.
 
-Pour intégrer votre code javascript dans vos templates, modifier la fin du document html afin d'obtenir :
+Pour intégrer votre code javascript dans vos templates, modifier la fin du document HTML afin d'obtenir :
 
         <script src="/js/main.js"></script>
       </body>
@@ -228,7 +228,7 @@ Téléchargez le fichier [jquery-3.2.1.min.js](https://code.jquery.com/jquery-3.
 
 Vous devriez avoir le fichier suivant : `public/js/jquery-3.2.1.min.js`.
 
-Pour utiliser jQuery dans vos templates, modifier la fin du document html afin d'obtenir :
+Pour utiliser jQuery dans vos templates, modifier la fin du document HTML afin d'obtenir :
 
         <script src="/js/jquery-3.2.1.min.js"></script>
         <script src="/js/main.js"></script>
@@ -249,7 +249,7 @@ Vous devriez avoir les trois dossiers suivants :
 - `public/bootstrap-3.3.7-dist/fonts`
 - `public/bootstrap-3.3.7-dist/js`
 
-Pour utiliser Bootstrap dans vos templates, modifier le début du document html afin d'obtenir :
+Pour utiliser Bootstrap dans vos templates, modifier le début du document HTML afin d'obtenir :
 
     <head>
       <meta charset="utf-8">
@@ -266,7 +266,7 @@ Attention :
 - votre feuille de style doit être intégrée après Bootstrap
 - pensez à adapter le titre à la page
 
-Puis modifier la fin du document html afin d'obtenir :
+Puis modifier la fin du document HTML afin d'obtenir :
 
         <script src="/js/jquery-3.2.1.min.js"></script>
         <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>

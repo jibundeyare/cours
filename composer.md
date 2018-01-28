@@ -57,27 +57,27 @@ Installer un paquet :
 
     composer require [nom du paquet]
 
+Par exemple, installer symfony/var-dumper :
+
+    composer require symfoy/var-dumper
+
 Installer un paquet pour l'environnement de développement :
 
     composer require --dev [nom du paquet]
 
-Par exemple, installer remg/generator-bundle :
-
-    composer require --dev remg/generator-bundle
-
-Installer une version particulière d'un paquet :
+Installer une version précise d'un paquet :
 
     composer require [nom du paquet] [numéro de version]
 
-Par exemple, installer précisément la version 1.3.0 de twig :
+Par exemple, installer précisément la version `1.3.0` de twig :
 
-    composer require twig/twig 1.35
+    composer require twig/twig 1.30
 
 Installer une version minimum d'un paquet :
 
     composer require [nom du paquet] ~[numéro de version]
 
-Par exemple, installer la version 1.35 minimum (mais pas la version 2.x) de twig :
+Par exemple, installer la version `1.35` minimum (mais pas la version `2.x`) de twig :
 
     composer require twig/twig ~1.35
 
