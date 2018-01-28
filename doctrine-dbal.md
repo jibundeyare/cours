@@ -1,6 +1,6 @@
 # Doctrine DBAL
 
-Doctrine DBAL est une librairie php qui permet de communiquer avec un serveur de base de données (BDD). Cette librairie peut communiquer avec plusieurs types de BDD, dont MySQL.
+Doctrine DBAL est une librairie PHP qui permet de communiquer avec un serveur de base de données (BDD). Cette librairie peut communiquer avec plusieurs types de BDD, dont MySQL.
 
 ## Installation
 
@@ -34,7 +34,7 @@ Taper le code suivant dans un nouveau fichier :
     );
     $conn = DriverManager::getConnection($connectionParams, $config);
 
-    // récupération de tous les éléments de la table `item` dans un tableau php
+    // récupération de tous les éléments de la table `item` dans un tableau PHP
     $items = $conn->fetchAll('SELECT * FROM item');
 
     foreach ($items as $item) {

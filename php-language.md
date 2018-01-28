@@ -1,4 +1,4 @@
-# Php language
+# PHP language
 
 ## Notions
 
@@ -12,7 +12,7 @@
 
 ## Syntaxe
 
-Ne pas fermer le bloc php avec `?>` si la page ne contient que du php.
+Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
 
 `=` est impératif (c'est un ordre).
 

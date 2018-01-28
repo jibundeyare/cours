@@ -14,11 +14,11 @@ Pour installer le paquet :
 
 ## Commandes
 
-Vérifier le code style d'un fichier php :
+Vérifier le code style d'un fichier PHP :
 
     vendor/bin/phpcs [nom du fichier]
 
-Vérifier le code style d'un dossier contenant des fichiers php :
+Vérifier le code style d'un dossier contenant des fichiers PHP :
 
     vendor/bin/phpcs [nom du dossier]
 
@@ -26,11 +26,11 @@ Lister les codes styles disponibles :
 
     vendor/bin/phpcs -i
 
-Améliorer le code style d'un fichier php :
+Améliorer le code style d'un fichier PHP :
 
     vendor/bin/phpcbf [nom du fichier]
 
-Améliorer le code style d'un dossier contenant des fichiers php :
+Améliorer le code style d'un dossier contenant des fichiers PHP :
 
     vendor/bin/phpcbf [nom du dossier]
 

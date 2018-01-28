@@ -1,8 +1,14 @@
 # Symfony installeur
 
-Cet outil permet d'installer Symfony sans faire appel à composer. Il est apparau avec la branche `3.x` mais n'est plus utilisé depuis la branche `4.x`.
+Cet outil permet d'installer Symfony.
 
-## Windows
+Il est utilisable avec les branches `2.x` et `3.x` mais pas avec la branche `4.x`.
+
+À partir de la branche `4.x`, il faut utiliser `composer` pour installer Symfony.
+
+## Installation
+
+### Windows
 
 Ouvrir un terminal et lancer les commandes suivantes :
 
@@ -31,7 +37,7 @@ Ouvrir le fichier `php.ini` et modifier la ligne :
 
     ;curl.cainfo =
 
-pour obtenir :
+afin d'obtenir :
 
     curl.cainfo = "C:\Users\[user]\bin\cacert.pem"
 
@@ -44,13 +50,17 @@ Fermer le terminal. Ouvrir un nouveau terminal puis tester le binaire :
 
     symfony
 
-## Macos et Linux
+### Macos et Linux
 
     sudo mkdir -p /usr/local/bin
     sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
     sudo chmod a+x /usr/local/bin/symfony
 
-## Commandes
+## Commandes utiles
+
+Installer Symfony 2.8 :
+
+    symfony new my_project 2.8
 
 Installer Symfony 3.4 :
 
@@ -59,3 +69,5 @@ Installer Symfony 3.4 :
 ## Doc
 
 - [Installing & Setting up the Symfony Framework (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/setup.html)
+- [Installing & Setting up the Symfony Framework (Symfony 2.8 Docs)](https://symfony.com/doc/2.8/setup.html)
+- [curl - Extract CA Certs from Mozilla](https://curl.haxx.se/docs/caextract.html)

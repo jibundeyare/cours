@@ -7,7 +7,7 @@ La procédure d'installation se base sur une distribution Linux Debian Stretch.
     sudo apt-get update
     sudo apt-get install apache2
 
-## Installation de php sur une box linux
+## Installation de PHP sur une box linux
 
     sudo apt-get install php7.0
 

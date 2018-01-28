@@ -51,7 +51,7 @@ Conseil : si vous rencontrer des problèmes à cette étape, consultez « Erreur
 
 ### Création de la base de données
 
-Avec phpmyadmin, créer une nouvelle base de données.
+Avec PhpMyAdmin, créer une nouvelle base de données.
 
 Le nom de la base de données ne doit comporter aucun espace ` `, ni tiret `-`, ni accent.
 
@@ -67,13 +67,13 @@ Modifier le fichier `app/config/parameters.yml` :
     database_user: root
     database_password: null
 
-pour obtenir :
+afin d'obtenir :
 
     database_name: my_project
     database_user: root
     database_password: null
 
-Vous devez utiliser le user et la password que vous utilisez quand vous vous connectez avec phpmyadmin.
+Vous devez utiliser le user et la password que vous utilisez quand vous vous connectez avec PhpMyAdmin.
 
 Conseil : avec MAMP, le mot de passe par défaut est `root`.
 Conseil : si vous avez une erreur de connexion avec MAMP, consultez « Erreur de connexion à la base de données avec MAMP » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md).
@@ -91,7 +91,7 @@ Pour activer le bundle, ouvrir le fichier `app/AppKernel.php` et modifier le blo
         $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
     }
 
-pour obtenir :
+afin d'obtenir :
 
     if ('dev' === $this->getEnvironment()) {
         $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
@@ -114,7 +114,7 @@ Créer une entité :
 
 ## Validation de formulaire
 
-Pour désactiver la validation côté client, modifier la fonction `configureOptions()` du form type pour obtenir :
+Pour désactiver la validation côté client, modifier la fonction `configureOptions()` du form type afin d'obtenir :
 
     class PostType extends AbstractType
     {

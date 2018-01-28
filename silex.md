@@ -1,6 +1,6 @@
 # Silex
 
-[Silex](https://silex.symfony.com/) est un micro framework php basé sur des composants du framework Symfony. Ces deux frameworks sont développés par la société [SensioLabs](https://sensiolabs.com/fr).
+[Silex](https://silex.symfony.com/) est un micro framework PHP basé sur des composants du framework Symfony. Ces deux frameworks sont développés par la société [SensioLabs](https://sensiolabs.com/fr).
 
 ## Structure du dossier
 
@@ -29,7 +29,7 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
             index.php       <= le point d'entrée de votre application
             package.json    <= liste des paquets gérés par npm
             package.lock    <= liste des paquets gérés par npm
-        src/                <= vos fichiers php
+        src/                <= vos fichiers PHP
             *.php
         templates/          <= vos templates (anciennement appelé views)
             *.php
@@ -122,7 +122,7 @@ puis dans un navigateur web, entrer l'url :
 
 ## Mode debug
 
-Pour activater le mode debug, enlever les slashs `//` devant les lignes `Debug::enable();` et `$app['debug'] = true;` dans le fichier `public/index.php` pour obtenir :
+Pour activater le mode debug, enlever les slashs `//` devant les lignes `Debug::enable();` et `$app['debug'] = true;` dans le fichier `public/index.php` afin d'obtenir :
 
     Debug::enable();            // <= modif
 
@@ -142,7 +142,7 @@ Pour ajouter une nouvelle page, il faut ajouter :
 
 ### Ajout d'une nouvelle route et d'un nouveau contrôleur
 
-Pour ajouter la page `contact`, modifier la fin du fichier `public/index.php` pour obtenir :
+Pour ajouter la page `contact`, modifier la fin du fichier `public/index.php` afin d'obtenir :
 
     // home
     $app->get('/', function() use($app) {
@@ -200,7 +200,7 @@ Créer le dossier `public/css` s'il n'existe pas encore.
 
 Créer votre feuille de style `public/css/main.css`.
 
-Pour intégrer votre feuille de style dans vos templates, modifier le début du document html pour obtenir :
+Pour intégrer votre feuille de style dans vos templates, modifier le début du document html afin d'obtenir :
 
     <head>
       <meta charset="utf-8" />
@@ -214,7 +214,7 @@ Créer le dossier `public/js` s'il n'existe pas encore.
 
 Créer votre code javascript dans `public/js/main.js`.
 
-Pour intégrer votre code javascript dans vos templates, modifier la fin du document html pour obtenir :
+Pour intégrer votre code javascript dans vos templates, modifier la fin du document html afin d'obtenir :
 
         <script src="/js/main.js"></script>
       </body>
@@ -228,7 +228,7 @@ Téléchargez le fichier [jquery-3.2.1.min.js](https://code.jquery.com/jquery-3.
 
 Vous devriez avoir le fichier suivant : `public/js/jquery-3.2.1.min.js`.
 
-Pour utiliser jQuery dans vos templates, modifier la fin du document html pour obtenir :
+Pour utiliser jQuery dans vos templates, modifier la fin du document html afin d'obtenir :
 
         <script src="/js/jquery-3.2.1.min.js"></script>
         <script src="/js/main.js"></script>
@@ -249,7 +249,7 @@ Vous devriez avoir les trois dossiers suivants :
 - `public/bootstrap-3.3.7-dist/fonts`
 - `public/bootstrap-3.3.7-dist/js`
 
-Pour utiliser Bootstrap dans vos templates, modifier le début du document html pour obtenir :
+Pour utiliser Bootstrap dans vos templates, modifier le début du document html afin d'obtenir :
 
     <head>
       <meta charset="utf-8">
@@ -266,7 +266,7 @@ Attention :
 - votre feuille de style doit être intégrée après Bootstrap
 - pensez à adapter le titre à la page
 
-Puis modifier la fin du document html pour obtenir :
+Puis modifier la fin du document html afin d'obtenir :
 
         <script src="/js/jquery-3.2.1.min.js"></script>
         <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -303,7 +303,7 @@ puis copier le fichier `config/db.yml.dist` vers `config/db.yml` et l'adapter av
 
 ### Lecture du fichier de config
 
-Pour lire le fichier de config, adapter le fichier `public/index.php` pour obtenir :
+Pour lire le fichier de config, adapter le fichier `public/index.php` afin d'obtenir :
 
     use Symfony\Component\Debug\Debug;
     use Symfony\Component\Yaml\Yaml;                                    // <= modif

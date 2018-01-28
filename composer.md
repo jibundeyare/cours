@@ -1,6 +1,6 @@
 # Composer
 
-Composer est un gestionnaire de paquet. Cet outil permet d'installer / désinstaller des programmes php, des frameworks php ou des librairies php.
+Composer est un gestionnaire de paquet. Cet outil permet d'installer / désinstaller des programmes PHP, des frameworks PHP ou des librairies PHP.
 
 Les paquets sont recensés sur le site [Packagist](https://packagist.org/).
 
@@ -29,7 +29,7 @@ Le fichier `vendor/autoload.php` permet l'autoloading de tous les paquets instal
 
 ## Autoloading
 
-Si on veut que composer puisse charger tout seul les fichiers php du dossier `src/`, il faut ajouter une clé `autoload` dans le fichier `composer.json` :
+Si on veut que composer puisse charger tout seul les fichiers PHP du dossier `src/`, il faut ajouter une clé `autoload` dans le fichier `composer.json` :
 
     "autoload": {
         "psr-4": {"App\\": "src/"}
@@ -114,3 +114,4 @@ Mettre à jour composer :
 - [Basic usage - Composer](https://getcomposer.org/doc/01-basic-usage.md#autoloading)
 - [Versions and constraints - Composer](https://getcomposer.org/doc/articles/versions.md)
 - [The composer.json Schema - Composer](https://getcomposer.org/doc/04-schema.md#psr-4)
+- [Using Symfony Flex to Manage Symfony Applications (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/setup/flex.html)

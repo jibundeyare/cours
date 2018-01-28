@@ -1,4 +1,4 @@
-# Php application
+# PHP application
 
 ## Notions
 
@@ -23,7 +23,7 @@
             .htaccess       <= config pour apache
             *.php           <= les pages de votre applications
             index.php       <= le point d'entrée de votre application
-        src/                <= vos fichiers php
+        src/                <= vos fichiers PHP
             *.php
         templates/          <= vos templates
             *.php
@@ -57,13 +57,13 @@ Afficher la version utilisée :
 
     php -v
 
-Conseil : si vous utilisez encore Php 5, mettez à jour votre système et utilisez Php 7.
+Conseil : si vous utilisez encore PHP 5, mettez à jour votre système et utilisez PHP 7.
 
 Afficher la liste des fichier `.ini` utilisés :
 
     php --ini
 
-Vérifier la syntaxe d'un fichier php :
+Vérifier la syntaxe d'un fichier PHP :
 
     php -l [nom du fichier]
 
@@ -82,6 +82,14 @@ Lancer le serveur web de développement avec le sous-dossier `public` comme docu
 ## Communication avec la base de données
 
 Je recommande fortement l'utilisation de Doctrine DBAL. Pour en savoir plus, voir [doctrine-dbal.md](doctrine-dbal.md).
+
+## Sécurité
+
+Les attaques les plus courantes :
+
+- injection de code SQL
+- injection de code JavaScript
+- injection de code PHP
 
 ## Doc
 

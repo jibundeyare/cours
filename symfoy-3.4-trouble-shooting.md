@@ -30,12 +30,12 @@ Ouvrir l'url suivante dans un navigateur :
 
 ## Erreur de connexion à la base de données avec MAMP
 
-Par MAMP n'utilise pas le port par défaut `3608` mais le port `8889`.
+MAMP n'utilise pas le port par défaut `3608` mais le port `8889`.
 
 Modifier le fichier `app/config/parameters.yml` :
 
     database_port: null
 
-pour obtenir :
+afin d'obtenir :
 
     database_port: 8889
