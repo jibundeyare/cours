@@ -190,7 +190,7 @@ Ou pour créer un lien qui pointe vers la page d'accueil :
 
     <a href="/">la page d'accueil</a>
 
-## Ajout d'une feuille de style et de javascript
+## Ajout d'une feuille de style et de JavaScript
 
 Tous les fichiers `css` et `js` doivent être stockés dans un sous-dossier de `public`.
 
@@ -208,13 +208,13 @@ Pour intégrer votre feuille de style dans vos templates, modifier le début du 
       <link href="/css/main.css" rel="stylesheet">
     </head>
 
-### Votre code javascript
+### Votre code JavaScript
 
 Créer le dossier `public/js` s'il n'existe pas encore.
 
-Créer votre code javascript dans `public/js/main.js`.
+Créer votre code JavaScript dans `public/js/main.js`.
 
-Pour intégrer votre code javascript dans vos templates, modifier la fin du document HTML afin d'obtenir :
+Pour intégrer votre code JavaScript dans vos templates, modifier la fin du document HTML afin d'obtenir :
 
         <script src="/js/main.js"></script>
       </body>
@@ -237,7 +237,7 @@ Pour utiliser jQuery dans vos templates, modifier la fin du document HTML afin d
 
 Attention :
 
-- votre code javascript doit être intégré après jQuery
+- votre code JavaScript doit être intégré après jQuery
 
 ### Installation et intégration de Bootstrap
 
@@ -277,7 +277,7 @@ Puis modifier la fin du document HTML afin d'obtenir :
 Attention :
 
 - jQuery doit être intégré avant Bootstrap
-- votre code javascript doit être intégré après Bootstrap
+- votre code JavaScript doit être intégré après Bootstrap
 
 ## Stockage des identifiants de base de données
 
