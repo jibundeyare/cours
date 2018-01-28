@@ -10,10 +10,9 @@ Pour se rendre dans le dossier du projet `my_project` :
 
     cd /Applications/MAMP/htdocs/my_project
 
-## Login et password MySQL par défaut
+## PhpMyAdmin
 
-user : `root`  
-password : `root`  
+Le login et le password par défaut sont tout les deux `root`.
 
 ## Config MySQL
 
