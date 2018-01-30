@@ -53,3 +53,7 @@ Fin
 
 Pour ... de ... à ... par pas de ...
 Fin
+
+## Doc
+
+- [Mémo Pseudo-codes](http://www.isn.codelab.info/ressources/algorithmique/memo-pseudo-codes/)
