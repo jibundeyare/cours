@@ -10,6 +10,7 @@
 - EntityManager
 - Repository
 - Route
+- Template Twig
 - Form
 - Validation
 
