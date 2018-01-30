@@ -1,10 +1,35 @@
+@todo installation
+@todo display var
+@todo for loop
+@todo if block
+@todo block
+@todo extends & base template
+@todo date filter
+@todo language
+@todo verbatim
+@todo localize
+    https://stackoverflow.com/questions/17364206/symfony2-how-can-i-set-twig-dated-f-y-filter-to-output-months-in-swedish
+    https://github.com/twigphp/Twig-extensions
+
 # Twig
 
 Twig est un moteur de « template ». Un « template » est un fichier dans lequel on définit la façon dont des données vont être affichées.
 
 Dans le modèle « MVC », le template correspond au « V », la vue (View en anglais).
 
-## Installation
+## Avec Symfony 3.4
+
+Twig est préinstallé dans Symfony 3.4.
+
+Les vues globales sont stockées dans le dossier `app/Resources/views/`.
+
+Les vues spécifiques à un bundle sont stockées dans le dossier `Resources/views/` du bundle. Exemple `src/AppBundle/Resources/views/`.
+
+Les vues générées par le générateur de CRUD de Doctrine sont stockées dans le dossier `app/Resources/views/`.
+
+## Avec le framework Silex
+
+### Installation
 
 Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
 
@@ -14,9 +39,50 @@ Pour installer le paquet :
 
     composer require twig/twig ~2.0
 
+### Utilisation
+
+Ouvrir le fichier `public/index.php` puis ajouter :
+
+    $app->register(new Silex\Provider\TwigServiceProvider(), [
+        'twig.path' => __DIR__.'/../templates',
+    ]);
+
+    $app->get('/', function() use($app) {
+        $greeting = 'Hello Twig!';
+
+        return $app['twig']->render('hello-twig.html.twig'[
+            'greeting' => $greeting,
+        ]);
+    });
+
+Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>{{ greeting }}</title>
+        </head>
+        <body>
+            <h1>{{ greeting }}</h1>
+        </body>
+    </html>
+
 ## Sans framework (en PHP brut)
 
-`public/hello-twig.php` :
+### Installation
+
+Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
+
+    cd [dossier du projet web]
+
+Pour installer le paquet :
+
+    composer require twig/twig ~2.0
+
+### Utilisation
+
+Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
     <?php
 
@@ -32,36 +98,7 @@ Pour installer le paquet :
         'greeting' => $greeting,
     ]);
 
-`templates/hello-twig.html.twig` :
-
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <title>{{ greeting }}</title>
-        </head>
-        <body>
-            <h1>{{ greeting }}</h1>
-        </body>
-    </html>
-
-## Avec le framework Silex
-
-`public/index.php` :
-
-    $app->register(new Silex\Provider\TwigServiceProvider(), [
-        'twig.path' => __DIR__.'/../templates',
-    ]);
-
-    $app->get('/', function() use($app) {
-        $greeting = 'Hello Twig!';
-
-        return $app['twig']->render('hello-twig.html.twig'[
-            'greeting' => $greeting,
-        ]);
-    });
-
-`templates/hello-twig.html.twig` :
+Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
 
     <!DOCTYPE html>
     <html>

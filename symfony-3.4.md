@@ -144,7 +144,7 @@ Si l'on veut que la variable `isDone` de l'entité `Foo` soit initialisée avec 
 
 ## Interface front-end
 
-L'interface est composée de contrôleurs, de form types et de templates.
+L'interface est composée de contrôleurs, de form types et de templates Twig.
 
 ### Génération
 
@@ -226,7 +226,7 @@ afin d'obtenir :
 
 ## Templates Twig
 
-Les vues générées sont stockées dans le dossier `app/Resources/views/`.
+Pour en savoir plus, voir [twig.md](twig.md).
 
 ### Modification des templates
 
