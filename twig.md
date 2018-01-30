@@ -1,16 +1,3 @@
-@todo installation
-@todo display var
-@todo for loop
-@todo if block
-@todo block
-@todo extends & base template
-@todo date filter
-@todo language
-@todo verbatim
-@todo localize
-    https://stackoverflow.com/questions/17364206/symfony2-how-can-i-set-twig-dated-f-y-filter-to-output-months-in-swedish
-    https://github.com/twigphp/Twig-extensions
-
 # Twig
 
 Twig est un moteur de « template ». Un « template » est un fichier dans lequel on définit la façon dont des données vont être affichées.
