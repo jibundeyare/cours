@@ -22,6 +22,8 @@ Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
 
 `include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
 
+`array()` est l'ancienne notation qui permet de créer un tableau. `[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
+
 ## Types de données
 
 - chaîne de caractères (string)
