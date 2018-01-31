@@ -99,19 +99,13 @@ afin d'obtenir :
 
 ## Bundles
 
-Les bundles sont des plugins Symfony.
+Voir [symfony-bundles.md](symfony-bundles.md).
 
-L'installation d'un bundle se passe en trois étapes :
-
-1. télécharger le bundle avec composer
-2. activer le bundle dans le fichier `app/AppKernel.php`
-3. configurer le bundle
-
-### Bundle `remg/generator-bundle`
+## Bundle `remg/generator-bundle`
 
 Voir [remg-generator.md](remg-generator.md).
 
-### Bundle `doctrine/doctrine-migrations-bundle`
+## Bundle `doctrine/doctrine-migrations-bundle`
 
 Voir [doctrine-migrations.md](doctrine-migrations.md).
 
@@ -333,6 +327,10 @@ afin d'obtenir :
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         {% block javascripts %}{% endblock %}
     </body>
+
+## Bundle `javiereguiluz/easyadmin-bundle`
+
+Voir [easyadmin.md](easyadmin.md).
 
 ## Commandes
 
