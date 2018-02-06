@@ -331,6 +331,7 @@ Ou voir [silexphp/Silex-Skeleton](https://github.com/silexphp/Silex-Skeleton) qu
 ## Doc
 
 - [Homepage - Silex - The PHP micro-framework based on the Symfony Components](https://silex.symfony.com/)
+- [The HttpFoundation Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/http_foundation.html)
 - [The Debug Component (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/components/debug.html)
 - [The VarDumper Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/var_dumper.html)
 - [The Yaml Component (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/components/yaml.html)
