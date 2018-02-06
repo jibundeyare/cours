@@ -328,6 +328,24 @@ afin d'obtenir :
         {% block javascripts %}{% endblock %}
     </body>
 
+## Validation
+
+### Désactivation de la validation côté client
+
+Pour tester la validation côté serveur, il est possible de désactiver la validation côté client (dans le navigateur web).
+
+Pour désactiver la validation côté client de l'entité `Foo`, ouvrir le fichier `Form/FooType.php` et modifier la fonction `configureOptions()` du form type afin d'obtenir :
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'attr'=> array('novalidate' => 'novalidate'),
+            'data_class' => 'AppBundle\Entity\Foo'
+        ]);
+    }
+
+Attention : veiller à adapter le nom de l'entité (`AppBundle\Entity\Foo` dans l'exemple).
+
 ## Bundle `javiereguiluz/easyadmin-bundle`
 
 Voir [easyadmin.md](easyadmin.md).

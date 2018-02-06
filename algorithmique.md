@@ -5,6 +5,8 @@
 ### Anglais
 
 If ... Then
+Else If ... Then
+Else
 End
 
 Switch ...
@@ -16,6 +18,8 @@ End
 ### Français
 
 Si ... Alors
+Sinon Si ... Alors
+Sinon
 Fin
 
 Selon ...

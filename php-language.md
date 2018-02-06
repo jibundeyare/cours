@@ -2,27 +2,13 @@
 
 ## Notions
 
-- variables (type simple, tableaux, objets)
-- structures de contrôle (blocs de type `if`)
-- boucles
+- variables (types de données simples, tableaux, objets)
+- structures de contrôle (blocs de type `if`, `else`, `else if` et `switch`)
+- boucles (blocs de type `foreach`, `while`, `do while` et `for`)
 - fonctions
 - classes
 - interfaces
 - mixins
-
-## Syntaxe
-
-Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
-
-`=` est impératif (c'est un ordre).
-
-`==` est interrogatif (c'est une question).
-
-`<?=` et `<?php echo ` sont équivalent
-
-`include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
-
-`array()` est l'ancienne notation qui permet de créer un tableau. `[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
 
 ## Types de données
 
@@ -35,10 +21,54 @@ Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
 
 ## Programmation orientée objet (POO)
 
+Une classe est la définition d'un objet.
+
+Un objet est une instance de classe.
+
+Analogie : on trouve la définition du mot voiture dans le dictionnaire, c'est l'équivalent d'une classe. On trouve de vraies voitures dans la rue, ce sont l'équivalent d'objets (des instances de la définition).
+
 En POO :
 
-- une variable se nomme « attribut »
+- une variable se nomme « attribut » ou « membre »
 - une fonction se nomme « méthode »
+
+## Syntaxe
+
+### Bloc PHP
+
+Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
+
+`<?=` et `<?php echo ` sont équivalent
+
+### Signe égal
+
+`=` est impératif (c'est un ordre).
+
+`==` est interrogatif (c'est une question).
+
+### Inclusion
+
+`include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
+
+### Tableaux
+
+`array()` est l'ancienne notation qui permet de créer un tableau. `[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
+
+### Opérateur ternaire
+
+L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, affecter ceci, sinon affecter cela ». Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
+
+Exemple avec un bloc `if` :
+
+    if ($erreur) {
+        $message = 'il y a une erreur';
+    } else {
+        $message = 'tout va bien';
+    }
+
+Même exemple avec l'opérateur ternaire :
+
+    $message = $erreur ? 'il y a une erreur' : 'tout va bien';
 
 ## Sécurité
 
