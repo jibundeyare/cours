@@ -333,7 +333,15 @@ puis :
 
 L'application peut maintenant communiquer avec la BDD.
 
-#### Lecture de tous les éléments
+#### Manipulation d'éléments de la BDD
+
+Imaginons que nous voulons manipuler des éléments nommés Foo et que tous ces éléments sont stockés dans la table `foo`.
+
+Créer le dossier `templates/foo` s'il n'existe pas. Toutes les vues liées aux éléments Foo seront stockées dedans.
+
+Le nommage des vues (`foo/index.php`, `foo/show.php`, `foo/new.php`, `foo/edit.php`) suit les standards du framework Symfony.
+
+#### Lecture de tous les éléments Foo
 
 Pour lire tous les éléments Foo (de la table `foo`), ajouter la route et le contrôleur suivant le fichier `public/index.php` :
 
