@@ -13,6 +13,7 @@
 - Template Twig
 - Form
 - Validation
+- Service
 
 ## Installation
 

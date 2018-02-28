@@ -54,6 +54,42 @@ Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
 
 `array()` est l'ancienne notation qui permet de créer un tableau. `[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
 
+### Intégration de code PHP dans du code HTML
+
+Pour intégrer du code PHP dans du code HTML, il est recommandé d'utiliser une syntaxe alternative dans tous les blocs de type structure de contrôle ou boucle.
+
+Voici un exemple avec une boucle `foreach` :
+
+    <ul>
+        <?php foreach ($rows as $row): ?>
+        <li><?= $row ?></li>
+        <?php endforeach ?>
+    </ul>
+
+Voici le même exemple mais codé d'une façon non recommandable :
+
+    <ul>
+        <?php foreach ($rows as $row) {
+            echo '<li>'.$row.'</li>';
+        } ?>
+    </ul>
+
+Voici un exemple avec un bloc `if` :
+
+    <?php if ($role == 'admin'): ?>
+        <span>Admin</span>
+    <?php else: ?>
+        <span>User</span>
+    <?php endif ?>
+
+Voici le même exemple mais codé d'une façon non recommandable :
+
+    <?php if ($role == 'admin') { ?>
+        <span>Admin</span>
+    <?php } else { ?>
+        <span>User</span>
+    <?php } ?>
+
 ### Opérateur ternaire
 
 L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, affecter ceci, sinon affecter cela ». Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
@@ -69,6 +105,11 @@ Exemple avec un bloc `if` :
 Même exemple avec l'opérateur ternaire :
 
     $message = $erreur ? 'il y a une erreur' : 'tout va bien';
+
+## `isset()` VS `!empty()`
+
+`isset()` sert à vérifier que l'utilisateur a envoyé des données.
+`!empty()` sert à vérifier qu'un champ obligatoire a bien été renseigné.
 
 ## Sécurité
 
@@ -101,6 +142,7 @@ ou équivalent :
 ## Doc
 
 - [PHP: Hypertext Preprocessor](https://secure.php.net/)
+- [PHP: Alternative syntax for control structures - Manual](https://secure.php.net/manual/en/control-structures.alternative-syntax.php)
 - [PHP: Operators - Manual](https://secure.php.net/manual/en/language.operators.php)
 - [operators - Reference — What does this symbol mean in PHP? - Stack Overflow](https://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php?rq=1)
 - [PHP: String Functions - Manual](https://secure.php.net/manual/en/ref.strings.php)

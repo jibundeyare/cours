@@ -23,21 +23,33 @@ Le fichier `composer.json` contient les dépendances du projet installées par l
 
 Le fichier `composer.lock` contient la liste complète des dépendances du projet (les dépendances des dépendances aussi donc !).
 
-Le dossier `vendor/` contient tous les paquets installés par composer. Ce dossier peut-être supprimé et entièrement reconstitué si le fichier `composer.json` ou  le fichier `composer.lock` existent.
+Le dossier `vendor/` contient tous les paquets installés par Composer. Ce dossier peut-être supprimé et entièrement reconstitué si le fichier `composer.json` ou  le fichier `composer.lock` existent.
 
-Le fichier `vendor/autoload.php` permet l'autoloading de tous les paquets installés avec composer.
+Le fichier `vendor/autoload.php` permet l'autoloading de tous les paquets installés avec Composer.
 
 ## Autoloading
 
-Si on veut que composer puisse charger tout seul les fichiers PHP du dossier `src/`, il faut ajouter une clé `autoload` dans le fichier `composer.json` :
+L'autoloading est un système qui permet de charger automatiquement un fichier PHP.
+
+Si on veut que notre application puisse charger automatiquement les fichiers PHP du dossier `src/`, il faut ajouter une clé `autoload` dans le fichier `composer.json` :
 
     "autoload": {
-        "psr-4": {"App\\": "src/"}
+        "psr-4": {"": "src/"}
     }
 
-puis demander à composer de générer un nouveau fichier d'autoloading :
+puis demander à Composer de générer un nouveau fichier d'autoloading :
 
     composer dump-autoload
+
+et enfin inclure le code d'autoloading dans notre application en y ajoutant la ligne suivante :
+
+    require __DIR__.'../vendor/autoload.php';
+
+Si les fichiers PHP du dossier `src/` sont dans le namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
+
+"autoload": {
+    "psr-4": {"Foo\\": "src/"}
+}
 
 ## Commandes
 

@@ -27,6 +27,10 @@ Si le premier n'est pas trouvé, MAMP cherche le suivant et ainsi de suite.
 
 ## Logs
 
+Les logs d'erreurs Apache sont stockés dans :
+
+    /Applications/MAMP/logs/apache_error_log
+
 Les logs d'erreurs MySQL sont stockés dans :
 
     /Applications/MAMP/logs/mysql_error_log.err

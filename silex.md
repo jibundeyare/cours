@@ -101,13 +101,13 @@ Pour créer le template de la page d'accueil, insérer le code suivant dans le f
 
     <!DOCTYPE html>
     <html lang="fr">
-      <head>
-        <meta charset="utf-8" />
-        <title><?= $message ?></title>
-      </head>
-      <body>
-          <h1><?= $message ?></h1>
-      </body>
+        <head>
+            <meta charset="utf-8" />
+            <title><?= $message ?></title>
+        </head>
+        <body>
+            <h1><?= $message ?></h1>
+        </body>
     </html>
 
 ## Test de l'application
@@ -169,13 +169,13 @@ Pour créer le template de la page `contact`, insérer le code suivant dans le f
 
     <!DOCTYPE html>
     <html lang="fr">
-      <head>
-        <meta charset="utf-8" />
-        <title>Contact</title>
-      </head>
-      <body>
-        <h1>Contact</h1>
-      </body>
+        <head>
+            <meta charset="utf-8" />
+            <title>Contact</title>
+        </head>
+        <body>
+            <h1>Contact</h1>
+        </body>
     </html>
 
 ## Lien vers une page
@@ -190,11 +190,11 @@ Ou pour créer un lien qui pointe vers la page d'accueil :
 
     <a href="/">la page d'accueil</a>
 
-## Ajout d'une feuille de style et de JavaScript
+## Ajout de CSS et de JavaScript
 
 Tous les fichiers `css` et `js` doivent être stockés dans un sous-dossier de `public`.
 
-### Votre feuille de style
+### Votre code CSS
 
 Créer le dossier `public/css` s'il n'existe pas encore.
 
@@ -203,9 +203,9 @@ Créer votre feuille de style `public/css/main.css`.
 Pour intégrer votre feuille de style dans vos templates, modifier le début du document HTML afin d'obtenir :
 
     <head>
-      <meta charset="utf-8" />
-      <title>Contact</title>
-      <link href="/css/main.css" rel="stylesheet">
+        <meta charset="utf-8" />
+        <title>Contact</title>
+        <link href="/css/main.css" rel="stylesheet">    <!-- <= modif -->
     </head>
 
 ### Votre code JavaScript
@@ -216,72 +216,51 @@ Créer votre code JavaScript dans `public/js/main.js`.
 
 Pour intégrer votre code JavaScript dans vos templates, modifier la fin du document HTML afin d'obtenir :
 
-        <script src="/js/main.js"></script>
-      </body>
+            <script src="/js/main.js"></script>         <!-- <= modif -->
+        </body>
     </html>
 
-### Installation et intégration de jQuery
+### Intégration de jQuery et de Bootstrap
 
-Créer le dossier `public/js` s'il n'existe pas encore.
+Nous allons intégrer jQuery et Bootstrap en utilisant des CDNs.
 
-Téléchargez le fichier [jquery-3.2.1.min.js](https://code.jquery.com/jquery-3.2.1.min.js) dans le dossier `public/js`.
-
-Vous devriez avoir le fichier suivant : `public/js/jquery-3.2.1.min.js`.
-
-Pour utiliser jQuery dans vos templates, modifier la fin du document HTML afin d'obtenir :
-
-        <script src="/js/jquery-3.2.1.min.js"></script>
-        <script src="/js/main.js"></script>
-      </body>
-    </html>
-
-Attention :
-
-- votre code JavaScript doit être intégré après jQuery
-
-### Installation et intégration de Bootstrap
-
-Téléchargez [bootstrap-3.3.7-dist.zip](https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip) et dézipper l'archive dans le dossier `public`.
-
-Vous devriez avoir les trois dossiers suivants :
-
-- `public/bootstrap-3.3.7-dist/css`
-- `public/bootstrap-3.3.7-dist/fonts`
-- `public/bootstrap-3.3.7-dist/js`
-
-Pour utiliser Bootstrap dans vos templates, modifier le début du document HTML afin d'obtenir :
+Modifier le début du document HTML afin d'obtenir :
 
     <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Titre</title>
-      <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
-      <link href="/css/main.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Titre</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <!-- <= modif -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    <!-- <= modif -->
+        <link href="/css/main.css" rel="stylesheet">
     </head>
 
 Attention :
 
-- votre feuille de style doit être intégrée après Bootstrap
+- votre feuille de style doit être intégrée en dernier, après Bootstrap
 - pensez à adapter le titre à la page
 
 Puis modifier la fin du document HTML afin d'obtenir :
 
-        <script src="/js/jquery-3.2.1.min.js"></script>
-        <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-        <script src="/js/main.js"></script>
-      </body>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>                                                                                             <!-- <= modif -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>         <!-- <= modif -->
+            <script src="/js/main.js"></script>
+        </body>
     </html>
 
 Attention :
 
-- jQuery doit être intégré avant Bootstrap
-- votre code JavaScript doit être intégré après Bootstrap
+- jQuery doit être intégré en premier, avant Bootstrap
+- votre code JavaScript doit être intégré en dernier, après Bootstrap
 
-## Stockage des identifiants de base de données
+## Identifiants d'accès à une BDD
 
-### Création du fichier de config
+Il faut éviter de stocker les identifiants d'accès à la BDD dans le code source.
+
+En stockant les identifiants dans un fichier de configuration, il devient possible de distribuer son code source sans compromettre la sécurité de son application.
+
+### Création d'un fichier de config
 
 Pour stocker les identifiants dans un fichier à part, insérer le code suivant dans le fichier `config/db.yml.dist` :
 
@@ -305,6 +284,8 @@ puis copier le fichier `config/db.yml.dist` vers `config/db.yml` et l'adapter av
 
 Pour lire le fichier de config, adapter le fichier `public/index.php` afin d'obtenir :
 
+    use Silex\Application;
+    use SilexPhpView\ViewServiceProvider;
     use Symfony\Component\Debug\Debug;
     use Symfony\Component\Yaml\Yaml;                                    // <= modif
 
@@ -312,15 +293,124 @@ Pour lire le fichier de config, adapter le fichier `public/index.php` afin d'obt
 
     Debug::enable();
 
-    $connectionParams = Yaml::parseFile(__DIR__.'/../config/db.yml');   // <= modif
+    $parameters = Yaml::parseFile(__DIR__.'/../config/db.yml');         // <= modif
+
+    $app->register(new ViewServiceProvider(), [
+        'view.path' => __DIR__.'/../templates',
+    ]);
+
+    $app = new Application();
+
+## Accès à une BDD
+
+### Installation
+
+Voir [doctrine-dbal.md](doctrine-dbal.md).
+
+### Communication avec la BDD
+
+Pour pouvoir communiquer avec la BDD, adapter le fichier `public/index.php` afin d'obtenir :
+
+    use Silex\Application;
+    use Silex\Provider\DoctrineServiceProvider;                         // <= modif
+    use SilexPhpView\ViewServiceProvider;
+    use Symfony\Component\Debug\Debug;
+    use Symfony\Component\Yaml\Yaml;
+
+puis :
+
+    $app['debug'] = true;
+
+    $parameters = Yaml::parseFile(__DIR__.'/../config/parameters.yml');
+
+    $app->register(new DoctrineServiceProvider(), [                     // <= modif
+        'db.options' => $parameters,                                    // <= modif
+    ]);                                                                 // <= modif
+
+    $app->register(new ViewServiceProvider(), [
+        'view.path' => __DIR__.'/../templates',
+    ]);
+
+L'application peut maintenant communiquer avec la BDD.
+
+#### Lecture de tous les éléments
+
+Pour lire tous les éléments Foo (de la table `foo`), ajouter la route et le contrôleur suivant le fichier `public/index.php` :
+
+    $app->get('/foo', function() use($app) {
+        $sql = 'SELECT * FROM foo';
+        $foos = $app['db']->fetchAll($sql);
+
+        return $app['view']->render('foo/index.php', [
+            'foos' => $foos
+        ]);
+    });
+
+Créer ensuite la vue associée (`templates/foo/index.php`) :
+
+    <!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8" />
+            <title>Liste de Foo</title>
+        </head>
+        <body>
+            <h1>Liste de Foo</h1>
+            <?php if ($foos) ?>
+                <table>
+                <?php foreach ($foos as $foo) ?>
+                    <tr>
+                        <td><?= $foo['label'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+                </table>
+            <?php endif ?>
+        </body>
+    </html>
+
+Attention, cette vue n'intègre pas jQuery et Bootstrap. Vous devez faire l'intégration vous-même.
+
+Si les éléments Foo doivent être clickable et rediriger sur la page de détail d'un Foo, adapter le code :
+
+    <td><?= $foo['label'] ?></td>
+
+afin d'obtenir :
+
+    <td><a href="<?= $foo['id'] ?>"><?= $foo['label'] ?></a></td>
+
+#### Lecture d'un seul élément
+
+Pour lire un seul éléments Foo (de la table `foo`), ajouter la route et le contrôleur suivant le fichier `public/index.php` :
+
+    $app->get('/foo/{id}', function($id) use($app) {
+        $sql = 'SELECT * FROM foo WHERE id = ?';
+        $task = $conn->fetchAssoc($sql, [$id]);
+
+        return $app['view']->render('task/show.php', [
+            'foo' => $foo,
+        ]);
+    });
+
+Créer ensuite la vue associée (`templates/foo/show.php`) :
+
+    <!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8" />
+            <title>Détail d'un Foo</title>
+        </head>
+        <body>
+            <h1>Détail d'un Foo</h1>
+            <p><?= $foo['id'] ?></p>
+            <p><?= $foo['label'] ?></p>
+        </body>
+    </html>
+
+Attention, cette vue n'intègre pas jQuery et Bootstrap. Vous devez faire l'intégration vous-même.
 
 ## Autoloading
 
-Pour activer l'autoloading, ajouter le bloc suivant au fichier `composer.json` :
-
-    "autoload": {
-        "psr-4": {"": "src/"}
-    }
+Voir [composer.md](composer.md).
 
 ## Skeleton
 
