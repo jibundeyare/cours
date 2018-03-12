@@ -11,6 +11,10 @@ La procédure d'installation se base sur une distribution Linux Debian Stretch.
 
     sudo apt-get install php7.0
 
+## Installation de MySQL sur une box linux
+
+    sudo apt-get install mysql-server mysql-client
+
 ## Fichier `.htaccess`
 
 

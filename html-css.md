@@ -10,6 +10,7 @@
             *.gif
             *.jpg
             *.png
+            *.svg
         js/             <= vos fichiers JavaScript
             *.js
         node_modules/   <= paquets gérés par npm
@@ -18,6 +19,7 @@
             *.scss
             main.sass
         .gitignore      <= liste des fichiers que git doit ignorer
+        *.html          <= tous les fichiers HTML
         package.json    <= liste des paquets gérés par npm
         package.lock    <= liste des paquets gérés par npm
         README.md       <= documentation du projet
@@ -52,6 +54,12 @@ Attention aussi à respecter l'ordre de chargement des fichiers JavaScript exter
 - d'abord `jquery-3.2.1.min.js`
 - puis `bootstrap.min.js`
 
+## Web sémantique
+
+Vous pouvez utiliser des balises sémantiques mais vous pouvez aussi intégrer les données en utilisant des micro-formats.
+
+Voir [http://schema.org/](http://schema.org/) pour utiliser des formules toutes prêtes.
+
 ## Doc
 
 - [jQuery](http://jquery.com/)
@@ -78,3 +86,6 @@ Attention aussi à respecter l'ordre de chargement des fichiers JavaScript exter
 - [An Intro to SVG Animation with SMIL by Noah Blon on CodePen](https://codepen.io/noahblon/post/an-intro-to-svg-animation-with-smil)
 - [How SVG Shape Morphing Works | CSS-Tricks](https://css-tricks.com/svg-shape-morphing-works/)
 - [SVG Animation and CSS Transforms: A Complicated Love Story | CSS-Tricks](https://css-tricks.com/svg-animation-on-css-transforms/)
+
+- [Microformat - Wikipedia](https://en.wikipedia.org/wiki/Microformat)
+- [Home - schema.org](http://schema.org/)
