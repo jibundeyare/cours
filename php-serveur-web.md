@@ -12,7 +12,7 @@ Lancer le serveur web :
 
     php -S localhost:8000
 
-Ouvrir l'url pour voir le site dans sont navigateur :
+Ouvrir l'url pour voir le site dans son navigateur :
 
     http://localhost:8000
 
@@ -26,7 +26,7 @@ Lancer le serveur dans le sous-dossier `web` :
 
     php -S localhost:8000 -t public
 
-Ouvrir l'url pour voir le site dans sont navigateur :
+Ouvrir l'url pour voir le site dans son navigateur :
 
     http://localhost:8000
 
@@ -36,7 +36,7 @@ Lancer le serveur avec le port `8080` :
 
     php -S localhost:8080
 
-Ouvrir l'url pour voir le site dans sont navigateur :
+Ouvrir l'url pour voir le site dans son navigateur :
 
     http://localhost:8080
 
@@ -45,6 +45,20 @@ Ouvrir l'url pour voir le site dans sont navigateur :
 Lancer le serveur avec l'adresse ip `0.0.0.0` :
 
     php -S 0.0.0.0:8000
+
+Trouver son adresse ip avec Mac et Linux :
+
+    sudo ifconfig
+
+Trouver son adresse ip avec Windows :
+
+    sudo ipconfig
+
+Ouvrir l'url pour voir le site depuis le navigateur d'une autre machine :
+
+    http://192.168.1.2:8080
+
+NB : remplacer `192.168.1.2` par l'adresse ip trouvée au préalable.
 
 ## Doc
 
