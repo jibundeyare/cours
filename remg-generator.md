@@ -50,11 +50,11 @@ Pour configurer le bundle, ajouter à la fin du fichier `app/config/config_dev.y
 
 Générer une nouvelle entité :
 
-    php app/console remg:generate:entity
+    php bin/console remg:generate:entity
 
 Modifier une entité existante :
 
-    php app/console remg:regenerate:entity
+    php bin/console remg:regenerate:entity
 
 Attention :
 
@@ -74,7 +74,7 @@ Imaginons que l'on veut obtenir deux entités : `Foo` et `Bar`. Nous commençons
  - un champ nullable est optionnel
  - un champ non nullable est obligatoire
 
-`Unique` porte sur la valeur du champ. Par exemple, si un champ `email` est unique, il ne pourra y avoir qu'une seule adresse `lorem.ipsum@example.com`. Cela n'empêche pas de créer un champ `email` dans d'autres entités (par exemple dans `Bar`).
+`Unique` porte sur la valeur du champ. Par exemple, si un champ `email` est unique, il ne pourra y avoir qu'une seule adresse `lorem.ipsum@example.com` dans la table liée à cette entité. Cela n'empêche pas de créer un champ `email` dans d'autres entités (par exemple dans `Bar`).
 
 `Association name` désigne le nom de la variable qui contiendra la ou les entités associées à l'entité `Foo`. Si on veut assosier `Bar` à `Foo`, l'association doit être nommée `bar`.
 

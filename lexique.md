@@ -5,6 +5,7 @@
 - BC : backward compatibility (rétro-compatibilité)
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
+- CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
   Ce sont toutes les opérations possibles sur un objet stocké en BDD  
 - CSS : Cascading Style Sheet (feuille de style en cascade)
