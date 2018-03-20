@@ -55,20 +55,64 @@ Pour configurer le bundle, ajouter à la fin du fichier `app/config/config.yml` 
 
 ## Utilisation
 
+Script de migration == diff de la BDD.
+
+Jouer les scripts de migration == appliquer un diff de la BDD
+
+### Validation du schéma
+
+Obtenir le status actuel de la base de données (BDD) :
+
+	php bin/console doctrine:schema:validate
+
+Quatre cas de figure sont possibles :
+
+1. erreur de mapping et erreur de BDD
+2. erreur de mapping mais BDD synchronisée
+3. mapping OK mais BDD pas synchronisée
+4. tout est OK
+
+#### Erreur de mapping
+
+Voici un message d'erreur typique :
+
+    [Mapping] FAIL - The entity-class 'AppBundle\Entity\Foo' mapping is invalid
+
+Il faut plonger dans le code et corriger jusqu'à ce que les erreurs de mapping disparaissent.
+
+#### Erreur de synchronisation de la BDD
+
+Voici un message d'erreur typique :
+
+    [Database] FAIL - The database schema is not in sync with the current mapping file.
+
+Il faut générer un diff de la BDD et jouer les migrations.
+
+### Génération d'un diff de la BDD
+
 Attention : toujours jouer les scripts de migration avant de générer un nouveau diff.
+Sinon on se retrouve avec des copies du même diff qui provoqueront des erreurs quand on jouera les migrations.
 
-Obtenir le status actuel de la base de données (bdd) :
-
-	php bin/console doctrine:migrations:status
-
-Créer un diff de la bdd :
+Générer un diff de la BDD :
 
 	php bin/console doctrine:migrations:diff
 
-Appliquer le diff de la bdd :
+### Affichage du status des scripts de migration
+
+Obtenir le status actuel des scripts de migration :
+
+	php bin/console doctrine:migrations:status
+
+### Application des diff de la BDD
+
+Jouer le script de migration :
 
 	php bin/console doctrine:migrations:migrate --no-interaction
+
+NB : vous pouvez revalider le schéma afin de s'assurer que les entités et la BDD sont bien synchronisées.
 
 ## Doc
 
 - [DoctrineMigrationsBundle (Symfony Bundles Docs)](http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html)
+- [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
+- [5. Association Mapping — Doctrine 2 ORM 2 documentation](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
