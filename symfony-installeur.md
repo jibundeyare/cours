@@ -41,10 +41,9 @@ afin d'obtenir :
 
     curl.cainfo = "C:\Users\[user]\bin\cacert.pem"
 
-Ajouter le dossier `C:\Users\[user]\bin` dans les variables d'environnement :
+Ajouter le dossier `C:\Users\[user]\bin` dans la variable d'environnement `PATH` du système.
 
-- [windows 7 variables d'environnement à DuckDuckGo](https://duckduckgo.com/?q=windows+7+variables+d%27environnement&ia=web)
-- [windows 10 variables d'environnement à DuckDuckGo](https://duckduckgo.com/?q=windows+10+variables+d%27environnement&ia=web)
+Voir [variables-environnement.md](variables-environnement.md) pour plus d'infos.
 
 Fermer le terminal. Ouvrir un nouveau terminal puis tester le binaire :
 

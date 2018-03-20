@@ -45,6 +45,7 @@ afin d'obtenir :
 
 Pour configurer le bundle, ajouter à la fin du fichier `app/config/config.yml` :
 
+    # doctrine/doctrine-migrations-bundle
     doctrine_migrations:
         dir_name: "%kernel.root_dir%/DoctrineMigrations"
         namespace: Application\Migrations

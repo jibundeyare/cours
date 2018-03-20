@@ -128,12 +128,12 @@ Par convention, le constructeur est toujours situé entre le dernier attribut (v
 
 Si l'on veut que la variable `isDone` de l'entité `Foo` soit initialisée avec la valeur `true` par défaut, il faut ouvrir le fichier `src/Entity/Foo.php` et ajouter ou modifier le constructeur :
 
-    private $category;              // <= dernier attribut
+    private $bar;                   // <= dernier attribut
 
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct()   // <= constructeur
     {
         $this->isDone = true;
     }
@@ -174,8 +174,8 @@ afin d'obtenir :
     $builder
         ->add('lorem')
         ->add('ipsum')
-        ->add('category', EntityType::class, array(
-            'class' => 'AppBundle:Category',
+        ->add('bar', EntityType::class, array(
+            'class' => 'AppBundle:Bar',
             'choice_label' => 'name',
         ))
     ;
@@ -206,8 +206,8 @@ afin d'obtenir :
     $builder
         ->add('lorem')
         ->add('ipsum')
-        ->add('category', EntityType::class, array(
-            'class' => 'AppBundle:Category',
+        ->add('bar', EntityType::class, array(
+            'class' => 'AppBundle:Bar',
             'choice_label' => 'name',
             'multiple' => true,
             'required' => false,
