@@ -109,7 +109,7 @@ Jouer le script de migration :
 
 	php bin/console doctrine:migrations:migrate --no-interaction
 
-NB : vous pouvez revalider le schéma afin de s'assurer que les entités et la BDD sont bien synchronisées.
+NB : vous pouvez revalider le schéma afin de vous assurer que les entités et la BDD sont bien synchronisées.
 
 ## Doc
 
