@@ -1,6 +1,7 @@
 # PHP serveur web
 
-PHP fournit un serveur de développement. Il est utile pour pouvoir développer rapidement sans devoir configurer Apache et afficher les messages d'erreur dans le terminal.
+PHP fournit un serveur de développement.
+Il est utile pour pouvoir développer rapidement sans devoir configurer Apache et afficher les messages d'erreur dans le terminal.
 
 ## Getting started
 

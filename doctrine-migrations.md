@@ -58,15 +58,15 @@ Attention : toujours jouer les scripts de migration avant de générer un nouvea
 
 Obtenir le status actuel de la base de données (bdd) :
 
-	php app/console doctrine:migrations:status
+	php bin/console doctrine:migrations:status
 
 Créer un diff de la bdd :
 
-	php app/console doctrine:migrations:diff
+	php bin/console doctrine:migrations:diff
 
 Appliquer le diff de la bdd :
 
-	php app/console doctrine:migrations:migrate --no-interaction
+	php bin/console doctrine:migrations:migrate --no-interaction
 
 ## Doc
 
