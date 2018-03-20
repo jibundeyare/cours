@@ -47,18 +47,6 @@ Conseil : si vous rencontrer des problèmes à cette étape, consultez « Erreur
 
 ## Configuration de l'accès à la base de données
 
-### Création de la base de données
-
-Avec PhpMyAdmin, créer une nouvelle base de données.
-
-Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
-
-Pour le nom de la BDD, choisissez le même nom que votre projet.
-
-L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
-
-### Configuration de Symfony
-
 Ouvrir le fichier `app/config/parameters.yml` et modifier le bloc :
 
     database_name: symfony
@@ -77,6 +65,26 @@ Conseils :
 
 - avec MAMP, le `database_user` et le `database_password` par défaut sont tout les deux `root`
 - si vous avez une erreur de connexion avec MAMP, consultez « Erreur de connexion à la base de données avec MAMP » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md)
+
+### Création de la base de données
+
+#### Avec la console
+
+Dans le terminal :
+
+    php bin/console doctrine:database:create
+
+Interrompre le serveur web avec `Ctrl-c` si nécessaire.
+
+#### Avec PhpMyAdmin
+
+Avec PhpMyAdmin, créer une nouvelle base de données.
+
+Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+
+Pour le nom de la BDD, choisissez le même nom que votre projet.
+
+L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
 
 ## Langue
 
