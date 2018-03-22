@@ -27,4 +27,6 @@
 - POO : Programmation Orientée Objet
 - repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
+- SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - VM : Virtual Machine (machine virtuelle)
+- WYSIWYG : What You See Is What You Get (éditeur visuel)

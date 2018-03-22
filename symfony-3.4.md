@@ -417,3 +417,8 @@ Afficher la liste des events et leur degré de priorité :
 - [jQuery](http://jquery.com/)
 - [Getting started · Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/)
 - [jQuery CDN](https://code.jquery.com/)
+
+## Service
+
+- [Service Container (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container.html)
+- [How to Create Service Aliases and Mark Services as Private (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container/alias_private.html)

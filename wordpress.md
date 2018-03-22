@@ -24,28 +24,72 @@
 ## Concepts importants
 
 - front office / back office (visiteur / admin)
-- les pages
-- les articles
+- les pages (page de contact, qui sommes-nous ?)
+- les articles (blog, brèves, événements)
+- les customs types (page spécifiques avec des champs personnalisés, date, n° de la salle, etc)
 - les tags
 - les catégories
 - les thèmes
 - les plugins
-- les widget
+- les widgets
 - le menu
-- url
+- les users
+- l'affichage des URL
+
+## Prérequis
+
+Il faut d'abord installer un serveur web, un serveur de données et un serveur d'appplication (Apache, MySQL et PHP).
+
+### Wampserver
+
+- [Download WampServer from SourceForge.net](https://sourceforge.net/projects/wampserver/files/latest/download?source=files)
+
+Wamp devrait être installé dans le dossier suivant :
+
+	C:\wampserver64
+
+#### PhpMyAdmin
+
+Nom de la BDD : caractères de a à z, (en minuscule) 0 à 9 et le tiret du bas `_`.
+
+#### Problème de fichier `dll` manquant
+
+- [WAMPSERVER Homepage](http://wampserver.aviatechno.net/)
 
 ## Installation
 
 1. Création de la BDD
 2. Décompression du fichier zip
-3. Éventuellement transfert des fichiers par FTP / SFTP
+3. Transfert des fichiers par FTP / SFTP ou  déplacement dans un autre dossier
 4. Configuration de l'accès à la BDD
-5. Configuration de du nom du site
-6. Configuration de l'accès à l'admin
+5. Configuration de du nom du site et de l'accès admin
 7. Connexion à l'admin
 8. Paramétrage de Wordpress
 
 NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
+
+### déplacement du dossier dézippé dans le dossier de Wamp
+
+	C:\wampserver64\www
+
+	http://localhost/phpmyadmin
+
+- login : root
+- password : aucun
+
+## Voir le site
+
+Pour accéder à la partie visiteur (front) de wordpress, ouvrir cette adresse :
+
+	http://localhost/wordpress
+
+NB Adapter la partie `wordpress` avec le nom de son site.
+
+Pour accéder à l'admin (back) de wordpress, ouvrir cette adresse :
+
+	http://localhost/wordpress/wp-admin
+
+NB Idem, adapter la partie `wordpress` avec le nom de son site.
 
 ## Reset du password admin
 
@@ -107,19 +151,19 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 - [All-in-One WP Migration — WordPress Plugins](https://wordpress.org/plugins/all-in-one-wp-migration/)
 - [UpdraftPlus WordPress Backup Plugin — WordPress Plugins](https://wordpress.org/plugins/updraftplus/)
 
-#### Carousel / Slider
-
-- [Master Slider – Responsive Touch Slider — Extensions WordPress](https://fr.wordpress.org/plugins/master-slider/)
-- [MetaSlider — Extensions WordPress](https://fr.wordpress.org/plugins/ml-slider/)
-- [Shortcodes Ultimate — Extensions WordPress](https://fr.wordpress.org/plugins/shortcodes-ultimate/)
-- [Slider by Soliloquy – Responsive Image Slider for WordPress — Extensions WordPress](https://fr.wordpress.org/plugins/soliloquy-lite/)
-
 #### Cache
 
 Le cache permet d'accélérer l'affichage des pages.
 
 - [W3 Total Cache — WordPress Plugins](https://wordpress.org/plugins/w3-total-cache/)
 - [WP Super Cache — WordPress Plugins](https://wordpress.org/plugins/wp-super-cache/)
+
+#### Carousel / Slider
+
+- [Master Slider – Responsive Touch Slider — Extensions WordPress](https://fr.wordpress.org/plugins/master-slider/)
+- [MetaSlider — Extensions WordPress](https://fr.wordpress.org/plugins/ml-slider/)
+- [Shortcodes Ultimate — Extensions WordPress](https://fr.wordpress.org/plugins/shortcodes-ultimate/)
+- [Slider by Soliloquy – Responsive Image Slider for WordPress — Extensions WordPress](https://fr.wordpress.org/plugins/soliloquy-lite/)
 
 #### Custom fields
 
@@ -153,6 +197,10 @@ Les formulaires sont utilisés pour permettre aux visiteurs de contacter le prop
 
 - [MailChimp for WordPress — WordPress Plugins](https://wordpress.org/plugins/mailchimp-for-wp/)
 - [MailPoet Newsletters (New) — WordPress Plugins](https://wordpress.org/plugins/mailpoet/)
+
+#### Maintenance
+
+- [WP Maintenance Mode — Extensions WordPress](https://fr.wordpress.org/plugins/wp-maintenance-mode/)
 
 #### Mise en page
 
@@ -193,6 +241,11 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 - [Web Marketing Tuto - YouTube - YouTube](https://www.youtube.com/user/julienWebM)
 - [WP Marmite - YouTube - YouTube](https://www.youtube.com/channel/UCU_gPhU-eAI56oUeFzVyUUQ)
 
+### Hébergement & mise en prod
+
+- [Créer un Blog WORDPRESS avec OVH - YouTube](https://www.youtube.com/watch?v=frxVxsXr9Bw)
+- [Tutoriel Hébergement - Héberger et Uploader son site web - YouTube](https://www.youtube.com/watch?v=ej-Fax5NuUw)
+
 ### Thèmes
 
 - [Devez-vous utiliser le thème WordPress DIVI d'Elegant Themes ? - YouTube](https://www.youtube.com/watch?v=Q1jrpvqaNKw)
@@ -202,10 +255,9 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 - [Créer une boutique en ligne avec Wordpress 4 & WooCommerce (1/8) - YouTube](https://www.youtube.com/watch?v=nEL8xCTGXhM&index=8&list=PLpfOedZZax4wl_l31ajvr0su_rUtZ25Dh)
 - [e-Commerce: Créer un Site en 2h ! [WORDPRESS + WOOCOMMERCE] - YouTube](https://www.youtube.com/watch?v=B6opNgiDqvI)
 
-### Hébergement & mise en prod
+### Programmation (HTML, CSS, JavaScript, PHP, MySQL)
 
-- [Créer un Blog WORDPRESS avec OVH - YouTube](https://www.youtube.com/watch?v=frxVxsXr9Bw)
-- [Tutoriel Hébergement - Héberger et Uploader son site web - YouTube](https://www.youtube.com/watch?v=ej-Fax5NuUw)
+- [Grafikart.fr - YouTube - YouTube](https://www.youtube.com/user/grafikarttv)
 
 ## Doc
 
@@ -213,10 +265,10 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 
 - [Main Page « WordPress Codex](https://codex.wordpress.org/)
 
-### Généralités
-
-- [WP Marmite - Tirez le meilleur de WordPress](https://wpmarmite.com/)
-
 ### Mise en prod
 
 - [Moving WordPress « WordPress Codex](https://codex.wordpress.org/Moving_WordPress)
+
+### Programmation (HTML, CSS, JavaScript, PHP, MySQL)
+
+- [Pierre Giraud - Apprendre à coder gratuitement](http://www.pierre-giraud.com/home.php)
