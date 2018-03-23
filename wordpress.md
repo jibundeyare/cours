@@ -101,16 +101,35 @@ NB remplacer le mot de passe `123` par le votre.
 
 ## Où trouver des thèmes ?
 
-- [aThemes - Awesome WordPress Themes](https://athemes.com/)
+### Thèmes « classiques »
+
+#### Officiels
+
+- [Thèmes WordPress gratuits](https://fr.wordpress.org/themes/)
+
+#### Sélection
+
+- [15+ Best Free Responsive WordPress Business Themes 2018 | WPAll](https://wpall.club/wordpress-themes-roundup/best-free-wordpress-business-themes/)
 - [Free - Learn WordPress with WPLift](https://wplift.com/theme-category/free)
+
+#### Agence
+
+- [aThemes - Awesome WordPress Themes](https://athemes.com/)
 - [Free WordPress Themes and Templates](http://www.ilovewp.com/)
 - [InkHive.com - We Produce Stunning WordPress Themes](https://inkhive.com/)
 - [Premium Responsive WordPress Themes by ThemeGrill](https://themegrill.com/)
 - [Premium WordPress Themes | WooCommerce Themes | Theme Fusion](https://theme-fusion.com/)
 - [Theme Hybrid – Plugins & Themes](https://themehybrid.com/)
-- [Thèmes WordPress gratuits](https://fr.wordpress.org/themes/)
-- [WordPress Themes & Website Templates from ThemeForest](https://themeforest.net/)
 - [WordPress Themes Loved By Over 490k Customers](https://www.elegantthemes.com/)
+
+#### Plateforme de vente
+
+- [WordPress Themes & Website Templates from ThemeForest](https://themeforest.net/)
+
+### Thèmes « ultra personnalisables »
+
+- [Divi — The Ultimate WordPress Theme & Visual Page Builder](https://www.elegantthemes.com/gallery/divi/)
+- [Jupiter WordPress Theme - Create WordPress Websites Everyday](https://themes.artbees.net/pages/jupiter-wordpress-theme-create-wordpress-websites/)
 
 ## Comment créer un child theme ?
 
