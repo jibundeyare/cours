@@ -133,14 +133,14 @@ NB remplacer le mot de passe `123` par le votre.
 
 ## Comment créer un child theme ?
 
-- [Child Themes « WordPress Codex](https://codex.wordpress.org/Child_Themes)
-
 Exemple avec twentyseventeen :
 
-    twentyseventeen-child/
-        functions.php
-        screenshot.png (optionnel)
-        style.css
+    twentyseventeen-child/	<= nom du child theme
+        functions.php		<= configuration du child theme
+        screenshot.png		<= capture d'écran du child theme (optionnel)
+        style.css			<= feuille de style du child theme
+
+Voir le repo [https://github.com/jibundeyare/src-wordpress-child-theme](https://github.com/jibundeyare/src-wordpress-child-theme) pour plus de détails.
 
 ## Ressources iconographiques
 
@@ -280,12 +280,10 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 
 ## Doc
 
-### Documentation officielle
+### Wordpress
 
 - [Main Page « WordPress Codex](https://codex.wordpress.org/)
-
-### Mise en prod
-
+- [Child Themes « WordPress Codex](https://codex.wordpress.org/Child_Themes)
 - [Moving WordPress « WordPress Codex](https://codex.wordpress.org/Moving_WordPress)
 
 ### Programmation (HTML, CSS, JavaScript, PHP, MySQL)
