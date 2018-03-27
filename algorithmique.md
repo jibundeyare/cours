@@ -12,9 +12,10 @@
     Else
     End
 
+
     Switch ...
-    Cas ...
-    Cas ...
+    Case ...
+    Case ...
     Other
     End
 
@@ -24,6 +25,7 @@
     Sinon Si ... Alors
     Sinon
     Fin
+
 
     Selon ...
     Cas ...
@@ -38,11 +40,14 @@
     While ...
     End
 
+
     Do
     While ...
 
+
     For each ... Do
     End
+
 
     For ... from ... to ... step ...
     Fin
@@ -52,11 +57,14 @@
     Tant que ...
     Fin
 
+
     Faire
     Tant que
 
+
     Pour chaque ... Faire
     Fin
+
 
     Pour ... de ... à ... par pas de ...
     Fin
