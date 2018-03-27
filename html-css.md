@@ -7,6 +7,7 @@ Code : [jibundeyare/src-html-css](https://github.com/jibundeyare/src-html-css)
     my_project/         <= document root
         css/            <= vos feuilles de style
             *.css
+            main.css
         fonts/          <= vos typos
         img/            <= vos images
             *.gif
@@ -15,6 +16,7 @@ Code : [jibundeyare/src-html-css](https://github.com/jibundeyare/src-html-css)
             *.svg
         js/             <= vos fichiers JavaScript
             *.js
+            main.js
         node_modules/   <= paquets gérés par npm
         sass/           <= vos feuilles de style
             *.sass

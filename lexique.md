@@ -24,6 +24,8 @@
 - not invented here : pas inventé chez nous  
   Syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
 - OOP : Object Oriented Programming. Voir POO
+- package : un librairie ou un programme installable
+- paquet : voir package
 - POO : Programmation Orientée Objet
 - repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
