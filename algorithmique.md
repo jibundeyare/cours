@@ -2,61 +2,64 @@
 
 ## Structure conditionnelles
 
+- [schéma de flux d'information à DuckDuckGo](https://duckduckgo.com/?q=sch%C3%A9ma+de+flux+d%27information&t=ffab&iax=images&ia=images)
+- [schéma d'arbre de décision à DuckDuckGo](https://duckduckgo.com/?q=sch%C3%A9ma+d%27arbre+de+d%C3%A9cision&t=ffab&iar=images&iax=images&ia=images&iai=http%3A%2F%2Fwww.esculape.com%2Fcardiologie%2Fimagecardio%2Fcholest_decision.gif)
+
 ### Anglais
 
-If ... Then
-Else If ... Then
-Else
-End
+    If ... Then
+    Else If ... Then
+    Else
+    End
 
-Switch ...
-Cas ...
-Cas ...
-Other
-End
+    Switch ...
+    Cas ...
+    Cas ...
+    Other
+    End
 
 ### Français
 
-Si ... Alors
-Sinon Si ... Alors
-Sinon
-Fin
+    Si ... Alors
+    Sinon Si ... Alors
+    Sinon
+    Fin
 
-Selon ...
-Cas ...
-Cas ...
-Autrement
-Fin
+    Selon ...
+    Cas ...
+    Cas ...
+    Autrement
+    Fin
 
 ## Boucles
 
 ### Anglais
 
-While ...
-End
+    While ...
+    End
 
-Do
-While ...
+    Do
+    While ...
 
-For each ... Do
-End
+    For each ... Do
+    End
 
-For ... from ... to ... step ...
-Fin
+    For ... from ... to ... step ...
+    Fin
 
 ### Français
 
-Tant que ...
-Fin
+    Tant que ...
+    Fin
 
-Faire
-Tant que
+    Faire
+    Tant que
 
-Pour chaque ... Faire
-Fin
+    Pour chaque ... Faire
+    Fin
 
-Pour ... de ... à ... par pas de ...
-Fin
+    Pour ... de ... à ... par pas de ...
+    Fin
 
 ## Doc
 
