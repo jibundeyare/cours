@@ -165,7 +165,11 @@ Attention : le générateur n'implémente par correctement les champs de type en
 
 Cette correction s'applique si l'entité `Foo` possède une association de type `one to many` avec l'entité `Bar`.
 
-Ouvrir le fichier `src/AppBundle/Form/FooType.php` pour modifier le bloc :
+Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
+
+    use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+Puis modifier le bloc suivant dans le même fichier :
 
     $builder->add('lorem')->add('ipsum')->add('bar');
 
@@ -197,7 +201,11 @@ afin d'obtenir :
 
 Cette correction s'applique si l'entité `Foo` possède une association de type `many to many` avec l'entité `Bar`.
 
-Ouvrir le fichier `src/AppBundle/Form/FooType.php` pour modifier le bloc :
+Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
+
+    use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+Puis modifier le bloc suivant dans le même fichier :
 
     $builder->add('lorem')->add('ipsum')->add('bar');
 

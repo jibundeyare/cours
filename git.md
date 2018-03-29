@@ -8,6 +8,20 @@ Utiliser l'installeur :
 
 - [Git - Downloads](https://www.git-scm.com/downloads)
 
+## Procédure de publication sur github / bitbucket / framagit
+
+git status
+git diff
+
+git add [fichier]
+(ou git add -u)
+(ou git add -i)
+
+git commit
+tapez ensuite le titre du commit et enregistrez
+(ou git commit -m "titre du commit")
+git push
+
 ## Doc
 
 - [Git](https://git-scm.com/)

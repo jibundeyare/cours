@@ -86,16 +86,11 @@ Voici un message d'erreur typique :
 
     [Database] FAIL - The database schema is not in sync with the current mapping file.
 
-Il faut générer un diff de la BDD et jouer les migrations.
+Ce qu'il faut faire :
 
-### Génération d'un diff de la BDD
-
-Attention : toujours jouer les scripts de migration avant de générer un nouveau diff.
-Sinon on se retrouve avec des copies du même diff qui provoqueront des erreurs quand on jouera les migrations.
-
-Générer un diff de la BDD :
-
-	php bin/console doctrine:migrations:diff
+- vérifier s'il y a des migrations non jouées  
+  s'il y en a, les jouer puis revalider le schéma  
+- sinon faire un diff et jouer les migrations
 
 ### Affichage du status des scripts de migration
 
@@ -110,6 +105,15 @@ Jouer le script de migration :
 	php bin/console doctrine:migrations:migrate --no-interaction
 
 NB : vous pouvez revalider le schéma afin de vous assurer que les entités et la BDD sont bien synchronisées.
+
+### Génération d'un diff de la BDD
+
+Attention : toujours jouer les scripts de migration avant de générer un nouveau diff.
+Sinon on se retrouve avec des copies du même diff qui provoqueront des erreurs quand on jouera les migrations.
+
+Générer un diff de la BDD :
+
+	php bin/console doctrine:migrations:diff
 
 ## Doc
 
