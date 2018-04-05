@@ -170,7 +170,7 @@ Attention : le générateur n'implémente par correctement les champs de type en
 
 Cette correction s'applique si l'entité `Foo` possède une association de type `many to one` avec l'entité `Bar` :
 
-![Diagramme de classe Foo Bar](class-diagram-foo-m-1-bar.png)
+![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
 
 Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
@@ -197,7 +197,7 @@ Note : pour en savoir plus sur les options des champs de type entité, voir [Ent
 
 Cette correction s'applique si l'entité `Foo` possède une association de type `many to many` avec l'entité `Baz` :
 
-![Diagramme de classe Foo Baz](class-diagram-foo-m-m-baz.png)
+![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
 
 Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
