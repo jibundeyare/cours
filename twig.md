@@ -57,6 +57,15 @@ Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
 
 ## Sans framework (en PHP brut)
 
+    my_project/
+        public/
+            index.php
+        templates/
+            *.html.twig
+            index.html.twig
+        var/
+            cache/
+
 ### Installation
 
 Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :

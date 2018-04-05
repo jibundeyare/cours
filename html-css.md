@@ -4,29 +4,29 @@ Code : [jibundeyare/src-html-css](https://github.com/jibundeyare/src-html-css)
 
 ## Arborescence d'un projet
 
-    my_project/         <= document root
-        css/            <= vos feuilles de style
+    my_project/             <= document root
+        css/                <= vos feuilles de style
             *.css
             main.css
-        fonts/          <= vos typos
-        img/            <= vos images
+        fonts/              <= vos typos
+        img/                <= vos images
             *.gif
             *.jpg
             *.png
             *.svg
-        js/             <= vos fichiers JavaScript
+        js/                 <= vos fichiers JavaScript
             *.js
-            main.js
-        node_modules/   <= paquets gérés par npm
-        sass/           <= vos feuilles de style
+            p5-hello.js
+        node_modules/       <= paquets gérés par npm
+        sass/               <= vos feuilles de style
             *.sass
             *.scss
             main.sass
-        .gitignore      <= liste des fichiers que git doit ignorer
-        *.html          <= tous les fichiers HTML
-        package.json    <= liste des paquets gérés par npm
-        package.lock    <= liste des paquets gérés par npm
-        README.md       <= documentation du projet
+        .gitignore          <= liste des fichiers que git doit ignorer
+        *.html              <= tous les fichiers HTML
+        package.json        <= liste des paquets gérés par npm
+        package-lock.json   <= liste des paquets gérés par npm
+        README.md           <= documentation du projet
 
 ## Ordre d'intégration des feuilles de style et des fichiers JavaScript
 

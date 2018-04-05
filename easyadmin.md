@@ -54,7 +54,9 @@ Pour déployer les fichiers CSS et JavaScript du bundle :
 
 ## Configuration de l'admin
 
-Dans l'exemple, il y a deux entités : `Tag` et `Task`. Les deux entités ont une association du type `many to many` entre elles.
+Partons du principe que nous avons trois entités et qu'elles ont les relations suivantes :
+
+![Diagramme de classe Task Category Tag](img/class-diagram-task-category-tag.png)
 
 Pour définir les entités que EasyAdmin peut manipuler, ouvrir le fichier `app/config/config.yml` et ajouter le bloc suivant à la fin :
 
@@ -65,6 +67,12 @@ Pour définir les entités que EasyAdmin peut manipuler, ouvrir le fichier `app/
             time: 'H:i'
             datetime: 'd/m/Y H:i:s'
         entities:
+            Category:
+                class: AppBundle\Entity\Category
+                form:
+                    fields:
+                        - 'title'
+                        - { property: 'tasks', type: 'entity', type_options: { choice_label: 'title', multiple: true }}
             Tag:
                 class: AppBundle\Entity\Tag
                 form:
@@ -81,5 +89,10 @@ Pour définir les entités que EasyAdmin peut manipuler, ouvrir le fichier `app/
                         - 'deadlineTime'
                         - 'isDone'
                         - { property: 'tags', type: 'entity', type_options: { choice_label: 'title', multiple: true }}
+                        - { property: 'category', type: 'entity', type_options: { choice_label: 'title' }}
 
 Note : veiller à adapter le nom des entités et leurs champs dans la partie `entities`.
+
+## Doc
+
+- [EasyAdminBundle (Symfony Bundles Docs)](http://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)

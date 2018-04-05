@@ -81,6 +81,12 @@ Voir [npm.md](npm.md).
 
 Voir [webpack.md](webpack.md).
 
+## Portée des variables (scope)
+
+Le scope fonctionne comme des vitres teintées : de l'intérieur, on voit l'extérieur mais de l'extérieur, on ne voit pas l'intérieur.
+
+Exemple : de l'intérieur d'une fonction, on voit les variables déclarées dans le scope global mais dans le scope global, on ne voit pas les variables déclarées dans une fonction.
+
 ## Doc
 
 - [JavaScript Guide - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)

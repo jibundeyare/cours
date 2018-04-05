@@ -157,13 +157,18 @@ Pour générer un CRUD :
 
 Pour créer les interfaces de création, de mise à jour et de suppression, répondre `y` à la question `Do you want to generate the "write" actions`.
 
+Astuce : si vous voulez regénérer un CRUD parce que votre entité a évolué, vous pouvez utiliser l'option `--overwrite` qui écrase celui-qui a déjà été créé.
+Mais attention, toutes les customisation précédentes seront perdues !
+
+    php bin/console doctrine:generate:crud --overwrite
+
 ### Correction du form type généré
 
 Attention : le générateur n'implémente par correctement les champs de type entité dans le from type. Si votre entité contient une ou des associations à d'autres entités, vous devez corriger le form type vous-même.
 
-### Association `one to many`
+### Association `many to one`
 
-Cette correction s'applique si l'entité `Foo` possède une association de type `one to many` avec l'entité `Bar`.
+Cette correction s'applique si l'entité `Foo` possède une association de type `many to one` avec l'entité `Bar`.
 
 Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
