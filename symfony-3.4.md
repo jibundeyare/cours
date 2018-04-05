@@ -120,6 +120,24 @@ Voir [doctrine-migrations.md](doctrine-migrations.md).
 
 ## Entités
 
+Il existe trois types de relations entre entités :
+
+- `one to many`
+- `many to one`
+- `many to many`
+
+### Relation `one to many`
+
+![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
+
+### Relation `many to one`
+
+![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
+
+### Relation `many to many`
+
+![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
+
 ### Configuration de valeurs par défaut
 
 Les valeurs par défaut sont définies dans le constructeur.
