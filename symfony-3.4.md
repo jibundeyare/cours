@@ -164,11 +164,13 @@ Mais attention, toutes les customisation précédentes seront perdues !
 
 ### Correction du form type généré
 
-Attention : le générateur n'implémente par correctement les champs de type entité dans le from type. Si votre entité contient une ou des associations à d'autres entités, vous devez corriger le form type vous-même.
+Attention : le générateur n'implémente par correctement les champs de type entité dans le form type. Si votre entité contient une ou des associations à d'autres entités, vous devez corriger le form type vous-même.
 
 ### Association `many to one`
 
-Cette correction s'applique si l'entité `Foo` possède une association de type `many to one` avec l'entité `Bar`.
+Cette correction s'applique si l'entité `Foo` possède une association de type `many to one` avec l'entité `Bar` :
+
+![Diagramme de classe Foo Bar](class-diagram-foo-m-1-bar.png)
 
 Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
@@ -191,20 +193,11 @@ afin d'obtenir :
 
 Note : pour en savoir plus sur les options des champs de type entité, voir [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html).
 
-Ouvrir le fichier `src/AppBundle/Form/BarType.php` pour modifier le bloc :
-
-    $builder->add('lorem')->add('ipsum');
-
-afin d'obtenir :
-
-    $builder
-        ->add('lorem')
-        ->add('ipsum')
-    ;
-
 ### Association `many to many`
 
-Cette correction s'applique si l'entité `Foo` possède une association de type `many to many` avec l'entité `Bar`.
+Cette correction s'applique si l'entité `Foo` possède une association de type `many to many` avec l'entité `Baz` :
+
+![Diagramme de classe Foo Baz](class-diagram-foo-m-m-baz.png)
 
 Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
@@ -212,33 +205,24 @@ Ajouter le `use` suivant dans le fichier `src/AppBundle/Form/FooType.php` :
 
 Puis modifier le bloc suivant dans le même fichier :
 
-    $builder->add('lorem')->add('ipsum')->add('bar');
+    $builder->add('lorem')->add('ipsum')->add('baz');
 
 afin d'obtenir :
 
     $builder
         ->add('lorem')
         ->add('ipsum')
-        ->add('bar', EntityType::class, array(
-            'class' => 'AppBundle:Bar',
+        ->add('baz', EntityType::class, array(
+            'class' => 'AppBundle:Baz',
             'choice_label' => 'name',
             'multiple' => true,
             'required' => false,
         ))
     ;
 
+Attention : Si nécessaire, cette correction doit être appliquée de la même façon dans le form type (fichier `src/AppBundle/Form/BazType.php`) de l'entité `Baz`.
+
 Note : pour en savoir plus sur les options des champs de type entité, voir [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html).
-
-Ouvrir le fichier `src/AppBundle/Form/BarType.php` pour modifier le bloc :
-
-    $builder->add('lorem')->add('ipsum');
-
-afin d'obtenir :
-
-    $builder
-        ->add('lorem')
-        ->add('ipsum')
-    ;
 
 ## Templates Twig
 
