@@ -130,13 +130,21 @@ Il existe trois types de relations entre entités :
 
 ![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
 
+Une entité `Foo` ne peut avoir qu'une seule entité `Bar`.
+Mais une entité `Bar` peut avoir plusieurs entités `Foo`.
+
 ### Relation `many to one`
 
 ![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
 
+C'est la même relation qu'un `one to many` mais vu depuis l'autre entité.
+
 ### Relation `many to many`
 
 ![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
+
+Mais une entité `Foo` peut avoir plusieurs entités `Bar`.
+Et une entité `Baz` peut avoir plusieurs entités `Foo`.
 
 ### Configuration de valeurs par défaut
 
