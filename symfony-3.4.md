@@ -445,3 +445,5 @@ Afficher la liste des events et leur degré de priorité :
 
 - [Service Container (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container.html)
 - [How to Create Service Aliases and Mark Services as Private (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container/alias_private.html)
+- [Introduction to Parameters (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container/parameters.html)
+- [Service Method Calls and Setter Injection (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container/calls.html)

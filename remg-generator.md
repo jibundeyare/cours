@@ -41,6 +41,7 @@ afin d'obtenir :
 
 Pour configurer le bundle, ajouter à la fin du fichier `app/config/config_dev.yml` :
 
+    # remg/generator-bundle
     remg_generator:
         entity:
             # available configuration formats are: 'annotation', 'yaml', 'xml' and 'php'.

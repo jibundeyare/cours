@@ -25,3 +25,7 @@ Par exemple, la version `3.4.2` apporte des fonctionnalités supplémentaire à 
 Un changement de numéro de version de patch indique que le code apporte des corrections à la version précédente.
 
 Par exemple, la version `3.4.2` apporte des corrections à la version `3.3.1`.
+
+## Doc
+
+- [Semantic Versioning 2.0.0 | Semantic Versioning](https://semver.org/)

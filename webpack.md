@@ -80,3 +80,7 @@ Dans votre fichier HTML, ajouter la ligne de code suivante juste avant la fermet
 
 - [webpack](https://webpack.js.org/)
 - [Getting Started](https://webpack.js.org/guides/getting-started/)
+- [javascript - Managing jQuery plugin dependency in webpack - Stack Overflow](https://stackoverflow.com/questions/28969861/managing-jquery-plugin-dependency-in-webpack)
+- [webpack-contrib/script-loader: script loader module for webpack](https://github.com/webpack-contrib/script-loader)
+- [webpack-contrib/imports-loader: Imports Loader](https://github.com/webpack-contrib/imports-loader)
+- [webpack-contrib/exports-loader: Exports Loader](https://github.com/webpack-contrib/exports-loader)
