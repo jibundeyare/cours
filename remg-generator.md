@@ -66,9 +66,11 @@ Attention :
 
 Pour en savoir plus sur la question de la casse du nom des variables (majuscules, minuscules), voir [code-style.md](code-style.md).
 
-Imaginons que l'on veut obtenir deux entités : `Foo` et `Bar`. Nous commençons par créer l'entité `Foo`.
+Imaginons que l'on veut obtenir deux entités : `Foo` et `Bar`.
 
-`Field name` désigne le nom de la variable qui sera utilisée dans l'entité `Foo`.
+Commençons par créer l'entité `Foo`.
+
+`Field name` désigne le nom d'une variable qui sera crée dans l'entité `Foo`.
 
 `Nullable` veut dire « optionnel » :
 
@@ -77,7 +79,7 @@ Imaginons que l'on veut obtenir deux entités : `Foo` et `Bar`. Nous commençons
 
 `Unique` porte sur la valeur du champ. Par exemple, si un champ `email` est unique, il ne pourra y avoir qu'une seule adresse `lorem.ipsum@example.com` dans la table liée à cette entité. Cela n'empêche pas de créer un champ `email` dans d'autres entités (par exemple dans `Bar`).
 
-`Association name` désigne le nom de la variable qui contiendra la ou les entités associées à l'entité `Foo`. Si on veut assosier `Bar` à `Foo`, l'association doit être nommée `bar`.
+`Association name` désigne le nom d'une variable qui contiendra la ou les entités associées à l'entité `Foo`. Pour une association de type `many to one` entre `Foo` et `Bar`, l'association doit être nommée `bar`.
 
 `Bidirectional` veut dire « réciproque » :
 
@@ -88,6 +90,11 @@ Imaginons que l'on veut obtenir deux entités : `Foo` et `Bar`. Nous commençons
 
 `Inversed by` désigne le nom de la variable qui contient l'association réciproque, c-à-d, la ou les entités associées à l'entité dans l'autre entité. Dans l'entité `Bar`, l'association est inversée au travers de la variable `foo`.
 
+Pour créer l'entité `Bar`, lors du choix du champ `Association name`, pour une association de type `one to many` entre `Bar` et `Foo`, l'association doit être nommée `foos` (`foo` mais avec un `s` pour le pluriel).
+
+Voir (code-style.md)[code-style.md] pour les questions de nommage de variable au singulier ou pluriel.
+
 ## Doc
 
 - [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
+- [Databases and the Doctrine ORM (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/doctrine.html)

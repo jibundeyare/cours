@@ -14,6 +14,22 @@ Pour commencer, `squizlabs/php_codesniffer` est indiqué mais par la suite, pour
 | `my_var`  | snake case            | surtout utilisé en Ruby ou Python                 |
 | `my-var`  | kebab case            | utilisé en HTML et CSS                            |
 
+## Nommage de variable au singulier ou pluriel
+
+Quand on nomme une variable, on utilise toujours le singulier sauf si la variable est un tableau (ou autre type de collection de données). Pour les tableaux, on utilise le pluriel.
+
+Exemple de code en JavaScript :
+
+    // variable nommée au singulier
+    var profile = {
+        // ...
+    };
+
+    // variable nommée au pluriel
+    var users = [
+        // ...
+    ];
+
 ## Doc
 
 - [PSR-1: Basic Coding Standard - PHP-FIG](http://www.php-fig.org/psr/psr-1/)

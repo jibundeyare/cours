@@ -126,6 +126,8 @@ Il existe trois types de relations entre entités :
 - `many to one`
 - `many to many`
 
+Voir (code-style.md)[code-style.md] pour les questions de nommage de variable au singulier ou pluriel.
+
 ### Relation `one to many`
 
 ![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)

@@ -1,6 +1,19 @@
 # JavaScript
 
-- syntaxe et concepts de base : variables, structures de contrôle, boucles et fonctions
+- arborescence d'un projet
+- syntaxe
+- concepts de base
+  - déclaration de variables
+  - variables de type simple (integer, float, booleann string)
+  - variables de type Array (tableau)
+  - variables de type Object
+  - JSON
+  - structures de contrôle (if, else, else if, switch )
+  - boucles (for, for in, for of, while, do while)
+  - fonctions (nommées, anonymes, paramètres, valeur de retour, closure, synchrone / asynchrone)
+  - portée des variables (scope)
+  - api DOM
+  - évènements (events)
 - POO (Programmation Orientée Objet)
 - intégration de code JavaScript dans une page web : balise `script` et webpack
 - jQuery et manipulation du DOM (Document Object Model)
@@ -9,41 +22,6 @@
 ## Arborescence d'un projet
 
 Voir [html-css.md](html-css.md).
-
-## Syntaxe
-
-Commenter le code :
-
-    // commentaire sur une seule ligne
-
-    /*
-    commentaire
-    sur plusieurs
-    lignes
-    */
-
-### Déclaration de variable
-
-`var` permet de déclarer une variable à portée globale.
-`let` permet de déclarer une variable à portée locale.
-
-### Opérateurs de comparaison
-
-Égalité : `==`
-
-Supérieur : `>`
-
-Inférieur : `<`
-
-Supérieur ou égal : `>=`
-
-Inférieur ou égal : `<=`
-
-Différent : `!=`
-
-Strictement identique (type et valeur) : `===`
-
-Strictement différent (type et valeur) : `!==`
 
 ## Intégration de fichiers JavaScript dans une page HTML
 
@@ -79,13 +57,53 @@ Voir [npm.md](npm.md).
 
 Voir [webpack.md](webpack.md).
 
-## Portée des variables (scope)
+## Syntaxe
+
+Commenter le code :
+
+    // commentaire sur une seule ligne
+
+    /*
+    commentaire
+    sur plusieurs
+    lignes
+    */
+
+### Opérateurs de comparaison
+
+Égalité : `==`
+
+Supérieur : `>`
+
+Inférieur : `<`
+
+Supérieur ou égal : `>=`
+
+Inférieur ou égal : `<=`
+
+Différent : `!=`
+
+Strictement identique (type et valeur) : `===`
+
+Strictement différent (type et valeur) : `!==`
+
+## Concepts de base
+
+### Déclaration de variables
+
+`var` permet de déclarer une variable à portée globale.
+
+`let` permet de déclarer une variable à portée locale.
+
+### Portée des variables (scope)
 
 Le scope fonctionne comme des vitres teintées : de l'intérieur, on voit l'extérieur mais de l'extérieur, on ne voit pas l'intérieur.
 
 Exemple : de l'intérieur d'une fonction, on voit les variables déclarées dans le scope global mais dans le scope global, on ne voit pas les variables déclarées dans une fonction.
 
-## `document.querySelectorAll()`
+## API DOM
+
+### `document.querySelectorAll()`
 
 Sélectionner tous les `input` de type `checkbox` dont le `name` est `fruits[]` :
 
@@ -102,6 +120,7 @@ Sélectionner tous les `input` de type `checkbox` dont le `name` n'est pas `frui
 - [The Modern Javascript Tutorial](http://javascript.info/)
 - [Babel · The compiler for writing next generation JavaScript](https://babeljs.io/)
 - [Node.js](https://nodejs.org/en/)
+- [Strict mode - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 - [String - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 - [String.prototype.trim() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
