@@ -15,7 +15,7 @@
   - boucles (for, for in, for of, while, do while)
   - fonctions (nommées, anonymes, paramètres, valeur de retour, closure, synchrone / asynchrone)
   - portée des variables (scope)
-  - api DOM
+  - API DOM
   - évènements (events)
 - POO (Programmation Orientée Objet)
 - jQuery et manipulation du DOM (Document Object Model)
