@@ -1,6 +1,9 @@
+@ref ?/string-split.html
+
 # JavaScript
 
 - arborescence d'un projet
+- intégration de code JavaScript dans une page web : balise `script` et webpack
 - syntaxe
 - concepts de base
   - déclaration de variables
@@ -15,7 +18,6 @@
   - api DOM
   - évènements (events)
 - POO (Programmation Orientée Objet)
-- intégration de code JavaScript dans une page web : balise `script` et webpack
 - jQuery et manipulation du DOM (Document Object Model)
 - balise `canvas` et Processing
 
