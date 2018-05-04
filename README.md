@@ -1,4 +1,4 @@
-# Notes
+# Cours
 
 Ce repo contient des supports de cours.
 
