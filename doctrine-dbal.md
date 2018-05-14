@@ -14,7 +14,7 @@ Pour installer le paquet :
 
 ## Arborescence d'un projet
 
-Pour en savoir plus sur ce sujet, voir [php-application.md](php-application.md).
+Pour en savoir plus, voir [php-application.md](php-application.md).
 
 ## Utilisation sans framework
 

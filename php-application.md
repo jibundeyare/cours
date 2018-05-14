@@ -3,13 +3,7 @@
 ## Architecture
 
 - programmation procédurale VS programmation orientée objet (POO)
-- architecture MVC (Modèle, Vue, Contrôleur)
-
-## Outils
-
-- « composer » permet d'installer des paquets
-- « symfony var dumper » permet d'inspecter une variable
-- « code sniffer » permet de valider le code style
+- architecture MVC (Modèle Vue Contrôleur)
 
 ## Arborescence d'un projet
 
