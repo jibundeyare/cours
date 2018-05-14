@@ -81,18 +81,18 @@ Cette méthode est adaptée si :
 - les données n'occupent pas trop de place dans la RAM
 - la requête ne prend pas de paramètres
 
-#### Sans paramètres
+```
+// envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
+$items = $conn->fetchAll('SELECT * FROM item');
 
-    // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
-    $items = $conn->fetchAll('SELECT * FROM item');
-
-    // parcours de chacun des éléments du tableau `$items`
-    foreach ($items as $item) {
-        echo $item['id'].'<br />';          // affichage de la colonne `id`
-        echo $item['name'].'<br />';        // affichage de la colonne `name`
-        echo $item['description'].'<br />'; // affichage de la colonne `description`
-        echo '<br />';
-    }
+// parcours de chacun des éléments du tableau `$items`
+foreach ($items as $item) {
+    echo $item['id'].'<br />';          // affichage de la colonne `id`
+    echo $item['name'].'<br />';        // affichage de la colonne `name`
+    echo $item['description'].'<br />'; // affichage de la colonne `description`
+    echo '<br />';
+}
+```
 
 ### Méthode `executeQuery()`
 
