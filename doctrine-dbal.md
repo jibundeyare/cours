@@ -81,6 +81,7 @@ Cette méthode est adaptée si :
 - les données n'occupent pas trop de place dans la RAM
 - la requête ne prend pas de paramètres
 
+
     // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
     $items = $conn->fetchAll('SELECT * FROM item');
 
