@@ -254,3 +254,4 @@ Cette méthode permet :
 ## Doc
 
 - [DBAL Documentation - Database Abstraction Layer (DBAL) - Doctrine](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/)
+- [Data Retrieval And Manipulation - Database Abstraction Layer (DBAL) - Doctrine](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#data-retrieval-and-manipulation)
