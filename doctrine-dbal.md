@@ -12,6 +12,10 @@ Pour installer le paquet :
 
     composer require doctrine/dbal ~2.0
 
+## Arborescence d'un projet
+
+Pour en savoir plus sur ce sujet, voir [php-application.md](php-application.md).
+
 ## Utilisation sans framework
 
 Taper le code suivant dans un nouveau fichier :
