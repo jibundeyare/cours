@@ -10,6 +10,24 @@ Pour se rendre dans le dossier du projet `my_project` :
 
     cd /Applications/MAMP/htdocs/my_project
 
+## PHP
+
+### Trouver la version de PHP utilisée
+
+Créer un fichier `phpinfo.php` dans le dossier `/Applications/MAMP/htdocs` avec le contenu suivant :
+
+    <?php phpinfo();
+
+Ouvrir l'url `http://localhost:8888/phpinfo.php`. Le numéro de version de PHP s'affiche.
+
+### Config `php.ini`
+
+Le fichier `php.ini` utilisé est dans :
+
+    /Applications/MAMP/bin/php/phpX.Y.Z/conf/php.ini
+
+Remplacez `X.Y.Z` par la version de PHP utilisée.
+
 ## PhpMyAdmin
 
 Le login et le password par défaut sont tout les deux `root`.
