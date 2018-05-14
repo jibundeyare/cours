@@ -87,6 +87,8 @@ $items = $conn->fetchAll('SELECT * FROM item');
 
 // parcours de chacun des éléments du tableau `$items`
 foreach ($items as $item) {
+    // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
+    // chaque clé alpha-numérique représente une colonne de la table
     echo $item['id'].'<br />';          // affichage de la colonne `id`
     echo $item['name'].'<br />';        // affichage de la colonne `name`
     echo $item['description'].'<br />'; // affichage de la colonne `description`
