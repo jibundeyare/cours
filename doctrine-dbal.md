@@ -116,6 +116,8 @@ Cette méthode est adaptée si :
 
     // boucle `while` qui récupère les résultats ligne par ligne
     while ($item = $stmt->fetch()) {
+        // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
+        // chaque clé alpha-numérique représente une colonne de la table
         echo $item['id'].'<br />';          // affichage de la colonne `id`
         echo $item['name'].'<br />';        // affichage de la colonne `name`
         echo $item['description'].'<br />'; // affichage de la colonne `description`
@@ -136,6 +138,8 @@ Cette méthode est adaptée si :
 
     // boucle `while` qui récupère les résultats ligne par ligne
     while ($item = $stmt->fetch()) {
+        // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
+        // chaque clé alpha-numérique représente une colonne de la table
         echo $item['id'].'<br />';          // affichage de la colonne `id`
         echo $item['name'].'<br />';        // affichage de la colonne `name`
         echo $item['description'].'<br />'; // affichage de la colonne `description`
@@ -150,6 +154,7 @@ Cette méthode est adaptée si :
     ]);
 
     // affichage des données de chaque colonne
+    // chaque clé alpha-numérique représente une colonne de la table
     echo $item['id'].'<br />';          // affichage de la colonne `id`
     echo $item['name'].'<br />';        // affichage de la colonne `name`
     echo $item['description'].'<br />'; // affichage de la colonne `description`
