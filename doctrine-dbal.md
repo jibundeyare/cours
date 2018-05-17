@@ -153,12 +153,14 @@ Cette méthode est adaptée si :
         'id' => 123,
     ]);
 
-    // affichage des données de chaque colonne
-    // chaque clé alpha-numérique représente une colonne de la table
-    echo $item['id'].'<br />';          // affichage de la colonne `id`
-    echo $item['name'].'<br />';        // affichage de la colonne `name`
-    echo $item['description'].'<br />'; // affichage de la colonne `description`
-    echo '<br />';
+    if ($item) {
+        // affichage des données de chaque colonne
+        // chaque clé alpha-numérique représente une colonne de la table
+        echo $item['id'].'<br />';          // affichage de la colonne `id`
+        echo $item['name'].'<br />';        // affichage de la colonne `name`
+        echo $item['description'].'<br />'; // affichage de la colonne `description`
+        echo '<br />';
+    }
 
 ## `INSERT` (ou create, le C de CRUD)
 
@@ -166,25 +168,9 @@ Cette méthode est adaptée si :
 
 Cette méthode est la plus simple pour insérer des données.
 
-    // exécution de la requête
-    // requête générée : `INSERT INTO item (name, description) VALUES ('foo', 'bar baz')`
-    $conn->insert('item', [
-        'name' => 'foo',
-        'description' => 'bar baz',
-    ]);
-
-    // récupération de l'id de la dernière ligne créée par la BDD dans la variable `$lastInsertId`
-    $lastInsertId = $conn->lastInsertId();
-
-### Méthode `executeUpdate()`
-
-Cette méthode permet :
-
-- d'exécuter des requêtes plus complexes
-- de savoir combien de lignes ont été affectées par l'opération
-
     // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-    $count = $conn->executeUpdate('INSERT INTO item (name, description) VALUES (:name, :description)', [
+    // requête générée : `INSERT INTO item (name, description) VALUES ('foo', 'bar baz')`
+    $count = $conn->insert('item', [
         'name' => 'foo',
         'description' => 'bar baz',
     ]);
@@ -196,18 +182,44 @@ Cette méthode permet :
     echo 'inserted : '.$count.'<br />';
     echo '<br />';
 
+### Méthode `executeUpdate()`
+
+Cette méthode permet :
+
+- d'exécuter des requêtes plus complexes
+- de savoir combien de lignes ont été affectées par l'opération
+
+```
+// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+$count = $conn->executeUpdate('INSERT INTO item (name, description) VALUES (:name, :description)', [
+    'name' => 'foo',
+    'description' => 'bar baz',
+]);
+
+// récupération de l'id de la dernière ligne créée par la BDD dans la variable `$lastInsertId`
+$lastInsertId = $conn->lastInsertId();
+
+// affichage de nombre de lignes affectées
+echo 'inserted : '.$count.'<br />';
+echo '<br />';
+```
+
 ## `UPDATE` (le U de CRUD)
 
 ### Méthode `update()`
 
 Cette méthode est la plus simple pour mettre des données à jour.
 
-    // exécution de la requête
+    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
     // requête générée : `UPDATE item SET name = 'foo', description = 'bar baz' WHERE id = 123`
-    $conn->update('item', [
+    $count = $conn->update('item', [
         'name' => 'foo',
         'description' => 'bar baz',
     ], ['id' => 123]);
+
+    // affichage de nombre de lignes affectées
+    echo 'updated : '.$count.'<br />';
+    echo '<br />';
 
 ### Méthode `executeUpdate()`
 
@@ -216,16 +228,18 @@ Cette méthode permet :
 - d'exécuter des requêtes plus complexes
 - de savoir combien de lignes ont été affectées par l'opération
 
-    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-    $count = $conn->executeUpdate('UPDATE item SET name = :name, description = :description WHERE id = :id', [
-        'name' => 'foo',
-        'description' => 'bar baz',
-         'id' => 123,
-    ]);
+```
+// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+$count = $conn->executeUpdate('UPDATE item SET name = :name, description = :description WHERE id = :id', [
+    'name' => 'foo',
+    'description' => 'bar baz',
+     'id' => 123,
+]);
 
-    // affichage de nombre de lignes affectées
-    echo 'updated : '.$count.'<br />';
-    echo '<br />';
+// affichage de nombre de lignes affectées
+echo 'updated : '.$count.'<br />';
+echo '<br />';
+```
 
 ## `DELETE` (le D de CRUD)
 
@@ -233,9 +247,13 @@ Cette méthode permet :
 
 Cette méthode est la plus simple pour mettre de données à jour.
 
-    // exécution de la requête
+    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
     // requête générée : `DELETE FROM item WHERE id = 123`
-    $conn->delete('item', ['id' => 123]);
+    $count = $conn->delete('item', ['id' => 123]);
+
+    // affichage de nombre de lignes affectées
+    echo 'updated : '.$count.'<br />';
+    echo '<br />';
 
 ### Méthode `executeUpdate()`
 
@@ -244,12 +262,14 @@ Cette méthode permet :
 - d'exécuter des requêtes plus complexes
 - de savoir combien de lignes ont été affectées par l'opération
 
-    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-    $count = $conn->executeUpdate('DELETE item WHERE id = :id', ['id' => 123]);
+```
+// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+$count = $conn->executeUpdate('DELETE item WHERE id = :id', ['id' => 123]);
 
-    // affichage de nombre de lignes affectées
-    echo 'updated : '.$count.'<br />';
-    echo '<br />';
+// affichage de nombre de lignes affectées
+echo 'updated : '.$count.'<br />';
+echo '<br />';
+```
 
 ## Doc
 
