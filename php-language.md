@@ -106,6 +106,16 @@ Même exemple avec l'opérateur ternaire :
 
     $message = $erreur ? 'il y a une erreur' : 'tout va bien';
 
+## Timeout
+
+La fonction `set_time_limit()` permet d'augmenter la durée maximale de temps d'exécution autorisé pour script.
+Ce réglage est défini dans le fichier `php.ini` avec la variable `max_execution_time`.
+La durée par défaut est de 30 secondes.
+
+Si je veux qu'un script puisse s'exécuter pendant 50 minutes sans faire de timeout, la durée limite de mon script doit être de `5 * 60 secondes = 300 secondes` :
+
+    set_time_limit(300);
+
 ## `isset()` VS `!empty()`
 
 `isset()` sert à vérifier que l'utilisateur a envoyé des données.
