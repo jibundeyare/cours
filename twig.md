@@ -301,8 +301,7 @@ Créer un template enfant `templates/bar.html.twig` qui hérite du template `tem
 
 ### Les includes
 
-Il est rare d'avoir besoin de la fonction `include()` avec Twig.
-Vérifiez d'abord si 
+NB Il est rare d'avoir besoin de la fonction `include()` avec Twig.
 
 Comme en PHP, il est possible de faire des includes.
 La fonctionnalité `include()` est utile si plusieurs templates enfants utilisent un même bloc de code.
@@ -346,7 +345,7 @@ Ou plus court :
 
     <p>{{ foo|e }}</p>
 
-Échapper la variable `foo` qui peut être dangereuse dans du JS : 
+Échapper la variable `foo` qui peut être dangereuse dans du JS :
 
     var foo = '{{ foo|e('js') }}';
 
@@ -407,4 +406,3 @@ Afficher la date au format `MM/JJ/AAAA` :
 
 - [PHP: date - Manual](http://php.net/manual/en/function.date.php)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)
-
