@@ -50,6 +50,14 @@ Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
         </body>
     </html>
 
+### Tester
+
+Dans le terminal, depuis le dossier racine du projet, lancer un serveur web de développement :
+
+    php -S localhost:8000 -t public
+
+Dans un navigateur, ourvir l'url `http://localhost:8000/hello-twig.php`.
+
 ### Configuration
 
 #### Pour la phase de dev
@@ -63,15 +71,15 @@ Le mode debug permet d'utiliser la fonction `dump()` dans un template Twig pour 
 
 Le mode de variables strictes permet d'afficher une erreur si vous utilisez une variable qui n'a pas été initialisée (c-à-d non transmise au template Twig).
 
-Modifier la partie `new Twig_Environment($loader);` :
+Modifier la partie `new Twig_Environment($loader);` et charger l'extension de debug `Twig_Extension_Debug` juste après :
 
+    // activer le mode debug et le mode de variables strictes
     $twig = new Twig_Environment($loader, [
         'debug' => true,
         'strict_variables' => true,
     ]);
 
-Charger l'extension de debug `Twig_Extension_Debug` juste après :
-
+    // charger l'extension Twig_Extension_Debug
     $twig->addExtension(new Twig_Extension_Debug());
 
 #### Pour la prod
@@ -80,20 +88,22 @@ Il est recommandé de désactiver la configuration de la phase de dev et d'activ
 
 - le cache
 
-Le cache permet de stocker le rendu PHP des templates Twig.
-C'est une optimization qui doit être appliquée quand le code est en production.
+Le cache permet de stocker le rendu PHP des templates Twig dans un dossier et de le recharger lors de la prochaine demande.
+C'est une optimisation qui doit être appliquée quand le code est en production.
+
+Créer le dossier `var/cache` à la racine du projet.
+Voir [php-application.md](php-application.md).
 
 Modifier la partie `new Twig_Environment($loader);` :
 
     <?php
 
+    // activer le cache
     $twig = new Twig_Environment($loader, [
         'cache' => __DIR__.'/../var/cache',
     ]);
 
-Créer ensuite le dossier `var/cache` à la racine du projet.
-
-Voir [php-application.md](php-application.md).
+NB Pensez à bien désactiver ou supprimer le chargement de l'extension de debug `Twig_Extension_Debug`.
 
 ## Avec Symfony 3.4
 
