@@ -50,18 +50,50 @@ Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
         </body>
     </html>
 
-### Configuration du cache
+### Configuration
 
-Le cache permet de stocker le rendu PHP du code Twig.
+#### Pour la phase de dev
+
+Il est recommandé d'activer :
+
+- le mode debug
+- le mode de variables strictes
+
+Le mode debug permet d'utiliser la fonction `dump()` dans un template Twig pour inspecter le contenu d'une variable.
+
+Le mode de variables strictes permet d'afficher une erreur si vous utilisez une variable qui n'a pas été initialisée (c-à-d non transmise au template Twig).
+
+Modifier la partie `new Twig_Environment($loader);` :
+
+    $twig = new Twig_Environment($loader, [
+        'debug' => true,
+        'strict_variables' => true,
+    ]);
+
+Charger l'extension de debug `Twig_Extension_Debug` juste après :
+
+    $twig->addExtension(new Twig_Extension_Debug());
+
+#### Pour la prod
+
+Il est recommandé de désactiver la configuration de la phase de dev et d'activer :
+
+- le cache
+
+Le cache permet de stocker le rendu PHP des templates Twig.
 C'est une optimization qui doit être appliquée quand le code est en production.
 
-Modifier la partie `new Twig_Environment($loader);` du fichier `public/hello-twig.php` :
+Modifier la partie `new Twig_Environment($loader);` :
 
     <?php
 
     $twig = new Twig_Environment($loader, [
         'cache' => __DIR__.'/../var/cache',
     ]);
+
+Créer ensuite le dossier `var/cache` à la racine du projet.
+
+Voir [php-application.md](php-application.md).
 
 ## Avec Symfony 3.4
 
@@ -220,14 +252,14 @@ Boucler sur le tableau `items` qui contient des objets et appeler ses méthodes 
         {{ item.getName() }}<br />
     {% endfor %}
 
-Récupérer « un à un » les éléments d'une requête SQL :
+Récupérer « un à un » les éléments du résultat d'une requête SQL exécutée avec la méthode `executeQuery()` de `doctrine/dbal` :
 
-    {% for item in items.fetch() %}
+    {% for item in items %}
         {{ item.id }}<br />
         {{ item.name }}<br />
     {% endfor %}
 
-NB La notation est la même pour accéder à une clé d'un tableau ou à un attribut d'un objet, on utilise le point `.`.
+NB La notation est toujours la même : on utilise `for item in items`.
 
 ### Les structures conditionnelles (blocs `if`)
 
