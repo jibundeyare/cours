@@ -310,11 +310,11 @@ On parle alors de template `partial` (partiel).
 Définir le bloc de code commun dans le fichier `templates/partials/_items.html.twig` :
 
     {% if items %}
-		<ul>
-				{% for item in items %}
-            <li>{{ item }}</li>
-				{% endfor %}
-		</ul>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
     {% endif %}
 
 Utiliser le template `partial` dans le template `templates/foo.html.twig` :
