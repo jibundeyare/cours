@@ -239,6 +239,26 @@ Afficher la valeur renvoyée par la méthode `foo` de la variable de type objet 
 
 NB La notation est la même pour accéder à une clé d'un tableau ou à un attribut d'un objet, on utilise le point `.`.
 
+### Les structures conditionnelles (blocs `if`)
+
+Afficher la variable `foo` si la variable  `bar` est égal à `true` :
+
+    {% if bar %}
+        {{ foo }}
+    {% endif %}
+
+Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
+
+    {% if baz.bar %}
+        {{ foo }}
+    {% endif %}
+
+Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
+
+    {% if baz.bar %}
+        {{ foo }}
+    {% endif %}
+
 ### Les boucles
 
 Boucler sur le tableau `items` qui contient des chaînes de caractères :
@@ -276,26 +296,6 @@ Récupérer « un à un » les éléments du résultat d'une requête SQL exécu
     {% endfor %}
 
 NB La notation est toujours la même : on utilise `for item in items`.
-
-### Les structures conditionnelles (blocs `if`)
-
-Afficher la variable `foo` si la variable  `bar` est égal à `true` :
-
-    {% if bar %}
-        {{ foo }}
-    {% endif %}
-
-Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
-
-    {% if baz.bar %}
-        {{ foo }}
-    {% endif %}
-
-Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
-
-    {% if baz.bar %}
-        {{ foo }}
-    {% endif %}
 
 ### L'héritage (ou l'extension) de templates
 
