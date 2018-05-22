@@ -493,6 +493,16 @@ Dans un template Twig, utiliser le filtre `localizeddate()` :
 
     {{ create_date|localizeddate('full', 'full') }}
 
+Le premier paramètre permet de formater la date, le deuxième permet de formater l'heure.
+
+Voici toutes les valeurs possibles à la place de `full` :
+
+- `none`
+- `short`
+- `medium`
+- `long`
+- `full`
+
 ### Afficher du code Twig sans le faire interpréter
 
 Si vous voulez afficher du code Twig au lieu de le faire interpréter, vous pouvez utiliser la balise `verbatim`.
