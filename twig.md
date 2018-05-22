@@ -71,7 +71,7 @@ Le mode debug permet d'utiliser la fonction `dump()` dans un template Twig pour 
 
 Le mode de variables strictes permet d'afficher une erreur si vous utilisez une variable qui n'a pas été initialisée (c-à-d non transmise au template Twig).
 
-Modifier la partie `new Twig_Environment($loader);` et charger l'extension de debug `Twig_Extension_Debug` juste après :
+Modifier la partie `new Twig_Environment($loader)` et charger l'extension de debug `Twig_Extension_Debug` juste après :
 
     // activer le mode debug et le mode de variables strictes
     $twig = new Twig_Environment($loader, [
@@ -81,6 +81,12 @@ Modifier la partie `new Twig_Environment($loader);` et charger l'extension de de
 
     // charger l'extension Twig_Extension_Debug
     $twig->addExtension(new Twig_Extension_Debug());
+
+Maintenant il est possible d'inspecter le contenu d'une variable dans un template Twig.
+
+Exemple :
+
+    {{ dump(foo) }}
 
 #### Pour la prod
 
@@ -94,7 +100,7 @@ C'est une optimisation qui doit être appliquée quand le code est en production
 Créer le dossier `var/cache` à la racine du projet.
 Voir [php-application.md](php-application.md).
 
-Modifier la partie `new Twig_Environment($loader);` :
+Modifier la partie `new Twig_Environment($loader)` :
 
     <?php
 
@@ -443,6 +449,16 @@ Afficher la variable `foo` sans appliquer aucun filtre :
 
     {{ foo|raw }}
 
+### Formatage de nombres
+
+Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgules flottant seulement deux chiffres après la virgule et avec un espace aux milliers :
+
+    $twig->getExtension('Twig_Extension_Core')->setNumberFormat(2, ',', ' ');
+
+Puis utiliser le filtre `number_format` dans les templates Twig :
+
+    {{ foo|number_format }}
+
 #### Formatage de dates
 
 Il est possible de manipuler le format d'affichage des dates avec le filtre `date()`.
@@ -454,6 +470,28 @@ Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA` 
 Afficher la date stockée dans la variable `create_date` au format `MM/JJ/AAAA` :
 
     {{ create_date|date("m/d/Y") }}
+
+### Localisation de dates
+
+La localisation permet d'afficher le nom des mois et des jours en français.
+
+#### Installation de l'extension
+
+Dans le terminal, dans le dossier racine du projet :
+
+    composer require twig/extensions
+
+#### Activation de l'extension
+
+Juste après la partie `new Twig_Environment($loader)`, définir la locale `fr-FR`, le fuseau horaire `Europe/Paris` puis charger l'extension `Twig_Extensions_Extension_Intl` :
+
+    $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+    Locale::setDefault('fr-FR');
+    $twig->addExtension(new Twig_Extensions_Extension_Intl());
+
+Puis dans un template Twig, utiliser le filtre `localizeddate()` :
+
+    {{ create_date|localizeddate('full', 'full') }}
 
 ### Afficher du code Twig sans le faire interpréter
 
@@ -485,7 +523,24 @@ Afficher du Twig sans le faire interpréter :
 - [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
 - [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/escape.html)
 
-### Localisation / Internationalisation
+### Formatage de nombres
 
-- [PHP: date - Manual](http://php.net/manual/en/function.date.php)
+- [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/number_format.html)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)
+
+### Date
+
+- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/date.html)
+- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/date.html)
+- [PHP: date - Manual](http://php.net/manual/en/function.date.php)
+
+### Localisation de dates
+
+- [Twig Extensions — Twig-extensions latest documentation](http://twig-extensions.readthedocs.io/en/latest/index.html)
+- [The Intl Extension — Twig-extensions latest documentation](https://twig-extensions.readthedocs.io/en/latest/intl.html)
+- [php - Localize dates in twigs using Symfony 2 - Stack Overflow](https://stackoverflow.com/questions/9480325/localize-dates-in-twigs-using-symfony-2)
+- [php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template/23424315#23424315)
+
+### Debug
+
+- [dump - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/dump.html)
