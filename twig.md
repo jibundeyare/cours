@@ -98,7 +98,7 @@ Le cache permet de stocker le rendu PHP des templates Twig dans un dossier et de
 C'est une optimisation qui doit être appliquée quand le code est en production.
 
 Créer le dossier `var/cache` à la racine du projet.
-Voir [php-application.md](php-application.md).
+Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
 Modifier la partie `new Twig_Environment($loader)` :
 
