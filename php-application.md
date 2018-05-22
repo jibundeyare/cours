@@ -34,6 +34,8 @@
         src/                <= vos fichiers PHP
             *.php
         templates/          <= vos templates
+            partials/
+                *.twig
             *.php
             *.twig
         var/

@@ -41,7 +41,7 @@ afin d'obtenir :
             new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle(),
         ];
 
-Pour configurer les routes du bundle, ajouter à la fin du fichier `app/config/routing.yml` :
+Pour configurer les routes du bundle, ouvrir le fichier `app/config/routing.yml` et ajouter le bloc suivant à la fin :
 
     easy_admin_bundle:
         resource: "@EasyAdminBundle/Controller/AdminController.php"

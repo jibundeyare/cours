@@ -43,7 +43,7 @@ afin d'obtenir :
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         ];
 
-Pour configurer le bundle, ajouter à la fin du fichier `app/config/config.yml` :
+Pour configurer le bundle, ouvrir le fichier `app/config/config.yml` et ajouter le bloc suivant à la fin :
 
     # doctrine/doctrine-migrations-bundle
     doctrine_migrations:

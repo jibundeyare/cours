@@ -32,6 +32,8 @@ Lors de la création d'un nouveau projet, il est recommandé de créer l'arbores
         src/                <= vos fichiers PHP
             *.php
         templates/          <= vos templates (anciennement appelé views)
+            partials/
+                *.twig
             *.php
             *.twig
         var/

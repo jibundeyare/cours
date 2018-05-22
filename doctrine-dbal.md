@@ -275,3 +275,5 @@ echo '<br />';
 
 - [DBAL Documentation - Database Abstraction Layer (DBAL) - Doctrine](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/)
 - [Data Retrieval And Manipulation - Database Abstraction Layer (DBAL) - Doctrine](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#data-retrieval-and-manipulation)
+- [How to Use Doctrine DBAL (The Symfony CookBook)](https://symfony.com/doc/2.6/cookbook/doctrine/dbal.html)
+

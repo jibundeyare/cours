@@ -39,7 +39,7 @@ afin d'obtenir :
         }
     }
 
-Pour configurer le bundle, ajouter à la fin du fichier `app/config/config_dev.yml` :
+Pour configurer le bundle, ouvrir le fichier `app/config/config_dev.yml` et ajouter le bloc suivant à la fin :
 
     # remg/generator-bundle
     remg_generator:
