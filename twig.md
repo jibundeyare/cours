@@ -528,7 +528,7 @@ Afficher du Twig sans le faire interpréter :
 - [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/number_format.html)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)
 
-### Date
+### Formatage de dates
 
 - [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/date.html)
 - [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/date.html)
