@@ -6,16 +6,9 @@ Dans le modèle « MVC », le template correspond au « V », la vue (View en an
 
 ## Sans framework (en PHP brut)
 
-    my_project/
-        public/
-            index.php
-        templates/
-            partials/
-                _*.html.twig
-            *.html.twig
-            index.html.twig
-        var/
-            cache/
+### Arborescence d'un projet
+
+Voir [php-application.md](php-application.md).
 
 ### Installation
 
@@ -125,9 +118,7 @@ Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
         </body>
     </html>
 
-## Syntaxe
-
-### Charger et afficher le rendu d'un template
+## Charger et afficher le rendu d'un template
 
 Utiliser le template `templates/foo.html.twig` sans transmettre de variables :
 
@@ -158,11 +149,11 @@ Exemple :
 
 Dans le template Twig, il faudra utiliser le nom de variable `bar` pour pouvoir afficher le contenu de la variable `$baz`.
 
+## Syntaxe
+
 ### Notions de base
 
-Tous les blocs de code twig sont encadrés d'accolades `{}`.
-
-Il y a trois types de blocs de code twig :
+Il n'y a que trois types de blocs de code Twig :
 
 1. `{# #}` : pour les commentaires
 2. `{{ }}` : pour afficher une variable
@@ -174,11 +165,13 @@ Noter un commentaire :
 
     {# ceci est un commentaire #}
 
-Le bloc accepte les commentaires multilignes.
+Le bloc accepte les commentaires multi-lignes.
 
 ### Afficher une variable
 
 Pour afficher une variable, il faut utiliser deux paires d'accolades `{{ }}`.
+
+NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appliqué dès qu'une variable est affichée.
 
 Afficher la variable `foo` :
 
@@ -369,11 +362,17 @@ On peut aussi échapper des variables pour :
 
 Échapper la variable `foo` qui peut être dangereuse dans du HTML :
 
-    <p>{{ foo|escape }}</p>
+    <p>{{ foo|escape('html') }}</p>
 
 Ou plus court :
 
-    <p>{{ foo|e }}</p>
+    <p>{{ foo|e('html') }}</p>
+
+Ou encore plus court :
+
+<p>{{ foo }}</p>
+
+NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appliqué dès qu'une variable est affichée.
 
 Échapper la variable `foo` qui peut être dangereuse dans du JS :
 
@@ -393,20 +392,32 @@ Ou plus court :
 
     <div id="{{ foo|e('html_attr') }}></div>
 
+#### Forcer l'affichage d'une variable appliquer aucun filtre
+
+Attention, ceci peut être dangereux.
+À n'utiliser que si vous savez ce que vous faites.
+
+Afficher la variable `foo` sans appliquer aucun filtre :
+
+    {{ foo|raw }}
+
 #### Formatage de dates
 
 Il est possible de manipuler le format d'affichage des dates avec le filtre `date()`.
 
-Afficher la date `create_date` au format `JJ/MM/AAAA` :
+Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA` :
 
     {{ create_date|date("d/m/Y") }}
 
-Afficher la date au format `MM/JJ/AAAA` :
+Afficher la date stockée dans la variable `create_date` au format `MM/JJ/AAAA` :
 
     {{ create_date|date("m/d/Y") }}
 
-### `verbatim` ou comment afficher du code twig (ou du code comprenant des accolades `{}`)
+### Afficher du code Twig sans le faire interpréter
 
+Si vous voulez afficher du code Twig au lieu de le faire interpréter, vous pouvez utiliser la balise `verbatim`.
+
+Afficher du Twig sans le faire interpréter :
 
     {% verbatim %}
         {% for item in items %}
