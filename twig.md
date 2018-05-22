@@ -176,7 +176,7 @@ Utiliser le template `templates/foo.html.twig` en transmettant une seule variabl
         'bar' => $bar,
     ]);
 
-Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variable :
+Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variables :
 
     echo $twig->render('foo.html.twig', [
         'bar' => $bar,
@@ -185,7 +185,7 @@ Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variabl
         'ipsum' => $ipsum,
     ]);
 
-Dans le tableau associatif, la clé correspond au nom de la variable dans le template Twig, et la valeur à la variable PHP.
+Dans le tableau associatif, la clé alphanumérique correspond au nom de la variable dans le template Twig et, la valeur, à la variable PHP.
 
 Exemple :
 
@@ -195,7 +195,7 @@ Exemple :
 
 Dans le template Twig, il faudra utiliser le nom de variable `bar` pour pouvoir afficher le contenu de la variable `$baz`.
 
-## Syntaxe
+## Syntaxe de templates Twig
 
 ### Notions de base
 
@@ -416,7 +416,7 @@ Ou plus court :
 
 Ou encore plus court :
 
-<p>{{ foo }}</p>
+    <p>{{ foo }}</p>
 
 NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appliqué dès qu'une variable est affichée.
 
@@ -438,7 +438,7 @@ NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appl
 
     <div id="{{ foo|e('html_attr') }}></div>
 
-#### Forcer l'affichage d'une variable appliquer aucun filtre
+#### Forcer l'affichage d'une variable sans appliquer aucun filtre
 
 Attention, ceci peut être dangereux.
 À n'utiliser que si vous savez ce que vous faites.
@@ -457,7 +457,7 @@ Puis utiliser le filtre `number_format` dans les templates Twig :
 
     {{ foo|number_format }}
 
-#### Formatage de dates
+### Formatage de dates
 
 Il est possible de manipuler le format d'affichage des dates avec le filtre `date()`.
 
@@ -487,7 +487,9 @@ Juste après la partie `new Twig_Environment($loader)`, définir la locale `fr-F
     Locale::setDefault('fr-FR');
     $twig->addExtension(new Twig_Extensions_Extension_Intl());
 
-Puis dans un template Twig, utiliser le filtre `localizeddate()` :
+#### Utilisation de l'extension
+
+Dans un template Twig, utiliser le filtre `localizeddate()` :
 
     {{ create_date|localizeddate('full', 'full') }}
 
