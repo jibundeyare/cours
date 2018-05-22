@@ -102,8 +102,6 @@ Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
 Modifier la partie `new Twig_Environment($loader)` :
 
-    <?php
-
     // activer le cache
     $twig = new Twig_Environment($loader, [
         'cache' => __DIR__.'/../var/cache',
