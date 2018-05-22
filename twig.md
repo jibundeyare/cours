@@ -10,8 +10,8 @@ Dans le modèle « MVC », le template correspond au « V », la vue (View en an
         public/
             index.php
         templates/
-						partials/
-								_*.html.twig
+            partials/
+                _*.html.twig
             *.html.twig
             index.html.twig
         var/
