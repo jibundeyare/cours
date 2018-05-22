@@ -107,7 +107,7 @@ Modifier la partie `new Twig_Environment($loader)` :
         'cache' => __DIR__.'/../var/cache',
     ]);
 
-NB Pensez à bien désactiver ou supprimer le chargement de l'extension de debug `Twig_Extension_Debug`.
+NB Pensez à désactiver ou supprimer le chargement de l'extension de debug `Twig_Extension_Debug`.
 
 ## Avec Symfony 3.4
 
