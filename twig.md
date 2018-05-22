@@ -40,8 +40,7 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
     $greeting = 'Hello Twig!';
 
-    $template = $twig->load('hello-twig.html.twig');
-    echo $template->render([
+    echo $twig->render('hello-twig.html.twig', [
         'greeting' => $greeting,
     ]);
 
@@ -127,6 +126,37 @@ Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
     </html>
 
 ## Syntaxe
+
+### Charger et afficher le rendu d'un template
+
+Utiliser le template `templates/foo.html.twig` sans transmettre de variables :
+
+    echo $twig->render('foo.html.twig');
+
+Utiliser le template `templates/foo.html.twig` en transmettant une seule variable `$bar` :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $bar,
+    ]);
+
+Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variable :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $bar,
+        'baz' => $baz,
+        'lorem' => $lorem,
+        'ipsum' => $ipsum,
+    ]);
+
+Dans le tableau associatif, la clé correspond au nom de la variable dans le template Twig, et la valeur à la variable PHP.
+
+Exemple :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $baz,
+    ]);
+
+Dans le template Twig, il faudra utiliser le nom de variable `bar` pour pouvoir afficher le contenu de la variable `$baz`.
 
 ### Notions de base
 
