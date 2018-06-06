@@ -46,7 +46,7 @@ Il faut d'abord installer un serveur web, un serveur de données et un serveur d
 
 Wamp devrait être installé dans le dossier suivant :
 
-	C:\wampserver64
+    C:\wampserver64
 
 #### PhpMyAdmin
 
@@ -70,9 +70,9 @@ NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
 
 ### déplacement du dossier dézippé dans le dossier de Wamp
 
-	C:\wampserver64\www
+    C:\wampserver64\www
 
-	http://localhost/phpmyadmin
+    http://localhost/phpmyadmin
 
 - login : root
 - password : aucun
@@ -81,13 +81,13 @@ NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
 
 Pour accéder à la partie visiteur (front) de wordpress, ouvrir cette adresse :
 
-	http://localhost/wordpress
+    http://localhost/wordpress
 
 NB Adapter la partie `wordpress` avec le nom de son site.
 
 Pour accéder à l'admin (back) de wordpress, ouvrir cette adresse :
 
-	http://localhost/wordpress/wp-admin
+    http://localhost/wordpress/wp-admin
 
 NB Idem, adapter la partie `wordpress` avec le nom de son site.
 
@@ -95,7 +95,7 @@ NB Idem, adapter la partie `wordpress` avec le nom de son site.
 
 Par requête SQL :
 
-	UPDATE wp_users SET user_pass=MD5("123") WHERE ID = 1
+    UPDATE wp_users SET user_pass=MD5("123") WHERE ID = 1
 
 NB remplacer le mot de passe `123` par le votre.
 
@@ -128,17 +128,22 @@ NB remplacer le mot de passe `123` par le votre.
 
 ### Thèmes « ultra personnalisables »
 
-- [Divi — The Ultimate WordPress Theme & Visual Page Builder](https://www.elegantthemes.com/gallery/divi/)
 - [Jupiter WordPress Theme - Create WordPress Websites Everyday](https://themes.artbees.net/pages/jupiter-wordpress-theme-create-wordpress-websites/)
+- [Divi — The Ultimate WordPress Theme & Visual Page Builder](https://www.elegantthemes.com/gallery/divi/)
+
+### Thèmes pour développeur
+
+- [Automattic/_s: Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.](https://github.com/automattic/_s)
+- [Download Visual Composer Starter Theme for WordPress](https://visualcomposer.io/visual-composer-starter-theme/)
 
 ## Comment créer un child theme ?
 
 Exemple avec twentyseventeen :
 
-    twentyseventeen-child/	<= nom du child theme
-        functions.php		<= configuration du child theme
-        screenshot.png		<= capture d'écran du child theme (optionnel)
-        style.css			<= feuille de style du child theme
+    twentyseventeen-child/  <= nom du child theme
+        functions.php       <= configuration du child theme
+        screenshot.png      <= capture d'écran du child theme (optionnel)
+        style.css           <= feuille de style du child theme
 
 Voir le repo [https://github.com/jibundeyare/src-wordpress-child-theme](https://github.com/jibundeyare/src-wordpress-child-theme) pour plus de détails.
 
@@ -225,10 +230,16 @@ Les formulaires sont utilisés pour permettre aux visiteurs de contacter le prop
 
 Ces plugins permettent de mettre en page un site de façon « plus visuelle ».
 
+- [Create a Website with Free Visual Composer Website Builder](https://visualcomposer.io/)
 - [Elementor Page Builder — WordPress Plugins](https://wordpress.org/plugins/elementor/)
 - [Page Builder by SiteOrigin — WordPress Plugins](https://wordpress.org/plugins/siteorigin-panels/)
 - [Page Builder: Live Composer – drag and drop website builder (visual front end site editor) — Extensions WordPress](https://fr.wordpress.org/plugins/live-composer-page-builder/)
 - [TinyMCE Advanced — WordPress Plugins](https://wordpress.org/plugins/tinymce-advanced/)
+
+Voir aussi les thèmes suivants si vous aimez Visual Composer :
+
+- [Jupiter WordPress Theme - Create WordPress Websites Everyday](https://themes.artbees.net/pages/jupiter-wordpress-theme-create-wordpress-websites/)
+- [Download Visual Composer Starter Theme for WordPress](https://visualcomposer.io/visual-composer-starter-theme/)
 
 #### Réseaux sociaux
 

@@ -394,7 +394,11 @@ Utiliser le template `partial` dans le template `templates/foo.html.twig` :
 
 #### Échappement de variables
 
-L'échappement de variable se fait avec le filtre  `escape()`.
+Twig est sécurisé par défaut contre les injections de code JavaScript.
+Quand on affiche la variable `foo` avec `{{ foo }}`, Twig applique automatiquement la fonction PHP `htmlentities()` à la variable `foo`.
+Il n'est donc pas nécessaire d'échapper les variables avant affichage.
+
+Mais il est cependant possible d'échapper une variable de façon explicite avec le filtre  `escape()`.
 C'est l'équivalent de `htmlentities()`.
 
 Mais `escape()` ne se limite pas à l'échappement de code HTML.
@@ -414,13 +418,9 @@ Ou plus court :
 
     <p>{{ foo|e('html') }}</p>
 
-Ou encore plus court :
-
-    <p>{{ foo }}</p>
-
 NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appliqué dès qu'une variable est affichée.
 
-Échapper la variable `foo` qui peut être dangereuse dans du JS :
+Échapper la variable `foo` qui peut être dangereuse dans du code JavaScript :
 
     var foo = '{{ foo|e('js') }}';
 
@@ -472,6 +472,8 @@ Afficher la date stockée dans la variable `create_date` au format `MM/JJ/AAAA` 
 ### Localisation de dates
 
 La localisation permet d'afficher le nom des mois et des jours en français.
+
+Attention : cette fonctionnalité nécessite l'installation et l'activation du module `php-intl`.
 
 #### Installation de l'extension
 
