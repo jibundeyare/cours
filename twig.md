@@ -185,7 +185,7 @@ Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variabl
         'ipsum' => $ipsum,
     ]);
 
-Dans le tableau associatif, la clé alphanumérique correspond au nom de la variable dans le template Twig et, la valeur, à la variable PHP.
+Dans le tableau associatif, la clé alpha-numérique correspond au nom de la variable dans le template Twig et, la valeur, à la variable PHP.
 
 Exemple :
 
@@ -223,7 +223,7 @@ Afficher la variable `foo` :
 
     {{ foo }}
 
-Afficher la valeur associée à la clé alphanumérique `foo` du tableau `bar` :
+Afficher la valeur associée à la clé alpha-numérique `foo` du tableau `bar` :
 
     {{ bar.foo }}
 
@@ -265,7 +265,7 @@ Boucler sur le tableau `items` qui contient des chaînes de caractères :
         {{ item }}<br />
     {% endfor %}
 
-Boucler sur le tableau `items` qui contient des tableaux avec des clé alphanumériques :
+Boucler sur le tableau `items` qui contient des tableaux avec des clé alpha-numériques :
 
     {% for item in items %}
         {{ item.id }}<br />
@@ -449,7 +449,7 @@ Afficher la variable `foo` sans appliquer aucun filtre :
 
 ### Formatage de nombres
 
-Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgules flottant seulement deux chiffres après la virgule et avec un espace aux milliers :
+Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgules flottant seulement deux chiffres après la virgule avec un espace aux milliers :
 
     $twig->getExtension('Twig_Extension_Core')->setNumberFormat(2, ',', ' ');
 
@@ -483,10 +483,14 @@ Dans le terminal, dans le dossier racine du projet :
 
 #### Activation de l'extension
 
-Juste après la partie `new Twig_Environment($loader)`, définir la locale `fr-FR`, le fuseau horaire `Europe/Paris` puis charger l'extension `Twig_Extensions_Extension_Intl` :
+Juste après la partie `new Twig_Environment($loader)`, définir le fuseau horaire `Europe/Paris`, la locale `fr-FR` puis charger l'extension `Twig_Extensions_Extension_Intl` :
 
     $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+    // configuration de la locale `fr-FR`
+    // @warning requiert l'extension php-intl
     Locale::setDefault('fr-FR');
+    // chargement de l'extension `Twig_Extensions_Extension_Intl` qui permet de localiser l'affichage des dates
+    // @warning requiert l'extension php-intl
     $twig->addExtension(new Twig_Extensions_Extension_Intl());
 
 #### Utilisation de l'extension
