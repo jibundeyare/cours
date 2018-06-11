@@ -264,7 +264,7 @@ Cette méthode permet :
 
 ```
 // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-$count = $conn->executeUpdate('DELETE item WHERE id = :id', ['id' => 123]);
+$count = $conn->executeUpdate('DELETE FROM item WHERE id = :id', ['id' => 123]);
 
 // affichage de nombre de lignes affectées
 echo 'updated : '.$count.'<br />';
