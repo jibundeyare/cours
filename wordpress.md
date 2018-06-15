@@ -259,7 +259,7 @@ Bien que que visuel, ce mode est un peu moins intuitif que le « live mode ».
 
 - [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
 - [KingComposer](https://wordpress.org/plugins/kingcomposer/)
-- [Fusion Page Builder](https://wordpress.org/plugins/fusion/)
+- [Fusion Page Builder](https://wordpress.org/plugins/fusion/) (fonctionne avec le framework CSS Bootstrap)
 
 #### Réseaux sociaux
 
