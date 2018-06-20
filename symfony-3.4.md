@@ -213,10 +213,10 @@ afin d'obtenir :
     $builder
         ->add('lorem')
         ->add('ipsum')
-        ->add('bar', EntityType::class, array(
-            'class' => 'AppBundle:Bar',
+        ->add('bar', EntityType::class, [
+            'class' => Bar::class,
             'choice_label' => 'name',
-        ))
+        ])
     ;
 
 Note : pour en savoir plus sur les options des champs de type entité, voir [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html).
@@ -240,12 +240,12 @@ afin d'obtenir :
     $builder
         ->add('lorem')
         ->add('ipsum')
-        ->add('baz', EntityType::class, array(
+        ->add('baz', EntityType::class, [
             'class' => 'AppBundle:Baz',
             'choice_label' => 'name',
             'multiple' => true,
             'required' => false,
-        ))
+        ])
     ;
 
 Attention : Si nécessaire, cette correction doit être appliquée de la même façon dans le form type (fichier `src/AppBundle/Form/BazType.php`) de l'entité `Baz`.
@@ -373,7 +373,7 @@ Pour désactiver la validation côté client de l'entité `Foo`, ouvrir le fichi
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'attr'=> array('novalidate' => 'novalidate'),
+            'attr'=> ['novalidate' => 'novalidate'],
             'data_class' => 'AppBundle\Entity\Foo'
         ]);
     }
