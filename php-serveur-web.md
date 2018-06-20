@@ -17,7 +17,7 @@ Ouvrir l'url pour voir le site dans son navigateur :
 
     http://localhost:8000
 
-## Lancer un serveur dans un autre sous-dossier
+## Lancer un serveur dans un sous-dossier
 
 Lancer le serveur dans le sous-dossier `public` :
 
@@ -43,24 +43,25 @@ Ouvrir l'url pour voir le site dans son navigateur :
 
 ## Lancer un serveur web accessible depuis une autre machine
 
-Lancer le serveur avec l'adresse ip `0.0.0.0` :
+Lancer le serveur avec l'adresse IP `0.0.0.0` :
 
     php -S 0.0.0.0:8000
 
-Trouver son adresse ip avec Mac et Linux :
+Trouver son adresse IP avec Mac et Linux :
 
     sudo ifconfig
 
-Trouver son adresse ip avec Windows :
+Trouver son adresse IP avec Windows :
 
     sudo ipconfig
 
 Ouvrir l'url pour voir le site depuis le navigateur d'une autre machine :
 
-    http://192.168.1.2:8080
+    http://192.168.1.2:8000
 
-NB : remplacer `192.168.1.2` par l'adresse ip trouvée au préalable.
+NB : remplacer `192.168.1.2` par l'adresse IP trouvée au préalable.
 
 ## Doc
 
 - [PHP: Built-in web server - Manual](https://secure.php.net/manual/en/features.commandline.webserver.php)
+
