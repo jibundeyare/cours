@@ -296,6 +296,10 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 - [Toolset Types – Custom Post Types, Custom Fields and Taxonomies — WordPress Plugins](https://wordpress.org/plugins/types/)
 - [Custom Post Types and Custom Fields creator – WCK — WordPress Plugins](https://wordpress.org/plugins/wck-custom-fields-and-custom-post-types-creator/)
 
+À noter, le plugin « Pods Beaver Themer Add-On » qui permet d'intégrer des custom post type créés avec Pods dans [Beaver Builder](https://wordpress.org/plugins/beaver-builder-lite-version/) :
+
+- [Pods Beaver Themer Add-On | WordPress.org](https://wordpress.org/plugins/pods-beaver-builder-themer-add-on/)
+
 ### Outils
 
 #### Générateurs de code

@@ -17,6 +17,12 @@
 
 ## Installation
 
+Générer un `secret token` :
+
+- [Symfony 2 Secret Generator - nux.net](http://nux.net/secret)
+
+## Installation
+
 Se rendre dans le dossier des projets (Windows) :
 
     cd C:\wamp64\www
