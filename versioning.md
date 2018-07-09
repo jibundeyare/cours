@@ -14,7 +14,7 @@ Un changement de numéro de version majeur indique que le code apporte des chang
 
 Par exemple, la version `3.0.0` n'est pas compatible avec la version `2.8.32`.
 
-# Numéro de version mineur
+## Numéro de version mineur
 
 Un changement de numéro de version mineur indique que le code apporte des améliorations compatibles avec la version précédente. On parle de changement rétro-compatible (backward compatible en anglais).
 

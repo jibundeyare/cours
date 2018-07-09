@@ -2,9 +2,17 @@
 
 ## Tester l'API
 
-- POSTMAN : possède une interface grpahique
+- POSTMAN : possède une interface graphique
 - httpie : fonctionne dans le terminal
 - curl : fonctionne dans le terminal (mais moins user friendly que httpie)
+
+## HTTPie
+
+### Installation
+
+Avec une distrib Debian, dans le terminal :
+
+    sudo apt install httpie
 
 ## FOS Rest Bundle
 
@@ -90,7 +98,7 @@ Avec le form suivant, dans `src/AppBundle/Form/PromotionType.php` :
 
 Créer une promotion :
 
-    http --form POST http://localhost:8000/api/promotions appbundle_promotion[name]="" appbundle_promotion[startDate]="2018-01-01" appbundle_promotion[endDate]="2018-06-30"
+    http --form POST http://localhost:8000/api/promotions appbundle_promotion[name]="Foo" appbundle_promotion[startDate]="2018-01-01" appbundle_promotion[endDate]="2018-06-30"
 
 Modifier une promotion :
 
@@ -98,7 +106,7 @@ Modifier une promotion :
 
 Supprimer une promotion :
 
-    http --form DELETE http://localhost:8000/api/promotions/10
+    http DELETE http://localhost:8000/api/promotions/10
 
 Avec le form suivant dans `src/AppBundle/Form/StudentType.php` :
 
@@ -145,6 +153,7 @@ Un student avec sa promotion qui contient des students :
             ]
         }
     }
+
 Activation de l'option `max_depth_checks` dans `app/config/config.yml` :
 
     # jms/serializer-bundle
