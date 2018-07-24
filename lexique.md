@@ -17,6 +17,7 @@
   C'est la façon de structurer du code. On peut parler d'architecture logicielle  
 - DOM : Document Object Model
 - DRY : Don't Repeat Yourself (ne te répète pas)  
+- ESN : Entreprise de services du numérique
   Principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile)  
   principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
@@ -35,5 +36,7 @@
 - repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
+- SS2I : Société de Services en Ingénierie Informatique
+- SSII : voir SS2I
 - VM : Virtual Machine (machine virtuelle)
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
