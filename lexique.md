@@ -17,7 +17,7 @@
   C'est la façon de structurer du code. On peut parler d'architecture logicielle  
 - DOM : Document Object Model
 - DRY : Don't Repeat Yourself (ne te répète pas)  
-- ESN : Entreprise de services du numérique
+- ESN : Entreprise de Services du Numérique
   Principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile)  
   principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
@@ -40,3 +40,4 @@
 - SSII : voir SS2I
 - VM : Virtual Machine (machine virtuelle)
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
+
