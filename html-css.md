@@ -26,7 +26,7 @@ Code : [jibundeyare/src-html-css](https://github.com/jibundeyare/src-html-css)
         *.html              <= tous les fichiers HTML
         package.json        <= liste des paquets gérés par npm
         package-lock.json   <= liste des paquets gérés par npm
-        README.md           <= documentation du projet
+        README.md           <= documentation du projet au format markdown
 
 ## Ordre d'intégration des feuilles de style et des fichiers JavaScript
 
@@ -99,20 +99,19 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 
 ## Doc
 
-- [jQuery](http://jquery.com/)
-- [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
+- [HTML elements reference - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- [CSS reference - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 - [Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)
 - [CSS-Tricks](https://css-tricks.com/)
 - [Alsacréations : Actualités et tutoriels web, HTML, CSS, JavaScript](https://www.alsacreations.com/)
 
 - [Specificity - CSS | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+- [At-rule - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
+- [Box Sizing | CSS-Tricks](https://css-tricks.com/box-sizing/)
 
 - [Using media queries - CSS | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 - [<link>: The External Resource Link element - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
 - [Using the viewport meta tag to control layout on mobile browsers - Mozilla | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
-- [Introduction · Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)
-- [Responsive utilities · Bootstrap 3](https://getbootstrap.com/docs/3.3/css/#responsive-utilities)
-- [Responsive breakpoints · Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
 
 - [transform - CSS | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 - [CSS3 : Transformations 2D - Alsacreations](https://www.alsacreations.com/article/lire/1418-css3-transformations-2d.html)
@@ -126,12 +125,29 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 - [Intro to CSS 3D transforms · Intro to CSS 3D transforms](http://desandro.github.io/3dtransforms/)
 
 - [A Complete Guide to Flexbox | CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [A Visual Guide to CSS3 Flexbox Properties ― Scotch](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+- [Sticky Footer — Solved by Flexbox — Cleaner, hack-free CSS](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/)
+- [css - Flex-box: Align last row to grid - Stack Overflow](https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid)
+
+- [Getting Started with CSS Grid | CSS-Tricks](https://css-tricks.com/getting-started-css-grid/)
 - [A Complete Guide to Grid | CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [The Difference Between Explicit and Implicit Grids | CSS-Tricks](https://css-tricks.com/difference-explicit-implicit-grids/)
+- [Does CSS Grid Replace Flexbox? | CSS-Tricks](https://css-tricks.com/css-grid-replace-flexbox/)
 
 - [A Guide to SVG Animations (SMIL) | CSS-Tricks](https://css-tricks.com/guide-svg-animations-smil/)
 - [An Intro to SVG Animation with SMIL by Noah Blon on CodePen](https://codepen.io/noahblon/post/an-intro-to-svg-animation-with-smil)
 - [How SVG Shape Morphing Works | CSS-Tricks](https://css-tricks.com/svg-shape-morphing-works/)
 - [SVG Animation and CSS Transforms: A Complicated Love Story | CSS-Tricks](https://css-tricks.com/svg-animation-on-css-transforms/)
 
+- [ARIA - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+- [Keyboard-navigable JavaScript widgets - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets)
 - [Microformat - Wikipedia](https://en.wikipedia.org/wiki/Microformat)
 - [Home - schema.org](http://schema.org/)
+
+- [Bootstrap · The most popular HTML, CSS, and JS library in the world.](https://getbootstrap.com/)
+- [Introduction · Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)
+- [Responsive utilities · Bootstrap 3](https://getbootstrap.com/docs/3.3/css/#responsive-utilities)
+- [Responsive breakpoints · Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
+
+- [jQuery](http://jquery.com/)
+
