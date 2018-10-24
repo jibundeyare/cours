@@ -146,7 +146,6 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 
 - [Bootstrap · The most popular HTML, CSS, and JS library in the world.](https://getbootstrap.com/)
 - [Introduction · Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)
-- [Responsive utilities · Bootstrap 3](https://getbootstrap.com/docs/3.3/css/#responsive-utilities)
 - [Responsive breakpoints · Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
 
 - [jQuery](http://jquery.com/)
