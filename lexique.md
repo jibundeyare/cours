@@ -35,9 +35,15 @@
 - PR : Pull Request
 - repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
+- RFC : Request For Comments (demande de commentaires, demande d'avis). Série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques. &ast;
+- RTFM : Read The Fucking Manual (lis le putain de manuel)
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - SS2I : Société de Services en Ingénierie Informatique
 - SSII : voir SS2I
+- TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - VM : Virtual Machine (machine virtuelle)
+- WIP : Work In Progress (travail en cours)
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
+
+&ast; définition issue de Wikipedia
 
