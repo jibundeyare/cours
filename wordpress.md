@@ -44,9 +44,9 @@ Il faut d'abord installer un serveur web, un serveur de données et un serveur d
 
 - [Download WampServer from SourceForge.net](https://sourceforge.net/projects/wampserver/files/latest/download?source=files)
 
-Wamp devrait être installé dans le dossier suivant :
+Wamp est installé dans le dossier suivant :
 
-    C:\wampserver64
+    C:\wamp64
 
 #### PhpMyAdmin
 
@@ -70,7 +70,7 @@ NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
 
 ### déplacement du dossier dézippé dans le dossier de Wamp
 
-    C:\wampserver64\www
+    C:\wamp64\www
 
     http://localhost/phpmyadmin
 
