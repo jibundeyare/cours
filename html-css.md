@@ -134,6 +134,10 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 - [The Difference Between Explicit and Implicit Grids | CSS-Tricks](https://css-tricks.com/difference-explicit-implicit-grids/)
 - [Does CSS Grid Replace Flexbox? | CSS-Tricks](https://css-tricks.com/css-grid-replace-flexbox/)
 
+- [Using CSS custom properties (variables) - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
+- [var() - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/var)
+- [:root - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
+
 - [A Guide to SVG Animations (SMIL) | CSS-Tricks](https://css-tricks.com/guide-svg-animations-smil/)
 - [An Intro to SVG Animation with SMIL by Noah Blon on CodePen](https://codepen.io/noahblon/post/an-intro-to-svg-animation-with-smil)
 - [How SVG Shape Morphing Works | CSS-Tricks](https://css-tricks.com/svg-shape-morphing-works/)

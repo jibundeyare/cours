@@ -1,5 +1,21 @@
 # Symfony 3.4
 
+## Certification
+
+Il est possible d'obtenir une certification Symfony en passant un examen proposé par la société Sensio Labs qui développe le framework.
+
+L'inscription et la liste des sujets abordés : [Symfony Certification](https://certification.symfony.com/).
+
+La liste donne une idée précise de tous les sujets à maîtriser pour être un expert en Symfony.
+
+Perdu face à la montagne de choses à apprendre ?
+[ThomasBerends](https://github.com/ThomasBerends) maintient une page web qui pointe vers de la documentation pour (quasiment) tous les sujets abordés par la certification Symfony : [Symfony Certification Preparation List](https://thomasberends.github.io/symfony-certification-preparation-list/).
+
+Pour finir, voici le témoignage d'Andrew Marcinkevičius, un développeur (contributeur du framework) qui a passé la certification : [My experience with SensioLabs Symfony certification exam — ifdattic](http://www.ifdattic.com/my-experience-sensiolabs-symfony-certification-exam/).
+Je note entre autre ceci :
+
+> made a habit of 90 minutes reading Symfony documentation for breakfast, um, tasty.
+
 ## Concepts de base
 
 - Entity
