@@ -208,6 +208,28 @@ Puis on commit.
 
 ## Doc
 
+### Utilisation
+
 - [Git](https://git-scm.com/)
 - [Git How To: Guided Git Tutorial](https://githowto.com/)
+
+### Git flow
+
+Notions de base :
+
+- [Introduction to GitLab Flow | GitLab](https://docs.gitlab.com/ce/workflow/gitlab_flow.html)
+- [Git Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
+
+Le git flow préconisé par github :
+
+- [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html)
+
+Le git flow utilisé pour le développement du kernel linux :
+
+- [Using git-flow to automate your git branching workflow](https://jeffkreeftmeijer.com/git-flow/)
+
+Notions avancées :
+
+- [My Git Workflow](https://blog.osteele.com/2008/05/my-git-workflow/)
+- [Git Workflow Guide with Examples for Pros | Toptal](https://www.toptal.com/git/git-workflows-for-pros-a-good-git-guide)
 
