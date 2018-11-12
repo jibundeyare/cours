@@ -93,8 +93,9 @@ Cela permet de :
 - `git clone` : duplique un repo dans le dossier courant
 - `git push` : pousse les modification du repo local dans le repo distant
 - `git pull` : rappatrie dans le repo local les modification du repo distant
-- `git checkout [nom-de-branche]` : change de branche pour aller dans `[nom-de-branche]`
 - `git checkout [nom-de-fichier]` : restaure un fichier dans son état avant modification, c-a-d annule les modifications
+- `git branch` : manipule les branches (création, suppression, liste)
+- `git checkout [nom-de-branche]` : change de branche pour aller dans `[nom-de-branche]`
 - `git merge [nom-de-branche]` : mixe le code de la branche `[nom-de-branche]` dans la branche courante
 - `git rebase master` : couper la branche courante et la rebaser sur le dernier commit de la branche master
 
