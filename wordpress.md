@@ -252,6 +252,8 @@ Le « live mode » permet de construire sa page tout en voyant (à peu près) ce
 - [Live Composer](https://wordpress.org/plugins/live-composer-page-builder/)
 - [Beaver Builder](https://wordpress.org/plugins/beaver-builder-lite-version/)
 
+Astuce : pour migrer des pages créées avec Elementor : « Dashboard > Elementor > Tools > Regenerate CSS »
+
 ##### Classic mode
 
 Le « classic mode » permet de construire sa page seulement dans l'éditeur de l'admin.

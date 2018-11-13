@@ -10,13 +10,20 @@ Affectation : stockage d'une valeur dans une variable
 
 Initialisation : déclaration et affectation en une seule opération
 
-Attention, les variables ont des types de données :
+Attention, les variables ont des types de données.
+
+Type de données de base :
 
 - chaîne de caractères (texte)
 - nombre entier
 - nombre à virgule (flottant ou fixe)
 - booléen (vrai / faux)
+- la valeur NULL
+
+Autre types de données :
+
 - tableau (plusieurs valeurs dans une seule variable)
+- objets / classes
 
 ## Structures de contrôle
 
