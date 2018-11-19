@@ -3,7 +3,8 @@
 ## Notions
 
 - variables (types de données simples, tableaux, objets)
-- structures de contrôle (blocs de type `if`, `else`, `else if` et `switch`)
+- constantes
+- alternatives (blocs de type `if`, `else`, `else if` et `switch`)
 - boucles (blocs de type `foreach`, `while`, `do while` et `for`)
 - fonctions
 - classes
@@ -16,8 +17,30 @@
 - nombre entier (integer)
 - nombre à virgule flottant (float)
 - booléen (boolean)
+- null
 - tableau (array)
 - objet (object)
+
+## Fonctions
+
+Une fonction doit d'abord être définie.
+Elle peut prendre un paramètre, plusieurs paramètres ou aucun paramètre.
+Elle peut renvoyer une valeur ou aucune valeur.
+
+Quand une fonction a été définie, on l'appeler (c-à-d l'utiliser).
+
+Exemple de définition :
+
+    function foo($bar) {
+        $baz = 'Hello ';
+        return $baz . $bar;
+    }
+
+Exemple d'appel :
+
+    $name = 'foo';
+    // appel de la fonction foo()
+    $result = foo($name);
 
 ## Programmation orientée objet (POO)
 
@@ -25,7 +48,8 @@ Une classe est la définition d'un objet.
 
 Un objet est une instance de classe.
 
-Analogie : on trouve la définition du mot voiture dans le dictionnaire, c'est l'équivalent d'une classe. On trouve de vraies voitures dans la rue, ce sont l'équivalent d'objets (des instances de la définition).
+Analogie : on trouve la définition du mot voiture dans le dictionnaire, c'est l'équivalent d'une classe.
+On trouve de vraies voitures dans la rue, ce sont l'équivalent d'objets (des instances de la définition).
 
 En POO :
 
@@ -43,22 +67,42 @@ Ne pas fermer le bloc PHP avec `?>` si la page ne contient que du code PHP.
 ### Signe égal
 
 `=` est impératif (c'est un ordre).
+Ce symbol sert à affecter (attribuer) une valeur à une variable.
 
 `==` est interrogatif (c'est une question).
+Ce symbol sert à vérifier l'égalité entre deux valeurs.
+La plupart du temps, on le trouve dans des blocs de type `if`.
 
 ### Inclusion
+
+L'instruction `include()` permet d'insérer le code provenant d'un autre fichier dans le fichier courant.
+On peut imaginer que PHP fait un copier-coller à notre place.
 
 `include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
 
 ### Tableaux
 
-`array()` est l'ancienne notation qui permet de créer un tableau. `[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
+`array()` est l'ancienne notation qui permet de créer un tableau.
+`[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
+
+Exemple :
+
+    // ancienne notation
+    $foo = array();
+    $foo2 = array(42, 'azerty', 3.14, true);
+
+    // notation actuelle
+    $bar = [];
+    $bar2 = [42, 'azerty', 3.14, true];
 
 ### Intégration de code PHP dans du code HTML
 
 Pour intégrer du code PHP dans du code HTML, il est recommandé d'utiliser une syntaxe alternative dans tous les blocs de type structure de contrôle ou boucle.
 
-Voici un exemple avec une boucle `foreach` :
+Tous les mots clés suivants ont une syntaxe alernative : `if`, `while`, `for`, `foreach`, et `switch`.
+Les blocs de ces mots-clés peuvent être terminés avec les mots-clés suivants : `endif;`, `endwhile;`, `endfor;`, `endforeach;` et `endswitch;`.
+
+Voici un exemple avec une boucle `foreach`, codé « comme il faut »:
 
     <ul>
         <?php foreach ($rows as $row): ?>
@@ -66,7 +110,7 @@ Voici un exemple avec une boucle `foreach` :
         <?php endforeach ?>
     </ul>
 
-Voici le même exemple mais codé d'une façon non recommandable :
+Voici le même exemple mais codé « pas comme il faut » :
 
     <ul>
         <?php foreach ($rows as $row) {
@@ -74,7 +118,7 @@ Voici le même exemple mais codé d'une façon non recommandable :
         } ?>
     </ul>
 
-Voici un exemple avec un bloc `if` :
+Voici un exemple avec un bloc `if`, codé « comme il faut » :
 
     <?php if ($role == 'admin'): ?>
         <span>Admin</span>
@@ -82,7 +126,7 @@ Voici un exemple avec un bloc `if` :
         <span>User</span>
     <?php endif ?>
 
-Voici le même exemple mais codé d'une façon non recommandable :
+Voici le même exemple mais codé « pas comme il faut » :
 
     <?php if ($role == 'admin') { ?>
         <span>Admin</span>
@@ -92,7 +136,8 @@ Voici le même exemple mais codé d'une façon non recommandable :
 
 ### Opérateur ternaire
 
-L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, affecter ceci, sinon affecter cela ». Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
+L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, renvoyer ceci, sinon renvoyer cela ».
+Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
 
 Exemple avec un bloc `if` :
 
@@ -105,6 +150,11 @@ Exemple avec un bloc `if` :
 Même exemple avec l'opérateur ternaire :
 
     $message = $erreur ? 'il y a une erreur' : 'tout va bien';
+
+L'opérateur permet aussi une simplification du type « S'il y a une valeur la renvoyer, sinon renvoyer autre chose ».
+
+    $erreur = 'il y a une erreur';
+    $message = $erreur ?: 'tout va bien';
 
 ## Timeout
 
@@ -119,7 +169,7 @@ Si je veux qu'un script puisse s'exécuter pendant 50 minutes sans faire de time
 ## `isset()` VS `!empty()`
 
 `isset()` sert à vérifier que l'utilisateur a envoyé des données.
-`!empty()` sert à vérifier qu'un champ obligatoire a bien été renseigné.
+`!empty()` sert à vérifier qu'un champ obligatoire a été renseigné (est non vide).
 
 ## Sécurité
 
@@ -165,3 +215,4 @@ ou équivalent :
 - [PHP: Validate filters - Manual](http://php.net/manual/en/filter.filters.validate.php)
 - [PHP: Sanitize filters - Manual](http://php.net/manual/en/filter.filters.sanitize.php)
 - [PHP: Other filters - Manual](http://php.net/manual/en/filter.filters.misc.php)
+
