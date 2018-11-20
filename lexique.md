@@ -59,7 +59,7 @@
 - SS2I : Société de Services en Ingénierie Informatique; voir aussi ESN
 - SSII : voir SS2I
 - String : chaîne de caractères, type de données
-- Ticket : voit Issue
+- Ticket : voir Issue
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
