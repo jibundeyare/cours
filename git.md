@@ -39,6 +39,24 @@ Ouvrir un terminal :
     git config --global user.name "[nom-du-développeur]"
     git config --global user.email "[email-du-développeur]"
 
+Vous pouvez aussi choisir l'éditeur de code avec lequel vous écrirez vos messages de commit.
+
+Dans un terminal, tapez :
+
+    git config --global core.editor [nom-de-l-éditeur]
+
+Exemple avec l'éditeur de code Vim :
+
+    git config --global core.editor vim
+
+Exemple avec l'éditeur de code Atom :
+
+    git config --global core.editor "atom --wait"
+
+Exemple avec l'éditeur de code Sublime Text 3 :
+
+    git config --global core.editor "subl -n -w"
+
 Il peut aussi être judicieux de configurer un accès SSH, ce qui évite de devoir taper son login et son mot de passe à chaque fois que l'on veut pusher du code sur le repo distant.
 
 ## Notions à connaître
@@ -98,6 +116,66 @@ Cela permet de :
 - `git checkout [nom-de-branche]` : change de branche pour aller dans `[nom-de-branche]`
 - `git merge [nom-de-branche]` : mixe le code de la branche `[nom-de-branche]` dans la branche courante
 - `git rebase master` : couper la branche courante et la rebaser sur le dernier commit de la branche master
+
+## Messages de commit
+
+Le message de commit se compose au minimum d'un titre.
+
+Mais il est de bon ton de rajouter des explications supplémentaires.
+Il est très important que le message de commit explique « quoi » et « pourquoi ».
+Le « quoi » indique ce qui a été fait dans le commit.
+Le « pourquoi » indique la raison de la modification du code.
+
+Voici un exemple de message de commit :
+
+    F Ajoute un champ "sujet" dans le formulaire de contact
+
+    Le champ "sujet" permet aux visiteurs de préciser la raison de leur demande de contact.
+    Les sujets étaient inscrits dans le corps du mail et le client n'arrivait pas à trier les mails en fonction de leur priorité.
+
+    Github issue #123
+
+    [php] [html]
+
+La lettre `F` indique qu'il s'agit d'une fonctionnalité.
+Ce code indique le type tâche réalisée dans le commit.
+
+Voici des codes possibles :
+
+- `F` : fonctionnalité
+- `B` : correction de bug
+- `D` : documentation
+- `M` : maintenance
+
+Vous pouvez inventer vos propres codes.
+Soyez créatifs mais surtout, soyez cohérents.
+
+Le terme `Github issue #123` fait référence à l'identifiant d'un « ticket » (une « issue ») créé dans l'outil « Issue tracker » de Github.
+
+Les termes `[php]` et `[html]` sont des tags qui permettent de faire une recherche rapide de tous les commits en rapport avec un type de modification de code.
+
+Voici des tags possibles :
+
+- `[build]` : système de build
+- `[db]` : database
+- `[config]`
+- `[controller]`
+- `[css]`
+- `[design]`
+- `[form]`
+- `[fs]` : file system
+- `[html]`
+- `[js]` : Javascript
+- `[model]`
+- `[php]`
+- `[route]`
+- `[sass]`
+- `[service]`
+- `[text]` : contenu éditorial
+- `[vue]`
+
+Pareil qu'avec les codes de tâches, vous pouvez inventer les vôtres.
+Soyez créatifs et cohérents.
 
 ## Utilisation
 
@@ -221,6 +299,11 @@ Notions de base :
 - [Introduction to GitLab Flow | GitLab](https://docs.gitlab.com/ce/workflow/gitlab_flow.html)
 - [Git Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
+Github ou Framagit (Gitlab) et SSH :
+
+- [Connecting to GitHub with SSH - User Documentation](https://help.github.com/articles/connecting-to-github-with-ssh/)
+- [GitLab and SSH keys | GitLab](https://docs.gitlab.com/ee/ssh/)
+
 Le git flow préconisé par github :
 
 - [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html)
@@ -233,4 +316,12 @@ Notions avancées :
 
 - [My Git Workflow](https://blog.osteele.com/2008/05/my-git-workflow/)
 - [Git Workflow Guide with Examples for Pros | Toptal](https://www.toptal.com/git/git-workflows-for-pros-a-good-git-guide)
+
+Messages de commit :
+
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+- [How to write professional messages EFFICIENTLY?](https://driggl.com/blog/a/how-to-write-professional-commits-efficiently)
+- [Online Git Commit Message Editor | Git Praise](https://gitpraise.com/)
+- [tbaggery - A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+- [joelparkerhenderson/git_commit_template: Git commit template for better commit messages](https://github.com/joelparkerhenderson/git_commit_template)
 

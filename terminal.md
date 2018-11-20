@@ -95,3 +95,4 @@ Supprimer un dossier
 Les fichiers dont le nom commence par un point sont cachés.
 
 Exemple : `.htaccess`
+

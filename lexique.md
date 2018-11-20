@@ -28,6 +28,7 @@
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - Integer : nombre entier, type de données
+- Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile)  
@@ -58,6 +59,7 @@
 - SS2I : Société de Services en Ingénierie Informatique; voir aussi ESN
 - SSII : voir SS2I
 - String : chaîne de caractères, type de données
+- Ticket : voit Issue
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
