@@ -97,6 +97,18 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+## Performances
+
+Ce document web est excellent : [Web Performance 101: JS, CSS, HTTP, images & fonts | PerfPerfPerf](https://3perf.com/talks/web-perf-101/).
+
+### Préchargement
+
+Pour augmenter les performances, il est possible de précharger des resources.
+
+- [<link>: The External Resource Link element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
+- [Link types - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)
+- [Preloading content with rel="preload" - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+
 ## Doc
 
 - [HTML elements reference - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
@@ -153,4 +165,9 @@ Le [responsive meta tag de Bootstrap 4](https://getbootstrap.com/docs/4.0/gettin
 - [Responsive breakpoints · Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
 
 - [jQuery](http://jquery.com/)
+
+- [Web Performance 101: JS, CSS, HTTP, images & fonts | PerfPerfPerf](https://3perf.com/talks/web-perf-101/#http-preload-1)
+- [<link>: The External Resource Link element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
+- [Link types - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)
+- [Preloading content with rel="preload" - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
 
