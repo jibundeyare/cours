@@ -32,12 +32,16 @@ Attention : il faut choisir un éditeur de code autre que `notepad` (qui servira
 
 ### Configuration
 
+#### Utilisateur
+
 Git a besoin de savoir qui est le développeur qui fait des commits.
 
 Ouvrir un terminal :
 
     git config --global user.name "[nom-du-développeur]"
     git config --global user.email "[email-du-développeur]"
+
+#### Éditeur
 
 Vous pouvez aussi choisir l'éditeur de code avec lequel vous écrirez vos messages de commit.
 
@@ -57,7 +61,21 @@ Exemple avec l'éditeur de code Sublime Text 3 :
 
     git config --global core.editor "subl -n -w"
 
+Exemple avec l'éditeur de code Sublime Text 3 :
+
+    git config --global core.editor "code --wait"
+
+#### Diff & merge
+
+Il est aussi possible de définir un outil pour comparer et fusionner des fichiers.
+
+Voir [Diff et merge](#diff-et-merge) ci-dessous.
+
+#### Accès SSH
+
 Il peut aussi être judicieux de configurer un accès SSH, ce qui évite de devoir taper son login et son mot de passe à chaque fois que l'on veut pusher du code sur le repo distant.
+
+Voir [Github ou Framagit (Gitlab) et SSH](#github-ou-framagit-gitlab-et-ssh) ci-dessous.
 
 ## Notions à connaître
 
@@ -294,30 +312,40 @@ Puis on commit.
 
 ### Git flow
 
-Notions de base :
+#### Configuration
+
+- [Associating text editors with Git - User Documentation](https://help.github.com/articles/associating-text-editors-with-git/)
+- [Git - Git Configuration](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+
+#### Diff et merge
+
+- [git - Configuring diff tool with .gitconfig - Stack Overflow](https://stackoverflow.com/questions/6412516/configuring-diff-tool-with-gitconfig)
+- [Set Visual Studio Code as default git editor and diff tool – Soltys Blog](https://blog.soltysiak.it/en/2017/01/set-visual-studio-code-as-default-git-editor-and-diff-tool/)
+
+#### Notions de base
 
 - [Introduction to GitLab Flow | GitLab](https://docs.gitlab.com/ce/workflow/gitlab_flow.html)
 - [Git Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
-Github ou Framagit (Gitlab) et SSH :
+#### Github ou Framagit (Gitlab) et SSH
 
 - [Connecting to GitHub with SSH - User Documentation](https://help.github.com/articles/connecting-to-github-with-ssh/)
 - [GitLab and SSH keys | GitLab](https://docs.gitlab.com/ee/ssh/)
 
-Le git flow préconisé par github :
+#### Le git flow préconisé par github
 
 - [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html)
 
-Le git flow utilisé pour le développement du kernel linux :
+#### Le git flow utilisé pour le développement du kernel linux
 
 - [Using git-flow to automate your git branching workflow](https://jeffkreeftmeijer.com/git-flow/)
 
-Notions avancées :
+#### Notions avancées
 
 - [My Git Workflow](https://blog.osteele.com/2008/05/my-git-workflow/)
 - [Git Workflow Guide with Examples for Pros | Toptal](https://www.toptal.com/git/git-workflows-for-pros-a-good-git-guide)
 
-Messages de commit :
+#### Messages de commit
 
 - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 - [How to write professional messages EFFICIENTLY?](https://driggl.com/blog/a/how-to-write-professional-commits-efficiently)
