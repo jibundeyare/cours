@@ -69,13 +69,13 @@ Exemple avec l'éditeur de code Sublime Text 3 :
 
 Il est aussi possible de définir un outil pour comparer et fusionner des fichiers.
 
-Voir [Diff et merge](#diff-et-merge) ci-dessous.
+Voir les liens dans la section [Diff et merge](#diff-et-merge) de la doc, ci-dessous.
 
 #### Accès SSH
 
 Il peut aussi être judicieux de configurer un accès SSH, ce qui évite de devoir taper son login et son mot de passe à chaque fois que l'on veut pusher du code sur le repo distant.
 
-Voir [Github ou Framagit (Gitlab) et SSH](#github-ou-framagit-gitlab-et-ssh) ci-dessous.
+Voir les liens dans la section [Github ou Framagit (Gitlab) et SSH](#github-ou-framagit-gitlab-et-ssh) de la doc, ci-dessous.
 
 ## Notions à connaître
 
