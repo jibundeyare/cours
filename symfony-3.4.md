@@ -140,35 +140,44 @@ Voir [remg-generator.md](remg-generator.md).
 
 Voir [doctrine-migrations.md](doctrine-migrations.md).
 
-## Entités
+## Relations cardinales entre entités
 
-Il existe trois types de relations entre entités :
+Il existe trois types de relations cardinales entre entités :
 
-- `one to many`
 - `many to one`
+- `one to many`
 - `many to many`
 
-Voir (code-style.md)[code-style.md] pour les questions de nommage de variable au singulier ou pluriel.
+Voir [code-style.md](code-style.md) pour les questions de nommage de variable au singulier ou pluriel.
 
-### Relation `one to many`
+### Relation `many to one`
 
 ![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
 
 Une entité `Foo` ne peut avoir qu'une seule entité `Bar`.
 Mais une entité `Bar` peut avoir plusieurs entités `Foo`.
 
-### Relation `many to one`
+Exemple : une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+Mais une entreprise peut avoir plusieurs voitures de fonction.
+
+### Relation `one to many`
 
 ![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
 
-C'est la même relation qu'un `one to many` mais vu depuis l'autre entité.
+C'est la même relation qu'un `one to many` mais du point de vue de l'autre entité.
+
+Exemple : une entreprise peut avoir plusieurs voitures de fonction.
+Et une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
 
 ### Relation `many to many`
 
 ![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
 
-Une entité `Foo` peut avoir plusieurs entités `Bar`.
+Une entité `Foo` peut avoir plusieurs entités `Baz`.
 Et une entité `Baz` peut avoir plusieurs entités `Foo`.
+
+Exemple : une voiture de fonction peut être réservée (successivement) par plusieurs salariés.
+Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
 
 ### Configuration de valeurs par défaut
 

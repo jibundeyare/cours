@@ -100,6 +100,43 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     -- notez qu'il n'y a pas de WHERE
     DELETE FROM `user`;
 
+## Relations cardinales entre objets
+
+Il existe trois types de relations cardinales entre objets :
+
+- `many to one`
+- `one to many`
+- `many to many`
+
+### Relation `many to one`
+
+![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
+
+Un objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
+Mais un objet `bar` peut être rattaché à plusieurs objets `foo`.
+
+Exemple : une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+Mais une entreprise peut avoir plusieurs voitures de fonction.
+
+### Relation `one to many`
+
+![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
+
+C'est la même relation qu'un `one to many` mais du point de vue de l'autre objet.
+
+Exemple : une entreprise peut avoir plusieurs voitures de fonction.
+Et une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+
+### Relation `many to many`
+
+![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
+
+Un objet `foo` peut être rattaché à plusieurs objets `baz`.
+Et un objet `baz` peut être rattaché à plusieurs objets `foo`.
+
+Exemple : une voiture de fonction peut être réservée (successivement) par plusieurs salariés.
+Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
+
 ## Sélection de données avec jointure
 
     -- sélection de tous les utilisateurs et leur ville
