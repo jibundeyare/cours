@@ -195,6 +195,18 @@ Voici des tags possibles :
 Pareil qu'avec les codes de tâches, vous pouvez inventer les vôtres.
 Soyez créatifs et cohérents.
 
+## `.gitignore`
+
+Ce fichier dit à Git de ne pas tenir compte de certain fichier.
+Ou de force le prise en compte de fichiers se trouvant dans un dossier ignoré.
+
+Dans votre fichier `.gitignore` :
+
+    /config/db.yml
+    /config/mail.yml
+    /cache/*
+    !cache/.gitkeep
+
 ## Utilisation
 
 Pour des cas d'usage typiques, voir :

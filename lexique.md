@@ -35,6 +35,7 @@
   principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
 - Lead dev : développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
+- LTS : Long Term Support ; support au long terme
 - méthode : en POO, une méthode désigne une fonction
 - membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request

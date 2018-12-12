@@ -1,25 +1,163 @@
 # MySQL
 
-## Conseils
+## Nommage des objets (base de données, tables, colonnes, etc)
 
-Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+- les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+- pour le nom de la BDD, choisissez le même nom de votre projet, en remplaçant les caractères interdits par des caractères autorisés.
+- nommez les tables au singulier.
+- nommez les tables qui ont une valeur métier dans la langue de votre commanditaire.
+À moins de travailler sur un projet open source où l'anglais est de mise, cela n'a pas de sens de tout traduire en anglais. Par contre nommer en anglais tout ce qui n'est pas métier (par exemple table `user`, table `config`, etc).
+- nommez `id` la colonne de l'identifiant primaire de vos tables.
+- formez le nom des colonnes qui font référence à une clé étrangère avec « le nom de la table étrangère + underscore + nom de la colonne étrangère ». Exemple : si la colonne ciblée est `event.id` (table `event`, colonne `id`), cela donne `event_id`.
 
-Pour le nom de la BDD, choisissez le même nom que votre projet.
+## Interclassement ("collation" en anglais)
 
 L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
 
-Nommez les tables au singulier.
+## Backticks (accent grave)
 
-Nommez les tables qui ont une valeur métier dans la langue de votre commanditaire.
-À moins de travailler sur un projet open source où l'anglais est de mise, cela n'a pas de sens de tout traduire en anglais.
-Par contre nommer en anglais tout ce qui n'est pas métier (par exemple table `user`, table `config`, etc).
+Les backticks permettent d'utiliser des mots clés réservés au langage SQL comme nom de base de données, de table ou de colonne.
 
-Nommez `id` la colonne de l''identifiant primaire de vos tables.
+Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des backticks, on peut créer une table `user` ou sélectionner des lignes de dedans.
 
-Formez le nom des colonnes qui font référence à une clé étrangère avec « le nom de la table étrangère + underscore + nom de la colonne étrangère ».
-Exemple : si la colonne ciblée est `event.id` (table `event`, colonne `id`), cela donne `event_id`.
+    -- création d'une table `user`
+    CREATE TABLE `user` (
+    `id` int(10) UNSIGNED NOT NULL,
+    `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `login` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `newsletter` tinyint(1) NOT NULL,
+    `devices` int(11) DEFAULT '1'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+## Sélection de données
+
+    -- sélection de toutes les colonnes de toutes les lignes
+    SELECT *
+    FROM `user`
+
+    -- sélection de plusieurs colonnes de toutes les lignes
+    SELECT id, email, login
+    FROM `user`
+
+    -- sélection d'une seule colonne de toutes les lignes
+    SELECT email
+    FROM `user`
+
+    -- sélection de toutes les colonnes d'une seule ligne
+    SELECT *
+    FROM `user`
+    WHERE `id` = 53
+
+    -- sélection de toutes les colonnes de plusieurs lignes
+    SELECT *
+    FROM `user`
+    WHERE `newsletter` = 1
+
+    -- sélection de plusieurs colonnes de plusieurs lignes
+    SELECT id, email
+    FROM `user`
+    WHERE `newsletter` = 1
+
+## Insert de données
+
+    -- insertion d'une seule ligne
+    INSERT INTO `user` (`email`, `login`, `newsletter`, `devices`)
+    VALUES ('foo@example.com', 'foo', '1', '1');
+
+    -- insertion de plusieurs lignes
+    INSERT INTO `user` (`email`, `login`, `newsletter`, `devices`)
+    VALUES
+    ('foo@example.com', 'foo', '1', '1'),
+    ('bar@example.com', 'bar', '1', '5'),
+    ('baz@example.com', 'baz', '1', '2');
+
+## Modifications de données
+
+    -- modification d'une seule colonne d'une seule ligne
+    UPDATE `user` SET `email` = 'foo@example.com' WHERE `id` = 53;
+
+    -- modification de plusieurs colonnes d'une seule ligne
+    UPDATE `user` SET `email` = 'foo@example.com', `newsletter` = 1 WHERE `id` = 53;
+
+    -- modification d'une seule colonne de toutes les lignes
+    -- notez qu'il n'y a pas de WHERE
+    UPDATE `user` SET `devices` = 1;
+
+    -- modification de plusieurs colonnes de toutes les lignes
+    -- notez qu'il n'y a pas de WHERE
+    UPDATE `user` SET `email` = 'foo@example.com', `newsletter` = 1;
+
+    -- modification de toutes les lignes avec un remplacement de texte
+    -- notez qu'il n'y a pas de WHERE
+    UPDATE `user` SET `email` = REPLACE(`email`, 'example.com', 'example.org');
+
+## Suppression de données
+
+    -- suppression d'une seule ligne
+    DELETE FROM `user` WHERE `id` = 53;
+
+    -- suppression de toutes les lignes
+    -- notez qu'il n'y a pas de WHERE
+    DELETE FROM `user`;
+
+## Sélection de données avec jointure
+
+    -- sélection de tous les utilisateurs et leur ville
+    -- relation "many to one"
+    SELECT *
+    FROM `user`
+    INNER JOIN `city` ON `user`.`city_id` = `city`.`id`;
+
+    -- sélection d'un seul utilisateur et sa ville
+    -- relation "many to one"
+    SELECT *
+    FROM `user`
+    INNER JOIN `city` ON `user`.`city_id` = `city`.`id`
+    WHERE `user`.`id` = 53;
+
+    -- sélection de tous les utilisateurs et de leurs groupes
+    -- relation "many to many"
+    SELECT *
+    FROM `user`
+    INNER JOIN `group_user` ON `user`.`id` = `group_user`.`user_id`
+    INNER JOIN `group` ON `group_user`.`group_id` = `group`.`id`;
+
+    -- sélection d'un seul utilisateur et de ses groupes
+    -- relation "many to many"
+    SELECT *
+    FROM `user`
+    INNER JOIN `group_user` ON `user`.`id` = `group_user`.`user_id`
+    INNER JOIN `group` ON `group_user`.`group_id` = `group`.`id`
+    WHERE `user`.`id` = 53;
+
+## `EXPLAIN`
+
+`EXPLAIN` permet de savoir comment la requête est exécutée par MySQL.
+Cela donne des indications sur la performance de la requête.
+
+ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure option d'un point de vue performance.
+
+    -- requête qui utilise la colonne id
+    EXPLAIN
+    SELECT *
+    FROM `user`
+    WHERE `id` = 1;
+
+    -- requête qui n'utilise pas la colonne id
+    EXPLAIN
+    SELECT *
+    FROM `user`
+    WHERE email = 'foo@example.com';
+
+## Générateurs de données de test
+
+- [Mockaroo - Random Data Generator and API Mocking Tool | JSON / CSV / SQL / Excel](https://mockaroo.com/)
+- [generatedata.com](http://www.generatedata.com/)
+- [Dummy data for MYSQL database](http://filldb.info/)
 
 ## Doc
 
 - [debian - debconf selections for phpmyadmin unattended installation with no webserver installed and no dbconfig-common - Stack Overflow](https://stackoverflow.com/questions/30741573/debconf-selections-for-phpmyadmin-unattended-installation-with-no-webserver-inst)
 - [apache2 - How to solve the phpmyadmin not found issue after upgrading php and apache? - Ask Ubuntu](https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache)
+
+- [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996)
