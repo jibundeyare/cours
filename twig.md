@@ -26,14 +26,20 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
     <?php
 
+    // activation du système d'autoloading de Composer
     require __DIR__.'/../vendor/autoload.php';
 
+    // instanciation du chargeur de templates
     $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+    // instanciation du moteur de template
     $twig = new Twig_Environment($loader);
 
+    // initialisation d'une donnée
     $greeting = 'Hello Twig!';
 
+    // affichage du rendu d'un template
     echo $twig->render('hello-twig.html.twig', [
+        // transmission de données au template
         'greeting' => $greeting,
     ]);
 
@@ -73,13 +79,13 @@ Le mode de variables strictes permet d'afficher une erreur si vous utilisez une 
 
 Modifier la partie `new Twig_Environment($loader)` et charger l'extension de debug `Twig_Extension_Debug` juste après :
 
-    // activer le mode debug et le mode de variables strictes
+    // activation du mode debug et du mode de variables strictes
     $twig = new Twig_Environment($loader, [
         'debug' => true,
         'strict_variables' => true,
     ]);
 
-    // charger l'extension Twig_Extension_Debug
+    // chargement de l'extension Twig_Extension_Debug
     $twig->addExtension(new Twig_Extension_Debug());
 
 Maintenant il est possible d'inspecter le contenu d'une variable dans un template Twig.
@@ -102,7 +108,7 @@ Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
 Modifier la partie `new Twig_Environment($loader)` :
 
-    // activer le cache
+    // activation du cache
     $twig = new Twig_Environment($loader, [
         'cache' => __DIR__.'/../var/cache',
     ]);
@@ -239,22 +245,22 @@ NB La notation est la même pour accéder à une clé d'un tableau ou à un attr
 
 ### Les structures conditionnelles (blocs `if`)
 
-Afficher la variable `foo` si la variable  `bar` est égal à `true` :
+Si la variable  `foo` est égal à `true`, afficher la variable `bar` :
 
-    {% if bar %}
-        {{ foo }}
+    {% if foo %}
+        {{ bar }}
     {% endif %}
 
-Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
+Si l'attribut `bar` de la variable  `foo` est égal à `true`, afficher la variable `baz`  :
 
-    {% if baz.bar %}
-        {{ foo }}
+    {% if foo.bar %}
+        {{ baz }}
     {% endif %}
 
-Afficher la variable `foo` si l'attribut `bar` de la variable  `baz` est égal à `true` :
+Si la clé ou l'attribut `bar` du tableau ou de l'objet `foo` existe, afficher la valeur de `foo.bar` :
 
-    {% if baz.bar %}
-        {{ foo }}
+    {% if foo.bar is defined %}
+        {{ foo.bar }}
     {% endif %}
 
 ### Les boucles
@@ -533,12 +539,12 @@ Afficher du Twig sans le faire interpréter :
 ### Front-end
 
 - [Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/templates.html)
-- [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/for.html)
 - [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/if.html)
-- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
+- [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/for.html)
+(https://twig.symfony.com/doc/2.x/tags/verbatim.html)
 - [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
 - [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/escape.html)
-
+- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine]
 ### Formatage de nombres
 
 - [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/number_format.html)

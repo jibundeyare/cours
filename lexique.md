@@ -65,7 +65,9 @@
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
 - WIP : Work In Progress (travail en cours)
+- wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
+- zoning : voir wireframe
 
 &ast; définition issue de Wikipedia
 

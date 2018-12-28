@@ -21,6 +21,32 @@
 - tableau (array)
 - objet (object)
 
+## Valeurs vides
+
+Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()` :
+
+- `0` : zéro (nombre entier)
+- `.0` : zéro (nombre à virgule flottante)
+- `false`
+- `''` ou `""` : une chaîne de caractères vide
+- `'0'` ou `"0"` : une chaîne de caractères avec un zéro
+- `[]` ou `array()` : un tableau vide
+- `null` : la valeur nulle
+
+## Opérateurs
+
+- `=` : affectation
+- `==` : égalité
+- `>` : plus grand que
+- `<` : plus petit que
+- `>=` : plus grand ou égal à
+- `<=` : plus petit ou égal à
+- `!=` : différent de
+- `===` : identité (type de données identique et valeur identique)
+- `!==` : non identité (type de données différent ou valeur différente)
+- `&&` : « et » logique
+- `||` : « ou » logique
+
 ## Fonctions
 
 Une fonction doit d'abord être définie.
@@ -31,7 +57,8 @@ Quand une fonction a été définie, on l'appeler (c-à-d l'utiliser).
 
 Exemple de définition :
 
-    function foo($bar) {
+    function foo($bar)
+    {
         $baz = 'Hello ';
         return $baz . $bar;
     }
@@ -73,27 +100,31 @@ Ce symbol sert à affecter (attribuer) une valeur à une variable.
 Ce symbol sert à vérifier l'égalité entre deux valeurs.
 La plupart du temps, on le trouve dans des blocs de type `if`.
 
+`===` est interrogatif aussi.
+Ce symbol sert à vérifier que deux valeurs sont égales et que leur type de données est aussi identique.
+La plupart du temps, on le trouve aussi dans des blocs de type `if`.
+
 ### Inclusion
 
-L'instruction `include()` permet d'insérer le code provenant d'un autre fichier dans le fichier courant.
+L'instruction `require()` permet d'insérer le code provenant d'un autre fichier dans le fichier courant.
 On peut imaginer que PHP fait un copier-coller à notre place.
 
-`include` et `require` font la même chose (un copier-coller dynamique de fichier) mais `require` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
+Les instructions `require()` et `include()` font la même chose (un copier-coller dynamique de fichier) mais `require()` a l'avantage de stopper le programme si le fichier n'est pas trouvé.
 
 ### Tableaux
 
+`[]` est la notation actuelle (recommandée) qui permet de créer un tableau.
 `array()` est l'ancienne notation qui permet de créer un tableau.
-`[]` est la nouvelle notation (recommandée) qui permet de créer un tableau.
 
 Exemple :
-
-    // ancienne notation
-    $foo = array();
-    $foo2 = array(42, 'azerty', 3.14, true);
 
     // notation actuelle
     $bar = [];
     $bar2 = [42, 'azerty', 3.14, true];
+
+    // ancienne notation
+    $foo = array();
+    $foo2 = array(42, 'azerty', 3.14, true);
 
 ### Intégration de code PHP dans du code HTML
 
@@ -168,8 +199,8 @@ Si je veux qu'un script puisse s'exécuter pendant 50 minutes sans faire de time
 
 ## `isset()` VS `!empty()`
 
-`isset()` sert à vérifier que l'utilisateur a envoyé des données.
-`!empty()` sert à vérifier qu'un champ obligatoire a été renseigné (est non vide).
+`isset()` (est défini) sert à vérifier que l'utilisateur a envoyé des données.
+`!empty()` (non vide) sert à vérifier qu'un champ obligatoire a été renseigné.
 
 ## Sécurité
 
@@ -202,6 +233,13 @@ ou équivalent :
 ## Doc
 
 - [PHP: Hypertext Preprocessor](https://secure.php.net/)
+
+- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
+- [PSR-1: Basic Coding Standard - PHP-FIG](https://www.php-fig.org/psr/psr-1/)
+- [PSR-2: Coding Style Guide - PHP-FIG](https://www.php-fig.org/psr/psr-2/)
+- [PSR-0: Autoloading Standard - PHP-FIG](https://www.php-fig.org/psr/psr-0/)
+- [PSR-4: Autoloader - PHP-FIG](https://www.php-fig.org/psr/psr-4/)
+
 - [PHP: Alternative syntax for control structures - Manual](https://secure.php.net/manual/en/control-structures.alternative-syntax.php)
 - [PHP: Operators - Manual](https://secure.php.net/manual/en/language.operators.php)
 - [operators - Reference — What does this symbol mean in PHP? - Stack Overflow](https://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php?rq=1)

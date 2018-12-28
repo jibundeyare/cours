@@ -122,7 +122,8 @@ Cela permet de :
 
 - `git status` : affiche le nom de la branche courante, la synchronisation avec `origin` et l'état des fichiers
 - `git log` : affiche la liste des commits
-- `git diff` : affiche les différences
+- `git show` : affiche les modifications enregistrées dans le dernier commit
+- `git diff` : affiche les différences entre deux commits
 - `git add` : notifie à git les fichier qu'on veut commiter, c-à-d copie les fichiers dans la zone de staging
 - `git reset` : notifie à git les fichier qu'on veut plus commiter, c-à-d supprime les fichiers de la zone de staging
 - `git commit` : enregistre les modification
