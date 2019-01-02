@@ -3,6 +3,7 @@
 - API : Application Programming Interface
 - Array : tableau, type de données
 - Attribut : en POO, un attribut désigne une variable
+- BATX : Baidu, Alibaba, Tencent, Xiaomi ; les grandes multinationales chinoises du net ; voir aussi FAANG et GAFAM
 - BC : backward compatibility (rétro-compatibilité)
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
@@ -23,8 +24,11 @@
 - DSI : Directeur du Système d'Information; Direction du Système d'Information
 - ESN : Entreprise de Services du Numérique; voir aussi SS2I
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
+- FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; les grandes multinationales occidentales du net ; voir aussi BATX et GAFAM
+- Feedbacks : retours d'expérience des utilisateurs
 - Float : nombre à virgule flottant, type de données
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
+- GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - Integer : nombre entier, type de données
@@ -51,6 +55,7 @@
 - PR : Pull Request
 - Repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
+- Retex : retours d'expérience ; voir aussi feedbacks
 - RFC : Request For Comments (demande de commentaires, demande d'avis); série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
 - RTFM : Read The Fucking Manual (lis le putain de manuel)
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
