@@ -1,6 +1,6 @@
 # MySQL
 
-Ce cours théorique aborde quelques notions élémentaires à connaître à propose de MySQL.
+Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
 
 Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mysql](https://github.com/jibundeyare/src-mysql).
 
