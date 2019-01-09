@@ -16,3 +16,9 @@ Dans chacune des sections, cocher les options suivantes.
 
 - Ajouter une instruction DROP TABLE / VIEW / PROCEDURE / FUNCTION / EVENT / TRIGGER
 - IF NOT EXISTS (moins efficace car les index seront générés lors de la création de la table)
+
+## Doc
+
+- [debian - debconf selections for phpmyadmin unattended installation with no webserver installed and no dbconfig-common - Stack Overflow](https://stackoverflow.com/questions/30741573/debconf-selections-for-phpmyadmin-unattended-installation-with-no-webserver-inst)
+- [apache2 - How to solve the phpmyadmin not found issue after upgrading php and apache? - Ask Ubuntu](https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache)
+

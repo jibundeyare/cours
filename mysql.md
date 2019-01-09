@@ -1,5 +1,15 @@
 # MySQL
 
+Ce cours théorique aborde quelques notions élémentaires à connaître à propose de MySQL.
+
+Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mysql](https://github.com/jibundeyare/src-mysql).
+
+## MariaDB
+
+MariaDB est officiellement le successeur open source et libre de MySQL (acquis par la société Oracle).
+MariaDB a été créé par les principaux développeur de MySQL.
+MariaDB remplace MySQL dans plusieurs distibutions Linux.
+
 ## Nommage des objets (base de données, tables, colonnes, etc)
 
 - les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
@@ -20,14 +30,9 @@ Les backticks permettent d'utiliser des mots clés réservés au langage SQL com
 
 Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des backticks, on peut créer une table `user` ou sélectionner des lignes de dedans.
 
-    -- création d'une table `user`
-    CREATE TABLE `user` (
-    `id` int(10) UNSIGNED NOT NULL,
-    `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-    `login` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-    `newsletter` tinyint(1) NOT NULL,
-    `devices` int(11) DEFAULT '1'
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+    -- sélection de données de la table `user`
+    SELECT *
+    FROM `user`
 
 ## Sélection de données
 
@@ -194,7 +199,7 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 
 ## Doc
 
-- [debian - debconf selections for phpmyadmin unattended installation with no webserver installed and no dbconfig-common - Stack Overflow](https://stackoverflow.com/questions/30741573/debconf-selections-for-phpmyadmin-unattended-installation-with-no-webserver-inst)
-- [apache2 - How to solve the phpmyadmin not found issue after upgrading php and apache? - Ask Ubuntu](https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache)
-
+- [Cours et Tutoriels sur le Langage SQL](https://sql.sh/)
+- [Learn - MariaDB.org](https://mariadb.org/learn/)
 - [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996)
+
