@@ -217,8 +217,9 @@ Les custom fields permettent de rajouter des champs dans une page, un article ou
 
 Les formulaires sont utilisés pour permettre aux visiteurs de contacter le propriétaire du site ou de s'abonner à une newsletter.
 
-- [Formidable Forms – Form Builder for WordPress](https://wordpress.org/plugins/formidable/)
 - [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+- [Formidable Forms – Form Builder for WordPress](https://wordpress.org/plugins/formidable/)
+- [Ninja Forms – The Easy and Powerful Forms Builder | WordPress.org](https://fr.wordpress.org/plugins/ninja-forms/)
 
 #### Forum
 

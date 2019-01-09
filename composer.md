@@ -10,6 +10,9 @@ Les paquets sont recensés sur le site [Packagist](https://packagist.org/).
 
 Télécharger et exécuter l'installeur [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe).
 
+Attention : quand l'installeur vous demande quelle version de PHP utiliser, choisissez bien la dernière version possible (donc PHP 7+).
+Et rappelez-vous que PHP 5.6 est officiellement obsolète depuis le 01/01/2019.
+
 ### Macos et Linux
 
 Ouvrir un terminal, exécuter les commandes de la page [Composer](https://getcomposer.org/download/) puis :
@@ -59,7 +62,7 @@ Tester l'installation :
 
 Chercher un paquet :
 
-    composer search  [mot clé]
+    composer search  [mot-clé]
 
 Obtenir des infos sur un paquet non installé :
 
@@ -123,6 +126,14 @@ Symfony Flex est un plugin Composer qui permet d'installer Symfony et des Bundle
 
 Cet outil est utilisable à partir de Symfony 3.4.
 
+## Packagist
+
+Le site [packagist.org](https://packagist.org/) est un annuaire communautaire de tous les packages disponible avec Composer.
+
+C'est donc aussi un moteur de recherche de packages PHP qui peut remplacer la commande `composer search [mot-clé]`.
+
+Si vous créer un package et souhaitez le diffuser, il faudra déclarer son existence sur ce site pour que la communauté PHP puisse le trouver et l'installer avec Composer.
+
 ## Doc
 
 - [Composer](https://getcomposer.org/)
@@ -133,3 +144,4 @@ Cet outil est utilisable à partir de Symfony 3.4.
 - [Versions and constraints - Composer](https://getcomposer.org/doc/articles/versions.md)
 - [The composer.json Schema - Composer](https://getcomposer.org/doc/04-schema.md#psr-4)
 - [Using Symfony Flex to Manage Symfony Applications (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/setup/flex.html)
+- [Packagist](https://packagist.org/)

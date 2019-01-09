@@ -43,6 +43,14 @@ Les fichiers de config MySQL sont recherchés dans cet ordre :
 
 Si le premier n'est pas trouvé, MAMP cherche le suivant et ainsi de suite.
 
+## Login et password MySQL
+
+Par défaut, le login est `root` et le password est aussi `root`.
+
+## Port MySQL
+
+Par défaut, le port est `8889` et non le port standard `3306`.
+
 ## Logs
 
 Les logs d'erreurs Apache sont stockés dans :
@@ -56,3 +64,4 @@ Les logs d'erreurs MySQL sont stockés dans :
 Les logs d'erreurs PHP sont stockés dans :
 
     /Applications/MAMP/logs/php_error.log
+
