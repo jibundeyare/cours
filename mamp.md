@@ -28,7 +28,11 @@ Le fichier `php.ini` utilisé est dans :
 
 Remplacez `X.Y.Z` par la version de PHP utilisée.
 
-## PhpMyAdmin
+## Port de MySQL
+
+Par défaut, le port est `8889` et non le port standard `3306`.
+
+## Login et password pour MySQL et PhpMyAdmin
 
 Le login et le password par défaut sont tout les deux `root`.
 
@@ -42,14 +46,6 @@ Les fichiers de config MySQL sont recherchés dans cet ordre :
     ~/.my.cnf
 
 Si le premier n'est pas trouvé, MAMP cherche le suivant et ainsi de suite.
-
-## Login et password MySQL
-
-Par défaut, le login est `root` et le password est aussi `root`.
-
-## Port MySQL
-
-Par défaut, le port est `8889` et non le port standard `3306`.
 
 ## Logs
 
