@@ -1,5 +1,9 @@
 # MySQL
 
+@todo fusionner avec une partie de la doc phpmyadmin
+@todo ajouter un lien vers le repo src-mysql
+@todo créer une vidéo qui montre comment ajouter une clé étrangère à une table
+
 Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
 
 Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mysql](https://github.com/jibundeyare/src-mysql).
@@ -33,6 +37,8 @@ Un dernier conseil :
 ## Interclassement ("collation" en anglais)
 
 L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
+
+Cette page de stackoverflow explique pourquoi en détail : [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996).
 
 ## Backticks (accent grave)
 
