@@ -220,6 +220,7 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 ## Doc
 
 - [Cours et Tutoriels sur le Langage SQL](https://sql.sh/)
+- [SQLZOO](https://zh.sqlzoo.net/)
 - [Learn - MariaDB.org](https://mariadb.org/learn/)
 - [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996)
 
