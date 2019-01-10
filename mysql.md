@@ -12,13 +12,23 @@ MariaDB remplace MySQL dans plusieurs distibutions Linux.
 
 ## Nommage des objets (base de données, tables, colonnes, etc)
 
-- les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
-- pour le nom de la BDD, choisissez le même nom de votre projet, en remplaçant les caractères interdits par des caractères autorisés.
+Quelques règles à respecter :
+
+- les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent et être écrit en caractères minuscules.  
+  Il faut donc se limiter aux caractères minuscules de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+- pour le nom de la BDD, choisissez le même nom que votre projet, en remplaçant les caractères interdits par des caractères autorisés.
 - nommez les tables au singulier.
-- nommez les tables qui ont une valeur métier dans la langue de votre commanditaire.
-À moins de travailler sur un projet open source où l'anglais est de mise, cela n'a pas de sens de tout traduire en anglais. Par contre nommer en anglais tout ce qui n'est pas métier (par exemple table `user`, table `config`, etc).
-- nommez `id` la colonne de l'identifiant primaire de vos tables.
-- formez le nom des colonnes qui font référence à une clé étrangère avec « le nom de la table étrangère + underscore + nom de la colonne étrangère ». Exemple : si la colonne ciblée est `event.id` (table `event`, colonne `id`), cela donne `event_id`.
+- nommez `id` la colonne de clé primaire de vos tables.
+- formez le nom des colonnes qui font référence à une clé étrangère avec « le nom de la table étrangère + underscore + nom de la colonne étrangère ».  
+  Exemple : si la colonne ciblée est `project.id` (table `project`, colonne `id`), cela donne `project_id`.
+- formez le nom des contraintes de clé étrangère avec « fk + underscore + le nom de la table en cours + underscore + le nom de la table étrangère + underscore + nom de la colonne étrangère ».  
+  Exemple : si on est dans la table `student` et que la colonne ciblée est `project.id` (table `project`, colonne `id`), cela donne `fk_student_project_id`.
+
+Un dernier conseil :
+
+- nommez les tables qui ont une valeur métier dans la langue de votre client.  
+  À moins de travailler sur un projet open source où l'anglais est de mise, cela n'a pas de sens de tout traduire en anglais.  
+  Par contre nommez en anglais tout ce qui n'est pas lié au métier (par exemple table `user`, table `config`, etc).
 
 ## Interclassement ("collation" en anglais)
 
