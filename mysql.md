@@ -50,7 +50,9 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     SELECT *
     FROM `user`
 
-## Sélection de données
+## Les requêtes SQL
+
+### Sélection de données
 
     -- sélection de toutes les colonnes de toutes les lignes
     SELECT *
@@ -79,7 +81,7 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     FROM `user`
     WHERE `newsletter` = 1
 
-## Insert de données
+### Insert de données
 
     -- insertion d'une seule ligne
     INSERT INTO `user` (`email`, `login`, `newsletter`, `devices`)
@@ -92,7 +94,7 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     ('bar@example.com', 'bar', '1', '5'),
     ('baz@example.com', 'baz', '1', '2');
 
-## Modifications de données
+### Modifications de données
 
     -- modification d'une seule colonne d'une seule ligne
     UPDATE `user` SET `email` = 'foo@example.com' WHERE `id` = 53;
@@ -112,7 +114,7 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     -- notez qu'il n'y a pas de WHERE
     UPDATE `user` SET `email` = REPLACE(`email`, 'example.com', 'example.org');
 
-## Suppression de données
+### Suppression de données
 
     -- suppression d'une seule ligne
     DELETE FROM `user` WHERE `id` = 53;
@@ -158,7 +160,9 @@ Et un objet `baz` peut être rattaché à plusieurs objets `foo`.
 Exemple : une voiture de fonction peut être réservée (successivement) par plusieurs salariés.
 Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
 
-## Sélection de données avec jointure
+## Des requêtes SQL plus complexes
+
+### Sélection de données avec jointure
 
     -- sélection de tous les utilisateurs et leur ville
     -- relation "many to one"
@@ -188,7 +192,7 @@ Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
     INNER JOIN `group` ON `group_user`.`group_id` = `group`.`id`
     WHERE `user`.`id` = 53;
 
-## `EXPLAIN`
+### Optimisation de requête avec `EXPLAIN`
 
 `EXPLAIN` permet de savoir comment la requête est exécutée par MySQL.
 Cela donne des indications sur la performance de la requête.
