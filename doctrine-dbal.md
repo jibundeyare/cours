@@ -68,7 +68,7 @@ Plusieurs méthodes (comprendre fonctions dans le sens POO) sont utilisables.
 
 Pour lire des données (`SELECT`) : `fetchAll()`, `fetchAssoc()` ou `executeQuery()`.
 
-Pour écrire des données (`INSERT`, `UPDATE` et `DELETE`) : `insert()`, `update()`, `delete()` ou `executeQuery()`.
+Pour écrire des données (`INSERT`, `UPDATE` et `DELETE`) : `insert()`, `update()`, `delete()` ou `executeUpdate()`.
 
 ## `SELECT` (ou read, le R de CRUD) de plusieurs lignes
 

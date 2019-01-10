@@ -1,6 +1,14 @@
 # Code sniffer
 
-Voir [Code style](code-style.md).
+Ces trois documents forment un ensemble :
+
+- [code-sniffer.md](code-sniffer)
+- [code-style.md](code-style.md)
+- [php-cs-fixer.md](php-cs-fixer.md)
+
+Code sniffer est un outil qui réécrit votre code en améliorant le code style.
+
+Pour commencer, `squizlabs/php_codesniffer` est indiqué mais par la suite, pour travailler avec le framework Symfony `friendsofphp/php-cs-fixer` est un meilleur choix.
 
 ## Installation
 
@@ -12,7 +20,7 @@ Pour installer le paquet :
 
     composer require --dev squizlabs/php_codesniffer
 
-## Commandes
+## Utilisation
 
 Vérifier le code style d'un fichier PHP :
 
