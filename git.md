@@ -136,6 +136,8 @@ Cela permet de :
 - `git merge [nom-de-branche]` : mixe le code de la branche `[nom-de-branche]` dans la branche courante
 - `git rebase master` : couper la branche courante et la rebaser sur le dernier commit de la branche master
 
+@todo `git tag` ; à relier avec le versioning
+
 ## Messages de commit
 
 Le message de commit se compose au minimum d'un titre.
@@ -196,6 +198,10 @@ Voici des tags possibles :
 Pareil qu'avec les codes de tâches, vous pouvez inventer les vôtres.
 Soyez créatifs et cohérents.
 
+## Focus sur le contenu précis du message de commit
+
+@todo ajouter les liens vers les articles de blog référencés ci-dessous
+
 ## `.gitignore`
 
 Ce fichier dit à Git de ne pas tenir compte de certain fichier.
@@ -207,6 +213,8 @@ Dans votre fichier `.gitignore` :
     /config/mail.yml
     /cache/*
     !cache/.gitkeep
+
+@todo explication sur les slashs (chemin relatif, chemin absolu)
 
 ## Utilisation
 
@@ -229,7 +237,7 @@ Pour des cas d'usage typiques, voir :
     # créer un premier commit
     git commit -m "Création du repo"
 
-### Création du repo sur github / framagit / bitcuket
+### Création du repo sur github / framagit / bitbucket
 
     # todo: s'il y a lieu, créer un compte sur le site
     # todo: sur le site, créer un nouveau repo (attention à donner le même nom que celui du dossier)
