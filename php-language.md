@@ -51,23 +51,21 @@ Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()`
 
 Une fonction doit d'abord être définie.
 Elle peut prendre un paramètre, plusieurs paramètres ou aucun paramètre.
-Elle peut renvoyer une valeur ou aucune valeur.
+Elle peut renvoyer une valeur ou ne n'en renvoyer aucune.
 
-Quand une fonction a été définie, on l'appeler (c-à-d l'utiliser).
+Quand une fonction a été définie, on peut l'appeler (c-à-d l'utiliser).
 
-Exemple de définition :
+Exemple de définition d'une fonction qui prend deux paramètres et renvoit une valeur :
 
-    function foo($bar)
+    function foo($a, $b)
     {
-        $baz = 'Hello ';
-        return $baz . $bar;
+        return $a + $b;
     }
 
 Exemple d'appel :
 
-    $name = 'foo';
-    // appel de la fonction foo()
-    $result = foo($name);
+    // appel de la fonction foo() et affectation de la valeur retournée à la variable $result
+    $result = foo(42, 123);
 
 ## Programmation orientée objet (POO)
 
@@ -213,8 +211,9 @@ Si je veux qu'un script puisse s'exécuter pendant 50 minutes sans faire de time
 
 ## `isset()` VS `!empty()`
 
-`isset()` (est défini) sert à vérifier que l'utilisateur a envoyé des données.
-`!empty()` (non vide) sert à vérifier qu'un champ obligatoire a été renseigné.
+`isset()` veut dire « est défini » en anglais; sert à vérifier que l'utilisateur a envoyé des données.
+
+`!empty()` veut dire « non vide » en anglais; sert à vérifier qu'un champ obligatoire a été renseigné.
 
 ## Sécurité
 
