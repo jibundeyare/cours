@@ -47,16 +47,22 @@ Taper le code suivant dans un nouveau fichier :
     // la variable `$conn` permet de communiquer avec la BDD
     $conn = DriverManager::getConnection($connectionParams, $config);
 
+    // stockage d'une requête SQL dans une variable
+    $sql = '
+    SELECT *
+    FROM item
+    ';
+
     // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
-    $items = $conn->fetchAll('SELECT * FROM item');
+    $items = $conn->fetchAll($sql);
 
     // parcours de chacun des éléments du tableau `$items`
     foreach ($items as $item) {
         // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
         // chaque clé alpha-numérique représente une colonne de la table
-        echo $item['id'].'<br />';          // affichage de la colonne `id`
-        echo $item['name'].'<br />';        // affichage de la colonne `name`
-        echo $item['description'].'<br />'; // affichage de la colonne `description`
+        echo $item['id'].'<br />';
+        echo $item['name'].'<br />';
+        echo $item['description'].'<br />';
         echo '<br />';
     }
 

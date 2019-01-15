@@ -83,6 +83,20 @@ En POO :
 - une variable se nomme « attribut » ou « membre »
 - une fonction se nomme « méthode »
 
+### La portée des variables (le scope, en anglais)
+
+Dans une classe, un attribut (une variable) doit toujours être `private`.
+Il y a une exception : si la variable doit être accessible depuis une classe enfant, il faut qu'elle soit `protected`.
+
+Les méthodes peuvent être `public`, `protected` ou `private` selon les cas d'usage.
+En cas de doute, partez du principe qu'elles sont `public`.
+
+### Les `getters` et les `setters`
+
+Dans une classe les méthodes (fonctions) qui permettent de lire un attribut s'appelent des `getters`.
+
+Les méthodes qui permettent de changer la valeur d'un attribut s'appelent des `setters`.
+
 ## Syntaxe
 
 ### Bloc PHP

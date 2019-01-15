@@ -61,7 +61,7 @@ Exemple avec l'éditeur de code Sublime Text 3 :
 
     git config --global core.editor "subl -n -w"
 
-Exemple avec l'éditeur de code Sublime Text 3 :
+Exemple avec l'éditeur de code Visual Studio Code (version open source) :
 
     git config --global core.editor "code --wait"
 

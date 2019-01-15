@@ -1,4 +1,6 @@
-# EasyAdmin
+# EasyAdmin Bundle
+
+EasyAdmin est un bundle Symfony qui permet de construire des back-offices.
 
 ## Installation
 

@@ -2,7 +2,7 @@
 
 @todo fusionner avec une partie de la doc phpmyadmin
 @todo ajouter un lien vers le repo src-mysql
-@todo créer une vidéo qui montre comment ajouter une clé étrangère à une table
+@todo ajouter liens vers vidéos vimeo
 
 Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
 
@@ -18,7 +18,7 @@ MariaDB remplace MySQL dans plusieurs distibutions Linux.
 
 Quelques règles à respecter :
 
-- les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni accent et être écrit en caractères minuscules.  
+- les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-` (tiret du milieu), ni point `.`, ni accent et être écrit en caractères minuscules.  
   Il faut donc se limiter aux caractères minuscules de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
 - pour le nom de la BDD, choisissez le même nom que votre projet, en remplaçant les caractères interdits par des caractères autorisés.
 - nommez les tables au singulier.
@@ -52,7 +52,18 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
 
 ## Les requêtes SQL
 
+### CRUD
+
+Le CRUD désigne les quatre opérations de base qui sont possible avec un objet stocké en BDD :
+
+- Create : créer un objet
+- Read : lire les données d'un ou de plusieurs objets
+- Update : mettre à jour les données d'un objet
+- Delete : supprimer un objet
+
 ### Sélection de données
+
+Ces requêtes correspondent au Read du CRUD.
 
     -- sélection de toutes les colonnes de toutes les lignes
     SELECT *
@@ -83,6 +94,8 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
 
 ### Insert de données
 
+Ces requêtes correspondent au Create du CRUD.
+
     -- insertion d'une seule ligne
     INSERT INTO `user` (`email`, `login`, `newsletter`, `devices`)
     VALUES ('foo@example.com', 'foo', '1', '1');
@@ -95,6 +108,8 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     ('baz@example.com', 'baz', '1', '2');
 
 ### Modifications de données
+
+Ces requêtes correspondent au Update du CRUD.
 
     -- modification d'une seule colonne d'une seule ligne
     UPDATE `user` SET `email` = 'foo@example.com' WHERE `id` = 53;
@@ -115,6 +130,8 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
     UPDATE `user` SET `email` = REPLACE(`email`, 'example.com', 'example.org');
 
 ### Suppression de données
+
+Ces requêtes correspondent au Delete du CRUD.
 
     -- suppression d'une seule ligne
     DELETE FROM `user` WHERE `id` = 53;
@@ -163,6 +180,8 @@ Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
 ## Des requêtes SQL plus complexes
 
 ### Sélection de données avec jointure
+
+Ces requêtes correspondent au Read du CRUD.
 
     -- sélection de tous les utilisateurs et leur ville
     -- relation "many to one"

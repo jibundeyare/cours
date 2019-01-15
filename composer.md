@@ -50,9 +50,9 @@ et enfin inclure le code d'autoloading dans notre application en y ajoutant la l
 
 Si les fichiers PHP du dossier `src/` sont dans le namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
 
-"autoload": {
-    "psr-4": {"Foo\\": "src/"}
-}
+    "autoload": {
+        "psr-4": {"Foo\\": "src/"}
+    }
 
 ## Commandes
 

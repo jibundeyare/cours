@@ -1,5 +1,7 @@
 # Livraison
 
+Pour en savoir plus sur le déploiement de projets Symfony, voir [easydeploy.md](easydeploy.md).
+
 En général « la livraison » et « la mise en production (MEP) » veulent dire la même chose.
 
 Mais s'il faut les différencier, on peut dire que :

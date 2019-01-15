@@ -18,24 +18,22 @@ Je note entre autre ceci :
 
 ## Concepts de base
 
-- Entity
-- Template (Twig)
-- Controller
+Ces concepts sont les implémentations du modèle MVC avec Symfony :
 
+- Controller
+- Entity
+- Template Twig
+
+Ces autres concepts sont indispensables pour développer des applications en Symfony :
+
+- Route
 - ORM (object relational mapping)
 - EntityManager
 - Repository
-- Route
-- Template Twig
 - Form
 - Validation
+- Container
 - Service
-
-## Installation
-
-Générer un `secret token` :
-
-- [Symfony 2 Secret Generator - nux.net](http://nux.net/secret)
 
 ## Installation
 
@@ -88,23 +86,32 @@ Conseils :
 - avec MAMP, le `database_user` et le `database_password` par défaut sont tout les deux `root`
 - si vous avez une erreur de connexion avec MAMP, consultez « Erreur de connexion à la base de données avec MAMP » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md)
 
+## Le `secret token`
+
+Si vous voulez regénérer le `secret_token` de votre fichier `parameters.yml`, le plus simple est d'utiliser l'outil en ligne :
+
+- [Symfony 2 Secret Generator - nux.net](http://nux.net/secret)
+
 ### Création de la base de données
 
 #### Avec la console
+
+Interrompre le serveur web avec `CTRL + C` si nécessaire.
 
 Dans le terminal :
 
     php bin/console doctrine:database:create
 
-Interrompre le serveur web avec `Ctrl-c` si nécessaire.
+Relancer le serveur web avec la commande `php bin/console server:run` si nécessaire.
 
 #### Avec PhpMyAdmin
 
 Avec PhpMyAdmin, créer une nouvelle base de données.
 
-Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni accent. Il est donc préférable de se limiter aux caractères de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni point `.`, ni accent.
+Il faut donc se limiter aux caractères minuscules de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
 
-Pour le nom de la BDD, choisissez le même nom que votre projet.
+Pour le nom de la BDD, choisissez le même nom que votre projet, en remplaçant les caractères interdits par des caractères autorisés.
 
 L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
 
@@ -140,7 +147,9 @@ Voir [remg-generator.md](remg-generator.md).
 
 Voir [doctrine-migrations.md](doctrine-migrations.md).
 
-## Relations cardinales entre entités
+## Entités
+
+### Relations cardinales entre entités
 
 Il existe trois types de relations cardinales entre entités :
 
@@ -148,7 +157,7 @@ Il existe trois types de relations cardinales entre entités :
 - `one to many`
 - `many to many`
 
-Voir [code-style.md](code-style.md) pour les questions de nommage de variable au singulier ou pluriel.
+Voir [code-style.md](code-style.md) pour les questions de nommage de variable au singulier ou au pluriel.
 
 ### Relation `many to one`
 

@@ -2,9 +2,7 @@
 
 Cet outil permet d'installer Symfony.
 
-Il est utilisable avec les branches `2.x` et `3.x` mais pas avec la branche `4.x`.
-
-À partir de la branche `4.x`, il faut utiliser `composer` pour installer Symfony.
+Il est utilisable avec les branches `2.x`, `3.x` et `4.x`.
 
 ## Installation
 
@@ -56,6 +54,10 @@ Fermer le terminal. Ouvrir un nouveau terminal puis tester le binaire :
     sudo chmod a+x /usr/local/bin/symfony
 
 ## Commandes utiles
+
+Tester l'installation :
+
+    symfony -v
 
 Installer Symfony 2.8 :
 
