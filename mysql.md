@@ -236,6 +236,13 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 - [generatedata.com](http://www.generatedata.com/)
 - [Dummy data for MYSQL database](http://filldb.info/)
 
+## Vidéos
+
+- [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
+- [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère avec PhpMyAdmin.
+- [phpmyadmin - création de bdd on Vimeo](https://vimeo.com/309776733) : Cette vidéo montre comment créer une base de données avec PhpMyAdmin.
+- [phpmyadmin - suppression de bdd on Vimeo](https://vimeo.com/309777482) : Cette vidéo montre comment supprimer une base de données avec PhpMyAdmin.
+
 ## Doc
 
 - [Cours et Tutoriels sur le Langage SQL](https://sql.sh/)
