@@ -18,9 +18,10 @@ Pour en savoir plus, voir [php-application.md](php-application.md).
 
 ## Utilisation sans framework
 
-Taper le code suivant dans un nouveau fichier :
+Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
 
     <?php
+    // public/hello-doctrine-dbal.php
 
     // déclaration des classes PHP qui seront utilisées
     use Doctrine\DBAL\Configuration;
@@ -67,6 +68,86 @@ Taper le code suivant dans un nouveau fichier :
     }
 
 Attention : veiller à bien adapter les code d'accès à la base de données.
+
+## Utilisation avec Twig et le package `symfony/yaml`
+
+Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
+
+    <?php
+    // public/hello-doctrine-dbal.php
+
+    // déclaration des classes PHP qui seront utilisées
+    use Doctrine\DBAL\Configuration;
+    use Doctrine\DBAL\DriverManager;
+    use Symfony\Component\Yaml\Yaml;
+
+    // activation de la fonction autoloading de Composer
+    require __DIR__.'/../vendor/autoload.php';
+
+    // instanciation du chargeur de templates
+    $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+    // instanciation du moteur de template
+    $twig = new Twig_Environment($loader);
+
+    // chargement des coordonnées de connexion à la BDD depuis un fichier YAML
+    $connectionParams = Yaml::parseFile(__DIR__.'/../config/parameters.yml');
+
+    // création d'une variable avec une configuration par défaut
+    $config = new Configuration();
+
+    // connection à la BDD
+    // la variable `$conn` permet de communiquer avec la BDD
+    $conn = DriverManager::getConnection($connectionParams, $config);
+
+    // stockage d'une requête SQL dans une variable
+    $sql = '
+    SELECT *
+    FROM item
+    ';
+
+    // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
+    $items = $conn->fetchAll($sql);
+
+    // affichage du rendu d'un template
+    echo $twig->render('hello-doctrine-dbal.html.twig', [
+        // transmission de données au template
+        'items' => $items,
+    ]);
+
+Créez un fichier nommé `hello-doctrine-dbal.html.twig` dans votre dossier `templates` :
+
+    {# templates/hello-doctrine-dbal.html.twig #}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+
+        {# parcours de chacun des éléments du tableau `items` #}
+        {% for item in items %}
+            {# à chaque itération de la boucle, la variable `item` contient une ligne de la table #}
+            {# chaque clé alpha-numérique représente une colonne de la table #}
+            {{ item.id }}<br />
+            {{ item.name }}<br />
+            {{ item.description }}<br />
+            <br />
+        {% endfor %}
+
+    </body>
+    </html>
+
+Créez un fichier nommé `parameters.yml` dans votre dossier `config` :
+
+    # config/parameters.yml
+    driver: pdo_mysql
+    host: 127.0.0.1
+    port: 3306
+    dbname: my_database
+    user: my_user
+    password: my_password
+    charset: utf8mb4
 
 ## Les méthodes
 
