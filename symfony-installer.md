@@ -14,7 +14,7 @@ Télécharger le programme suivant depuis l'adresse suivante et le lancer : [htt
 
 ### MacOS et Linux
 
-Ouvrir un terminal et taper la commande suivante :
+Ouvrir un terminal et taper les commandes suivante :
 
     curl -sS https://get.symfony.com/cli/installer | bash
     sudo mkdir -p /usr/local/bin
