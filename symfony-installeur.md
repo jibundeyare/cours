@@ -1,3 +1,3 @@
 # Symfony installeur
 
-Voir [symfony-installeur.md](symfony-installeur.md).
+Voir [symfony-installer.md](symfony-installer.md).
