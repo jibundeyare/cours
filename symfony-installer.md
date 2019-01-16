@@ -10,7 +10,7 @@ La version `1.x` permet d'installer les versions de Symfony `2.x` et Symfony `3.
 
 ### Windows
 
-Télécharger le programme suivant depuis l'adresse suivante et le lancer : [https://get.symfony.com/cli/setup.exe](https://get.symfony.com/cli/setup.exe).
+Télécharger le programme d'installation depuis l'adresse suivante et le lancer : [https://get.symfony.com/cli/setup.exe](https://get.symfony.com/cli/setup.exe).
 
 ### MacOS et Linux
 
