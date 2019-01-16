@@ -115,6 +115,7 @@ Installer Symfony 3.4 :
 
 ## Doc
 
+- [Download Symfony Framework and Components](https://symfony.com/download)
 - [symfony/symfony-installer: The Symfony Installer](https://github.com/symfony/symfony-installer)
 - [Installing & Setting up the Symfony Framework (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/setup.html)
 - [Installing & Setting up the Symfony Framework (Symfony 2.8 Docs)](https://symfony.com/doc/2.8/setup.html)
