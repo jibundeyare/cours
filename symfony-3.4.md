@@ -45,6 +45,10 @@ Se rendre dans le dossier des projets (Macos) :
 
     cd /Applications/MAMP/htdocs
 
+Se rendre dans le dossier des projets (Linux) :
+
+    cd ~/projets
+
 Installer Symfony avec l'installeur `symfony` :
 
     symfony new my_project 3.4
@@ -360,7 +364,7 @@ afin d'obtenir :
         debug: '%kernel.debug%'
         strict_variables: '%kernel.debug%'
         form_themes:
-        - 'bootstrap_3_layout.html.twig'
+        - 'bootstrap_4_layout.html.twig'
 
 #### Intégration des fichiers
 

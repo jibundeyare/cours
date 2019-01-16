@@ -98,14 +98,6 @@ Obtenir le status actuel des scripts de migration :
 
 	php bin/console doctrine:migrations:status
 
-### Application des diff de la BDD
-
-Jouer le script de migration :
-
-	php bin/console doctrine:migrations:migrate --no-interaction
-
-NB : vous pouvez revalider le schéma afin de vous assurer que les entités et la BDD sont bien synchronisées.
-
 ### Génération d'un diff de la BDD
 
 Attention : toujours jouer les scripts de migration avant de générer un nouveau diff.
@@ -114,6 +106,14 @@ Sinon on se retrouve avec des copies du même diff qui provoqueront des erreurs 
 Générer un diff de la BDD :
 
 	php bin/console doctrine:migrations:diff
+
+### Application des diff de la BDD
+
+Jouer le script de migration :
+
+	php bin/console doctrine:migrations:migrate --no-interaction
+
+NB : vous pouvez revalider le schéma afin de vous assurer que les entités et la BDD sont bien synchronisées.
 
 ## Doc
 
