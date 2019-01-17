@@ -14,9 +14,19 @@ Installer le bundle `symfony/web-server-bundle` :
 
     composer require server --dev
 
-## Configurer la base de données
+Lancer le serveur web de développement :
 
-Pour configurer Doctrine, ouvrir le fichier `.env` et adapter :
+    php bin/console server:run
+
+Note : pour stopper le serveur, appuyer sur `CTRL + C`.
+
+Pour tester l'installation, ouvrir l'url suivante dans un navigateur :
+
+    http://localhost:8000/
+
+## Configuration de l'accès à la base de données
+
+Ouvrir le fichier `.env` et modifier le bloc :
 
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 
@@ -24,20 +34,39 @@ afin d'obtenir :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/my_project
 
-Créer la base de données avec la commande suivante :
+### Création de la base de données
+
+#### Avec la console
+
+Interrompre le serveur web avec `CTRL + C` si nécessaire.
+
+Dans le terminal :
 
     php bin/console doctrine:database:create
 
-## Activer le français
+Relancer le serveur web avec la commande `php bin/console server:run` si nécessaire.
 
-Dans le fichier `config/services.yaml`, modifier :
+#### Avec PhpMyAdmin
+
+Avec PhpMyAdmin, créer une nouvelle base de données.
+
+Les noms (BDD, tables, colonnes, etc) ne doivent comporter aucun espace ` `, ni tiret `-`, ni point `.`, ni accent.
+Il faut donc se limiter aux caractères minuscules de l'alphabet, aux chiffres et au « underscore » (tiret du bas) `_`.
+
+Pour le nom de la BDD, choisissez le même nom que votre projet, en remplaçant les caractères interdits par des caractères autorisés.
+
+L'interclassement de la BDD doit être `utf8mb4_unicode_ci`.
+
+## Langue
+
+Pour configurer la langue, ouvrir le fichier `config/services.yaml`, et modifier le bloc :
 
     # Put parameters here that don't need to change on each machine where the app is deployed
     # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
     parameters:
         locale: 'en'
 
-Pour obtenir :
+afin d'obtenir :
 
     # Put parameters here that don't need to change on each machine where the app is deployed
     # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
