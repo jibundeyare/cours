@@ -108,25 +108,11 @@ Dans le dossier `src/Controller`, créer le fichier `MinimalController.php` :
 
 ## Accéder au service `database_connection`
 
-Dans le fichier `config/services.yaml`, modifier :
+Modifier tous les contrôleurs qui doivent utiliser le service `database_connection`, en ajoutant la ligne de code suivante :
 
-        # controllers are imported separately to make sure services can be injected
-        # as action arguments even if you don't extend any base controller class
-        App\Controller\:
-            resource: '../src/Controller'
-            tags: ['controller.service_arguments']
+    use Doctrine\DBAL\Connection;
 
-Pour obtenir :
-
-        # controllers are imported separately to make sure services can be injected
-        # as action arguments even if you don't extend any base controller class
-        App\Controller\:
-            resource: '../src/Controller'
-            tags: ['controller.service_arguments']
-            arguments:
-                $conn: '@database_connection'
-
-Modifier tous les contrôleurs qui doivent utiliser le service `database_connection`, en ajouter les lignes de code suivantes :
+    // ...
 
         private $conn;
 
@@ -140,6 +126,7 @@ Exemple avec notre contrôleur minimaliste :
     <?php
     namespace App\Controller;
 
+    use Doctrine\DBAL\Connection;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Routing\Annotation\Route;
