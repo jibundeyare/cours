@@ -16,6 +16,10 @@ Pour installer le paquet :
 
 Pour en savoir plus, voir [php-application.md](php-application.md).
 
+## Stockage des identifiants de connexion
+
+Pour en savoir plus, voir [symfony-yaml.md](symfony-yaml.md).
+
 ## Utilisation sans framework
 
 Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
