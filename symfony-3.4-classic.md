@@ -528,7 +528,7 @@ Afficher la liste des events et leur degré de priorité :
 - [Routing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/routing.html)
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
 
-## Bootstrap et jQuery
+## CSS et Javascript
 
 - [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
 - [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
