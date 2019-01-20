@@ -36,6 +36,16 @@ afin d'obtenir :
 
 Obtenir une valeur aléatoire pour le champs `secret` : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret)
 
+## Le `secret` de  `parameters.yml`
+
+Si vous voulez regénérer le `secret` de votre fichier `parameters.yml`, vous pouvez utiliser le script suivant qui génèrera une chaîne de 40 caractères en hexadécimal tirée au hasard :
+
+    <?php
+    $bytes = random_bytes(20);
+    echo bin2hex($bytes).PHP_EOL;
+
+Sinon vous pouvez utiliser un outil en ligne : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret).
+
 ## Langue
 
 Pour configurer la langue, ouvrir le fichier `app/config/config.yml` et adapter :

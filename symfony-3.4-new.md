@@ -1,6 +1,17 @@
-# Symfony 3.4
+# Symfony 3.4 New
+
+Attention : ce cours installe une version de Symfony 3.4 qui a structure de dossier identique avec celle de Symfony 4.x.
+
+Dans Symfony 4.x, certains dossiers changent de nom et d'emplacement :
+
+- `/app/config` devient `/config`
+- `/app/Ressources/views` devient `/templates`
+- `/src/AppBundle` devient `/src`
+- `/web` devient `/public`
 
 ## Install
+
+Attention : l'installation nécessite la nouvelle version (`4.x`) de l'installeur Symfony. Voir [symfony-installer.md](symfony-installer.md).
 
 Installer Symfony 3.4 :
 
@@ -33,6 +44,16 @@ Ouvrir le fichier `.env` et modifier le bloc :
 afin d'obtenir :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/my_project
+
+## Le `APP_SECRET` de `.env`
+
+Si vous voulez regénérer le `APP_SECRET` de votre fichier `.env`, vous pouvez utiliser le script suivant qui génèrera une chaîne de 32 caractères en hexadécimal tirée au hasard :
+
+    <?php
+    $bytes = random_bytes(16);
+    echo bin2hex($bytes).PHP_EOL;
+
+Sinon vous pouvez utiliser un outil en ligne (qui génère 40 caractères et non 32) : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret).
 
 ### Création de la base de données
 
@@ -192,6 +213,7 @@ Dans les formulaires, remplacer les occurences de :
 
 ## Doc
 
+- [Framework Configuration Reference (FrameworkBundle) (Symfony Docs)](https://symfony.com/doc/current/reference/configuration/framework.html#secret)
 - [Forms (Symfony Docs)](http://symfony.com/doc/current/forms.html)
 - [Databases and the Doctrine ORM (Symfony Docs)](http://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database)
 - [How to Work with Doctrine Associations / Relations (Symfony Docs)](https://symfony.com/doc/current/doctrine/associations.html)

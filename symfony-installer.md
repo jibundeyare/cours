@@ -2,11 +2,12 @@
 
 Cet outil permet d'installer Symfony.
 
-La version `4.x` permet d'installer les versions de Symfony `3.x` et Symfony `4.x`.
+Attention : il existe deux versions de cet outil :
 
-La version `1.x` permet d'installer les versions de Symfony `2.x` et Symfony `3.x`.
+- la version `4.x` permet d'installer les versions de Symfony `3.x` et Symfony `4.x`.
+- la version `1.5.11` permet d'installer les versions de Symfony `2.x` et Symfony `3.x`.
 
-## Installation du nouveau cli (version `4.x`)
+## Installation du nouvel outil (version `4.x`)
 
 ### Windows
 
@@ -46,7 +47,7 @@ Installer la dernière version stable de Symfony en mode minimal (microservice, 
 
     symfony new my_project
 
-## Installation de l'ancien cli (version `1.5.11`)
+## Installation de l'ancien outil (version `1.5.11`)
 
 ### Windows
 
