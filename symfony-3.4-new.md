@@ -213,8 +213,27 @@ Dans les formulaires, remplacer les occurences de :
 
 ## Doc
 
-- [Framework Configuration Reference (FrameworkBundle) (Symfony Docs)](https://symfony.com/doc/current/reference/configuration/framework.html#secret)
-- [Forms (Symfony Docs)](http://symfony.com/doc/current/forms.html)
-- [Databases and the Doctrine ORM (Symfony Docs)](http://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database)
-- [How to Work with Doctrine Associations / Relations (Symfony Docs)](https://symfony.com/doc/current/doctrine/associations.html)
-- [Form Types Reference (Symfony Docs)](https://symfony.com/doc/current/reference/forms/types.html)
+### Install
+
+- [Download Symfony Framework and Components](https://symfony.com/download)
+- [Framework Configuration Reference (FrameworkBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/framework.html#secret)
+
+### Entity
+
+- [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html#persisting-objects-to-the-database)
+- [How to Work with Doctrine Associations / Relations (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine/associations.html)
+- [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
+- [Doctrine\Common\Collections\ArrayCollection | API](https://www.doctrine-project.org/api/collections/latest/Doctrine/Common/Collections/ArrayCollection.html)
+
+### GET, POST, FILES, SESSION, COOKIES, SERVER
+
+- [Symfony and HTTP Fundamentals (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/introduction/http_fundamentals.html)
+- [The HttpFoundation Component (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/components/http_foundation.html)
+
+### Form
+
+- [Forms (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/forms.html)
+- [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
+- [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
+- [Validation Constraints Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/constraints.html)
+

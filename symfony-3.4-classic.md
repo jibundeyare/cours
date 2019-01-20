@@ -494,14 +494,21 @@ Afficher la liste des events et leur degré de priorité :
 ### Install
 
 - [Installing & Setting up the Symfony Framework (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/setup.html)
-- [Framework Configuration Reference (FrameworkBundle) (Symfony Docs)](https://symfony.com/doc/current/reference/configuration/framework.html#secret)
+- [Framework Configuration Reference (FrameworkBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/framework.html#secret)
 
 ### Entity
 
 - [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
-- [5. Association Mapping — Doctrine 2 ORM 2 documentation](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
-- [Class Doctrine\Common\Collections\ArrayCollection | Collections](http://www.doctrine-project.org/api/collections/1.3/class-Doctrine.Common.Collections.ArrayCollection.html)
+- [How to Work with Doctrine Associations / Relations (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine/associations.html)
+- - [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
+- [Doctrine\Common\Collections\ArrayCollection | API](https://www.doctrine-project.org/api/collections/latest/Doctrine/Common/Collections/ArrayCollection.html)
+
+## Remg Generator Bundle
+
 - [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
+
+## Migrations
+
 - [DoctrineMigrationsBundle (The Symfony Bundles Documentation)](http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html)
 
 ### GET, POST, FILES, SESSION, COOKIES, SERVER
@@ -511,6 +518,7 @@ Afficher la liste des events et leur degré de priorité :
 
 ### Form
 
+- [Forms (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/forms.html)
 - [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
 - [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
 - [Validation Constraints Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/constraints.html)
