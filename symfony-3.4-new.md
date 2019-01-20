@@ -1,6 +1,6 @@
 # Symfony 3.4 New
 
-Attention : ce cours installe une version de Symfony 3.4 qui a structure de dossier identique avec celle de Symfony 4.x.
+Attention : ce cours installe une version de Symfony 3.4 qui a une structure de dossier identique avec celle de Symfony 4.x.
 
 Dans Symfony 4.x, certains dossiers changent de nom et d'emplacement :
 

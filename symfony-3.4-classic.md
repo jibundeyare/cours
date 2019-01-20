@@ -1,6 +1,6 @@
 # Symfony 3.4 Classic
 
-Attention : ce cours installe une version de Symfony 3.4 qui a structure de dossier incompatible avec Symfony 4.x.
+Attention : ce cours installe une version de Symfony 3.4 qui a une structure de dossier incompatible avec Symfony 4.x.
 
 Dans Symfony 4.x, certains dossiers changent de nom et d'emplacement :
 
