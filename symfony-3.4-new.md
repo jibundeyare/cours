@@ -137,7 +137,7 @@ Modifier tous les contrôleurs qui doivent utiliser le service `database_connect
 
         private $conn;
 
-        public function __construct($conn)
+        public function __construct(Connection $conn)
         {
             $this->conn = $conn;
         }
@@ -160,7 +160,7 @@ Exemple avec notre contrôleur minimaliste :
     {
         private $conn;
 
-        public function __construct($conn)
+        public function __construct(Connection $conn)
         {
             $this->conn = $conn;
         }
