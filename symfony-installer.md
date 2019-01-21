@@ -53,24 +53,20 @@ Installer la dernière version stable de Symfony en mode minimal (microservice, 
 
 Ouvrir un terminal et lancer les commandes suivantes :
 
-    php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
+    php -r "file_put_contents('symfony-1.5.11.phar', file_get_contents('https://symfony.com/installer'));"
 
 Créer un dossier `bin` dans sa home (`C:\Users\[user]`) :
 
     mkdir bin
 
-Renommer le binaire `symfony` en `symfony-1.5.11` :
+Déplacer le binaire `symfony-1.5.11.phar` :
 
-    move symfony symfony-1.5.11
-
-Déplacer le binaire `symfony` :
-
-    move symfony-1.5.11 bin/
+    move symfony-1.5.11.phar bin/
 
 Créer le fichier `symfony-1.5.11.bat` dans le dossier `bin` :
 
     cd bin
-    (echo @ECHO OFF & echo php "%~dp0symfony-1.5.11" %*) > symfony-1.5.11.bat
+    (echo @ECHO OFF & echo php "%~dp0symfony-1.5.11.phar" %*) > symfony-1.5.11.bat
 
 Télécharger le fichier [cacert.pem](https://curl.haxx.se/ca/cacert.pem) puis le déplacer dans le dossier `bin`.
 
