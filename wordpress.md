@@ -95,9 +95,11 @@ NB Idem, adapter la partie `wordpress` avec le nom de son site.
 
 Par requête SQL :
 
-    UPDATE wp_users SET user_pass=MD5("123") WHERE ID = 1
+    UPDATE wp_users SET user_pass = MD5("123") WHERE ID = 1
 
 NB remplacer le mot de passe `123` par le votre.
+
+[Resetting Your Password « WordPress Codex](https://codex.wordpress.org/Resetting_Your_Password)
 
 ## Où trouver des thèmes ?
 
@@ -284,6 +286,11 @@ SEO : Search Engin Optimisation (optimisation pour les moteur de recherches).
 
 - [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
 - [All in One SEO Pack](https://wordpress.org/plugins/all-in-one-seo-pack/)
+
+Si vous voulez conserver vos données de fréquentation sans passer par un service comme Google, vous pouvez installer Matomo et le plugin suivant :
+
+- [#1 Free Web Analytics Software](https://matomo.org/)
+- [WP-Matomo (WP-Piwik) | WordPress.org](https://fr.wordpress.org/plugins/wp-piwik/)
 
 #### Stats
 
