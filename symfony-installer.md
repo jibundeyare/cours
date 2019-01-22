@@ -51,11 +51,19 @@ Installer la dernière version stable de Symfony en mode minimal (microservice, 
 
 ### Windows
 
-Ouvrir un terminal et lancer les commandes suivantes :
+Ouvrir un terminal et se déplacer dans sa home (`C:\Users\[user]`) :
+
+    cd %HOMEPATH%
+
+Attention : notez bien le dossier dans lequel vous vous toruvez, c'est votre home.
+Dans les lignes qui suivent, je désigne le dossier de la home par `C:\Users\[user]`.
+Mais vous devrez utiliser le vrai chemin de votre home.
+
+Télécharger l'installeur :
 
     php -r "file_put_contents('symfony-1.5.11.phar', file_get_contents('https://symfony.com/installer'));"
 
-Créer un dossier `bin` dans sa home (`C:\Users\[user]`) :
+Créer un dossier `bin` dans sa home :
 
     mkdir bin
 
