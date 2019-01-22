@@ -234,13 +234,13 @@ Si l'on veut que la variable `isDone` de l'entité `Foo` soit initialisée avec 
 
 ## Interface front-end
 
-L'interface est composée de contrôleurs, de form types et de templates Twig.
+L'interface est composée de contrôleurs, de Form Types et de templates Twig.
 
 ### Génération
 
 Pour générer un CRUD :
 
-    php bin/console generate:doctrine:crud
+    php bin/console doctrine:generate:crud
 
 Pour créer les interfaces de création, de mise à jour et de suppression, répondre `y` à la question `Do you want to generate the "write" actions`.
 
@@ -249,9 +249,14 @@ Mais attention, toutes les customisation précédentes seront perdues !
 
     php bin/console doctrine:generate:crud --overwrite
 
-### Correction du form type généré
+## Form Type
 
-Attention : le générateur n'implémente par correctement les champs de type entité dans le form type. Si votre entité contient une ou des associations à d'autres entités, vous devez corriger le form type vous-même.
+Les Form Types sont des classes qui permettent de créer des formulaires HTML.
+
+### Form Types générés par Doctrine
+
+Attention : le générateur n'implémente par correctement les champs de type entité dans le Form Type.
+Si votre entité contient une ou des associations à d'autres entités, vous devez corriger le Form Type vous-même.
 
 ### Association `many to one`
 
@@ -307,9 +312,44 @@ afin d'obtenir :
         ])
     ;
 
-Attention : Si nécessaire, cette correction doit être appliquée de la même façon dans le form type (fichier `src/AppBundle/Form/BazType.php`) de l'entité `Baz`.
+Attention : Si nécessaire, cette correction doit être appliquée de la même façon dans le Form Type (fichier `src/AppBundle/Form/BazType.php`) de l'entité `Baz`.
 
 Note : pour en savoir plus sur les options des champs de type entité, voir [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html).
+
+### Champ de type Date
+
+Il est possible de préciser qu'un champ est de type Date.
+
+L'option `widget` permet de choisir si l'on souhaite utiliser le composant de Symfony (avec des menus déroulants) ou si l'on préfère utiliser un composant HTML pur (une balise `input`).
+
+L'option `format` permet de préciser le format dans lequel les dates sont saisies.
+Ceci est utile pour adapter le format de date aux différents pays mais aussi pour la validation. (12/01/2018 et 01/12/2018 peuvent signifier la même choise en fonction du format).
+
+    <?php
+    // src/AppBundle/Form/FooType.php
+
+    // ...
+    use Symfony\Component\Form\Extension\Core\Type\DateType;
+    // ...
+
+    class ProjectType extends AbstractType
+    {
+        // ...
+
+        public function buildForm(FormBuilderInterface $builder, array $options)
+        {
+            // ...
+
+            ->add('dateStart', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+            ])
+
+            // ...
+        }
+
+        // ...
+    }
 
 ## Templates Twig
 
@@ -423,31 +463,209 @@ afin d'obtenir :
 
 ## Validation
 
-### Empêcher les champs vides
+Les contraintes de validation ainsi que les messages d'erreur de validation peuvent être entièrement écrites dans les classes PHP en utilisant des annotations.
 
-@todo
+Pour utiliser ces annotations, l'entité doit d'abord importer la classe `Symfony\Component\Validator\Constraints`.
+
+### Empêcher un champ vide
+
+Notez l'import de la classe `Symfony\Component\Validator\Constraints` et l'utilisation de l'alias `Assert` :
+
+    <?php
+    // src/AppBundle/Entity/Foo.php
+
+    // ...
+    use Symfony\Component\Validator\Constraints as Assert;
+    // ...
+
+    class Foo
+    {
+        // ...
+
+        /**
+         * @Assert\NotBlank
+         */
+        public $bar;
+
+        // ...
+    }
+
+La même annotation avec un message d'erreur personnalisé :
+
+        /**
+         * @Assert\NotBlank(message="Veuillez renseigner ce champ svp")
+         */
+        public $bar;
 
 ### Forcer la taille minimale et / ou la taille maximale
 
-@todo
+Taille minimal de 1 caractère et taille maximal de 255 caractères :
+
+    <?php
+    // src/AppBundle/Entity/Foo.php
+
+    // ...
+    use Symfony\Component\Validator\Constraints as Assert;
+    // ...
+
+    class Foo
+    {
+        // ...
+
+        /**
+         * @Assert\Length(min = 3, max = 100)
+         */
+        public $bar;
+
+        // ...
+    }
+
+La même annotation avec un message d'erreur personnalisé :
+
+        /**
+         * @Assert\Length(
+         *      min = 3,
+         *      max = 100,
+         *      minMessage = "Ce champ doit comporter au moins {{ limit }} caractères",
+         *      maxMessage = "Ce champ ne peut comporter plus de {{ limit }} caractère"
+         * )
+         */
+        public $bar;
+
+Notez qu'il est possible de forcer seulement la taille maximale en omettant la taille minimale, et inversement.
 
 ### Forcer le nombre d'associations minimum et / ou maximum
 
-@todo
+Cette contraintes permet de s'assurer qu'une association de type « one to many » ou « many to many » comporte un minimum et un maximum d'associations.
+Par exemple, on peut s'assurer que chaque student associe au moins 3 tags et au maximum 5 tags à son profil.
 
-### Validation customisée
+    <?php
+    // src/AppBundle/Entity/Foo.php
 
-@todo
+    // ...
+    use Symfony\Component\Validator\Constraints as Assert;
+    // ...
 
-#### Empêcher une date postérieure à la date du jour
+    class Foo
+    {
+        // ...
 
-@todo
+        /**
+         * @Assert\Count(min = 3, max = 5)
+         */
+        public $bars;
+
+        // ...
+    }
+
+La même annotation avec un message d'erreur personnalisé :
+
+        /**
+         * @Assert\Count(
+         *      min = 1,
+         *      max = 5,
+         *      minMessage = "Vous devez associer au moins {{ limit }} bars",
+         *      maxMessage = "Vous ne pouvez pas associer plus de {{ limit }} bars"
+         * )
+         */
+        public $bars;
+
+Notez qu'il est possible de forcer seulement un nombre maximal en omettant le nombre minimal, et inversement.
+
+#### S'assurer qu'une date est valide
+
+    <?php
+    // src/AppBundle/Entity/Foo.php
+
+    // ...
+    use Symfony\Component\Validator\Constraints as Assert;
+    // ...
+
+    class Foo
+    {
+        // ...
+
+        /**
+         * @Assert\Date
+         */
+        public $dateStart;
+
+        // ...
+    }
+
+La même annotation avec un message d'erreur personnalisé :
+
+        /**
+         * @Assert\Date(message="Veuillez entrer une date valide svp")
+         */
+        public $dateStart;
+
+#### Empêcher une date postérieure ou antérieure à une autre date
+
+Pour contrôler une date, il faut créer une validation custom appelée Callback (car le système de validation rappelle une fonction de callback).
+
+Dans le dossier `src/AppBundle`, créer un nouveau dossier `Validator`, puis créer un fichier nommé `FooValidator.php` dedans :
+
+    <?php
+    // src/AppBundle/Validator/FooValidator.php
+
+    namespace AppBundle\Validator;
+
+    use DateTime;
+    use Symfony\Component\Validator\Context\ExecutionContextInterface;
+
+    class FooValidator
+    {
+        public static function validate($object, ExecutionContextInterface $context, $payload)
+        {
+            // date du jour
+            $now = new DateTime();
+
+            // vérifier si la date est bien postérieure à la date du jour
+            if ($context->getObject()->getDateStart() < $now) {
+                // la date est antérieure à la date du jour
+                $context->buildViolation('Veuillez renseigner une date postérieure à la date du jour')
+                    ->atPath('dateStart')
+                    ->addViolation();
+            }
+
+            // vérifier si la date est bien antérieure à la date du jour
+            if ($context->getObject()->getDateStart() > $now) {
+                // la date est postérieure à la date du jour
+                $context->buildViolation('Veuillez renseigner une date antérieure à la date du jour')
+                    ->atPath('dateStart')
+                    ->addViolation();
+            }
+        }
+    }
+
+Puis modifier l'entitié :
+
+    <?php
+    // src/AppBundle/Entity/Foo.php
+
+    // ...
+    use Symfony\Component\Validator\Constraints as Assert;
+    // ...
+
+    class Foo
+    {
+        // ...
+
+        /**
+         * @Assert\Date
+         * @Assert\Callback(callback={"AppBundle\Validator\FooValidator", "validate"})
+         */
+        public $dateStart;
+
+        // ...
+    }
 
 ### Désactivation de la validation côté client
 
 Pour tester la validation côté serveur, il est possible de désactiver la validation côté client (dans le navigateur web).
 
-Pour désactiver la validation côté client de l'entité `Foo`, ouvrir le fichier `Form/FooType.php` et modifier la fonction `configureOptions()` du form type afin d'obtenir :
+Pour désactiver la validation côté client de l'entité `Foo`, ouvrir le fichier `Form/FooType.php` et modifier la fonction `configureOptions()` du Form Type afin d'obtenir :
 
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -463,7 +681,7 @@ Attention : veiller à adapter le nom de l'entité (`AppBundle\Entity\Foo` dans 
 
 Voir [easyadmin.md](easyadmin.md).
 
-## Commandes
+## Commandes utiles
 
 Lancer le serveur web de développement :
 
@@ -521,14 +739,17 @@ Afficher la liste des events et leur degré de priorité :
 - [Forms (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/forms.html)
 - [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
 - [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
+- [DateType Field (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/forms/types/date.html)
+- [Formatting Dates and Times - ICU User Guide](http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Time-Format-Syntax)
 - [Validation Constraints Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/constraints.html)
+- [Callback (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/constraints/Callback.html)
 
 ### Route
 
 - [Routing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/routing.html)
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
 
-## CSS et Javascript
+### CSS et Javascript
 
 - [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
 - [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
