@@ -154,6 +154,10 @@ afin d'obtenir :
         #esi: ~
         translator: { fallbacks: ['%locale%'] }
 
+## Doctrine ORM
+
+Voir [doctrine-orm.md](doctrine-orm.md).
+
 ## Bundles
 
 Voir [symfony-bundles.md](symfony-bundles.md).
@@ -165,72 +169,6 @@ Voir [remg-generator.md](remg-generator.md).
 ## Bundle `doctrine/doctrine-migrations-bundle`
 
 Voir [doctrine-migrations.md](doctrine-migrations.md).
-
-## Entités
-
-### Relations cardinales entre entités
-
-Il existe trois types de relations cardinales entre entités :
-
-- `many to one`
-- `one to many`
-- `many to many`
-
-Voir [code-style.md](code-style.md) pour les questions de nommage de variable au singulier ou au pluriel.
-
-### Relation `many to one`
-
-![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
-
-Une entité `Foo` ne peut avoir qu'une seule entité `Bar`.
-Mais une entité `Bar` peut avoir plusieurs entités `Foo`.
-
-Exemple : une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
-Mais une entreprise peut avoir plusieurs voitures de fonction.
-
-### Relation `one to many`
-
-![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
-
-C'est la même relation qu'un `one to many` mais du point de vue de l'autre entité.
-
-Exemple : une entreprise peut avoir plusieurs voitures de fonction.
-Et une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
-
-### Relation `many to many`
-
-![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
-
-Une entité `Foo` peut avoir plusieurs entités `Baz`.
-Et une entité `Baz` peut avoir plusieurs entités `Foo`.
-
-Exemple : une voiture de fonction peut être réservée (successivement) par plusieurs salariés.
-Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
-
-### Configuration de valeurs par défaut
-
-Les valeurs par défaut sont définies dans le constructeur.
-
-Par convention, le constructeur est toujours situé entre le dernier attribut (variable) et la première méthode (fonction).
-
-Si l'on veut que la variable `isDone` de l'entité `Foo` soit initialisée avec la valeur `true` par défaut, il faut ouvrir le fichier `src/Entity/Foo.php` et ajouter ou modifier le constructeur :
-
-    private $bar;                   // <= dernier attribut
-
-    /**
-     * Constructor
-     */
-    public function __construct()   // <= constructeur
-    {
-        $this->isDone = true;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId() {       // <= première méthode
 
 ## Interface front-end
 

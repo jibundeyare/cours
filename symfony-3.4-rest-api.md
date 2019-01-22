@@ -84,17 +84,25 @@ Récupérer un student :
 
 ### Écrire des données
 
-Avec le form suivant, dans `src/AppBundle/Form/PromotionType.php` :
+Avec le Form Type suivant, dans `src/AppBundle/Form/PromotionType.php` :
 
-    $builder
-        ->add('name')
-        ->add('startDate', DateType::class, [
-            'widget' => 'single_text',
-        ])
-        ->add('endDate', DateType::class, [
-            'widget' => 'single_text',
-        ])
-    ;
+    <?php
+    // src/AppBundle/Form/PromotionType.php
+
+    // ...
+    use Symfony\Component\Form\Extension\Core\Type\DateType;
+    // ...
+
+        $builder
+            ->add('name')
+            ->add('startDate', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('endDate', DateType::class, [
+                'widget' => 'single_text',
+            ])
+
+    // ...
 
 Créer une promotion :
 
@@ -110,18 +118,27 @@ Supprimer une promotion :
 
 Avec le form suivant dans `src/AppBundle/Form/StudentType.php` :
 
-    $builder
-        ->add('firstname')
-        ->add('lastname')
-        ->add('sex')
-        ->add('birthdate', DateType::class, [
-            'widget' => 'single_text',
-        ])
-        ->add('promotion', EntityType::class, [
-            'class' => 'AppBundle:Promotion',
-            'choice_label' => 'name',
-        ])
-    ;
+    <?php
+    // src/AppBundle/Form/StudentType.php
+
+    // ...
+    use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+    use Symfony\Component\Form\Extension\Core\Type\DateType;
+    // ...
+
+        $builder
+            ->add('firstname')
+            ->add('lastname')
+            ->add('sex')
+            ->add('birthdate', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('promotion', EntityType::class, [
+                'class' => 'AppBundle:Promotion',
+                'choice_label' => 'name',
+            ])
+
+    // ...
 
 Créer un student :
 
