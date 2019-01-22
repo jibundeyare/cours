@@ -99,6 +99,7 @@ afin d'obtenir :
 Dans le dossier `src/Controller`, créer le fichier `MinimalController.php` :
 
     <?php
+    // src/Controller/MinimalController.php
 
     namespace App\Controller;
 
@@ -125,7 +126,19 @@ Dans le dossier `src/Controller`, créer le fichier `MinimalController.php` :
         }
     }
 
+Dans le dossier `templates`, créer un dossier `minimal` puis créer le fichier `hello-name.html.twig` dedans :
 
+    {# templates/minimal/hello-name.html.twig #}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ greeting }}</title>
+    </head>
+    <body>
+        <h1>{{ greeting }}</h1>
+    </body>
+    </html>
 
 ## Accéder au service `database_connection`
 
@@ -142,9 +155,13 @@ Modifier tous les contrôleurs qui doivent utiliser le service `database_connect
             $this->conn = $conn;
         }
 
-Exemple avec notre contrôleur minimaliste :
+### Exemple avec notre contrôleur minimaliste
+
+Dans le dossier `src/Controller`, modifier le fichier `MinimalController.php` :
 
     <?php
+    // src/Controller/MinimalController.php
+
     namespace App\Controller;
 
     use Doctrine\DBAL\Connection;
@@ -178,35 +195,59 @@ Exemple avec notre contrôleur minimaliste :
         }
 
         /**
-         * @Route("/items", name="minimal_items")
+         * @Route("/items", name="minimal_items_index")
          */
-        public function items(Request $request, $name)
+        public function itemsIndex(Request $request, $name)
         {
-            $sql = '
-            SELECT *
-            FROM item
-            ';
+            $title = 'Liste des items';
 
+            $sql = 'SELECT * FROM item';
             $items = $this->conn->fetchAll($sql);
 
-            return $this->render('minimal/hello-name.html.twig', [
+            return $this->render('minimal/items-index.html.twig', [
+                'title' => $title,
                 'items' => $items,
             ]);
         }
     }
 
+Il faut aussi créer un template qui peut afficher les données de la requête SQL.
+Dans le dossier `templates/minimal`, créer le fichier `items-index.html.twig` :
+
+    {# templates/minimal/items-index.html.twig #}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+
+        <ul>
+        {% for item in items %}
+            <li><a href="/item/{{item.id}}">{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </body>
+    </html>
+
 ## Migrer des entités, des contrôleurs et des formulaires 2.8 vers 3.4
 
-Dans les entités, remplacer les occurences de :
+Si vous avez du code Symfony 2.8, ou du code Symfony 3.4 utilisant le namespace `AppBundle`, il est assez facile de le transformer en code compatible avec Symfony 3.4 sans bundle ou avec Symfony 4.x.
+
+Attention : quand vous faites ce type de remplacement de chaîne de caractère, cocher la case « sensible à la casse ».
+
+Dans les entités, remplacez les occurences de :
 
 - `AppBundle` par `App`
 
-Dans les contrôleurs, remplacer les occurences de :
+Dans les contrôleurs, remplacez les occurences de :
 
 - `AppBundle` par `App`
 - `App:` par `App\Entity\`
 
-Dans les formulaires, remplacer les occurences de :
+Dans les formulaires, remplacez les occurences de :
 
 - `AppBundle` par `App`
 - `appbundle` par `app`

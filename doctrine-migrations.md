@@ -59,6 +59,14 @@ Script de migration == diff de la BDD.
 
 Jouer les scripts de migration == appliquer un diff de la BDD
 
+### Étapes
+
+1. création, modifications ou suppression d'entités
+2. validation du schéma
+3. vérification qu'il ne reste pas de script de migration non joué
+4. génération d'un diff
+5. jouer tous les scripts de migrations
+
 ### Validation du schéma
 
 Obtenir le status actuel de la base de données (BDD) :

@@ -500,14 +500,14 @@ Afficher la liste des events et leur degré de priorité :
 
 - [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
 - [How to Work with Doctrine Associations / Relations (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine/associations.html)
-- - [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
+- [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
 - [Doctrine\Common\Collections\ArrayCollection | API](https://www.doctrine-project.org/api/collections/latest/Doctrine/Common/Collections/ArrayCollection.html)
 
-## Remg Generator Bundle
+### Remg Generator Bundle
 
 - [Remg/GeneratorBundle: Code generation tools for Symfony3.](https://github.com/Remg/GeneratorBundle)
 
-## Migrations
+### Migrations
 
 - [DoctrineMigrationsBundle (The Symfony Bundles Documentation)](http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html)
 
@@ -536,7 +536,7 @@ Afficher la liste des events et leur degré de priorité :
 - [Getting started · Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/)
 - [jQuery CDN](https://code.jquery.com/)
 
-## Service
+### Service
 
 - [Service Container (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container.html)
 - [How to Create Service Aliases and Mark Services as Private (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/service_container/alias_private.html)
