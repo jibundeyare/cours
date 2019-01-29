@@ -278,7 +278,7 @@ Ceci est utile pour adapter le format de date aux différents pays mais aussi po
         {
             // ...
 
-            ->add('dateStart', DateType::class, [
+            ->add('startDate', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
             ])
@@ -510,7 +510,7 @@ La même annotation avec un message d'erreur personnalisé :
 
 Notez qu'il est possible de forcer seulement un nombre maximal en omettant le nombre minimal, et inversement.
 
-#### S'assurer qu'une date est valide
+### S'assurer qu'une date est valide
 
     <?php
     // src/AppBundle/Entity/Foo.php
@@ -526,7 +526,7 @@ Notez qu'il est possible de forcer seulement un nombre maximal en omettant le no
         /**
          * @Assert\Date
          */
-        public $dateStart;
+        public $startDate;
 
         // ...
     }
@@ -536,11 +536,21 @@ La même annotation avec un message d'erreur personnalisé :
         /**
          * @Assert\Date(message="Veuillez entrer une date valide svp")
          */
-        public $dateStart;
+        public $startDate;
 
-#### Empêcher une date postérieure ou antérieure à une autre date
+### Validation de type Callback
 
-Pour contrôler une date, il faut créer une validation custom appelée Callback (car le système de validation rappelle une fonction de callback).
+Une validation de type Callback est une validation dont on fixe soi-même les règles.
+
+On peut par exemple obliger que le prénom et le nom d'un utilisateur soient différents, qu'un email ne comporte pas certains nom de domaines ou d'une date soit antérieure ou postérieure à une autre date.
+
+#### Empêcher une date postérieure ou antérieure à une date limite
+
+Comparer des dates est une situation typique d'utulisation d'une validation de type Callback.
+En effet, les validation founrnies d'usine par Symfony ne permettent pas de faire cette comparaison.
+
+Notre système de valiation va vérifier que la date renseignée par l'utilisateur est bien postérieure à une date limite, `la date du jour + 7 jours`.
+Si ce n'est pas le cas, notre système de validation signalera l'erreur à l'utilisateur.
 
 Dans le dossier `src/AppBundle`, créer un nouveau dossier `Validator`, puis créer un fichier nommé `FooValidator.php` dedans :
 
@@ -556,22 +566,22 @@ Dans le dossier `src/AppBundle`, créer un nouveau dossier `Validator`, puis cr�
     {
         public static function validate($object, ExecutionContextInterface $context, $payload)
         {
-            // date du jour
-            $now = new DateTime();
+            // récupération des données renvoyées par l'utilisateur
+            $data = $context->getObject();
 
-            // vérifier si la date est bien postérieure à la date du jour
-            if ($context->getObject()->getDateStart() < $now) {
+            // récupération de la date
+            $startDate = $data->getStartDate();
+
+            // date du jour
+            $limitDate = new DateTime();
+            // date du jour + 7 jours
+            $limitDate->add(new DateInterval('P7D'));
+
+            // vérification que la date est bien postérieure à la date limite
+            if ($startDate < $limitDate) {
                 // la date est antérieure à la date du jour
                 $context->buildViolation('Veuillez renseigner une date postérieure à la date du jour')
-                    ->atPath('dateStart')
-                    ->addViolation();
-            }
-
-            // vérifier si la date est bien antérieure à la date du jour
-            if ($context->getObject()->getDateStart() > $now) {
-                // la date est postérieure à la date du jour
-                $context->buildViolation('Veuillez renseigner une date antérieure à la date du jour')
-                    ->atPath('dateStart')
+                    ->atPath('startDate')
                     ->addViolation();
             }
         }
@@ -594,7 +604,7 @@ Puis modifier l'entitié :
          * @Assert\Date
          * @Assert\Callback(callback={"AppBundle\Validator\FooValidator", "validate"})
          */
-        public $dateStart;
+        public $startDate;
 
         // ...
     }

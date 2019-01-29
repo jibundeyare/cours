@@ -31,6 +31,7 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
     // instanciation du chargeur de templates
     $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+
     // instanciation du moteur de template
     $twig = new Twig_Environment($loader);
 
@@ -79,9 +80,11 @@ Le mode de variables strictes permet d'afficher une erreur si vous utilisez une 
 
 Modifier la partie `new Twig_Environment($loader)` et charger l'extension de debug `Twig_Extension_Debug` juste après :
 
-    // activation du mode debug et du mode de variables strictes
+    // instanciation du moteur de template
     $twig = new Twig_Environment($loader, [
+        // activation du mode debug
         'debug' => true,
+        // activation du mode de variables strictes
         'strict_variables' => true,
     ]);
 
@@ -108,8 +111,9 @@ Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
 Modifier la partie `new Twig_Environment($loader)` :
 
-    // activation du cache
+    // instanciation du moteur de template
     $twig = new Twig_Environment($loader, [
+        // activation du cache
         'cache' => __DIR__.'/../var/cache',
     ]);
 
@@ -245,6 +249,9 @@ NB La notation est la même pour accéder à une clé d'un tableau ou à un attr
 
 ### Les structures conditionnelles (blocs `if`)
 
+Le `if` est identique en PHP et en Twig.
+La seule différence est qu'il n'y a pas de parenthèses.
+
 Si la variable  `foo` est égal à `true`, afficher la variable `bar` :
 
     {% if foo %}
@@ -263,7 +270,19 @@ Si la clé ou l'attribut `bar` du tableau ou de l'objet `foo` existe, afficher l
         {{ foo.bar }}
     {% endif %}
 
+NB La syntaxe Twig `foo.bar is defined` est équivalente à la syntaxe PHP `isset($foo['bar'])`.
+
 ### Les boucles
+
+La syntaxe Twig pour les boucle est différente de PHP.
+
+En PHP, pour parcourir tous les éléments d'un tableau, on utilise `foreach ($items as $item)`.
+`$items` désigne le tableau et `$item` un élément différent du tableau à chaque tour.
+
+Avec Twig, pour faire la même chose, on utilise `for item in items`.
+`items` désigne le tableau et `$item` un élément différent du tableau à chaque tour.
+Sauf que l'ordre est différent : avec Twig on a d'abord l'élément, puis le tableau.
+En français, on dirait : « pour chaque item du tableau items ».
 
 Boucler sur le tableau `items` qui contient des chaînes de caractères :
 
@@ -492,9 +511,11 @@ Dans le terminal, dans le dossier racine du projet :
 Juste après la partie `new Twig_Environment($loader)`, définir le fuseau horaire `Europe/Paris`, la locale `fr-FR` puis charger l'extension `Twig_Extensions_Extension_Intl` :
 
     $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+
     // configuration de la locale `fr-FR`
     // @warning requiert l'extension php-intl
     Locale::setDefault('fr-FR');
+
     // chargement de l'extension `Twig_Extensions_Extension_Intl` qui permet de localiser l'affichage des dates
     // @warning requiert l'extension php-intl
     $twig->addExtension(new Twig_Extensions_Extension_Intl());

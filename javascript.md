@@ -103,7 +103,7 @@ Le scope fonctionne comme des vitres teintées : de l'intérieur, on voit l'ext�
 
 Exemple : de l'intérieur d'une fonction, on voit les variables déclarées dans le scope global mais dans le scope global, on ne voit pas les variables déclarées dans une fonction.
 
-## API DOM
+## API
 
 ### `document.querySelectorAll()`
 

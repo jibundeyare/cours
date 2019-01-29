@@ -30,7 +30,6 @@
 - front office / back office (visiteur / admin)
 - les pages (page de contact, qui sommes-nous ?)
 - les articles (blog, brèves, événements)
-- les customs types (page spécifiques avec des champs personnalisés, date, n° de la salle, etc)
 - les tags
 - les catégories
 - les thèmes
@@ -39,6 +38,8 @@
 - le menu
 - les users
 - l'affichage des URL
+- les custom fields
+- les customs types (page spécifiques avec des champs personnalisés, date, adresse, coordonnées GPS, n° de salle, etc)
 
 ## Prérequis
 
@@ -72,7 +73,7 @@ Nom de la BDD : caractères de a à z, (en minuscule) 0 à 9 et le tiret du bas 
 
 NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
 
-### déplacement du dossier dézippé dans le dossier de Wamp
+### Déplacement du dossier dézippé dans le dossier de Wamp
 
     C:\wamp64\www
 
@@ -202,12 +203,6 @@ Le cache permet d'accélérer l'affichage des pages.
 - [Shortcodes Ultimate](https://wordpress.org/plugins/shortcodes-ultimate/)
 - [Slider by Soliloquy – Responsive Image Slider for WordPress](https://wordpress.org/plugins/soliloquy-lite/)
 
-#### Custom fields
-
-Les custom fields permettent de rajouter des champs dans une page, un article ou un custom type.
-
-- [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
-
 #### E-Commerce
 
 - [Contact Form 7 – PayPal & Stripe Add-on](https://wordpress.org/plugins/contact-form-7-paypal-add-on/)
@@ -305,18 +300,28 @@ Si vous voulez conserver vos données de fréquentation sans passer par un servi
 
 - [Polylang](https://wordpress.org/plugins/polylang/)
 
-#### Custom post type / custom field
+#### Custom fields
+
+Les custom fields permettent de rajouter des champs dans une page, un article ou un custom type.
 
 - [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
 - [Meta Box – WordPress Custom Fields Framework](https://wordpress.org/plugins/meta-box/)
+
+#### Custom post type
+
+Open source et libre :
+
 - [Pods – Custom Content Types and Fields](https://wordpress.org/plugins/pods/)
-- [Custom Post Type UI — WordPress Plugins](https://wordpress.org/plugins/custom-post-type-ui/)
-- [Toolset Types – Custom Post Types, Custom Fields and Taxonomies — WordPress Plugins](https://wordpress.org/plugins/types/)
-- [Custom Post Types and Custom Fields creator – WCK — WordPress Plugins](https://wordpress.org/plugins/wck-custom-fields-and-custom-post-types-creator/)
 
 À noter, le plugin « Pods Beaver Themer Add-On » qui permet d'intégrer des custom post type créés avec Pods dans [Beaver Builder](https://wordpress.org/plugins/beaver-builder-lite-version/) :
 
 - [Pods Beaver Themer Add-On | WordPress.org](https://wordpress.org/plugins/pods-beaver-builder-themer-add-on/)
+
+Le plugin de création de custom type est libre mais le plugin d'affichage de custom type est payant :
+
+- [Custom Post Type UI — WordPress Plugins](https://wordpress.org/plugins/custom-post-type-ui/)
+- [Toolset Types – Custom Post Types, Custom Fields and Taxonomies — WordPress Plugins](https://wordpress.org/plugins/types/)
+- [Custom Post Types and Custom Fields creator – WCK — WordPress Plugins](https://wordpress.org/plugins/wck-custom-fields-and-custom-post-types-creator/)
 
 ### Outils
 

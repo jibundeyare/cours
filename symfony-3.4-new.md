@@ -37,17 +37,52 @@ Pour tester l'installation, ouvrir l'url suivante dans un navigateur :
 
 ## Configuration de l'accès à la base de données
 
-Ouvrir le fichier `.env` et modifier le bloc :
+Créez un fichier `.env.local` à la racine du projet.
+
+Ouvrez le fichier `.env` à la racine du projet et copiez le bloc :
+
+    APP_ENV=dev
+    APP_SECRET=24209e2e73cff25fd43b74b21cf4e173
+
+et colle-le dans le fichier `.env.local`.
+
+Copiez aussi le bloc dans le fichier `.env` :
 
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 
-afin d'obtenir :
+et colle-le dans le fichier `.env.local`.
+
+Ensuite, modifiez la ligne `DATABASE_URL` du fichier `.env.local` pour que Symfony puisse accéder à votre BDD.
+
+Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306` et `db_name` avec les informations qui correspondent à votre configuration.
+
+### Exemples
+
+Voici la ligne originale :
+
+    DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
+
+#### Wamp
+
+Voici la ligne pour le user `root`, sans mot de passe, une connection sur le port `3306` (mysql) sur le même serveur, la BDD `my_project` :
+
+    DATABASE_URL=mysql://root:@127.0.0.1:3306/my_project
+
+#### MAMP
+
+Voici la ligne pour le user `root`, le mot de passe `root`, une connection sur le port `8889` (mysql) sur le même serveur, la BDD `my_project` :
+
+    DATABASE_URL=mysql://root:root@127.0.0.1:8889/my_project
+
+#### Autre
+
+Voici la ligne pour le user `root`, le mot de passe `123`, une connection sur le port `3306` (mysql) sur le même serveur, la BDD `my_project` :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/my_project
 
 ## Le `APP_SECRET` de `.env`
 
-Si vous voulez regénérer le `APP_SECRET` de votre fichier `.env`, vous pouvez utiliser le script suivant qui génèrera une chaîne de 32 caractères en hexadécimal tirée au hasard :
+Si vous voulez regénérer le `APP_SECRET` de votre fichier `.env` (ou de votre `.env.local`), vous pouvez utiliser le script suivant qui génèrera une chaîne de 32 caractères en hexadécimal tirée au hasard :
 
     <?php
     $bytes = random_bytes(16);
@@ -139,6 +174,12 @@ Dans le dossier `templates`, créer un dossier `minimal` puis créer le fichier 
         <h1>{{ greeting }}</h1>
     </body>
     </html>
+
+Pour tester de contôleur, vous devez lancer votre serveur web :
+
+    php bin/console server:run
+
+Puis ouvrir l'url associée [http://localhost:8000/hello/Toto](http://localhost:8000/hello/Toto).
 
 ## Accéder au service `database_connection`
 

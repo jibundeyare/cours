@@ -53,10 +53,7 @@ Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
     $conn = DriverManager::getConnection($connectionParams, $config);
 
     // stockage d'une requête SQL dans une variable
-    $sql = '
-    SELECT *
-    FROM item
-    ';
+    $sql = 'SELECT * FROM item';
 
     // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
     $items = $conn->fetchAll($sql);
@@ -90,6 +87,7 @@ Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
 
     // instanciation du chargeur de templates
     $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+
     // instanciation du moteur de template
     $twig = new Twig_Environment($loader);
 
@@ -104,10 +102,7 @@ Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
     $conn = DriverManager::getConnection($connectionParams, $config);
 
     // stockage d'une requête SQL dans une variable
-    $sql = '
-    SELECT *
-    FROM item
-    ';
+    $sql = 'SELECT * FROM item';
 
     // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
     $items = $conn->fetchAll($sql);
@@ -172,20 +167,21 @@ Cette méthode est adaptée si :
 - les données n'occupent pas trop de place dans la RAM
 - la requête ne prend pas de paramètres
 
-```
-// envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
-$items = $conn->fetchAll('SELECT * FROM item');
+    // stockage d'une requête SQL dans une variable
+    $sql = 'SELECT * FROM item';
 
-// parcours de chacun des éléments du tableau `$items`
-foreach ($items as $item) {
-    // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
-    // chaque clé alpha-numérique représente une colonne de la table
-    echo $item['id'].'<br />';          // affichage de la colonne `id`
-    echo $item['name'].'<br />';        // affichage de la colonne `name`
-    echo $item['description'].'<br />'; // affichage de la colonne `description`
-    echo '<br />';
-}
-```
+    // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
+    $items = $conn->fetchAll($sql);
+
+    // parcours de chacun des éléments du tableau `$items`
+    foreach ($items as $item) {
+        // à chaque itération de la boucle, la variable `$item` contient une ligne de la table
+        // chaque clé alpha-numérique représente une colonne de la table
+        echo $item['id'].'<br />';          // affichage de la colonne `id`
+        echo $item['name'].'<br />';        // affichage de la colonne `name`
+        echo $item['description'].'<br />'; // affichage de la colonne `description`
+        echo '<br />';
+    }
 
 ### Méthode `executeQuery()`
 
@@ -198,8 +194,11 @@ Cette méthode est adaptée si :
 
 #### Sans paramètres
 
-    // créer une requête préparée à partir du code SQL et renvoie un pointeur sur le résultat
-    $stmt = $conn->executeQuery('SELECT * FROM item');
+    // stockage d'une requête SQL dans une variable
+    $sql = 'SELECT * FROM item';
+
+    // crée une requête préparée à partir du code SQL et renvoie un pointeur sur le résultat
+    $stmt = $conn->executeQuery($sql);
 
     // la méthode `rowCount()` permet de savoir combien de lignes le résultat comporte
     echo 'results : '.$stmt->rowCount().'<br />';
@@ -280,20 +279,18 @@ Cette méthode permet :
 - d'exécuter des requêtes plus complexes
 - de savoir combien de lignes ont été affectées par l'opération
 
-```
-// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-$count = $conn->executeUpdate('INSERT INTO item (name, description) VALUES (:name, :description)', [
-    'name' => 'foo',
-    'description' => 'bar baz',
-]);
+    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+    $count = $conn->executeUpdate('INSERT INTO item (name, description) VALUES (:name, :description)', [
+        'name' => 'foo',
+        'description' => 'bar baz',
+    ]);
 
-// récupération de l'id de la dernière ligne créée par la BDD dans la variable `$lastInsertId`
-$lastInsertId = $conn->lastInsertId();
+    // récupération de l'id de la dernière ligne créée par la BDD dans la variable `$lastInsertId`
+    $lastInsertId = $conn->lastInsertId();
 
-// affichage de nombre de lignes affectées
-echo 'inserted : '.$count.'<br />';
-echo '<br />';
-```
+    // affichage de nombre de lignes affectées
+    echo 'inserted : '.$count.'<br />';
+    echo '<br />';
 
 ## `UPDATE` (le U de CRUD)
 
@@ -319,18 +316,16 @@ Cette méthode permet :
 - d'exécuter des requêtes plus complexes
 - de savoir combien de lignes ont été affectées par l'opération
 
-```
-// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-$count = $conn->executeUpdate('UPDATE item SET name = :name, description = :description WHERE id = :id', [
-    'name' => 'foo',
-    'description' => 'bar baz',
-     'id' => 123,
-]);
+    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+    $count = $conn->executeUpdate('UPDATE item SET name = :name, description = :description WHERE id = :id', [
+        'name' => 'foo',
+        'description' => 'bar baz',
+        'id' => 123,
+    ]);
 
-// affichage de nombre de lignes affectées
-echo 'updated : '.$count.'<br />';
-echo '<br />';
-```
+    // affichage de nombre de lignes affectées
+    echo 'updated : '.$count.'<br />';
+    echo '<br />';
 
 ## `DELETE` (le D de CRUD)
 
@@ -353,14 +348,12 @@ Cette méthode permet :
 - d'exécuter des requêtes plus complexes
 - de savoir combien de lignes ont été affectées par l'opération
 
-```
-// exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
-$count = $conn->executeUpdate('DELETE FROM item WHERE id = :id', ['id' => 123]);
+    // exécution de la requête et récupération du nombre de lignes affectées dans la variable `$count`
+    $count = $conn->executeUpdate('DELETE FROM item WHERE id = :id', ['id' => 123]);
 
-// affichage de nombre de lignes affectées
-echo 'updated : '.$count.'<br />';
-echo '<br />';
-```
+    // affichage de nombre de lignes affectées
+    echo 'updated : '.$count.'<br />';
+    echo '<br />';
 
 ## Doc
 
