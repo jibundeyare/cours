@@ -43,7 +43,7 @@ Une entité est une classe qui représente un objet qui sera stocké en BDD.
          *
          * @ORM\Column(type="integer")
          */
-        private $year;
+        private $quantity;
 
         /**
          * Get id
@@ -80,27 +80,27 @@ Une entité est une classe qui représente un objet qui sera stocké en BDD.
         }
 
         /**
-         * Set year
+         * Set quantity
          *
-         * @param integer $year
+         * @param integer $quantity
          *
          * @return Foo
          */
-        public function setYear($year)
+        public function setQuantity($quantity)
         {
-            $this->year = $year;
+            $this->quantity = $quantity;
 
             return $this;
         }
 
         /**
-         * Get year
+         * Get quantity
          *
          * @return integer
          */
-        public function getYear()
+        public function getQuantity()
         {
-            return $this->year;
+            return $this->quantity;
         }
     }
 
@@ -151,23 +151,20 @@ Les valeurs par défaut sont définies dans le constructeur.
 
 Par convention, le constructeur est toujours situé entre le dernier attribut (variable) et la première méthode (fonction).
 
-Si l'on veut que la variable `year` de l'entité `Foo` soit initialisée avec l'année en cours par défaut, il faut ouvrir le fichier `src/Entity/Foo.php` et ajouter un constructeur ou le modifier :
+Si l'on veut que la variable `quantity` de l'entité `Foo` soit initialisée avec l'année en cours par défaut, il faut ouvrir le fichier `src/Entity/Foo.php` et ajouter un constructeur ou le modifier pour obtenir :
 
     <?php
     // src/Entity/Foo.php
 
-    // ...
-    use DateTime;
-    // ...
-
-        private $year;                  // <= dernier attribut
+        // ...
+        private $quantity;              // <= dernier attribut
 
         /**
          * Constructor
          */
         public function __construct()   // <= constructeur
         {
-            $this->year = (int) (new DateTime())->format('Y');
+            $this->quantity = 42;
         }
 
         /**
@@ -181,7 +178,7 @@ Si l'on veut que la variable `year` de l'entité `Foo` soit initialisée avec l'
 
 Le composant Entity Manager permet d'enregistrer des entités dans la BDD.
 
-Le composant Repository permet de récuprére des entités enregistrées dans la BDD.
+Le composant Repository permet de récupérer des entités enregistrées dans la BDD.
 
 ### Récupérer une ou des entités enregistrées
 
@@ -204,12 +201,12 @@ Le composant Repository permet de récuprére des entités enregistrées dans la
         $foo = $repository->find($id);
 
         // récupération de plusieurs entités à partir d'un critère
-        $foo = $repository->findByYear(2018);
+        $foo = $repository->findByQuantity(42);
 
         // récupération de plusieurs entités à partir de plusieurs critères
         $foos = $repository->findBy([
             'name' => 'Foo bar baz',
-            'year' => 2018,
+            'quantity' => 42,
         ]);
 
         // récupération d'une entité à partir d'un critère
@@ -218,7 +215,7 @@ Le composant Repository permet de récuprére des entités enregistrées dans la
         // récupération d'une entité à partir de plusieurs critères
         $foo = $repository->findOneBy([
             'name' => 'Foo bar baz',
-            'year' => 2018,
+            'quantity' => 42,
         ]);
 
     // ...
@@ -253,6 +250,7 @@ Attention : si votre application Symfony se trouve dans un bundle, vous devez pr
 
     // modification de l'entité
     $foo->setName('Lorem ipsum');
+    $foo->setQuantity(123);
 
     // enregistrement de l'entité
     $entityManager->flush();
@@ -274,6 +272,8 @@ Attention : si votre application Symfony se trouve dans un bundle, vous devez pr
 
 ## Doc
 
+- [Doctrine Configuration Reference (DoctrineBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/doctrine.html)
+- [Customizing the User Entity > Symfony Security: Beautiful Authentication, Powerful Authorization | SymfonyCasts](https://symfonycasts.com/screencast/symfony-security/user-entity#setting-doctrines-server-version).
 - [Welcome to Doctrine 2 ORM's documentation! - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/index.html)
 - [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/association-mapping.html#association-mapping)
 - [Doctrine Query Language - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/dql-doctrine-query-language.html)
