@@ -76,14 +76,4 @@ Maintenant, il faut changer les réglages de Wordpress :
 
 Voici un exemple des réglages personnalisés :
 
-![Réglages personnalisés de la page d'accueil](home-page-custom-settings.png)
-
-## Créer un custom post type et l'afficher
-
-@todo compléter
-
-1. Créer le custom post type
-2. Activer la page d'archive pour ce custom post type
-3. Créer le fichier `archive-$posttype.php`
-4. Créer le fichier `single-$posttype.php`
-
+![Réglages personnalisés de la page d'accueil](img/home-page-custom-settings.png)
