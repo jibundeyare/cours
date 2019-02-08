@@ -825,6 +825,10 @@ Dans les formulaires, remplacez les occurences de :
 - [Download Symfony Framework and Components](https://symfony.com/download)
 - [Framework Configuration Reference (FrameworkBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/framework.html#secret)
 
+## Upgrade Symfony 3.4
+
+- [Upgrade to Symfony 3.4 > Upgrade to Symfony4 and Flex! | SymfonyCasts](https://symfonycasts.com/screencast/symfony4-upgrade/sf34-deprecations)
+
 ### Entity
 
 - [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html#persisting-objects-to-the-database)

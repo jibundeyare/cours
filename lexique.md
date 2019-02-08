@@ -10,6 +10,7 @@
 - Boolean : variable booléenne, type de données; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
 - CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CEO : Chief Executive Officer (PDG)
+- Code snippet : petit morceau de code utile que l'on réutilise de projet en projet
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
   Ce sont toutes les opérations possibles sur une donnée stockée en BDD
 - CSS : Cascading Style Sheet (feuille de style en cascade)
@@ -62,6 +63,7 @@
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée; voir aussi Getter
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
   Dans un contexte de cryptographie, désigne un document numériquement signé
+- Snippet : voir Code snippet
 - SS2I : Société de Services en Ingénierie Informatique; voir aussi ESN
 - SSII : voir SS2I
 - String : chaîne de caractères, type de données

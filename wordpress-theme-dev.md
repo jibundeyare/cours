@@ -77,3 +77,33 @@ Maintenant, il faut changer les réglages de Wordpress :
 Voici un exemple des réglages personnalisés :
 
 ![Réglages personnalisés de la page d'accueil](img/home-page-custom-settings.png)
+
+## Créer un template de page
+
+Un template de page permet d'afficher une avec apparence différente des autres.
+Normalement, quand on veut visualiser une page (`http://example.com/contact` par exemple), c'est le fichier `page.php` qui est utilisé pour afficher le document.
+Mais si l'on définit un template de page, c'est le fichier contenant ce template (`template-contact.php` par exemple) qui sera utilisé pour l'affichage.
+
+Pour créer un template de page, il faut créer un fichier contenant un bloc de commentaire spécial :
+
+    <?php
+    /**
+     * Template Name: Template Contact
+     */
+
+C'est ce commentaire, et rien d'autre, qui notifie à Wordpress l'existence d'un template de page.
+
+Lors de l'édition d'une page dans l'admin de Wordpress, ce template sera affiché comme étant `Template Contact` dans la section **Attributs de page** dans la colonne de droite :
+
+![template de page personnalisé](img/custom-page-template.png)
+
+Il est d'usage de nommer les templates de page avec le préfixe `template-` et d'ajouter le nom de la page le nom du type de page.
+Par exemple, pour la page contact, le fichier devrait être nommé `template-contact.php`.
+
+Le reste du contenu du fichier PHP obéit aux règles habituelle d'un fichier de thème Wordpress.
+On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query()` pour afficher tout type de contenu.
+
+## Doc
+
+- [Page Templates | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/template-files-section/page-template-files/)
+
