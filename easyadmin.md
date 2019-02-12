@@ -71,18 +71,24 @@ Pour définir les entités que EasyAdmin peut manipuler, ouvrir le fichier `app/
         entities:
             Category:
                 class: AppBundle\Entity\Category
+                list:
+                    fields: ['title', 'tasks']
                 form:
                     fields:
                         - 'title'
                         - { property: 'tasks', type: 'entity', type_options: { choice_label: 'title', multiple: true }}
             Tag:
                 class: AppBundle\Entity\Tag
+                list:
+                    fields: ['title', 'tasks']
                 form:
                     fields:
                         - 'title'
                         - { property: 'tasks', type: 'entity', type_options: { choice_label: 'title', multiple: true }}
             Task:
                 class: AppBundle\Entity\Task
+                list:
+                    fields: ['title', 'description', 'deadlineDate', 'deadlineTime', 'isDone', { property: 'category.title', label: 'Category' }]
                 form:
                     fields:
                         - 'title'
@@ -98,3 +104,7 @@ Note : veiller à adapter le nom des entités et leurs champs dans la partie `en
 ## Doc
 
 - [EasyAdminBundle (Symfony Bundles Docs)](http://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)
+- [Chapter 5. List, Search and Show Views Configuration (EasyAdmin Bundle Docs)](https://symfony.com/doc/master/bundles/EasyAdminBundle/book/list-search-show-configuration.html)
+- [How to Define Custom Options for Entity Properties (EasyAdmin Bundle Docs)](https://symfony.com/doc/master/bundles/EasyAdminBundle/tutorials/custom-property-options.html)
+- [Form Types Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types.html)
+- [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)

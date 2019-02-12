@@ -15,7 +15,7 @@ Pour faire ces tests, on utilise des paramètres connus lors de l'appel de la fo
 
 Même si chaque fonction de votre application se comporte correctement, votre application peut comporter des bugs. (Il suffit de mal combiner les fonctions entre elles.)
 
-Les tests fonctionnels permettent de vérifier que l'application se comporte correctement lorsqu'elle utilisée par une vraie personne.
+Les tests fonctionnels permettent de vérifier que l'application se comporte correctement lorsqu'elle est utilisée par une vraie personne.
 
 Pour faire ces tests, on pilote un client HTTP (une librairie PHP ou un vrai navigateur web) et on vérifie que chaque action demandée entraîne le résultat souhaité (affichage d'une chaîne de caractères ou d'une balise HTML par exemple).
 

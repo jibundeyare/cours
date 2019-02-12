@@ -195,7 +195,7 @@ Dans le dossier `src/Controller`, créer le fichier `MainController.php` :
 
     namespace App\Controller;
 
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\Routing\Annotation\Method;
@@ -203,7 +203,7 @@ Dans le dossier `src/Controller`, créer le fichier `MainController.php` :
     /**
      * @Route("/")
      */
-    class MainController extends Controller
+    class MainController extends AbstractController
     {
         /**
          * @Route("/", name="main_index")
@@ -283,7 +283,7 @@ Par exemple, pour que toutes les URL commencent par `/main`, il faut modifier le
     /**
      * @Route("/")
      */
-    class MainController extends Controller
+    class MainController extends AbstractController
     {
         // ...
 
@@ -294,7 +294,7 @@ devienne :
     /**
      * @Route("/main")
      */
-    class MainController extends Controller
+    class MainController extends AbstractController
     {
         // ...
 
@@ -303,7 +303,7 @@ Les URL `/` et `hello/{name}` peuvent alors être ouvertes avec :
 - [http://localhost:8000/main](http://localhost:8000/main)
 - [http://localhost:8000/main/hello/Toto](http://localhost:8000/main/hello/Toto)
 
-## Accéder au service `database_connection`
+## Accéder au service `database_connection` (optionnel)
 
 Modifier tous les contrôleurs qui doivent utiliser le service `database_connection`, en ajoutant la ligne de code suivante :
 
@@ -328,7 +328,7 @@ Dans le dossier `src/Controller`, modifier le fichier `MainController.php` :
     namespace App\Controller;
 
     use Doctrine\DBAL\Connection;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\Routing\Annotation\Method;
@@ -336,7 +336,7 @@ Dans le dossier `src/Controller`, modifier le fichier `MainController.php` :
     /**
      * @Route("/")
      */
-    class MainController extends Controller
+    class MainController extends AbstractController
     {
         private $conn;
 
@@ -395,6 +395,107 @@ Dans le dossier `templates/main`, créer le fichier `items-index.html.twig` :
     {% endfor %}
     </ul>
     {% endblock %}
+
+## La variable de session
+
+La variable de session est spéciale : elle a une durée de vie limitée.
+Il est possible de stocker des données dans cette variable.
+
+Cela permet de savoir si une personne est authentifié ou non et de la déconnecter automatiquement au bout d'un certain temps.
+
+Pour utiliser cette variable de session, il faut importer la classe avec un `use` et ajouter un type hint dans une action :
+
+    use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+    // ...
+
+        public function index(Request $request,　SessionInterface $session)
+        {
+            // ...
+        }
+
+Il est alors possible d'utiliser la variable de session :
+
+    // enregistrer les données d'un utilisateur
+    $session->set($user, 'user');
+
+    // récupérer les données d'un utilisateur
+    $user = $session->get('user');
+
+### Exemple avec le contrôleur principal
+
+    <?php
+    // src/Controller/MainController.php
+
+    namespace App\Controller;
+
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Session\SessionInterface;
+    use Symfony\Component\Routing\Annotation\Route;
+    use Symfony\Component\Routing\Annotation\Method;
+
+    /**
+     * @Route("/")
+     */
+    class MainController extends AbstractController
+    {
+        /**
+         * @Route("/", name="main_index")
+         */
+        public function index(Request $request, SessionInterface $session)
+        {
+            if (!$session->has('now')) {
+                $session->get(new DateTime(), 'now');
+            }
+
+            $now = $session->get('now');
+
+            return $this->render('main/index.html.twig', [
+                // ...
+                'now' => $now,
+            ]);
+        }
+
+        /**
+         * @Route("/hello/{name}", name="main_hello")
+         */
+        public function hello(Request $request, SessionInterface $session, $name)
+        {
+            if (!$session->has('now')) {
+                $session->get(new DateTime(), 'now');
+            }
+
+            $now = $session->get('now');
+
+            $greeting = "Hello {$name}!";
+
+            return $this->render('main/hello-name.html.twig', [
+                'greeting' => $greeting,
+                'now' => $now,
+            ]);
+        }
+
+        /**
+         * @Route("/items", name="main_items_index")
+         */
+        public function itemsIndex(Request $request, SessionInterface $session, $name)
+        {
+            if (!$session->has('now')) {
+                $session->get(new DateTime(), 'now');
+            }
+
+            $now = $session->get('now');
+
+            $sql = 'SELECT * FROM item';
+            $items = $this->conn->fetchAll($sql);
+
+            return $this->render('main/items-index.html.twig', [
+                'items' => $items,
+                'now' => $now,
+            ]);
+        }
+    }
 
 ## Authentification par mot de passe
 
@@ -663,13 +764,13 @@ Si vous voulez modifier le formulaire d'inscription :
 - pour ajouter des champs, le Form Type se trouve dans le fichier `src/Form/RegistrationFormType.php`. 
 - pour personnaliser l'intégration HTML CSS, le template se trouve dans le fichier `templates/registration/register.html.twig`.
 
-### Création automatique d'utilisateur
+### Création automatique d'utilisateur (optionnel)
 
 Pour créer plusieurs utilisateurs automatiquement, il faut utiliser des Fixtures.
 
-Pour en savoir plus, voir [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html).
+Pour en savoir plus, voir [symfony-fixtures.md](symfony-fixtures.md).
 
-### Rôle d'un utilisateur
+### Rôle d'un utilisateur (optionnel)
 
 Par défaut, tous les utilisateurs inscrits ont seulement le rôle `ROLE_USER`.
 
@@ -687,7 +788,7 @@ Pour supprimer le rôle `ROLE_ADMIN` d'un utilisateur, tapez la commande suivant
 
     php bin/console doctrine:query:sql "UPDATE user SET roles = '[]' WHERE email = 'foo.bar@example.com'"
 
-### Rôle de plusieurs utilisateurs
+### Rôle de plusieurs utilisateurs (optionnel)
 
 Vous pouvez modifier la colonne `roles` de plusieurs utilisateurs avec une requête SQL, mais si vous voulez que tous les utilisateurs qui s'inscrivent aient le rôle `ROLE_ADMIN` vous devez modifier l'entité `User`.
 
@@ -743,7 +844,7 @@ Le firewall devrait ressembler à ceci :
                 logout:
                     path: app_logout
 
-### Authentification par token (API Key)
+### Authentification par token / API Key (optionnel)
 
 Ceci est l'étape d'après et permet de mettre en place l'authentification par token pour l'accès aux API.
 
@@ -840,6 +941,10 @@ Dans les formulaires, remplacez les occurences de :
 
 - [Symfony and HTTP Fundamentals (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/introduction/http_fundamentals.html)
 - [The HttpFoundation Component (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/components/http_foundation.html)
+- [symfony/ParameterBag.php at 3.4 · symfony/symfony](https://github.com/symfony/symfony/blob/3.4/src/Symfony/Component/HttpFoundation/ParameterBag.php)
+- [Controller (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/controller.html#managing-the-session)
+- [Session Management (The HttpFoundation Component - Symfony 3.4 Docs)](https://symfony.com/doc/3.4/components/http_foundation/sessions.html)
+- [symfony/SessionInterface.php at 3.4 · symfony/symfony](https://github.com/symfony/symfony/blob/3.4/src/Symfony/Component/HttpFoundation/Session/SessionInterface.php)
 
 ### Form
 
