@@ -415,6 +415,21 @@ Utiliser le template `partial` dans le template `templates/foo.html.twig` :
 
     {% include('partials/_items.html.twig') %}
 
+### La génération d'URL
+
+Au lieu d'écrire les URL à la main, vous pouvez utiliser la fonction `path()` qui peut générer les URL de votre application.
+
+Si dans un de vos contrôleurs, vous avez une route nommée `main_index` par exemple, le code suivant va créer un lien qui pointera vers cette page :
+
+    <a href="{{ path('main_index') }}">la page d'accueil</a>
+
+Si votre application possède une page de visualisation d'un objet stocké en BDD (un student par exemple), le nom de la route sera probablement quelque chose comme `student_show`.
+Le code suivant permet de générer une URL qui pointe vers cette page, en utilisant l'id de l'objet :
+
+    <a href="{{ path('student_show', { id: student.id }) }}">voir le student {{ student.firstname }} {{ student.lastname }}</a>
+
+Pour en savoir plus, voir : [Creating and Using Templates (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/templating.html#linking-to-pages).
+
 ### Les filtres
 
 #### Échappement de variables
@@ -585,7 +600,12 @@ Afficher du Twig sans le faire interpréter :
 (https://twig.symfony.com/doc/2.x/tags/verbatim.html)
 - [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
 - [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/escape.html)
-- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine]
+- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
+
+### Génération d'URL
+
+- [Creating and Using Templates (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/templating.html#linking-to-pages)
+
 ### Formatage de nombres
 
 - [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/number_format.html)
@@ -596,6 +616,7 @@ Afficher du Twig sans le faire interpréter :
 - [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/date.html)
 - [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/date.html)
 - [PHP: date - Manual](http://php.net/manual/en/function.date.php)
+- [PHP: DateInterval::format - Manual](https://secure.php.net/DateInterval.format)
 
 ### Localisation de dates
 
