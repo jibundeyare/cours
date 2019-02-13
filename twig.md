@@ -484,7 +484,7 @@ Puis utiliser le filtre `number_format` dans les templates Twig :
 
 ### Formatage de dates
 
-Il est possible de manipuler le format d'affichage des dates avec le filtre `date()`.
+Il est possible de manipuler le format d'affichage de dates (objet de type DateTime) avec le filtre `date()`.
 
 Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA` :
 
@@ -493,6 +493,26 @@ Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA` 
 Afficher la date stockée dans la variable `create_date` au format `MM/JJ/AAAA` :
 
     {{ create_date|date("m/d/Y") }}
+
+Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA HH:MM:SS` :
+
+    {{ create_date|date("d/m/Y H:i:s") }}
+
+### Formatage de durée
+
+Il est possible de manipuler le format d'affichage de durées (objet de type DateInterval) avec le filtre `date()`.
+
+Afficher la durée stockée dans la variable `connexion_duration` au format `J` (en nombre de jours):
+
+    {{ connexion_duration|date("%a") }}
+
+Afficher la durée stockée dans la variable `connexion_duration` au format `JJ MM AAAA` (en nombre de jours, mois et années) :
+
+    {{ connexion_duration|date("%D %M %Y") }}
+
+Afficher la durée stockée dans la variable `connexion_duration` au format ` HHh MMm SSs JJ MM AAAA` (en nombre d'heures, minutes, secondes, jours, mois et années) :
+
+    {{ connexion_duration|date("%Hh %Im %Ss %D %M %Y") }}
 
 ### Localisation de dates
 

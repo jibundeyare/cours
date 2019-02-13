@@ -409,20 +409,24 @@ Pour utiliser cette variable de session, il faut importer la classe avec un `use
 
     // ...
 
-        public function index(Request $request,　SessionInterface $session)
+        private $session;
+
+        public function __construct(SessionInterface $session)
         {
-            // ...
+            $this->session = $session;
         }
 
 Il est alors possible d'utiliser la variable de session :
 
     // enregistrer les données d'un utilisateur
-    $session->set($user, 'user');
+    $this->session->set('user', $user);
 
     // récupérer les données d'un utilisateur
-    $user = $session->get('user');
+    $this->user = $session->get('user');
 
 ### Exemple avec le contrôleur principal
+
+L'exemple suivant se base sur le contrôleur principal que nous avions créé et montre comment utiliser la variable de session pour afficher la date et l'heure à laquelle l'utilisateur s'est connecté au serveur et depuis combien de temps il est connecté :
 
     <?php
     // src/Controller/MainController.php
@@ -440,62 +444,134 @@ Il est alors possible d'utiliser la variable de session :
      */
     class MainController extends AbstractController
     {
+        private $session;
+
+        public function __construct(SessionInterface $session)
+        {
+            $this->session = $session;
+        }
+
         /**
          * @Route("/", name="main_index")
          */
-        public function index(Request $request, SessionInterface $session)
+        public function index(Request $request)
         {
-            if (!$session->has('now')) {
-                $session->get(new DateTime(), 'now');
+            $now = new \DateTime();
+
+            if (!$this->session->has('connectionDateTime')) {
+                $this->session->set('connectionDateTime', $now);
             }
 
-            $now = $session->get('now');
+            $connectionDateTime = $this->session->get('connectionDateTime');
+            $connectionDuration = $connectionDateTime->diff($now);
 
             return $this->render('main/index.html.twig', [
                 // ...
-                'now' => $now,
+                'connectionDateTime' => $connectionDateTime,
+                'connectionDuration' => $connectionDuration,
             ]);
         }
 
         /**
          * @Route("/hello/{name}", name="main_hello")
          */
-        public function hello(Request $request, SessionInterface $session, $name)
+        public function hello(Request $request, $name)
         {
-            if (!$session->has('now')) {
-                $session->get(new DateTime(), 'now');
+            $now = new \DateTime();
+
+            if (!$this->session->has('connectionDateTime')) {
+                $this->session->set('connectionDateTime', $now);
             }
 
-            $now = $session->get('now');
+            $connectionDateTime = $this->session->get('connectionDateTime');
+            $connectionDuration = $connectionDateTime->diff($now);
 
             $greeting = "Hello {$name}!";
 
             return $this->render('main/hello-name.html.twig', [
                 'greeting' => $greeting,
-                'now' => $now,
+                'connectionDateTime' => $connectionDateTime,
+                'connectionDuration' => $connectionDuration,
             ]);
         }
 
         /**
          * @Route("/items", name="main_items_index")
          */
-        public function itemsIndex(Request $request, SessionInterface $session, $name)
+        public function itemsIndex(Request $request, $name)
         {
-            if (!$session->has('now')) {
-                $session->get(new DateTime(), 'now');
+            $now = new \DateTime();
+
+            if (!$this->session->has('connectionDateTime')) {
+                $this->session->set('connectionDateTime', $now);
             }
 
-            $now = $session->get('now');
+            $connectionDateTime = $this->session->get('connectionDateTime');
+            $connectionDuration = $connectionDateTime->diff($now);
 
             $sql = 'SELECT * FROM item';
             $items = $this->conn->fetchAll($sql);
 
             return $this->render('main/items-index.html.twig', [
                 'items' => $items,
-                'now' => $now,
+                'connectionDateTime' => $connectionDateTime,
+                'connectionDuration' => $connectionDuration,
             ]);
         }
     }
+
+Pour afficher la date et l'heure de connection et la durée de la connection, il faut ajouter le code suivant dans le bloc `body` du template Twig :
+
+    <p>
+        Date et heure de connection : {{ connectionDateTime|date("d/m/Y H:i:s") }}.<br />
+        Durée de connection : {{ connectionDuration|date("%Hh %Im %Ss") }} secondes.<br />
+    </p>
+
+## Messages flash
+
+Les messages flash permettent d'afficher un message d'information, d'alerte ou d'erreur une seule fois seulement.
+Ce sont des notifiactions.
+
+Sous le capot, les messages flashs utilisent la variable de session.
+Mais vous n'avez pas à vous soucier de la variable de session, l'enregistrement, la lecture et la suppression sont automatiquement gérées par Symfony et Twig.
+
+Si vous voulez créer un message de confirmation après un enregistrement en BDD, vous pouvez utiliser le code suivant dans votre contrôleur :
+
+            // ajouter un message flash
+            $this->addFlash(
+                'notice',
+                'Vos changements ont été enregistrés'
+            );
+
+Et pour afficher ce message, vous pouvez ajouter le code suivant dans le bloc `body` de votre template Twig :
+
+    {# afficher les messages flashs #}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+Si vous voulez créer une alerte, utilisez le mot-clé `warning` au lieu de `notice` :
+
+            // ajouter un message flash
+            $this->addFlash(
+                'warning',
+                'Vos changements ont été enregistrés'
+            );
+
+Et dans le bloc `body` de votre template Twig :
+
+    {# afficher les messages flashs #}
+    {% for message in app.flashes('warning') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+En fait, vous pouvez utiliser n'importe quel mot-clé au lieu de `notice` ou `warning` du moment qu'ils sont identiques dans votre contrôleur et dans votre template Twig.
+
+Pour en savoir plus, voir [Controller (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/controller.html#flash-messages).
 
 ## Authentification par mot de passe
 
