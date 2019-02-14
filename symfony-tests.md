@@ -37,9 +37,49 @@ maintenant vous devriez avoir :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/src_symfony_3_4_test
 
+## Générer un gabarit de test unitaire
+
+À la racine du projet, lancer la commande :
+
+    php bin/console make:unit-test
+
+Pour la rédaction de tests, voir [Testing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/testing.html).
+
+Pour un exemple de test unitaire, voir le fichier suivant dans le repo [https://github.com/jibundeyare/src-symfony-3.4](https://github.com/jibundeyare/src-symfony-3.4) :
+
+- `tests/TaxCalculatorTest.php`
+
+## Générer un gabarit de test fonctionnel
+
+À la racine du projet, lancer la commande :
+
+    php bin/console make:functional-test
+
+Pour la rédaction de tests, voir [Testing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/testing.html).
+
+Pour un exemple de test unitaire, voir les fichiers suivant dans le repo [https://github.com/jibundeyare/src-symfony-3.4](https://github.com/jibundeyare/src-symfony-3.4) :
+
+- `tests/StudentControllerTest.php`
+- `tests/TaxControllerTest.php`
+
+## Lancer les tests
+
+Pour lancer les tests, taper la commande suivante :
+
+    bin/phpunit
+
+Si vous avez des data fixtures, n'oubliez pas de les recharger :
+
+    php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
+    bin/phpunit
+
+Note : l'option `--purge-with-truncate` permet de vider la BDD avant de charger les data fixtures.
+
+Pour en savoir plus sur les data fixtures, voir [symfony-fixtures.md](symfony-fixtures.md).
+
 ## Script de lancement des tests
 
-Ce script reconstruit la BDD et charge les fixtures avant de lancer les tests.
+Ce script vide la BDD et recharge les fixtures avant de lancer les tests.
 
 ### Linux et MacOS
 
