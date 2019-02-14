@@ -1013,6 +1013,14 @@ Dans les formulaires, remplacez les occurences de :
 - [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html)
 - [Doctrine\Common\Collections\ArrayCollection | API](https://www.doctrine-project.org/api/collections/latest/Doctrine/Common/Collections/ArrayCollection.html)
 
+### Contrôleur
+
+- [Controller (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/controller.html)
+
+### Route
+
+- [Routing (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/routing.html)
+
 ### GET, POST, FILES, SESSION, COOKIES, SERVER
 
 - [Symfony and HTTP Fundamentals (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/introduction/http_fundamentals.html)
@@ -1033,7 +1041,7 @@ Dans les formulaires, remplacez les occurences de :
 
 @todo ajouter [Managing CSS and JavaScript (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/frontend.html)
 
-## Fixtures
+## Data fixtures
 
 - [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html)
 
