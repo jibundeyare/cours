@@ -113,6 +113,20 @@ Le fichier suivant permet de générer :
         }
     }
 
+## Charger les data fixtures
+
+Attention : le chargement des data fixtures supprime d'abord les données de votre BDD.
+
+Pour charger les données dans votre BDD, lancez la commande suivante :
+
+    php bin/console doctrine:fixture:load --purge-with-truncate --no-interaction
+
+Note : l'option `--purge-with-truncate` vide la BDD avant de charger les data fixtures.
+
+Si vous voulez charger les données dans votre BDD de test, ajouter l'option `--env=test` :
+
+    php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
+
 ## Le package `hautelook/AliceBundle`
 
 Ce package permet de créer des data fixtures à partir de code YAML.

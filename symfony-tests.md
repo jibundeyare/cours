@@ -37,6 +37,13 @@ maintenant vous devriez avoir :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/src_symfony_3_4_test
 
+## Création de la BDD de test
+
+Pour créer la BDD de test, lancer les commandes suivantes :
+
+    php bin/console doctrine:create:database --env=test
+    php bin/console doctrine:migrations:migrate --env=test
+
 ## Générer un gabarit de test unitaire
 
 À la racine du projet, lancer la commande :
@@ -62,6 +69,10 @@ Pour un exemple de test unitaire, voir les fichiers suivant dans le repo [https:
 - `tests/StudentControllerTest.php`
 - `tests/TaxControllerTest.php`
 
+## Data fixtures (données de test)
+
+Pour en savoir plus, voir [symfony-fixtures.md](symfony-fixtures.md).
+
 ## Lancer les tests
 
 Pour lancer les tests, taper la commande suivante :
@@ -72,10 +83,6 @@ Si vous avez des data fixtures, n'oubliez pas de les recharger :
 
     php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
     bin/phpunit
-
-Note : l'option `--purge-with-truncate` permet de vider la BDD avant de charger les data fixtures.
-
-Pour en savoir plus sur les data fixtures, voir [symfony-fixtures.md](symfony-fixtures.md).
 
 ## Script de lancement des tests
 
