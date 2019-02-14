@@ -271,6 +271,10 @@ Puis ouvrir les URL associées :
 - [http://localhost:8000/](http://localhost:8000/)
 - [http://localhost:8000/hello/Toto](http://localhost:8000/hello/Toto)
 
+### Génération d'URL
+
+Pour générer une URL dans un template, voir la section « Génération d'URL » dans [twig.md](twig.md).
+
 ### Changer le préfixe d'un contrôleur
 
 Il est possible de changer les URL de toutes les actions d'un contrôleur.
