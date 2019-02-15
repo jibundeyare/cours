@@ -115,17 +115,26 @@ Le fichier suivant permet de générer :
 
 ## Charger les data fixtures
 
-Attention : le chargement des data fixtures supprime d'abord les données de votre BDD.
+Attention : l'idée est de supprimer d'abord toutes les données avant de charger les data fixtures.
+Auttrement dit, cette procédure supprime toutes les données de votre BDD.
 
-Pour charger les données dans votre BDD, lancez la commande suivante :
+### Charger les data fixtures dans la BDD de dev
 
-    php bin/console doctrine:fixture:load --purge-with-truncate --no-interaction
+Pour charger les données dans votre BDD de dev, lancez les commandes suivante :
 
-Note : l'option `--purge-with-truncate` vide la BDD avant de charger les data fixtures.
+    php bin/console doctrine:database:drop --force
+    php bin/console doctrine:database:create
+    php bin/console doctrine:migrations:migrate --no-interaction
+    php bin/console doctrine:fixture:load --no-interaction
 
-Si vous voulez charger les données dans votre BDD de test, ajouter l'option `--env=test` :
+### Charger les data fixtures dans la BDD de test
 
-    php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
+Si vous voulez faire cette procédure dans votre BDD de test, ajoutez l'option `--env=test` :
+
+    php bin/console doctrine:database:drop --force --env=test
+    php bin/console doctrine:database:create --env=test
+    php bin/console doctrine:migrations:migrate --no-interaction --env=test
+    php bin/console doctrine:fixture:load --no-interaction --env=test
 
 ## Le package `hautelook/AliceBundle`
 

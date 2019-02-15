@@ -95,6 +95,9 @@ Créer un fichier nommé `tests.sh` dans le dossier `bin` :
     #!/bin/bash
     # bin/tests.sh
 
+    php bin/console doctrine:database:drop --force --env=test
+    php bin/console doctrine:database:create --env=test
+    php bin/console doctrine:migrations:migrate --no-interaction --env=test
     php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
     bin/phpunit
 
@@ -109,7 +112,10 @@ Créer un fichier nommé `tests.bat` dans le dossier `bin` :
     @echo off
     REM bin/tests.bat
 
-    php bin/console doctrine:fixture:load --env=test --purge-with-truncate --no-interaction
+    php bin/console doctrine:database:drop --force --env=test
+    php bin/console doctrine:database:create --env=test
+    php bin/console doctrine:migrations:migrate --no-interaction --env=test
+    php bin/console doctrine:fixture:load --env=test --no-interaction
     bin/phpunit
 
 Pour démarrer le script, taper la commande suivante :
