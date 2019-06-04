@@ -16,3 +16,11 @@
 
 > "Premature optimization is the root of all evil." - Donald Knuth
 
+## Product
+
+> "You’re not the customer, you’re the product." - Tom Johnson
+
+> "If you are not paying for it, you’re not the customer; you’re the product being sold." - Andrew Lewis
+
+For a detailed story of these quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
+

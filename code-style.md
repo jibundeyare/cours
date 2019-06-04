@@ -71,4 +71,3 @@ Exemple de code en PHP :
 - [PSR-2: Coding Style Guide - PHP-FIG](http://www.php-fig.org/psr/psr-2/)
 - [Coding Standards (Symfony Docs)](http://symfony.com/doc/current/contributing/code/standards.html)
 - [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)
--

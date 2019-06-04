@@ -18,7 +18,8 @@ Créer un fichier `phpinfo.php` dans le dossier `/Applications/MAMP/htdocs` avec
 
     <?php phpinfo();
 
-Ouvrir l'url `http://localhost:8888/phpinfo.php`. Le numéro de version de PHP s'affiche.
+Ouvrir l'url [http://localhost:8888/phpinfo.php](http://localhost:8888/phpinfo.php).
+Le numéro de version de PHP s'affiche.
 
 ### Config `php.ini`
 

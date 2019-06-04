@@ -16,6 +16,7 @@
 - CSS : Cascading Style Sheet (feuille de style en cascade)
 - CTO : Chief Technology Officer (directeur technique)
 - Database : BDD
+- DAW : Digital Audio Workstation (Station de travail Audio Numérique)
 - DB : Database
 - Design Pattern : motif de conception  
   C'est la façon de structurer du code; on peut parler d'architecture logicielle  

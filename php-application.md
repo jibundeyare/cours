@@ -57,9 +57,7 @@ Pour lancer le serveur web, taper :
 
     php -S localhost:8000 -t public
 
-Puis dans barre d'adresse d'un navigateur web, taper :
-
-    http://localhost:8000/
+Puis dans barre d'adresse d'un navigateur web, taper : [http://localhost:8000/](http://localhost:8000/)
 
 ## Commandes
 

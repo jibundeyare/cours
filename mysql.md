@@ -28,6 +28,10 @@ Quelques règles à respecter :
 - formez le nom des contraintes de clé étrangère avec « fk + underscore + le nom de la table en cours + underscore + le nom de la table étrangère + underscore + nom de la colonne étrangère ».  
   Exemple : si on est dans la table `student` et que la colonne ciblée est `project.id` (table `project`, colonne `id`), cela donne `fk_student_project_id`.
 
+Attention : avec MariaDB la taille maximale pour le nom d'un objet (BDD, table, colonne, etc) est de 64 caractères.
+
+Pour plus d'informations, voir [Identifier Names - MariaDB Knowledge Base](https://mariadb.com/kb/en/library/identifier-names/#maximum-length).
+
 Un dernier conseil :
 
 - nommez les tables qui ont une valeur métier dans la langue de votre client.  
@@ -238,12 +242,17 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 
 ## Vidéos
 
+- [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858)
 - [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
 - [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère avec PhpMyAdmin.
 - [phpmyadmin - création de bdd on Vimeo](https://vimeo.com/309776733) : Cette vidéo montre comment créer une base de données avec PhpMyAdmin.
 - [phpmyadmin - suppression de bdd on Vimeo](https://vimeo.com/309777482) : Cette vidéo montre comment supprimer une base de données avec PhpMyAdmin.
 
 ## Doc
+
+### Généralités
+
+- [Identifier Names - MariaDB Knowledge Base](https://mariadb.com/kb/en/library/identifier-names/#maximum-length)
 
 ### Tutoriels
 
@@ -257,3 +266,4 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 - [Mockaroo - Random Data Generator and API Mocking Tool | JSON / CSV / SQL / Excel](https://mockaroo.com/)
 - [generatedata.com](http://www.generatedata.com/)
 - [Dummy data for MYSQL database](http://filldb.info/)
+

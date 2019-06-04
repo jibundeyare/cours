@@ -24,9 +24,7 @@ Lancer le serveur web de développement :
 
     php -S localhost:8000 -t web
 
-Ouvrir l'url suivante dans un navigateur :
-
-    http://localhost:8000/app_dev.php/
+Ouvrir l'url suivante dans un navigateur : [http://localhost:8000/app_dev.php/](http://localhost:8000/app_dev.php/)
 
 ## Erreur de connexion à la base de données avec MAMP
 

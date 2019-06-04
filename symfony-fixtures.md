@@ -12,9 +12,9 @@ Par exemple : `Foo bar baz` devient `foo-bar-baz`.
 
 ## Install
 
-    composer require orm-fixtures --dev
-    composer require fzaninotto/faker --dev
-    composer require javiereguiluz/easyslugger --dev
+    composer require orm-fixtures
+    composer require fzaninotto/faker
+    composer require javiereguiluz/easyslugger
 
 ## Créer un gabarit de data fixtures
 

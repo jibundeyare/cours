@@ -74,9 +74,7 @@ Lancer le serveur web de développement :
 
 Note : pour stopper le serveur, appuyer sur `CTRL + C`.
 
-Pour tester l'installation, ouvrir l'url suivante dans un navigateur :
-
-    http://localhost:8000/
+Pour tester l'installation, ouvrir l'url suivante dans un navigateur : [http://localhost:8000/](http://localhost:8000/)
 
 Conseil : si vous rencontrer des problèmes à cette étape, consultez « Erreur lors de l'affichage de la home » dans [symfoy-3.4-trouble-shooting.md](symfoy-3.4-trouble-shooting.md).
 

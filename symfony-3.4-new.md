@@ -25,7 +25,7 @@ Se rendre dans le dossier du projet :
 
 Installer le bundle `symfony/web-server-bundle` :
 
-    composer require server --dev
+    composer require server
 
 Lancer le serveur web de développement :
 
@@ -33,9 +33,7 @@ Lancer le serveur web de développement :
 
 Note : pour stopper le serveur, appuyer sur `CTRL + C`.
 
-Pour tester l'installation, ouvrir l'URL suivante dans un navigateur :
-
-    http://localhost:8000/
+Pour tester l'installation, ouvrir l'URL suivante dans un navigateur : [http://localhost:8000/](http://localhost:8000/)
 
 ## Configuration de l'accès à la base de données
 
@@ -158,9 +156,15 @@ Dans le fichier `config/packages/doctrine.yaml`, vous devez modifier la ligne :
 
             server_version: '5.7'
 
-pour obtenir :
+si vous utilisez MySQL :
 
             server_version: '5.6'
+
+ou si vous utilisez MariaDB :
+
+            server_version: 'mariadb-10.1.38'
+
+NB Adaptez le numéro de version si besoin.
 
 Pour savoir quelle version de MySQL vous avez, tapez la commande suivante :
 

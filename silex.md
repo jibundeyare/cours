@@ -118,9 +118,7 @@ Depuis le terminal, lancer un serveur web de développement :
 
     php -S localhost:8000 -t public
 
-puis dans un navigateur web, entrer l'url :
-
-    http://localhost:8000
+puis dans un navigateur web, entrer l'url : [http://localhost:8000](http://localhost:8000)
 
 ## Mode debug
 

@@ -114,6 +114,7 @@ Pour augmenter les performances, il est possible de précharger des resources.
 - [HTML elements reference - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 - [CSS reference - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 - [Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)
+- [What Web Can Do Today](https://whatwebcando.today/)
 - [CSS-Tricks](https://css-tricks.com/)
 - [Alsacréations : Actualités et tutoriels web, HTML, CSS, JavaScript](https://www.alsacreations.com/)
 

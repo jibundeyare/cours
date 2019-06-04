@@ -103,6 +103,85 @@ Par exemple, pour la page contact, le fichier devrait être nommé `template-con
 Le reste du contenu du fichier PHP obéit aux règles habituelle d'un fichier de thème Wordpress.
 On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query()` pour afficher tout type de contenu.
 
+#### WP_Query
+
+Afficher tous les articles (`post`) :
+
+    // WP_Query arguments
+    $args = array(
+        'post_type' => array( 'post' ),
+    );
+
+    // The Query
+    $query = new WP_Query( $args );
+
+    // The Loop
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            // do something
+        }
+    } else {
+        // no posts found
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+
+Afficher un article (`post`) correspondant à un slug donné :
+
+    // WP_Query arguments
+    $args = array(
+        'name' => 'foo',
+    );
+
+    // The Query
+    $query = new WP_Query( $args );
+
+    // The Loop
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            // do something
+        }
+    } else {
+        // no posts found
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+
+Afficher une page (`page`) correspondant à un slug donné :
+
+    // WP_Query arguments
+    $args = array(
+        'pagename' => 'foo',
+        'post_type' => array( 'post' ),
+    );
+
+    // The Query
+    $query = new WP_Query( $args );
+
+    // The Loop
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            // do something
+        }
+    } else {
+        // no posts found
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+
+## Créer un custom post type et l'afficher
+
+1. Créer le custom post type
+2. Activer la page d'archive pour ce custom post type
+3. Créer le fichier `archive-$posttype.php`
+4. Créer le fichier `single-$posttype.php`
+
 ## Doc
 
 - [Page Templates | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/template-files-section/page-template-files/)

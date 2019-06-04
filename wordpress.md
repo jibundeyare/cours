@@ -77,22 +77,18 @@ NB le fichier `wp-config.php` contient la configuration de l'accès à la BDD.
 
     C:\wamp64\www
 
-    http://localhost/phpmyadmin
+[http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 
 - login : root
 - password : aucun
 
 ## Voir le site
 
-Pour accéder à la partie visiteur (front) de wordpress, ouvrir cette adresse :
-
-    http://localhost/wordpress
+Pour accéder à la partie visiteur (front) de wordpress, ouvrir cette adresse : [http://localhost/wordpress](http://localhost/wordpress)
 
 NB Adapter la partie `wordpress` avec le nom de son site.
 
-Pour accéder à l'admin (back) de wordpress, ouvrir cette adresse :
-
-    http://localhost/wordpress/wp-admin
+Pour accéder à l'admin (back) de wordpress, ouvrir cette adresse : [http://localhost/wordpress/wp-admin](http://localhost/wordpress/wp-admin)
 
 NB Idem, adapter la partie `wordpress` avec le nom de son site.
 

@@ -63,7 +63,7 @@ Dans le terminal, depuis le dossier racine du projet, lancer un serveur web de d
 
     php -S localhost:8000 -t public
 
-Dans un navigateur, ourvir l'url `http://localhost:8000/hello-twig.php`.
+Dans un navigateur, ourvir l'url [http://localhost:8000/hello-twig.php](http://localhost:8000/hello-twig.php).
 
 ### Configuration
 

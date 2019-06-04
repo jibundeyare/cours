@@ -13,9 +13,7 @@ Lancer le serveur web :
 
     php -S localhost:8000
 
-Ouvrir l'url pour voir le site dans son navigateur :
-
-    http://localhost:8000
+Ouvrir l'url pour voir le site dans son navigateur : [http://localhost:8000](http://localhost:8000)
 
 ## Lancer un serveur dans un sous-dossier
 
@@ -27,9 +25,7 @@ Lancer le serveur dans le sous-dossier `web` :
 
     php -S localhost:8000 -t public
 
-Ouvrir l'url pour voir le site dans son navigateur :
-
-    http://localhost:8000
+Ouvrir l'url pour voir le site dans son navigateur : [http://localhost:8000](http://localhost:8000)
 
 ## Lancer un serveur avec un autre port
 
@@ -37,9 +33,7 @@ Lancer le serveur avec le port `8080` :
 
     php -S localhost:8080
 
-Ouvrir l'url pour voir le site dans son navigateur :
-
-    http://localhost:8080
+Ouvrir l'url pour voir le site dans son navigateur : [http://localhost:8080](http://localhost:8080)
 
 ## Lancer un serveur web accessible depuis une autre machine
 
