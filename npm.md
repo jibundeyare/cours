@@ -1,7 +1,11 @@
 # npm
 
-npm (Node Packet Manager) est le gestionnaire de paquet de nodejs.
+`npm` (Node Packet Manager) est le gestionnaire de paquet de nodejs.
 Il est livré avec nodejs.
+
+## Installation
+
+Voir [nodejs.md](nodejs.md).
 
 ## Le fichier `package.json`
 
@@ -48,7 +52,19 @@ Ou, dans le terminal, pour installer Bootstrap 3 (l'ancienne version) :
 
     npm install bootstrap@3.3.7
 
+## Utilisation de `npx` pour lancer des exécutables
+
+La commande `npx` permet de lancer des exécutables sans devoir les installer de façon globale.
+Évitez donc de faire des `npm install -g package_name` et préférez une installation locale avec `npm install package_name` puis son exécution avec `npx package_command`.
+
+Attention toutefoi, car `npx` installe automatiquement les packages qu'il ne trouve pas.
+Personnellement je n'aime pas ça.
+Heureusement, l'option `npx --no-install` permet d'empêcher ce comportement par défaut.
+
+Astuce : j'ai rajouté `alias npx='npx --no-install'` dans mon fichier `~/.bashrc` pour ne pas avoir à taper `--no-install` à chaque fois.
+
 ## Doc
 
 - [npm Documentation](https://docs.npmjs.com/)
 - [package.json | npm Documentation](https://docs.npmjs.com/files/package.json)
+

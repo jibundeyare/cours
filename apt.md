@@ -1,8 +1,8 @@
-# `apt`
+# APT
 
-Le gestionnaire de paquet de la distribution linux Debian s'appelle `apt`.
+APT (Advanced Package Tool) est gestionnaire de paquet de la distribution linux Debian.
 
-Dans ce cadre, un paquet peut être : une application graphique, une application en ligne de commande, un service, un plugin, un driver, une librairie logicielle, ...
+Note : un paquet peut être c'est une application graphique, une application en ligne de commande, un service, un plugin, un driver, une librairie logicielle, ...
 
 ## Principe
 
@@ -16,23 +16,23 @@ Cette liste permet d'obtenir des informations comme le nom d'un paquet, sa descr
 
 Mettre à jour al liste des paquets :
 
-    apt update
+    sudo apt update
 
 Mettre à jour tous les paquets déjà installés sans en installer de nouveaux ni supprimer de paquets installés :
 
-    apt upgrade
+    sudo apt upgrade
 
 Mettre à jour tous les paquets déjà installés et installe de nouveaux paquets si besoin :
 
-    apt dist-upgrade
+    sudo apt dist-upgrade
 
 Installer le paquet `foo` :
 
-    apt install foo
+    sudo apt install foo
 
 Supprimer (désinstalle) le paquet `foo` :
 
-    apt remove foo
+    sudo apt remove foo
 
 Afficher le manuel de `apt` :
 
