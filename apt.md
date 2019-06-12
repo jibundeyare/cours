@@ -14,9 +14,13 @@ Cette liste permet d'obtenir des informations comme le nom d'un paquet, sa descr
 
 ## Utilisation
 
-Mettre à jour al liste des paquets :
+Mettre à jour la liste des paquets :
 
     sudo apt update
+
+Pour chercher un paquet par mot clé (`foo` par exemple) :
+
+    apt search foo
 
 Mettre à jour tous les paquets déjà installés sans en installer de nouveaux ni supprimer de paquets installés :
 
