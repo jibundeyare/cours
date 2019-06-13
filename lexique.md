@@ -33,6 +33,7 @@
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
+- IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
 - Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
 - KB : Knowledge Base (base de donnaissance)
@@ -54,6 +55,7 @@
 - paquet : voir package
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
 - POO : Programmation Orientée Objet
+- POP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence d'IMAP, les messages sont rappatriés du serveur vers le client puis supprimés du serveur ; voir aussi IMAP et SMTP
 - PR : Pull Request
 - Repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
@@ -64,12 +66,16 @@
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée; voir aussi Getter
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
   Dans un contexte de cryptographie, désigne un document numériquement signé
+- SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
 - Snippet : voir Code snippet
 - SS2I : Société de Services en Ingénierie Informatique; voir aussi ESN
 - SSII : voir SS2I
+- SSL : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
 - String : chaîne de caractères, type de données
 - Ticket : voir Issue
+- TLD : Top Level Domain (domaine de premier niveau)
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
+- TLS : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il supplante SSL ; voir aussi SSL
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
 - WIP : Work In Progress (travail en cours)

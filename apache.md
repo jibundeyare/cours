@@ -13,7 +13,7 @@ La procédure d'installation se base sur une distribution Linux Debian Stretch.
 
 ## Installation de MySQL sur une box linux
 
-    sudo apt-get install mysql-server mysql-client
+    sudo apt-get install mariadb-server mariadb-client
 
 ## Fichier `.htaccess`
 

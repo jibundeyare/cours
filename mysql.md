@@ -65,9 +65,15 @@ Le CRUD désigne les quatre opérations de base qui sont possible avec un objet 
 - Update : mettre à jour les données d'un objet
 - Delete : supprimer un objet
 
-### Sélection de données
+### Lecture de données
 
-Ces requêtes correspondent au Read du CRUD.
+La lecture de données se fait au moyen de l'instruction `SELECT`.
+L'instruction `SELECT` attend au minimum deux informations : la ou les colonnes sélectionnées et la table dans laquelle elles se trouvent.
+Le symbole `*` étoile veut dire « toutes les colonnes ».
+On précise la table avec le mot clé `FROM` suivi du nom de la table.
+On peut aussi ajouter une clause `WHERE` qui permet de ne sélectionner que les lignes qui correspondent à certains critères (égalité ou grandeur numérique par exemple).
+
+Quelques exemples :
 
     -- sélection de toutes les colonnes de toutes les lignes
     SELECT *
@@ -96,9 +102,12 @@ Ces requêtes correspondent au Read du CRUD.
     FROM `user`
     WHERE `newsletter` = 1
 
-### Insert de données
+### Création de données
 
-Ces requêtes correspondent au Create du CRUD.
+La création de données se fait au moyen de l'instruction `INSERT`.
+Cette instruction attend : le nom de la table, le nom des colonnes et les données correspondantes.
+
+Quelques exemples :
 
     -- insertion d'une seule ligne
     INSERT INTO `user` (`email`, `login`, `newsletter`, `devices`)
@@ -113,36 +122,50 @@ Ces requêtes correspondent au Create du CRUD.
 
 ### Modifications de données
 
-Ces requêtes correspondent au Update du CRUD.
+La modification de données se fait au moyen de l'instruction `UPDATE`.
+Cette instruction attend au minimum : le nom de la table, un ou des couples de nom de colonne et la donnée correspondante.
+On peut aussi ajouter une clause `WHERE` qui permet de ne mettre à jour que les lignes qui correspondent à certains critères (égalité ou grandeur numérique par exemple).
 
-    -- modification d'une seule colonne d'une seule ligne
+Quelques exemples :
+
+    -- modification d'une seule colonne (la colonne `mail`) pour toutes les lignes
+    UPDATE `user` SET `email` = ''
+
+    -- modification d'une seule colonne (la colonne `mail`) d'une seule ligne (celle pour laquelle `id = 53`)
     UPDATE `user` SET `email` = 'foo@example.com' WHERE `id` = 53;
 
-    -- modification de plusieurs colonnes d'une seule ligne
+    -- modification de plusieurs colonnes (les colonnes `mail` et `newsletter`) d'une seule ligne (celle pour laquelle `id = 53`)
     UPDATE `user` SET `email` = 'foo@example.com', `newsletter` = 1 WHERE `id` = 53;
 
     -- modification d'une seule colonne de toutes les lignes
     -- notez qu'il n'y a pas de WHERE
     UPDATE `user` SET `devices` = 1;
 
-    -- modification de plusieurs colonnes de toutes les lignes
+    -- modification de plusieurs colonnes pour toutes les lignes
     -- notez qu'il n'y a pas de WHERE
     UPDATE `user` SET `email` = 'foo@example.com', `newsletter` = 1;
 
     -- modification de toutes les lignes avec un remplacement de texte
     -- notez qu'il n'y a pas de WHERE
+    -- notez l'utulisation de la fonction `REPLACE()`
     UPDATE `user` SET `email` = REPLACE(`email`, 'example.com', 'example.org');
 
 ### Suppression de données
 
-Ces requêtes correspondent au Delete du CRUD.
+La suppression  de données se fait au moyen de l'instruction `DELETE`.
+Cette instruction attend au minimum : le nom de la table.
+On peut aussi ajouter une clause `WHERE` qui permet de ne supprimer que les lignes qui correspondent à certains critères (égalité ou grandeur numérique par exemple).
 
-    -- suppression d'une seule ligne
+Quelques exemples :
+
+    -- suppression d'une seule ligne (celle pour laquelle `id = 53`)
     DELETE FROM `user` WHERE `id` = 53;
 
     -- suppression de toutes les lignes
     -- notez qu'il n'y a pas de WHERE
     DELETE FROM `user`;
+
+Attention : quand on supprime en SQL, il n'est pas possible de récupérer les données. Toutes perte est définitive !
 
 ## Relations cardinales entre objets
 
