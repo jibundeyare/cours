@@ -8,9 +8,12 @@
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
 - Boolean : variable booléenne, type de données; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
+- Browser : voir Web browser
 - CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CEO : Chief Executive Officer (PDG)
+- CLI : Command Line Interface (interface en ligne de commande) ; voir aussi Console et Terminal
 - Code snippet : petit morceau de code utile que l'on réutilise de projet en projet
+- Console : à la base il s'agit du clavier qui permet de manipuler les premiers ordinateurs ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Terminal
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
   Ce sont toutes les opérations possibles sur une donnée stockée en BDD
 - CSS : Cascading Style Sheet (feuille de style en cascade)
@@ -32,6 +35,7 @@
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter
+- GUI : Graphical User Interface (interface utilisateur graphique)
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
@@ -72,12 +76,14 @@
 - SSII : voir SS2I
 - SSL : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
 - String : chaîne de caractères, type de données
+- Terminal : à la base c'est un appareil qui permet de saisir ou d'afficher des données dans un ordinateur ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Console
 - Ticket : voir Issue
 - TLD : Top Level Domain (domaine de premier niveau)
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - TLS : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il supplante SSL ; voir aussi SSL
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
+- Web browser : navigateur web (Chrome, Edge, Firefox, Internet Explorer, Lynx, Opera, Safari, etc)
 - WIP : Work In Progress (travail en cours)
 - wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
