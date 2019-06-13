@@ -145,3 +145,4 @@ Si vous créer un package et souhaitez le diffuser, il faudra déclarer son exis
 - [The composer.json Schema - Composer](https://getcomposer.org/doc/04-schema.md#psr-4)
 - [Using Symfony Flex to Manage Symfony Applications (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/setup/flex.html)
 - [Packagist](https://packagist.org/)
+

@@ -1,4 +1,6 @@
-# PHP language
+# PHP language basic
+
+@todo [PHP: Late Static Bindings - Manual](http://php.net/manual/en/language.oop5.late-static-bindings.php)
 
 ## Notions
 
@@ -50,10 +52,10 @@ Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()`
 ## Fonctions
 
 Une fonction doit d'abord être définie.
+Quand une fonction a été définie, on peut l'appeler (c-à-d l'utiliser).
+
 Elle peut prendre un paramètre, plusieurs paramètres ou aucun paramètre.
 Elle peut renvoyer une valeur ou ne n'en renvoyer aucune.
-
-Quand une fonction a été définie, on peut l'appeler (c-à-d l'utiliser).
 
 Exemple de définition d'une fonction qui prend deux paramètres et renvoit une valeur :
 
@@ -66,34 +68,6 @@ Exemple d'appel :
 
     // appel de la fonction foo() et affectation de la valeur retournée à la variable $result
     $result = foo(42, 123);
-
-## Programmation orientée objet (POO)
-
-Une classe est la définition d'un objet.
-
-Un objet est une instance de classe.
-
-Analogie : on trouve la définition du mot voiture dans le dictionnaire, c'est l'équivalent d'une classe.
-On trouve de vraies voitures dans la rue, ce sont l'équivalent d'objets (des instances de la définition).
-
-En POO :
-
-- une variable se nomme « attribut » ou « membre »
-- une fonction se nomme « méthode »
-
-### La portée des variables (le scope, en anglais)
-
-Dans une classe, un attribut (une variable) doit toujours être `private`.
-Il y a une exception : si la variable doit être accessible depuis une classe enfant, il faut qu'elle soit `protected`.
-
-Les méthodes peuvent être `public`, `protected` ou `private` selon les cas d'usage.
-En cas de doute, partez du principe qu'elles sont `public`.
-
-### Les `getters` et les `setters`
-
-Dans une classe les méthodes (fonctions) qui permettent de lire un attribut s'appelent des `getters`.
-
-Les méthodes qui permettent de changer la valeur d'un attribut s'appelent des `setters`.
 
 ## Syntaxe
 
