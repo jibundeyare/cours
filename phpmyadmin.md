@@ -1,5 +1,27 @@
 # PhpMyAdmin
 
+## Install
+
+Connexion avec le compte root :
+
+    sudo apt -y install phpmyadmin
+    echo "UPDATE user SET plugin='' WHERE user='root';" | sudo mysql
+    echo "FLUSH PRIVILEGES;" | sudo mysql
+    ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+    a2enconf phpmyadmin.conf
+    # @warning do not enable this on ploduction platform
+    sudo sed -i "s/\\/\\/ \$cfg\\['Servers'\\]\\[\$i\\]\\['AllowNoPassword'\\] = TRUE;/\$cfg['Servers'][\$i]['AllowNoPassword'] = TRUE;/" /etc/phpmyadmin/config.inc.php
+    sudo systemctl restart apache2.service
+
+Connexion avec le phpmyadmin :
+
+    sudo apt -y install phpmyadmin
+    echo "GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;" | sudo mysql
+    echo "FLUSH PRIVILEGES;" | sudo mysql
+    ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+    a2enconf phpmyadmin.conf
+    sudo systemctl restart apache2.service
+
 ## Export
 
 Dans chacune des sections, cocher les options suivantes.

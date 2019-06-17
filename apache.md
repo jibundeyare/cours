@@ -2,38 +2,32 @@
 
 La procédure d'installation se base sur une distribution Linux Debian Stretch.
 
-## Installation d'apache sur une box linux
+## Installation d'Apache
 
-    sudo apt-get update
     sudo apt-get install apache2
 
-## Installation de PHP sur une box linux
+## Configuration d'un virtual host
 
-    sudo apt-get install php7.0
+### Étapes sur le serveur
 
-## Installation de MySQL sur une box linux
+- création du fichier virtual host pour le site web
+- création d'un dossier pour le site web
+- activation du site
+- rechargement de la configuration d'Apache
 
-    sudo apt-get install mariadb-server mariadb-client
+### Étapes en local (c-à-d sur le poste de développement)
+
+- mêmes étapes que sur le serveur
+- configuration du nom de domaine dans le fichier `/etc/hosts`
 
 ## Fichier `.htaccess`
 
 
+
+
+
+
 Pour annuler une redirection permanente, on est obligé de d'effacer le cache du navigateur. Cela veut dire qu'on n'a pas le droit à l'erreur car seul les utilisateurs du site peuvent effectuer cette action.
-
-## Configuration de virtual hosts
-
-### Étapes sur le serveur
-
-- création d'un fichier virtual host par site
-- organisation des fichiers et dossiers (création d'un dossier par site)
-- activation du site
-- rechargement d'Apache
-
-### Étapes en local (sur le poste de développement)
-
-- organisation des fichiers et dossiers (création d'un dossier par site)
-- transfert des fichiers ou configuration du `Vagrantfile`
-- configuration des nom de domaine dans le fichier `/etc/hosts`
 
 ## Création de certificats SSL pour le poste de développement
 
@@ -49,31 +43,35 @@ Il est possible « d'automatiser » la création de la clé privée et du certif
 
 ## Commandes utiles
 
-### Service apache
+### Service Apache
 
-Démarrer apache :
+Démarrer Apache :
 
-    sudo service apache2 start
+    sudo systemctl start apache2
 
-Arrêter apache :
+Arrêter Apache :
 
-    sudo service apache2 stop
+    sudo systemctl stop apache2
 
-Redémarrer apache :
+Redémarrer Apache :
 
-    sudo service apache2 restart
+    sudo systemctl restart apache2
+
+Recharger la configuration d'Apache :
+
+    sudo systemctl reload apache2
 
 ### Site
 
 Activer un site :
 
-    a2ensite [nom du virtualhost]
+    sudo a2ensite [nom du virtualhost]
 
 Exemple : `a2ensite 000-default.conf`
 
 Désactiver un site :
 
-    a2dissite [nom du virtualhost]
+    sudo a2dissite [nom du virtualhost]
 
 Exemple : `a2dissite 000-default.conf`
 
@@ -120,3 +118,4 @@ Exemple : `sudo a2enconf php7.0-fpm`
 - [Certificat SSL Let’s Encrypt gratuit avec votre hébergement - OVH](https://www.ovh.com/fr/hebergement-web/ssl_mutualise.xml)
 - [Free TLS/SSL certificates with Let's Encrypt and Gandi - Nom de domaine et hébergement cloud - Gandi.net](https://v4.gandi.net/news/en/2016-01-12/6677-free_tlsssl_certificates_with_lets_encrypt_and_gandi/)
 - [How To Secure Apache with Let's Encrypt on Ubuntu 16.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04)
+
