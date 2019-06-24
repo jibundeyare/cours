@@ -358,7 +358,7 @@ Le plugin de création de custom type est libre mais le plugin d'affichage de cu
 #### Power user
 
 - [Main Page « WordPress Codex](https://codex.wordpress.org/)
-- [Child Themes « WordPress Codex](https://codex.wordpress.org/Child_Themes)
+- [Child Themes | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/advanced-topics/child-themes/)
 - [Moving WordPress « WordPress Codex](https://codex.wordpress.org/Moving_WordPress)
 
 #### Développeur
