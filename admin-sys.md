@@ -44,8 +44,50 @@ Exemple pour rendre *sudoer* l'utilisateur `foo` :
 
 Remplacez `user` par votre nom d'utilisateur :
 
-    useradd -G sudo -s /bin/bash user
+    useradd -m -G sudo -s /bin/bash user
 
 Exemple pour créer un utilisateur nommé `foo` qui pourra utiliser `sudo` et dont le terminal par défaut sera `bash` :
 
-    useradd -G sudo -s /bin/bash foo 
+    useradd -m -G sudo -s /bin/bash foo 
+
+**Attention** : il est fortement recommandé de n'utiliser que des lettres minuscules et des chiffres arabes.
+Évitez absolument d'utiliser des accents ou des caractères spéciaux (point d'exclamation, dièse, etc).
+
+## Attribuer ou changer le mot de passe d'un utilisateur
+
+Changez `user` par le nom de l'utilisateur dont vous voulez changer le mot de passe :
+
+    passwd user
+
+Exemple pour changer le mot de passe d'un utiliser nommé `foo` :
+
+    passwd foo
+
+**NB** Quand on tape le mot de passe, rien n'apparaît, c'est normal.
+C'est une question de sécurité.
+
+## La propriété et les permissions des fichiers et dossiers
+
+Sous Linux, les fichiers et dossiers ont un propriétaire, un groupe et des permissions.
+
+il n'y a que trois types de permissions :
+
+- permission de lire
+- permission d'écrire (ajouter, modifier, supprimer)
+- permission d'exécuter (rendre un fichier exéctubale ou rendre un dossier accessible)
+
+Cela permet de définir :
+
+- ce que le propriétaire peut faire avec le fichier ou dossier
+- ce que le groupe peut faire avec le fichier ou dossier
+- ce que les autres peuvent faire avec le fichier ou dossier
+
+La commande `chown` permet de changer le propriétaire et le groupe d'un fichier ou d'un dossier.
+La commande `chmod` permet de changer les permissions d'un fichier ou d'un dossier.
+
+La page [Chmod Calculator](https://chmod-calculator.com/) permet de calculer la formule magique pour appliquer les permissions que vous souhaitez.
+
+## Doc
+
+- [Chmod Calculator](https://chmod-calculator.com/)
+

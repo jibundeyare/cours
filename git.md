@@ -6,9 +6,9 @@ Git est un outil de gestion de code source. Il permet d'enregistrer du code sour
 
 ### Linux
 
-Avec Debian, en tant que `root` dans un terminal, taper :
+Avec Debian, dans un terminal, tapez :
 
-    apt install git
+    sudo apt install git
 
 ### MacOS
 
@@ -52,6 +52,10 @@ Dans un terminal, tapez :
 Exemple avec l'éditeur de code Vim :
 
     git config --global core.editor vim
+
+Exemple avec l'éditeur de code gedit :
+
+    git config --global core.editor gedit
 
 Exemple avec l'éditeur de code Atom :
 
