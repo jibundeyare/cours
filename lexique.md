@@ -51,7 +51,7 @@
 - Merge request : synonyme de pull request
 - Mobile first : d'abord les téléphones mobiles; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - MVC : Model View Controller (modèle vue contrôleur)
-- Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
+- not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
 - OOP : Object Oriented Programming; voir POO
 - package : un librairie ou un programme installable
 - paquet : voir package
