@@ -87,6 +87,21 @@ La commande `chmod` permet de changer les permissions d'un fichier ou d'un dossi
 
 La page [Chmod Calculator](https://chmod-calculator.com/) permet de calculer la formule magique pour appliquer les permissions que vous souhaitez.
 
+## Sécurisation avec fail2ban
+
+On peut être sûr que dès qu'un service web est mis en place, des bots vont faire leur apparition pour tenter de passer à travers les mécanismes de sécurité.
+Un des moyens de s'en prémunir est d'installer fail2ban.
+
+Fail2ban est typiquement utilisé pour sécuriser SSH.
+Il permet de bannir pendant quelques minutes les adresses IP qui se trompent plusieurs fois de suite de mot de passe lors d'une connection SSH.
+Cela rend inopérant les attaques de type « brute force ».
+
+Mais fail2ban peut être utiliser pour sécuriser d'autres services aussi (mail, ftp, etc).
+
+Il suffit d'installer la package car il est préconfiguré pour fonctionner avec SSH :
+
+    sudo apt install fail2ban
+
 ## Doc
 
 - [Chmod Calculator](https://chmod-calculator.com/)

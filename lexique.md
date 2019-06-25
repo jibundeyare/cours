@@ -8,7 +8,9 @@
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
 - Boolean : variable booléenne, type de données; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
+- Bots : logiciel autonome (agent autonome) qui peuvent servir à spammer des canaux de communication ou à parcourir automatiquement des sites web et des services web à la recherche de failles de sécurité ; mais les bots peuvent aussi être utilisés pour faire le bien (agent conversationnel qui répond aux questions d'usagers par exemple)
 - Browser : voir Web browser
+- Brute force attack : attaque en force brute ; ce type d'attaque consiste à essayer toutes les combinaisons de mots de passe possible et n'est efficace qu'avec une énorme capacité de calcul ou un grand nombre de machines travaillant en parallèle
 - CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CEO : Chief Executive Officer (PDG)
 - CLI : Command Line Interface (interface en ligne de commande) ; voir aussi Console et Terminal
@@ -21,11 +23,9 @@
 - Database : BDD
 - DAW : Digital Audio Workstation (Station de travail Audio Numérique)
 - DB : Database
-- Design Pattern : motif de conception  
-  C'est la façon de structurer du code; on peut parler d'architecture logicielle  
+- Design Pattern : motif de conception ; c'est la façon de structurer du code; on peut parler d'architecture logicielle  
 - DOM : Document Object Model; représentation en mémoire d'un document HTML; c'est le code HTML tel que interprêté par le navigateur web
-- DRY : Don't Repeat Yourself (ne te répète pas)  
-  Principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
+- DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
 - DSI : Directeur du Système d'Information; Direction du Système d'Information
 - ESN : Entreprise de Services du Numérique; voir aussi SS2I
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
@@ -42,8 +42,7 @@
 - Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
-- KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile)  
-  principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
+- KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile) ; principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
 - Lead dev : développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme
@@ -52,8 +51,7 @@
 - Merge request : synonyme de pull request
 - Mobile first : d'abord les téléphones mobiles; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - MVC : Model View Controller (modèle vue contrôleur)
-- not invented here : pas inventé chez nous  
-  Syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
+- Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
 - OOP : Object Oriented Programming; voir POO
 - package : un librairie ou un programme installable
 - paquet : voir package
