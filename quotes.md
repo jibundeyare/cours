@@ -1,6 +1,6 @@
 # Quotes
 
-## Design « mobile first »
+## Mobile first design
 
 > "Start with the small screen first, then expand until it looks like shit. Time for a breakpoint!" - Stephen Hay
 
@@ -14,7 +14,7 @@
 
 ## Optimisation
 
-> "Premature optimization is the root of all evil." - Donald Knuth
+> "Premature optimization is the root of all evil (or at least most of it) in programming." - Donald Knuth
 
 ## Product
 
@@ -22,5 +22,5 @@
 
 > "If you are not paying for it, you’re not the customer; you’re the product being sold." - Andrew Lewis
 
-For a detailed story of these quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
+For a detailed story of those two quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
 
