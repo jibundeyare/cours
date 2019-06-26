@@ -1,8 +1,8 @@
-# PhpMyAdmin
+# phpMyAdmin
 
 ## Install
 
-Cette méthode d'installation permet de se connecter à PhpMyAdmin avec le compte `phpmyadmin`.
+Cette méthode d'installation permet de se connecter à phpMyAdmin avec le compte `phpmyadmin`.
 
     sudo apt -y install phpmyadmin
     echo "GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;" | sudo mysql
@@ -15,8 +15,8 @@ Cette méthode d'installation permet de se connecter à PhpMyAdmin avec le compt
 
 ## Ajouter une authentification HTTP pour améliorer la sécurité
 
-L'authentification HTTP ajoute une étape supplémentaire avant de pouvoir accéder à PhpMyAdmin.
-Dès qu'une page de PhpMyAdmin est demandée, un login et un mot de passe (indépendants de PhpMyAdmin) sont demandés.
+L'authentification HTTP ajoute une étape supplémentaire avant de pouvoir accéder à phpMyAdmin.
+Dès qu'une page de phpMyAdmin est demandée, un login et un mot de passe (indépendants de phpMyAdmin) sont demandés.
 
 Remplacez `user` par un nom d'utilisateur que vous aurez choisi puis lancez cette commande :
 
@@ -24,7 +24,7 @@ Remplacez `user` par un nom d'utilisateur que vous aurez choisi puis lancez cett
 
 Le mot de passe que vous voudrez utiliser vous sera demandé et enregistré dans le fichier `/etc/phpmyadmin/htpasswd`.
 
-Ensuite, ces commandes `sed` vont activer l'authentification HTTP dans la configuration du vhost de PhpMyAdmin :
+Ensuite, ces commandes `sed` vont activer l'authentification HTTP dans la configuration du vhost de phpMyAdmin :
 
     sudo sed -i "9i\AuthType Basic" /etc/apache2/apache2.conf
     sudo sed -i "10i\AuthName \"phpMyAdmin\"" /etc/apache2/apache2.conf
@@ -39,7 +39,7 @@ Ces lignes permettent juste d'insérer le code suivant au bon endroit (à la lig
     AuthUserFile /etc/phpmyadmin/htpasswd
     Require valid-user
 
-Note : pour totalement blinder PhpMyAdmin, il faudrait en plus activer le protocole TLS (anciennement SSL) qui crypte les communications entre un client et un serveur web.
+Note : pour totalement blinder phpMyAdmin, il faudrait en plus activer le protocole TLS (anciennement SSL) qui crypte les communications entre un client et un serveur web.
 Avis aux amateurs d'admin sys.
 
 ## Export
