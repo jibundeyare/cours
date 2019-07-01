@@ -230,23 +230,23 @@ Pour des cas d'usage typiques, voir :
 
 ### Création du repo en local
 
-    # todo: créer le dossier du projet
-    # todo: créer un fichier README.md dans le dossier du projet
-    # todo: ouvrir un terminal
+    # créez le dossier du projet
+    # créez un fichier README.md dans le dossier du projet
+    # ouvrez un terminal
     cd [dossier-du-projet]
-    # initialiser le repo git
+    # initialisez le repo git
     git init
-    # ajouter tous les fichiers dans la zone de staging
+    # ajoutez tous les fichiers dans la zone de staging
     git add .
-    # créer un premier commit
+    # créez un premier commit
     git commit -m "Création du repo"
 
 ### Création du repo sur github / framagit / bitbucket
 
-    # todo: s'il y a lieu, créer un compte sur le site
-    # todo: sur le site, créer un nouveau repo (attention à donner le même nom que celui du dossier)
-    # todo: sur le site, copier l'url du repo (de la forme https://github.com/[login]/[nom-du-repo].git ou git@github.com:[login]/[nom-du-repo].git)
-    # todo: revenir dans le terminal
+    # s'il y a lieu, créez un compte sur le site
+    # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)
+    # sur le site, copiez l'url du repo (de la forme https://github.com/[login]/[nom-du-repo].git ou git@github.com:[login]/[nom-du-repo].git)
+    # revenez dans le terminal
     git remote add origin https://github.com/[login]/[nom-du-repo].git
     git push -u origin master
 
@@ -279,9 +279,9 @@ D'abord on ajoute les fichiers dans la zone de staging.
 
 On vérifie que tout ce qu'on veut commiter a bien été ajouté dans la zone de staging.
 
-    # vérifier les fichiers qui seront commités
+    # vérifiez les fichiers qui seront commités
     git status
-    # vérifier le code qui sera commité
+    # vérifiez le code qui sera commité
     git diff --staged
 
 Si on se rend compte qu'on a ajouter par erreur un fichier, on peut le supprimer de la zone de staging.
@@ -294,13 +294,13 @@ Puis on commit.
     # commiter en spécifiant juste un titre de commit
     git commit -m "Ajout de la fonctionnalité foo bar baz"
 
-    # commiter en spécifiant un titre de commit et des commentaires
+    # ou commiter en spécifiant un titre de commit et une description détaillée
     git commit
     # note: un éditeur de code s'ouvre
-    # todo: taper le titre du commit dans la première ligne
-    # todo: laisser une ligne vide entre le titre et les commentaires
-    # todo: taper les commentaires
-    # todo: enregistrer et quitter totalement l'éditeur de code
+    # tapez le titre du commit dans la première ligne
+    # laissez une ligne vide entre le titre et les commentaires
+    # tapez les commentaires
+    # enregistrez et quitter totalement l'éditeur de code
     # warning: tant que l'éditeur de code reste ouvert, la commande ne termine pas son travail
 
 ### Publier des modifications

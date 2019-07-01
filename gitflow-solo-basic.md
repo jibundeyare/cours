@@ -6,9 +6,12 @@
     # créez un fichier README.md dans le dossier du projet
     # ouvrez un terminal
     cd [dossier-du-projet]
+    # initialisez le repo git
     git init
+    # ajoutez tous les fichiers dans la zone de staging
     git add .
-    git commit
+    # créez un premier commit
+    git commit -m "Création du repo"
 
 ## Création du repo sur github / framagit / bitcuket
 
