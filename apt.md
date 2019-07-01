@@ -1,42 +1,50 @@
 # APT
 
-APT (Advanced Package Tool) est gestionnaire de paquet de la distribution linux Debian.
+APT (Advanced Package Tool) est gestionnaire de package de la distribution linux Debian.
 
-Note : un paquet peut être c'est une application graphique, une application en ligne de commande, un service, un plugin, un driver, une librairie logicielle, ...
+Note : un package peut être c'est une application graphique, une application en ligne de commande, un service, un plugin, un driver, une librairie logicielle, ...
+
+Note bis : en français on dit « un paquet ».
 
 ## Principe
 
-Pour installer des paquets, votre machine se connecte à un répertoire et télécharge la liste des paquets disponibles.
-Le fichier `/etc/sources.list` permet de définir à quel répoertoires `apt` se connecte pour télécharger la liste des paquets disponibles.
-Cette liste permet d'obtenir des informations comme le nom d'un paquet, sa description, sa version, les paquets dont il dépend, les paquets qui dépendent de lui.
+Pour installer des packages, votre machine se connecte à un répertoire et télécharge la liste des packages disponibles.
+Le fichier `/etc/sources.list` permet de définir à quel répoertoires `apt` se connecte pour télécharger la liste des packages disponibles.
+Cette liste permet d'obtenir des informations comme le nom d'un package, sa description, sa version, les packages dont il dépend, les packages qui dépendent de lui.
 
-À partir du moment ou vous avez la liste des paquets, vous pouvez installer de nouveaux paquets ou mettre à jour des paquets déjà installés.
+À partir du moment ou vous avez la liste des packages, vous pouvez installer de nouveaux packages ou mettre à jour des packages déjà installés.
 
 ## Utilisation
 
-Mettre à jour la liste des paquets :
+Mettre à jour la liste des packages :
 
     sudo apt update
 
-Pour chercher un paquet par mot clé (`foo` par exemple) :
+Pour chercher un package par mot clé (`foo` par exemple) :
 
     apt search foo
 
-Mettre à jour tous les paquets déjà installés sans en installer de nouveaux ni supprimer de paquets installés :
+Mettre à jour tous les packages déjà installés sans en installer de nouveaux ni supprimer de packages installés :
 
     sudo apt upgrade
 
-Mettre à jour tous les paquets déjà installés et installe de nouveaux paquets si besoin :
+Mettre à jour tous les packages déjà installés et installe de nouveaux packages si besoin :
 
     sudo apt dist-upgrade
 
-Installer le paquet `foo` :
+Installer le package `foo` :
 
     sudo apt install foo
 
-Supprimer (désinstalle) le paquet `foo` :
+Supprimer (désinstalle) le package `foo` :
 
     sudo apt remove foo
+
+Supprimer (désinstalle) le package `foo` et tout les fichiers liés au package (configuration notamment) :
+
+    sudo apt remove --purge foo
+    # ou alors
+    sudo apt purge foo
 
 Afficher le manuel de `apt` :
 

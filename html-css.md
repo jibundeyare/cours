@@ -164,6 +164,9 @@ Pour augmenter les performances, il est possible de précharger des resources.
 - [Bootstrap · The most popular HTML, CSS, and JS library in the world.](https://getbootstrap.com/)
 - [Introduction · Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)
 - [Responsive breakpoints · Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
+- [Modern Business - Template Preview - Start Bootstrap](https://startbootstrap.com/previews/modern-business/)
+
+- [Favicon Generator for all platforms: iOS, Android, PC/Mac...](https://realfavicongenerator.net/)
 
 - [jQuery](http://jquery.com/)
 
