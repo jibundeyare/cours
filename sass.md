@@ -1,4 +1,11 @@
-# Utiliser sass
+# SASS
+
+SASS c'est Super Awesome Style Sheet.
+C'est du CSS++ !
+
+## Installation
+
+Voir [Sass: Install Sass](https://sass-lang.com/install).
 
 ## Compiler un fichier `sass` en un fichier `css`
 

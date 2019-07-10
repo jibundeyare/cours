@@ -185,6 +185,8 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus/)
 - [Duplicator – WordPress Migration Plugin](https://wordpress.org/plugins/duplicator/)
 
+Personnellement, je recommande Duplicator.
+
 #### Cache
 
 Le cache permet d'accélérer l'affichage des pages.

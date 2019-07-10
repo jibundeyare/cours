@@ -1,6 +1,6 @@
 # Livraison
 
-Pour en savoir plus sur le déploiement de projets Symfony, voir [easydeploy.md](easydeploy.md).
+Pour en savoir plus sur le déploiement de projets Symfony, voir [deployer.md](deployer.md).
 
 En général « la livraison » et « la mise en production (MEP) » veulent dire la même chose.
 
@@ -55,7 +55,7 @@ Au minimum, la documentation doit contenir :
 - une liste des bugs connus
 - optionnel : la liste des recommandations (pistes d'amélioration)
 
-## Lience
+## Licence
 
 Vous avez le choix entre des licences libres et des licences propriétaires.
 
