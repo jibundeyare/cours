@@ -265,9 +265,9 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 
 ## Vidéos
 
-- [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858)
+- [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858) : Cette vidéo montre comment créer une table de jointure pour les relations de type « many to many » avec phpmyadmin.
 - [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
-- [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère avec PhpMyAdmin.
+- [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère pour les relations de type « many to one » ou « one to many » avec PhpMyAdmin.
 - [phpmyadmin - création de bdd on Vimeo](https://vimeo.com/309776733) : Cette vidéo montre comment créer une base de données avec PhpMyAdmin.
 - [phpmyadmin - suppression de bdd on Vimeo](https://vimeo.com/309777482) : Cette vidéo montre comment supprimer une base de données avec PhpMyAdmin.
 
