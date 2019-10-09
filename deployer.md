@@ -404,5 +404,7 @@ Voici le résultat :
 
 - [How to Deploy a Symfony Application (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/deployment.html)
 - [Deployer – A deployment tool for php](https://deployer.org/)
+- [GitHub - deployphp/deployer: A deployment tool written in PHP with support for popular frameworks out of the box](https://github.com/deployphp/deployer)
+- [deployphp/recipes: Deployer Recipes](https://github.com/deployphp/recipes)
 - [How to Automatically Deploy Laravel Applications with Deployer | DigitalOcean](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu)
 - [jibundeyare’s gists](https://gist.github.com/jibundeyare)
