@@ -283,6 +283,7 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 - [SQLZOO](https://zh.sqlzoo.net/)
 - [Learn - MariaDB.org](https://mariadb.org/learn/)
 - [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996)
+- [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 
 ### Générateurs de données de test
 

@@ -101,13 +101,29 @@ Conseils :
 
 ## Le `secret` de  `parameters.yml`
 
-Si vous voulez regénérer le `secret` de votre fichier `parameters.yml`, vous pouvez utiliser le script suivant qui génèrera une chaîne de 40 caractères en hexadécimal tirée au hasard :
+Pour regénérer le `APP_SECRET` de votre fichier `parameters.yml`, vous pouvez utiliser la méthode suivante qui génèrera une chaîne de 40 caractères en hexadécimal tirée au hasard.
 
-    <?php
+Dans un terminal, tapez :
+
+    php -a
     $bytes = random_bytes(20);
     echo bin2hex($bytes).PHP_EOL;
+    exit
 
-Sinon vous pouvez utiliser un outil en ligne : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret).
+Le résultat devrait ressembler à ceci :
+
+    $ php -a
+    Interactive shell
+
+    php > $bytes = random_bytes(20);
+    php > echo bin2hex($bytes).PHP_EOL;
+    0236b7b98e1cc108b3e7ff54419721b32f5581db
+    php > exit
+
+Vouc pouvez copier la chaîne de caractère `9c56d22b9c9b92a9a13fb8a10d3aa008` et l'utiliser comme nouveau `APP_SECRET`.
+
+**Sinon vous pouvez aussi utiliser un outil en ligne : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret).**
+
 
 ### Création de la base de données
 

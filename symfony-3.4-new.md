@@ -82,13 +82,7 @@ Voici la ligne pour le user `root`, le mot de passe `123`, une connection sur le
 
 ## Le `APP_SECRET` de `.env`
 
-Si vous voulez regénérer le `APP_SECRET` de votre fichier `.env` (ou de votre `.env.local`), vous pouvez utiliser le script suivant qui génèrera une chaîne de 32 caractères en hexadécimal tirée au hasard :
-
-    <?php
-    $bytes = random_bytes(16);
-    echo bin2hex($bytes).PHP_EOL;
-
-Sinon vous pouvez utiliser un outil en ligne (qui génère 40 caractères et non 32) : [Symfony 2 Secret Generator - nux.net](http://nux.net/secret).
+Voir [Symfony `APP_SECRET`](symfony-app-secret.md).
 
 ## Mode debug
 

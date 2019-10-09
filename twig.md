@@ -272,6 +272,9 @@ Si la clé ou l'attribut `bar` du tableau ou de l'objet `foo` existe, afficher l
 
 NB La syntaxe Twig `foo.bar is defined` est équivalente à la syntaxe PHP `isset($foo['bar'])`.
 
+Hormis les tests habituels (`==`, `>=`, `<=`, etc) il est aussi possible de tester si une variable est définie, vide, nulle, etc.
+Tous les tests possibles sont listés ici : [Tests - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tests/index.html).
+
 ### Les boucles
 
 La syntaxe Twig pour les boucle est différente de PHP.
@@ -581,6 +584,7 @@ Afficher du Twig sans le faire interpréter :
 
 - [Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/templates.html)
 - [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/if.html)
+- [Tests - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tests/index.html)
 - [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/for.html)
 (https://twig.symfony.com/doc/2.x/tags/verbatim.html)
 - [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
@@ -624,3 +628,4 @@ Pour en savoir plus, voir : [Creating and Using Templates (Symfony 3.4 Docs)](ht
 ### Debug
 
 - [dump - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/dump.html)
+
