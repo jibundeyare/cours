@@ -69,4 +69,5 @@ Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.
 ## Doc
 
 - [How to use ssh-keygen to generate a new SSH key | SSH.COM](https://www.ssh.com/ssh/keygen/)
+- [Changer le mot de passe root sur un VPS | Documentation OVH](https://docs.ovh.com/fr/vps/root-password/)
 

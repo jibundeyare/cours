@@ -39,22 +39,20 @@ Pour tester l'installation, ouvrir l'URL suivante dans un navigateur : [http://l
 
 Créez un fichier `.env.local` à la racine du projet.
 
-Ouvrez le fichier `.env` à la racine du projet et copiez le bloc :
+Insérer le code suivant :
 
     APP_ENV=dev
-    APP_SECRET=24209e2e73cff25fd43b74b21cf4e173
-
-et colle-le dans le fichier `.env.local`.
-
-Copiez aussi le bloc dans le fichier `.env` :
-
+    # APP_DEBUG=0
+    APP_SECRET=
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
-
-et colle-le dans le fichier `.env.local`.
 
 Ensuite, modifiez la ligne `DATABASE_URL` du fichier `.env.local` pour que Symfony puisse accéder à votre BDD.
 
 Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306` et `db_name` avec les informations qui correspondent à votre configuration.
+
+Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` de `.env` ».
+
+**Attention : le fichier `.env.local` doit être rajouté dans votre `.gitignore`. Sinon pour allez publier vos mots de passe sur Github !**
 
 ### Exemples de configuration de `DATABASE_URL`
 
@@ -88,12 +86,16 @@ Voir [Symfony `APP_SECRET`](symfony-app-secret.md).
 
 Il est possible de désactiver le mode debug même en mode dev.
 
-Pour cela, il faut ajouter dans le fichier `.env.local` la ligne :
+Pour cela, il faut activer la ligne suivante dans le fichier `.env.local` :
 
     APP_DEBUG=0
 
-Si vous voulez réactiver le mode debug, vous pouvez commenter la ligne ou la changer pour obtenir :
+Si vous voulez réactiver le mode debug, vous pouvez commenter la ligne :
 
+    # APP_DEBUG=0
+
+ou la changer pour obtenir :
+ 
     APP_DEBUG=1
 
 ## Création de la base de données

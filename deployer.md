@@ -1,15 +1,16 @@
 # Deployer
 
-*Pour en savoir plus sur les modalités de livraison d'un projet, voir [livraison.md](livraison.md).*
+*Pour en savoir plus sur les modalités de livraison d'un projet, voir [livraison](livraison.md).*
 
 Deployer est une application PHP qui fonctionne dans le terminal.
 Cette application permet d'automatiser le déploiement de projets Symfony (ou autre framework) sur d'autres serveurs.
 
 ## Prérequis
 
-- la commande deployer
+- un projet dans un repository git accessible via internet (Github, Framagit, Bitbucket, etc)
+- la commande `dep` (c-à-d Deployer)
 - une connexion SSH avec authentification par clé publique
-- PHP (7.1+ fortement recommandé)
+- PHP (7.1+ fortement recommandé) sur votre serveur
 - un `composer` installé globalement sur le serveur
 - un serveur web (Apache, nginx ou autre)
 - une base de données (BDD) avec une connexion root pour créer un utilisateur et BDD (MariaDB, PostgreSQL, ou autre)
@@ -47,6 +48,8 @@ Depuis la racine de votre projet, lancez la commande suivante :
 
     composer require symfony/apache-pack
 
+Et validez quand composer vous demande si vous voulez exécuter la recette.
+
 ## Créer le fichier d'environnement de production `.env.prod`
 
 Créez le fichier à la racine du projet et insérez le code suivant :
@@ -56,9 +59,11 @@ Créez le fichier à la racine du projet et insérez le code suivant :
     APP_SECRET=3b66278912b18bc0e3e6d96e6e33b472
     DATABASE_URL=mysql://src_symfony_3_4:123@127.0.0.1:3306/src_symfony_3_4
 
-Adaptez la valeur de la chaîne de caractère `DATABASE_URL` avec celles de votre BDD :
+Adaptez la valeur de la chaîne de caractères `DATABASE_URL` avec celles de votre BDD :
 
     DATABASE_URL=mysql://user:password@server:port/database
+
+Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` de `.env` ».
 
 ## Le `APP_SECRET` de `.env`
 
@@ -102,15 +107,19 @@ Si votre application web utiliser une BDD, il lui faut un accès permettant de c
 
 Connectez-vous à votre serveur en SSH puis tapez la commande suivante :
 
-    mysql -u root
+    sudo mysql -u root
 
 Si le compte root nécessite un mot de passe, tapez plutôt la commande suivante :
 
-    mysql -u root -p
+    sudo mysql -u root -p
 
 Dès que vous êtes connecté à MariaDB, créez la BDD :
 
     CREATE DATABASE src_symfony_3_4 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+Syntaxe :
+
+    CREATE DATABASE database_name DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 **Attention : reprenez le nom de votre application web pour le nom de la BDD. Par exemple, si le projet s'appelle `src-symfony-3.4`, la BDD devrait s'appeler `src_symfony_3_4`.**
 
@@ -118,11 +127,23 @@ Créez l'utilisateur associé à la BDD :
 
     CREATE USER 'src_symfony_3_4'@'localhost' IDENTIFIED BY '123';
 
+Syntaxe :
+
+    CREATE USER 'user_name'@'localhost' IDENTIFIED BY 'password';
+
+*Le `user_name` est le nom d'utilisateur avec lequel vous vous connectez à la BDD (pas au serveur).*
+
 **Attention : si possible, reprenez le nom de votre BDD pour votre le nom de votre utilisateur. Utilisez un mot de passe robuste et pas `123` comme dans l'exemple.**
 
 Accordez tous les droits à l'utilisateur pour manipuler la BDD :
 
     GRANT ALL ON src_symfony_3_4.* TO 'src_symfony_3_4'@'localhost';
+
+Syntaxe :
+
+    GRANT ALL ON database_name.* TO 'user_name'@'localhost';
+
+*Le `user_name` est le nom d'utilisateur avec lequel vous vous connectez à la BDD (pas au serveur).*
 
 Mettez à jour et fermez la connexion de la BDD :
 
@@ -134,21 +155,9 @@ Mettez à jour et fermez la connexion de la BDD :
 Il faut créer un virtual host.
 Voir les fichiers gist : [jibundeyare’s gists](https://gist.github.com/jibundeyare).
 
-## Attribution du droit de redémarrage du pool php-fpm et du serveur web
-
-Dans un terminal, tapez la commande suivante :
-
-    sudo visudo -f /etc/sudoers.d/user_name
-
-Insérez le code suvant :
-
-    user_name ALL=(ALL) NOPASSWD: /bin/systemctl reload apache2,/bin/systemctl reload php7.3-fpm
-
-Puis enregistrer le résultat avec `ctrl o` (la lettre Ô, pas le zéro) en sortez de l'éditeur nano avec `ctrl x`.
-
-**Attention : pensez à remplacer `user_name` par le vrai nom d'utilisateur.**
-
 ## Création automatique du fichier de config `deploy.php`
+
+**Attention : la configuration automatique ne fonctionne pas avec Symfony 3.4 et plus.**
 
 La commande suivante permet de générer automatiquement le fichier de config `deploy.php`.
 
@@ -156,14 +165,13 @@ Depuis la racine de votre projet, lancez la commande suivante :
 
     dep init
 
-**Attention : malheureusement cette configuration automatique ne fonctionne pas avec Symfony 3.4 et plus.**
-
 ## Configuration manuelle du fichier `deploy.php`
 
 ### Création du fichier
 
-
 ### Version alpha
+
+Cette version du fichier `deploy.php` va vous permettre de valider que deployer fonctionne correctement en local.
 
 Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code suivant :
 
@@ -175,22 +183,27 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
     // tasks
 
-    task('test', function () {
+    desc('Test deployer');
+    task('test:hello', function () {
         writeln('Hello world');
     });
 
 Pour tester cette config, tapez la commande suivante :
 
-    dep test
+    dep test:hello
 
 Voici les résultat :
 
-    [src-symfony-3.4]$ dep test
-    ➤ Executing task test
+    [src-symfony-3.4]$ dep test:hello
+    ➤ Executing task test:hello
     Hello world
     ✔ Ok
 
+Bravo, vous venez d'exécuter en local la tâche `test` du fichier `deploy.php` !
+
 ### Version beta
+
+Cette version du fichier `deploy.php` va vous permettre de valider que deployer fonctionne correctement sur le serveur.
 
 Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code suivant :
 
@@ -206,27 +219,37 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
     // tasks
 
-    task('test', function () {
+    desc('Test deployer');
+    task('test:hello', function () {
         writeln('Hello world');
     });
 
-    task('hostname', function () {
+    desc('Get server hostname');
+    task('test:hostname', function () {
         $result = run('cat /etc/hostname');
         writeln("$result");
     });
 
+*Le `user_name` est le nom d'utilisateur avec lequel vous vous connectez au serveur en SSH (pas à la BDD).*
+
 Pour tester cette config, tapez la commande suivante :
 
-    dep hostname
+    dep test:hostname
 
 Voici les résultat :
 
-    [src-symfony-3.4]$ dep hostname
-    ➤ Executing task hostname
+    [src-symfony-3.4]$ dep test:hostname
+    ➤ Executing task test:hostname
     vps608861
     ✔ Ok
 
+Bravo, vous venez d'exécuter sur le serveur la tâche `hostname` du fichier `deploy.php` !
+
 ### Version de base
+
+Cette version du fichier `deploy.php` va vous permettre de déployer votre projet.
+
+**Attention : lisez la section suivante pour tester correctement cette config.**
 
 Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code suivant :
 
@@ -267,6 +290,12 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
         ->user('user_name')
         ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
 
+    // foobarbaz.com
+    // host('foofoobarbaz.com')
+    //     ->stage('test')
+    //     ->user('user_name')
+    //     ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
+
     // user the web server runs as. If this parameter is not configured, deployer try to detect it from the process list.
     set('http_user', 'user_name');
 
@@ -290,25 +319,24 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
     before('deploy:symlink', 'database:migrate');
 
     desc('Test deployer');
-    task('test', function () {
+    task('test:hello', function () {
         writeln('Hello world');
     });
 
     desc('Get server hostname');
-    task('hostname', function () {
+    task('test:hostname', function () {
         $result = run('cat /etc/hostname');
         writeln("$result");
     });
 
-    desc('Copy .env.prod as .env.local');
-    task('env:prod', function () {
-        upload('.env.prod', '~/{{projects_dir}}/{{application}}/shared/.env.local');
+    desc('Copy .env.{{stage}}.local as .env.local');
+    task('deploy:env', function () {
+        upload('.env.{{stage}}.local', '~/{{projects_dir}}/{{application}}/shared/.env.local');
     });
 
-    desc('Reload services');
-    task('services:reload', function () {
-        run('sudo /bin/systemctl reload php7.3-fpm');
-        run('sudo /bin/systemctl reload apache2');
+    desc('Clean git files');
+    task('clean:git-files', function () {
+        run('rm -fr ~/{{projects_dir}}/{{application}}/current/.git');
     });
 
     desc('Rollback database');
@@ -320,16 +348,14 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
         run(sprintf('{{bin/console}} doctrine:migrations:migrate prev %s', $options));
     });
 
-    after('deploy', 'services:reload');
+    after('deploy', 'clean:git-files');
 
 **Attention : pensez à adapter les valeurs suivantes à votre cas de figure :**
 
 - `application` : c'est le dossier dans lequel votre application doit être installée
 - `repository` : c'est l'adresse du repository git contenant le code de votre projet
 - `host` : c'est le nom de domaine ou l'adresse IP de votre serveur
-- `user_name` : c'est le nom d'utilisateur avec lequel vous vous connectez en SSH
-
-**Attention : lisez la section suivante pour tester cette config.**
+- `user_name` : c'est le nom d'utilisateur avec lequel vous vous connectez au serveur en SSH (pas à la BDD)
 
 ## Déploiement
 
@@ -338,15 +364,15 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 Dans un terminal à la racine du projet, tapez :
 
     dep deploy:prepare
-    dep env:prod
+    dep deploy:env
     dep deploy
 
 Voici le résultat :
 
     [src-symfony-3.4]$ dep deploy:prepare
     ✔ Executing task deploy:prepare
-    [src-symfony-3.4]$ dep env:prod
-    ✔ Executing task env:prod
+    [src-symfony-3.4]$ dep deploy:env
+    ✔ Executing task deploy:env
     [src-symfony-3.4]$ dep deploy
     ✈︎ Deploying master on popschool-lens.fr
     ✔ Executing task deploy:prepare
@@ -372,7 +398,7 @@ Voici le résultat :
     ✔ Executing task deploy:unlock
     ✔ Executing task cleanup
     Successfully deployed!
-    ✔ Executing task services:reload
+    ✔ Executing task clean:git-files
 
 ### Les autres déploiements
 
