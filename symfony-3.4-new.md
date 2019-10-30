@@ -52,7 +52,7 @@ Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306`
 
 Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` de `.env` ».
 
-**Attention : le fichier `.env.local` doit être rajouté dans votre `.gitignore`. Sinon pour allez publier vos mots de passe sur Github !**
+**Attention : le fichier `.env.local` doit être rajouté dans votre `.gitignore`. Sinon vous allez publier vos mots de passe sur Github !**
 
 ### Exemples de configuration de `DATABASE_URL`
 
