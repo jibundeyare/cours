@@ -39,6 +39,7 @@
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
+- IRI : Internationalized Resource Identifier (identifiant international de ressource) ; c'est comme URL mais en version internationale (avec des caractères de russe, chinois, arabe, etc)
 - Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
@@ -79,6 +80,7 @@
 - TLD : Top Level Domain (domaine de premier niveau)
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - TLS : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il supplante SSL ; voir aussi SSL
+- URI : Uniform Resource Identifier (identifiant uniforme de ressource) ; la plupart du temps, c'est l'adresse d'une page web
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
 - Web browser : navigateur web (Chrome, Edge, Firefox, Internet Explorer, Lynx, Opera, Safari, etc)

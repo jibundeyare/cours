@@ -35,6 +35,8 @@ Note : pour stopper le serveur, appuyer sur `CTRL + C`.
 
 Pour tester l'installation, ouvrir l'URL suivante dans un navigateur : [http://localhost:8000/](http://localhost:8000/)
 
+Note : pour savoir quelle version de Symfony vous devriez installer, consulter la page [Symfony releases, notifications and release checker](https://symfony.com/releases) et trouvez le numéro de la version « LTS » (Long Term Support).
+
 ## Configuration de l'accès à la base de données
 
 Créez un fichier `.env.local` à la racine du projet.
