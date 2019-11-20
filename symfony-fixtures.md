@@ -32,6 +32,8 @@ Le fichier suivant permet de générer :
 - 1 student nommé Titi
 - 10 students avec un nom et un email générés aléatoirement
 
+Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
+
     <?php
     // src/DataFixtures/AppFixtures.php
 
