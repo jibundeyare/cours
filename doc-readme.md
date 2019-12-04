@@ -1,6 +1,16 @@
 # Doc (README.md)
 
-- markdown
+La documentation technique est d'une importance capitale.
+Elle est malheureusement très souvent négligée par les développeurs.
+Pourtant c'est avant tout la documentation qui conditionne le succès d'un projet open source, par exemple.
+
+Pour le format de la doc :
+
+- rédigez votre documentation au format markdown
+- sinon utilisez un générateur de documentation comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
+
+Voici ce qui doit figurer au minimum dans votre documentation :
+
 - description en quelques mots
 - pré-requis
   - type d'OS compatible
@@ -11,15 +21,19 @@
   - démarrer à partir du `git clone`
   - détailler toutes les étapes nécessaires comm si c'était un script bash
   - idéalement, il n'y a qu'à copier-coller pour installer
-- utilisation (démarrage d'un serveur web, ouverture de la page dans le navigateur)
+- utilisation
+	- démarrage d'un serveur web
+	- quel page ouvrir dans le navigateur
 - infos utiles
   - poid et taille recommandés des images
-  - procédure des actions automatisées (script qui retaille des images, génération de sprite map, etc)
+  - commandes pour lancer des procédures automatisées (script qui retaille des images, génération de sprite map, etc)
 - mentions légales
   - auteur des images et source
   - licence qui s'applique au projet
 
 ## Exemple
+
+Voici un modèle de fichier `README.md` en français :
 
     # Nom du projet
 
