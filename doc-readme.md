@@ -9,7 +9,7 @@ Pour le format de la doc :
 - rédigez votre documentation au format markdown
 - sinon utilisez un générateur de documentation comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
 
-Voici ce qui doit figurer au minimum dans votre documentation :
+Voici le genre d'informations qui doit figurer dans votre documentation :
 
 - description en quelques mots
 - pré-requis
