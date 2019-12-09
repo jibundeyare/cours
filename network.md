@@ -4,7 +4,7 @@ Un réseau informatique permet à des machines connectées entre elles de commun
 
 ## Types de réseaux
 
-Il existent plusieurs types de réseaux :
+Il existe plusieurs types de réseaux :
 
 - LAN (Local Area Network)
 - WAN (Wide Area Network)
@@ -19,6 +19,12 @@ Internet est souvent appelé « le réseau des réseaux ».
 En effet, les différents opérateurs qui fournissent un accès à internet (en France Orange, Free, etc) construisent des WAN privés.
 Mais il existent encore bien d'autres WAN privés proposés par d'autre opérateurs en France ou à l'étranger.
 Internet est le réseau qui relie tout ces WAN.
+
+### FAI (Fournisseur d'Accès à Internet)
+
+Personne n'est propriétaire d'Internet et tout le monde peut devenir fournisseur d'accès à Internet.
+
+Pour plus de détails, voir [FDN - Fournisseur d'Accès à Internet associatif depuis 1992](https://www.fdn.fr/).
 
 ## Intranets et extranets
 
@@ -206,6 +212,17 @@ Il y a plusieurs normes qui permettent de communiquer à des débits plus ou moi
 Attention : vérifiez bien la capacité de débit du port filaire aussi.
 Si vous avez trois machines qui communiquent à 54 Mbit/s, cela s'additionne et le port filaire débite du 162 Mbit/s.
 Un port 1 000 Mbit/s pour le port filaire est donc bienvenu.
+
+### CPL (Courants Porteurs en Ligne)
+
+Dans certaines situations, il est compliqué voir impossible de mettre en place un réseau informatique filaire ou sans fil.
+Le CPL permet d'utiliser le réseau électrique déjà en place pour transporter des données.
+
+Des boîtiers CPL sont branchés d'une part à une prise électrique et d'autre part à un appareil ethernet (carte réseau d'un ordinateur, access point, routeur, etc).
+
+Les boîtiers « écoutent » les communications sur le réseau électrique et se comportent comme un hub.
+
+C'est ce type d'appareil qui permet de mettre en réseau les boxes en deux parties (routeur et media center) des différents FAI.
 
 #### Sécurité
 
@@ -485,6 +502,7 @@ Voir [Liste de ports logiciels — Wikipédia](https://fr.wikipedia.org/wiki/Lis
 - [IPv4 — Wikipédia](https://fr.wikipedia.org/wiki/IPv4)
 - [IPv6 — Wikipédia](https://fr.wikipedia.org/wiki/IPv6)
 - [Dynamic Host Configuration Protocol — Wikipédia](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
+- [Domain Name System — Wikipédia](https://fr.wikipedia.org/wiki/Domain_Name_System)
 
 ### Services et numéros de port utilisés
 
