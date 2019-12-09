@@ -1,6 +1,6 @@
 # Network (réseau)
 
-Un réseau informatique permet à des machines connectées entre elles de communiquer ensemble.
+Un réseau informatique permet à des machines connectées entre elles de communiquer et d'échanger des données.
 
 ## Types de réseaux
 
