@@ -91,5 +91,5 @@ Voici un modèle de fichier `README.md` en français :
 
     ## Contact
 
-    Pour toute demande d'information, vous pouvez cotacter foo.bar@example.com
+    Pour toute demande d'information, vous pouvez contacter foo.bar@example.com
 
