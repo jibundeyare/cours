@@ -1,13 +1,19 @@
-# Doc (README.md)
+# Doc (`README.md`)
 
 La documentation technique est d'une importance capitale.
 Elle est malheureusement très souvent négligée par les développeurs.
 Pourtant c'est avant tout la documentation qui conditionne le succès d'un projet open source, par exemple.
 
+## Format
+
 Pour le format de la doc :
 
 - rédigez votre documentation au format markdown
-- sinon utilisez un générateur de documentation comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
+- sinon utilisez un autre format comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
+
+Pour en savoir plus sur la syntaxe de Markdown, voir [markdown.md](markdown.md).
+
+## Contenu
 
 Voici le genre d'informations qui doit figurer dans votre documentation :
 
@@ -31,7 +37,7 @@ Voici le genre d'informations qui doit figurer dans votre documentation :
   - auteur des images et source
   - licence qui s'applique au projet
 
-## Exemple
+## Gabarit / modèle / template de `README.md`
 
 Voici un modèle de fichier `README.md` en français :
 
@@ -59,12 +65,15 @@ Voici un modèle de fichier `README.md` en français :
 
     ## Utilisation
 
+    Lancez un serveur web :
+
         symfony serve
 
-    Ouvrir le lien [http://localhost:8000](http://localhost:8000).
+    Puis ouvrez le lien [http://localhost:8000](http://localhost:8000).
 
-    - http://localhost:8000/admin : back office
-    - http://localhost:8000/register : inscription
+    - /admin : back office
+    - /login : connexion
+    - /register : inscription
     - ...
 
     ## Fixtures
@@ -73,17 +82,33 @@ Voici un modèle de fichier `README.md` en français :
 
         php bin/console doctrine:fixtures:load --group=test
 
+    ## Tests
+
+    Pour lancer tous les tests :
+
+        php bin/phpunit
+
+    Pour lancer les tests liés au front-office :
+
+        php bin/phpunit tests/Front
+
+    Pour lancer les tests liés au back-office :
+
+        php bin/phpunit tests/Back
+
     ## États des lieux
 
     Fonctionnalités qui devraient être implémentées :
 
     - ceci
     - cela
+    - ...
 
     Bugs connus :
 
     - ceci
     - cela
+    - ...
 
     ## Mentions légales
 
@@ -91,5 +116,5 @@ Voici un modèle de fichier `README.md` en français :
 
     ## Contact
 
-    Pour toute demande d'information, vous pouvez contacter foo.bar@example.com
+    Pour toute demande d'information, contactez foo.bar@example.com
 
