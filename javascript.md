@@ -7,7 +7,7 @@
 - syntaxe
 - concepts de base
   - déclaration de variables
-  - variables de type simple (integer, float, booleann string)
+  - variables de type simple (integer, float, boolean, string)
   - variables de type Array (tableau)
   - variables de type Object
   - JSON

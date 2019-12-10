@@ -277,6 +277,10 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 
 - [Identifier Names - MariaDB Knowledge Base](https://mariadb.com/kb/en/library/identifier-names/#maximum-length)
 
+### Sécurité
+
+- [Les dangers de MySQL et MariaDB](https://sqlpro.developpez.com/tutoriel/dangers-mysql-mariadb/)
+
 ### Tutoriels
 
 - [Cours et Tutoriels sur le Langage SQL](https://sql.sh/)

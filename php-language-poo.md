@@ -13,19 +13,18 @@ Voir la section « Autoloading » dans [composer.md](composer.md).
 ## Programmation orientée objet (POO)
 
 Une classe est la définition d'un objet.
+Et un objet est une instance de classe.
 
-Un objet est une instance de classe.
-Ou autrement dit, un objet est la matérialisation d'une définition abstraite.
+Ou autrement dit, un objet est la matérialisation d'une définition abstraite qu'est la classe.
 
 Analogie : on trouve la définition du mot voiture dans le dictionnaire, c'est l'équivalent d'une classe.
 On trouve de vraies voitures dans la rue, ce sont l'équivalent d'objets (des instances de la définition).
 
-En POO :
+### Attributs et méthodes
 
-- une variable se nomme « attribut » ou « membre »
-- une fonction se nomme « méthode »
+En POO une variable qui est rattachée à une classe se nomme « attribut » ou « membre », et une fonction qui est rattachée à une classe se nomme « méthode ».
 
-### La portée des variables (le scope, en anglais)
+### La portée des variables (scope, en anglais)
 
 Il y a trois scopes possibles : `public`, `protected` ou `private`.
 

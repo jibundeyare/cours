@@ -1,5 +1,6 @@
 # Lexique
 
+- Adresse MAC : voir MAC Address
 - API : Application Programming Interface
 - Array : tableau, type de données
 - Attribut : en POO, un attribut désigne une variable
@@ -39,6 +40,9 @@
 - Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
+- IP : Internet Protocol (protocole inter-réseau) ; protocole de communication de réseau informatique ; ce protocole ne se préoccupe pas du contenu des paquets, il fournit juste une méthode pour les mener à destination ; ce protocole fonctionne peut fonctionner en tandem avec le protocole TCP pour former le protocole TCP/IP utilisé dans Internet
+- IPv4 : Internet Protocol v4 (protocole inter-réseau v4) ; les adresses sont codées sur 32 bits, soit 4 294 967 296 adresses possibles ; voir aussi IP
+- IPv6 : Internet Protocol v6 (protocole inter-réseau v6) ; les adresses sont codées sur 128 bits, soit 3,4 * 10 ^ 38 adresses possibles ; voir aussi IP
 - IRI : Internationalized Resource Identifier (identifiant international de ressource) ; c'est comme URL mais en version internationale (avec des caractères de russe, chinois, arabe, etc)
 - Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
 - KB : Knowledge Base (base de donnaissance)
@@ -47,6 +51,7 @@
 - Lead dev : développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme
+- MAC address : Media Access Control address ; c'est une adresse unique que possède toutes les cartes réseaux ; cette adresse permet d'identifier une machine
 - méthode : en POO, une méthode désigne une fonction
 - membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request
@@ -60,6 +65,7 @@
 - POO : Programmation Orientée Objet
 - POP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence d'IMAP, les messages sont rappatriés du serveur vers le client puis supprimés du serveur ; voir aussi IMAP et SMTP
 - PR : Pull Request
+- Protocole de communication : c'est une « langue » commune parlée par deux machines ou programmes ; FTP, SSH ou HTTP sont des protocoles de communication
 - Repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
 - Retex : retours d'expérience ; voir aussi feedbacks
@@ -83,6 +89,7 @@
 - URI : Uniform Resource Identifier (identifiant uniforme de ressource) ; la plupart du temps, c'est l'adresse d'une page web
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - VM : Virtual Machine (machine virtuelle)
+- VPN : Virtual Private Network (réseau privé virtuel) ; c'est un système qui permet à un utilisateur d'être connecté à un réseau privé (celui d'une entreprise par exemple) comme s'il était physiquement sur place, alors qu'en réalité il y est connecté en passant par internet
 - Web browser : navigateur web (Chrome, Edge, Firefox, Internet Explorer, Lynx, Opera, Safari, etc)
 - WIP : Work In Progress (travail en cours)
 - wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning

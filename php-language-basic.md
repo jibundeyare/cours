@@ -1,7 +1,5 @@
 # PHP language basic
 
-@todo [PHP: Late Static Bindings - Manual](http://php.net/manual/en/language.oop5.late-static-bindings.php)
-
 ## Notions
 
 - variables (types de données simples, tableaux, objets)
@@ -15,13 +13,13 @@
 
 ## Types de données
 
-- chaîne de caractères (string)
 - nombre entier (integer)
 - nombre à virgule flottant (float)
 - booléen (boolean)
-- null
+- chaîne de caractères (string)
+- valeur nulle (null value)
 - tableau (array)
-- objet (object)
+- objet / classe (object / class)
 
 ## Valeurs vides
 
@@ -59,8 +57,7 @@ Elle peut renvoyer une valeur ou ne n'en renvoyer aucune.
 
 Exemple de définition d'une fonction qui prend deux paramètres et renvoit une valeur :
 
-    function foo($a, $b)
-    {
+    function foo($a, $b) {
         return $a + $b;
     }
 
