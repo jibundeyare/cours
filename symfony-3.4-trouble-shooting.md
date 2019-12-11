@@ -71,3 +71,50 @@ La longueur maximum est `767 / 4 == 191.75`, c-à-d, à peu près `190` caractè
     private $name;
 
 - [mysql - #1071 - Specified key was too long; max key length is 767 bytes - Stack Overflow](https://stackoverflow.com/questions/1814532/1071-specified-key-was-too-long-max-key-length-is-767-bytes)
+
+## Erreur de syntaxe lors de la création d'une table contenant une colonne de type JSON
+
+Cette erreur arrive quand on a un type de données JSON dans son entité.
+
+    An exception occurred while executing 'CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(255) NOT
+      NULL, nom VARCHAR(255) NOT NULL, prenon VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, roles JSON DEFAULT
+      NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB':
+      SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that
+      corresponds to your MariaDB server version for the right syntax to use near 'JSON DEFAULT NULL, PRIMARY KEY(id)) D
+      EFAULT CHARACTER SET utf8mb4 COLLATE utf8mb' at line 1
+
+Si vous utilisez MySQL 5.7 ou plus, votre serveur est capable de traiter nativement des données de type `json`.
+Mais si vous avez une version plus ancienne, votre serveur n'est pas capable traiter nativement des données de type `json` et il faut le signaler à Doctrine ORM.
+
+Dans le fichier `config/packages/doctrine.yaml`, vous devez modifier la ligne :
+
+            server_version: '5.7'
+
+si vous utilisez MySQL :
+
+            server_version: '5.6'
+
+ou si vous utilisez MariaDB :
+
+            server_version: 'mariadb-10.1.38'
+
+*Attention : adaptez le numéro de version si besoin.*
+
+Pour savoir quelle version de MySQL vous avez, tapez la commande suivante :
+
+    mysql -V
+
+La commande `mysql -v` permet d'obtenir le numéro de version de MySQL ou Maria DB.
+
+Par exemple, voici ce qu'affiche Maria DB :
+
+    Welcome to the MariaDB monitor.  Commands end with ; or \g.
+    Your MariaDB connection id is 1539
+    Server version: 10.1.38-MariaDB-0+deb9u1 Debian 9.8
+
+Pour en savoir plus, voir :
+
+- [JSON Data Type - MariaDB Knowledge Base](https://mariadb.com/kb/en/library/json-data-type/)
+- [Doctrine Configuration Reference (DoctrineBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/doctrine.html)
+- [Customizing the User Entity > Symfony Security: Beautiful Authentication, Powerful Authorization | SymfonyCasts](https://symfonycasts.com/screencast/symfony-security/user-entity#setting-doctrines-server-version).
+

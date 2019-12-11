@@ -434,3 +434,4 @@ Voici le résultat :
 - [deployphp/recipes: Deployer Recipes](https://github.com/deployphp/recipes)
 - [How to Automatically Deploy Laravel Applications with Deployer | DigitalOcean](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu)
 - [jibundeyare’s gists](https://gist.github.com/jibundeyare)
+

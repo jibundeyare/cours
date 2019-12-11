@@ -1,6 +1,8 @@
-# Symfony 3.4 Classic
+# Symfony 3.4 deprecated
 
-Attention : ce cours installe une version de Symfony 3.4 qui a une structure de dossier incompatible avec Symfony 4.x.
+*Attention : ce cours est obsolète.*
+
+Ce cours montre comment installer, configurer et démarrer le développement avec une version de Symfony 3.4 qui a une structure de dossier compatible avec Symfony 2.x et incompatible avec Symfony 4.x.
 
 Dans Symfony 4.x, certains dossiers changent de nom et d'emplacement :
 
@@ -643,6 +645,15 @@ Attention : veiller à adapter le nom de l'entité (`AppBundle\Entity\Foo` dans 
 
 Voir [easyadmin.md](easyadmin.md).
 
+## Fixtures
+
+@todo package `nelmio/alice`
+
+## Tests
+
+@todo symfony-test.md
+@todo package behat.md
+
 ## Commandes utiles
 
 Lancer le serveur web de développement :
@@ -712,6 +723,8 @@ Afficher la liste des events et leur degré de priorité :
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
 
 ### CSS et Javascript
+
+@todo ajouter [Managing CSS and JavaScript (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/frontend.html)
 
 - [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
 - [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)
