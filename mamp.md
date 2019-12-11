@@ -1,5 +1,7 @@
 # MAMP
 
+MAMP : MacOS Apache MySQL PHP
+
 ## Terminal
 
 Pour se rendre le dossier des projets :
