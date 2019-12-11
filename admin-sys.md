@@ -88,13 +88,13 @@ La commande `chown` permet de changer le propriétaire et le groupe d'un fichier
 
 En général, avec la distribution Linux Debian, on utilise le même nom pour le propriétaire et le groupe.
 
-Pour que `toto` devienne le propriétaire et le groupe de tous les sous-dossiers et fichiers contenu dans le dossier `~/foo` :
+Pour que `toto` devienne le propriétaire et le groupe d'un dossier ou d'un fichier `~/foo` :
 
-    sudo chown -R toto:toto ~/foo
+    sudo chown toto:toto ~/foo
 
-Pour que `toto` devienne le propriétaire et le groupe d'un dossier ou d'un fichier `~/bar` :
+Pour que `toto` devienne le propriétaire et le groupe de tous les sous-dossiers et fichiers contenu dans le dossier `~/bar` :
 
-    sudo chown toto:toto ~/bar
+    sudo chown -R toto:toto ~/bar
 
 ### `chmod` (CHange MODe)
 
