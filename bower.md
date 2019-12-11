@@ -1,6 +1,7 @@
 # Bower
 
-*Attention, Bower est considéré comme étant obsolète par ses créateurs.*
+**Attention, Bower est considéré comme étant obsolète par ses créateurs.**
+
 Voir la notice sur la home page de Bower : [https://bower.io/](https://bower.io/).
 
 ## Obtenir la liste des commandes de bower
