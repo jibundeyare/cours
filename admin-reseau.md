@@ -1,4 +1,4 @@
-# Network (réseau)
+# Administration réseau
 
 Un réseau informatique permet à des machines connectées entre elles de communiquer et d'échanger des données.
 
