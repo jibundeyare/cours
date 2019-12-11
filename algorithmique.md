@@ -107,6 +107,16 @@ Ce qui est vérifié avec un bloc conditionnelle, c'est si la condition est « v
 
     if conditionA then
       // do something
+    end
+
+    if conditionA then
+      // do something
+    else
+      // do something
+    end
+
+    if conditionA then
+      // do something
     else if conditionB then
       // do something
     else
@@ -116,13 +126,25 @@ Ce qui est vérifié avec un bloc conditionnelle, c'est si la condition est « v
     switch true
     case conditionA
       // do something
+      break
     case conditionB
       // do something
+      break
     other
       // do something
     end
 
 ### Français
+
+    si conditionA alors
+      // faire quelque chose
+    fin
+
+    si conditionA alors
+      // faire quelque chose
+    sinon
+      // faire quelque chose
+    fin
 
     si conditionA alors
       // faire quelque chose
@@ -135,8 +157,10 @@ Ce qui est vérifié avec un bloc conditionnelle, c'est si la condition est « v
     selon vrai
     cas conditionA
       // faire quelque chose
+      interrompre
     cas conditionB
       // faire quelque chose
+      interrompre
     autrement
       // faire quelque chose
     fin
@@ -146,12 +170,6 @@ Ce qui est vérifié avec un bloc conditionnelle, c'est si la condition est « v
 Les boucles permettent de répêter une action.
 
 Un bloc de code permet de répêter 100 fois, 200, fois, 1000 fois la même série d'instructions sans devoir copier-coller le code.
-
-@TODO les sauts (branchements inconditionnels) :
-
-    break
-    continue
-    return expression_optionnelle
 
 ### Anglais
 
@@ -205,6 +223,61 @@ Cette boucle répête une action un nombre de fois déterminé :
       // faire quelque chose
     fin
 
+## Sauts, branchements inconditionnels
+
+Les instructions `continue` et `break` permettent de faire des sauts dans le code.
+On appelle aussi cela un « branchement inconditionnel ».
+
+### Continue (continuer)
+
+Quand l'instruction `continue` est utilisée, la boucle recommence une itération en ignorant le code qui pourrait suivre dans la boucle.
+
+Exemple d'utilisation de `continue` dans une boucle :
+
+    i = 0
+
+    while i < 10
+      i++
+
+      // demande d'itération en ignorant la suite
+      continue
+
+      // la ligne suivante ne sera jamais exécutée
+      echo "Hello !"
+    end
+
+### Break (interrompre)
+
+Quand l'instruction `break` est utilisée, la boucle ou le switch s'arrête en ignorant le code qui pourrait suivre.
+
+Exemple d'utilisation de `break` dans une boucle :
+
+    i = 0
+
+    while i < 10
+      i++
+
+      // la ligne suivante n'est exécutée qu'une seule fois
+      echo "Hello !"
+
+      // car il y a demande d'interruption juste après
+      break
+    end
+
+L'instruction `break` est obligatoire dans un `switch` (à moins de savoir ce qu'on fait) :
+
+    switch true
+    case conditionA
+      // do something
+      break
+    case conditionB
+      // do something
+      break
+    other
+      // do something
+      break
+    end
+
 ## Fonctions
 
 Les fonctions permettent de regrouper plusieurs instructions dans un bloc de code et de nommer ce bloc code.
@@ -214,6 +287,12 @@ Dans un premier temps, il faut « définir » une fonction.
 Dès que cela est fait, il devient possible « d'appeler » la fonction.
 
 Utiliser une « librarie » c'est surtout utiliser des fonctions qui ont été écrites par d'autres développeurs.
+
+### Return (renvoyer)
+
+L'instruction `return` permet à une fonction de renvoyer une ou plusieurs valeurs (selon les possibilités du langage).
+Quand cette instruction est utilisés, le programme sort de la fonction et le code qui pourrait suivre dans le fonction est ignoré.
+Si l'instruction est utilisée sans valeur de retour, le programme sort de la fonction sans renvoyer de valeur (et le code qui pourrait suivre dans la fonction est ignoré).
 
 ### Anglais
 
