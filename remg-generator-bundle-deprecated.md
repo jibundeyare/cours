@@ -1,4 +1,7 @@
-# Remg Generator Bundle
+# Remg Generator Bundle deprecated
+
+**Ce cours est obsolète.**
+**La commande `php bin/console make:entity` remplace avantageusement le bundle `remg/generator-bundle`.**
 
 Remg Generator Bundle est un plugin Symfony qui permet de générer des entités et des associations entre entités.
 

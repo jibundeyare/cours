@@ -5,7 +5,8 @@ Il peut être utilisé comme un serveur d'application JavaScript.
 
 ## Installation
 
-Tout d'abord, il faut vérifier le numéro de la version LTS.
+**Tout d'abord, il faut vérifier le numéro de la version LTS.**
+
 Actuellement, c'est la `10.16.0`.
 
 La page [distributions/README.md at master · nodesource/distributions](https://github.com/nodesource/distributions/blob/master/README.md#debinstall) indique comment installer Node.js v10.x.

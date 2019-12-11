@@ -1,6 +1,6 @@
 # Symfony installer 1.5.11 deprecated
 
-*Attention : ce cours montre comment installer la version obsolète 1.5.11 de cet outil.*
+**Attention : ce cours montre comment installer la version obsolète 1.5.11 de l'installeur symfony.**
 
 Cet outil permet d'installer Symfony.
 

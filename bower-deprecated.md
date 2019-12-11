@@ -1,4 +1,4 @@
-# Bower
+# Bower deprecated
 
 **Attention, Bower est considéré comme étant obsolète par ses créateurs.**
 
