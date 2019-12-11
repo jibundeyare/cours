@@ -82,8 +82,43 @@ Cela permet de définir :
 - ce que le groupe peut faire avec le fichier ou dossier
 - ce que les autres peuvent faire avec le fichier ou dossier
 
+### `chown` (CHange OWNer)
+
 La commande `chown` permet de changer le propriétaire et le groupe d'un fichier ou d'un dossier.
+
+En général, avec la distribution Linux Debian, on utilise le même nom pour le propriétaire et le groupe.
+
+Pour que `toto` devienne le propriétaire et le groupe de tous les sous-dossiers et fichiers contenu dans le dossier `~/foo` :
+
+    sudo chown -R toto:toto ~/foo
+
+Pour que `toto` devienne le propriétaire et le groupe d'un dossier ou d'un fichier `~/bar` :
+
+    sudo chown toto:toto ~/bar
+
+### `chmod` (CHange MODe)
+
 La commande `chmod` permet de changer les permissions d'un fichier ou d'un dossier.
+
+En général on applique les droits `775` aux dossiers :
+
+- propriétaire : lecture, écriture et exécution
+- groupe : lecture, écriture et exécution
+- autre : lecture et exécution
+
+En général on applique les droits `664` aux fichiers :
+
+- propriétaire : lecture et écriture
+- groupe : lecture et écriture
+- autre : lecture seule
+
+Pour appliquer ce schéma de droits sur tous les sous-dossiers contenu dans le dossier `~/foo` :
+
+    sudo find ~/foo -type d -exec chmod 0775 {} \;
+
+Pour appliquer ce schéma de droits sur tous les fichiers contenu dans le dossier `~/foo` :
+
+    sudo find ~/foo -type f -exec chmod 0664 {} \;
 
 La page [Chmod Calculator](https://chmod-calculator.com/) permet de calculer la formule magique pour appliquer les permissions que vous souhaitez.
 
@@ -101,6 +136,10 @@ Mais fail2ban peut être utiliser pour sécuriser d'autres services aussi (mail,
 Il suffit d'installer la package car il est préconfiguré pour fonctionner avec SSH :
 
     sudo apt install fail2ban
+
+## SSH
+
+Pour configurer un accès SSH, voir [ssh.md](ssh.md).
 
 ## Doc
 
