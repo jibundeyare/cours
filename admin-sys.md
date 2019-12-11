@@ -1,5 +1,9 @@
 # Administration système
 
+## APT
+
+Pour en savoir plus sur le gestionnaire de paquet `apt`, voir [apt.md](apt.md).
+
 ## Le compte Root
 
 Le compte root permet de modifier le système.
