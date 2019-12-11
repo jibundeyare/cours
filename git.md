@@ -2,6 +2,12 @@
 
 Git est un outil de gestion de code source. Il permet d'enregistrer du code source à un instant T et de le restituer plus tard, si nécessaire. Il permet également d'entretenir en parallèle plusieurs versions d'un même code source. Cette dernière faculté permet une collaboration plus fluide entre plusieurs développeur travaillant sur un même projet.
 
+## Travail en solo ou en groupe
+
+- pour travailler en solo avec une méthode simple, voir [gitflow-solo-basic.md](gitflow-solo-basic.md)
+- pour travailler en solo avec une méthode plus évoluée, voir [gitflow-solo-advanced.md](gitflow-solo-advanced.md)
+- pour travailler en groupe avec une méthode simple, voir [gitflow-github-flow-basic.md](gitflow-github-flow-basic.md)
+
 ## Installation
 
 ### Linux
@@ -70,6 +76,8 @@ Exemple avec l'éditeur de code Visual Studio Code (version open source) :
     git config --global core.editor "code --wait"
 
 #### Diff & merge
+
+@todo diff & merge
 
 Il est aussi possible de définir un outil pour comparer et fusionner des fichiers.
 
