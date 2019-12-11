@@ -76,19 +76,19 @@ Voici la ligne originale :
 
 #### Wamp
 
-Voici la ligne pour le user `root`, sans mot de passe, une connection sur le port `3306` (mysql) sur le même serveur, la BDD `my_project` :
+Voici la ligne pour le user `root`, sans mot de passe, une connection sur le port `3306` (MariaDB) sur le même serveur, la BDD `my_project` :
 
     DATABASE_URL=mysql://root:@127.0.0.1:3306/my_project
 
 #### MAMP
 
-Voici la ligne pour le user `root`, le mot de passe `root`, une connection sur le port `8889` (mysql) sur le même serveur, la BDD `my_project` :
+Voici la ligne pour le user `root`, le mot de passe `root`, une connection sur le port `8889` (MariaDB) sur le même serveur, la BDD `my_project` :
 
     DATABASE_URL=mysql://root:root@127.0.0.1:8889/my_project
 
 #### Autre
 
-Voici la ligne pour le user `root`, le mot de passe `123`, une connection sur le port `3306` (mysql) sur le même serveur, la BDD `my_project` :
+Voici la ligne pour le user `root`, le mot de passe `123`, une connection sur le port `3306` (MariaDB) sur le même serveur, la BDD `my_project` :
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/my_project
 
@@ -180,7 +180,7 @@ ou si vous utilisez MariaDB :
 
 *Attention : adaptez le numéro de version si besoin.*
 
-Pour savoir quelle version de MySQL vous avez, tapez la commande suivante :
+Pour savoir quelle version de MariaDB ou MySQL vous avez, tapez la commande suivante :
 
     mysql -V
 

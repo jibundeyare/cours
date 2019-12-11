@@ -48,7 +48,7 @@ Voici un modèle de fichier `README.md` en français :
     ## Prérequis
 
     - PHP 7.x
-    - MySQL 5.x
+    - MariaDB 15.x
     - Apache 2.x
     - Npm x.x
 

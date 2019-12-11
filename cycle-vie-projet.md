@@ -8,7 +8,7 @@
 - wireframes
 - BDD (voir [doctrine-orm.md](doctrine-orm.md) et [doctrine-migrations.md](doctrine-migrations.md))
 - maquette fonctionnelle
-- domaine & hébergement
+- domaine & hébergement (voir [admin-sys.md](admin.sys))
 - production
 - recette
 - MEP (mise en production) (voir [deployer.md](deployer.md))

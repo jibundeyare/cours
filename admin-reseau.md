@@ -326,7 +326,7 @@ Le mieux est alors de redémarrer le serveur DHCP.
 Le DNS est l'équivalent d'un annuaire téléphonique mais pour des noms de domaine.
 On lui fournit un nom de domaine, et le serveur DNS renvoit une adresse IP.
 
-FQDN (Fully Qualified Domain Name, nom de domaine pleinement qualifié)
+FQDN (Fully Qualified Domain Name, nom de domaine pleinement qualifié).
 
 Par exemple :
 

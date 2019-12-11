@@ -21,7 +21,7 @@
 ## Architecture logicielle
 
 - serveur web (Apache)
-- serveur de données (MySQL)
+- serveur de données (MariaDB)
 - serveur d'application (PHP)
 - serveur de fichiers (FTP / SFTP)
 
@@ -43,7 +43,7 @@
 
 ## Prérequis
 
-Il faut d'abord installer un serveur web, un serveur de données et un serveur d'appplication (Apache, MySQL et PHP).
+Il faut d'abord installer un serveur web, un serveur de données et un serveur d'appplication (Apache, MariaDB et PHP).
 
 ### Wampserver
 
@@ -349,7 +349,7 @@ Le plugin de création de custom type est libre mais le plugin d'affichage de cu
 - [Créer une boutique en ligne avec Wordpress 4 & WooCommerce (1/8) - YouTube](https://www.youtube.com/watch?v=nEL8xCTGXhM&index=8&list=PLpfOedZZax4wl_l31ajvr0su_rUtZ25Dh)
 - [e-Commerce: Créer un Site en 2h ! [WORDPRESS + WOOCOMMERCE] - YouTube](https://www.youtube.com/watch?v=B6opNgiDqvI)
 
-### Programmation (HTML, CSS, JavaScript, PHP, MySQL)
+### Programmation (HTML, CSS, JavaScript, PHP, MariaDB)
 
 - [Grafikart.fr - YouTube - YouTube](https://www.youtube.com/user/grafikarttv)
 

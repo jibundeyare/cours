@@ -145,6 +145,18 @@ Il suffit d'installer la package car il est préconfiguré pour fonctionner avec
 
 Pour configurer un accès SSH, voir [ssh.md](ssh.md).
 
+## Apache
+
+Voir [apache.md](apache.md).
+
+## MariaDB / MySQL
+
+Voir [mariadb.md](mariadb.md).
+
+## PhpMyAdmin
+
+Voir [phpmyadmin.md](phpmyadmin.md).
+
 ## Doc
 
 - [Chmod Calculator](https://chmod-calculator.com/)

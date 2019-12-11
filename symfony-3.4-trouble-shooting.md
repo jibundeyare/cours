@@ -40,7 +40,7 @@ afin d'obtenir :
 
 ## Erreur `Specified key was too long` (la clé spécifiée est trop longue)
 
-Cette erreur arrive quand on essaye de créer un index ou une contrainte (avec MySQL) sur un champ texte, et qu'on utilise un codage de caractères `utf8mb4` avec le moteur de stockage `InnoDB`.
+Cette erreur arrive quand on essaye de créer un index ou une contrainte (avec MariaDB ou MySQL) sur un champ texte, et qu'on utilise un codage de caractères `utf8mb4` avec le moteur de stockage `InnoDB`.
 Les index et les contraintes sont limités à une longueur de `767` octets.
 Le champ en question ne fait que `255` caractères de long, mais avec `utf8mb4`, `1 caractère == 4 octets`.
 Avec un champ de `255` caractères, nous avons donc un index ou une contrainte qui fait `4 * 255 caractères == 1020 octets`.
@@ -86,6 +86,8 @@ Cette erreur arrive quand on a un type de données JSON dans son entité.
 Si vous utilisez MySQL 5.7 ou plus, votre serveur est capable de traiter nativement des données de type `json`.
 Mais si vous avez une version plus ancienne, votre serveur n'est pas capable traiter nativement des données de type `json` et il faut le signaler à Doctrine ORM.
 
+La commande `mysql -V` permet d'obtenir le numéro de version de MariaDB ou MySQL.
+
 Dans le fichier `config/packages/doctrine.yaml`, vous devez modifier la ligne :
 
             server_version: '5.7'
@@ -100,13 +102,7 @@ ou si vous utilisez MariaDB :
 
 *Attention : adaptez le numéro de version si besoin.*
 
-Pour savoir quelle version de MySQL vous avez, tapez la commande suivante :
-
-    mysql -V
-
-La commande `mysql -v` permet d'obtenir le numéro de version de MySQL ou Maria DB.
-
-Par exemple, voici ce qu'affiche Maria DB :
+Par exemple, voici ce qu'affiche MariaDB :
 
     Welcome to the MariaDB monitor.  Commands end with ; or \g.
     Your MariaDB connection id is 1539
