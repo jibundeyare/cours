@@ -1,6 +1,9 @@
-# Silex
+# Silex deprecated
 
-[Silex](https://silex.symfony.com/) est un micro framework PHP basé sur des composants du framework Symfony. Ces deux frameworks sont développés par la société [SensioLabs](https://sensiolabs.com/fr).
+**Attention : Silex est officiellement obsolète depuis juin 2018.**
+
+[Silex](https://silex.symfony.com/) est un micro framework PHP basé sur des composants du framework Symfony.
+Ces deux frameworks sont développés par la société [SensioLabs](https://sensiolabs.com/fr).
 
 ## Structure du dossier
 

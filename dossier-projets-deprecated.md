@@ -1,10 +1,12 @@
-# Dossier projets
+# Dossier projets deprecated
 
 **Attention** : ce document est obsolète.
 Veuillez vous reporter aux documents suivants :
 
 - [admin-sys.md](admin-sys.md)
 - [apache.md](apache.md)
+
+@todo supprimer ce document dès que les infos auront été reportées dans [apache.md](apache.md)
 
 Remplacez `[user-name]` par votre nom d'utilisateur dans la procédure.
 
