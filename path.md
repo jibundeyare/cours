@@ -81,3 +81,4 @@ Pour aller dans le dossier `/home/foo/projets/baz/src/Controller`, il faudrait u
 Pour aller dans le dossier `/home/foo/projets/lorem`, il faudrait utiliser le chemin absolu suivant :
 
     cd /home/foo/projets/lorem
+

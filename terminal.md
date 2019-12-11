@@ -204,6 +204,12 @@ Les fichiers dont le nom commence par un point sont cachés.
 
 Exemple : `.htaccess`
 
+## Path (chemin)
+
+Pour être à l'aise dans le terminal, vous devez connaître la différence entre un chemin absolu et un chemin relatif.
+
+Pour en savoir plus, voir [path.md](path.md).
+
 ## Doc
 
 ### Windows
@@ -215,3 +221,4 @@ Exemple : `.htaccess`
 ### Linux et MacOS
 
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+
