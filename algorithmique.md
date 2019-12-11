@@ -96,7 +96,7 @@ Certaies personnes préfèrent découvrir les algorithme avec, donc ne vous priv
 - [Expliquer l'algorithme et le logigramme avec des exemples](https://www.edrawsoft.com/fr/explain-algorithm-flowchart.php)
 - [Introduction aux algorigrammes](https://troumad.developpez.com/C/algorigrammes/)
 
-## Structures conditionnelles ou structures alternatives
+## Structures conditionnelles ou structures alternatives (control flow en anglais)
 
 Les structures conditionnelles permettent de faire des choix.
 
@@ -165,7 +165,7 @@ Ce qui est vérifié avec un bloc conditionnelle, c'est si la condition est « v
       // faire quelque chose
     fin
 
-## Boucles
+## Boucles (loops en anglais)
 
 Les boucles permettent de répêter une action.
 
@@ -223,12 +223,12 @@ Cette boucle répête une action un nombre de fois déterminé :
       // faire quelque chose
     fin
 
-## Sauts, branchements inconditionnels
+## Sauts, branchements inconditionnels (jumps en anglais)
 
 Les instructions `continue` et `break` permettent de faire des sauts dans le code.
 On appelle aussi cela un « branchement inconditionnel ».
 
-### Continue (continuer)
+### Continuer (continue en anglais)
 
 Quand l'instruction `continue` est utilisée, la boucle recommence une itération en ignorant le code qui pourrait suivre dans la boucle.
 
@@ -246,7 +246,7 @@ Exemple d'utilisation de `continue` dans une boucle :
       echo "Hello !"
     end
 
-### Break (interrompre)
+### Interrompre (break en anglais)
 
 Quand l'instruction `break` est utilisée, la boucle ou le switch s'arrête en ignorant le code qui pourrait suivre.
 
@@ -278,7 +278,7 @@ L'instruction `break` est obligatoire dans un `switch` (à moins de savoir ce qu
       break
     end
 
-## Fonctions
+## Fonctions (functions en anglais)
 
 Les fonctions permettent de regrouper plusieurs instructions dans un bloc de code et de nommer ce bloc code.
 Le développeur peut alors « appeler » (utiliser) la fonction dans différents endroits de son programme pour exécuter des instructions.
@@ -288,7 +288,7 @@ Dès que cela est fait, il devient possible « d'appeler » la fonction.
 
 Utiliser une « librarie » c'est surtout utiliser des fonctions qui ont été écrites par d'autres développeurs.
 
-### Return (renvoyer)
+### Renvoyer (return en anglais)
 
 L'instruction `return` permet à une fonction de renvoyer une ou plusieurs valeurs (selon les possibilités du langage).
 Quand cette instruction est utilisés, le programme sort de la fonction et le code qui pourrait suivre dans le fonction est ignoré.
@@ -374,5 +374,4 @@ Appel de la fonction et affectation de la valeur de retour dans une variable :
 - [Introduction aux algorigrammes](https://troumad.developpez.com/C/algorigrammes/)
 - [Control flow - Wikipedia](https://en.wikipedia.org/wiki/Control_flow)
 - [Structure de contrôle — Wikipédia](https://fr.wikipedia.org/wiki/Structure_de_contr%C3%B4le)
-
 
