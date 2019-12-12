@@ -1,21 +1,5 @@
 # Symfony 3.4
 
-@todo compare my method of authentification and authorization and the one in :
-- [The Symfony MakerBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html)
-- [Security (Symfony Docs)](https://symfony.com/doc/current/security.html#create-user-class)
-- [How to Implement a Registration Form (Symfony Docs)](https://symfony.com/doc/current/doctrine/registration_form.html)
-
-@todo composer Package symfony/lts is abandoned, you should avoid using it. Use symfony/flex instead
-  https://github.com/symfony/lts
-
-@todo https://symfony.com/doc/current/setup/flex.html
-  https://flex.symfony.com/
-
-@todo https://github.com/whiteoctober/Pagerfanta
-@todo https://symfony.com/blog/
-@todo https://symfony.com/doc/current/components/asset.html
-@todo https://github.com/symfony/contracts
-
 Ce cours montre comment installer, configurer et démarrer le développement avec le framework Symfony à partir de la version 3.4.
 
 Le repo suivant contient le résultat de ce tutoriel : [jibundeyare/src-symfony-3.4](https://github.com/jibundeyare/src-symfony-3.4).
