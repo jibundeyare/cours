@@ -507,6 +507,7 @@ Voir [Liste de ports logiciels — Wikipédia](https://fr.wikipedia.org/wiki/Lis
 ### Services et numéros de port utilisés
 
 - [Liste de ports logiciels — Wikipédia](https://fr.wikipedia.org/wiki/Liste_de_ports_logiciels)
+- [Registered port - Wikipedia](https://en.wikipedia.org/wiki/Registered_port)
 
 ### Sécurité
 

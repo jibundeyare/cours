@@ -3,6 +3,8 @@
 Le protocole SSH permet d'accéder au terminal d'un serveur distant.
 On peut utiliser la ligne de commande du terminal comme si un clavier et un écran étaient directement branchés dessus.
 
+Pensez à jeter un coup d'œil au cours sur l'admin sys [admin-sys.md](admin-sys.md) et la sécurité [security.md](security.md).
+
 ## Se connecter à un serveur distant
 
 Avant toute connexion, le serveur vous demandera de vous authentifier, c-à-d prouver que vous êtes bien qui vous prétendez être.
@@ -29,7 +31,8 @@ Exemple pour se connecter au serveur `example.com` avec le compte `foo` :
 
     ssh foo@example.com
 
-**Attention** : lors de la première connexion, le client SSH vous demandera si vous acceptez ou non la signature du serveur distant. Si vous décidez de l'accepter, il faudra bien taper `yes` en toute lettre, sans quoi le client SSH croira que vous ne voulez pas l'accepter.
+**Attention** : lors de la première connexion, le client SSH vous demandera si vous acceptez ou non la signature du serveur distant.
+Si vous décidez de l'accepter, il faudra bien taper `yes` en toute lettre, sans quoi le client SSH croira que vous ne voulez pas l'accepter.
 
 ## Générer des clés SSH
 
@@ -64,10 +67,201 @@ Exemple pour copier la clé ssh dans le compte `foo` du serveur `example.com` :
 
 ## Sécuriser le service SSH
 
-Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.md).
+### Fail2ban
+
+Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.md#Sécurisation avec fail2ban).
+
+### Configuration plus stricte
+
+**Attention : quand vous faites les manipulations de cette section, veillez à toujours avoir un terminal `root` actif.**
+
+Si vous faites des erreurs de manipulation dans la config et que vous n'arrivez plus à vous connecter en SSH, ce terminal vous permettra de revenir à une situation antérieure et vous sauver.
+
+Si vous n'avez pas pris cette précaution et que n'arrivez plus à vous connecter, votre seule chance est de recourir à un démarrage du serveur en mode *rescue*.
+Le admin de votre hébergeur devrait vous permettre de faire ça et de recevoir une adresse IP et un mot de passe root temporaires.
+Après connexion, il faudra :
+
+- monter le disque de votre serveur sur le système de fichier du système de sauvetage
+- corriger les erreurs dans le fichier de config de SSH
+- redémarrer le serveur en mode normal et tester
+- recommencer si ça ne fonctionne toujours pas
+
+#### Changer le port SSH
+
+*Cette config est optionnelle.*
+
+Par défaut le port SSH est le port 22.
+Vous pourrez éviter beaucoup d'attaques automatisées juste en changeant le numéro du port.
+
+D'abord, choisissez un nombre entre `49152` et `65535`.
+
+Sur le serveur, en tant que `root`, ouvrez le fichier `/etc/ssh/sshd_config` :
+
+    sudo nano /etc/ssh/sshd_config
+
+Retrouvez la ligne avec le paramètre désactivé `#Port 22`.
+
+Juste en dessous de cette ligne, ajoutez le paramètre (en remplaçant `54321` par le nombre que vous avez choisi) :
+
+    Port 54321
+
+Enregistrez puis relancez votre service ssh :
+
+    sudo systemctl restart sshd
+
+Puis en local, vérifiez que vous arrivez à vous connecter avec le nouveau port (en remplaçant `54321` par le nombre que vous avez choisi) :
+
+    ssh -p 54321 foo@example.com
+
+Si ça ne fonctionne pas, vérifiez qu'il n'y a pas un firewall qui bloque ce port en local ou sur le serveur.
+
+#### Désactiver l'authentification par mot de passe pour le compte `root`
+
+L'authentification par mot de passe ouvre la voie aux attaques dites de force brute (*brute force* en anglais).
+Pour cette raison, il vaut mieux la désactiver et n'autoriser que l'authentification par clé.
+
+En local, si vous ne l'avez pas déjà fait, vous devez copier votre clé sur le serveur pour pouvoir vous connecter avec un compte `root` :
+
+    ssh-copy-id root@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+Sur le serveur, en tant que `root`, ouvrez le fichier `/etc/ssh/sshd_config` :
+
+    sudo nano /etc/ssh/sshd_config
+
+Retrouvez la ligne avec le paramètre désactivé `#PermitRootLogin yes`.
+
+Juste en dessous de cette ligne, ajoutez le paramètre :
+
+    PermitRootLogin without-password
+
+Enregistrez puis relancez votre service ssh :
+
+    sudo systemctl restart sshd
+
+Puis en local, vérifiez que vous arrivez à vous connecter avec votre compte `root` sans mot de passe :
+
+    ssh root@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+#### Désactiver l'authentification par mot de passe pour tous les utilisateurs
+
+En local, si vous ne l'avez pas déjà fait, vous devez copier votre clé sur le serveur pour pouvoir vous connecter avec votre compte utilisateur `foo` :
+
+    ssh-copy-id foo@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+Sur le serveur, en tant que `root`, ouvrez le fichier `/etc/ssh/sshd_config` :
+
+    sudo nano /etc/ssh/sshd_config
+
+Retrouvez la ligne avec le paramètre désactivé `#PasswordAuthentication yes`.
+
+Juste en dessous de cette ligne, ajoutez le paramètre :
+
+    PasswordAuthentication no
+
+Enregistrez puis relancez votre service ssh :
+
+    sudo systemctl restart sshd
+
+Puis en local, vérifiez que vous arrivez à vous connecter avec votre compte `foo` sans mot de passe :
+
+    ssh foo@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+#### Autoriser l'accès à certains utilisateurs depuis certaines adresses IP seulement
+
+*Cette config est optionnelle.*
+
+Il est possible de n'autoriser l'accès SSH qu'à certains utilisateurs depuis certaines adresses IP.
+
+Par exemple :
+
+- le compte `root` seulement depuis l'adresse IP du travail
+- le compte `foo` seulement depuis l'adresse IP du travail et du domicile
+- tous les autres accès seront refusés
+
+Sur le serveur, en tant que `root`, ouvrez le fichier `/etc/ssh/sshd_config` :
+
+    sudo nano /etc/ssh/sshd_config
+
+Pour n'autoriser que l'accès du compte `foo` depuis une seule adresse IP, ajoutez à la toute fin du fichier :
+
+    AllowUsers foo@123.123.123.123
+
+Ou pour autoriser l'accès avec le compte `foo` et le compte `root` que depuis une seule adresse IP, ajoutez à la toute fin du fichier :
+
+    AllowUsers foo@123.123.123.123 root@123.123.123.123
+
+Vous avez compris le système, je suppose.
+
+Pour autoriser l'accès avec le compte `foo` et le compte `root` depuis deux adresses IP, ajoutez à la toute fin du fichier :
+
+    AllowUsers root@123.123.123.123 root@234.234.234.234 foo@123.123.123.123 foo@234.234.234.234
+
+Enregistrez puis relancez votre service ssh :
+
+    sudo systemctl restart sshd
+
+Puis en local, vérifiez que vous arrivez à vous connecter avec votre compte `root` sans mot de passe :
+
+    ssh root@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+#### Autoriser l'accès par mot de passe à certains utilisateurs depuis certaines adresses IP seulement
+
+*Cette config est optionnelle.*
+
+Il est possible de customiser l'autorisation d'accès par mot de passe pour certains utilisateurs
+
+Pour autoriser l'authentification par mot de passe pour le compte `foo` depuis une seule adresse IP, ajoutez à la toute fin du fichier :
+
+    Match User foo Address 123.123.123.123
+        PasswordAuthentication yes
+
+Ou pour autoriser l'authentification par mot de passe pour le compte `foo` depuis deux adresses IP, ajoutez à la toute fin du fichier :
+
+    Match User foo Address 123.123.123.123,234.234.234.234
+        PasswordAuthentication yes
+
+Si un autre utilisateur `bar` doit pouvoir avoir les mêmes privilèges, ajoutez-le au bloc :
+
+    Match User foo bar Address 123.123.123.123,234.234.234.234
+        PasswordAuthentication yes
+
+Si un autre utilisateur doit avoir des privilèges différents, vous pouvez rajouter un nouveau bloc.
+
+Pour autoriser l'authentification par mot de passe pour le compte `root` depuis une seule adresse IP, ajoutez à la toute fin du fichier :
+
+    Match User root Address 123.123.123.123
+        PermitRootLogin yes
+
+Ou pour la même chose depuis deux adresses IP, ajoutez à la toute fin du fichier :
+
+    Match User root Address 123.123.123.123,234.234.234.234
+        PermitRootLogin yes
+
+Enregistrez puis relancez votre service ssh :
+
+    sudo systemctl restart sshd
+
+Puis en local, vérifiez que vous arrivez à vous connecter avec votre compte `root` sans mot de passe :
+
+    ssh root@example.com
+
+*Pensez à ajouter l'option `-p` si vous avez customisé le port.*
 
 ## Doc
 
 - [How to use ssh-keygen to generate a new SSH key | SSH.COM](https://www.ssh.com/ssh/keygen/)
 - [Changer le mot de passe root sur un VPS | Documentation OVH](https://docs.ovh.com/fr/vps/root-password/)
+- [My First 5 Minutes On A Server; Or, Essential Security for Linux Servers](https://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
+- [How to allow root login from one IP address with ssh public keys only - nixCraft](https://www.cyberciti.biz/faq/match-address-sshd_config-allow-root-loginfrom-one_ip_address-on-linux-unix/)
+- [Registered port - Wikipedia](https://en.wikipedia.org/wiki/Registered_port)
 
