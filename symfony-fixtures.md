@@ -2,6 +2,12 @@
 
 Les data fixtures sont des données que l'on charge dans la BDD pour faire des tests ou parce qu'elles sont nécessaires au bon fonctionnement d'une application.
 
+## Fixtures en SQL ou aves des fichiers CSV
+
+Voir la section « Générateurs de données de test » de [mariadb.md](mariadb.md).
+
+## Symfony et les fixtures
+
 Le package `doctrine/doctrine-fixtures-bundle` permet de créer facilement des data fixtures.
 
 Le package `fzaninotto/faker` permet de générer des fauses données de façon aléatoire.
