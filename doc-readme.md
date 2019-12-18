@@ -120,3 +120,7 @@ Voici un modèle de fichier `README.md` en français :
 
     Pour toute demande d'information, contactez foo.bar@example.com
 
+## Doc
+
+- [Choose an open source license | Choose a License](https://choosealicense.com/)
+
