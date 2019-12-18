@@ -46,14 +46,7 @@ Note spéciale pour MacOS : attention de ne pas se tromper en zippant un raccour
 
 ## Documentation du projet
 
-Au minimum, la documentation doit contenir :
-
-- une description succinte du projet
-- la liste des prérequis logiciels (nom et version)
-- la procédure d'installation (import de BDD, installation de packages, configuration de l'accès à la BDD)
-- des indications sur l'utilisation (document root, url)
-- une liste des bugs connus
-- optionnel : la liste des recommandations (pistes d'amélioration)
+Voir [doc-readme.md](doc-readme.md).
 
 ## Licence
 

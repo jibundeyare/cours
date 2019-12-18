@@ -1,6 +1,6 @@
 # Deployer
 
-*Pour en savoir plus sur les modalités de livraison d'un projet, voir [livraison](livraison.md).*
+*Pour en savoir plus sur les modalités de livraison d'un projet, voir [livraison.md](livraison.md).*
 
 Deployer est une application PHP qui fonctionne dans le terminal.
 Cette application permet d'automatiser le déploiement de projets Symfony (ou autre framework) sur d'autres serveurs.

@@ -25,7 +25,7 @@ Voici le genre d'informations qui doit figurer dans votre documentation :
   - pré-requis optionnels (serveur web local, etc)
 - installation
   - démarrer à partir du `git clone`
-  - détailler toutes les étapes nécessaires comm si c'était un script bash
+  - détailler toutes les étapes nécessaires comme si c'était un script bash
   - idéalement, il n'y a qu'à copier-coller pour installer
 - utilisation
 	- démarrage d'un serveur web
@@ -56,8 +56,12 @@ Voici un modèle de fichier `README.md` en français :
 
         git clone https://github.com/editeur/projet.git
         cd projet
+        # adaptez les paramètres
+        echo "DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name" > .env.local
         composer install
+        php bin/console doctrine:database:create
         php bin/console doctrine:migrations:migrate
+        php bin/console doctrine:fixtures:load
 
     Pour charger les données nécessaires au bon fonctionnement :
 
@@ -65,7 +69,9 @@ Voici un modèle de fichier `README.md` en français :
 
     ## Utilisation
 
-    Lancez un serveur web :
+    Le document root se trouve dans le dossier `public`.
+
+    Depuis la racine du projet, lancez un serveur web :
 
         symfony serve
 
@@ -75,12 +81,6 @@ Voici un modèle de fichier `README.md` en français :
     - /login : connexion
     - /register : inscription
     - ...
-
-    ## Fixtures
-
-    Pour charger les données de test :
-
-        php bin/console doctrine:fixtures:load --group=test
 
     ## Tests
 
@@ -96,15 +96,17 @@ Voici un modèle de fichier `README.md` en français :
 
         php bin/phpunit tests/Back
 
-    ## États des lieux
+    ## Bugs
 
-    Fonctionnalités qui devraient être implémentées :
+    Bugs connus :
 
     - ceci
     - cela
     - ...
 
-    Bugs connus :
+    ## Recommandations
+
+    Fonctionnalités qui devraient être implémentées :
 
     - ceci
     - cela
