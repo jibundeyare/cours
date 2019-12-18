@@ -24,4 +24,4 @@ Pour savoir quel type d'information doit figurer dans un bon fichier `README.md`
 - [Organizing information with tables - GitHub Help](https://help.github.com/en/github/writing-on-github/organizing-information-with-tables)
 - [Creating and highlighting code blocks - GitHub Help](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks)
 - [Autolinked references and URLs - GitHub Help](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls)
-
+- [thisdavej/copy-excel-paste-markdown: Copy a table in Excel (or other spreadsheet programs) and paste it as a Markdown table](https://github.com/thisdavej/copy-excel-paste-markdown)

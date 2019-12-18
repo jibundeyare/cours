@@ -1,6 +1,6 @@
 # Symfony data fixtures
 
-Les data fixtures sont des données que l'on charge dans la BDD pour faire des tests ou parce qu'elles sont nécessaires au bon fonctionnement d'une application.
+Les data fixtures (ou fixtures tout court) sont des données que l'on charge dans la BDD pour faire des tests ou parce qu'elles sont nécessaires au bon fonctionnement d'une application.
 
 ## Fixtures en SQL ou aves des fichiers CSV
 
@@ -8,7 +8,7 @@ Voir la section « Générateurs de données de test » de [mariadb.md](mariadb.
 
 ## Symfony et les fixtures
 
-Le package `doctrine/doctrine-fixtures-bundle` permet de créer facilement des data fixtures.
+Le package `doctrine/doctrine-fixtures-bundle` permet de créer facilement des fixtures.
 
 Le package `fzaninotto/faker` permet de générer des fauses données de façon aléatoire.
 Par exemple : des noms de personne, des adresses, des numéros de téléphone, des paragraphes de texte (du type lorem ipsum), etc.
@@ -22,7 +22,19 @@ Par exemple : `Foo bar baz` devient `foo-bar-baz`.
     composer require fzaninotto/faker
     composer require javiereguiluz/easyslugger
 
-## Créer un gabarit de data fixtures
+## Utiliser les fixtures en environnement de prod (optionnel)
+
+**Attention : si vous ne faites pas cette manip, vous ne pourrez charger des fixtures qu'en environnement de dev et de test, pas de prod.**
+
+Dans le fichier `config/bundles.php`, trouvez la ligne suivante :
+
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
+
+Pour la remplacer par :
+
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['all' => true],
+
+## Générer automatiquement un gabarit de fixtures
 
     php bin/console make:fixtures
 
@@ -48,11 +60,12 @@ Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
     use App\Entity\Student;
     use App\Entity\User;
     use Doctrine\Bundle\FixturesBundle\Fixture;
+    use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
     use Doctrine\Common\Persistence\ObjectManager;
     use EasySlugger\Slugger;
     use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-    class AppFixtures extends Fixture
+    class AppFixtures extends Fixture implements FixtureGroupInterface
     {
         private $encoder;
 
@@ -121,32 +134,167 @@ Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
         }
     }
 
-## Charger les data fixtures
+## Gabarits de fixtures
 
-Attention : l'idée est de supprimer d'abord toutes les données avant de charger les data fixtures.
-Auttrement dit, cette procédure supprime toutes les données de votre BDD.
+Il est possible de tagger des fixtures pour l'environnement de dev, de test, de prod, etc.
 
-### Charger les data fixtures dans la BDD de dev
+Si vous voulez créer des fixtures taggées dev et prod par exemple, vous devez faire attention à la façon dont vous organisez les données.
+
+- les fixtures de prod doivent contenir toutes les données absoluments nécessaires au bon fonctionnement de l'application (par exemple le compte admin, des options par défaut, etc)
+- les fixtures de dev doivent contenir les données nécessaires aux tests de l'application
+
+Donc quand vous recréez une nouvelle instance de l'application en phase de dev ou de test, vous devez charger :
+
+1. les fixtures de prod
+2. les fixtures de dev
+
+### Fixtures non taggées
+
+Ces fixtures seront chargées si vous ne spécifiez pas d'environnement particulier avec l'option `--group`.
+
+    <?php
+    // src/DataFixtures/AppFixtures.php
+
+    namespace App\DataFixtures;
+
+    // use App\Entity\Foo;
+    use Doctrine\Bundle\FixturesBundle\Fixture;
+    use Doctrine\Common\Persistence\ObjectManager;
+
+    class AppFixtures extends Fixture
+    {
+        public function __construct()
+        {
+        }
+
+        public function load(ObjectManager $manager)
+        {
+            // créer un foo
+            // $foo = new Foo();
+            // $manager->persist($foo);
+
+            // sauvegarder le tout en BDD
+            $manager->flush();
+        }
+    }
+
+### Fixtures taggées prod
+
+Ces fixtures ne seront chargées que si l'option `--group=prod` est utilisée.
+
+    <?php
+    // src/DataFixtures/ProdFixtures.php
+
+    namespace App\DataFixtures;
+
+    // use App\Entity\Foo;
+    use Doctrine\Bundle\FixturesBundle\Fixture;
+    use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
+    use Doctrine\Common\Persistence\ObjectManager;
+
+    class ProdFixtures extends Fixture implements FixtureGroupInterface
+    {
+        public function __construct()
+        {
+        }
+
+        public function load(ObjectManager $manager)
+        {
+            // créer un foo
+            // $foo = new Foo();
+            // $manager->persist($foo);
+
+            // sauvegarder le tout en BDD
+            $manager->flush();
+        }
+
+        public static function getGroups(): array
+        {
+            return ['prod'];
+        }
+    }
+
+### Fixtures taggées dev
+
+Ces fixtures ne seront chargées que si l'option `--group=dev` ou `--group=test` est utilisée.
+
+Normalement, les fixtures de dev nécessite que les fixtures de prod soient chargés d'abord.
+Ceci est précisé dans la méthode `getDependencies()`.
+
+    <?php
+    // src/DataFixtures/DevFixtures.php
+
+    namespace App\DataFixtures;
+
+    use App\DataFixtures\ProdFixtures;
+    // use App\Entity\Foo;
+    use Doctrine\Bundle\FixturesBundle\Fixture;
+    use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
+    use Doctrine\Common\Persistence\ObjectManager;
+
+    class DevFixtures extends Fixture implements FixtureGroupInterface
+    {
+        public function __construct()
+        {
+        }
+
+        public function load(ObjectManager $manager)
+        {
+            // créer un foo
+            // $foo = new Foo();
+            // $manager->persist($foo);
+
+            // sauvegarder le tout en BDD
+            $manager->flush();
+        }
+
+        public function getDependencies()
+        {
+            return array(
+                ProdFixtures::class,
+            );
+        }
+
+        public static function getGroups(): array
+        {
+            return ['test', 'dev'];
+        }
+    }
+
+## Charger les fixtures
+
+**Attention : l'idée est de supprimer d'abord toutes les données avant de charger les fixtures.**
+Autrement dit, cette procédure supprime toutes les données de votre BDD.
+
+### Charger les fixtures dans la BDD de prod
+
+Cette manip se fait sur votre serveur de prod.
+
+Pour charger les données dans votre BDD de prod, lancez les commandes suivante :
+
+    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
+
+### Charger les fixtures dans la BDD de dev
+
+Cette manip se fait sur votre poste de dev.
 
 Pour charger les données dans votre BDD de dev, lancez les commandes suivante :
 
-    php bin/console doctrine:database:drop --force
-    php bin/console doctrine:database:create
-    php bin/console doctrine:migrations:migrate --no-interaction
-    php bin/console doctrine:fixture:load --no-interaction
+    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
+    php bin/console doctrine:fixtures:load --no-interaction --group=dev --append
 
-### Charger les data fixtures dans la BDD de test
+### Charger les fixtures dans la BDD de test
 
-Si vous voulez faire cette procédure dans votre BDD de test, ajoutez l'option `--env=test` :
+Cette manip se fait sur votre serveur de test.
 
-    php bin/console doctrine:database:drop --force --env=test
-    php bin/console doctrine:database:create --env=test
-    php bin/console doctrine:migrations:migrate --no-interaction --env=test
-    php bin/console doctrine:fixture:load --no-interaction --env=test
+Pour charger les données dans votre BDD de test, lancez les commandes suivante :
+
+    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
+    php bin/console doctrine:fixtures:load --no-interaction --group=dev --append
 
 ## Le package `hautelook/AliceBundle`
 
-Ce package permet de créer des data fixtures à partir de code YAML.
+Ce package permet de créer des fixtures à partir de code YAML.
 
 Son usage est un petit peu plus avancé mais permet de créer plus facilement des données complexes.
 
@@ -160,7 +308,7 @@ Pour en savoir plus, voir [hautelook/AliceBundle: A Symfony bundle to manage fix
 
 ## Doc
 
-- [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html)
+- [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
 - [fzaninotto/Faker: Faker is a PHP library that generates fake data for you](https://github.com/fzaninotto/Faker)
 - [javiereguiluz/EasySlugger: A fast and easy to use slugger with full UTF-8 support](https://github.com/javiereguiluz/EasySlugger)
 - [hautelook/AliceBundle: A Symfony bundle to manage fixtures with Alice and Faker.](https://github.com/hautelook/AliceBundle)

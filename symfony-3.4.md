@@ -35,6 +35,8 @@ Note : pour savoir quelle version de Symfony vous devriez installer, consulter l
 
 ## Configuration de l'accès à la base de données
 
+### Création de la config pour l'environnement de dev
+
 Créez un fichier `.env.local` à la racine du projet.
 
 Insérer le code suivant :
@@ -44,13 +46,31 @@ Insérer le code suivant :
     APP_SECRET=
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 
-Ensuite, modifiez la ligne `DATABASE_URL` du fichier `.env.local` pour que Symfony puisse accéder à votre BDD.
+Ensuite, modifiez la ligne `DATABASE_URL` du fichier `.env.local` pour que Symfony puisse accéder à votre BDD de dev.
 
-Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306` et `db_name` avec les informations qui correspondent à votre configuration.
+Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306` et `db_name` avec les informations qui correspondent à votre configuration de dev.
 
-Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` de `.env` ».
+Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` des fichiers `.env*` ».
 
-**Attention : le fichier `.env.local` doit être rajouté dans votre `.gitignore`. Sinon vous allez publier vos mots de passe sur Github !**
+*Note : normalement, le fichier `.env.local` figure déjà dans votre `.gitignore`. Sans ça, vos mots de passe seraient publiés sur Github.*
+
+### Création de la config pour l'environnement de prod
+
+Créez un fichier `.env.prod.local` à la racine du projet.
+
+Insérer le code suivant :
+
+    APP_ENV=prod
+    APP_SECRET=
+    DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
+
+Ensuite, modifiez la ligne `DATABASE_URL` du fichier `.env.prod.local` pour que Symfony puisse accéder à votre BDD de prod.
+
+Vous devez modifier les éléments `db_user`, `db_password`, `127.0.0.1`, `3306` et `db_name` avec les informations qui correspondent à votre configuration de prod.
+
+Pour adapter la valeur de la chaîne de caractères `APP_SECRET`, voir la section « Le `APP_SECRET` des fichiers `.env*` ».
+
+*Note : normalement, les fichiers `.env.*.local` figurent déjà dans votre `.gitignore`. Sans ça, vos mots de passe seraient publiés sur Github.*
 
 ### Exemples de configuration de `DATABASE_URL`
 
@@ -76,7 +96,7 @@ Voici la ligne pour le user `root`, le mot de passe `123`, une connection sur le
 
     DATABASE_URL=mysql://root:123@127.0.0.1:3306/my_project
 
-## Le `APP_SECRET` de `.env`
+## Le `APP_SECRET` des fichiers `.env*`
 
 Voir [Symfony `APP_SECRET`](symfony-app-secret.md).
 
