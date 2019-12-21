@@ -113,3 +113,5 @@ Ensuite affectons leur une vitesse et un nombre de passagers puis affichons ces 
 
 - [PHP: Classes and Objects - Manual](https://www.php.net/manual/en/language.oop5.php)
 
+- [PHP Sadness](http://phpsadness.com/)
+

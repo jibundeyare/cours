@@ -22,7 +22,7 @@ Reportez-vous à la section « Trouble shooting ».
 
 Si Wamp démarre mais que Apache ou MySQL ne démarre pas, c'est problablement qu'il vous manque des DLL, vous pouvez téléchargez un fichier zip contenant toutes les DLL nécessaires à Wamp depuis la page suivante :
 
-[Fichiers Wampserver](http://wampserver.aviatechno.net/)
+[http://wampserver.aviatechno.net/](http://wampserver.aviatechno.net/)
 
 Allez tout en bas de la page et cliquez sur le lien :
 

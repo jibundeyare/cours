@@ -238,3 +238,5 @@ ou équivalent :
 - [PHP: Sanitize filters - Manual](http://php.net/manual/en/filter.filters.sanitize.php)
 - [PHP: Other filters - Manual](http://php.net/manual/en/filter.filters.misc.php)
 
+- [PHP Sadness](http://phpsadness.com/)
+

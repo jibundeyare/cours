@@ -90,3 +90,14 @@ Réaction à chaud après un incident sécu
 
 - [My First 5 Minutes On A Server; Or, Essential Security for Linux Servers](https://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 
+## Videos
+
+- [How to Choose a Password - Computerphile - YouTube](https://www.youtube.com/watch?v=3NjQ9b3pgIg)
+- [How Secure Shell Works (SSH) - Computerphile - YouTube](https://www.youtube.com/watch?v=ORcvSkgdA58)
+- [Cookie Stealing - Computerphile - YouTube](https://www.youtube.com/watch?v=T1QEs3mdJoc)
+- [Cracking Websites with Cross Site Scripting - Computerphile - YouTube](https://www.youtube.com/watch?v=L5l9lSnNMxg)
+- [Cross Site Request Forgery - Computerphile - YouTube](https://www.youtube.com/watch?v=vRBihr41JTo)
+- [Running an SQL Injection Attack - Computerphile - YouTube](https://www.youtube.com/watch?v=ciNHn38EyRc)
+- [Hacking Websites with SQL Injection - Computerphile - YouTube](https://www.youtube.com/watch?v=_jKylhJtPmI)
+- [Hashing Algorithms and Security - Computerphile - YouTube](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
+

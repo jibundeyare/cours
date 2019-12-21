@@ -9,3 +9,5 @@
 
 Le job board de la GEN : [Diversifiezvostalents.com](https://diversifiezvostalents.com/#/)
 
+[Honeypot | Europe's Developer-Focused Job Platform](https://www.honeypot.io/en/)
+

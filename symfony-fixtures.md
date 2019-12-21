@@ -40,15 +40,17 @@ Pour la remplacer par :
 
 Cette commande créé un nouveau fichier dans le dossier `src/DataFixtures`.
 
-## Exemple de fixture
+## Exemple de fixtures
 
-Le fichier suivant permet de générer :
+Le fichier suivant permet de générer des comptes d'utilisateurs, dont :
 
 - 1 compte super admin
 - 1 compte admin
-- 1 student nommé Toto
-- 1 student nommé Titi
+- 1 student nommé Foo
+- 1 student nommé Bar
 - 10 students avec un nom et un email générés aléatoirement
+
+Notez que la méthode `getGroups()` étant absente, ces fixtures n'appartiennent à aucune groupe.
 
 Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
 
@@ -96,16 +98,16 @@ Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
 
             // créer un student
             $student = new Student();
-            $student->setFirstname('Toto');
+            $student->setFirstname('Foo');
             $student->setLastname('Pop');
-            $student->setEmail('toto.pop@example.com');
+            $student->setEmail('foo.pop@example.com');
             $manager->persist($student);
 
             // créer un autre student
             $student = new Student();
-            $student->setFirstname('Titi');
+            $student->setFirstname('Bar');
             $student->setLastname('Pop');
-            $student->setEmail('titi.pop@example.com');
+            $student->setEmail('bar.pop@example.com');
             $manager->persist($student);
 
             // créer un générateur de fausses données, localisé pour le français
@@ -136,19 +138,23 @@ Ouvrir le fichier `src/DataFixtures/AppFixtures.php` :
 
 ## Gabarits de fixtures
 
-Il est possible de tagger des fixtures pour l'environnement de dev, de test, de prod, etc.
+Il est possible, mais pas obligatoire, d'affecter un groupe aux fixtures.
+Ceci permet de charger des fixtures en fonctione du contexte : environnement de dev, de test, de prod, etc.
 
-Si vous voulez créer des fixtures taggées dev et prod par exemple, vous devez faire attention à la façon dont vous organisez les données.
+De façon générale, il y a deux types de groupes :
 
-- les fixtures de prod doivent contenir toutes les données absoluments nécessaires au bon fonctionnement de l'application (par exemple le compte admin, des options par défaut, etc)
-- les fixtures de dev doivent contenir les données nécessaires aux tests de l'application
+- le groupe `required` qui contient les fixtures nécessaires au bon fonctionnement de l'application
+- le groupe `test` qui contient les fixtures nécessaires pour tester l'application
 
-Donc quand vous recréez une nouvelle instance de l'application en phase de dev ou de test, vous devez charger :
+Les fixtures du groupe `required` sont nécessaires dans tous les environnements (dev, test, prod, etc).
+Les fixtures du groupe `test` ne sont nécessaires que dans les environnements de dev ou de test.
 
-1. les fixtures de prod
-2. les fixtures de dev
+Si vous voulez créer des fixtures appartennant à ces groupes, vous devez faire attention à la façon dont vous organisez les données.
 
-### Fixtures non taggées
+- les fixtures du groupe `required` doivent contenir toutes les données absoluments nécessaires au bon fonctionnement de l'application (par exemple le compte admin, des options par défaut, etc)
+- les fixtures du groupe `test` doivent contenir toutes les données nécessaires aux tests de l'application (par exemple des comptes utilisateurs, des commandes, des factures, etc)
+
+### Fixtures sans groupe spécifique
 
 Ces fixtures seront chargées si vous ne spécifiez pas d'environnement particulier avec l'option `--group`.
 
@@ -178,12 +184,12 @@ Ces fixtures seront chargées si vous ne spécifiez pas d'environnement particul
         }
     }
 
-### Fixtures taggées prod
+### Fixtures du groupe `required`
 
-Ces fixtures ne seront chargées que si l'option `--group=prod` est utilisée.
+Ces fixtures ne seront chargées que si l'option `--group=required` est utilisée.
 
     <?php
-    // src/DataFixtures/ProdFixtures.php
+    // src/DataFixtures/RequiredFixtures.php
 
     namespace App\DataFixtures;
 
@@ -192,7 +198,7 @@ Ces fixtures ne seront chargées que si l'option `--group=prod` est utilisée.
     use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
     use Doctrine\Common\Persistence\ObjectManager;
 
-    class ProdFixtures extends Fixture implements FixtureGroupInterface
+    class RequiredFixtures extends Fixture implements FixtureGroupInterface
     {
         public function __construct()
         {
@@ -210,19 +216,19 @@ Ces fixtures ne seront chargées que si l'option `--group=prod` est utilisée.
 
         public static function getGroups(): array
         {
-            return ['prod'];
+            return ['required'];
         }
     }
 
-### Fixtures taggées dev
+### Fixtures du groupe `test`
 
-Ces fixtures ne seront chargées que si l'option `--group=dev` ou `--group=test` est utilisée.
+Ces fixtures ne seront chargées que si l'option `--group=test` est utilisée.
 
-Normalement, les fixtures de dev nécessite que les fixtures de prod soient chargés d'abord.
+Normalement, les fixtures du groupe `test` nécessitent que les fixtures du `required` soient chargés d'abord.
 Ceci est précisé dans la méthode `getDependencies()`.
 
     <?php
-    // src/DataFixtures/DevFixtures.php
+    // src/DataFixtures/TestFixtures.php
 
     namespace App\DataFixtures;
 
@@ -232,7 +238,7 @@ Ceci est précisé dans la méthode `getDependencies()`.
     use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
     use Doctrine\Common\Persistence\ObjectManager;
 
-    class DevFixtures extends Fixture implements FixtureGroupInterface
+    class TestFixtures extends Fixture implements FixtureGroupInterface
     {
         public function __construct()
         {
@@ -251,13 +257,13 @@ Ceci est précisé dans la méthode `getDependencies()`.
         public function getDependencies()
         {
             return array(
-                ProdFixtures::class,
+                RequiredFixtures::class,
             );
         }
 
         public static function getGroups(): array
         {
-            return ['test', 'dev'];
+            return ['test'];
         }
     }
 
@@ -272,7 +278,7 @@ Cette manip se fait sur votre serveur de prod.
 
 Pour charger les données dans votre BDD de prod, lancez les commandes suivante :
 
-    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
+    php bin/console doctrine:fixtures:load --no-interaction --group=required --purge-with-truncate
 
 ### Charger les fixtures dans la BDD de dev
 
@@ -280,8 +286,8 @@ Cette manip se fait sur votre poste de dev.
 
 Pour charger les données dans votre BDD de dev, lancez les commandes suivante :
 
-    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
-    php bin/console doctrine:fixtures:load --no-interaction --group=dev --append
+    php bin/console doctrine:fixtures:load --no-interaction --group=required --purge-with-truncate
+    php bin/console doctrine:fixtures:load --no-interaction --group=test --append
 
 ### Charger les fixtures dans la BDD de test
 
@@ -289,14 +295,14 @@ Cette manip se fait sur votre serveur de test.
 
 Pour charger les données dans votre BDD de test, lancez les commandes suivante :
 
-    php bin/console doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate
-    php bin/console doctrine:fixtures:load --no-interaction --group=dev --append
+    php bin/console doctrine:fixtures:load --no-interaction --group=required --purge-with-truncate
+    php bin/console doctrine:fixtures:load --no-interaction --group=test --append
 
 ## Le package `hautelook/AliceBundle`
 
 Ce package permet de créer des fixtures à partir de code YAML.
 
-Son usage est un petit peu plus avancé mais permet de créer plus facilement des données complexes.
+Son usage est un peu plus avancé mais permet de créer plus facilement des données complexes.
 
 Exemples :
 

@@ -218,7 +218,7 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
     // example.com
     host('example.com')
-        ->user('user_name');
+        ->user(getenv('ssh_user'));
 
     // tasks
 
@@ -235,13 +235,15 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
 *Le `user_name` est le nom d'utilisateur avec lequel vous vous connectez au serveur en SSH (pas à la BDD).*
 
-Pour tester cette config, tapez la commande suivante :
+Pour tester cette config, tapez les commandes suivantes :
 
+    ssh_user=foo
     dep test:hostname
 
 Voici les résultat :
 
-    [src-symfony-3.4]$ dep test:hostname
+    $ ssh_user=foo
+    $ dep test:hostname
     ➤ Executing task test:hostname
     vps608861
     ✔ Ok
@@ -266,20 +268,38 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
     option('all-fixtures', 'a', InputOption::VALUE_NONE, 'Load all fixtures');
 
+    // @todo configure this
+    project repository
+    set('repository', 'https://github.com/foo/bar.git');
+
+    // hosts
+
+    @todo configure this
+    host('example.com')
+        ->stage('prod')
+        ->user(getenv('ssh_user'))
+        // user the web server runs as. If this parameter is not configured, deployer try to detect it from the process list.
+        ->set('http_user', getenv('ssh_user'))
+        // projects directory
+        ->set('projects_dir', 'projects')
+        // projects name
+        ->set('application', 'foo')
+        ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
+
+    // @todo configure this
+    host('test.example.com')
+        ->stage('test')
+        ->user(getenv('ssh_user'))
+        // user the web server runs as. If this parameter is not configured, deployer try to detect it from the process list.
+        ->set('http_user', getenv('ssh_user'))
+        // projects directory
+        ->set('projects_dir', 'projects')
+        // projects name
+        ->set('application', 'foo')
+        ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
+
     // set default stage
     set('default_stage', 'prod');
-
-    // @todo configure this
-    // projects directory
-    set('projects_dir', 'projects');
-
-    // @todo configure this
-    // project name
-    set('application', 'src-symfony-3.4');
-
-    // @todo configure this
-    // project repository
-    set('repository', 'https://github.com/jibundeyare/src-symfony-3.4.git');
 
     // [Optional] Allocate tty for git clone. Default value is false.
     set('git_tty', true);
@@ -291,26 +311,6 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
     // writable dirs by web server
     add('writable_dirs', []);
     set('allow_anonymous_stats', false);
-
-    // hosts
-
-    // @todo configure this
-    // example.com
-    host('example.com')
-        ->stage('prod')
-        ->user('user_name')
-        ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
-
-    // @todo configure this (optional)
-    // test.example.com
-    // host('test.example.com')
-    //     ->stage('test')
-    //     ->user('user_name')
-    //     ->set('deploy_path', '~/{{projects_dir}}/{{application}}');
-
-    // @todo configure this
-    // user the web server runs as. If this parameter is not configured, deployer try to detect it from the process list.
-    set('http_user', 'user_name');
 
     // writable mode
     //
@@ -391,32 +391,76 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
     after('deploy', 'clean:git-files');
 
-**Attention : pensez à adapter les valeurs suivantes à votre cas de figure :**
+**Attention : il y a un peu configuration à faire avant de pouvoir tester.**
 
-- `application` : c'est le dossier dans lequel votre application doit être installée
+Quel que soit l'environnement vers lequel vous déployez, vous devez spécifier la source du projet (c-à-d où se trouve le repo git) :
+
 - `repository` : c'est l'adresse du repository git contenant le code de votre projet
-- `host` : c'est le nom de domaine ou l'adresse IP de votre serveur
-- `user_name` : c'est le nom d'utilisateur avec lequel vous vous connectez au serveur en SSH (pas à la BDD)
+
+Pour chaque host, vous devez configurer :
+
+- `host()` : vous devez renseigner le nom de domaine ou l'adresse IP du serveur
+- `stage()` : vous devez préciser sde quel environnement il s'agit (prod, test, etc)
+- `projects_dir` : c'est le dossier dans lequel se trouvent les projets web sur votre serveur
+- `application` : c'est le dossier de votre application sur le serveur
 
 ## Déploiement
 
+### Nom d'utilisateur pour la connexion SSH
+
+Avant de lancer la commande de déploiement, vous devez spécifier le nom d'utilisateur avec lequel vous vous connecter au server.
+Pour des raison de sécurité, nous faisons ça en utilisant une variable d'environnement.
+En effet, si vous ne stockez pas l'information du nom d'utilisateur dans le fichier `deploy.php`, vous pouvez le commiter avec git sans craindre de publier des informations confidentielles.
+
+Si vous voulez vous connecter avec l'utilisateur foo, vous devdez taper :
+
+    ssh_user=foo
+
+Note : avec Windows, vous devez rajoutez `set` devant la commande :
+
+    set ssh_user=foo
+
+### Nom de domaine ou adresse IP du serveur pour la connexion SSH (optionnel)
+
+Si vous souhaitez aussi rendre le nom de l'hôte confidentiel et le spécifier en utilisant une variable d'environnement faites les modifications suivantes.
+
+- dans `deploy.php`, remplacez `host('example.com')` par `host(getenv('ssh_host'))`
+- dans `deploy.php`, pour éviter se déployer par erreur sur le serveur de prod, définissez une valeur vide pour l'environnement poar défaut :
+
+        set('default_stage', '');
+
+   vous devrez alors toujours spécifier la plateforme de déploiement.
+   par exemple pour la prod :
+
+        dep deploy prod
+
+- avant de lancer le déploiment, définissez le nom de domaine ou l'adresse IP du serveur avec la commande :
+
+        ssh_host=example.com
+
+  ou avec Windows :
+
+    set ssh_host=example.com
+
 ### Le premier déploiement
 
-**Attention : la commande `dep deploy:env` ne peut fonctionner que si vous avez bien créé une config pour l'environnement de prod. Si ce n'est pas le cas, voir la section « Création de la config pour l'environnement de prod » dans [symfony-3.4.md](symfony-3.4.md).**
+**Attention : la commande `dep deploy:env` ne peut fonctionner que si vous avez bien créé le fichier `.env.prod.local` (la config pour l'environnement de prod). Si ce n'est pas le cas, voir la section « Création de la config pour l'environnement de prod » dans [symfony-3.4.md](symfony-3.4.md).**
 
-Dans un terminal à la racine du projet, tapez :
+Pour lancer le déploiement, dans un terminal à la racine du projet, tapez :
 
+    ssh_user=foo
     dep deploy:prepare
     dep deploy:env
     dep deploy
 
 Voici le résultat :
 
-    [src-symfony-3.4]$ dep deploy:prepare
+    $ ssh_user=foo
+    $ dep deploy:prepare
     ✔ Executing task deploy:prepare
-    [src-symfony-3.4]$ dep deploy:env
+    $ dep deploy:env
     ✔ Executing task deploy:env
-    [src-symfony-3.4]$ dep deploy
+    $ dep deploy
     ✈︎ Deploying master on popschool-lens.fr
     ✔ Executing task deploy:prepare
     ✔ Executing task deploy:lock
@@ -447,10 +491,12 @@ Voici le résultat :
 
 Si vous voulez charger toutes les fixtures, en environnement de prod, tapez la commande suivante :
 
+    ssh_user=foo
     dep fixtures:load --all-fixtures
 
 Si vous voulez charger toutes les fixtures, en environnement de test, tapez la commande suivante :
 
+    ssh_user=foo
     dep fixtures:load --all-fixtures test
 
 Cette commande charge toutes les fixtures, qu'elles soient taggées ou non.
@@ -459,6 +505,7 @@ Cette commande charge toutes les fixtures, qu'elles soient taggées ou non.
 
 Si vous déployez vers un environnement de prod pour la première fois, tapez la commande suivante :
 
+    ssh_user=foo
     dep fixtures:load
 
 Cette commande ne charge que les fixtures taggées prod.
@@ -474,6 +521,7 @@ Sinon vous verrez l'erreur :
 
 Si vous déployez vers un environnement de test (la première fois ou les autres fois), tapez la commande suivante :
 
+    ssh_user=foo
     dep fixtures:load test
 
 Cette commande charge d'abord les fixtures taggées prod puis celles qui sont taggées dev.
@@ -487,26 +535,31 @@ Sinon vous verrez l'erreur :
 
 Dans un terminal à la racine du projet, tapez :
 
+    ssh_user=foo
     dep deploy
 
 ### Oups, j'ai fait de la m...e, je reviens en arrière (rollback)
 
 Dans un terminal à la racine du projet, tapez :
 
+    ssh_user=foo
     dep rollback
 
 Voici le résultat :
 
-    [src-symfony-3.4]$ dep rollback
+    $ ssh_user=foo
+    $ dep rollback
     ✔ Executing task rollback
 
 Si la BDD doit aussi être remise dans son état antérieur :
 
+    ssh_user=foo
     dep database:rollback
 
 Voici le résultat :
 
-    [src-symfony-3.4]$ dep database:rollback
+    $ ssh_user=foo
+    $ dep database:rollback
     ✔ Executing task database:rollback
 
 ### Déploiement vers un environnement autre que prod (test, staging, etc)
@@ -537,12 +590,14 @@ Maintenant, pour le déploiement, ajoutez le nom de l'environnement à la fin de
 
 Par exemple, pour déployer vers l'environnement de test, tapez :
 
+    ssh_user=foo
     dep deploy:prepare test
     dep deploy:env test
     dep deploy test
 
 Ou pour déployer vers l'environnement de staging, tapez :
 
+    ssh_user=foo
     dep deploy:prepare staging
     dep deploy:env staging
     dep deploy staging
