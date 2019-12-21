@@ -396,7 +396,7 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
 
 Quel que soit l'environnement vers lequel vous déployez, vous devez spécifier la source du projet (c-à-d où se trouve le repo git) :
 
-- `repository` : c'est l'adresse du repository git contenant le code de votre projet
+- `repository` : doit préciser l'url du repository git contenant le code de votre projet
 
 Pour chaque host, vous devez configurer :
 
