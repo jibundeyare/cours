@@ -364,20 +364,23 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
         }
 
         if ($allFixtures) {
-            writeln("Loading all fixtures");
-            $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --purge-with-truncate');
-            writeln("$result");
+            if (get('stage') == 'prod') {
+                writeln("Loading all fixtures");
+                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --append');
+                writeln("$result");
+            } else { // get('stage') != 'prod'
+                writeln("Loading all fixtures");
+                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --purge-with-truncate');
+                writeln("$result");
+            }
         } else {
             if (get('stage') == 'prod') {
-                writeln("Loading prod fixtures");
-                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --group=prod --append');
+                writeln("Loading required fixtures");
+                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --group=required --append');
                 writeln("$result");
-            } else { // get('stage') == 'test'
-                writeln("Loading prod fixtures");
-                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --group=prod --purge-with-truncate');
-                writeln("$result");
-                writeln("Loading dev fixtures");
-                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --group=dev --append');
+            } else { // get('stage') != 'prod'
+                writeln("Loading test fixtures");
+                $result = run('{{bin/console}} doctrine:fixtures:load --no-interaction --group=test --purge-with-truncate');
                 writeln("$result");
             }
         }
