@@ -400,10 +400,10 @@ Quel que soit l'environnement vers lequel vous déployez, vous devez spécifier 
 
 Pour chaque host, vous devez configurer :
 
-- `host()` : vous devez renseigner le nom de domaine ou l'adresse IP du serveur
-- `stage()` : vous devez préciser sde quel environnement il s'agit (prod, test, etc)
-- `projects_dir` : c'est le dossier dans lequel se trouvent les projets web sur votre serveur
-- `application` : c'est le dossier de votre application sur le serveur
+- `host()` : doit préciser le nom de domaine ou l'adresse IP du serveur
+- `stage()` : doit préciser de quel environnement il s'agit (prod, test, etc)
+- `projects_dir` : doit préciser le dossier dans lequel sont placés **les** projets web sur le serveur
+- `application` : doit préciser le dossier dans lequel sera placé **le** projet web sur le serveur
 
 ## Déploiement
 
