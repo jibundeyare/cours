@@ -217,6 +217,8 @@ Pour en savoir plus, voir [path.md](path.md).
 - [CMD.exe (Command Shell) - Windows CMD - SS64.com](https://ss64.com/nt/cmd.html)
 - [PowerShell commands - PowerShell - SS64.com](https://ss64.com/ps/)
 - [PowerShell.exe Command Line Help | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/components/console/powershell.exe-command-line-help?view=powershell-6)
+- [batch file - How do I run two commands in one line in Windows CMD? - Stack Overflow](https://stackoverflow.com/questions/8055371/how-do-i-run-two-commands-in-one-line-in-windows-cmd)
+- [windows - How to execute multiple commands in a single line - Stack Overflow](https://stackoverflow.com/questions/13719174/how-to-execute-multiple-commands-in-a-single-line)
 
 ### Linux et MacOS
 

@@ -5,6 +5,9 @@
 Deployer est une application PHP qui fonctionne dans le terminal.
 Cette application permet d'automatiser le déploiement de projets Symfony (ou autre framework) sur d'autres serveurs.
 
+**Attention : la recette de déploiement de ce cours est adaptée au déploiement de Symfony 3.4.**
+Si vous voulez déployer une version antérieure ou déployer un autre framework ou application, vous devrez modifier la configuration.
+
 ## Prérequis
 
 - un projet dans un repository git accessible via internet (Github, Framagit, Bitbucket, etc)
@@ -420,6 +423,9 @@ Note : avec Windows, vous devez rajoutez `set` devant la commande :
 
     set ssh_user=foo
 
+**Note : Une fois que vous avez défini cette variable d'environnement, à moins de fermer votre terminal, vous n'avez plus à le refaire avant chaque commande de déploiement.**
+Dans les commandes des sections ci-dessous, je répète la commande mais en réalité ce n'est donc pas nécessaire.
+
 ### Nom de domaine ou adresse IP du serveur pour la connexion SSH (optionnel)
 
 Si vous souhaitez aussi rendre le nom de l'hôte confidentiel et le spécifier en utilisant une variable d'environnement faites les modifications suivantes.
@@ -487,7 +493,11 @@ Voici le résultat :
     Successfully deployed!
     ✔ Executing task clean:git-files
 
-### Chargement de toutes les fixtures en environnement de prod ou de test
+### Chargement de toutes les fixtures, quelque soit l'environnement
+
+Cette commande charge toutes les fixtures, quelque soit leur groupe.
+
+**Note : cette commande est utile si vos fixtures n'appartiennent à aucun groupe particulier.**
 
 Si vous voulez charger toutes les fixtures, en environnement de prod, tapez la commande suivante :
 
@@ -499,34 +509,32 @@ Si vous voulez charger toutes les fixtures, en environnement de test, tapez la c
     ssh_user=foo
     dep fixtures:load --all-fixtures test
 
-Cette commande charge toutes les fixtures, qu'elles soient taggées ou non.
-
 ### Chargement des fixtures pour l'environnement de prod
+
+Cette commande ne charge que les fixtures du groupe `required`.
+
+**Note : en prod, par précaution, aucune données n'est supprimée avant le chargement des fixtures.**
 
 Si vous déployez vers un environnement de prod pour la première fois, tapez la commande suivante :
 
     ssh_user=foo
     dep fixtures:load
 
-Cette commande ne charge que les fixtures taggées prod.
-
-**En prod, par précaution, aucune données n'est supprimée avant le chargement des fixtures.**
-
-**Note : si vous utilisez cette commande, vous devez avoir des fixtures taggées prod.**
+**Note : si vous utilisez cette commande, vous devez avoir des fixtures appartenant au groupe `required`.**
 Sinon vous verrez l'erreur :
 
     [ERROR] Could not find any fixture services to load in the groups (prod).
 
 ### Chargement des fixtures pour l'environnement de test
 
+Cette commande charge d'abord les fixtures du groupe `required` puis celles du groupe `test`.
+
 Si vous déployez vers un environnement de test (la première fois ou les autres fois), tapez la commande suivante :
 
     ssh_user=foo
     dep fixtures:load test
 
-Cette commande charge d'abord les fixtures taggées prod puis celles qui sont taggées dev.
-
-**Note : si vous utilisez cette commande, vous devez avoir des fixtures taggées dev.**
+**Note : si vous utilisez cette commande, vous devez avoir des fixtures appartenant au groupe `required` et au groupe `test`.**
 Sinon vous verrez l'erreur :
 
     [ERROR] Could not find any fixture services to load in the groups (prod).
