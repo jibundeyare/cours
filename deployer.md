@@ -257,7 +257,7 @@ Bravo, vous venez d'exécuter sur le serveur la tâche `hostname` du fichier `de
 
 Cette version du fichier `deploy.php` va vous permettre de déployer votre projet.
 
-**Attention : lisez la section suivante pour tester correctement cette config.**
+**Attention : lisez la section suivante avant de lancer le déploiement dans votre terminal.**
 
 Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code suivant :
 
@@ -393,8 +393,6 @@ Créez le fichier `deploy.php` (à la racine du projet) et ajoutez-y le code sui
     });
 
     after('deploy', 'clean:git-files');
-
-**Attention : il y a un peu configuration à faire avant de pouvoir tester.**
 
 Quel que soit l'environnement vers lequel vous déployez, vous devez spécifier la source du projet (c-à-d où se trouve le repo git) :
 
