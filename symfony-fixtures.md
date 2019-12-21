@@ -169,10 +169,6 @@ Ces fixtures seront chargées si vous ne spécifiez pas d'environnement particul
 
     class AppFixtures extends Fixture
     {
-        public function __construct()
-        {
-        }
-
         public function load(ObjectManager $manager)
         {
             // créer un foo
@@ -200,10 +196,6 @@ Ces fixtures ne seront chargées que si l'option `--group=required` est utilisé
 
     class RequiredFixtures extends Fixture implements FixtureGroupInterface
     {
-        public function __construct()
-        {
-        }
-
         public function load(ObjectManager $manager)
         {
             // créer un foo
@@ -240,10 +232,6 @@ Ceci est précisé dans la méthode `getDependencies()`.
 
     class TestFixtures extends Fixture implements FixtureGroupInterface
     {
-        public function __construct()
-        {
-        }
-
         public function load(ObjectManager $manager)
         {
             // créer un foo
