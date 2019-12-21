@@ -274,8 +274,7 @@ Cette manip se fait sur votre poste de dev.
 
 Pour charger les données dans votre BDD de dev, lancez les commandes suivante :
 
-    php bin/console doctrine:fixtures:load --no-interaction --group=required --purge-with-truncate
-    php bin/console doctrine:fixtures:load --no-interaction --group=test --append
+    php bin/console doctrine:fixtures:load --no-interaction --group=test --purge-with-truncate
 
 ### Charger les fixtures dans la BDD de test
 
@@ -283,8 +282,7 @@ Cette manip se fait sur votre serveur de test.
 
 Pour charger les données dans votre BDD de test, lancez les commandes suivante :
 
-    php bin/console doctrine:fixtures:load --no-interaction --group=required --purge-with-truncate
-    php bin/console doctrine:fixtures:load --no-interaction --group=test --append
+    php bin/console doctrine:fixtures:load --no-interaction --group=test --purge-with-truncate
 
 ## Le package `hautelook/AliceBundle`
 
