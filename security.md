@@ -11,8 +11,6 @@ Il existe un cours indépendant de Philippe P. (un collègue) qui explique des n
 - [La Politique de Sécurité des Systèmes d’Information de l’État (PSSIE) | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/entreprise/reglementation/protection-des-systemes-dinformations/la-politique-de-securite-des-systemes-dinformation-de-letat-pssie/)
 - [Paris Web 2018 - 5 octobre matin - Auditorium Pascal - YouTube](https://www.youtube.com/watch?v=VnwzO0uNn6o&feature=youtu.be&t=3836)
 
-@todo trouver une référence pour les relations publiques après piratage
-
 Réaction à chaud après un incident sécu
 
 1. excuses
