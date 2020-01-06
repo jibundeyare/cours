@@ -165,6 +165,8 @@ Vérification de la bonne santé de npm avec `npm doctor` :
 - Vérifie les permissions de différents dossiers tels que le dossier local et global `node_modules` et celui du dossier utilisé pour le cache des packages.
 - Vérifie l'exactitude des sommes de contrôle du cache de modules npm local.
 
+Exemple d'utilisation de `npm doctor` :
+
     $ npm doctor
     npm notice PING https://registry.npmjs.org/
     npm WARN verifyCachedFiles Content garbage-collected: 1480 (30762254 bytes)
