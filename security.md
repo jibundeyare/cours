@@ -54,13 +54,13 @@ Réaction à chaud après un incident de sécurité :
 
 Audit de sécurité :
 
-		$ npm audit
-		npm ERR! code EAUDITNOLOCK
-		npm ERR! audit Neither npm-shrinkwrap.json nor package-lock.json found: Cannot audit a project without a lockfile
-		npm ERR! audit Try creating one first with: npm i --package-lock-only
+    $ npm audit
+    npm ERR! code EAUDITNOLOCK
+    npm ERR! audit Neither npm-shrinkwrap.json nor package-lock.json found: Cannot audit a project without a lockfile
+    npm ERR! audit Try creating one first with: npm i --package-lock-only
 
-		npm ERR! A complete log of this run can be found in:
-		npm ERR!     /home/user-foo/.npm/_logs/2019-12-30T10_53_33_175Z-debug.log
+    npm ERR! A complete log of this run can be found in:
+    npm ERR!     /home/user-foo/.npm/_logs/2019-12-30T10_53_33_175Z-debug.log
     $ npm i --package-lock-only
     npm notice created a lockfile as package-lock.json. You should commit this file.
     npm WARN project-foo@1.0.0 No repository field.
