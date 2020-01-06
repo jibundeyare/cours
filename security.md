@@ -182,6 +182,14 @@ Exemple d'utilisation de `npm doctor` :
     Perms check on local node_modules   ok
     Verify cache contents               verified 4407 tarballs
 
+### Wordpress
+
+- [News – Security – WordPress.org](https://wordpress.org/news/category/security/)
+- [WPScan Vulnerability Database](https://wpvulndb.com/)
+- [WPScan a WordPress Vulnerability Scanner](https://wpscan.org/)
+- [SecuPress : Plugin WordPress de sécurité premium](https://secupress.me/fr/)
+- [WordPress Security Plugin | Wordfence](https://www.wordfence.com/)
+
 ### Audit de sécurité multilanguage
 
 - [Snyk | Develop Fast. Stay Secure](https://snyk.io/)
