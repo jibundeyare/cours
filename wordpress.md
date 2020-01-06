@@ -270,13 +270,24 @@ Bien que que visuel, ce mode est un peu moins intuitif que le « live mode ».
 
 #### Sécurité
 
-- [Loginizer](https://wordpress.org/plugins/loginizer/)
-- [Wordfence Security – Firewall & Malware Scan](https://wordpress.org/plugins/wordfence/)
+##### Alertes
+
+- [News – Security – WordPress.org](https://wordpress.org/news/category/security/)
 - [WPScan Vulnerability Database](https://wpvulndb.com/)
+
+##### Plugins
+
+- [Loginizer](https://wordpress.org/plugins/loginizer/)
+- [SecuPress Free — WordPress Security – WordPress plugin | WordPress.org](https://wordpress.org/plugins/secupress/)
+- [Wordfence Security – Firewall & Malware Scan](https://wordpress.org/plugins/wordfence/)
 
 Voir l'article suivant pour se faire un avis sur le plugin WordFence :
 
 - [WordFence Review – Is It Really The Best WordPress Security Plugin? | Elegant Themes Blog](https://www.elegantthemes.com/blog/resources/wordfence-review-is-it-really-the-best-wordpress-security-plugin)
+
+##### Outil en ligne de commande
+
+- [WPScan a WordPress Vulnerability Scanner](https://wpscan.org/)
 
 #### SEO
 

@@ -127,8 +127,9 @@ La base de données de vulnérabilité de Snyke recense des failles pour les lan
 
 ### Wordpress
 
-- [SecuPress : Plugin WordPress de sécurité premium](https://secupress.me/fr/)
-- [WordPress Security Plugin | Wordfence](https://www.wordfence.com/)
+- [Loginizer](https://wordpress.org/plugins/loginizer/)
+- [SecuPress Free — WordPress Security – WordPress plugin | WordPress.org](https://wordpress.org/plugins/secupress/)
+- [Wordfence Security – Firewall & Malware Scan](https://wordpress.org/plugins/wordfence/)
 
 ### JS
 
