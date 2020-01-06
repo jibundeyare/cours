@@ -47,10 +47,94 @@ Réaction à chaud après un incident de sécurité :
 ### JS
 
 - [npm | Security advisories](https://www.npmjs.com/advisories)
+- [10 npm Security Best Practices | Snyk](https://snyk.io/blog/ten-npm-security-best-practices/)
+
+### Wordpress
+
+- [News – Security – WordPress.org](https://wordpress.org/news/category/security/)
+- [WPScan Vulnerability Database](https://wpvulndb.com/)
+
+### Audit de sécurité multilanguage
+
+- [Snyk | Develop Fast. Stay Secure](https://snyk.io/)
+- [Vulnerability DB | Snyk](https://snyk.io/vuln)
+
+La base de données de vulnérabilité de Snyke recense des failles pour les langages, package manager ou OS suivants :
+
+- Composer (PHP)
+- Go
+- Linux
+- Maven (Java)
+- npm (JS)
+- NuGet (.Net, C#, etc)
+- pip (Python)
+- RubyGems (Ruby)
+
+## Connaissance des attaques
+
+### Généralités
+
+- [OWASP](https://www.owasp.org/index.php/Main_Page)
+- [Category:Attack - OWASP](https://www.owasp.org/index.php/Category:Attack)
+- [Introduction · OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
+
+### Symfony
+
+- [SymfonyLive Paris 2016 - Alain Tiemblo - Sécurité web : pirater pour mieux protéger - YouTube](https://www.youtube.com/watch?v=0RKu12T0r5g)
+- [ninsuo/slides: Let's make web security subjects simple and enjoyable.](https://github.com/ninsuo/slides)
+- [Sedona au SymfonyLive Paris 2016 – résumé complet des conférences – Sedona Solutions Blog](http://blog.sedona.fr/2016/04/sedona-au-symfonylive-paris-2016/#_Toc449204233)
+
+- [Sécurité et http - Sedona au SymfonyLive Paris 2016 – résumé complet des conférences – Sedona Solutions Blog](http://blog.sedona.fr/2016/04/sedona-au-symfonylive-paris-2016/#_Toc449204248)
+- [SymfonyLive Paris 2016 - Romain Neutron - Sécurité et HTTP - YouTube](https://www.youtube.com/watch?v=Vx1_BUohdho)
+- [Sécurité & HTTP @ Symfony Live Paris 2016 - Speaker Deck](https://speakerdeck.com/romain/securite-and-http-at-symfony-live-paris-2016)
+
+- [SymfonyLive Paris 2017 - Alain Tiemblo - Sécurité web : et si on continuait à tout casser - YouTube](https://www.youtube.com/watch?v=xzxPM6dnhVI)
+- [ninsuo/slides: Let's make web security subjects simple and enjoyable.](https://github.com/ninsuo/slides)
+- [Symfony Paris 2017: Les retours de l'équipe Novaway](https://www.novaway.fr/blog/tech/symfony-live-paris-2017-retours#twitter-widget-11)
+
+### Attaque XSS et solutions
+
+- [Cross-site Scripting (XSS) - OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
+- [OWASP / Cross-Site Scripting (XSS) - Le blog de Clever Age](https://blog.clever-age.com/fr/2014/02/10/owasp-xss-cross-site-scripting/)
+- [X-XSS-Protection - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+- [Content-Security-Policy - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
+- [Protéger votre site des attaques XSS avec l'en-tête X-XSS-Protection](https://www.justegeek.fr/proteger-votre-site-des-attaques-xss-avec-len-tete-x-xss-protection/)
+- [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/escape.html)
+
+## Entêtes HTTP
+
+- [HTTP headers - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+## PHP et les mots de passe
+
+- [PHP: password_hash - Manual](https://www.php.net/manual/en/function.password-hash.php)
+
+## Logs Apache, logs de Symfony
+
+@todo chemin des logs
+
+## Enregistrement de l'adresse IP
+
+@todo bannir les adresses ip qui répètes de faux mots de passe
+
+## Outils d'audit en mode whitebox
+
+### Symfony / PHP
+
+- [Symfony Security Monitoring](https://security.symfony.com/)
+- [sensiolabs/security-checker: PHP frontend for security.symfony.com](https://github.com/sensiolabs/security-checker)
+- [FloeDesignTechnologies/phpcs-security-audit: phpcs-security-audit is a set of PHP_CodeSniffer rules that finds vulnerabilities and weaknesses related to security in PHP code](https://github.com/FloeDesignTechnologies/phpcs-security-audit/)
+
+### Wordpress
+
+- [SecuPress : Plugin WordPress de sécurité premium](https://secupress.me/fr/)
+- [WordPress Security Plugin | Wordfence](https://www.wordfence.com/)
+
+### JS
+
 - [npm-audit | npm Documentation](https://docs.npmjs.com/cli/audit.html)
 - [Auditing package dependencies for security vulnerabilities | npm Documentation](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities)
 - [Identifying Security Vulnerabilities Using NPM Audit](https://itnext.io/identifying-security-vulnerabilities-using-npm-audit-9c590eec9615)
-- [10 npm Security Best Practices | Snyk](https://snyk.io/blog/ten-npm-security-best-practices/)
 
 Audit de sécurité :
 
@@ -182,85 +266,20 @@ Exemple d'utilisation de `npm doctor` :
     Perms check on local node_modules   ok
     Verify cache contents               verified 4407 tarballs
 
-### Wordpress
-
-- [News – Security – WordPress.org](https://wordpress.org/news/category/security/)
-- [WPScan Vulnerability Database](https://wpvulndb.com/)
-- [WPScan a WordPress Vulnerability Scanner](https://wpscan.org/)
-- [SecuPress : Plugin WordPress de sécurité premium](https://secupress.me/fr/)
-- [WordPress Security Plugin | Wordfence](https://www.wordfence.com/)
-
-### Audit de sécurité multilanguage
-
-- [Snyk | Develop Fast. Stay Secure](https://snyk.io/)
-- [Vulnerability DB | Snyk](https://snyk.io/vuln)
-
-La base de données de vulnérabilité de Snyke recense des failles pour les langages, package manager ou OS suivants :
-
-- Composer (PHP)
-- Go
-- Linux
-- Maven (Java)
-- npm (JS)
-- NuGet (.Net, C#, etc)
-- pip (Python)
-- RubyGems (Ruby)
-
-## Connaissance des attaques
-
-### Généralités
-
-- [OWASP](https://www.owasp.org/index.php/Main_Page)
-- [Category:Attack - OWASP](https://www.owasp.org/index.php/Category:Attack)
-- [Introduction · OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
-
-### Symfony
-
-- [SymfonyLive Paris 2016 - Alain Tiemblo - Sécurité web : pirater pour mieux protéger - YouTube](https://www.youtube.com/watch?v=0RKu12T0r5g)
-- [ninsuo/slides: Let's make web security subjects simple and enjoyable.](https://github.com/ninsuo/slides)
-- [Sedona au SymfonyLive Paris 2016 – résumé complet des conférences – Sedona Solutions Blog](http://blog.sedona.fr/2016/04/sedona-au-symfonylive-paris-2016/#_Toc449204233)
-
-- [Sécurité et http - Sedona au SymfonyLive Paris 2016 – résumé complet des conférences – Sedona Solutions Blog](http://blog.sedona.fr/2016/04/sedona-au-symfonylive-paris-2016/#_Toc449204248)
-- [SymfonyLive Paris 2016 - Romain Neutron - Sécurité et HTTP - YouTube](https://www.youtube.com/watch?v=Vx1_BUohdho)
-- [Sécurité & HTTP @ Symfony Live Paris 2016 - Speaker Deck](https://speakerdeck.com/romain/securite-and-http-at-symfony-live-paris-2016)
-
-- [SymfonyLive Paris 2017 - Alain Tiemblo - Sécurité web : et si on continuait à tout casser - YouTube](https://www.youtube.com/watch?v=xzxPM6dnhVI)
-- [ninsuo/slides: Let's make web security subjects simple and enjoyable.](https://github.com/ninsuo/slides)
-- [Symfony Paris 2017: Les retours de l'équipe Novaway](https://www.novaway.fr/blog/tech/symfony-live-paris-2017-retours#twitter-widget-11)
-
-### Attaque XSS et solutions
-
-- [Cross-site Scripting (XSS) - OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
-- [OWASP / Cross-Site Scripting (XSS) - Le blog de Clever Age](https://blog.clever-age.com/fr/2014/02/10/owasp-xss-cross-site-scripting/)
-- [X-XSS-Protection - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
-- [Content-Security-Policy - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
-- [Protéger votre site des attaques XSS avec l'en-tête X-XSS-Protection](https://www.justegeek.fr/proteger-votre-site-des-attaques-xss-avec-len-tete-x-xss-protection/)
-- [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/escape.html)
-
-## Entêtes HTTP
-
-- [HTTP headers - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
-
-## PHP et les mots de passe
-
-- [PHP: password_hash - Manual](https://www.php.net/manual/en/function.password-hash.php)
-
-## Outils d'audit en mode whitebox
-
-- [Symfony Security Monitoring](https://security.symfony.com/)
-- [sensiolabs/security-checker: PHP frontend for security.symfony.com](https://github.com/sensiolabs/security-checker)
-- [FloeDesignTechnologies/phpcs-security-audit: phpcs-security-audit is a set of PHP_CodeSniffer rules that finds vulnerabilities and weaknesses related to security in PHP code](https://github.com/FloeDesignTechnologies/phpcs-security-audit/)
-
 ## Outils d'audit en mode blackbox
 
-### Zap
+### Zap (open source)
 
 - [OWASP Zed Attack Proxy Project - OWASP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 - [Devenir hacker en 10 minutes - Paul Molin - WEB2DAY 2017 - YouTube](https://www.youtube.com/watch?v=1ijGyVg4VuY)
 
-### Scanner
+### Scanner (propriétaire)
 
 - [Scanner](https://scanner.secapps.com/)
+
+### WPScan (plugin Wordpress open source)
+
+- [WPScan a WordPress Vulnerability Scanner](https://wpscan.org/)
 
 ## Requêtes préparées contre les injections SQL
 

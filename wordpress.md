@@ -272,6 +272,7 @@ Bien que que visuel, ce mode est un peu moins intuitif que le « live mode ».
 
 - [Loginizer](https://wordpress.org/plugins/loginizer/)
 - [Wordfence Security – Firewall & Malware Scan](https://wordpress.org/plugins/wordfence/)
+- [WPScan Vulnerability Database](https://wpvulndb.com/)
 
 Voir l'article suivant pour se faire un avis sur le plugin WordFence :
 
