@@ -56,6 +56,7 @@
 - membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request
 - Mobile first : d'abord les téléphones mobiles; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
+- Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
 - MVC : Model View Controller (modèle vue contrôleur)
 - not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
 - OOP : Object Oriented Programming; voir POO

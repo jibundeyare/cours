@@ -319,6 +319,7 @@ Système d'attribution automatique d'adresses IP.
 Surtout utile avec IPv4.
 
 Les DHCP bas de gamme gère parfois mal le renouvellement du bail.
+Des adresses qui ne sont plus utilisées restent réservées et de nouvelles machines n'arrivent pas à obtenir d'adresse.
 Le mieux est alors de redémarrer le serveur DHCP.
 
 ### DNS (Domain Name System)
@@ -449,6 +450,32 @@ Les services suivants sont couramment mis à disposition dans une DMZ :
 - POP3S (Post Office Protocol 3 over TLS/SSL), port 995
 
 Voir [Liste de ports logiciels — Wikipédia](https://fr.wikipedia.org/wiki/Liste_de_ports_logiciels) pour plus de détails.
+
+## Commandes et outils
+
+### Scanner d'IP
+
+Un scanner d'IP est un outil qui permet de trouver les machines qui utilisent une adresse IP sur un réseau.
+On s'en sert couramment pour cartographier un réseau qu'on ne connaît pas bien ou pour faire des tests.
+
+- [Angry IP Scanner - the original IP scanner for Windows, Mac and Linux](https://angryip.org/)
+
+### Commandes du terminal Windows
+
+Il y a trois commandes très utiles :
+
+- `ipconfig`
+- `ping`
+- `arp`
+- `tracert`
+
+### Commandes du terminal Linux
+
+- `ip`
+- `ping`
+- `nmap`
+- `ss`
+- `traceroute`
 
 ## Doc
 
