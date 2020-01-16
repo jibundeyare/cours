@@ -17,6 +17,7 @@
 - CLI : Command Line Interface (interface en ligne de commande) ; voir aussi Console et Terminal
 - Code snippet : petit morceau de code utile que l'on réutilise de projet en projet
 - Console : à la base il s'agit du clavier qui permet de manipuler les premiers ordinateurs ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Terminal
+- CRM : Customer Relationship Management (Gestion du suivi client) ; c'est une application qui permet de gérer tout l'historique des relations client : les contacts, les devis, les factures, les relances, etc
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
   Ce sont toutes les opérations possibles sur une donnée stockée en BDD
 - CSS : Cascading Style Sheet (feuille de style en cascade)
@@ -28,11 +29,13 @@
 - DOM : Document Object Model; représentation en mémoire d'un document HTML; c'est le code HTML tel que interprêté par le navigateur web
 - DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
 - DSI : Directeur du Système d'Information; Direction du Système d'Information
+- ERP : Enterprise Ressource Planning (Planification des ressources de l'entreprise) ; c'est une application qui permet de gérer les ressources humaines, les relations fournisseurs, les relations clients, la comptabilité et la finance, le stock, la vente et la distribution
 - ESN : Entreprise de Services du Numérique; voir aussi SS2I
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
 - FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; les grandes multinationales occidentales du net ; voir aussi BATX et GAFAM
 - Feedbacks : retours d'expérience des utilisateurs
 - Float : nombre à virgule flottant, type de données
+- Fork : une fourchette ; on parle d'un fork pour dire d'un projet qu'il est basé sur un autre projet ; exemples : Maria DB est un fork de MySQL, Libre Office est un fork d'Open Office
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter

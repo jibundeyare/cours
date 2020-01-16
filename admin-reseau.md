@@ -460,6 +460,10 @@ On s'en sert couramment pour cartographier un réseau qu'on ne connaît pas bien
 
 - [Angry IP Scanner - the original IP scanner for Windows, Mac and Linux](https://angryip.org/)
 
+Attention : il est nécessaire d'installer un runtime Java pour pouvoir utiliser Angry IP Scanner.
+Avec Windows et MacOS, vous pouvez installer [AdoptOpenJDK](https://adoptopenjdk.net/).
+Avec Linux, votre distribution devrait proposer un package OpenJDK.
+
 ### Commandes du terminal Windows
 
 Il y a trois commandes très utiles :
@@ -469,7 +473,7 @@ Il y a trois commandes très utiles :
 - `arp`
 - `tracert`
 
-### Commandes du terminal Linux
+### Commandes du terminal Linux et MacOS
 
 - `ip`
 - `ping`
