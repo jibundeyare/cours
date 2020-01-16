@@ -1,4 +1,8 @@
-# Laravel
+# Laravel 6
+
+Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https://github.com/jibundeyare/src-laravel-6).
+
+## Création d'une application avec le framework Laravel
 
 [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/)
 
