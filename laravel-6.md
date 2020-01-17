@@ -2,6 +2,11 @@
 
 Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https://github.com/jibundeyare/src-laravel-6).
 
+## Tutoriels
+
+- [Laravel 6 CRUD Application Tutorial](https://www.itsolutionstuff.com/post/laravel-6-crud-application-tutorialexample.html)
+- [Laravel 6 CRUD Example | Laravel 6 Tutorial For Beginners](https://appdividend.com/2019/09/12/laravel-6-crud-example-laravel-6-tutorial-for-beginners/) (ce tutoriel est moins bien)
+
 ## Création d'une application avec le framework Laravel
 
 [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/)
@@ -11,10 +16,20 @@ Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https:
 
 - créer des routes nommées
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/routing#basic-routing)
+```
+Route::get('/', 'MainController@index')->name('main.index');
+Route::resource('foo', 'FooController');
+```
+```
+php artisan route:list
+```
+
 
 - créer des contrôleurs
 [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#single-action-controllers)
-`php artisan make:controller FooController`
+```
+php artisan make:controller FooController
+```
 - créer des actions
 [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#single-action-controllers)
 
@@ -28,9 +43,11 @@ Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https:
 - générer des urls de routes nommées
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/routing#named-routes)
 - afficher des urls de routes nommées dans un template blade
-`{{ route('foo') }}`
-`{{ route('foo', ['id' => 123]) }}`
-`{{ route('foo', ['id' => 123, 'bar' => 42]) }}`
+```
+{{ route('foo') }}
+{{ route('foo', ['id' => 123]) }}
+{{ route('foo', ['id' => 123, 'bar' => 42]) }}
+```
 
 - installer le package laravel/ui avec `composer require laravel/ui --dev`
 [JavaScript & CSS Scaffolding - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/frontend)
@@ -42,12 +59,16 @@ npm run dev
 
 - activer browsersync
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/mix#browsersync-reloading)
-`mix.browserSync('localhost:8000');`
-`mix.browserSync('127.0.0.1:8000');`
+```
+mix.browserSync('localhost:8000');
+mix.browserSync('127.0.0.1:8000');
+```
 
 - activer le watch
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/mix#running-mix)
-`npm run watch`
+```
+npm run watch
+```
 
 - intéger des fichiers CSS et JS dans des vues
 [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/blade#stacks)
@@ -77,28 +98,54 @@ Créer un fichier de traduction `resources/lang/fr.json`
 
 - rediriger vers une autre page à partir d'une action
 
+- configurer l'accès à la BDD
+
+- créer les classes de modèle de données
+[Eloquent: Getting Started - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/eloquent#defining-models)
+```
+php artisan make:model -cmr Foo
+```
+
+- créer des fichiers de migration
+[Database: Migrations - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/migrations#creating-columns)
+
+- exécuter les fichiers de migration
+- lire des données dans la BDD
+- injecter des données dans la BDD
+- modifier des données dans la BDD
+- supprimer des données dans la BDD
+
+- transmettre des variables dans les vues
+[Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/views#creating-views)
+- afficher des variables dans les vues
+[Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/blade#loops)
+
 - ajouter des variables dans les routes et les transmettre aux actions
 - définir des contraintes sur les variables de routes
 - ajouter des paramètres aux routes et les récupérer dans une actions
-- transmettre des variables dans les vues
-- afficher des variables dans les vues
+
+- créer des formulaires avec protection CSRF
+- créer des routes en mode POST, PUT, DELETE
+- récupérer les données d'un formulaire dans une action
+- valider les données d'un formulaire dans une action
+[Validation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/validation)
+[Creating A Custom Form Request In Laravel - rfmeier.net](https://rfmeier.net/creating-custom-form-request-laravel/)
+- afficher les messages d'erreur d'un formulaire dans une vue
+```
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+```
+- afficher un message flash
 
 - activer la variable de session
 - lire des données dans la variable de session
 - insérer des données dans la variable de session
 - supprimer des données dans la variable de session
 
-- configurer l'accès à la BDD
-- créer des fichiers de migration
-- exécuter les fichiers de migration
-- créer les classes de modèle de données
-- lire des données dans la BDD
-- injecter des données dans la BDD
-- modifier des données dans la BDD
-- supprimer des données dans la BDD
-- créer des formulaires avec protection CSRF
-- créer des routes en mode POST, PUT, DELETE
-- récupérer les données d'un formulaire dans une action
-- valider les données d'un formulaire dans une action
-- afficher les messages d'erreur d'un formulaire dans une vue
-- afficher un message flash
