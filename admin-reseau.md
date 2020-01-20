@@ -451,6 +451,20 @@ Les services suivants sont couramment mis à disposition dans une DMZ :
 
 Voir [Liste de ports logiciels — Wikipédia](https://fr.wikipedia.org/wiki/Liste_de_ports_logiciels) pour plus de détails.
 
+## Architectures réseaux
+
+Cisco, leader des fabricants de matériel réseau, propose un cours d'architecture réseau.
+
+Voici quelques pages qui peuvent vous intéresser :
+
+- [Hierarchical Network Design Overview (1.1) > Cisco Networking Academy Connecting Networks Companion Guide: Hierarchical Network Design](http://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4)
+- [Cisco Enterprise Architecture (1.2) > Cisco Networking Academy Connecting Networks Companion Guide: Hierarchical Network Design](http://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=5)
+- [Cisco Enterprise Architecture Model (1.2.2) > Cisco Networking Academy Connecting Networks Companion Guide: Hierarchical Network Design](http://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=6)
+
+À retenir :
+
+- l'architecture « two-tier collapsed core design » (design deux tiers avec noyeau incorporé) qui permet de construire un vaste réseau à moindre coûts ; ce type d'architecture réseau est adapté pour les PME.
+
 ## Commandes et outils
 
 ### Scanner d'IP

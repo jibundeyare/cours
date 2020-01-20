@@ -16,10 +16,16 @@ Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https:
 
 - créer des routes nommées
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/routing#basic-routing)
+Modifier `routes/web.php`.
 ```
+// une route par action
 Route::get('/', 'MainController@index')->name('main.index');
+```
+```
+// une route pour toutes les actions liées à une ressource
 Route::resource('foo', 'FooController');
 ```
+Afficher la liste de toutes les routes :
 ```
 php artisan route:list
 ```
@@ -28,7 +34,7 @@ php artisan route:list
 - créer des contrôleurs
 [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#single-action-controllers)
 ```
-php artisan make:controller FooController
+php artisan make:controller -r FooController
 ```
 - créer des actions
 [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#single-action-controllers)
@@ -102,21 +108,50 @@ Créer un fichier de traduction `resources/lang/fr.json`
 
 - créer les classes de modèle de données
 [Eloquent: Getting Started - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/eloquent#defining-models)
+Ajouter ce code dans votre modèle si la table n'a pas un nom standard (c-à-d le pluriel avec autre chose qu'un `s`) :
 ```
-php artisan make:model -cmr Foo
+/**
+    * The table associated with the model.
+    *
+    * @var string
+    */
+protected $table = 'lieux';
+```
+```
+php artisan make:model -m Foo
 ```
 
 - créer des fichiers de migration
 [Database: Migrations - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/migrations#creating-columns)
 
 - exécuter les fichiers de migration
+```
+php artisan migrate
+```
 - lire des données dans la BDD
+Hack pour vérifier que l'on a bien récupéré les données :
+```
+$lieux = Lieu::all();
+
+echo '<pre>';
+var_dump($lieux);
+echo '</pre>';
+exit();
+```
+
 - injecter des données dans la BDD
 - modifier des données dans la BDD
 - supprimer des données dans la BDD
 
 - transmettre des variables dans les vues
 [Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/views#creating-views)
+```
+compact('lieux')
+// équivalent de
+[
+    'lieux' => $lieux,
+]
+```
 - afficher des variables dans les vues
 [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/blade#loops)
 

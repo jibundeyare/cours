@@ -14,6 +14,7 @@
 - Brute force attack : attaque en force brute ; ce type d'attaque consiste à essayer toutes les combinaisons de mots de passe possible et n'est efficace qu'avec une énorme capacité de calcul ou un grand nombre de machines travaillant en parallèle
 - CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CEO : Chief Executive Officer (PDG)
+- CIO : Chief information officer (directeur du service informatique)
 - CLI : Command Line Interface (interface en ligne de commande) ; voir aussi Console et Terminal
 - Code snippet : petit morceau de code utile que l'on réutilise de projet en projet
 - Console : à la base il s'agit du clavier qui permet de manipuler les premiers ordinateurs ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Terminal
