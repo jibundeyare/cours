@@ -464,6 +464,7 @@ Voici quelques pages qui peuvent vous intéresser :
 À retenir :
 
 - l'architecture « two-tier collapsed core design » (design deux tiers avec noyeau incorporé) qui permet de construire un vaste réseau à moindre coûts ; ce type d'architecture réseau est adapté pour les PME.
+Voir dans [Hierarchical Network Design Overview (1.1) > Cisco Networking Academy Connecting Networks Companion Guide: Hierarchical Network Design](http://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4).
 
 ## Commandes et outils
 

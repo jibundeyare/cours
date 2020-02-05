@@ -160,6 +160,13 @@ Voir le repo [https://github.com/jibundeyare/src-wordpress-child-theme](https://
 
 - [Unsplash | Free High-Resolution Photos](https://unsplash.com/)
 - [Trouvez l’inspiration. | Flickr](https://www.flickr.com/)
+- [Recherche d'images avancée Google](https://www.google.fr/advanced_image_search)
+  Changer le filtre `droits d'usage` :
+  - non filtré par licence
+  - libre de droits d'usage ou de distribution
+  - libre de droits d'usage ou de distribution, y compris à des fins commerciales
+  - libre de droits d'usage, de distribution ou de modification
+  - libre de droits d'usage, de distribution ou de modification, y compris à des fins commerciales
 
 ## Lorem ipsum
 
@@ -346,6 +353,12 @@ Le plugin de création de custom type est libre mais le plugin d'affichage de cu
 - [Cours WordPress - YouTube](https://www.youtube.com/watch?v=cEGEmPJHBjc&list=PL5BcU-_5Oa_ocJ_cyNKqhqJICMEJM9uqy)
 - [Web Marketing Tuto - YouTube - YouTube](https://www.youtube.com/user/julienWebM)
 - [WP Marmite - YouTube - YouTube](https://www.youtube.com/channel/UCU_gPhU-eAI56oUeFzVyUUQ)
+
+### Checklist
+
+Les checklists permettent de vérifier que tout a bien été fait dans les règles de l'art.
+
+- [WordPress Checklist (Infographic): 101+ Easy Steps to Follow in 2020](https://capsicummediaworks.com/killer-wordpress-checklist/)
 
 ### Hébergement & mise en prod
 

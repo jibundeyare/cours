@@ -129,7 +129,7 @@ source : [Readers' Choice Awards 2018: Laptops and Desktops | PCMag](https://www
 
 ### Les critères de choix
 
-- performances (vitesse du CPU / GPU, quantité de mémoire vive / mémoire de stockage)
+- performances (vitesse du CPU / GPU, quantité de cœeurs dans le CPU / GPU, quantité de mémoire vive / mémoire de stockage)
 - consommation électrique et autonomie
 - confort (taille et définition de l'écran, ergonomie du clavier)
 - versatilité (connectiques, baies d'extension)
@@ -318,14 +318,6 @@ Quelques services en ligne pour assurer le suivi (pas le déploiement):
 - [5 Best Free Open Source Firewall Software For Windows](https://listoffreeware.com/open-source-firewall-software-windows/)
 - [7 Best Open Source Firewall to Protect Your Network](https://geekflare.com/best-open-source-firewall/)
 
-### Suite bureautique
-
-- Microsoft Office : [Microsoft Office - Comparer tous les pack Office](https://products.office.com/fr-FR/compare-all-microsoft-office-products?activetab=tab%3aprimaryr1)
-
-Une alternative open source :
-
-- Libre Office : [Home | LibreOffice - Free Office Suite - Fun Project - Fantastic People](https://www.libreoffice.org/)
-
 ### Backups
 
 Le système de backups est vital dans une entreprise.
@@ -351,9 +343,17 @@ Pour Linux :
 
 Mention spéciale :
 
-- [Clonezilla - About](https://www.clonezilla.org/) : permet de dupliquer tel quel le disque dur d'une machine, localement ou via le réseau
+- [Clonezilla](https://www.clonezilla.org/) : permet de dupliquer tel quel le disque dur d'une machine, localement ou via le réseau
 
 source : [13 open source backup solutions | Opensource.com](https://opensource.com/article/19/3/backup-solutions)
+
+### Suite bureautique
+
+- Microsoft Office : [Microsoft Office - Comparer tous les pack Office](https://products.office.com/fr-FR/compare-all-microsoft-office-products?activetab=tab%3aprimaryr1)
+
+Une alternative open source :
+
+- Libre Office : [Home | LibreOffice - Free Office Suite - Fun Project - Fantastic People](https://www.libreoffice.org/)
 
 ### Logiciels de gestion
 

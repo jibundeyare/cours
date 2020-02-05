@@ -8,7 +8,7 @@
 - BC : backward compatibility (rétro-compatibilité)
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
-- Boolean : variable booléenne, type de données; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
+- Boolean : variable booléenne, type de données ; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
 - Bots : logiciel autonome (agent autonome) qui peuvent servir à spammer des canaux de communication ou à parcourir automatiquement des sites web et des services web à la recherche de failles de sécurité ; mais les bots peuvent aussi être utilisés pour faire le bien (agent conversationnel qui répond aux questions d'usagers par exemple)
 - Browser : voir Web browser
 - Brute force attack : attaque en force brute ; ce type d'attaque consiste à essayer toutes les combinaisons de mots de passe possible et n'est efficace qu'avec une énorme capacité de calcul ou un grand nombre de machines travaillant en parallèle
@@ -26,12 +26,12 @@
 - Database : BDD
 - DAW : Digital Audio Workstation (Station de travail Audio Numérique)
 - DB : Database
-- Design Pattern : motif de conception ; c'est la façon de structurer du code; on peut parler d'architecture logicielle  
-- DOM : Document Object Model; représentation en mémoire d'un document HTML; c'est le code HTML tel que interprêté par le navigateur web
+- Design Pattern : motif de conception ; c'est la façon de structurer du code ; on peut parler d'architecture logicielle  
+- DOM : Document Object Model ; représentation en mémoire d'un document HTML ; c'est le code HTML tel que interprêté par le navigateur web
 - DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
-- DSI : Directeur du Système d'Information; Direction du Système d'Information
+- DSI : Directeur du Système d'Information ; Direction du Système d'Information
 - ERP : Enterprise Ressource Planning (Planification des ressources de l'entreprise) ; c'est une application qui permet de gérer les ressources humaines, les relations fournisseurs, les relations clients, la comptabilité et la finance, le stock, la vente et la distribution
-- ESN : Entreprise de Services du Numérique; voir aussi SS2I
+- ESN : Entreprise de Services du Numérique ; voir aussi ICT et SSSI
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
 - FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; les grandes multinationales occidentales du net ; voir aussi BATX et GAFAM
 - Feedbacks : retours d'expérience des utilisateurs
@@ -39,9 +39,10 @@
 - Fork : une fourchette ; on parle d'un fork pour dire d'un projet qu'il est basé sur un autre projet ; exemples : Maria DB est un fork de MySQL, Libre Office est un fork d'Open Office
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
-- Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée; voir aussi Setter
+- Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée ; voir aussi Setter
+- ICT : Ingénierie et Conseils en Technologie ; voir aussi ESN et SSII
 - GUI : Graphical User Interface (interface utilisateur graphique)
-- Id : identifiant (unique); l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
+- Id : identifiant (unique) ; l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
 - IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
 - IP : Internet Protocol (protocole inter-réseau) ; protocole de communication de réseau informatique ; ce protocole ne se préoccupe pas du contenu des paquets, il fournit juste une méthode pour les mener à destination ; ce protocole fonctionne peut fonctionner en tandem avec le protocole TCP pour former le protocole TCP/IP utilisé dans Internet
@@ -59,11 +60,11 @@
 - méthode : en POO, une méthode désigne une fonction
 - membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request
-- Mobile first : d'abord les téléphones mobiles; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
+- Mobile first : d'abord les téléphones mobiles ; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
 - MVC : Model View Controller (modèle vue contrôleur)
 - not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
-- OOP : Object Oriented Programming; voir POO
+- OOP : Object Oriented Programming ; voir POO
 - package : un librairie ou un programme installable
 - paquet : voir package
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
@@ -74,16 +75,16 @@
 - Repo : repository  
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
 - Retex : retours d'expérience ; voir aussi feedbacks
-- RFC : Request For Comments (demande de commentaires, demande d'avis); série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
+- RFC : Request For Comments (demande de commentaires, demande d'avis) ; série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
 - RTFM : Read The Fucking Manual (lis le putain de manuel)
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
-- Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée; voir aussi Getter
+- Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée ; voir aussi Getter
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
   Dans un contexte de cryptographie, désigne un document numériquement signé
 - SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
 - Snippet : voir Code snippet
-- SS2I : Société de Services en Ingénierie Informatique; voir aussi ESN
-- SSII : voir SS2I
+- SS2I : Voir SSII
+- SSII : Société de Services en Ingénierie Informatique ; voir aussi ICT et ESN
 - SSL : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
 - String : chaîne de caractères, type de données
 - Terminal : à la base c'est un appareil qui permet de saisir ou d'afficher des données dans un ordinateur ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Console

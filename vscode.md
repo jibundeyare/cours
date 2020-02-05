@@ -4,6 +4,10 @@ Visual Studio Code (vscode pour les intimes) est un éditeur de code libre et op
 
 Vscodium est une version précompilée à partir du code source original de VS Code mais sans les modules de télémétrie et de tracking ajoutés par Microsoft.
 
+## PHP
+
+- [PHP Programming with Visual Studio Code](https://code.visualstudio.com/docs/languages/php)
+
 ## Plugin
 
 Voici quelques plugins recommandés pour faire du développement web en PHP et JS :
