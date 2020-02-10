@@ -9,7 +9,7 @@ Il existe un cours indépendant de Philippe P. (un collègue) qui explique des n
 ## Politique de sécurité
 
 - [La Politique de Sécurité des Systèmes d’Information de l’État (PSSIE) | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/entreprise/reglementation/protection-des-systemes-dinformations/la-politique-de-securite-des-systemes-dinformation-de-letat-pssie/)
-- [Paris Web 2018 - 5 octobre matin - Auditorium Pascal - YouTube](https://www.youtube.com/watch?v=VnwzO0uNn6o&t=3836)
+- [Paris Web 2018 - 5 octobre matin - Auditorium Pascal - YouTube](https://www.youtube.com/watch?v=VnwzO0uNn6o&t=3850)
 - [Top 5 Ways to Handle a Data Breach](https://securitytrails.com/blog/top-5-ways-handle-data-breach)
 - [How to Handle a Public Relations Crisis](https://www.businessnewsdaily.com/8935-recover-from-pr-crisis.html)
 

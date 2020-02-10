@@ -17,14 +17,18 @@ Virus
 Bot et botnet
 Ver
 Trojan horse : cheval de Troie
+Spam
+Phishing et attaque homographique : parade -> taper manuellement l'URL
+
 Bombe logique
 Logiciel espion : key loggers
 Backdoor : porte dérobée
-Spam
-Phishing et attaque homographique : parade -> taper manuellement l'URL
+
 Injection SQL : parade -> librairie, échappement des caractères interdits
 XSS : parade -> same origin policy
 CSRF : parade -> token (jeton)
+
+## Social engineering (ingénierie sociale)
 
 ## Parades
 
@@ -61,7 +65,13 @@ Filtres :
 
 - tous les appareils administrables : mot de passe
 - tous les appareils ayant un rôle clé dans les communications réseau : accès physique verrouillé
-- tous les appareils stockant des données clés pour l'entreprise : accès physique verrouillé, backups
+- tous les appareils stockant des données clés pour l'entreprise : accès physique verrouillé, crypter les données, backups
+
+## Sécurisation des données
+
+- crypter les données clés pour l'entreprise
+- redonder les données sur plusieurs lieux physiques
+- attention à l'accès : en sens unique depuis le service de backup
 
 ## Sécurisation des postes de travail
 
@@ -72,10 +82,25 @@ Filtres :
 - tous les appareils : mot de passe, pare-feu, antivirus, sauvegarde
 - tous les appareils stockant des données clés pour l'entreprise : accès physique verrouillé, backups
 
-## Sécurisation des données
+### Sécurisation de Windows
 
-- crypter les données clés pour l'entreprise
-- redonder les données sur plusieurs lieux physiques
+#### Attaque : activer le compte admin caché sans mot de passe
+
+Dans un terminal admin :
+
+    net user administrator /active yes
+
+Parade : activer le compte admin, se connecter avec ce compte admin puis lui attribuer un mot de passe
+
+#### Attaque : accéder à un terminal admin
+
+- [2020 How to Reset Windows 7 Password without any Software or Bootable USB/CD/DVD media. - YouTube](https://www.youtube.com/watch?v=5NckCxkZUnw)
+
+## Mot de passe
+
+- [xkcd: Password Strength](https://xkcd.com/936/)
+- [How to Choose a Password - Computerphile - YouTube](https://www.youtube.com/watch?v=3NjQ9b3pgIg)
+- [Diceware & Passwords - Computerphile - YouTube](https://www.youtube.com/watch?v=Pe_3cFuSw1E)
 
 ## Politique de sécurité
 
@@ -93,7 +118,7 @@ Réaction à chaud après un incident de sécurité :
 
 Résumé du talk « Votre base de données avec des informations personnelles sera piratée » de Stéphane Bortzmeyer.
 
-Source : [Paris Web 2018 - 5 octobre matin - Auditorium Pascal - YouTube](https://www.youtube.com/watch?v=VnwzO0uNn6o&t=3836)
+Source : [Paris Web 2018 - 5 octobre matin - Auditorium Pascal - YouTube](https://www.youtube.com/watch?v=VnwzO0uNn6o&t=3850)
 
 #### Avant
 
@@ -143,11 +168,6 @@ Une solution est d'avoir deux équipes qui travaillent en parallèle : une qui t
 - [NVD - Search and Statistics](https://nvd.nist.gov/vuln/search)
 - [NVD - Categories](https://nvd.nist.gov/vuln/categories)
 
-### Debian
-
-- [Debian -- Informations de sécurité](https://www.debian.org/security/)
-- [Debian Mailing Lists -- Index for debian-security-announce](https://lists.debian.org/debian-security-announce/)
-
 ## Connaissance des attaques
 
 ### Généralités
@@ -177,7 +197,9 @@ Une solution est d'avoir deux équipes qui travaillent en parallèle : une qui t
 
 ## Videos
 
+- [Micode - YouTube](https://www.youtube.com/channel/UCYnvxJ-PKiGXo_tYXpWAC-w)
 - [How to Choose a Password - Computerphile - YouTube](https://www.youtube.com/watch?v=3NjQ9b3pgIg)
+- [Diceware & Passwords - Computerphile - YouTube](https://www.youtube.com/watch?v=Pe_3cFuSw1E)
 - [How Secure Shell Works (SSH) - Computerphile - YouTube](https://www.youtube.com/watch?v=ORcvSkgdA58)
 - [Cookie Stealing - Computerphile - YouTube](https://www.youtube.com/watch?v=T1QEs3mdJoc)
 - [Cracking Websites with Cross Site Scripting - Computerphile - YouTube](https://www.youtube.com/watch?v=L5l9lSnNMxg)
@@ -185,8 +207,13 @@ Une solution est d'avoir deux équipes qui travaillent en parallèle : une qui t
 - [Running an SQL Injection Attack - Computerphile - YouTube](https://www.youtube.com/watch?v=ciNHn38EyRc)
 - [Hacking Websites with SQL Injection - Computerphile - YouTube](https://www.youtube.com/watch?v=_jKylhJtPmI)
 - [Hashing Algorithms and Security - Computerphile - YouTube](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
-- [Diceware & Passwords - Computerphile - YouTube](https://www.youtube.com/watch?v=Pe_3cFuSw1E)
+
+## Plateforme d'entraînement
+
+[Bienvenue [Root Me : plateforme d'apprentissage dédiée au Hacking et à la Sécurité de l'Information]](https://www.root-me.org/)
 
 ## Doc
 
 - [Have I Been Pwned: Check if your email has been compromised in a data breach](https://haveibeenpwned.com/)
+- [This is what happens when you reply to spam email | James Veitch - YouTube](https://www.youtube.com/watch?v=_QdPW8JrYzQ)
+- [Materiel.net - Votre expert informatique & High Tech - Nouveautés & Promotions !](https://www.materiel.net/)
