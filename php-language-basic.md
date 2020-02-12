@@ -218,11 +218,14 @@ ou équivalent :
 
 - [PHP: Hypertext Preprocessor](https://secure.php.net/)
 
-- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
+### Code style
+
 - [PSR-1: Basic Coding Standard - PHP-FIG](https://www.php-fig.org/psr/psr-1/)
 - [PSR-2: Coding Style Guide - PHP-FIG](https://www.php-fig.org/psr/psr-2/)
 - [PSR-0: Autoloading Standard - PHP-FIG](https://www.php-fig.org/psr/psr-0/)
 - [PSR-4: Autoloader - PHP-FIG](https://www.php-fig.org/psr/psr-4/)
+
+### Syntaxe
 
 - [PHP: Alternative syntax for control structures - Manual](https://secure.php.net/manual/en/control-structures.alternative-syntax.php)
 - [PHP: Operators - Manual](https://secure.php.net/manual/en/language.operators.php)
@@ -238,5 +241,13 @@ ou équivalent :
 - [PHP: Sanitize filters - Manual](http://php.net/manual/en/filter.filters.sanitize.php)
 - [PHP: Other filters - Manual](http://php.net/manual/en/filter.filters.misc.php)
 
+### WTF
+
 - [PHP Sadness](http://phpsadness.com/)
+
+### Best practices
+
+- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
+- [PHP: The Right Way](http://www.phptherightway.com/)
+- [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 

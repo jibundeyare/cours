@@ -102,10 +102,17 @@ Les attaques les plus courantes :
 ## Doc
 
 - [PHP: Hypertext Preprocessor](http://php.net/)
-- [PHP: The Right Way](http://www.phptherightway.com/)
-- [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 - [PHP: Options - Manual](http://php.net/manual/en/features.commandline.options.php)
 - [SitePoint – Learn HTML, CSS, JavaScript, PHP, Ruby & Responsive Design](https://www.sitepoint.com/)
+
+### Sécurité
+
 - [OWASP](https://www.owasp.org/index.php/Main_Page)
 - [Category:PHP - OWASP](https://www.owasp.org/index.php/Category:PHP#tab=Main)
+
+### Best practices
+
+- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
+- [PHP: The Right Way](http://www.phptherightway.com/)
+- [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 
