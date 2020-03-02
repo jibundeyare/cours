@@ -7,11 +7,11 @@ Il peut être utilisé comme un serveur d'application JavaScript.
 
 **Tout d'abord, il faut vérifier le numéro de la version LTS.**
 
-Actuellement, c'est la `10.16.0`.
+Actuellement, c'est la `12.x`.
 
 La page [distributions/README.md at master · nodesource/distributions](https://github.com/nodesource/distributions/blob/master/README.md#debinstall) indique comment installer Node.js v10.x.
 
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
 ## Doc

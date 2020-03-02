@@ -156,10 +156,23 @@ Une solution est d'avoir deux équipes qui travaillent en parallèle : une qui t
 - le fait d'être petit ne protège quand il y a une faille systémique
   exemple : des attaques automatisées peuvent compromettre le site Wordpress de toutes petites structures
 
+## PSSI
+
+Exemple de PSSI d'une grande école : [Politique de Sécurité des Systèmes d’Information - PSSI.pdf](https://www.ssi.ens.fr/PSSI.pdf).
+
 ## Veille de sécurité
+
+### Best practices
+
+- [Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/administration/bonnes-pratiques/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/entreprise/bonnes-pratiques/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/particulier/bonnes-pratiques/)
+- [Notes d’information – CERT-FR](https://www.cert.ssi.gouv.fr/information/)
 
 ### Général
 
+- [CERT-FR – Centre gouvernemental de veille, d'alerte et de réponse aux attaques informatiques](https://www.cert.ssi.gouv.fr/)
 - [National Cyber Awareness System | CISA](https://www.us-cert.gov/ncas)
 - [CVE - Common Vulnerabilities and Exposures (CVE)](http://cve.mitre.org/)
 - [CVE - Search CVE List](http://cve.mitre.org/cve/search_cve_list.html)
@@ -217,3 +230,4 @@ Une solution est d'avoir deux équipes qui travaillent en parallèle : une qui t
 - [Have I Been Pwned: Check if your email has been compromised in a data breach](https://haveibeenpwned.com/)
 - [This is what happens when you reply to spam email | James Veitch - YouTube](https://www.youtube.com/watch?v=_QdPW8JrYzQ)
 - [Materiel.net - Votre expert informatique & High Tech - Nouveautés & Promotions !](https://www.materiel.net/)
+

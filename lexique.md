@@ -40,6 +40,7 @@
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée ; voir aussi Setter
+- I18N : internationalisation ; rendre une application multilingue (adaptée à plusieurs zones culturelles et linguistiques) ; voir L10N
 - ICT : Ingénierie et Conseils en Technologie ; voir aussi ESN et SSII
 - GUI : Graphical User Interface (interface utilisateur graphique)
 - Id : identifiant (unique) ; l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
@@ -53,6 +54,7 @@
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile) ; principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
+- L10N : localisation ; traduire une application dans une langue (la rendre adaptée à une zone culturelle et linguistique) ; voir I18N
 - Lead dev : développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme

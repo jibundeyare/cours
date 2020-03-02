@@ -21,8 +21,17 @@ Réaction à chaud après un incident de sécurité :
 
 ## Veille de sécurité
 
+### Best practices
+
+- [Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/administration/bonnes-pratiques/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/entreprise/bonnes-pratiques/)
+- [Bonnes pratiques | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/particulier/bonnes-pratiques/)
+- [Notes d’information – CERT-FR](https://www.cert.ssi.gouv.fr/information/)
+
 ### Général
 
+- [CERT-FR – Centre gouvernemental de veille, d'alerte et de réponse aux attaques informatiques](https://www.cert.ssi.gouv.fr/)
 - [National Cyber Awareness System | CISA](https://www.us-cert.gov/ncas)
 - [CVE - Common Vulnerabilities and Exposures (CVE)](http://cve.mitre.org/)
 - [CVE - Search CVE List](http://cve.mitre.org/cve/search_cve_list.html)

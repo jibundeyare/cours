@@ -1,6 +1,6 @@
 # Laravel 6
 
-Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https://github.com/jibundeyare/src-laravel-6).
+Un projet « témoin » accompagne ce cours : [https://github.com/jibundeyare/src-laravel-6](https://github.com/jibundeyare/src-laravel-6).
 
 ## Tutoriels
 
@@ -10,6 +10,10 @@ Un projet « témoin » accompagne ce cours : [jibundeyare/src-laravel-6](https:
 ## Création d'une application avec le framework Laravel
 
 [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/)
+
+```
+laravel new foo
+```
 
 - configurer la langue (locale)
 [Localization - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/localization#configuring-the-locale)
@@ -65,9 +69,14 @@ npm run dev
 
 - activer browsersync
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/mix#browsersync-reloading)
+
+Dans `webpack.mix.js` :
+
 ```
-mix.browserSync('localhost:8000');
 mix.browserSync('127.0.0.1:8000');
+
+// ou si 127.0.0.1 ne fonctionne pas
+mix.browserSync('localhost:8000');
 ```
 
 - activer le watch

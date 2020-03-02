@@ -191,6 +191,7 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 - [All-in-One WP Migration](https://wordpress.org/plugins/all-in-one-wp-migration/)
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus/)
 - [Duplicator – WordPress Migration Plugin](https://wordpress.org/plugins/duplicator/)
+- [The Most Reliable WordPress Backup Plugin - BlogVault](https://blogvault.net/) (payant mais indispensable pour des sites de commerce en ligne)
 
 Personnellement, je recommande Duplicator.
 
