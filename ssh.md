@@ -1,7 +1,5 @@
 # SSH
 
-@todo expliquer comment détecter les problèmes dans `/var/log/auth.log`
-
 Le protocole SSH permet d'accéder au terminal d'un serveur distant.
 On peut utiliser la ligne de commande du terminal comme si un clavier et un écran étaient directement branchés dessus.
 
@@ -91,7 +89,7 @@ Exemple pour copier la clé ssh dans le compte `foo` du serveur `example.com` :
 
 ### Fail2ban
 
-Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.md#Sécurisation avec fail2ban).
+Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.md#Sécurisation) avec fail2ban.
 
 ### Configuration plus stricte
 
