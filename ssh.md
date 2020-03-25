@@ -1,5 +1,7 @@
 # SSH
 
+@todo expliquer comment détecter les problèmes dans `/var/log/auth.log`
+
 Le protocole SSH permet d'accéder au terminal d'un serveur distant.
 On peut utiliser la ligne de commande du terminal comme si un clavier et un écran étaient directement branchés dessus.
 
@@ -33,6 +35,26 @@ Exemple pour se connecter au serveur `example.com` avec le compte `foo` :
 
 **Attention** : lors de la première connexion, le client SSH vous demandera si vous acceptez ou non la signature du serveur distant.
 Si vous décidez de l'accepter, il faudra bien taper `yes` en toute lettre, sans quoi le client SSH croira que vous ne voulez pas l'accepter.
+
+Exemple d'écran lors d'une première connection au serveur `example.com` avec le compte `foo` :
+
+    $ ssh foo@example.com
+    The authenticity of host 'example.com (123.123.123.123)' can't be established.
+    ECDSA key fingerprint is SHA256:bMAT6dKtxN3aplAiXdoFPISWKId+c2A/+LZ5pSE0Egl.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added 'example.com' (ECDSA) to the list of known hosts.
+    foo@example.com's password:
+    Linux vps123456 5.x.x-x-amd64 #1 SMP Debian 5.x.xx-x+debxux (2020-01-01) x86_64
+
+    The programs included with the Debian GNU/Linux system are free software;
+    the exact distribution terms for each program are described in the
+    individual files in /usr/share/doc/*/copyright.
+
+    Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+    permitted by applicable law.
+    You have new mail.
+    Last login: Thu Jan 01 00:00:00 2020 from 234.234.234.234
+    foo@vps123456:~$
 
 ## Générer des clés SSH
 
@@ -256,6 +278,13 @@ Puis en local, vérifiez que vous arrivez à vous connecter avec votre compte `r
     ssh root@example.com
 
 *Pensez à ajouter l'option `-p` si vous avez customisé le port.*
+
+## Création de clés SSH avec PuTTY dans Windows
+
+Voir les guides suivante (en anglais) :
+
+- [Using PuTTYgen on Windows to generate SSH key pairs](https://www.ssh.com/ssh/putty/windows/puttygen)
+- un peu plus sécurisé et détaillé : [Use Public Key Authentication with SSH | Linode](https://www.linode.com/docs/security/authentication/use-public-key-authentication-with-ssh/#windows).
 
 ## Doc
 
