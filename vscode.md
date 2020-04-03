@@ -183,8 +183,8 @@ Pour convertir les clé de putty au format Open SSH, vous pouvez suivre les indi
     - `port` : port SSH
     - `username` : nom d'utilisateur de votre VPS
 
-7. Testez à nouveau le connexion SSH à votre VPS avec le terminal
-8. Si VSCode ne vous demande plus de mot de passe, c'est que vous avez réussi !
+7. Dans VSCode, testez à nouveau le connexion SSH à votre VPS avec le terminal
+8. Si le terminal ne vous demande plus de mot de passe, c'est que vous avez réussi !
 
 ## Doc
 
