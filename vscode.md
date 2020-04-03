@@ -119,12 +119,16 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 9. Dans VSCode, le terminal devrait être connecté à votr VPS
 10. Dans VSCode, Créer un nouveau fichier nommé `hello.py` et tapez le code suivant :
 
-    print("Hello World!")
+  ```
+  print("Hello World!")
+  ```
 
 11. Dans VSCode, depuis le terminal, tapez les commandes suivantes :
 
-    cd python
-    python hello.py
+  ```
+  cd python
+  python hello.py
+  ```
 
   Si un message `Hello World!` s'affiche dans le terminal, vous avez réussi !
 
