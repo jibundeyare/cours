@@ -89,7 +89,7 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 
 Prérequis :
 
-- Open SSH
+- Auto Save (voir ci-dessus)
 - Windows 10
 
 1. Dans VSCode, installez l'extension suivante :  
@@ -145,7 +145,6 @@ Prérequis :
 
 Prérequis :
 
-- Open SSH
 - PuTTY
 - serveur VPS avec authentification par clé
 - Windows 10
