@@ -24,59 +24,59 @@ Dans le menu `File` > `Preferences` > `Settings` > tapez `telemetry` dans le cha
 
 Voici quelques plugins recommandés pour faire du développement web en JS, PHP et Python :
 
-- Name: Better PHPUnit
-  Id: calebporzio.better-phpunit
+- Name: Better PHPUnit  
+  Id: calebporzio.better-phpunit  
   Publisher: calebporzio
-- Name: Code Runner
-  Id: formulahendry.code-runner
+- Name: Code Runner  
+  Id: formulahendry.code-runner  
   Publisher: Jun Han
-- Name: DotENV
-  Id: mikestead.dotenv
+- Name: DotENV  
+  Id: mikestead.dotenv  
   Publisher: mikestead
-- Name: ESLint
-  Id: dbaeumer.vscode-eslint
+- Name: ESLint  
+  Id: dbaeumer.vscode-eslint  
   Publisher: Dirk Baeumer
-- Name: Live Server
-  Id: ritwickdey.liveserver
+- Name: Live Server  
+  Id: ritwickdey.liveserver  
   Publisher: Ritwick Dey
-- Name: Live Share
-  Id: ms-vsliveshare.vsliveshare
+- Name: Live Share  
+  Id: ms-vsliveshare.vsliveshare  
   Publisher: Microsoft
-- Name: php cs fixer
-  Id: junstyle.php-cs-fixer
+- Name: php cs fixer  
+  Id: junstyle.php-cs-fixer  
   Publisher: junstyle
-- Name: PHP Debug
-  Id: felixfbecker.php-debug
-  Publisher: Felix Becker
+- Name: PHP Debug  
+  Id: felixfbecker.php-debug  
+  Publisher: Felix Becker  
   Note: installer XDebug (voir la doc du plugin)
-- Name: PHP DocBlocker
-  Id: neilbrayfield.php-docblocker
+- Name: PHP DocBlocker  
+  Id: neilbrayfield.php-docblocker  
   Publisher: Neil Brayfield
-- Name: PHP Getters & Setters
-  Id: phproberto.vscode-php-getters-setters
+- Name: PHP Getters & Setters  
+  Id: phproberto.vscode-php-getters-setters  
   Publisher: phproberto
-- Name: PHP IntelliSense
-  Id: felixfbecker.php-intellisense
-  Publisher: Felix Becker
+- Name: PHP IntelliSense  
+  Id: felixfbecker.php-intellisense  
+  Publisher: Felix Becker  
   Note: affecter `false` au paramètre `php.suggest.basic` de vscode
-- Name: PHP Namespace Resolver
-  Id: mehedidracula.php-namespace-resolver
+- Name: PHP Namespace Resolver  
+  Id: mehedidracula.php-namespace-resolver  
   Publisher: Mehedi Hassan
-- Name: phpcs
-  Id: ikappas.phpcs
-  Publisher: Ioannis Kappas
+- Name: phpcs  
+  Id: ikappas.phpcs  
+  Publisher: Ioannis Kappas  
   Note: `composer global require squizlabs/php_codesniffer`
-- Name: Prettier - Code formatter
-  Id: esbenp.prettier-vscode
+- Name: Prettier - Code formatter  
+  Id: esbenp.prettier-vscode  
   Publisher: Esben Petersen
-- Name: Python
-  Id: ms-python.python
+- Name: Python  
+  Id: ms-python.python  
   Publisher: Microsoft
-- Name: SFTP
-  Id: liximomo.sftp
+- Name: SFTP  
+  Id: liximomo.sftp  
   Publisher: liximomo
-- Name: Twig
-  Id: whatwedo.twig
+- Name: Twig  
+  Id: whatwedo.twig  
   Publisher: whatwedo
 
 Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trouver avec exactitude.
@@ -104,15 +104,17 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 
   Exemple :
 
-    {
-    	"name": "My Server",
-    	"host": "123.123.123.123",
-    	"protocol": "sftp",
-    	"port": 54321,
-    	"username": "foo",
-    	"remotePath": "/home/foo/python",
-    	"uploadOnSave": true
-    }
+  ```
+  {
+   	"name": "My Server",
+   	"host": "123.123.123.123",
+   	"protocol": "sftp",
+   	"port": 54321,
+   	"username": "foo",
+   	"remotePath": "/home/foo/python",
+   	"uploadOnSave": true
+   }
+  ```
 
 7. Dans vscode, ouvrez une connexion SSH : appuyez sur la touche `F1` > tapez `sftp: open ssh in terminal` > validez
 8. Dans VSCode, si le terminal vous demande un mot de passe, tapez le mot de passe de l'utilisateur de votre VPS
@@ -130,7 +132,7 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
   python hello.py
   ```
 
-  Si un message `Hello World!` s'affiche dans le terminal, vous avez réussi !
+12. Si un message `Hello World!` s'affiche dans le terminal, vous avez réussi !
 
 ## Doc
 
