@@ -90,9 +90,9 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
   Id: liximomo.sftp  
   Publisher: liximomo
 2. Sur le poste de développement, dans la home de votre utilisateur, créez un dossier `projects` et encore dedans un dossier `python`  
-	Par exemple, pour l'utilisateur `foo` : `C:\Users\foo\projects\python`
+  Par exemple, pour l'utilisateur `foo` : `C:\Users\foo\projects\python`
 3. Dans le VPS, faire la même chose : dans la home de votre utilisateur, créez un dossier `projects` et encore dedans un dossier `python`  
-	Par exemple, pour l'utilisateur `foo` : `/home/foo/projects/python`
+  Par exemple, pour l'utilisateur `foo` : `/home/foo/projects/python`
 4. Dans VSCode, ouvrez le dossier `python` : `File` > `Open Folder` > ouvrez le dossier `projects` > ouvrez le dossier `python` > validez
 5. Dans VSCode, créez la configuration SFTP : appuyez sur la touche `F1` > tapez `sftp: config` > validez
 6. Dans le fichier `sftp.json` renseignez les champs suivants :
@@ -102,17 +102,17 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
     - `username` : nom d'utilisateur de votre VPS
     - `remotePath` : le nom dossier python dans votre VPS
 
-	Exemple :
+  Exemple :
 
-		{
-				"name": "My Server",
-				"host": "123.123.123.123",
-				"protocol": "sftp",
-				"port": 54321,
-				"username": "foo",
-				"remotePath": "/home/foo/python",
-				"uploadOnSave": true
-		}
+    {
+    	"name": "My Server",
+    	"host": "123.123.123.123",
+    	"protocol": "sftp",
+    	"port": 54321,
+    	"username": "foo",
+    	"remotePath": "/home/foo/python",
+    	"uploadOnSave": true
+    }
 
 7. Dans vscode, ouvrez une connexion SSH : appuyez sur la touche `F1` > tapez `sftp: open ssh in terminal` > validez
 8. Dans VSCode, si le terminal vous demande un mot de passe, tapez le mot de passe de l'utilisateur de votre VPS
