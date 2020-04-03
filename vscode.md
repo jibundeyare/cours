@@ -90,7 +90,7 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 Prérequis :
 
 - Auto Save (voir ci-dessus)
-- Windows 10
+- OpenSSH
 
 1. Dans VSCode, installez l'extension suivante :  
   Name: SFTP  
@@ -141,13 +141,12 @@ Prérequis :
 
 12. Si un message `Hello World!` s'affiche dans le terminal, vous avez réussi !
 
-### Se connecter au VPS sans mot de passe
+### Se connecter au VPS sans mot de passe avec Windows
 
 Prérequis :
 
 - PuTTY
 - serveur VPS avec authentification par clé
-- Windows 10
 
 Voici les étapes dans les grandes lignes :
 
