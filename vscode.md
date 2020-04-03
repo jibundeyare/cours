@@ -20,7 +20,7 @@ Dans le menu `File` > `Preferences` > `Settings` > tapez `telemetry` dans le cha
 
 - [PHP Programming with Visual Studio Code](https://code.visualstudio.com/docs/languages/php)
 
-## Plugin
+## Plugins
 
 Voici quelques plugins recommandés pour faire du développement web en JS, PHP et Python :
 
@@ -97,12 +97,12 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 5. Dans VSCode, créez la configuration SFTP : appuyez sur la touche `F1` > tapez `sftp: config` > validez
 6. Dans le fichier `sftp.json` renseignez les champs suivants :
 
-    - `host` : adresse ip de votre VPS  
-    - `port` : port ssh  
-    - `username` : nom d'utilisateur de votre VPS  
-    - `remotePath` : le nom dossier python dans votre VPS  
+    - `host` : adresse ip de votre VPS
+    - `port` : port SSH
+    - `username` : nom d'utilisateur de votre VPS
+    - `remotePath` : le nom dossier python dans votre VPS
 
-	Exemple :  
+	Exemple :
 
 		{
 				"name": "My Server",
@@ -121,7 +121,7 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 
     print("Hello World!")
 
-11. Dans VSCode, depuis le terminal, tapez les commandes suivantes :  
+11. Dans VSCode, depuis le terminal, tapez les commandes suivantes :
 
     cd python
     python hello.py
