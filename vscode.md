@@ -136,7 +136,7 @@ Prérequis :
 
   ```
   cd python
-  python hello.py
+  python3 hello.py
   ```
 
 12. Si un message `Hello World!` s'affiche dans le terminal, vous avez réussi !
