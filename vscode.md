@@ -118,7 +118,7 @@ Prérequis :
    	"protocol": "sftp",
    	"port": 54321,
    	"username": "foo",
-   	"remotePath": "/home/foo/python",
+   	"remotePath": "/home/foo/projects/python",
    	"uploadOnSave": true
    }
   ```
