@@ -12,8 +12,9 @@
 
 ## La prise de note
 
-- mind mapping
 - mots clé
+- dessins
+- mind mapping
 
 ## Flash card
 
