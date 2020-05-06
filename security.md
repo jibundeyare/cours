@@ -1,1 +1,1 @@
-Ce cours a été déplacé ici : [securité-dev.md](securité-dev.md).
+Ce cours a été déplacé ici : [sécurité-dev.md](sécurité-dev.md).
