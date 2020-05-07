@@ -51,9 +51,18 @@ Ouvrir un terminal :
 
 Vous pouvez aussi choisir l'éditeur de code avec lequel vous écrirez vos messages de commit.
 
+Notes pour :
+- MacOS : Nano et Vim sont livrés avec le système d'exploitation.
+- Windows : Git Bash est livré avec Nano et Vim.
+- Linux : Nano est livré avec le système d'exploitation, Vim est installable avec `apt`
+
 Dans un terminal, tapez :
 
     git config --global core.editor [nom-de-l-éditeur]
+
+Exemple avec l'éditeur de code Nano :
+
+    git config --global core.editor nano
 
 Exemple avec l'éditeur de code Vim :
 
@@ -62,6 +71,10 @@ Exemple avec l'éditeur de code Vim :
 Exemple avec l'éditeur de code gedit :
 
     git config --global core.editor gedit
+
+Exemple avec l'éditeur de code Notepad++ :
+
+    git config --global core.editor notepad++
 
 Exemple avec l'éditeur de code Atom :
 
