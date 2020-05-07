@@ -17,9 +17,9 @@
 
     # s'il y a lieu, créez un compte sur le site
     # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)
-    # sur le site, copiez l'url du repo (de la forme https://github.com/[login]/[nom-du-repo].git ou git@github.com:[login]/[nom-du-repo].git)
+    # sur le site, copiez l'url du repo au format SSH (de la forme git@github.com:[login]/[nom-du-repo].git)
     # revenez dans le terminal
-    git remote add origin https://github.com/[login]/[nom-du-repo].git
+    git remote add origin git@github.com:[login]/[nom-du-repo].git
     git push -u origin master
 
 ## Enregistrer son travail

@@ -1,5 +1,15 @@
 # Github flow, mode basic
 
+Ce gitflow est adapté pour des petites éqiupes de 2 à 6 personnes environ.
+
+Le principe de base reprend celui du git flow solo avancé en y ajoutant du code review par les paires.
+
+La branche master contient le code livrable.
+Des branches de fonctionnalités sont créées par chaque développeur de l'équipe.
+Avant de merger une branche de fonctionnalités dans la branche master, le développeur demande un code review à son équipe.
+Si le code est validé par l'équipe, le code est mergé.
+Les autres membres de l'équipes peuvent alors bénéficier des mises à jour la branche master.
+
 ## Création du repo en local
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
@@ -27,7 +37,6 @@ Cette action est nécessaire à chaque fois qu'un merge (fait en local ou via un
 
 Mettons la branche master à jour.
 
-    # mettre à jour la branche master
     git checkout master
     git pull --rebase
 
@@ -44,37 +53,55 @@ S'il y a des conflits, il faut :
 - ajouter les fichiers dans la zone de staging
 - terminer le rebase
 
+Voici les étapes :
 
-    # voir la liste des conflits
+    # examinez liste des conflits
     git status
-    # todo: résoudre les conflits en modifiant les fichiers
+
+    # todo: résolvez les conflits en modifiant les fichiers
+
+    # répêtez `git add` autant de fois que nécessaire
     git add [nom-de-fichier]
-    # todo: répêter `git add` autant de fois que nécessaire
+
+    # `git rebase` se comporte comme `git commit`, mais les messages sont préremplis
     git rebase --continue
-    # note: chaque rebase se comporte comme un commit, mais le message de commit sont déjà remplis
 
 La branche est à jour.
 On peut reprendre le travail.
 
-    # todo: créer ou modifier des fichiers sources
-    git add [nom-de-fichier]
-    # todo: répêter `git add` autant de fois que nécessaire
+    # todo: créez ou modifiez des fichiers sources
+
+    # examinez l'état du repo
     git status
-    # si on a un doute, vérifier le code qui sera commité
+
+    # répêtez `git add` autant de fois que nécessaire
+    git add [nom-de-fichier]
+
+    # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
+
+    # si tout est bon, vous pouvez commiter
     git commit
+
     # l'option --force-with-lease est nécessaire si on a rebasé sa branche sur master avant de reprendre le travail
     git push --force-with-lease
 
 ## Enregistrer le travail fait dans une branche
 
-    # todo: créer ou modifier des fichiers sources
-    git add [nom-de-fichier]
-    # todo: répêter `git add` autant de fois que nécessaire
+    # todo: créez ou modifiez des fichiers sources
+
+    # examinez l'état du repo
     git status
-    # si on a un doute, vérifier le code qui sera commité
+
+    # répêtez `git add` autant de fois que nécessaire
+    git add [nom-de-fichier]
+
+    # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
+
+    # si tout est bon, vous pouvez commiter
     git commit
+
     # l'option --force-with-lease n'est pas nécessaire si on n'a pas rebasé sa branche sur master avant de travailler
     git push
 
@@ -90,37 +117,45 @@ Il faut :
 - sinon valider la pull request / merge request
 - mettre à jour la branche master locale
 
+Voici les étapes :
 
-    # todo: sur le site, créer une nouvelle pull request / merge request
+    # todo: sur github, créer une nouvelle pull request / merge request
+    # todo: demandez à voss collègue de faire du code review
+    # todo: sur github, lisez leurs commentaires
+    # todo: s'il y a lieu, modifiez votre code
 
-    # todo: demander à ses collègue de faire du code review
-    # todo: sur le site, lire les commentaires
-    # todo: s'il y a lieu, modifier son code
-    git add [nom-de-fichier]
-    # todo: répêter `git add` autant de fois que nécessaire
+    # examinez l'état du repo
     git status
-    # si on a un doute, vérifier le code qui sera commité
+
+    # répêtez `git add` autant de fois que nécessaire
+    git add [nom-de-fichier]
+
+    # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
+
+    # si tout est bon, vous pouvez commiter
     git commit
+
+    # pousser le code sur github
     git push
 
-    # todo: répêter « demander à ses collègue de faire du code review » autant de fois que nécessaire
+    # todo: répêtez la demande du code review aux collègues autant de fois que nécessaire
+    # todo: s'il n'y a plus de modifications de code à faire, valider la pull request sur github
 
-    # todo: s'il n'y a plus de modifications de code à faire, valider la pull request
-
-    # mettre à jour la branche master locale
+    # mettez à jour la branche master locale
     git checkout master
     git pull --rebase
 
 ## Ajouter des informations de numéro de version
 
-Quand on commence à avoir beaucoup de commits, il est pratique d'ajouter un numéro de version à certain commit pour savoir quelles sont les étapes importantes.
+Quand on commence à avoir beaucoup de commits, il est pratique de marquer certains commits avec un numéro de version.
+Ce numéro de version correspond à une « release » (un livrable).
 
 	git checkout master
 
-	# tagger la branche master avec une numéro de version sémantique
+	# taggez le dernier commit de la branche master avec un numéro de version sémantique
 	git tag -a x.y.z
 
-	# pousser les tags
+	# poussez les tags
 	git push --tags
 
