@@ -192,8 +192,13 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus/)
 - [Duplicator – WordPress Migration Plugin](https://wordpress.org/plugins/duplicator/)
 - [The Most Reliable WordPress Backup Plugin - BlogVault](https://blogvault.net/) (payant mais indispensable pour des sites de commerce en ligne)
+- [WP Migrate DB – WordPress Migration Made Easy – WordPress plugin | WordPress.org](https://wordpress.org/plugins/wp-migrate-db/)
 
 Personnellement, je recommande Duplicator.
+
+L'outil siuvant permet de remplacer les URLs dans toute la BDD sans casser la configuration :
+
+- [Search & Replace – WordPress plugin | WordPress.org](https://wordpress.org/plugins/search-and-replace/)
 
 #### Cache
 
@@ -208,6 +213,29 @@ Le cache permet d'accélérer l'affichage des pages.
 - [MetaSlider](https://wordpress.org/plugins/ml-slider/)
 - [Shortcodes Ultimate](https://wordpress.org/plugins/shortcodes-ultimate/)
 - [Slider by Soliloquy – Responsive Image Slider for WordPress](https://wordpress.org/plugins/soliloquy-lite/)
+
+#### Custom fields
+
+Les custom fields permettent de rajouter des champs dans une page, un article ou un custom type.
+
+- [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
+- [Meta Box – WordPress Custom Fields Framework](https://wordpress.org/plugins/meta-box/)
+
+#### Custom post type
+
+Open source et libre :
+
+- [Pods – Custom Content Types and Fields](https://wordpress.org/plugins/pods/)
+
+À noter, le plugin « Pods Beaver Themer Add-On » qui permet d'intégrer des custom post type créés avec Pods dans [Beaver Builder](https://wordpress.org/plugins/beaver-builder-lite-version/) :
+
+- [Pods Beaver Themer Add-On | WordPress.org](https://wordpress.org/plugins/pods-beaver-builder-themer-add-on/)
+
+Le plugin de création de custom type est libre mais le plugin d'affichage de custom type est payant :
+
+- [Custom Post Type UI — WordPress Plugins](https://wordpress.org/plugins/custom-post-type-ui/)
+- [Toolset Types – Custom Post Types, Custom Fields and Taxonomies — WordPress Plugins](https://wordpress.org/plugins/types/)
+- [Custom Post Types and Custom Fields creator – WCK — WordPress Plugins](https://wordpress.org/plugins/wck-custom-fields-and-custom-post-types-creator/)
 
 #### E-Commerce
 
@@ -241,12 +269,6 @@ Les formulaires sont utilisés pour permettre aux visiteurs de contacter le prop
 
 - [WP Maintenance Mode](https://wordpress.org/plugins/wp-maintenance-mode/)
 
-#### TinyMCE
-
-Le plugin TinyMCE permet de choisir la typographie du texte dans les moindres détails (titre, taille, couleur, police, etc).
-
-- [TinyMCE Advanced](https://wordpress.org/plugins/tinymce-advanced/)
-
 #### Page builders / Mise en page
 
 Ces plugins permettent de mettre en page un site de façon « plus visuelle ».
@@ -271,9 +293,18 @@ Bien que que visuel, ce mode est un peu moins intuitif que le « live mode ».
 - [KingComposer](https://wordpress.org/plugins/kingcomposer/)
 - [Fusion Page Builder](https://wordpress.org/plugins/fusion/) (fonctionne avec le framework CSS Bootstrap)
 
+#### TinyMCE
+
+Le plugin TinyMCE permet de choisir la typographie du texte dans les moindres détails (titre, taille, couleur, police, etc).
+
+- [TinyMCE Advanced](https://wordpress.org/plugins/tinymce-advanced/)
+
 #### Réseaux sociaux
 
-- [Social Media Share Buttons & Social Sharing Icons (Ultimate Sharing)](https://wordpress.org/plugins/ultimate-social-media-icons/)
+En général, les boutons de partage sur les réseaux sociaux envoient des données privées aux serveurs :
+[Solutions pour les boutons sociaux | CNIL](https://www.cnil.fr/fr/solutions-pour-les-boutons-sociaux)
+
+- [Shariff Wrapper – Extension WordPress | WordPress.org Français](https://fr.wordpress.org/plugins/shariff/)
 - [BuddyPress](https://wordpress.org/plugins/buddypress/)
 
 #### Sécurité
@@ -316,30 +347,18 @@ Si vous voulez conserver vos données de fréquentation sans passer par un servi
 
 #### Traduction
 
+- [WPML - The WordPress Multilingual Plugin](https://wpml.org/)
 - [Polylang](https://wordpress.org/plugins/polylang/)
+- [WPML to Polylang – WordPress plugin | WordPress.org](https://wordpress.org/plugins/wpml-to-polylang/)
 
-#### Custom fields
+WPML est payant mais le standard de facto.
+PolyLang est gratuit et constitue une excellente alternative.
 
-Les custom fields permettent de rajouter des champs dans une page, un article ou un custom type.
+#### Vignettes / Thumbnails
 
-- [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
-- [Meta Box – WordPress Custom Fields Framework](https://wordpress.org/plugins/meta-box/)
-
-#### Custom post type
-
-Open source et libre :
-
-- [Pods – Custom Content Types and Fields](https://wordpress.org/plugins/pods/)
-
-À noter, le plugin « Pods Beaver Themer Add-On » qui permet d'intégrer des custom post type créés avec Pods dans [Beaver Builder](https://wordpress.org/plugins/beaver-builder-lite-version/) :
-
-- [Pods Beaver Themer Add-On | WordPress.org](https://wordpress.org/plugins/pods-beaver-builder-themer-add-on/)
-
-Le plugin de création de custom type est libre mais le plugin d'affichage de custom type est payant :
-
-- [Custom Post Type UI — WordPress Plugins](https://wordpress.org/plugins/custom-post-type-ui/)
-- [Toolset Types – Custom Post Types, Custom Fields and Taxonomies — WordPress Plugins](https://wordpress.org/plugins/types/)
-- [Custom Post Types and Custom Fields creator – WCK — WordPress Plugins](https://wordpress.org/plugins/wck-custom-fields-and-custom-post-types-creator/)
+- [Compress JPEG & PNG images – WordPress plugin | WordPress.org](https://wordpress.org/plugins/tiny-compress-images/)
+- [Regenerate Thumbnails – WordPress plugin | WordPress.org](https://wordpress.org/plugins/regenerate-thumbnails/)
+- [ShortPixel Image Optimizer – WordPress plugin | WordPress.org](https://wordpress.org/plugins/shortpixel-image-optimiser/)
 
 ### Outils
 

@@ -1,6 +1,6 @@
 # Github flow, mode basic
 
-Ce gitflow est adapté pour des petites éqiupes de 2 à 6 personnes environ.
+Ce gitflow est adapté pour des petites équipes de 2 à 6 personnes environ.
 
 Le principe de base reprend celui du git flow solo avancé en y ajoutant du code review par les paires.
 

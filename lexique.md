@@ -12,6 +12,7 @@
 - Bots : logiciel autonome (agent autonome) qui peuvent servir à spammer des canaux de communication ou à parcourir automatiquement des sites web et des services web à la recherche de failles de sécurité ; mais les bots peuvent aussi être utilisés pour faire le bien (agent conversationnel qui répond aux questions d'usagers par exemple)
 - Browser : voir Web browser
 - Brute force attack : attaque en force brute ; ce type d'attaque consiste à essayer toutes les combinaisons de mots de passe possible et n'est efficace qu'avec une énorme capacité de calcul ou un grand nombre de machines travaillant en parallèle
+- CA : Certificate Authority (autorité de certification) ; c'est généralement une structure de type entreprise ou fondation qui fournit un service de certification d'authenticité aux acteurs de l'internet
 - CDN : Content Delivery Network (serveur qui stock des fichiers statiques)
 - CEO : Chief Executive Officer (PDG)
 - CIO : Chief information officer (directeur du service informatique)
@@ -87,7 +88,7 @@
 - Snippet : voir Code snippet
 - SS2I : Voir SSII
 - SSII : Société de Services en Ingénierie Informatique ; voir aussi ICT et ESN
-- SSL : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
+- SSL : Secure Socket Layer (@todo traduction SSL); c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
 - String : chaîne de caractères, type de données
 - Terminal : à la base c'est un appareil qui permet de saisir ou d'afficher des données dans un ordinateur ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Console
 - Ticket : voir Issue

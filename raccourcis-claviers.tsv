@@ -14,6 +14,7 @@ Touches	Action	Contexte
 `CTRL C`	copier	GUI
 `CTRL X`	couper	GUI
 `CTRL V`	coller	GUI
+`SHIFT INSERT`	coller	CLI
 `CTRL S`	enregistrer	GUI
 `CTRL SHIFT S`	enregistrer sous ...	GUI
 `CTRL O`	ouvrir	GUI

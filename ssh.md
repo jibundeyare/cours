@@ -98,12 +98,12 @@ Voir la section « Sécurisation avec fail2ban » dans [admin-sys.md](admin-sys.
 Si vous faites des erreurs de manipulation dans la config et que vous n'arrivez plus à vous connecter en SSH, ce terminal vous permettra de revenir à une situation antérieure et vous sauver.
 
 Si vous n'avez pas pris cette précaution et que n'arrivez plus à vous connecter, votre seule chance est de recourir à un démarrage du serveur en mode *rescue*.
-Le admin de votre hébergeur devrait vous permettre de faire ça et de recevoir une adresse IP et un mot de passe root temporaires.
+L'admin de votre hébergeur devrait vous permettre de faire ça et de recevoir une adresse IP et un mot de passe root temporaires.
 Après connexion, il faudra :
 
 - monter le disque de votre serveur sur le système de fichier du système de sauvetage
 - corriger les erreurs dans le fichier de config de SSH
-- redémarrer le serveur en mode normal et tester
+- redémarrer le serveur en mode normal et tester votre accès SSH
 - recommencer si ça ne fonctionne toujours pas
 
 #### Changer le port SSH
@@ -291,4 +291,5 @@ Voir les guides suivante (en anglais) :
 - [My First 5 Minutes On A Server; Or, Essential Security for Linux Servers](https://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 - [How to allow root login from one IP address with ssh public keys only - nixCraft](https://www.cyberciti.biz/faq/match-address-sshd_config-allow-root-loginfrom-one_ip_address-on-linux-unix/)
 - [Registered port - Wikipedia](https://en.wikipedia.org/wiki/Registered_port)
+- [Installation of OpenSSH For Windows | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)
 

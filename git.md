@@ -72,10 +72,6 @@ Exemple avec l'éditeur de code gedit :
 
     git config --global core.editor gedit
 
-Exemple avec l'éditeur de code Notepad++ :
-
-    git config --global core.editor notepad++
-
 Exemple avec l'éditeur de code Atom :
 
     git config --global core.editor "atom --wait"
@@ -88,13 +84,57 @@ Exemple avec l'éditeur de code Visual Studio Code (version open source) :
 
     git config --global core.editor "code --wait"
 
+Exemple avec l'éditeur de code Notepad++ (version 64 bit) :
+
+    git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+Exemple avec l'éditeur de code Notepad++ (version 32 bit) :
+
+    git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
 #### Diff & merge
 
-@todo diff & merge
+Il est aussi possible de définir un outil personnaliser pour comparer (diff) et fusionner (merge) des fichiers.
 
-Il est aussi possible de définir un outil pour comparer et fusionner des fichiers.
+Exemple avec Vimdiff :
 
-Voir les liens dans la section [Diff et merge](#diff-et-merge) de la doc, ci-dessous.
+    git config --global merge.tool vimdiff
+    git config --global diff.tool vimdiff
+
+Exemple avec KDiff3 :
+
+    git config --global merge.tool kdiff3
+    git config --global diff.tool kdiff3
+
+Exemple avec Meld :
+
+    git config --global merge.tool kdiff3
+    git config --global diff.tool kdiff3
+
+Exemple avec Visual Studio Code :
+
+    git config --global merge.tool vscode
+    git config --global mergetool.vscode.cmd "code --wait $MERGED"
+    git config --global diff.tool vscode
+    git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+Les commandes suivantes permettent de savoir quels outils sont supportés par git sans configuration particulière :
+
+    # liste des outils de diff
+    git difftool --tool-help
+
+    # liste des outils de merge
+    git mergetool --tool-help
+
+**Attention** : pour utiliser l'outil que vous venez de configuré, vous devez utiliser :
+
+    git difftool
+
+La commande `git diff` utilisera l'outil de diff par défaut.
+
+La commande `git config --global difftool.prompt false` permet en plus de zapper la question `Launch 'vimdiff|kdiff3|meld|vscode|else' [Y/n]?`avant chaque fichier.
+
+Pour plus de détails, voir les liens dans la section [Diff et merge](#diff-et-merge) de la doc, ci-dessous.
 
 #### Accès SSH
 
@@ -264,11 +304,27 @@ Pour des cas d'usage typiques, voir :
 
 ### Création du repo sur github / framagit / bitbucket
 
-    # s'il y a lieu, créez un compte sur le site
-    # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)
-    # sur le site, copiez l'url du repo (de la forme https://github.com/[login]/[nom-du-repo].git ou git@github.com:[login]/[nom-du-repo].git)
-    # revenez dans le terminal
+Créez le repo sur le site :
+
+- s'il y a lieu, créez un compte sur le site
+- sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier en local)
+
+#### Pour lier votre repo local à un repo distant en utilisant le protocole HTTPS :
+
+Sur le site, copiez l'url du repo au format HTTPS (de la forme https://github.com/[login]/[nom-du-repo].git)
+
+Puis dans le terminal :
+
     git remote add origin https://github.com/[login]/[nom-du-repo].git
+    git push -u origin master
+
+#### Pour lier votre repo local à un repo distant en utilisant le protocole SSH :
+
+Sur le site, copiez l'url du repo au format SSH (de la forme git@github.com:[login]/[nom-du-repo].git)
+
+Puis dans le terminal :
+
+    git remote add origin git@github.com:[login]/[nom-du-repo].git
     git push -u origin master
 
 ### Enregistrer des modifications
@@ -354,7 +410,11 @@ Puis on commit.
 ### Utilisation
 
 - [Git](https://git-scm.com/)
+
+### Tutriels en ligne
+
 - [Git How To: Guided Git Tutorial](https://githowto.com/)
+- [Learn Git Branching](https://learngitbranching.js.org/)
 
 ### Git flow
 
@@ -367,6 +427,7 @@ Puis on commit.
 
 - [git - Configuring diff tool with .gitconfig - Stack Overflow](https://stackoverflow.com/questions/6412516/configuring-diff-tool-with-gitconfig)
 - [Set Visual Studio Code as default git editor and diff tool – Soltys Blog](https://blog.soltysiak.it/en/2017/01/set-visual-studio-code-as-default-git-editor-and-diff-tool/)
+- [How to use Visual Studio Code as the default editor for Git MergeTool - Stack Overflow](https://stackoverflow.com/questions/44549733/how-to-use-visual-studio-code-as-the-default-editor-for-git-mergetool)
 
 #### Notions de base
 

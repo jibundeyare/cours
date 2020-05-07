@@ -190,3 +190,9 @@ Pour convertir les clé de putty au format Open SSH, vous pouvez suivre les indi
 - [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
 - [Visual Studio Code Remote Development Troubleshooting Tips and Tricks](https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen)
 
+### Amélioration des performances
+
+- [Visual Studio Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings)
+- [visual studio code - why vscode require so much memory? How to make it more clean? - Stack Overflow](https://stackoverflow.com/questions/53658769/why-vscode-require-so-much-memory-how-to-make-it-more-clean)
+- [Reducing VSCode Memory Consumption - DEV Community 👩‍💻👨‍💻](https://dev.to/claudiodavi/reducing-vscode-memory-consumption-527k)
+
