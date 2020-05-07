@@ -2,6 +2,8 @@
 
 La procédure d'installation se base sur une distribution Linux Debian Stretch.
 
+Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, MySQL, PHP et PHPMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
+
 ## Installation d'Apache
 
     sudo apt-get install apache2

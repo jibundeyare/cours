@@ -289,7 +289,7 @@ Pour une TPE, un e simple feuille Excel peut suffire :
 - date de fin (s'il y a lieu)
 - machine concernée (numéro de série ou numéro interne)
 
-Au-delà d'une vingtaine de machines, il devien nécessaire d'utiliser une application de gestion de parc informatique.
+Au-delà d'une vingtaine de machines, il devient nécessaire d'utiliser une application de gestion de parc informatique.
 
 ### Gestion des machines
 

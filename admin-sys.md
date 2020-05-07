@@ -1,5 +1,7 @@
 # Administration système
 
+Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, MySQL, PHP et PHPMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
+
 ## APT
 
 Pour en savoir plus sur le gestionnaire de paquet `apt`, voir [apt.md](apt.md).

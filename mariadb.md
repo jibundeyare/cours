@@ -1,9 +1,8 @@
 # MySQL
 
-@todo ajouter un lien vers les scripts d'installation gist
 @todo fusionner avec une partie de la doc phpmyadmin
-@todo ajouter un lien vers le repo src-mysql
-@todo ajouter liens vers vidéos vimeo
+
+Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, MySQL, PHP et PHPMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
 Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
 

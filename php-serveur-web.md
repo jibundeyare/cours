@@ -43,7 +43,7 @@ Lancer le serveur avec l'adresse IP `0.0.0.0` :
 
 Trouver son adresse IP avec Mac et Linux :
 
-    # méthode obsolète
+    # warning: méthode obsolète
     sudo ifconfig
 
     # méthode actuelle
