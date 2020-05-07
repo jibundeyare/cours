@@ -44,6 +44,7 @@ S'il y a des conflits, il faut :
 - ajouter les fichiers dans la zone de staging
 - terminer le rebase
 
+
     # voir la liste des conflits
     git status
     # todo: résoudre les conflits en modifiant les fichiers
@@ -88,6 +89,7 @@ Il faut :
 - s'il y a lieu, modifier son code et redemander un code review
 - sinon valider la pull request / merge request
 - mettre à jour la branche master locale
+
 
     # todo: sur le site, créer une nouvelle pull request / merge request
 
