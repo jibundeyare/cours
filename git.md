@@ -94,7 +94,21 @@ Exemple avec l'éditeur de code Notepad++ (version 32 bit) :
 
 #### Diff & merge
 
-Il est aussi possible de définir un outil personnaliser pour comparer (diff) et fusionner (merge) des fichiers.
+Il est aussi possible de définir un outil personnalisé pour comparer (diff) et fusionner (merge) des fichiers.
+
+L'outil de diff s'utilise comme `git diff`, pour voir les différences avec une version précédente du code.
+L'outil de merge ne peut être utilisé que quand il y a un conflit après un git `git pull`.
+Il sert alors à résoudre les conflits.
+
+Si vous utilisez git dans un VPS, vous n'avez pas le choix, vous devez opter pour un outil de diff ou de merge qui fonctionne dans le terminal.
+Dans ce cas, `vimdiff` est idéal.
+
+Si vous utilisez git sur votre poste de travail, vous pouvez utilisez un outil de diff graphique.
+Privilégiez un outil qui est capable de faire un 3-way merge.
+Ce mode de fusion, utilisé lorsqu'il y a un conflit, vous permet de voir le fichier original, la version remote, la version locale et le résultat final que vous allez conserver.
+Personnellement, je recommande `kdiff3` qui est capable de résoudre tout seul des conflits simples et d'utiliser un 3-way merge sinon.
+En second choix, vous pouvez utiliser `meld`.
+Utiliser `vscode` n'est pas idéal car il n'est pas capable de faire de 3-way merge, même s'il ajoute la coloration syntaxique.
 
 Exemple avec Vimdiff :
 
@@ -108,8 +122,8 @@ Exemple avec KDiff3 :
 
 Exemple avec Meld :
 
-    git config --global merge.tool kdiff3
-    git config --global diff.tool kdiff3
+    git config --global merge.tool meld
+    git config --global diff.tool meld
 
 Exemple avec Visual Studio Code :
 
@@ -126,11 +140,15 @@ Les commandes suivantes permettent de savoir quels outils sont supportés par gi
     # liste des outils de merge
     git mergetool --tool-help
 
-**Attention** : pour utiliser l'outil que vous venez de configuré, vous devez utiliser :
+**Attention** : pour utiliser l'outil de diff que vous venez de configuré, vous devez utiliser :
 
     git difftool
 
-La commande `git diff` utilisera l'outil de diff par défaut.
+**Attention** : et pour utiliser l'outil de merge que vous venez de configuré, vous devez utiliser :
+
+    git mergetool
+
+La commande `git diff` utilisera toujours l'outil de diff par défaut de git (dans le terminal).
 
 La commande `git config --global difftool.prompt false` permet en plus de zapper la question `Launch 'vimdiff|kdiff3|meld|vscode|else' [Y/n]?`avant chaque fichier.
 
