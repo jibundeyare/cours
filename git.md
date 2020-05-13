@@ -114,9 +114,9 @@ Exemple avec Meld :
 Exemple avec Visual Studio Code :
 
     git config --global merge.tool vscode
-    git config --global mergetool.vscode.cmd "code --wait $MERGED"
+    git config --global mergetool.vscode.cmd "code --wait \$MERGED"
     git config --global diff.tool vscode
-    git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+    git config --global difftool.vscode.cmd "code --wait --diff \$LOCAL \$REMOTE"
 
 Les commandes suivantes permettent de savoir quels outils sont supportés par git sans configuration particulière :
 
