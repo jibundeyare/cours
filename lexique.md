@@ -4,7 +4,7 @@
 - API : Application Programming Interface
 - Array : tableau, type de données
 - Attribut : en POO, un attribut désigne une variable
-- BATX : Baidu, Alibaba, Tencent, Xiaomi ; les grandes multinationales chinoises du net ; voir aussi FAANG et GAFAM
+- BATX : Baidu, Alibaba, Tencent, Xiaomi ; de grandes multinationales chinoises du net ; voir aussi FAANG, GAFAM et NATU
 - BC : backward compatibility (rétro-compatibilité)
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
 - BDD : Base De Données
@@ -34,12 +34,12 @@
 - ERP : Enterprise Ressource Planning (Planification des ressources de l'entreprise) ; c'est une application qui permet de gérer les ressources humaines, les relations fournisseurs, les relations clients, la comptabilité et la finance, le stock, la vente et la distribution
 - ESN : Entreprise de Services du Numérique ; voir aussi ICT et SSSI
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
-- FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; les grandes multinationales occidentales du net ; voir aussi BATX et GAFAM
+- FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; de grandes multinationales occidentales du net ; voir aussi BATX, GAFAM et NATU
 - Feedbacks : retours d'expérience des utilisateurs
 - Float : nombre à virgule flottant, type de données
 - Fork : une fourchette ; on parle d'un fork pour dire d'un projet qu'il est basé sur un autre projet ; exemples : Maria DB est un fork de MySQL, Libre Office est un fork d'Open Office
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
-- GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; les grandes multinationales occidentales du net ; voir aussi BATX et FAANG
+- GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et NATU
 - Getter : en POO, un getter désigne une méthode (fonction) qui permet de récupérer la valeur d'une variable privée ; voir aussi Setter
 - I18N : internationalisation ; rendre une application multilingue (adaptée à plusieurs zones culturelles et linguistiques) ; voir L10N
 - ICT : Ingénierie et Conseils en Technologie ; voir aussi ESN et SSII
@@ -66,6 +66,7 @@
 - Mobile first : d'abord les téléphones mobiles ; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
 - MVC : Model View Controller (modèle vue contrôleur)
+- NATU : Netflix Airbnb Tesla Uber ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et GAFAM
 - not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
 - OOP : Object Oriented Programming ; voir POO
 - package : un librairie ou un programme installable
