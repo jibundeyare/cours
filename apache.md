@@ -22,6 +22,33 @@ Pour information je propose un ensemble de scripts pour faciliter la gestion de 
 - mêmes étapes que sur le serveur
 - configuration du nom de domaine dans le fichier `/etc/hosts`
 
+## Fichiers de logs
+
+Les fichiers de log sont des fichiers dans lesquels sont consignés les erreurs et les avertissements qui ont lieu lors de l'exécution d'une application.
+
+### Les logs d'accès
+
+Ces logs permettent de savoir quelle adresse ip a demandé quelle url sur tel ou tel nom de domaine.
+
+Voici le chemin du fichier : `/var/log/apache2/access.log`.
+
+Vous pouvez visionner le fichier avec `less` ou `vim` par exemple.
+Voici la commande pour le visualiser avec `less` :
+
+    sudo less /var/log/apache2/access.log
+
+### Les logs d'erreurs
+
+Ces logs permettent de savoir si une erreur a lieu lors d'une requête HTTP.
+Les erreurs PHP se retrouvent aussi dans ce fichier de logs.
+
+Voici le chemin du fichier : `/var/log/apache2/errors.log`.
+
+Vous pouvez visionner le fichier avec `less` ou `vim` par exemple.
+Voici la commande pour le visualiser avec `less` :
+
+    sudo less /var/log/apache2/errors.log
+
 ## Fichier `.htaccess`
 
 
