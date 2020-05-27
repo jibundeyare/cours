@@ -154,6 +154,27 @@ La commande `git config --global difftool.prompt false` permet en plus de zapper
 
 Pour plus de détails, voir les liens dans la section [Diff et merge](#diff-et-merge) de la doc, ci-dessous.
 
+#### Vérifier la configuration
+
+La commande suivante permet d'afficher la configuration de git :
+
+    cat ~/.gitconfig
+
+Vous devriez voir quelque chose qui ressemble au résultat ci-dessous.
+Ici l'utilisateur s'appelle `Foo Bar`, son email est `foo.bar@example.com` et il utilise `vscode` pour fusionner son code et visualiser les différences.
+
+    [user]
+    	email = foo.bar@example.com
+    	name = Foo Bar
+    [merge]
+    	tool = vscode
+    [mergetool "vscode"]
+    	cmd = code --wait $MERGED
+    [diff]
+    	tool = vscode
+    [difftool "vscode"]
+    	cmd = code --wait --diff $LOCAL $REMOTE
+
 #### Accès SSH
 
 Il peut aussi être judicieux de configurer un accès SSH, ce qui évite de devoir taper son login et son mot de passe à chaque fois que l'on veut pusher du code sur le repo distant.
