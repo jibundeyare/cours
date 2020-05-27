@@ -196,6 +196,8 @@ Pour convertir les clé de putty au format Open SSH, vous pouvez suivre les indi
 ## Doc
 
 - [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
+- [Documentation for Visual Studio Code](https://code.visualstudio.com/docs)
+- [Visual Studio Code Frequently Asked Questions](https://code.visualstudio.com/docs/supporting/faq)
 - [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
 - [Visual Studio Code Remote Development Troubleshooting Tips and Tricks](https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen)
 
