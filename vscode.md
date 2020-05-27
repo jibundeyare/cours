@@ -106,15 +106,15 @@ Prérequis :
 
   ```
   {
-   	"name": "My Server",
-   	"host": "123.123.123.123",
-   	"protocol": "sftp",
-   	"port": 54321,
-   	"username": "foo",
-   	"remotePath": "/home/foo/projects/python",
+    "name": "My Server",
+    "host": "123.123.123.123",
+    "protocol": "sftp",
+    "port": 54321,
+    "username": "foo",
+    "remotePath": "/home/foo/projects/python",
     "privateKeyPath": "/home/baz/.ssh/id_rsa",
     "agent": "$SSH_AUTH_SOCK",
-   	"uploadOnSave": true
+    "uploadOnSave": true
    }
   ```
 
