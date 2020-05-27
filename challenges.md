@@ -49,6 +49,12 @@ Perso, j'adore ce site. Je suis arrivé jusqu'au challenge 14 et j'aimerai avoir
 C'est calendrier de l'avant du code. Ces challenges sont tout de suite assez balaises, clairement au dessus du niveau débutant. Mais ça peut être amusant de voir quel genre de problème on rencontre à un niveau plus élevé.
 Perso je suis arrivé jusqu'au jour 4 de 2019. Comme pour projecteuler, j'aimerai avoir plus de temps à y consacrer. Si vous faites ne fut-ce que le premier jour, c'est déjà super !
 
+## Pire que les maths : l'admin sys et le réseau !
+
+[Root Me : plateforme d'apprentissage dédiée au Hacking et à la Sécurité de l'Information](https://www.root-me.org/)
+
+No comment. Je ne touche pas à ce genre de came ;)
+
 ## Non testé mais recommandé par des apprenants
 
 - [CodeCombat - Jeux de codage pour apprendre Python et JavaScript | CodeCombat](https://codecombat.com/)
