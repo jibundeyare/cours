@@ -1,4 +1,4 @@
-# Twig 3.x
+# Twig 2.x
 
 Twig est un moteur de « template ». Un « template » est un fichier dans lequel on définit la façon dont des données vont être affichées.
 
@@ -8,7 +8,7 @@ Dans le modèle « MVC », le template correspond au « V », la vue (View en an
 
 Depuis novembre 2019, Twig est passé en version 3.
 Changement notable, le nom des classes à charger en PHP est différent.
-Si vous voulez retrouver les anciens noms de classes, voir [twig-2.x.md](twig-2.x.md).
+Si vous voulez retrouver les nouveaux noms de classes, voir [twig.md](twig.md).
 
 ## Sans framework (en PHP brut)
 
@@ -24,7 +24,7 @@ Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre pro
 
 Pour installer le paquet :
 
-    composer require twig/twig ~3.0
+    composer require twig/twig ~2.0
 
 ### Utilisation
 
@@ -32,17 +32,14 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
     <?php
 
-    use Twig\Environment;
-    use Twig\Loader\FilesystemLoader;
-
     // activation du système d'autoloading de Composer
     require __DIR__.'/../vendor/autoload.php';
 
     // instanciation du chargeur de templates
-    $loader = new FilesystemLoader(__DIR__.'/../templates');
+    $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
 
     // instanciation du moteur de template
-    $twig = new Environment($loader);
+    $twig = new Twig_Environment($loader);
 
     // initialisation d'une donnée
     $greeting = 'Hello Twig!';
@@ -87,22 +84,18 @@ Le mode debug permet d'utiliser la fonction `dump()` dans un template Twig pour 
 
 Le mode de variables strictes permet d'afficher une erreur si vous utilisez une variable qui n'a pas été initialisée (c-à-d non transmise au template Twig).
 
-Modifier la partie `new Environment($loader)` et charger l'extension de debug `Twig\\Extension\\DebugExtension` juste après :
-
-    use Twig\Extension\DebugExtension;
-
-    // ...
+Modifier la partie `new Twig_Environment($loader)` et charger l'extension de debug `Twig_Extension_Debug` juste après :
 
     // instanciation du moteur de template
-    $twig = new Environment($loader, [
+    $twig = new Twig_Environment($loader, [
         // activation du mode debug
         'debug' => true,
         // activation du mode de variables strictes
         'strict_variables' => true,
     ]);
 
-    // chargement de l'extension DebugExtension
-    $twig->addExtension(new DebugExtension());
+    // chargement de l'extension Twig_Extension_Debug
+    $twig->addExtension(new Twig_Extension_Debug());
 
 Maintenant il est possible d'inspecter le contenu d'une variable dans un template Twig.
 
@@ -122,21 +115,101 @@ C'est une optimisation qui doit être appliquée quand le code est en production
 Créer le dossier `var/cache` à la racine du projet.
 Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
-Modifier la partie `new Environment($loader)` :
+Modifier la partie `new Twig_Environment($loader)` :
 
     // instanciation du moteur de template
-    $twig = new Environment($loader, [
+    $twig = new Twig_Environment($loader, [
         // activation du cache
         'cache' => __DIR__.'/../var/cache',
     ]);
 
-NB Pensez à désactiver ou supprimer le chargement de l'extension de debug `Twig\Extension\DebugExtension`.
+NB Pensez à désactiver ou supprimer le chargement de l'extension de debug `Twig_Extension_Debug`.
 
-## Avec Symfony 3.4 et plus
+## Avec Symfony 3.4
 
-Twig est préinstallé avec Symfony 3.4 et plus.
+Twig est préinstallé dans Symfony 3.4.
 
-Les vues sont stockées dans le dossier `templates/`.
+Les vues globales sont stockées dans le dossier `app/Resources/views/`.
+
+Les vues spécifiques à un bundle sont stockées dans le dossier `Resources/views/` du bundle. Exemple `src/AppBundle/Resources/views/`.
+
+Les vues générées par le générateur de CRUD de Doctrine sont stockées dans le dossier `app/Resources/views/`.
+
+## Avec le framework Silex
+
+### Structure du dossier
+
+Voir [silex.md](silex.md).
+
+### Installation
+
+Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
+
+    cd [dossier du projet web]
+
+Pour installer le paquet :
+
+    composer require twig/twig ~2.0
+
+### Utilisation
+
+Ouvrir le fichier `public/index.php` puis ajouter :
+
+    $app->register(new Silex\Provider\TwigServiceProvider(), [
+        'twig.path' => __DIR__.'/../templates',
+    ]);
+
+    $app->get('/', function() use($app) {
+        $greeting = 'Hello Twig!';
+
+        return $app['twig']->render('hello-twig.html.twig'[
+            'greeting' => $greeting,
+        ]);
+    });
+
+Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>{{ greeting }}</title>
+        </head>
+        <body>
+            <h1>{{ greeting }}</h1>
+        </body>
+    </html>
+
+## Charger et afficher le rendu d'un template
+
+Utiliser le template `templates/foo.html.twig` sans transmettre de variables :
+
+    echo $twig->render('foo.html.twig');
+
+Utiliser le template `templates/foo.html.twig` en transmettant une seule variable `$bar` :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $bar,
+    ]);
+
+Utiliser le template `templates/foo.html.twig` en transmettant plusieurs variables :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $bar,
+        'baz' => $baz,
+        'lorem' => $lorem,
+        'ipsum' => $ipsum,
+    ]);
+
+Dans le tableau associatif, la clé alpha-numérique correspond au nom de la variable dans le template Twig et, la valeur, à la variable PHP.
+
+Exemple :
+
+    echo $twig->render('foo.html.twig', [
+        'bar' => $baz,
+    ]);
+
+Dans le template Twig, il faudra utiliser le nom de variable `bar` pour pouvoir afficher le contenu de la variable `$baz`.
 
 ## Syntaxe de templates Twig
 
@@ -179,47 +252,6 @@ Afficher la valeur renvoyée par la méthode `foo` de la variable de type objet 
     {{ bar.foo() }}
 
 NB La notation est la même pour accéder à une clé d'un tableau ou à un attribut d'un objet, on utilise le point `.`.
-
-### Déclaration et initialisation d'une variable
-
-Il est possible de déclarer et d'initialiser une variable en Twig comme en PHP avec l'opérateur `=`.
-
-Exemple de déclaration et d'affectation d'une chaîne de caractères à la variable `greeting` :
-
-    {% set greeting = 'Hello' %}
-
-Exemple de déclaration et d'affectation de la valeur de la variable `app.request.host` à la variable `myHost` :
-
-    {% set myHost = app.request.host %}
-
-### Concaténer des chaînes de caractères
-
-Il possible de concaténer des chaînes de caractères en Twig avec l'opérateur `~` comme on le ferait en PHP avec l'opérateur `.`.
-
-Exemple de concaténation des deux chaînes de caractères `'foo'` et `'bar'` :
-
-    {{ 'foo' ~ 'bar' }}
-
-Exemple de concaténation d'une chaîne de caractères et d'une variable :
-
-    {{ 'http://' ~ app.request.host }}
-
-Exemple de concaténation d'une chaîne de caractères et de la variable `app.request.host`, et de l'utilisation d'un filtre d'échappement :
-
-    {{ ('http://' ~ app.request.host)|e }}
-
-### Interpolation de chaînes de caractères
-
-Il est possible de faire de l'interpolation de chaînes de caractèresen Twig.
-Ceci requiert d'utiliser des doubles quotes `"`.
-
-Exemple d'interpolation de la variable `app.request.host` dans une chaîne de caractères :
-
-    {{ "http://#{app.request.host}" }}
-
-Exemple d'interpolation de la variable `app.request.host` dans une chaîne de caractères et de l'utilisation d'un filtre d'échappement :
-
-    {{ "http://#{app.request.host}"|e }}
 
 ### Les structures conditionnelles (blocs `if`)
 
@@ -451,26 +483,9 @@ Afficher la variable `foo` sans appliquer aucun filtre :
 
 ### Formatage de nombres
 
-#### Sans Symfony
+Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgules flottant seulement deux chiffres après la virgule avec un espace aux milliers :
 
-Ajouter le `use` en début de fichier :
-
-    use Twig\Extension\CoreExtension;
-
-Juste après la partie `new Environment($loader)`, ajouter la config pour afficher deux chiffres après la virgule, la virgule comme séparateur après la virgule et l'espace comme séparateur de milliers :
-
-    $twig->getExtension(CoreExtension::class)->setNumberFormat(2, ',', ' ');
-
-#### Avec Symfony
-
-Dans le fichier `config/packages/twig.yam`, ajouter la config pour afficher deux chiffres après la virgule, la virgule comme séparateur après la virgule et l'espace comme séparateur de milliers :
-
-    number_format:
-        decimals:             2
-        decimal_point:        ','
-        thousands_separator:  ' '
-
-#### Utilisation
+    $twig->getExtension('Twig_Extension_Core')->setNumberFormat(2, ',', ' ');
 
 Puis utiliser le filtre `number_format` dans les templates Twig :
 
@@ -478,23 +493,23 @@ Puis utiliser le filtre `number_format` dans les templates Twig :
 
 ### Formatage de dates
 
-Il est possible de manipuler le format d'affichage de dates (objet de type `DateTime`) avec le filtre `date()`.
+Il est possible de manipuler le format d'affichage de dates (objet de type DateTime) avec le filtre `date()`.
 
-Afficher la date stockée dans la variable `myDate` au format `JJ/MM/AAAA` :
+Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA` :
 
-    {{ myDate|date("d/m/Y") }}
+    {{ create_date|date("d/m/Y") }}
 
-Afficher la date stockée dans la variable `myDate` au format `MM/JJ/AAAA` :
+Afficher la date stockée dans la variable `create_date` au format `MM/JJ/AAAA` :
 
-    {{ myDate|date("m/d/Y") }}
+    {{ create_date|date("m/d/Y") }}
 
-Afficher la date stockée dans la variable `myDate` au format `JJ/MM/AAAA HH:MM:SS` :
+Afficher la date stockée dans la variable `create_date` au format `JJ/MM/AAAA HH:MM:SS` :
 
-    {{ myDate|date("d/m/Y H:i:s") }}
+    {{ create_date|date("d/m/Y H:i:s") }}
 
 ### Formatage de durée
 
-Il est possible de manipuler le format d'affichage de durées (objet de type `DateInterval`) avec le filtre `date()`.
+Il est possible de manipuler le format d'affichage de durées (objet de type DateInterval) avec le filtre `date()`.
 
 Afficher la durée stockée dans la variable `connexion_duration` au format `J` (en nombre de jours):
 
@@ -516,27 +531,29 @@ Attention : cette fonctionnalité nécessite l'installation et l'activation du m
 
 #### Installation de l'extension
 
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
+Dans le terminal, dans le dossier racine du projet :
 
-#### Sans Symfony
+    composer require twig/extensions
 
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
+#### Activation de l'extension
 
-#### Avec Symfony
+Juste après la partie `new Twig_Environment($loader)`, définir le fuseau horaire `Europe/Paris`, la locale `fr-FR` puis charger l'extension `Twig_Extensions_Extension_Intl` :
 
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
+    $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+
+    // configuration de la locale `fr-FR`
+    // @warning requiert l'extension php-intl
+    Locale::setDefault('fr-FR');
+
+    // chargement de l'extension `Twig_Extensions_Extension_Intl` qui permet de localiser l'affichage des dates
+    // @warning requiert l'extension php-intl
+    $twig->addExtension(new Twig_Extensions_Extension_Intl());
 
 #### Utilisation de l'extension
 
 Dans un template Twig, utiliser le filtre `localizeddate()` :
 
-    {{ myDate|localizeddate('full', 'full') }}
+    {{ create_date|localizeddate('full', 'full') }}
 
 Le premier paramètre permet de formater la date, le deuxième permet de formater l'heure.
 
@@ -577,32 +594,32 @@ Pour en savoir plus, voir : [Creating and Using Templates (Symfony 3.4 Docs)](ht
 
 ## Doc
 
-- [Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/)
+- [Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/)
 
 ### Back-end
 
-- [Installation - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/installation.html)
-- [Twig for Developers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/api.html)
+- [Installation - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/installation.html)
+- [Twig for Developers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/api.html)
 
 ### Front-end
 
-- [Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/templates.html)
-- [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/tags/if.html)
-- [Tests - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/tests/index.html)
-- [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/tags/for.html)
-- [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/index.html)
-- [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/escape.html)
-- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/tags/verbatim.html)
+- [Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/templates.html)
+- [if - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/if.html)
+- [Tests - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tests/index.html)
+- [for - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/for.html)
+- [Filters - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/index.html)
+- [escape - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/escape.html)
+- [verbatim - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/tags/verbatim.html)
 
 ### Formatage de nombres
 
-- [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/number_format.html)
+- [number_format - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/number_format.html)
 - [PHP: number_format - Manual](http://php.net/manual/en/function.number-format.php)
 
 ### Formatage de dates
 
-- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/filters/date.html)
-- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/3.x/functions/date.html)
+- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/filters/date.html)
+- [date - Documentation - Twig - The flexible, fast, and secure PHP template engine](https://twig.symfony.com/doc/2.x/functions/date.html)
 - [PHP: date - Manual](http://php.net/manual/en/function.date.php)
 - [PHP: DateInterval::format - Manual](https://secure.php.net/DateInterval.format)
 
