@@ -15,17 +15,17 @@ TNS : travailler non salarié
 
 ## EIRL, EURL, SA, SAS, SARL
 
-EIRL : peut fonctionner comme une AE
-EURL : régime réel, la fiscalité est calculé n-1
-SARL : format classique d'entreprise, projet à plus long terme, être gérant majoritaire (TNS) ou minoritaire (régime général)
-SAS : en dessous d'un certain montant de capital, ne représente pas d'intérêt
-SA : il faut avoir des salariés, des actionnaires, du capital, etc
+- EIRL : peut fonctionner comme un auto-entrepreneur (AE)
+- EURL : régime réel, la fiscalité est calculée n-1
+- SARL : format classique d'entreprise, projet à plus long terme, être gérant majoritaire (TNS) ou minoritaire (régime général)
+- SAS : en dessous d'un certain montant de capital, ne représente pas d'intérêt
+- SA : il faut avoir des salariés, des actionnaires, du capital, etc
 
-## Auto-entrepreneur
+## Auto-entrepreneur (AE)
 
-- le gros avantage est la baisse charges
+- le gros avantage est le niveau des charges très basses
 - obligation de prendre une prévoyance pour s'assurer un revenu en cas d'incapacité
-- non assujetti à la TVA (on est 20% moins cher que ceux qui sont assujetti, mais on paie la TVA sur les produits achetés)
+- non assujetti à la TVA (on est 20 % moins cher que ceux qui sont assujetti, mais on paie la TVA sur les produits achetés)
 - pour les marchés publics, parfois les AE sont refusés
 - bien pour les cas ou l'entrepreneur est salarié à côté et que ses revenus en AE ne dépassent pas son salaire
 - on est exonéré de la cotisation foncière des entreprises (CFE)
@@ -41,6 +41,7 @@ SA : il faut avoir des salariés, des actionnaires, du capital, etc
 - on peut négocier des réductions avec les entrepreneurs de la société
 - pour les marchés publics, c'est la société qui répond au marché
 - il y a le coût de la société en plus des charges sociales
+- en cas d'achat de matériel, il faut l'accord de l'entreprise de portage et c'est l'entreprise qui est propriétaire du matériel
 
 ## Coopérative aide à l'emploi (CAE)
 
@@ -78,4 +79,5 @@ On est assujetti à la TVA mais on récupère la TVA sur tous les achats.
 - transports (frais kilométriques)
 - coworking
 - ligne téléphonique
+- achat de matériel
 
