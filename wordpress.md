@@ -186,7 +186,7 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 
 - [Jetpack](https://wordpress.org/plugins/jetpack/)
 
-#### Backups / Migration
+#### Backups / Migration / Mise en prod / Déploiement
 
 - [All-in-One WP Migration](https://wordpress.org/plugins/all-in-one-wp-migration/)
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus/)
