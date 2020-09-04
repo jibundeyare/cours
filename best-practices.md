@@ -26,3 +26,13 @@ Tout est ici :
 - [PHP: The Right Way](http://www.phptherightway.com/)
 - [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 
+## Programmation orientée objet (POO)
+
+Refactorisation de code :
+
+- [Refactoring: clean your code](https://refactoring.guru/refactoring)
+
+Design patterns avec exemple de code :
+
+- [Design Patterns](https://refactoring.guru/design-patterns)
+

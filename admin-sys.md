@@ -162,4 +162,5 @@ Voir [phpmyadmin.md](phpmyadmin.md).
 ## Doc
 
 - [Chmod Calculator](https://chmod-calculator.com/)
+- [101 commandes indispensables sous linux – Buzut](https://buzut.net/101-commandes-indispensables-sous-linux/?fbclid=IwAR29L50ovusl2kC4gFs-ixJhq5ojQEH6jKWBNWNBCS285J4VnLjPSRORJ7w)
 

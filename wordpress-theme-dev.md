@@ -1,5 +1,27 @@
 # Wordpress - Développement de thème
 
+## Minimum requis
+
+Pour créer un thème custom pour Wordpress, il faut au minimum les fichiers suivants :
+
+- `style.css` qui contient les méta données du thème (nom, auteur, url, etc)
+- `index.php` qui affiche les pages du site
+- `screenshot.png` qui contient une capture d'écran du thème (au format 1200px * 900px)
+
+## Au-delà du minimum
+
+Si on veut un thème custom plus évolué, on peut commencer par rajouter les fichiers suivants :
+
+- `functions.php` qui définit les paramètres du thème
+- `header.php` qui contient l'entête du site (avec la navbar)
+- `header.php` qui contient le pied de page du site
+- `page.php` qui affiche le contenu de type `page`
+- `single.php` qui affiche le contenu de type `post`
+- `404.php` qui affiche la page d'erreur 404
+- `search.php` qui affiche le résultat d'une recherche
+
+Voir la page [Organizing Theme Files | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/basics/organizing-theme-files/) pour en savoir plus.
+
 ## Page d'accueil personnalisée
 
 Par défaut, la page d'accueil de Wordpress utilise la liste des articles.
@@ -16,11 +38,11 @@ Cela nous permettra de personnaliser l'affichage.
 
 Pour faire cela, il faut tout d'abord :
 
-- créer une page nommée Accueil
-- créer une autre page nommée News
+- créer une page nommée « Accueil »
+- créer une autre page nommée « News »
 - créer un fichier nommé `front-page.php`
 - créer un fichier nommé `home.php`
-- configurer la page d'accueil et la page des articles de Wordpress
+- configurer la page d'accueil et la page des articles de Wordpress dans les paramètres
 
 La page News affichera une liste de news.
 En réalité, ces news sont de simples articles.
@@ -67,7 +89,7 @@ Voici un contenu possible du fichier `home.php` :
 
     get_footer();
 
-Maintenant, il faut changer les réglages de Wordpress :
+Maintenant, il faut changer les paramètres de Wordpress :
 
 - aller dans la page **Admin > Réglages > Lecture**
 - choisir l'option **Une page statique**
@@ -184,5 +206,20 @@ Afficher une page (`page`) correspondant à un slug donné :
 
 ## Doc
 
-- [Page Templates | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/template-files-section/page-template-files/)
+- [Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/)
+- [Theme Development « WordPress Codex](https://codex.wordpress.org/Theme_Development)
+- [WordPress theme - The Anatomy, an Infographic - Yoast](https://yoast.com/wordpress-theme-anatomy/)
+- [Template Hierarchy | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+- [WordPress template hierarchy](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
+- [Including CSS & JavaScript | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/basics/including-css-javascript/)
+- [JavaScript Best Practices | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/advanced-topics/javascript-best-practices/)
+- [The Loop in Action « WordPress Codex](https://codex.wordpress.org/The_Loop_in_Action)
+- [Class Reference/WP Query « WordPress Codex](https://codex.wordpress.org/Class_Reference/WP_Query)
+- [Conditional Tags « WordPress Codex](https://codex.wordpress.org/Conditional_Tags)
+- [Shortcode API « WordPress Codex](https://codex.wordpress.org/Shortcode_API)
+- [Function Reference/get the tag list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_tag_list)
+- [Function Reference/get the category list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_category_list)
+- [Post Types « WordPress Codex](https://codex.wordpress.org/Post_Types)
+- [Custom Fields « WordPress Codex](https://codex.wordpress.org/Custom_Fields)
+
 

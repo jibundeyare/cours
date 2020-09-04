@@ -11,3 +11,4 @@ Le job board de la GEN : [Diversifiezvostalents.com](https://diversifiezvostalen
 
 [Honeypot | Europe's Developer-Focused Job Platform](https://www.honeypot.io/en/)
 
+[Recherche d'emploi Glassdoor | Trouvez le job de vos rêves](https://www.glassdoor.fr/index.htm)

@@ -410,17 +410,3 @@ Les checklists permettent de vérifier que tout a bien été fait dans les règl
 
 #### Développeur
 
-- [WordPress theme - The Anatomy, an Infographic - Yoast](https://yoast.com/wordpress-theme-anatomy/)
-- [Template_Hierarchy.png (PNG Image, 1453 × 1443 pixels) - Scaled (52%)](https://codex.wordpress.org/images/1/18/Template_Hierarchy.png)
-- [Theme Development « WordPress Codex](https://codex.wordpress.org/Theme_Development)
-- [Including CSS & JavaScript | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/basics/including-css-javascript/)
-- [JavaScript Best Practices | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/advanced-topics/javascript-best-practices/)
-- [The Loop in Action « WordPress Codex](https://codex.wordpress.org/The_Loop_in_Action)
-- [Class Reference/WP Query « WordPress Codex](https://codex.wordpress.org/Class_Reference/WP_Query)
-- [Conditional Tags « WordPress Codex](https://codex.wordpress.org/Conditional_Tags)
-- [Shortcode API « WordPress Codex](https://codex.wordpress.org/Shortcode_API)
-- [Function Reference/get the tag list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_tag_list)
-- [Function Reference/get the category list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_category_list)
-- [Post Types « WordPress Codex](https://codex.wordpress.org/Post_Types)
-- [Custom Fields « WordPress Codex](https://codex.wordpress.org/Custom_Fields)
-
