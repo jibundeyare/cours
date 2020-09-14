@@ -265,6 +265,17 @@ Les formulaires sont utilisés pour permettre aux visiteurs de contacter le prop
 - [MailChimp for WordPress](https://wordpress.org/plugins/mailchimp-for-wp/)
 - [MailPoet Newsletters (New)](https://wordpress.org/plugins/mailpoet/)
 
+- Un plugin pour tester la fonction wp_mail() de WP  
+  [Check Email – WordPress plugin | WordPress.org](https://wordpress.org/plugins/check-email/)
+- Idem mais avec un serveur SMTP en plus  
+  [How to Fix the WordPress Not Sending Emails Issue](https://kinsta.com/knowledgebase/wordpress-not-sending-emails/)
+- Un script PHP pour tester la fonction wp_mail() de WP  
+  [wp_mail - Troubleshoot email issues in WordPress with this simple script](https://butlerblog.com/2012/09/23/testing-the-wp_mail-function/)
+- Idem mais avec un serveur SMTP en plus  
+  [Testing the wp_mail Function – how to do that? | WordPress.org](https://wordpress.org/support/topic/testing-the-wp_mail-function-how-to-do-that/)
+- Une méthode pour faire des tests unitaires d'envoi de mail avec PHPUnit  
+  [How To Test The Emails WordPress Sends](https://torquemag.io/2018/02/test-emails-wordpress-sends/)
+
 #### Maintenance
 
 - [WP Maintenance Mode](https://wordpress.org/plugins/wp-maintenance-mode/)
