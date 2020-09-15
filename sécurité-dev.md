@@ -120,11 +120,25 @@ La base de données de vulnérabilité de Snyke recense des failles pour les lan
 
 ## Logs Apache, logs de Symfony
 
-@todo chemin des logs
+Les logs d'Apache se trouvent dans le dossier `/var/log/apache2`.
+On y trouve des logs de connexion `access.log` et des logs d'erreur `error.log`.
+
+Les logs de Symfony se trouvent dans le dossier `[dossier-app]/var/log`.
+On y trouve des logs en fonction de l'environnement d'exécution : `dev.log`, `test.log` ou encore `prod.log`.
 
 ## Enregistrement de l'adresse IP
 
-@todo bannir les adresses ip qui répètes de faux mots de passe
+Certains outils permettent de « blacklister » (bannir) temporairement des utilisateurs qui ont essayé plusieurs mot de passe erronés.
+Ces outils sont parfaits pour se prémunir d'attaques de type « brute force ».
+
+En admin sys, l'outil le plus connu est `fail2ban`.
+
+Voici des outils pour Symfony :
+
+- [GitHub - mariusbalcytis/gentle-force-bundle: Symfony bundle for brute-force, error and request rate limiting](https://github.com/mariusbalcytis/gentle-force-bundle)
+- [GitHub - anyx/LoginGateBundle](https://github.com/anyx/LoginGateBundle)
+
+La librairie suivante (sur laquelle est basée `mariusbalcytis/gentle-force-bundle`) propose une liste d'autres outils en PHP du même type : [GitHub - mariusbalcytis/gentle-force: Brute-force, error and request rate limiting](https://github.com/mariusbalcytis/gentle-force).
 
 ## Outils d'audit en mode whitebox
 
@@ -133,6 +147,30 @@ La base de données de vulnérabilité de Snyke recense des failles pour les lan
 - [Symfony Security Monitoring](https://security.symfony.com/)
 - [sensiolabs/security-checker: PHP frontend for security.symfony.com](https://github.com/sensiolabs/security-checker)
 - [FloeDesignTechnologies/phpcs-security-audit: phpcs-security-audit is a set of PHP_CodeSniffer rules that finds vulnerabilities and weaknesses related to security in PHP code](https://github.com/FloeDesignTechnologies/phpcs-security-audit/)
+
+Exemple de sortie de `symfony security:check` :
+
+    $ symfony security:check
+
+    Version 4.15.0 is available. Do you want to update now (execution will continue after whatever you decide) ? [Y/n]: n
+    OK, I'll ask you again tomorrow.
+    You can upgrade manually at any time using the `self:update` command
+
+
+    Symfony Security Check Report
+    =============================
+
+    1 package has known vulnerabilities.
+
+    symfony/http-kernel (v4.4.10)
+    -----------------------------
+
+    * [CVE-2020-15094][]: Prevent RCE when calling untrusted remote with CachingHttpClient
+
+    [CVE-2020-15094]: https://symfony.com/cve-2020-15094
+
+    Note that this checker can only detect vulnerabilities that are referenced in the security advisories database.
+    Execute this command regularly to check the newly discovered vulnerabilities.
 
 ### Wordpress
 
@@ -287,7 +325,7 @@ Exemple d'utilisation de `npm doctor` :
 
 - [Scanner](https://scanner.secapps.com/)
 
-### WPScan (plugin Wordpress open source)
+### WPScan pour Wordpress
 
 - [WPScan a WordPress Vulnerability Scanner](https://wpscan.org/)
 
