@@ -14,6 +14,18 @@ MariaDB est officiellement le successeur open source et libre de MySQL (acquis p
 MariaDB a été créé par les principaux développeur de MySQL.
 MariaDB remplace MySQL dans plusieurs distibutions Linux.
 
+## Modélisation
+
+Pour modéliser votre base de données (c-à-d dessiner son schéma), il existe bon nombre d'outils payants ou gratuits.
+
+Voici quelques outils gratuits :
+
+- [phpMyAdmin](https://www.phpmyadmin.net/) en mode « designer »
+- [MySQL :: MySQL Workbench](https://www.mysql.com/products/workbench/)
+- [GitHub - ondras/wwwsqldesigner: WWW SQL Designer, your online SQL diagramming tool](https://github.com/ondras/wwwsqldesigner), [WWW SQL Designer](https://ondras.zarovi.cz/sql/demo/)
+
+Personnellement, je vous recommande MySQL Workbench.
+
 ## Nommage des objets (base de données, tables, colonnes, etc)
 
 Quelques règles à respecter :
@@ -257,21 +269,15 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
     FROM `user`
     WHERE email = 'foo@example.com';
 
-## Générateurs de données de test
+## Doc
 
-- [Mockaroo - Random Data Generator and API Mocking Tool | JSON / CSV / SQL / Excel](https://mockaroo.com/)
-- [generatedata.com](http://www.generatedata.com/)
-- [Dummy data for MYSQL database](http://filldb.info/)
-
-## Vidéos
+### Vidéos
 
 - [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858) : Cette vidéo montre comment créer une table de jointure pour les relations de type « many to many » avec phpmyadmin.
 - [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
 - [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère pour les relations de type « many to one » ou « one to many » avec PhpMyAdmin.
 - [phpmyadmin - création de bdd on Vimeo](https://vimeo.com/309776733) : Cette vidéo montre comment créer une base de données avec PhpMyAdmin.
 - [phpmyadmin - suppression de bdd on Vimeo](https://vimeo.com/309777482) : Cette vidéo montre comment supprimer une base de données avec PhpMyAdmin.
-
-## Doc
 
 ### Généralités
 
