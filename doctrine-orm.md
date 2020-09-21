@@ -6,6 +6,7 @@ Cela permet de faciliter l'utilisation d'une BDD quand on fait de la POO.
 ## Entités
 
 Une entité est une classe qui représente un objet qui sera stocké en BDD.
+On dit que les entités sont notre modèle de données.
 
 ### Exemple d'entité
 
