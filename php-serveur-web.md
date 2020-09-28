@@ -7,7 +7,7 @@ Il est utile pour pouvoir développer rapidement sans devoir configurer Apache e
 
 Se déplacer dans le dossier du projet :
 
-    cd www/my_project
+    cd ~/projects/my_project
 
 Lancer le serveur web :
 

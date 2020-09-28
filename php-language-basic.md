@@ -216,7 +216,17 @@ ou équivalent :
 
 ## Doc
 
-- [PHP: Hypertext Preprocessor](https://secure.php.net/)
+### Généralités
+
+- [PHP: Hypertext Preprocessor](http://php.net/)
+- [PHP: Options - Manual](http://php.net/manual/en/features.commandline.options.php)
+- [SitePoint – Learn HTML, CSS, JavaScript, PHP, Ruby & Responsive Design](https://www.sitepoint.com/)
+
+### Best practices
+
+- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
+- [PHP: The Right Way](http://www.phptherightway.com/)
+- [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
 
 ### Code style
 
@@ -245,9 +255,8 @@ ou équivalent :
 
 - [PHP Sadness](http://phpsadness.com/)
 
-### Best practices
+### Sécurité
 
-- [PHP-FIG — PHP Framework Interop Group - PHP-FIG](https://www.php-fig.org/)
-- [PHP: The Right Way](http://www.phptherightway.com/)
-- [PHP Best Practices: a short, practical guide for common and confusing PHP tasks](https://phpbestpractices.org/)
+- [OWASP](https://www.owasp.org/index.php/Main_Page)
+- [Category:PHP - OWASP](https://www.owasp.org/index.php/Category:PHP#tab=Main)
 

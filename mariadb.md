@@ -26,6 +26,18 @@ Voici quelques outils gratuits :
 
 Personnellement, je vous recommande MySQL Workbench.
 
+## Concepts importants
+
+### Les index
+
+Dans une base de données, un index permet de retrouver rapidement des données.
+L'utilisation d'un index simplifie et accélère les opérations de recherche, de tri, de jointure ou d'agrégation.
+
+- contrainte d'unicité
+- clé primaire
+- clé étrangère
+- contrainte d'intégrité
+
 ## Nommage des objets (base de données, tables, colonnes, etc)
 
 Quelques règles à respecter :

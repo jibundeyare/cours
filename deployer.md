@@ -12,7 +12,7 @@ Si vous voulez déployer une version antérieure ou déployer un autre framework
 
 - un projet dans un repository git accessible via internet (Github, Framagit, Bitbucket, etc)
 - une config pour l'environnement de prod (accès à la BDD, accès à un SMTP, etc)
-- la commande `dep` (c-à-d deployer)
+- la commande `dep` (c-à-d Deployer)
 - une connexion SSH avec authentification par clé publique
 - PHP (7.1+ fortement recommandé) sur votre serveur
 - un `composer` installé globalement sur le serveur
@@ -21,7 +21,7 @@ Si vous voulez déployer une version antérieure ou déployer un autre framework
 - un compte root pour créer un pool php-fpm et un vhost
 - un compte utilisateur qui est sudoer pour redémarrer des services (optionnel)
 
-## Installation de la commande `dep` (c-à-d deployer)
+## Installation de la commande `dep` (c-à-d Deployer)
 
 Suivez les instructions de la documentation officielle :
 

@@ -145,6 +145,5 @@ Exemple : `sudo a2enconf php7.0-fpm`
 - [HowTo: Create CSR using OpenSSL Without Prompt (Non-Interactive) - ShellHacks](https://www.shellhacks.com/create-csr-openssl-without-prompt-non-interactive/)
 - [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 - [Certificat SSL Let’s Encrypt gratuit avec votre hébergement - OVH](https://www.ovh.com/fr/hebergement-web/ssl_mutualise.xml)
-- [Free TLS/SSL certificates with Let's Encrypt and Gandi - Nom de domaine et hébergement cloud - Gandi.net](https://v4.gandi.net/news/en/2016-01-12/6677-free_tlsssl_certificates_with_lets_encrypt_and_gandi/)
 - [How To Secure Apache with Let's Encrypt on Ubuntu 16.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04)
 

@@ -510,9 +510,16 @@ Si l'on veut que la variable `quantity` de l'entité `Foo` soit initialisée ave
 
 ## Entity Manager et Repository
 
-Le composant Entity Manager permet d'enregistrer des entités dans la BDD.
 
-Le composant Repository permet de récupérer des entités enregistrées dans la BDD.
+Le composant Entity Manager s'occupe de toutes les opérations en écriture :
+
+- create
+- update
+- delete
+
+Le composant Repository s'occupe de toutes les opérations en lecture :
+
+- read
 
 ### Récupérer une ou des entités enregistrées
 
