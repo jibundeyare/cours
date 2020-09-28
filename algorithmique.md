@@ -77,6 +77,22 @@ De même, il est possible de convertir de int en float, arrondir et convertir de
 
 En PHP, quand on affiche un int avec l'instruction `echo`, on convertit implicitement l'int en string.
 
+## Les opérateurs
+
+Les opérateurs permettent de réaliser des actions sur des variables et des données.
+
+- `=` : affectation
+- `==` : égalité
+- `>` : plus grand que
+- `<` : plus petit que
+- `>=` : plus grand ou égal à
+- `<=` : plus petit ou égal à
+- `!=` : différent de
+- `===` : identité (type de données identique et valeur identique)
+- `!==` : non identité (type de données différent ou valeur différente)
+- `&&` : « et » logique
+- `||` : « ou » logique
+
 ## Structures de contrôle
 
 Les structures de contrôle sont le squelette d'un algorithme.

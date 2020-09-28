@@ -47,13 +47,34 @@ Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()`
 - `&&` : « et » logique
 - `||` : « ou » logique
 
+## Affectation
+
+Une affectation est comme une affirmation.
+On affirme que telle variable va contenir telle valeur.
+
+Exemple d'affectation :
+
+    $foo = 123;
+
+## Conditions
+
+Une condition est comme une question.
+On demande si telle variable contient telle valeur.
+
+Exemple de condition :
+
+    // comparaison d'égalité entre la variable $foo et la valeur 123
+    if ($foo == 123) {
+        echo 'foo contient la valeur 123';
+    }
+
 ## Fonctions
 
 Une fonction doit d'abord être définie.
 Quand une fonction a été définie, on peut l'appeler (c-à-d l'utiliser).
 
 Elle peut prendre un paramètre, plusieurs paramètres ou aucun paramètre.
-Elle peut renvoyer une valeur ou ne n'en renvoyer aucune.
+Elle peut renvoyer une valeur ou n'en renvoyer aucune.
 
 Exemple de définition d'une fonction qui prend deux paramètres et renvoit une valeur :
 
