@@ -58,7 +58,7 @@ La commande `npx` permet de lancer des exécutables sans devoir les installer de
 Évitez donc de faire des `npm install -g package_name` et préférez une installation locale avec `npm install package_name` puis son exécution avec `npx package_command`.
 
 Attention toutefoi, car `npx` installe automatiquement les packages qu'il ne trouve pas.
-Personnellement je n'aime pas ça.
+Personnellement je n'aime pas ça, à cause de problèmes de sécurité assez évidents.
 Heureusement, l'option `npx --no-install` permet d'empêcher ce comportement par défaut.
 
 Astuce : j'ai rajouté `alias npx='npx --no-install'` dans mon fichier `~/.bashrc` pour ne pas avoir à taper `--no-install` à chaque fois.
