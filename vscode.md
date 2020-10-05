@@ -77,6 +77,17 @@ Voici quelques plugins recommandés pour faire du développement web en JS, PHP 
 
 Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trouver avec exactitude.
 
+## Activer la coloration syntaxique du HTML dans les fichiers Twig
+
+1. File
+2. Preferences
+3. Settings
+4. taper `emmet.includeLanguages` dans la barre de recherche
+5. Add Item
+6. taper `twig` dans le champ Key et `html` dans le champ Value
+
+Vous pouvez fermer l'onglet.
+
 ## Quelques conseils de Microsoft
 
 - [JavaScript Programming with Visual Studio Code](https://code.visualstudio.com/Docs/languages/javascript)
