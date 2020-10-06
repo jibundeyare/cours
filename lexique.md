@@ -87,6 +87,7 @@
   Dans un contexte de cryptographie, désigne un document numériquement signé
 - SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
 - Snippet : voir Code snippet
+- SQL : Structured Query Language (langage de requête structurée) ; c'est le langage qui permet de manipuler les données contenues dans une BDD ; voir aussi BDD et CRUD
 - SS2I : Voir SSII
 - SSII : Société de Services en Ingénierie Informatique ; voir aussi ICT et ESN
 - SSL : Secure Socket Layer (@todo traduction SSL); c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
