@@ -1,6 +1,12 @@
 # Administration système
 
+Ce cours d'administration système est basé sur la distribution linux Debian.
+
 Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, MySQL, PHP et PHPMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
+
+## Le guide officiel de l'admin sys
+
+[The Debian Administrator's Handbook](https://debian-handbook.info/browse/stable/index.html)
 
 ## APT
 
@@ -161,6 +167,7 @@ Voir [phpmyadmin.md](phpmyadmin.md).
 
 ## Doc
 
+- [The Debian Administrator's Handbook](https://debian-handbook.info/browse/stable/index.html)
 - [Chmod Calculator](https://chmod-calculator.com/)
 - [101 commandes indispensables sous linux – Buzut](https://buzut.net/101-commandes-indispensables-sous-linux/?fbclid=IwAR29L50ovusl2kC4gFs-ixJhq5ojQEH6jKWBNWNBCS285J4VnLjPSRORJ7w)
 
