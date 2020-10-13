@@ -7,15 +7,15 @@ Il est également possible d'écrire des scripts pour automatiser des tâches r�
 
 ## Types
 
+### Linux et MacOS
+
+Linux et MacOS sont livrés avec Bash.
+
 ### Windows
 
 Windows est livré avec `cmd.exe` et le Power Shell.
 Mais il est possible d'installer Bash sous Windows aussi, notamment en installant Git.
 Voir [git.md](git.md).
-
-### Linux et MacOS
-
-Linux et MacOS sont livrés avec Bash.
 
 ## Historique et complétion automatique
 
@@ -51,74 +51,6 @@ Avec `cmd.exe`, si votre terminal affiche vraiment des tabulation (plusieurs esp
 Mais je ne sais pas comment.
 
 ## Utilisation
-
-### Windows
-
-Se rendre dans un dossier :
-
-    cd [nom du dossier]
-
-Se rendre dans sa home :
-
-    cd %HOMEPATH%
-
-Se rendre dans le dossier de travail de Wamp Server :
-
-    cd C:\wamp64\www
-
-Se rendre directement dans le dossier `my_project` :
-
-    cd C:\wamp64\www\my_project
-
-Si le nom du chemin comporte des espaces, il faut l'entourer de guillemets.
-
-Par exemple, pour se rendre dans le dossier `C:\Users\user\my project`:
-
-    cd "C:\Users\user\my project"
-
-Changer de disque (sur Windows) :
-
-    [lettre du disque]:
-
-Par exemple, pour aller dans le disque `D:` avec Windows :
-
-    D:
-
-Afficher le chemin du dossier actuel :
-
-    cd
-
-Afficher le contenu du dossier actuel :
-
-    dir
-
-Effacer tout l'écran :
-
-    cls
-
-Créer un dossier :
-
-    mkdir [nom du dossier]
-
-Supprimer un dossier
-
-    rmdir [nom du dossier]
-
-Copier un fichier :
-
-    copy [nom de fichier source] [nom de fichier cible]
-
-Déplacer un fichier :
-
-    move [nom de fichier] [dossier cible]
-
-Renomer un fichier :
-
-    rename [nom de fichier original] [nouveau nom de fichier]
-
-Supprimer un fichier (attention : impossibilité de récupérer le fichier par après) :
-
-    del [nom de fichier]
 
 ### Linux et MacOS
 
@@ -196,6 +128,114 @@ Supprimer un fichier (attention : impossibilité de récupérer le fichier par a
 
     rm [nom de fichier]
 
+Créer un fichier vide :
+
+    touch [nom de fichier]
+
+Afficher le contenu d'un fichier :
+
+    cat [nom de fichier]
+
+Écraser le contenu d'un fichier :
+
+    echo "[texte]" > [nom de fichier]
+
+Exemple : créer un fichier nommé `hello.txt` contenant le texte `"Hello World!"`
+
+    echo "Hello World!" > hello.txt
+
+Ajouter du contenu dans un fichier :
+
+    echo "[texte]" >> [nom de fichier]
+
+Exemple : ajouter le texte `"Hello Bash!"` dans le fichier `hello.txt`
+
+    echo "Hello Bash!" >> hello.txt
+
+Afficher l'arborescence des dossiers :
+
+    tree -d -L [niveaux] [nom de dossier]
+
+Exemple : afficher l'arborescence de la racine `/` jusqu'aux sous-dossiers de 1er niveau seulement
+
+    tree -d -L 1 /
+
+Lancer une commande avec des droits d'administrateur :
+
+    sudo [commande]
+
+Exemple : afficher la liste des fichiers du dossier `/root`
+
+    sudo ls /root
+
+### Windows
+
+Se rendre dans un dossier :
+
+    cd [nom du dossier]
+
+Se rendre dans sa home :
+
+    cd %HOMEPATH%
+
+Se rendre dans le dossier de travail de Wamp Server :
+
+    cd C:\wamp64\www
+
+Se rendre directement dans le dossier `my_project` :
+
+    cd C:\wamp64\www\my_project
+
+Si le nom du chemin comporte des espaces, il faut l'entourer de guillemets.
+
+Par exemple, pour se rendre dans le dossier `C:\Users\user\my project`:
+
+    cd "C:\Users\user\my project"
+
+Changer de disque (sur Windows) :
+
+    [lettre du disque]:
+
+Par exemple, pour aller dans le disque `D:` avec Windows :
+
+    D:
+
+Afficher le chemin du dossier actuel :
+
+    cd
+
+Afficher le contenu du dossier actuel :
+
+    dir
+
+Effacer tout l'écran :
+
+    cls
+
+Créer un dossier :
+
+    mkdir [nom du dossier]
+
+Supprimer un dossier
+
+    rmdir [nom du dossier]
+
+Copier un fichier :
+
+    copy [nom de fichier source] [nom de fichier cible]
+
+Déplacer un fichier :
+
+    move [nom de fichier] [dossier cible]
+
+Renomer un fichier :
+
+    rename [nom de fichier original] [nouveau nom de fichier]
+
+Supprimer un fichier (attention : impossibilité de récupérer le fichier par après) :
+
+    del [nom de fichier]
+
 ## Fichiers cachés
 
 ### Macos et Linux
@@ -212,6 +252,12 @@ Pour en savoir plus, voir [path.md](path.md).
 
 ## Doc
 
+### Linux et MacOS
+
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Apprendre à utiliser le shell Bash - Pierre Giraud](https://www.pierre-giraud.com/shell-bash/)
+- [Terminus](http://luffah.xyz/bidules/Terminus/)
+
 ### Windows
 
 - [CMD.exe (Command Shell) - Windows CMD - SS64.com](https://ss64.com/nt/cmd.html)
@@ -219,8 +265,4 @@ Pour en savoir plus, voir [path.md](path.md).
 - [PowerShell.exe Command Line Help | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/components/console/powershell.exe-command-line-help?view=powershell-6)
 - [batch file - How do I run two commands in one line in Windows CMD? - Stack Overflow](https://stackoverflow.com/questions/8055371/how-do-i-run-two-commands-in-one-line-in-windows-cmd)
 - [windows - How to execute multiple commands in a single line - Stack Overflow](https://stackoverflow.com/questions/13719174/how-to-execute-multiple-commands-in-a-single-line)
-
-### Linux et MacOS
-
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 
