@@ -2,12 +2,12 @@
 
 ## Infos générales sur le titre pro
 
-[RNCP31114 - TP - Développeur web et web mobile - France Compétences](https://www.francecompetences.fr/recherche/rncp/31114/)
-[Arrêté du 6 avril 2018 relatif au titre professionnel de développeur web et web mobile - Légifrance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036805882)
+- [RNCP31114 - TP - Développeur web et web mobile - France Compétences](https://www.francecompetences.fr/recherche/rncp/31114/)
+- [Arrêté du 6 avril 2018 relatif au titre professionnel de développeur web et web mobile - Légifrance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036805882)
 
 ## Où se trouvent les PDF qui décrivent le titre pro ?
 
-[banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx](https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx)
+- [banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx](https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx)
 
 1. Recherche par l'intitulé d'un titre
 2. Développeur web et web mobile
