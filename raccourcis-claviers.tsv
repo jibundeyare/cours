@@ -18,19 +18,19 @@ Touches	Action	Contexte
 `CTRL S`	enregistrer	GUI
 `CTRL SHIFT S`	enregistrer sous ...	GUI
 `CTRL O`	ouvrir	GUI
-`CTRL A`	aller au début du document	GUI
+`CTRL A`	sélectionner le texte de tout le document	GUI
+`CTRL HOME`	aller au début du document	GUI
 `CTRL END`	aller à la fin du document	GUI
-`CTRL HOME`	sélectionner le texte de tout le document	GUI
-`CTRL SHIFT LEFT` (flèche)	sélectionner du texte à gauche	GUI
-`CTRL SHIFT RIGHT` (flèche)	sélectionner du texte à droite	GUI
-`CTRL SHIFT UP` (flèche)	sélectionner du texte de la ligne précédent	GUI
-`CTRL SHIFT DOWN` (flèche)	sélectionner du texte de la ligne suivante	GUI
-`SHIFT HOME`	sélectionner du texte jusqu'au début de la ligne	GUI
-`SHIFT END`	sélectionner du texte jusqu'à la fin de la ligne	GUI
-`CTRL SHIFT HOME`	sélectionner du texte jusqu'au début du document	GUI
-`CTRL SHIFT END`	sélectionner du texte jusqu'à la fin du document	GUI
-`CTRL SHIFT PAGE_UP`	sélectionner du texte jusqu'à la page précédente	GUI
-`CTRL SHIFT PAGE_DOWN`	sélectionner du texte jusqu'à la page suivante	GUI
+`CTRL SHIFT LEFT` (flèche)	sélectionner le texte à gauche	GUI
+`CTRL SHIFT RIGHT` (flèche)	sélectionner le texte à droite	GUI
+`CTRL SHIFT UP` (flèche)	sélectionner le texte de la ligne précédent	GUI
+`CTRL SHIFT DOWN` (flèche)	sélectionner le texte de la ligne suivante	GUI
+`SHIFT HOME`	sélectionner le texte jusqu'au début de la ligne	GUI
+`SHIFT END`	sélectionner le texte jusqu'à la fin de la ligne	GUI
+`CTRL SHIFT HOME`	sélectionner le texte jusqu'au début du document	GUI
+`CTRL SHIFT END`	sélectionner le texte jusqu'à la fin du document	GUI
+`CTRL SHIFT PAGE_UP`	sélectionner le texte jusqu'à la page précédente	GUI
+`CTRL SHIFT PAGE_DOWN`	sélectionner le texte jusqu'à la page suivante	GUI
 `F12`	dans un navigateur, afficher le panneau de développement	Browser
 `CTRL SHIFT DELETE`	supprimer le cache du navigateur	Browser
 `CTRL R`	recharger la page	Browser
