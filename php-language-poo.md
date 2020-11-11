@@ -103,7 +103,13 @@ Ensuite affectons leur une vitesse et un nombre de passagers puis affichons ces 
 
 ## Doc
 
-- [PHP: Hypertext Preprocessor](https://secure.php.net/)
+## PHP 8
+
+- [What's new in PHP 8 - stitcher.io](https://stitcher.io/blog/new-in-php-8)
+
+### Généralités
+
+- [PHP: Hypertext Preprocessor](http://php.net/)
 
 ### Code style
 

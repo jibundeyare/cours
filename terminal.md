@@ -257,6 +257,7 @@ Pour en savoir plus, voir [path.md](path.md).
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 - [Apprendre à utiliser le shell Bash - Pierre Giraud](https://www.pierre-giraud.com/shell-bash/)
 - [Terminus](http://luffah.xyz/bidules/Terminus/)
+- [101 commandes indispensables sous linux – Buzut](https://buzut.net/101-commandes-indispensables-sous-linux/?fbclid=IwAR29L50ovusl2kC4gFs-ixJhq5ojQEH6jKWBNWNBCS285J4VnLjPSRORJ7w)
 
 ### Windows
 

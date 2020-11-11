@@ -300,7 +300,21 @@ Pour en savoir plus, voir [hautelook/AliceBundle: A Symfony bundle to manage fix
 
 ## Doc
 
-- [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
-- [fzaninotto/Faker: Faker is a PHP library that generates fake data for you](https://github.com/fzaninotto/Faker)
 - [javiereguiluz/EasySlugger: A fast and easy to use slugger with full UTF-8 support](https://github.com/javiereguiluz/EasySlugger)
+
+### Fixtures
+
+- [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
 - [hautelook/AliceBundle: A Symfony bundle to manage fixtures with Alice and Faker.](https://github.com/hautelook/AliceBundle)
+
+### Faker
+
+**Attention : fzaninotto/Faker est officiellement non maintenu depuis le 21/10/2020.**
+
+- [fzaninotto/Faker: Faker is a PHP library that generates fake data for you](https://github.com/fzaninotto/Faker)
+- [Sunsetting PHP Faker](https://marmelab.com/blog/2020/10/21/sunsetting-faker.html?fbclid=IwAR1L086nsjvB2ObHU78ylWPEti9hW7w0HIVWKiJnmO8gaJhn4FO5MlvrGgQ)
+
+Le repo FakerPHP/Faker est le fork principal qui va prendre la relève.
+
+- [GitHub - FakerPHP/Faker: Faker is a PHP library that generates fake data for you](https://github.com/FakerPHP/Faker)
+

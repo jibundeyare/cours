@@ -330,6 +330,7 @@ En général, les boutons de partage sur les réseaux sociaux envoient des donn�
 - [Loginizer](https://wordpress.org/plugins/loginizer/)
 - [SecuPress Free — WordPress Security – WordPress plugin | WordPress.org](https://wordpress.org/plugins/secupress/)
 - [Wordfence Security – Firewall & Malware Scan](https://wordpress.org/plugins/wordfence/)
+- [Antispam Bee – The privacy first anti-spam WordPress plugin](https://antispambee.pluginkollektiv.org/)
 
 Voir l'article suivant pour se faire un avis sur le plugin WordFence :
 

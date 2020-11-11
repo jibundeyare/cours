@@ -51,6 +51,8 @@ Le rapport de stage doit être :
 
 `RCV2_DWWM_V03_03052018.pdf`, p5
 
+**Attention : lire aussi la section « Le contenu du rapport de stage » plus bas.**
+
 ## Le dossier professionnel (DP)
 
 Il est remis le jour même.

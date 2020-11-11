@@ -246,6 +246,10 @@ ou équivalent :
 
 ## Doc
 
+## PHP 8
+
+- [What's new in PHP 8 - stitcher.io](https://stitcher.io/blog/new-in-php-8)
+
 ### Généralités
 
 - [PHP: Hypertext Preprocessor](http://php.net/)

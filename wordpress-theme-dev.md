@@ -222,4 +222,7 @@ Afficher une page (`page`) correspondant à un slug donné :
 - [Post Types « WordPress Codex](https://codex.wordpress.org/Post_Types)
 - [Custom Fields « WordPress Codex](https://codex.wordpress.org/Custom_Fields)
 
+## Tutoriels
+
+- [How to Build a WordPress Theme from Scratch: the Basics - SitePoint](https://www.sitepoint.com/build-wordpress-theme-from-scratch-basics/)
 
