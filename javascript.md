@@ -103,6 +103,21 @@ Le scope fonctionne comme des vitres teintées : de l'intérieur, on voit l'ext�
 
 Exemple : de l'intérieur d'une fonction, on voit les variables déclarées dans le scope global mais dans le scope global, on ne voit pas les variables déclarées dans une fonction.
 
+### Déboggage
+
+[Stop Using console.log() In JavaScript | by Harsha Vardhan | JavaScript In Plain English | Oct, 2020 | Medium](https://medium.com/javascript-in-plain-english/stop-using-console-log-in-javascript-d29d6c24dc26)
+
+    console.log()
+    console.warn()
+    console.error()
+    console.clear()
+    console.time()
+    console.timeEnd()
+    console.table()
+    console.count()
+    console.group()
+    console.groupEnd()
+
 ## API
 
 ### `document.querySelectorAll()`

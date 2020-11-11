@@ -332,7 +332,6 @@ Pour Windows :
 
 Pour MacOS :
 
-- @todo backup macos
 
 Pour Linux :
 
@@ -384,8 +383,6 @@ Quelques ERP open source :
 ## Gestion du budget
 
 ### La négociation
-
-@todo négociation
 
 ### L'amortissement comptable
 

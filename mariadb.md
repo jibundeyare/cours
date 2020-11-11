@@ -1,6 +1,5 @@
 # Mariadb (ancinnement MySQL)
 
-@todo fusionner avec une partie de la doc phpmyadmin
 
 Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, Mariadb, PHP et PhpMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 

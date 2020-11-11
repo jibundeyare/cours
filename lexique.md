@@ -90,7 +90,7 @@
 - SQL : Structured Query Language (langage de requête structurée) ; c'est le langage qui permet de manipuler les données contenues dans une BDD ; voir aussi BDD et CRUD
 - SS2I : Voir SSII
 - SSII : Société de Services en Ingénierie Informatique ; voir aussi ICT et ESN
-- SSL : Secure Socket Layer (@todo traduction SSL); c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
+- SSL : Secure Socket Layer (Couche de sockets sécurisée) ; c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il a été supplanté par TLS ; voir aussi TLS
 - String : chaîne de caractères, type de données
 - Terminal : à la base c'est un appareil qui permet de saisir ou d'afficher des données dans un ordinateur ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Console
 - Ticket : voir Issue
