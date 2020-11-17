@@ -63,6 +63,8 @@ En fin de semaine, après le travail :
 - si c'est bon, on déplace dans la colonne « Archivé »
 - si on ne peut pas valider, on remet dans la colonne « À faire »
 
+L'outil en ligne [Trello](https://trello.com/) est très adapté pour la méthode Kanban.
+
 ## Pomodoro
 
 [Pomodoro Technique - Wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique)
@@ -90,4 +92,82 @@ Conseils :
 
 - pour ne pas se laisser distraire : mettre offline tous les services de communication
 - dédier une tranche de 25 minutes spécialement aux besoins de communication
+
+Je recommande l'outil [Tomate Mécanique – Applications sur Google Play](https://play.google.com/store/apps/details?id=net.phlam.android.clockworktomato) qui est gratuit et sans publicité.
+
+## Méthode Scrum
+
+Idée de base :
+
+> Release fast, release often.
+
+C'est-à-dire :
+
+> Livrez vite, livrez souvent.
+
+Scrum : mélée de rugby, en anglais.
+
+### Parties prenantes
+
+- scrum master : le garant de la méthode de travail
+- product owner (PO) : le représentant des intérêts du client
+  C'est aussi l'interlocuteur unique de l'équipe de dev
+  Si le PO valide, ça veut dire que le client a validé
+- developper, lead developper
+
+### Planning poker
+
+Le planning poker est utilisé pour estimer la difficulté d'un tâche.
+
+Le niveau de difficulté est représenté par une des valeurs de la suite de Fibonacci : 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, +infini, pause.
+Le niveau le plus facile est `0`, le niveau le plus dur est `+infini`. La pause veut dire qu'une pause est nécessaire pour réfléchir.
+
+Règles du jeu :
+
+1. on expose une tâche à accomplir
+2. chacun évalue le niveau de difficulté et choisit un carte qu'il pose face cachée sur la table
+3. au signale, tout le monde retourne sa carte en même temps
+4. on compare les différences
+   si les niveaux ne sont pas homogènes, chacun explique son point de vue puis on retourne au point 2
+   si les niveaux sont homogènes, on note le niveau moyen de difficulté sur la tâche
+5. on recommence pour la tâche suivante
+
+### Durée d'un cycle, itéartion ou sprint
+
+Durée recommandée :
+
+- 3 jours minimum
+- 15 jours maximum
+- 5 jours est idéal
+
+### Déroulement d'un cycle
+
+- préparation de la réunion :
+    - le product owner doit préparer des user story (création d'un product backlog)
+
+- réunion de plannification :
+    - analyse des besoins (avec des user story)
+    - découpage en sous tâche
+    - estimation de la difficulté de chaque tâche (planning poker)
+    - estimation de la durée de chaque tâche
+    - répartition des tâches (le dévelopeur qui accepte la tâche est garant de sa réalisation)
+    - décision des objectifs du cycle (on peut utiliser un outil comme trello par exemple)  
+      toutes les tâches ne doivent pas nécessairement être réalisée lors du cycle en cours  
+      on peut reporter des tâches au cycle suivant
+
+- production :
+    - réunion quotidienne (daily meeting ou daily scrum) pour faire rapidement le point  
+      la réunoin ne dure pas, elle doit juste permettre de débloquer des situations
+    - les dévelopeur font leur recherches et produsuient du code
+    - livraison quotidienne, si possible
+
+- réunion de restitution :
+    - test par le product owner de l'application
+    - validation ou non des fonctionnalités
+    - décision de ce qui est doit être reconduit lors d'un prochain cycle ou abandonné
+
+- réunion rétrospective :
+  - on fait un rapide bilan de ce qui a bien marché et ce qui n'a pas marché
+  - on vérifie l'écart entre le niveau réel de difficulté et de durée de chaque tâche avec les valeurs estimée  
+    cela doit permettre de faire de meilleurs estimations la prochaine fois
 
