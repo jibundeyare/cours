@@ -1,50 +1,8 @@
 # phpMyAdmin
 
-Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, MySQL, PHP et PHPMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
+Je propose un ensemble de scripts pour faciliter l'installation de phpMyAdmin et la gestion de base de données avec MariaDB sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
-## Install
-
-Cette méthode d'installation permet de se connecter à phpMyAdmin avec le compte `phpmyadmin`.
-
-    sudo apt -y install phpmyadmin
-    echo "GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;" | sudo mysql
-    echo "FLUSH PRIVILEGES;" | sudo mysql
-    sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-    sudo a2enconf phpmyadmin.conf
-    sudo systemctl restart apache2.service
-
-**Attention** : en prod, il est fortement **déconseillé** d'activer la connexion avec le compte `root`.
-
-## Ajouter une authentification HTTP pour améliorer la sécurité
-
-L'authentification HTTP ajoute une étape supplémentaire avant de pouvoir accéder à phpMyAdmin.
-Dès qu'une page de phpMyAdmin est demandée, un login et un mot de passe (indépendants de phpMyAdmin) sont demandés.
-
-Remplacez `user` par un nom d'utilisateur que vous aurez choisi puis lancez cette commande :
-
-    sudo htpasswd -c /etc/phpmyadmin/htpasswd user
-
-Le mot de passe que vous voudrez utiliser vous sera demandé et enregistré dans le fichier `/etc/phpmyadmin/htpasswd`.
-
-Ensuite, ces commandes `sed` vont activer l'authentification HTTP dans la configuration du vhost de phpMyAdmin :
-
-    sudo sed -i "9i\AuthType Basic" /etc/apache2/apache2.conf
-    sudo sed -i "10i\AuthName \"phpMyAdmin\"" /etc/apache2/apache2.conf
-    sudo sed -i "11i\AuthUserFile /etc/phpmyadmin/htpasswd" /etc/apache2/apache2.conf
-    sudo sed -i "12i\Require valid-user" /etc/apache2/apache2.conf
-    sudo sed -i "13i\\\\" /etc/apache2/apache2.conf
-
-Ces lignes permettent juste d'insérer le code suivant au bon endroit (à la ligne 9) dans le fichier `/etc/phpmyadmin/apache2.conf` :
-
-    AuthType Basic
-    AuthName "phpMyAdmin"
-    AuthUserFile /etc/phpmyadmin/htpasswd
-    Require valid-user
-
-Note : pour totalement blinder phpMyAdmin, il faudrait en plus activer le protocole TLS (anciennement SSL) qui crypte les communications entre un client et un serveur web.
-Avis aux amateurs d'admin sys.
-
-## Export
+## Export d'une base de données
 
 Dans chacune des sections, cocher les options suivantes.
 
