@@ -250,6 +250,15 @@ Pour être à l'aise dans le terminal, vous devez connaître la différence entr
 
 Pour en savoir plus, voir [path.md](path.md).
 
+## Terminus (le jeu)
+
+[Terminus](http://luffah.xyz/bidules/Terminus/)
+
+Arg je suis bloqué.e dans Terminus pour trouver le mot de passe de sudo, je pense qu'il y a un problème dans le jeu avec la commande grep.
+
+> Dans "PlusDeFichiersNoyau"
+> grep password *.txt
+
 ## Doc
 
 ### Linux et MacOS

@@ -10,20 +10,21 @@ Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
 ## Commencer à travailler dans une nouvelle branche
 
-On créé la nouvelle branche.
+On crée la nouvelle branche.
 
     git checkout master
     git checkout -b [nom-de-branche]
 
 On peut commencer le travail.
 
-    # todo: créer ou modifier des fichiers sources
+    # todo: créez ou modifiez des fichiers sources
     git add [nom-de-fichier]
-    # répêter `git add` autant de fois que nécessaire
+    # répêtez `git add` autant de fois que nécessaire
     git status
-    # si on a un doute, vérifier le code qui sera commité
+    # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
     git commit
+    # todo: rédigez votre message de commit
 
 ## Reprendre le travail dans une branche existante
 
@@ -31,7 +32,7 @@ Avant de reprendre le travail, il faut mettre la branche de fonctionnalité à j
 Cette action est nécessaire à chaque fois qu'un merge a eu lieu dans la branche `master`.
 
     git checkout [nom-de-branche]
-    # rebaser la branche courante sur la branche master
+    # rebasez la branche courante sur la branche master
     git rebase master
     # s'il y a des conflits, il faut :
     # - vérifier quels fichiers posent problèmes
@@ -44,16 +45,16 @@ Cette action est nécessaire à chaque fois qu'un merge a eu lieu dans la branch
     git add [nom-de-fichier]
     # todo: répêter `git add` autant de fois que nécessaire
     git rebase --continue
-    # note: chaque rebase se comporte comme un commit, mais le message de commit sont déjà remplis
+    # note: chaque rebase se comporte comme un commit, mais les messages de commit sont déjà remplis
 
 La branche est à jour.
 On peut reprendre le travail.
 
-    # todo: créer ou modifier des fichiers sources
+    # todo: créez ou modifiez des fichiers sources
     git add [nom-de-fichier]
-    # todo: répêter `git add` autant de fois que nécessaire
+    # todo: répêtez `git add` autant de fois que nécessaire
     git status
-    # si on a un doute, vérifier le code qui sera commité
+    # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
     git commit
 
@@ -66,6 +67,7 @@ On peut reprendre le travail.
     # si on a un doute, vérifier le code qui sera commité
     git diff --staged
     git commit
+    # todo: rédigez votre message de commit
 
 ## Importer le code d'une branche dans la branche master
 

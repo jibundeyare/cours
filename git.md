@@ -224,23 +224,35 @@ Cela permet de :
 
 ## Commandes à connaître
 
-- `git status` : affiche le nom de la branche courante, la synchronisation avec `origin` et l'état des fichiers
-- `git log` : affiche la liste des commits
-- `git show` : affiche les modifications enregistrées dans le dernier commit
-- `git diff` : affiche les différences entre deux commits
 - `git add` : notifie à git les fichier qu'on veut commiter, c-à-d copie les fichiers dans la zone de staging
-- `git reset` : notifie à git les fichier qu'on veut plus commiter, c-à-d supprime les fichiers de la zone de staging
-- `git commit` : enregistre les modification
-- `git clone` : duplique un repo dans le dossier courant
-- `git push` : pousse les modification du repo local dans le repo distant
-- `git pull` : rappatrie dans le repo local les modification du repo distant
-- `git checkout [nom-de-fichier]` : restaure un fichier dans son état avant modification, c-a-d annule les modifications
 - `git branch` : manipule les branches (création, suppression, liste)
+- `git checkout [nom-de-fichier]` : restaure un fichier dans son état avant modification, c-a-d annule les modifications
 - `git checkout [nom-de-branche]` : change de branche pour aller dans `[nom-de-branche]`
+- `git clone` : duplique un repo dans le dossier courant
+- `git commit` : enregistre les modification
+- `git diff` : affiche les différences entre deux commits
+- `git log` : affiche la liste des commits
 - `git merge [nom-de-branche]` : mixe le code de la branche `[nom-de-branche]` dans la branche courante
+- `git pull` : rappatrie dans le repo local les modification du repo distant
+- `git push` : pousse les modification du repo local dans le repo distant
 - `git rebase master` : couper la branche courante et la rebaser sur le dernier commit de la branche master
+- `git reset` : notifie à git les fichier qu'on veut plus commiter, c-à-d supprime les fichiers de la zone de staging
+- `git show` : affiche les modifications enregistrées dans le dernier commit
+- `git status` : affiche le nom de la branche courante, la synchronisation avec `origin` et l'état des fichiers
+- `git tag` : ajoute un tag (le plus souvent un numéro de version) à un commit
 
-@todo `git tag` ; à relier avec le versioning
+## Pourquoi il ne faut pas utiliser `git commit -m`
+
+Dans la plupart des tutos, vous verrez `git commit -m` mais ce n'est pas une bonne idée.
+
+Quand vous travaillez sur un projet réel, et surtout quand vous travaillez à plusieurs, vous avez besoin de savoir exactement ce qu'un commit apporte comme modifications.
+
+Donner seulement un titre à votre commit, dans la ligne de commande avec l'option `-m`, ne suffira pas à expliquer le détails des modifications.
+Cela va contraindre vos collaborateurs (ou vous-même) à devoir lire le code source pour comprendre ce que fait le commit.
+Alors que quelques lignes d'explications auraient suffis...
+
+Pour ajouter ces informations, vous devez laisser tomber l'option `-m` et utiliser un éditeur de code pour rédiger le message de commit.
+Cela vous permettra de donner un titre à votre commit mais aussi une description détaillée.
 
 ## Messages de commit
 
@@ -249,7 +261,7 @@ Le message de commit se compose au minimum d'un titre.
 Mais il est de bon ton de rajouter des explications supplémentaires.
 Il est très important que le message de commit explique « quoi » et « pourquoi ».
 Le « quoi » indique ce qui a été fait dans le commit.
-Le « pourquoi » indique la raison de la modification du code.
+Le « pourquoi » indique la raison des modifications.
 
 Voici un exemple de message de commit :
 
@@ -263,7 +275,7 @@ Voici un exemple de message de commit :
     [php] [html]
 
 La lettre `F` indique qu'il s'agit d'une fonctionnalité.
-Ce code indique le type tâche réalisée dans le commit.
+Ce code indique le type de tâche réalisée dans le commit.
 
 Voici des codes possibles :
 
@@ -300,25 +312,37 @@ Voici des tags possibles :
 - `[vue]`
 
 Pareil qu'avec les codes de tâches, vous pouvez inventer les vôtres.
-Soyez créatifs et cohérents.
+Soyez créatifs mais cohérents.
 
 ## Focus sur le contenu précis du message de commit
 
-@todo ajouter les liens vers les articles de blog référencés ci-dessous
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+- [How to write professional messages EFFICIENTLY?](https://driggl.com/blog/a/how-to-write-professional-commits-efficiently)
+- [Online Git Commit Message Editor | Git Praise](https://gitpraise.com/)
+- [tbaggery - A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+- [joelparkerhenderson/git_commit_template: Git commit template for better commit messages](https://github.com/joelparkerhenderson/git_commit_template)
 
-## `.gitignore`
+## Le fichier `.gitignore`
 
 Ce fichier dit à Git de ne pas tenir compte de certain fichier.
-Ou de force le prise en compte de fichiers se trouvant dans un dossier ignoré.
+Ou il force la prise en compte de fichiers se trouvant dans un dossier ignoré.
 
-Dans votre fichier `.gitignore` :
+Exemple d'un fichier `.gitignore` :
 
     /config/db.yml
     /config/mail.yml
     /cache/*
     !cache/.gitkeep
 
-@todo explication sur les slashs (chemin relatif, chemin absolu)
+Le slash `/` qui précède les chemins désigne le dossier du repo.
+Si le repo se trouve dans `~/projects/foo`, alors `/config/db.yml` désigne `~/projects/foo/config/db.yml`.
+
+Explications :
+
+- `/config/db.yml` : demande d'ignorer le fichier `db.yml` qui se trouve dans le dossier `config`
+- `/cache/*` : demande d'ignorer tous les fichiers qui se trouve dans le dossier `cache`
+- `!cache/.gitkeep` : demande de forcer la prise en compte du fichier `.gitkeep` qui se trouve dans le dossier `cache`  
+  C'est donc une demande d'exception par rapport à la règle précédente
 
 ## Utilisation
 
@@ -331,15 +355,19 @@ Pour des cas d'usage typiques, voir :
 ### Création du repo en local
 
     # créez le dossier du projet
-    # créez un fichier README.md dans le dossier du projet
-    # ouvrez un terminal
+    mkdir [dossier-du-projet]
+    # allez dans le dossier du projet
     cd [dossier-du-projet]
+    # créez un fichier `README.md` dans le dossier du projet
+    nano README.md
+    # todo: rédigez le contenu de la doc
     # initialisez le repo git
     git init
-    # ajoutez tous les fichiers dans la zone de staging
-    git add .
+    # ajoutez le fichier `README.md` dans la zone de staging
+    git add README.md
     # créez un premier commit
-    git commit -m "Création du repo"
+    git commit
+    # todo: rédigez votre message de commit
 
 ### Création du repo sur github / framagit / bitbucket
 
@@ -366,6 +394,18 @@ Puis dans le terminal :
     git remote add origin git@github.com:[login]/[nom-du-repo].git
     git push -u origin master
 
+#### Flûte ! Je me suis trompé, il fallait du HTTPS / SSH :
+
+Pas de panique, on peut changer le repo `origin` quand on veut.
+
+Pour lier le repo local à un repo distant en HTTPS
+
+    git remote set-utl origin https://github.com/[login]/[nom-du-repo].git
+
+Ou pour lier le repo local à un repo distant en SSH
+
+    git remote set-utl origin git@github.com:[login]/[nom-du-repo].git
+
 ### Enregistrer des modifications
 
 Il est important d'enregistrer des ensembles de modifications cohérents.
@@ -389,8 +429,12 @@ D'abord on ajoute les fichiers dans la zone de staging.
     # ajouter plusieurs fichiers :
     git add [nom-du-fichier1] [nom-du-fichier2] [nom-du-fichier3] [...]
 
+    # ajouter des portions de fichier en mode interactif
+    # ce mode permet d'ajouter des parties de fichier (des patches), au lieu d'ajouter le fichier entier
+    git add -p
+
     # ajouter des fichiers en mode interactif (usage avancé)
-    # ce mode permet notamment de n'ajouter que certaines lignes d'un fichier dans la zone de commit, au lieu d'ajouter le fichier entier
+    # ce mode permet de contrôler l'ajout de fichier entier ou de partie de fichier avec une interface interactive
     git add -i
 
 On vérifie que tout ce qu'on veut commiter a bien été ajouté dans la zone de staging.
@@ -408,7 +452,9 @@ Si on se rend compte qu'on a ajouter par erreur un fichier, on peut le supprimer
 Puis on commit.
 
     # commiter en spécifiant juste un titre de commit
-    git commit -m "Ajout de la fonctionnalité foo bar baz"
+    git commit
+    # rédiger votre message de commit
+    # exemple : Ajout de la fonctionnalité foo bar baz
 
     # ou commiter en spécifiant un titre de commit et une description détaillée
     git commit
