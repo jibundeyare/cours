@@ -22,6 +22,15 @@ Si on veut un thème custom plus évolué, on peut commencer par rajouter les fi
 
 Voir la page [Organizing Theme Files | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/basics/organizing-theme-files/) pour en savoir plus.
 
+## Déboggage
+
+À placer dans le fichier `wp-config.php` :
+
+    @ini_set( 'display_errors', 'On' );
+    define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );   // 5.2 and later
+    define( 'WP_DEBUG', true );
+    define( 'WP_DEBUG_DISPLAY', true );
+
 ## Page d'accueil personnalisée
 
 Par défaut, la page d'accueil de Wordpress utilise la liste des articles.
