@@ -151,7 +151,7 @@ Pour des organisations ayant peu de moyens, des machines reconditionnées ou de 
 - [AfBshop.fr | AfB Shop - PC/PC portables d'occasion reconditionnés](https://www.afbshop.fr/)
 - [Matériel informatique, PC portables reconditionnés Ecodair](https://www.ordinateur-occasion.com/)
 
-### Matériel portable ou immobile ?
+### Matériel portable ou fixe ?
 
 Le choix de la mobilité se fait principalement en fonction du besoin technique et du métier.
 Si une puissance de calcul phénoménale est nécessaire, il faudra une tour.
