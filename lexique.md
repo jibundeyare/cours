@@ -24,6 +24,7 @@
   Ce sont toutes les opérations possibles sur une donnée stockée en BDD
 - CSS : Cascading Style Sheet (feuille de style en cascade)
 - CTO : Chief Technology Officer (directeur technique)
+- Daemon : démon ; c'est un programme qui tourne en tâche de fond, en attendant de traiter des requêtes (exemple : serveur web, serveur de mail, serveur ssh, etc)
 - Database : BDD
 - DAW : Digital Audio Workstation (Station de travail Audio Numérique)
 - DB : Database
