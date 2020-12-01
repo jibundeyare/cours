@@ -28,10 +28,12 @@
 - Database : BDD
 - DAW : Digital Audio Workstation (Station de travail Audio Numérique)
 - DB : Database
-- Design Pattern : motif de conception ; c'est la façon de structurer du code ; on peut parler d'architecture logicielle  
+- Design Pattern : motif de conception ; c'est la façon de structurer du code ; on peut parler d'architecture logicielle
 - DOM : Document Object Model ; représentation en mémoire d'un document HTML ; c'est le code HTML tel que interprêté par le navigateur web
-- DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures  
+- DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures
 - DSI : Directeur du Système d'Information ; Direction du Système d'Information
+- EOF : End Of File (fin du fichier) ; c'est une constante qui est utilisée pour indiquer que la fin du fichier a été atteinte
+- EOL : End Of Line (fin de la ligne) ; c'est une constante qui est utilisée pour indiquer que la fin d'une ligne a été atteinte
 - ERP : Enterprise Ressource Planning (Planification des ressources de l'entreprise) ; c'est une application qui permet de gérer les ressources humaines, les relations fournisseurs, les relations clients, la comptabilité et la finance, le stock, la vente et la distribution
 - ESN : Entreprise de Services du Numérique ; voir aussi ICT et SSSI
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
@@ -61,27 +63,28 @@
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme
 - MAC address : Media Access Control address ; c'est une adresse unique que possède toutes les cartes réseaux ; cette adresse permet d'identifier une machine
-- méthode : en POO, une méthode désigne une fonction
-- membre : en POO, un membre désigne une variable
+- Méthode : en POO, une méthode désigne une fonction
+- Membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request
 - Mobile first : d'abord les téléphones mobiles ; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
 - MVC : Model View Controller (modèle vue contrôleur)
 - NATU : Netflix Airbnb Tesla Uber ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et GAFAM
-- not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers  
+- Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers
 - OOP : Object Oriented Programming ; voir POO
-- package : un librairie ou un programme installable
-- paquet : voir package
+- Package : un librairie ou un programme installable
+- Paquet : voir package
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
 - POO : Programmation Orientée Objet
 - POP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence d'IMAP, les messages sont rappatriés du serveur vers le client puis supprimés du serveur ; voir aussi IMAP et SMTP
 - PR : Pull Request
 - Protocole de communication : c'est une « langue » commune parlée par deux machines ou programmes ; FTP, SSH ou HTTP sont des protocoles de communication
 - Repo : repository  
-  En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches  
+  En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches
 - Retex : retours d'expérience ; voir aussi feedbacks
 - RFC : Request For Comments (demande de commentaires, demande d'avis) ; série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
 - RTFM : Read The Fucking Manual (lis le putain de manuel)
+- Scalar : voir variable scalaire
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée ; voir aussi Getter
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
@@ -98,15 +101,17 @@
 - TLD : Top Level Domain (domaine de premier niveau)
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - TLS : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il supplante SSL ; voir aussi SSL
+- TTY : TeleTYpe, TeleTYpewriter (machine à écrire à distance) ; historiquement, successeur du télégraphe ; de nos jours, le TTY désigne un terminal logiciel comme `x-term` par exemple
 - URI : Uniform Resource Identifier (identifiant uniforme de ressource) ; la plupart du temps, c'est l'adresse d'une page web
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
+- Variable scalaire : c'est une variable qui ne contient qu'une seule valeur contrairement à une liste, un tableau, un dictionnaire ou un objet par exemple ; exemple : bool, float, integer, string
 - VM : Virtual Machine (machine virtuelle)
 - VPN : Virtual Private Network (réseau privé virtuel) ; c'est un système qui permet à un utilisateur d'être connecté à un réseau privé (celui d'une entreprise par exemple) comme s'il était physiquement sur place, alors qu'en réalité il y est connecté en passant par internet
 - Web browser : navigateur web (Chrome, Edge, Firefox, Internet Explorer, Lynx, Opera, Safari, etc)
 - WIP : Work In Progress (travail en cours)
-- wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
+- Wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
-- zoning : voir wireframe
+- Zoning : voir wireframe
 
 &ast; définition issue de Wikipedia
 
