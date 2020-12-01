@@ -68,6 +68,8 @@ Exemple de code en PHP :
 ## Doc
 
 - [PSR-1: Basic Coding Standard - PHP-FIG](http://www.php-fig.org/psr/psr-1/)
-- [PSR-2: Coding Style Guide - PHP-FIG](http://www.php-fig.org/psr/psr-2/)
+- <del>[PSR-2: Coding Style Guide - PHP-FIG](https://www.php-fig.org/psr/psr-2/)</del>
+- [PSR-12: Extended Coding Style - PHP-FIG](https://www.php-fig.org/psr/psr-12/)
 - [Coding Standards (Symfony Docs)](http://symfony.com/doc/current/contributing/code/standards.html)
 - [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)
+
