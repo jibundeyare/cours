@@ -6,8 +6,8 @@ Cliquez sur le lien « télécharger ».
 Puis cliquez sur le lien « WAMPSERVER 64 BITS (X64) 3.17 » (ou une autre version supérieure).
 Si un formulaire vous demande des informations (email notamment), cliquez sur le lien « passer au téléchargement direct ».
 
-Il est aussi possible de télécharger directement Wamp depuis Source Forge : [WampServer - Browse /WampServer 3/WampServer 3.0.0 at SourceForge.net](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/).
-Si vous passez par Source forge, évitez les versions beta.
+Il est aussi possible de télécharger directement Wamp depuis Source Forge : [WampServer - Browse /WampServer 3 at SourceForge.net](https://sourceforge.net/projects/wampserver/files/WampServer%203/).
+**Si vous passez par Source forge, évitez les versions beta.**
 
 ## Utilisation
 
