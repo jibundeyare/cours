@@ -14,7 +14,26 @@ Si vous voulez retrouver les anciens noms de classes, voir [twig-2.x.md](twig-2.
 
 ### Arborescence d'un projet
 
-Voir [php-application.md](php-application.md).
+Si votre document root est le sous-dossier `public` votre dossier de projet (recommandé) :
+
+    dossier-projet/
+        public/
+            index.php
+            *.php
+        template/
+            index.html.twig
+            *.html.twig
+        vendor/
+
+Si votre document root est votre dossier de projet (non recommandé) :
+
+    dossier-projet/
+        template/
+            index.html.twig
+            *.html.twig
+        vendor/
+        index.php
+        *.php
 
 ### Installation
 
@@ -44,7 +63,7 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
     // instanciation du moteur de template
     $twig = new Environment($loader);
 
-    // initialisation d'une donnée
+    // traitement des données
     $greeting = 'Hello Twig!';
 
     // affichage du rendu d'un template
@@ -513,24 +532,6 @@ Afficher la durée stockée dans la variable `connexion_duration` au format ` HH
 La localisation permet d'afficher le nom des mois et des jours en français.
 
 Attention : cette fonctionnalité nécessite l'installation et l'activation du module `php-intl`.
-
-#### Installation de l'extension
-
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
-
-#### Sans Symfony
-
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
-
-#### Avec Symfony
-
-@todo date localisation
-[php - How to render a DateTime object in a Twig template - Stack Overflow](https://stackoverflow.com/questions/8318914/how-to-render-a-datetime-object-in-a-twig-template)
-[php - How to install the Intl extension for Twig - Stack Overflow](https://stackoverflow.com/questions/25948853/how-to-install-the-intl-extension-for-twig)
 
 #### Utilisation de l'extension
 

@@ -14,7 +14,26 @@ Si vous voulez retrouver les nouveaux noms de classes, voir [twig.md](twig.md).
 
 ### Arborescence d'un projet
 
-Voir [php-application.md](php-application.md).
+Si votre document root est le sous-dossier `public` votre dossier de projet (recommandé) :
+
+    dossier-projet/
+        public/
+            index.php
+            *.php
+        template/
+            index.html.twig
+            *.html.twig
+        vendor/
+
+Si votre document root est votre dossier de projet (non recommandé) :
+
+    dossier-projet/
+        template/
+            index.html.twig
+            *.html.twig
+        vendor/
+        index.php
+        *.php
 
 ### Installation
 
@@ -41,7 +60,7 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
     // instanciation du moteur de template
     $twig = new Twig_Environment($loader);
 
-    // initialisation d'une donnée
+    // traitement des données
     $greeting = 'Hello Twig!';
 
     // affichage du rendu d'un template
