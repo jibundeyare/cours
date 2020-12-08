@@ -244,6 +244,157 @@ ou équivalent :
 
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_SPECIAL_CHARS);
 
+## Les variables super globales
+
+Les variables super globales sont appelées comme ça car elles sont accessible où que vous soyez dans votre code (dans un `if`, une fonction ou une classe ou autre).
+
+Voici les variables super globales les plus utilisées :
+
+- `$_GET`
+- `$_POST`
+- `$_SESSION`
+- `$_FILES`
+- `$_COOKIE`
+
+Toutes les variables super globales sont des tableaux à clé / index alpha-numérique.
+Vous pouvez donc utiliser la syntaxe habituelle.
+
+Quelque soit la variable, il est à chaque fois possible d'effectuer les opérations suivantes :
+
+- vérifier si le tableau contient des données avec un simple `if`
+- vérifier si une clé existe avec la fonction `isset()`
+- vérifier si une valeur associée à une clé est une vide avec la fonction `empty()`
+
+Comme on ne peut pas toujours savoir à l'avance si l'utilisateur nous envoie des données, on doit d'abord tester la présence de données avant d'essayer de les utiliser.
+Dans un contexte booléen, un tableau vide équivaut à `false` et un tableau contenant des données équivaut à `true`.
+En exploitant cette propriété, on peut utiliser un simple `if` pour voir si notre tableau contient des données :
+
+    if ($_POST) {
+        // il y a des données dans la variable $_GET
+    }
+
+Pour tester la présence d'une clé en particulier, il faut utiliser la fonction `isset()` :
+
+    if (isset($_POST['login'])) {
+        // la clé login existe
+    }
+
+Mais en général, on utilise plutôt la fonction `empty()` qui permet de tester qu'une clé existe et que la valeur associée est non vide :
+
+    if (empty($_POST['login'])) {
+        // la clé login n'exoste pas ou la valeur associé est vide
+    }
+
+### La variable `$_GET`
+
+Cette variable permet de récupérer des données envoyées par l'utilisateur via la barre d'adresse.
+
+Si vous appelez la page `foo.php` avec les paramètres suivants :
+
+[http://localhost:8000/foo.php?param1=lorem&param2=ipsum](http://localhost:8000/foo.php?param1=lorem&param2=ipsum)
+
+Alors vous pourrez récupérer les valeurs des paramètres `param1` et `param2` avec le code suivant :
+
+    $param1 = $_GET['param1'];
+    $param2 = $_GET['param2'];
+
+### La variable `$_POST`
+
+Cette variable permet aussi de récupérer les données envoyées par les utilisateurs.
+Mais cette fois-ci, les données envoyées via un formulaire.
+
+Si dans votre code HTML vous avez le formulaire suivant :
+
+    <form action="" method="post>
+        <input type="text" name="login"><br>
+        <input type="password" name="password"><br>
+        <button type="submit">ok</button>
+    </form>
+
+Alors vous pourrez récupérer les valeurs des paramètres `login` et `password` avec le code suivant :
+
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+Notez bien que c'est l'attribut `name` dans le code HTML qui détermine le nom des clés alpha-numérique côté serveur.
+Si je change `name="login"` en `name="foo"`, alors côté serveur je devrais faire `$foo = $_POST['foo'];` pour récupérer la valeur associée.
+
+## La variable `$_SESSION`
+
+On l'appelle aussi la variable de session.
+
+Cette variable permet d'associer un espace de stockage (temporaire) dédié à chaque client.
+C-à-d que PHP va stocker les données de deux clients (navigateurs web) différents dans deux différents fichiers.
+
+Si c'est le client `A` qui effectue une requête, le code `echo $_SESSION['login'];` ne donnera pas le même résultat que si c'est le client `B` qui exécute la même requête.
+
+Encore autrement dit, c'est un mécanisme qui permet à PHP de reconnaître un client et de stocker des données particulières à ce client.
+
+Dans la pratique, on s'en sert pour protéger des pages web par mot de passe et rejeter les clients non authentifiés.
+
+Pour utiliser la variable de session, il faut d'abord la démarrer, sinon `$_SESSION` reste vide :
+
+Dans le fichier `a.php`, essayez :
+
+    <?php
+    // a.php
+    if (isset($_SESSION['foo'])) {
+        echo $_SESSION['foo'];
+    } else {
+        echo "la clé 'foo' n'est pas définie";
+    }
+
+Dans le fichier `b.php`, essayez :
+
+    <?php
+    // b.php
+    session_start();
+    $_SESSION['foo'] = 123;
+
+Enfin dans le fichier `c.php`, essayez :
+
+    <?php
+    // c.php
+    session_start();
+    if (isset($_SESSION['foo'])) {
+        echo $_SESSION['foo'];
+    } else {
+        echo "la clé 'foo' n'est pas définie";
+    }
+
+## La variable `$_FILES`
+
+Cette variable permet de récupérer des fichiers envoyés par l'utilisateur au moyen d'un formulaire.
+
+Le formulaire doit avoir l'attribut `enctype="multipart/form-data"` pour que PHP puisse récupérer les données.
+Sinon le fichier ne sera pas envoyé et vous allez galérer pendant plusieurs minutes avant de comprendre et finir pas vous sentir bête.
+(Mais c'est pas grave voyons !)
+
+Si vous voulez voir des exemples (en PHP brut, ce qui n'est vraiment plus à faire) regardez ici :
+
+- [cours-php/form-input-file.php at master · jibundeyare/cours-php](https://github.com/jibundeyare/cours-php/blob/master/code/form-input-file.php)
+- [cours-php/form-input-file-multi.php at master · jibundeyare/cours-php](https://github.com/jibundeyare/cours-php/blob/master/code/form-input-file-multi.php)
+
+## La variable `$_COOKIE`
+
+Cette variable permet de stocker des données chez le client (dans le système de stockage du navigateur).
+
+Ça permet de stocker un panier de commande ou d'autres données qu'on n'a pas envie de stocker sur le serveur parce qu'elle ne nous serviront plus à rien si l'utilisateur ne revient pas.
+Mais qui peuvent être précisuese pour l'utilisateur.
+
+Il faut quand même savoir que le réglage par défaut des cookies fait que les données sont supprimées quand le navigateur est fermé.
+À moins de donner une durée de vie au cookie.
+Auquel cas, les données restent stockées jusqu'à la date limite.
+Mais l'utilisateur peut à tout moment choisir de les effacer.
+
+Pour stocker quelque chosre dans le navigateur (et échanger des données JS par exemple) :
+
+    $_COOKIE['foo'] = 'lorem ipsum';
+
+Pour lire des données stockées dans le cookie (par JS par exemple) :
+
+    $foo = $_COOKIE['foo'];
+
 ## Doc
 
 ## PHP 8
