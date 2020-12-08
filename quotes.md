@@ -28,7 +28,7 @@
 
 > "Premature optimization is the root of all evil (or at least most of it) in programming." - Donald Knuth
 
-> "L'optimisation prématurée est la source du mal (ou au moins en grande partie) en programmation." - Donald Knuth
+> "L'optimisation prématurée est la source de tous les maux (ou au moins en grande partie) en programmation." - Donald Knuth
 
 ## Product
 
@@ -36,18 +36,19 @@
 
 > "Vous n'êtes pas le client, vous êtes le produit." - Tom Johnson
 
+For a detailed story of those two quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
+
 > "If you are not paying for it, you’re not the customer; you’re the product being sold." - Andrew Lewis
 
 > "Si vous n'avez pas payé pour, vous n'êtes pas le client ; vous êtes le produit qu'on marchande." - Andrew Lewis
 
-For a detailed story of those two quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
 Pour une histoire détaillée de ces deux citations, voir [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
 
 ## Freedom
 
 > "Arguing that you don't care about the right to privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say." -  Edward Snowden
 
-> "Prétendre qu'on se fiche du droit à l'intimité parce qu'on a rien à cacher n'est pas différent de dire qu'on se fiche de la liberté d'expression parce qu'on a rien à dire." - Edward Snowden
+> "Prétendre qu'on se fiche du droit à l'intimité parce qu'on n'a rien à cacher n'est pas différent de dire qu'on se fiche de la liberté d'expression parce qu'on n'a rien à dire." - Edward Snowden
 
 ## Habitude
 
