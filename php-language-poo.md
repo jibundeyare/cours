@@ -1,7 +1,5 @@
 # PHP language poo
 
-@todo exo avec un jeu de carte
-
 ## Arborescence d'un projet
 
 Voir la section « Arborescence d'un projet » dans [php-application.md](php-application.md).

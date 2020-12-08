@@ -1,7 +1,5 @@
 # Organisation du dossier client
 
-@todo fuctionner `organisation des dossiers projet web.txt`
-
 - backups de l'existant avant modif (hyper important !)
 - créa, maquettes, wireframes (fichiers photoshop, illustrator ou autre)
 - documents clients (présentation, organigramme, etc)

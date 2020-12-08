@@ -1132,10 +1132,6 @@ Dans les formulaires, remplacez les occurences de :
 - [EntityType Field (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/forms/types/entity.html)
 - [Validation Constraints Reference (Symfony 3.4 Docs)](http://symfony.com/doc/3.4/reference/constraints.html)
 
-## CSS et Javascript
-
-@todo ajouter [Managing CSS and JavaScript (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/frontend.html)
-
 ## Data fixtures
 
 - [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html)
