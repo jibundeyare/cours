@@ -1,5 +1,7 @@
 # Mariadb (ancinnement MySQL)
 
+@todo fusionner avec une partie de la doc phpmyadmin
+@todo datetime with timezone
 
 Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, Mariadb, PHP et PhpMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
@@ -104,7 +106,8 @@ Voici quelques outils gratuits :
 - presque gratuits : du papier et un crayon !
 - [phpMyAdmin](https://www.phpmyadmin.net/) en mode « designer »
 - [MySQL :: MySQL Workbench](https://www.mysql.com/products/workbench/)
-- [GitHub - ondras/wwwsqldesigner: WWW SQL Designer, your online SQL diagramming tool](https://github.com/ondras/wwwsqldesigner), [WWW SQL Designer](https://ondras.zarovi.cz/sql/demo/)
+- [GitHub - ondras/wwwsqldesigner: WWW SQL Designer, your online SQL diagramming tool](https://github.com/ondras/wwwsqldesigner)  
+  [WWW SQL Designer](https://ondras.zarovi.cz/sql/demo/)
 
 Personnellement, je vous recommande le papier et le crayon.
 
@@ -119,6 +122,11 @@ Ces vidéos vous montrent toutes les étapes pour créer une BDD, des tables et 
 - [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
 - [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère pour les relations de type « many to one » ou « one to many » avec PhpMyAdmin.
 - [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858) : Cette vidéo montre comment créer une table de jointure pour les relations de type « many to many » avec phpmyadmin.
+
+@todo ajouter vidéo pour créer un utilisateur
+@todo ajouter vidéo pour configurer les permissions d'un utilisateur
+@todo ajouter une vidéo pour exporter des données
+@todo ajouter une vidéo pour importer des données
 
 ## Données de test (fixtures)
 
@@ -258,40 +266,61 @@ Attention : quand on supprime en SQL, il n'est pas possible de récupérer les d
 
 ## Relations cardinales entre objets
 
-Il existe trois types de relations cardinales entre objets :
+Il existe quatre types de relations cardinales entre objets :
 
+- `one to one`
 - `many to one`
 - `one to many`
 - `many to many`
+
+Pour déterminer le type de relation cardinale entre deux types d'objets (des `foo` et `bar` par exemple), vous devez vous poser la question suivante pour chaque objet :
+
+> Chaque `foo` peut avoir combien de `bar` ?
+
+> Chaque `bar` peut avoir combien de `foo` ?
+
+Dans les descriptions ci-dessous, je vais prendre l'exemple de voitures pour illustrer le propos.
+
+**Rappelez-vous que la relation cardinale dépend du point vue et essayez de ne pas vous emmêler les pinceaux.**
+
+### Relation `one to one`
+
+![Diagramme de classe Foo Bar](img/class-diagram-foo-1-1-bar.png)
+
+Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
+Et chaque objet `bar` ne peut être rattaché qu'à un seul objet `foo`.
+
+Exemple : chaque conducteur ne peut avoir qu'un seul permis de conduire.
+Et chaque permis de condiure ne peut être rattaché qu'à un seul condicteur.
 
 ### Relation `many to one`
 
 ![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
 
-Un objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
-Mais un objet `bar` peut être rattaché à plusieurs objets `foo`.
+Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
+Mais chaque objet `bar` peut être rattaché à plusieurs objets `foo`.
 
-Exemple : une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
-Mais une entreprise peut avoir plusieurs voitures de fonction.
+Exemple : chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+Mais chaque entreprise peut avoir plusieurs voitures de fonction.
 
 ### Relation `one to many`
 
 ![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
 
-C'est la même relation qu'un `one to many` mais du point de vue de l'autre objet.
+C'est la même relation que `many to one` mais du point de vue de l'autre objet.
 
-Exemple : une entreprise peut avoir plusieurs voitures de fonction.
-Et une voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+Exemple : chaque entreprise peut avoir plusieurs voitures de fonction.
+Mais chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
 
 ### Relation `many to many`
 
 ![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
 
-Un objet `foo` peut être rattaché à plusieurs objets `baz`.
-Et un objet `baz` peut être rattaché à plusieurs objets `foo`.
+Chaque objet `foo` peut être rattaché à plusieurs objets `baz`.
+Et chaque objet `baz` peut être rattaché à plusieurs objets `foo`.
 
-Exemple : une voiture de fonction peut être réservée (successivement) par plusieurs salariés.
-Et un salarié peut réserver (successivement) plusieurs voitures de fonction.
+Exemple : chaque voiture de location peut être réservée (successivement) par plusieurs clients.
+Et chaque client peut réserver (successivement) plusieurs voitures de location.
 
 ## Des requêtes SQL plus complexes
 
