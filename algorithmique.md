@@ -302,7 +302,7 @@ Le développeur peut alors « appeler » (utiliser) la fonction dans différents
 Dans un premier temps, il faut « définir » une fonction.
 Dès que cela est fait, il devient possible « d'appeler » la fonction.
 
-Utiliser une « librarie » c'est surtout utiliser des fonctions qui ont été écrites par d'autres développeurs.
+Utiliser une « librairie » c'est surtout utiliser des fonctions qui ont été écrites par d'autres développeurs.
 
 ### Renvoyer (return en anglais)
 

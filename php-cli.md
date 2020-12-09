@@ -1,5 +1,8 @@
 # PHP CLI
 
+CLI veut dire Command Line Interface, c-à-d Interface en Ligne de Commande en français.
+PHP peut être utilisé avec un serveur web mais aussi en ligne de commande.
+
 Afficher la version utilisée :
 
     php -v
@@ -14,9 +17,13 @@ Vérifier la syntaxe d'un fichier PHP :
 
     php -l [nom du fichier]
 
-Afficher une liste d'info complète :
+Afficher toutes les infos conernants PHP :
 
     php -i
+
+Et bien sûr, pour exécuter un fichier PHP :
+
+    php mon-fichier.php
 
 ## Doc
 
