@@ -55,7 +55,7 @@ Ouvrir le fichier `public/hello-twig.php` puis ajouter :
     use Twig\Loader\FilesystemLoader;
 
     // activation du système d'autoloading de Composer
-    require __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/autoload.php';
 
     // instanciation du chargeur de templates
     $loader = new FilesystemLoader(__DIR__.'/../templates');

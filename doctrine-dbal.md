@@ -32,7 +32,7 @@ Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
     use Doctrine\DBAL\DriverManager;
 
     // activation de la fonction autoloading de Composer
-    require __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/autoload.php';
 
     // création d'une variable avec une configuration par défaut
     $config = new Configuration();
@@ -83,7 +83,7 @@ Créez un fichier nommé `hello-doctrine-dbal.php` dans votre dossier `public` :
     use Symfony\Component\Yaml\Yaml;
 
     // activation de la fonction autoloading de Composer
-    require __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/autoload.php';
 
     // instanciation du chargeur de templates
     $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');

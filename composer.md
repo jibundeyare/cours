@@ -53,7 +53,7 @@ puis demander à Composer de générer un nouveau fichier d'autoloading :
 
 et enfin inclure le code d'autoloading dans notre application en y ajoutant la ligne suivante :
 
-    require __DIR__.'../vendor/autoload.php';
+    require_once __DIR__.'../vendor/autoload.php';
 
 Si les fichiers PHP du dossier `src/` sont dans le namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
 

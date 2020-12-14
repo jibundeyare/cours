@@ -77,7 +77,7 @@ Pour créer l'application, insérer le code suivant dans le fichier `public/inde
     use SilexPhpView\ViewServiceProvider;
     use Symfony\Component\Debug\Debug;
 
-    require __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/autoload.php';
 
     // Debug::enable();
 
@@ -292,7 +292,7 @@ Pour lire le fichier de config, adapter le fichier `public/index.php` afin d'obt
     use Symfony\Component\Debug\Debug;
     use Symfony\Component\Yaml\Yaml;                                    // <= modif
 
-    require __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/autoload.php';
 
     Debug::enable();
 

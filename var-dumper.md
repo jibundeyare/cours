@@ -20,7 +20,7 @@ Pour installer le paquet :
 
     <?php
 
-    require __DIR__.'/vendor/autoload.php';
+    require_once __DIR__.'/vendor/autoload.php';
 
     $myVar = 'Hello Var Dumper';
 
