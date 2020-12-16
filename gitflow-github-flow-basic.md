@@ -59,6 +59,7 @@ Voici les étapes :
     git status
 
     # todo: résolvez les conflits en modifiant les fichiers
+    # utilisez `git mergetool` si vous avez configuré un outil de fusion
 
     # répêtez `git add` autant de fois que nécessaire
     git add [nom-de-fichier]

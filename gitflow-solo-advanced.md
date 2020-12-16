@@ -42,6 +42,7 @@ Cette action est nécessaire à chaque fois qu'un merge a eu lieu dans la branch
     # voir la liste des conflits
     git status
     # todo: résoudre les conflits en modifiant les fichiers
+    # utilisez `git mergetool` si vous avez configuré un outil de fusion
     git add [nom-de-fichier]
     # todo: répêter `git add` autant de fois que nécessaire
     git rebase --continue

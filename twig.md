@@ -20,18 +20,22 @@ Si votre document root est le sous-dossier `public` votre dossier de projet (rec
         public/
             index.php
             *.php
-        template/
+        templates/
             index.html.twig
             *.html.twig
         vendor/
+        composer.json
+        composer.lock
 
 Si votre document root est votre dossier de projet (non recommandé) :
 
     dossier-projet/
-        template/
+        templates/
             index.html.twig
             *.html.twig
         vendor/
+        composer.json
+        composer.lock
         index.php
         *.php
 
