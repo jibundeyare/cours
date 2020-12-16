@@ -190,7 +190,7 @@ Pour désactiver un plugin sans passer par l'admin, vous pouvez rajouter un symb
 - [The Most Reliable WordPress Backup Plugin - BlogVault](https://blogvault.net/) (payant mais indispensable pour des sites de commerce en ligne)
 - [WP Migrate DB – WordPress Migration Made Easy – WordPress plugin | WordPress.org](https://wordpress.org/plugins/wp-migrate-db/)
 
-Personnellement, je recommande Duplicator.
+Personnellement, je recommande [Duplicator](https://wordpress.org/plugins/duplicator/).
 
 L'outil siuvant permet de remplacer les URLs dans toute la BDD sans casser la configuration :
 
