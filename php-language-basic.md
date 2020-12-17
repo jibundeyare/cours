@@ -418,6 +418,9 @@ Pour lire des données stockées dans le cookie (par JS par exemple) :
 - [PSR-1: Basic Coding Standard - PHP-FIG](https://www.php-fig.org/psr/psr-1/)
 - <del>[PSR-2: Coding Style Guide - PHP-FIG](https://www.php-fig.org/psr/psr-2/)</del>
 - [PSR-12: Extended Coding Style - PHP-FIG](https://www.php-fig.org/psr/psr-12/)
+
+### Autoloading
+
 - [PSR-0: Autoloading Standard - PHP-FIG](https://www.php-fig.org/psr/psr-0/)
 - [PSR-4: Autoloader - PHP-FIG](https://www.php-fig.org/psr/psr-4/)
 
