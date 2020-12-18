@@ -10,6 +10,8 @@
 
 - ["Study Less, Study Smart": The Best Ways to Retain More in Less Time](https://lifehacker.com/study-less-study-smart-the-best-ways-to-retain-more-1683362205)
 
+@todo traduc française
+
 ## La prise de note
 
 - mots clé
@@ -27,6 +29,8 @@
 - [Getting Things Done® - David Allen's GTD® Methodology](https://gettingthingsdone.com/)
 - [Zen To Done (ZTD): The Simple Productivity System : zen habits](https://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/)
 
+@todo traduc française ztd [https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/](https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/)
+
 ## Kanban
 
 [Kanban - Wikipedia](https://en.wikipedia.org/wiki/Kanban)
@@ -36,7 +40,7 @@ Ce n'est pas une implémentation stricte, du coup le nom est un peu usurpé.
 
 Pour utiliser cette méthode, il faut un tableau avec quatre colonnes :
 
-- À faire
+- À faire (backlog)
 - En cours
 - À valider
 - Archivé
