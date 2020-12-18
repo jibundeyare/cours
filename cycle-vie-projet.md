@@ -15,5 +15,5 @@
 - documentation (voir [doc-readme.md](doc-readme.me))
 - livrables (voir [livraison.md](livraison.md))
 - recommandations
-- bouclage (facturation)
+- facturation (bouclage)
 
