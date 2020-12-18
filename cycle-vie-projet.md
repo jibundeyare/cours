@@ -4,11 +4,11 @@
 - proposition commerciale (propale)
 - planning
 - devis
+- domaine & hébergement (voir [admin-sys.md](admin.sys))
 - workflow (pour le workflow de développement, voir [git.md](git.md))
 - wireframes
 - BDD (voir [doctrine-orm.md](doctrine-orm.md) et [doctrine-migrations.md](doctrine-migrations.md))
 - maquette fonctionnelle
-- domaine & hébergement (voir [admin-sys.md](admin.sys))
 - production
 - recette
 - MEP (mise en production) (voir [deployer.md](deployer.md))
