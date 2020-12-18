@@ -5,7 +5,7 @@
 - planning
 - devis
 - domaine & hébergement (voir [admin-sys.md](admin.sys))
-- workflow (pour le workflow de développement, voir [git.md](git.md))
+- workflow (pour le workflow de développement, voir [méthodologie.md](méthodologie.md) et [git.md](git.md))
 - wireframes
 - BDD (voir [doctrine-orm.md](doctrine-orm.md) et [doctrine-migrations.md](doctrine-migrations.md))
 - maquette fonctionnelle
