@@ -85,6 +85,14 @@ Exemple pour copier la clé ssh dans le compte `foo` du serveur `example.com` :
 
     ssh-copy-id foo@example.com
 
+### Copier sa clé publique pour l'utilisateur `root`
+
+Ceci permet de se connecter au compte `root` avec sa clé ssh.
+
+Dans la home de votre vps, tapez :
+
+    cat .ssh/authorized_keys | sudo tee -a /home/root/.ssh/authorized_keys
+
 ## Sécuriser le service SSH
 
 ### Fail2ban
