@@ -112,6 +112,8 @@ Sur votre VPS, seules deux étapes sont nécessaire :
 1. création d'une BDD
 2. création d'un vhost et d'un pool php-fpm
 
+La création du nom de domaine se fait avec l'interface d'admin de votre fournisseur de nom de domaine.
+
 ### Création d'une BDD
 
 Ce script crée une BDD et un nouvel utilisateur qui portent le même nom.
@@ -157,7 +159,7 @@ Attention : sur votre machine de dev vous devez créer un nom de domaine local p
 
 #### Les templates de vhost
 
-Il est possible de choisir un template de vhost parmis plusieurs choix ou de créer ses propres templates de vhost.
+Il est possible de choisir un template de vhost parmis plusieurs ou de créer ses propres templates de vhost.
 Le template par défaut est `template-vhost.conf`.
 
 Il existe deux sortes de templates :
@@ -237,7 +239,7 @@ Exemple :
 
 Après suppression, l'utilisateur `foo` et la BDD `foo` auront disparu.
 
-## Les remote tools
+## L'installation des remote tools
 
 Ce script installe des outils de prise en main de pc à distance.
 
@@ -247,13 +249,13 @@ Il installe :
 - anydesk
 
 Attention : ce script désactive wayland au profit de xorg.
-Cela est nécessaire pour que teamviwer et anydesk puissent afficher l'écran de l'hôte.
+Cela est nécessaire pour que teamviewer et anydesk puissent afficher l'écran de l'hôte à l'invité.
 
 L'installation :
 
     ./install-remote-tools.sh
 
-## Les teacher tools
+## L'installation des teacher tools
 
 Attention : si vous n'êtes pas formateur, il y a peu de chance que ces outils vous intéressent.
 

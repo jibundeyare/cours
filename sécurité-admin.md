@@ -2,9 +2,9 @@
 
 ## Gestion des risques
 
-- Risques légaux 
-- Risques financiers 
-- Risques symboliques 
+- Risques légaux
+- Risques financiers
+- Risques symboliques
 
 ## Types d'attaques
 

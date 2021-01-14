@@ -14,7 +14,7 @@ Si on veut un thème custom plus évolué, on peut commencer par rajouter les fi
 
 - `functions.php` qui définit les paramètres du thème
 - `header.php` qui contient l'entête du site (avec la navbar)
-- `header.php` qui contient le pied de page du site
+- `footer.php` qui contient le pied de page du site
 - `page.php` qui affiche le contenu de type `page`
 - `single.php` qui affiche le contenu de type `post`
 - `404.php` qui affiche la page d'erreur 404
@@ -27,7 +27,7 @@ Voir la page [Organizing Theme Files | Theme Developer Handbook | WordPress Deve
 À placer dans le fichier `wp-config.php` :
 
     @ini_set( 'display_errors', 'On' );
-    define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );   // 5.2 and later
+    define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
     define( 'WP_DEBUG', true );
     define( 'WP_DEBUG_DISPLAY', true );
 
