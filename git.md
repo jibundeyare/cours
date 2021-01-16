@@ -510,6 +510,16 @@ Mais que choisir parmi ces options ? Réponses ci-dessous.
 
 Pour plus de détails voir l'article suivant (en anglais) : [Git warning: Pulling without specifying how to reconcile divergent branches is discouraged | Sal Ferrarello](https://salferrarello.com/git-warning-pulling-without-specifying-how-to-reconcile-divergent-branches-is-discouraged/)
 
+#### Dans tous les cas
+
+Optez pour l'option globale suivante et jetez un coup d'œil ci-dessous pour les options locales :
+
+    git config --global pull.ff only
+
+Cette option est bien dans la mesure où elle tenter d'utiliser le mode de synchronisation `fast forward` (c'est à dire un mode chronologique simple) quand c'est possible.
+Si ce n'est pas possible, `git pull` affichera un message d'erreur et ne fera rien.
+Ce qui vous laissera la possibilité de choisir entre le mode `git pull --ff-no` (qui force un `merge`) et le mode `git pull --rebase` (qui force un `rebase`).
+
 #### Vous travaillez seul et uniquement sur la branche master
 
 Dans ce cas, l'option `git config pull.ff only` est tout indiquée.
