@@ -1,5 +1,3 @@
-@ref ?/string-split.html
-
 # JavaScript
 
 - arborescence d'un projet
