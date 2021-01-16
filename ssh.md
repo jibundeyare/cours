@@ -292,6 +292,77 @@ Voir les guides suivante (en anglais) :
 - [Using PuTTYgen on Windows to generate SSH key pairs](https://www.ssh.com/ssh/putty/windows/puttygen)
 - un peu plus sécurisé et détaillé : [Use Public Key Authentication with SSH | Linode](https://www.linode.com/docs/security/authentication/use-public-key-authentication-with-ssh/#windows).
 
+## Converssion d'une clé privée PuTTY en clé privée OpenSSH dans Windows
+
+1. ouvrez PuTTYGen
+2. chargez le fichier `.ppk` de la clé que vous voulez convertir
+3. dans la barre de menu, cliquez sur l'entrée `Conversions`
+4. dans le menu déroulant, cliquez sur l'entrée `Export OpenSSH key`
+5. sauvez le fichier dans le dossier `.ssh` de votre home en lui donnant le nom de la clé
+6. si PuTTYGen vous demande de confirmer qu'il n'y a pas de passphrase, répondez « oui »
+
+Note : le nom du fichier doit être le type de clé sans aucune extension.
+Exemple : pour une clé RSA, le nom du fichier est `id_rsa`.
+
+## Converssion d'une clé publique PuTTY en clé publique OpenSSH dans Windows
+
+1. avec un éditeur de code, ouvrez le fichier `.ppk` de la clé que vous voulez convertir
+2. copiez dans le press-papier les six lignes de la clé publique
+3. créez un nouveau fichier dans le dossier `.ssh` de votre home en lui donnant le nom de la clé et l'extension `.pub`
+5. dans ce nouveau fichier, tapez le code qui correspond au type de clé
+4. collez les six lignes de code de la clé publique
+5. supprimez tous les saut de ligne de façon à ce que toute la clé publique soit écrite sur une seule ligne
+
+Note : le code de la type de clé est créé en utilisant le préfixe `ssh-` et le type de la clé.
+Exemple : pour une clé RSA, le code du type de la clé est `ssh-rsa`.
+
+Note : le nom du fichier doit être le type de clé avec l'extension `.pub`.
+Exemple : pour une clé RSA, le nom du fichier est `id_rsa.pub`.
+
+Voici un exemple de contenu du fichier `.ppk` d'une clé RSA :
+
+    PuTTY-User-Key-File-2: ssh-rsa
+    Encryption: aes256-cbc
+    Comment: rsa-key-20170126
+    Public-Lines: 6
+    AAAAB3NzaC1yc2EAAAABJQAAAQEAx+52s7vvaZ8rT2UdFZWlSUVDHDQ+5ZRFvgRW
+    6nm2sO1c9WqNg7u2PQL4jeKSDX2XWcMnpleALz2x8Rr4rMy5E1iZzvWov8VtFd8l
+    fa9HOkgEeJB3VFuYR3NlnD3eyCoYJYPVpHJHrIeui2WZs5vQ76HDe+th8+z5Ald4
+    zPw3p2c6ZJpBrkSBM67hWokoBDi23c7NhszDHhJBrv+B98cQxnagI1PUKqN7E8Vg
+    bNtBI8beIMHyI69up9G1AXSEi0cGIjYNx9RNUPau1mRk/SvfqxgWkAjM005lj7hc
+    bOsjbdKK3T2NtrKTaYjEiXlEXcj1iGuApsD/m73pYaEJB3Nd7w==
+    Private-Lines: 14
+    MoaDbq0owouN/7Z9Pga0favDhM2bSEgMErJBxdDmNUXIVVcUoLiD/Ps1RA+BeBBX
+    wxqKUt9PqLy/pnafPR/i2xjJiQtQ0CWkPxND16Gi1dqLzmbQYYl1ev4+LzuG0zNX
+    HDGMvRiwagY7mY+F1tUjBYfOL6z8XHw4m40YcY1QorOO+0MMzAVT5Hkg8YyXW209
+    B/V/LRADFMVA2BlL39y11cb5ZpFStPH/waYUMY+2w1ZmJZ7dcRoMjuKmY+YE/tUx
+    n9X3P0qTNSbw6e6sMG3Dhr1vfoJUQWApUliD6GpUiCeIvXBcVqG8Vsfq9XADsPl0
+    +nFAwjSZflywcB7/FwhGb7q5UmcJK06SzoMl7Og5e3g7NCs3yNNQIv+qCpDjhxrA
+    hpT03mbipu7OXCZDeUwUhMGJAmYHE5iqm1rPCsSVbaMgpxhCWf01Cx4gLx3aMvn4
+    MdylA31GuL3wSxcWTslrOI8+449lZN/qZEnGEZkYTrnlu123jTqsAWMMtuHSz2Ig
+    6GA89oTdlppkNflhNH3OJ85kMUrc3p/ZBMdndz8jTDTljmJjHR5oNMoShFof115A
+    nWjUHqBwCgcubLYyH3afDvBTOhtl0tJ9Oby0wJlOAGnCXiPSDbF/y7J7xml/PS9t
+    XlSVNxtAY15NDO6Fp96sBVfKuJsfJ90PzdBom4ikIuf7sMwtElrHHLuYfcXJQYLp
+    G5jBmqDgnirosVPEBIxlxFzz/HCRmdU+tsYg46gqI4R5UpKUe8WSaJoZkDGsrqhm
+    e+1SJaBuafR4v2bx/bV414Hg7LGQosK2S3crxH4UgZl+g02vWznZfBH+9CmHvKDR
+    AxfcKOTzsaILKJtQPV81lmJ45sARYMcB5jMiE4kBg56hiXouChsvKkm55WVcW1E+
+    Private-MAC: 17512c9f7582c1d9c3ae2b01b4d67a6b1dbd1d0e
+
+La clé publique est contenue entre les balises `Public-Lines: 6` et `Private-Lines: 14` :
+
+    Public-Lines: 6
+    AAAAB3NzaC1yc2EAAAABJQAAAQEAx+52s7vvaZ8rT2UdFZWlSUVDHDQ+5ZRFvgRW
+    6nm2sO1c9WqNg7u2PQL4jeKSDX2XWcMnpleALz2x8Rr4rMy5E1iZzvWov8VtFd8l
+    fa9HOkgEeJB3VFuYR3NlnD3eyCoYJYPVpHJHrIeui2WZs5vQ76HDe+th8+z5Ald4
+    zPw3p2c6ZJpBrkSBM67hWokoBDi23c7NhszDHhJBrv+B98cQxnagI1PUKqN7E8Vg
+    bNtBI8beIMHyI69up9G1AXSEi0cGIjYNx9RNUPau1mRk/SvfqxgWkAjM005lj7hc
+    bOsjbdKK3T2NtrKTaYjEiXlEXcj1iGuApsD/m73pYaEJB3Nd7w==
+    Private-Lines: 14
+
+Le nouveau fichier `id_rsa.pub` devra ressembler à ça :
+
+    ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAx+52s7vvaZ8rT2UdFZWlSUVDHDQ+5ZRFvgRW6nm2sO1c9WqNg7u2PQL4jeKSDX2XWcMnpleALz2x8Rr4rMy5E1iZzvWov8VtFd8lfa9HOkgEeJB3VFuYR3NlnD3eyCoYJYPVpHJHrIeui2WZs5vQ76HDe+th8+z5Ald4zPw3p2c6ZJpBrkSBM67hWokoBDi23c7NhszDHhJBrv+B98cQxnagI1PUKqN7E8VgbNtBI8beIMHyI69up9G1AXSEi0cGIjYNx9RNUPau1mRk/SvfqxgWkAjM005lj7hcbOsjbdKK3T2NtrKTaYjEiXlEXcj1iGuApsD/m73pYaEJB3Nd7w==
+
 ## Doc
 
 - [How to use ssh-keygen to generate a new SSH key | SSH.COM](https://www.ssh.com/ssh/keygen/)

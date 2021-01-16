@@ -490,6 +490,38 @@ Puis on commit.
     # afficher la liste simplifiée des commits (sans les commentaires)
     git log --oneline
 
+## J'ai un warning quand je tente un `git pull`
+
+En effet, si vous n'avez pas configuré comment la commande `git pull` doit procédrer pour synchroniser un repo local et un repo distant, vous allez avoir le message d'erreur suivant :
+
+    $ git pull
+    warning: Tirer sans spécifier comment réconcilier les branches divergentes
+    est découragé. Vous pouvez éliminer ce message en lançant une des
+    commandes suivantes avant votre prochain tirage :
+      git config pull.rebase false  # fusion (stratégie par défaut)
+      git config pull.rebase true   # rebasage
+      git config pull.ff only       # avance rapide seulement
+    Vous pouvez remplacer "git config" par "git config --global" pour que
+    ce soit l'option par défaut pour tous les dépôts. Vous pouvez aussi
+    passer --rebase, --no-rebase ou --ff-only sur la ligne de commande pour
+    remplacer à l'invocation la valeur par défaut configurée.Déjà à jour.
+
+Mais que choisir parmi ces options ? Réponses ci-dessous.
+
+Pour plus de détails voir l'article suivant (en anglais) : [Git warning: Pulling without specifying how to reconcile divergent branches is discouraged | Sal Ferrarello](https://salferrarello.com/git-warning-pulling-without-specifying-how-to-reconcile-divergent-branches-is-discouraged/)
+
+#### Vous travaillez seul et uniquement sur la branche master
+
+Dans ce cas, l'option `git config pull.ff only` est tout indiquée.
+
+#### Vous travaillez seul sur plusieurs branches
+
+Dans ce cas, l'option `git config pull.rebase true` est tout indiquée.
+
+#### Vous travaillez à plusieurs (sur une ou plusieurs branches)
+
+Pareil que dans le cas précédent, l'option `git config pull.rebase true` est tout indiquée.
+
 ## Doc
 
 ### Utilisation
