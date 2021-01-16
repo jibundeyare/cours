@@ -18,6 +18,7 @@
 - CIO : Chief information officer (directeur du service informatique)
 - CLI : Command Line Interface (interface en ligne de commande) ; voir aussi Console et Terminal
 - Code snippet : petit morceau de code utile que l'on réutilise de projet en projet
+- Compile time errors : erreurs de compilation ; ce sont des erreurs qui sont détéctées avant même que le logiciel ne soit exécuté
 - Console : à la base il s'agit du clavier qui permet de manipuler les premiers ordinateurs ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Terminal
 - CRM : Customer Relationship Management (Gestion du suivi client) ; c'est une application qui permet de gérer tout l'historique des relations client : les contacts, les devis, les factures, les relances, etc
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
@@ -55,6 +56,7 @@
 - IPv6 : Internet Protocol v6 (protocole inter-réseau v6) ; les adresses sont codées sur 128 bits, soit 3,4 * 10 ^ 38 adresses possibles ; voir aussi IP
 - IRI : Internationalized Resource Identifier (identifiant international de ressource) ; c'est comme URL mais en version internationale (avec des caractères de russe, chinois, arabe, etc)
 - Issue : tâche à réaliser dans un gestionnaire de tâches (un bug à corriger, une fonctionnalité à implémenter, etc)
+- JDK : Java Development Kit (kit de développement java) ; voir SDK
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile) ; principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
@@ -83,8 +85,12 @@
   En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches
 - Retex : retours d'expérience ; voir aussi feedbacks
 - RFC : Request For Comments (demande de commentaires, demande d'avis) ; série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
-- RTFM : Read The Fucking Manual (lis le putain de manuel)
+- Rolling release : publication continue ; un logiciel en publication continue est continuellement mis à jour ; c'est un mode de publication qui est opposé à celui de publication par versions successives
+- RTFM : Read The Fucking Manual (lis le putain de manuel) ; c'est une réponse un peu désagréable qu'on donne aux personnes qui posent des questions basiques montrant qu'elles n'ont pas lu la documentation
+- Runtime errors : erreurs en cours d'exécution ; contrairement aux erreurs de compilation, on ne peut détecter ces erreurs qu'en exécutant le logiciel
+- Runtime libraries : librairies ; il s'agit d'un ensemble de fichiers qui permettent à un logiciel qui a été développé avec un SDK de fonctionner ; dans le monde de Windows, il arrive souvent que des fichiers de type `.dll` manquent, ce sont des fichiers qui font partie du « runtime library »
 - Scalar : voir variable scalaire
+- SDK : Software Development Kit (kit de développement logiciel) ; c'est un ensemble de fichiers (compilateur, linkeur, librairies, etc) qui permettent de développer des logiciels ; par exemple : SDK Windows, SDK iOS, SDK Android, JDK ; voir JDK
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée ; voir aussi Getter
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
