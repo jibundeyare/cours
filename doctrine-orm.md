@@ -3,10 +3,26 @@
 Un ORM est un programme qui permet d'utiliser une BDD relationnelle comme si elle stockait les données sous la forme d'objets.
 Cela permet de faciliter l'utilisation d'une BDD quand on fait de la POO.
 
-## Entités
+## À savoir
+
+### Entité
 
 Une entité est une classe qui représente un objet qui sera stocké en BDD.
 On dit que les entités sont notre modèle de données.
+
+### Repository et Entity Manager
+
+Le Repository est un composant qui s'occupe de toutes les opérations en lecture :
+
+- read
+
+L'Entity Manager est un composant qui s'occupe de toutes les opérations en écriture :
+
+- create
+- update
+- delete
+
+## Entité
 
 ### Exemple d'entité
 
@@ -508,20 +524,9 @@ Si l'on veut que la variable `quantity` de l'entité `Foo` soit initialisée ave
          */
         public function getId() {       // <= première méthode
 
-## Entity Manager et Repository
+## Repository et Entity Manager
 
-
-Le composant Entity Manager s'occupe de toutes les opérations en écriture :
-
-- create
-- update
-- delete
-
-Le composant Repository s'occupe de toutes les opérations en lecture :
-
-- read
-
-### Récupérer une ou des entités enregistrées
+### Récupérer un ou des objets enregistrées
 
     <?php
     // src/Controller/FooController.php
@@ -532,28 +537,28 @@ Le composant Repository s'occupe de toutes les opérations en lecture :
     use App\Entity\Foo;
     // ...
 
-        // instanciation du repository de l'entité
+        // instancie le repository de l'entité
         $repository = $em->getRepository(Foo::class);
 
-        // récupération de toutes les entités
+        // récupère tous les objets
         $foos = $repository->findAll();
 
-        // récupération d'une entité à partir de son id
+        // récupère un objet à partir de son id
         $foo = $repository->find($id);
 
-        // récupération de plusieurs entités à partir d'un critère
+        // récupère plusieurs objets à partir d'un critère
         $foo = $repository->findByQuantity(42);
 
-        // récupération de plusieurs entités à partir de plusieurs critères
+        // récupère plusieurs objets à partir de plusieurs critères
         $foos = $repository->findBy([
             'name' => 'Foo bar baz',
             'quantity' => 42,
         ]);
 
-        // récupération d'une entité à partir d'un critère
+        // récupère un objet à partir d'un critère
         $foo = $repository->findOneByName('Foo bar baz');
 
-        // récupération d'une entité à partir de plusieurs critères
+        // récupère un objet à partir de plusieurs critères
         $foo = $repository->findOneBy([
             'name' => 'Foo bar baz',
             'quantity' => 42,
@@ -562,6 +567,63 @@ Le composant Repository s'occupe de toutes les opérations en lecture :
     // ...
 
 Attention : si votre application Symfony se trouve dans un bundle, vous devez probalement corriger le `namespace` et le `use` pour obtenir : `namespace AppBundle\Controller;` `use AppBundle\Entity\Foo;`
+
+### `ArrayCollection` ou la liste d'objets
+
+Quand vous récupérez des objets à l'aides des méthodes `findAll()` ou `findBy()` par exemmple, vous récupérez un objet de la classe `ArrayCollection`.
+La classe `ArrayCollection` est comme un tableau mais avec beaucoup plus de fonctionnalités.
+
+Par exemple cette classe permet de vérifier si on objet est présent dans la liste, de savoir à quel indexe il se trouve, d'appliquer une fonction sur tous les objets de la liste, etc.
+
+Voici des exmples d'utilisation :
+
+    <?php
+    // src/Controller/FooController.php
+
+    namespace App\Controller;
+
+    // ...
+    use App\Entity\Foo;
+    // ...
+
+        // instancie le repository de l'entité Foo
+        $repository = $em->getRepository(Foo::class);
+
+        // récupère tous les objets
+        // la variable $foos est un objet de la classe ArrayCollection
+        $foos = $repository->findAll();
+
+        // ajoute un nouvel objet de la classe Foo dans la liste
+        $foo = new Foo();
+        $foos->add($foo);
+
+        // récupère le premier objet de la liste
+        $first = $foos->first();
+
+        // récupère le dernier objet de la liste
+        $last = $foos->last();
+
+        // vérifie s'il y a au moins un objet dont l'atribut `bar` est égal à 42
+        $exists = $collection->exists(function($key, $value) {
+            return $value->getBar() == 42;
+        });
+
+        if ($exists) {
+          // il y a un objet dont l'attribut `bar` est égal à 42
+        } else {
+          // il n'y a aucun objet dont l'attribut `bar` est égal à 42
+        }
+
+        // recherche tous les objets dont l'attribut `baz` est inférieur à 123
+        $filteredCollection = $foos->filter(function($element) {
+            return $element->getBaz() < 123;
+        });
+
+        foreach ($filteredCollection as $element) {
+          // tous les éléments de cette boucle ont un attribut `baz` inférieur à 123
+        }
+
+Pour en savoir plus, consultez la doc de la classe `ArrayCollection` : [Introduction - Doctrine Collections](https://www.doctrine-project.org/projects/doctrine-collections/en/current/index.html).
 
 ### Enregistrer une nouvelle entité
 
@@ -612,6 +674,7 @@ Attention : si votre application Symfony se trouve dans un bundle, vous devez pr
 - [Doctrine Configuration Reference (DoctrineBundle) (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/reference/configuration/doctrine.html)
 - [Customizing the User Entity > Symfony Security: Beautiful Authentication, Powerful Authorization | SymfonyCasts](https://symfonycasts.com/screencast/symfony-security/user-entity#setting-doctrines-server-version).
 - [Welcome to Doctrine 2 ORM's documentation! - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/index.html)
+- [Introduction - Doctrine Collections](https://www.doctrine-project.org/projects/doctrine-collections/en/current/index.html)
 - [Association Mapping - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/association-mapping.html#association-mapping)
 - [Doctrine Query Language - Object Relational Mapper (ORM) - Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/dql-doctrine-query-language.html)
 - [Databases and the Doctrine ORM (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/doctrine.html)
