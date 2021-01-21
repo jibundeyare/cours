@@ -2,15 +2,12 @@
 
 ## Study Less Study Smart
 
-- [Marty Lobdell - Study Less Study Smart - YouTube](https://www.youtube.com/watch?v=IlU-zDU6aQ0)
+- vidéo originale : [Marty Lobdell - Study Less Study Smart - YouTube](https://www.youtube.com/watch?v=IlU-zDU6aQ0)
 
-- [I made a 6-minute summary of that hour-long "Study Less Study Smart" lecture. : GetStudying](https://www.reddit.com/r/GetStudying/comments/2u3n2x/i_made_a_6minute_summary_of_that_hourlong_study/)
-- [Study Less Study Smart - handwritten notes - Album on Imgur](https://imgur.com/a/TjzD1)
-- [Study Less, Study Smart - @TomFrankly’s detailed notes](https://www.evernote.com/shard/s33/client/snv?noteGuid=978feb82-1f4b-4e6b-afb7-ccad8375e28e&noteKey=a5e49b16353adea8&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs33%2Fsh%2F978feb82-1f4b-4e6b-afb7-ccad8375e28e%2Fa5e49b16353adea8&title=Study%2BLess%252C%2BStudy%2BSmart%2B-%2B%2540TomFrankly%25E2%2580%2599s%2Bdetailed%2Bnotes)
-
-- ["Study Less, Study Smart": The Best Ways to Retain More in Less Time](https://lifehacker.com/study-less-study-smart-the-best-ways-to-retain-more-1683362205)
-
-@todo traduc française
+- version écrite courte : ["Study Less, Study Smart": The Best Ways to Retain More in Less Time](https://lifehacker.com/study-less-study-smart-the-best-ways-to-retain-more-1683362205)
+- version écrite moyenne : [What I Learned From Dr. Marty Lobdell About Study Less Study Smart | by Sarah Dee | Medium](https://medium.com/@sarahdm/what-i-learned-from-dr-marty-lobdell-about-study-less-study-smart-dbd9c86335b4)
+- version écrite longue : [Study Less, Study Smart - @TomFrankly’s detailed notes](https://www.evernote.com/shard/s33/client/snv?noteGuid=978feb82-1f4b-4e6b-afb7-ccad8375e28e&noteKey=a5e49b16353adea8&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs33%2Fsh%2F978feb82-1f4b-4e6b-afb7-ccad8375e28e%2Fa5e49b16353adea8&title=Study%2BLess%252C%2BStudy%2BSmart%2B-%2B%2540TomFrankly%25E2%2580%2599s%2Bdetailed%2Bnotes)
+- version écrite longue : [Study Less Study Smart - handwritten notes - Album on Imgur](https://imgur.com/a/TjzD1)
 
 ## La prise de note
 
@@ -23,6 +20,10 @@
 - [Carte mémoire (apprentissage) — Wikipédia](https://fr.wikipedia.org/wiki/Carte_m%C3%A9moire_(apprentissage))
 - [Anki - powerful, intelligent flashcards](https://apps.ankiweb.net/)
 - [8 Better Ways to Make and Study Flash Cards](https://collegeinfogeek.com/flash-card-study-tips/)
+
+## La technique de Richard Feynman
+
+- [Comment apprendre plus rapidement avec la technique FEYNMAN : exemple - YouTube](https://www.youtube.com/watch?v=tbDYU7VV8TU)
 
 ## GTD vs ZTD
 
