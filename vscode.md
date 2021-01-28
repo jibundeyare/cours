@@ -88,6 +88,33 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 
 Vous pouvez fermer l'onglet.
 
+## Le plugin `phpcs` affiche trop d'erreurs et de warnings dans l'onglet `Problems`
+
+Il est possible de réhausser le niveau minimum d'erreurs et de warnings à afficher.
+
+`File` > `Preferences` > `Settings` > `phpcs`
+
+Puis faire passer le niveau du paramètre :
+
+- `Error Severity` de `5` à `6`
+- `Warning Severity` de `5` à `6`
+
+## Afficher le terminal avec un raccourci clavier
+
+Personnellement, j'aime bien utiliser la combinaison de touches `CTRL ALT t` mais une autre combinaison de touches est possible.
+
+`File` > `Preferences` > `Keyboard Shortcuts` > `workbench.action.terminal.focus`
+
+Ne vous faites pas avoir, ne changez pas le raccourci clavier d'autres commandes qui ressemblent.
+Celle que nous cherchons, c'est :
+
+    Terminal: Focus Terminal
+    workbench.action.terminal.focus
+
+Cliquez sur l'icône `+` sur la gauche de la commande, puis choisissez votre raccourci clavier et validez avec `Enter`.
+
+Vous pouvez resetter le raccourci clavier en faisant un click droit et en choisissant `Reset Keybinding`.
+
 ## Quelques conseils de Microsoft
 
 - [JavaScript Programming with Visual Studio Code](https://code.visualstudio.com/Docs/languages/javascript)
