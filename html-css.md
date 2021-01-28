@@ -2,6 +2,10 @@
 
 Code : [jibundeyare/src-html-css](https://github.com/jibundeyare/src-html-css)
 
+## Indentation
+
+Voir [code-style.md](code-style.md).
+
 ## Arborescence d'un projet
 
     my_project/             <= document root

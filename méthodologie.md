@@ -9,11 +9,17 @@
 - version écrite longue : [Study Less, Study Smart - @TomFrankly’s detailed notes](https://www.evernote.com/shard/s33/client/snv?noteGuid=978feb82-1f4b-4e6b-afb7-ccad8375e28e&noteKey=a5e49b16353adea8&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs33%2Fsh%2F978feb82-1f4b-4e6b-afb7-ccad8375e28e%2Fa5e49b16353adea8&title=Study%2BLess%252C%2BStudy%2BSmart%2B-%2B%2540TomFrankly%25E2%2580%2599s%2Bdetailed%2Bnotes)
 - version écrite longue : [Study Less Study Smart - handwritten notes - Album on Imgur](https://imgur.com/a/TjzD1)
 
-## La prise de note
 
-- mots clé
-- dessins
-- mind mapping
+## Comment font les meilleurs étudiants ?
+
+- [What do top students do differently? | Douglas Barton | TEDxYouth@Tallinn - YouTube](https://www.youtube.com/watch?v=Na8m4GPqA30)
+
+## Learning how to learn (apprendre à apprendre)
+
+- [Learning how to learn | Barbara Oakley | TEDxOaklandUniversity - YouTube](https://www.youtube.com/watch?v=O96fE1E-rf8)
+- [Apprendre à apprendre : des outils mentaux puissants qui vous aideront à maitriser les matières difficiles | Coursera](https://www.coursera.org/learn/learning-how-to-learn)
+- [Introduction to the Focused and Diffuse Modes University of California, San Diego - YouTube](https://www.youtube.com/watch?v=U48yVm_6lQ0&list=PL-9r0qXR0Kq1TA2W6SpKLYZTP-_xfbebw)
+- [Why Trying Too Hard Can Sometimes Be a Problem - Learning How To Learn for Youth by ASU #1 - YouTube](https://www.youtube.com/watch?v=cqe0yRrcZBE&list=PLVext98k2eviNRNTheyyTZ8d8Wkg25b-u)
 
 ## Flash card
 
@@ -24,6 +30,12 @@
 ## La technique de Richard Feynman
 
 - [Comment apprendre plus rapidement avec la technique FEYNMAN : exemple - YouTube](https://www.youtube.com/watch?v=tbDYU7VV8TU)
+
+## La prise de note
+
+- mots clé
+- dessins
+- mind mapping
 
 ## GTD vs ZTD
 

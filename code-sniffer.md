@@ -2,7 +2,7 @@
 
 Ces trois documents forment un ensemble :
 
-- [code-sniffer.md](code-sniffer)
+- [code-sniffer.md](code-sniffer.md)
 - [code-style.md](code-style.md)
 - [php-cs-fixer.md](php-cs-fixer.md)
 
