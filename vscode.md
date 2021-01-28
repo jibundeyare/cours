@@ -99,6 +99,10 @@ Puis faire passer le niveau du paramètre :
 - `Error Severity` de `5` à `6`
 - `Warning Severity` de `5` à `6`
 
+![vscode phpcs error severity](vscode-phpcs-error-severity.png)
+
+![vscode phpcs warning severity](vscode-phpcs-warning-severity.png)
+
 ## Afficher le terminal avec un raccourci clavier
 
 Personnellement, j'aime bien utiliser la combinaison de touches `CTRL ALT t` mais une autre combinaison de touches est possible.
@@ -113,7 +117,9 @@ Celle que nous cherchons, c'est :
 
 Cliquez sur l'icône `+` sur la gauche de la commande, puis choisissez votre raccourci clavier et validez avec `Enter`.
 
-Vous pouvez resetter le raccourci clavier en faisant un click droit et en choisissant `Reset Keybinding`.
+![vscode terminal keyboard shortcut](vscode-terminal-keyboard-shortcut.png)
+
+Vous pouvez *resetter* le raccourci clavier en faisant un click droit et en choisissant `Reset Keybinding`.
 
 ## Quelques conseils de Microsoft
 
