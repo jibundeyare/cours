@@ -22,7 +22,7 @@ Attention : je pars du principe que vous avez déjà fait l'analyse du schéma d
 3. choix de la langue dans le fichier de configuration `config/packages/translation.yaml`
 4. création de la BDD avec la commande `php bin/console doctrine:database:create`  
    ou avec l'install script `mkdb.sh`
-5. *(optionel)* installation de packages supplémentaires avec la commande `composer require`
+5. *(optionnel)* installation de packages supplémentaires avec la commande `composer require`
 6. création d'une classe `User` avec la commande `php bin/console make:user`
 7. création d'un fichier de migration avec la commande `php bin/console doctrine:migrations:diff` ou `php bin/console make:migration`
 8. application du fichier de migration sur la BDD avec la commande `php bin/console doctrine:migrations:migrate`
@@ -33,8 +33,8 @@ Attention : je pars du principe que vous avez déjà fait l'analyse du schéma d
 11. application du fichier de migration sur la BDD avec la commande `php bin/console doctrine:migrations:migrate`
 12. création d'un CRUD pour chaque entité avec la commande `php bin/console make:crud`
 13. correction des champs de type `EntityType` dans le formulaire de chaque entité (dossier `src/Form`)
-14. *(optionel)* correction des routes dans les contrôleurs de chaque entité (dossier `src/Controller`)
-15. *(optionel)* ajout ou modification d'entités (retour à l'étape `8`)
+14. *(optionnel)* correction des routes dans les contrôleurs de chaque entité (dossier `src/Controller`)
+15. *(optionnel)* ajout ou modification d'entités (retour à l'étape `8`)
 16. activation du mode thème bootstrap de twig dans le fichier de configuration `config/packages/twig.yaml`
 17. installation du package webpack encore avec la commande `composer require symfony/webpack-encore-bundle`
 18. installation des dépendances front-end avec la commande `npm install` ou `yarn install`
@@ -49,22 +49,22 @@ Attention : je pars du principe que vous avez déjà fait l'analyse du schéma d
     on peut réutiliser les champs du form dedié à l'entité `src/Form/UserType.php`
 24. configuration de permissions d'accès (les ACL) dans la section `access_control` du fichier `config/packages/security.yaml`  
     ou création de voters et ajout de filtres dans les contrôleurs avec la fonction `denyAccessUnlessGranted()`
-25. *(optionel)* ajout de filtres dans les contrôleurs et les templates avec la fonction `isGranted()` et `is_granted()` respectivement
+25. *(optionnel)* ajout de filtres dans les contrôleurs et les templates avec la fonction `isGranted()` et `is_granted()` respectivement
 26. création d'un formulaire d'authentification avec la commande `php bin/console make:auth`
 27. personnalisation (activation de la redirection) du contrôleur d'authentification `src/Controller/SecurityController.php`
 28. personnalisation (redirection en fonction de l'utilisateur) de l'authentificateur `src/Security/LoginFormAuthenticator.php`
-29. *(optionel)* personnalisation de contrôleurs : ajout de nouvelles routes
-30. *(optionel)* personnalisation de repository : ajouts de méthodes qui permettent de faire de nouveaux types de recherches
-31. *(optionel)* création de services dans le dossier `src/Service` pour mutualiser des foncionnalités dans toute l'application
-32. *(optionel)* installation d'un back office généré automatiquement avec la commande `composer require easycorp/easyadmin-bundle`
-33. *(optionel)* installation du serveur d'api avec la commande `composer req api`  
+29. *(optionnel)* personnalisation de contrôleurs : ajout de nouvelles routes
+30. *(optionnel)* personnalisation de repository : ajouts de méthodes qui permettent de faire de nouveaux types de recherches
+31. *(optionnel)* création de services dans le dossier `src/Service` pour mutualiser des foncionnalités dans toute l'application
+32. *(optionnel)* installation d'un back office généré automatiquement avec la commande `composer require easycorp/easyadmin-bundle`
+33. *(optionnel)* installation du serveur d'api avec la commande `composer req api`  
     ajout du `use ApiPlatform\Core\Annotation\ApiResource;` et de l'annotation `@ApiResource()` à toutes les entités qui doivent être accessible via l'api
 34. installation du package doctrine fixtures bundle avec la commande `composer require --dev orm-fixtures`
 35. création de fixtures
 36. chargement des fixtures avec la commande ` php bin/console doctrine:fixtures:load`
 37. création de tests unitaires ou fonctionnels
 38. lancement des teste avec la commande `./bin/phpunit`
-39. *(optionel)* si votre serveur web est `apache2`, création du fichier `public/.htaccess` avec la commande `composer require symfony/apache-pack`
+39. *(optionnel)* si votre serveur web est `apache2`, création du fichier `public/.htaccess` avec la commande `composer require symfony/apache-pack`
 40. création du fichier de déploiement de l'outil `dep` (Deployer)
 41. configuration du serveur
 42. déploiement avec avec l'outil `dep` (Deployer)
