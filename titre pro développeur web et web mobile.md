@@ -67,7 +67,7 @@ Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
 
 ## Le contenu du rapport de stage
 
-Tout ce que le rappor de stage doit contenir :
+Tout ce que le rapport de stage doit contenir :
 
 > Contenu du dossier de projet
 >
