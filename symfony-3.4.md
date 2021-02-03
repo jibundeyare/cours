@@ -828,6 +828,8 @@ Sauvegardons les changements dans la BDD :
     php bin/console doctrine:migrations:diff
     php bin/console doctrine:migrations:migrate
 
+Pour en savoir plus sur les migrations, voir [doctrine-migrations.md](doctrine-migrations.md).
+
 ### Création de l'authentificateur et du formulaire d'authentification
 
 Lancez la commande suivante :

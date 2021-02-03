@@ -17,7 +17,7 @@ Attention : je pars du principe que vous avez déjà fait l'analyse du schéma d
 
 1. création du projet avec la commande `symfony new`  
    attention aux options `--version` ou `--full`
-2. création du fichier local des variables d'environnement  
+2. création du fichier local des variables d'environnement `.env.dev.local`  
    ce fichier contient les codes d'accès de la BDD ou du serveur de mail
 3. choix de la langue dans le fichier de configuration `config/packages/translation.yaml`
 4. création de la BDD avec la commande `php bin/console doctrine:database:create`  
@@ -76,4 +76,10 @@ Vous pouvez créer des utilisateurs de test avec des fixtures mais quand on comm
 1. hashage du mot de passe avec la commande `php bin/console security:encode-password`
 2. insertion dans la BDD avec PhpMyAdmin  
    coller la version « hashée » du mot de passe dans la colonne `password`
+
+## Références
+
+- [symfony-3.4.md](symfony-3.4.md)
+- [symfony-3.4-trouble-shooting.md](symfony-3.4-trouble-shooting.md)
+- [symfony-4.4-trouble-shooting.md](symfony-4.4-trouble-shooting.md)
 
