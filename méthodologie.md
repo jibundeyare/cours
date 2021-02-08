@@ -42,8 +42,6 @@
 - [Getting Things Done® - David Allen's GTD® Methodology](https://gettingthingsdone.com/)
 - [Zen To Done (ZTD): The Simple Productivity System : zen habits](https://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/)
 
-@todo traduc française ztd [https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/](https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/)
-
 ## Kanban
 
 [Kanban - Wikipedia](https://en.wikipedia.org/wiki/Kanban)

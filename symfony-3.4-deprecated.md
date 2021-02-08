@@ -647,12 +647,7 @@ Voir [easyadmin.md](easyadmin.md).
 
 ## Fixtures
 
-@todo package `nelmio/alice`
-
 ## Tests
-
-@todo symfony-test.md
-@todo package behat.md
 
 ## Commandes utiles
 
@@ -723,8 +718,6 @@ Afficher la liste des events et leur degré de priorité :
 - [SensioFrameworkExtraBundle (Symfony Bundles Docs)](https://symfony.com/doc/master/bundles/SensioFrameworkExtraBundle/index.html)
 
 ### CSS et Javascript
-
-@todo ajouter [Managing CSS and JavaScript (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/frontend.html)
 
 - [twig - What is the correct way to add bootstrap to a symfony app? - Stack Overflow](https://stackoverflow.com/questions/36453039/what-is-the-correct-way-to-add-bootstrap-to-a-symfony-app)
 - [Bootstrap · The world's most popular mobile-first and responsive front-end framework.](https://getbootstrap.com/docs/3.3/)

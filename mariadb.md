@@ -1,8 +1,5 @@
 # Mariadb (ancinnement MySQL)
 
-@todo fusionner avec une partie de la doc phpmyadmin
-@todo datetime with timezone
-
 Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, Mariadb, PHP et PhpMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
 Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
@@ -122,11 +119,6 @@ Ces vidéos vous montrent toutes les étapes pour créer une BDD, des tables et 
 - [phpmyadmin - création de table on Vimeo](https://vimeo.com/310984229) : Cette vidéo montre comment créer une table avec PhpMyAdmin.
 - [phpmyadmin - création de clé étrangère on Vimeo](https://vimeo.com/310982123) : Cette vidéo montre comment créer une clé étrangère pour les relations de type « many to one » ou « one to many » avec PhpMyAdmin.
 - [phpmyadmin - création d’une table de jointure on Vimeo](https://vimeo.com/336705858) : Cette vidéo montre comment créer une table de jointure pour les relations de type « many to many » avec phpmyadmin.
-
-@todo ajouter vidéo pour créer un utilisateur
-@todo ajouter vidéo pour configurer les permissions d'un utilisateur
-@todo ajouter une vidéo pour exporter des données
-@todo ajouter une vidéo pour importer des données
 
 ## Données de test (fixtures)
 

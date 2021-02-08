@@ -59,7 +59,7 @@ CAP :
 - il est possible de moduler son revenu tous les mois en fonction de qu'il y a dans la cagnotte
 - possibilité de créer une cagnotte qui ne sera touchée que quand les allocations perçues par ailleurs se tarissent
 - ce contrat est très bien si on a des aides (pôle emploi, rsa, etc)
-- durée maximale de 2 ans (@todo vérifier cette durée)
+- durée maximale de 2 ans
 
 CESA :
 
