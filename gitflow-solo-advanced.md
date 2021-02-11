@@ -1,5 +1,14 @@
 # Git en solo, mode avancé
 
+Ce gitflow est adapté pour travailler seul sur un projet complexe.
+
+Complexe veut dire, par exemple :
+
+- qu'on veut ajouter des fonctionnalités sans pour autant les publier directement
+- qu'on veut pouvoir tester des idées et éventuellement les abandonner
+- qu'on veut gérer plusieurs version différentes du même projet
+- etc
+
 ## Création du repo en local
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).

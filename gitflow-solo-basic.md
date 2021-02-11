@@ -1,5 +1,14 @@
 # Git en solo, mode basic
 
+Ce gitflow est adapté pour travailler seul sur un projet simple.
+
+Simple ça veut dire, par exemple :
+
+- qu'il y a une version du projet
+- que dès qu'on rajoute du code, il est prêt à être publié
+- qu'on a pas besoin d'avoir un historique nickel
+- etc
+
 ## Création du repo en local
 
     # créez le dossier du projet
