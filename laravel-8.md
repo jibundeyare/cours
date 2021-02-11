@@ -125,7 +125,7 @@ en :
 
 Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont compatibles.
 
-### Les routes nommées
+## Les routes nommées
 
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#basic-routing)
 
@@ -202,14 +202,21 @@ Par exemple :
 - pour un blog : un article avec son titre, son texte, son auteur, sa date de publication, etc
 - pour un site de location de voiture : un client avec son nom et prénom, son numéro de téléphone, son email, etc
 
-### Les contrôleurs
+### Les redirections
+
+Il est possible de configurer des redirection directement dans le fichier `routes/web.php` :
+
+    // redirection de la page « à propos » vers la page « contact »
+    Route::redirect('/about', '/contact');
+
+## Les contrôleurs
 
 [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#single-action-controllers)
 
 Les contrôleurs sont le cerveau de votre application.
 Ce sont ces composants qui vont déterminer « ce que l'application fait ».
 
-### Un contrôleur simple
+## Un contrôleur simple
 
 Nous allons créer un premier contrôleur qui affichera la page d'accueil :
 
@@ -222,7 +229,7 @@ Vous pouvez ouvrir le fichier `app/Http/Controllers/MainController.php` et ajout
             return view('welcome');
         }
 
-### Un contrôleur de ressource
+## Un contrôleur de ressource
 
 Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
