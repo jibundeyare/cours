@@ -4,17 +4,19 @@ Ce gitflow est adapté pour des petites équipes de 2 à 6 personnes environ.
 
 Le principe de base reprend celui du git flow solo avancé en y ajoutant du code review par les paires.
 
-La branche master contient le code livrable.
+La branche `master` contient le code livrable.
+
 Des branches de fonctionnalités sont créées par chaque développeur de l'équipe.
-Avant de merger une branche de fonctionnalités dans la branche master, le développeur demande un code review à son équipe.
+
+Avant de merger une branche de fonctionnalités dans la branche `master`, le développeur demande un code review à son équipe.
 Si le code est validé par l'équipe, le code est mergé.
-Les autres membres de l'équipes peuvent alors bénéficier des mises à jour la branche master.
+Les autres membres de l'équipes peuvent alors bénéficier des mises à jour la branche `master`.
 
 ## Création du repo en local
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
-## Création du repo sur github / framagit / bitcuket
+## Création du repo sur github / framagit / bitbucket
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
@@ -30,12 +32,12 @@ Après le commit, ne pas oublier de pousser sa branche sur le repo distant.
 
 Avant de reprendre le travail, il faut :
 
-- mettre à jour la branche master par rapport au repo distant
-- mettre la branche de travail à jour par rapport à la branche master
+- mettre à jour la branche `master` par rapport au repo distant
+- mettre la branche de travail à jour par rapport à la branche `master`
 
 Cette action est nécessaire à chaque fois qu'un merge (fait en local ou via une pull request) a lieu dans la branche `master`.
 
-Mettons la branche master à jour.
+Mettons la branche `master` à jour.
 
     git checkout master
     git pull --rebase
@@ -106,7 +108,7 @@ On peut reprendre le travail.
     # l'option --force-with-lease n'est pas nécessaire si on n'a pas rebasé sa branche sur master avant de travailler
     git push
 
-## Importer le code d'une branche dans la branche master
+## Importer le code d'une branche de fonctionnalité dans la branche `master`
 
 La plupart des actions se font sur Github / Framagit / Bitbucket.
 Il faut :
@@ -116,7 +118,7 @@ Il faut :
 - lire leurs commentaires
 - s'il y a lieu, modifier son code et redemander un code review
 - sinon valider la pull request / merge request
-- mettre à jour la branche master locale
+- mettre à jour la branche `master` locale
 
 Voici les étapes :
 

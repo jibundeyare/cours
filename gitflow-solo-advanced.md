@@ -4,7 +4,7 @@
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
-## Création du repo sur github / framagit / bitcuket
+## Création du repo sur github / framagit / bitbucket
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
@@ -28,7 +28,7 @@ On peut commencer le travail.
 
 ## Reprendre le travail dans une branche existante
 
-Avant de reprendre le travail, il faut mettre la branche de fonctionnalité à jour par rapport à master.
+Avant de reprendre le travail, il faut mettre la branche de fonctionnalité à jour par rapport à la branche `master`.
 Cette action est nécessaire à chaque fois qu'un merge a eu lieu dans la branche `master`.
 
     git checkout [nom-de-branche]
@@ -70,7 +70,7 @@ On peut reprendre le travail.
     git commit
     # todo: rédigez votre message de commit
 
-## Importer le code d'une branche dans la branche master
+## Importer le code d'une branche de fonctionnalité dans la branche `master`
 
 Cette action ne devrait jamais provoquer de conflits.
 S'il y a des conflits, c'est qu'il n'ont pas été gérés correctement dans la branche.

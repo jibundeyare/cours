@@ -61,7 +61,7 @@
 - KDB : Knowledge Data Base (base de donnaissance)
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile) ; principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
 - L10N : localisation ; traduire une application dans une langue (la rendre adaptée à une zone culturelle et linguistique) ; voir I18N
-- Lead dev : développeur principal d'une équipe
+- Lead dev : lead developper ; développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme
 - MAC address : Media Access Control address ; c'est une adresse unique que possède toutes les cartes réseaux ; cette adresse permet d'identifier une machine

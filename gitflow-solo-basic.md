@@ -17,7 +17,7 @@
     git commit
     # todo: rédigez votre message de commit
 
-## Création du repo sur github / framagit / bitcuket
+## Création du repo sur github / framagit / bitbucket
 
     # s'il y a lieu, créez un compte sur le site
     # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)

@@ -1,4 +1,9 @@
-# Laravel 6
+# Laravel 6 *obsolète*
+
+**Attention** : ce document est obsolète.
+Veuillez vous reporter aux document suivant :
+
+- [laravel-8.md](laravel-8.md)
 
 Un projet « témoin » accompagne ce cours : [https://github.com/jibundeyare/src-laravel-6](https://github.com/jibundeyare/src-laravel-6).
 
