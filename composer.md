@@ -13,6 +13,15 @@ Télécharger et exécuter l'installeur [Composer-Setup.exe](https://getcomposer
 Attention : quand l'installeur vous demande quelle version de PHP utiliser, choisissez bien la dernière version possible (donc PHP 7+).
 Et rappelez-vous que PHP 5.6 est officiellement obsolète depuis le 01/01/2019.
 
+Composer vous permet d'installer des outils exécutables en ligne de commande (comme `phpcs` ou `phpunit` par exemple).
+Mais pour pouvoir les exécuter, vous devez ajouter la ligne suivante dans votre variable d'environnement :
+
+    %USERPROFILE%\AppData\Roaming\Composer\vendor\bin
+
+Pour en savoir un peu plus sur les variables d'environnement, voir [variables-environnement.md](variables-environnement.md).
+
+Au prochain démarrage de votre terminal, les outils du dossier `~/.composer/vendor/bin` seront disponibles.
+
 ### Macos et Linux
 
 Ouvrir un terminal, exécuter les commandes de la page [Composer](https://getcomposer.org/download/) puis :

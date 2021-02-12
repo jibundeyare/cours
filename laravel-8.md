@@ -8,16 +8,12 @@ Un projet « témoin » accompagne ce cours : [https://github.com/jibundeyare/sr
 - MariaDB ou MySQL
 - la commande `composer`
 
-## Installation de `artisan`
+## La commande `artisan`
 
 La commande `artisan` est outil qui fait partie de l'écosystème Laravel.
-Il permet notamment de créer un nouveau projet ou de démarrer un serveur web.
+Elle permet notamment de créer un nouveau projet ou de démarrer un serveur web.
 
-Vous pouvez l'installer avec `composer` :
-
-    composer global require laravel/installer
-
-Vous connaître la liste des commandes de `artisan`, (depuis un dossier projet) vous pouvez taper :
+Pour connaître la liste des commandes de `artisan`, (depuis un dossier projet) vous pouvez taper :
 
     php artisan list
 
@@ -25,9 +21,22 @@ Et pour avoir des infos sur une commande, (depuis un dossier projet) vous pouvez
 
     php artisan une-commande --help
 
-Par exemple, pour avoir des infos sur la commande `ui:auth`, vous pouvez taper :
+Par exemple, pour avoir des infos sur la commande `make:controller`, vous pouvez taper :
 
-    php artisan ui:auth --help
+    php artisan make:controller --help
+
+### **(Optionnel)** Installation globale de la commande `artisan`
+
+Une installation globale veut dire que la commande est disponible depuis n'importe quel dossier en tapant seulement `artisan` (pas la peine de taper `php artisan`).
+
+Vous pouvez 'installer globalement la commande avec `composer` :
+
+    composer global require laravel/installer
+
+Fermez votre terminal puis lancez-en un autre.
+Testez en tapant la commande `artisan`.
+
+Si vous obtenez une erreur du type `command not found`, vérifiez que vous avez bien réalisé toutes les étapes de la procédure d'installation de Composer dans [composer.md](composer.md).
 
 ## Quelques concepts généraux
 
@@ -240,16 +249,16 @@ Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
 ## Les vues
 
-- créer une vue parent
-[Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/views#creating-and-rendering-views)
-[Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade)
-- créer des vues enfants
-[Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/views#creating-and-rendering-views)
-[Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade)
+créer une vue parent et des vues enfants
 
-- générer des urls de routes nommées
+- [Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/views#creating-and-rendering-views)
+- [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#layouts-using-template-inheritance)
+
+générer des urls de routes nommées
+
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#named-routes)
-- afficher des urls de routes nommées dans un template blade
+
+afficher des urls de routes nommées dans un template blade
 
 ```
 {{ route('foo') }}
@@ -260,14 +269,16 @@ Nous allons créer un contrôleur pour une ressource de type 'foo' :
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix)
 
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix#installing-laravel-mix)
-- installer les packages js et compiler les fichiers CSS et JS avec :
+
+installer les packages js et compiler les fichiers CSS et JS avec :
 
 ```
 npm install
 npm run dev
 ```
 
-- activer browsersync
+activer browsersync
+
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix#browsersync-reloading)
 
 Dans `webpack.mix.js` :
@@ -279,13 +290,21 @@ mix.browserSync('127.0.0.1:8000');
 mix.browserSync('localhost:8000');
 ```
 
-- activer le watch
+activer le watch
+
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix#watching-assets-for-changes)
 
 ```
 npm run watch
 ```
 
-- intéger des fichiers CSS et JS dans des vues
+désactiver les notifications
+
+Dans `webpack.mix.js` :
+
+    mix.disableNotifications();
+
+intéger des fichiers CSS et JS dans des vues
+
 [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#stacks)
 
