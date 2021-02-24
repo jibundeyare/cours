@@ -98,6 +98,14 @@ Voir [composer](composer.md).
 
 Si votre application web utiliser une BDD, il lui faut un accès permettant de créer, détruire et modifier une BDD.
 
+Vous pouvez procéder manuellement ou utiliser les install scripts : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
+
+Vous aurez besoin de la commande `mkdb.sh`.
+
+#### Procédure manuelle
+
+Vous aurez besoin de la commande `mkwebsite.sh`.
+
 Connectez-vous à votre serveur en SSH puis tapez la commande suivante :
 
     sudo mysql -u root
@@ -147,15 +155,9 @@ Mettez à jour et fermez la connexion de la BDD :
 
 Il faut créer un virtual host.
 
-Voir les fichiers gist : [jibundeyare’s gists](https://gist.github.com/jibundeyare).
+Vous pouvez procéder manuellement ou utiliser les install scripts : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
-Vous aurez besoin de :
-
-- `rmwebsite.sh`
-- `mkwebsite.sh`
-- `template-pool.conf`
-- `template-vhost.conf`
-- `template-vhost-symfony.conf`
+Vous aurez besoin de la commande `mkwebsite.sh`.
 
 ## Création automatique du fichier de config `deploy.php` sur le poste de dev
 
