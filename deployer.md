@@ -104,8 +104,6 @@ Vous aurez besoin de la commande `mkdb.sh`.
 
 #### Procédure manuelle
 
-Vous aurez besoin de la commande `mkwebsite.sh`.
-
 Connectez-vous à votre serveur en SSH puis tapez la commande suivante :
 
     sudo mysql -u root
