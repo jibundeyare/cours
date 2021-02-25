@@ -12,13 +12,15 @@ Si vous voulez déployer une version antérieure ou déployer un autre framework
 
 - un projet dans un repository git accessible via internet (Github, Framagit, Bitbucket, etc)
 - une config pour l'environnement de prod (accès à la BDD, accès à un SMTP, etc)
-- la commande `dep` (c-à-d Deployer)
+- la commande `dep` (c-à-d Deployer) sur le poste de dev
 - une connexion SSH avec authentification par clé publique
-- PHP (7.1+ fortement recommandé) sur votre serveur
-- un `composer` installé globalement sur le serveur
+- PHP (7.1+ fortement recommandé) sur le serveur
+- la commande `composer` sur le serveur
+- la commande `npm` sur le serveur
 - un serveur web (Apache, nginx ou autre) sur le serveur
-- une base de données (BDD) avec une connexion root pour créer un utilisateur et BDD (MariaDB, PostgreSQL, ou autre) sur le serveur
-- un compte root pour créer un pool php-fpm et un vhost
+- un serveur de données (MariaDB, PostgreSQL, ou autre) sur le serveur
+- un compte root dans la BDD pour créer un nouvel utilisateur et une nouvelle BDD sur le serveur
+- un compte root dans l'OS pour créer un pool php-fpm et un vhost sur le serveur
 - un compte utilisateur qui est sudoer pour redémarrer des services (optionnel)
 
 ## Installation de la commande `dep` (c-à-d Deployer)
