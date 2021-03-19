@@ -168,7 +168,70 @@ Exemple : afficher la liste des fichiers du dossier `/root`
 
     sudo ls /root
 
+#### Recherche de texte
+
+La commande `grep` permet de rechercher un mot clé à l'intérieur d'un fichier.
+
+La commande `fgrep` permet de rechercher un mot clé à l'intérieur de tous les fichiers contenus dans un dossier.
+
+Recherche insensible à la casse (sans prise en compte des majuscules et minuscules) du mot clé `foo` à l'intérieur du fichier `bar.txt` :
+
+    grep -i foo bar.txt
+
+Recherche insensible à la casse du mot clé `foo` à l'intérieur de tous les fichiers du dossier `bar` :
+
+    fgrep -ir foo bar
+
+La même commande mais sans l'affichage du texte trouvé (seulement la liste des fichiers qui contiennent le mot clé) :
+
+    fgrep -ilr foo bar
+
+#### Historique des commandes tapées
+
+Cette commande affiche l'historique des commandes tapées :
+
+    history
+
+En combinant `grep` et `history`, on peut rechercher un mot clé dans l'historique des commandes tapées.
+
+Recherche du mot clé `foo` dans l'historique des commandes tapées :
+
+    history | grep -i `foo`
+
+Vous devriez obtenir un résultat du type :
+
+     1749  foo
+     2002  history | grep -i foo
+
+Si vous voulez exécuter une commande précédemment tapée, vous pouvez utiliser le point d'exclamation `!` et le numéro de la ligne pour ne pas devoir tout retaper :
+
+    !1749
+
+#### J'ai oublié d'utiliser `sudo`
+
+Si vous voulez relancer la commande précédente en ajoutant `sudo` devant, utiliser les double point d'exclamation `!!` :
+
+    sudo !!
+
+#### Recherche de fichiers dans des dossiers
+
+La commande `find` permet de rechercher des fichiers en fonction de leur nom, leur type, etc.
+C'est une commande très riche.
+Le mieux est de consulter sa page man avec `man find`.
+
+Recherche insensible à la casse (sans prise en compte des majuscules et minuscules) de tous les fichiers ayant l'extension `.txt` dans le dossier courant (le dossier `.`) :
+
+    find . -type f -iname "*.txt"
+
+Recherche insensible à la casse de tous les dossiers ayant le nom `src` dans le dossier `projects` :
+
+    find projects -type d -iname "src"
+
 ### Windows
+
+Cette section est censée reproduire à peu près la section Linux.
+Mais il y a des différences, certaines commandes ne sont pas reproduites.
+(Et puis je connais moins bien Windows.)
 
 Se rendre dans un dossier :
 
@@ -236,9 +299,52 @@ Supprimer un fichier (attention : impossibilité de récupérer le fichier par a
 
     del [nom de fichier]
 
+### Recherche de texte
+
+La commande `findstr`
+
+Recherche insensible à la casse (sans prise en compte des majuscules et minuscules) du mot clé `foo` à l'intérieur du fichier `bar.txt` :
+
+    findstr /i foo bar.txt
+
+Recherche insensible à la casse du mot clé `foo` à l'intérieur de tous les fichiers du dossier `bar` :
+
+    findstr /s /i foo bar
+
+La même commande mais sans l'affichage du texte trouvé (seulement la liste des fichiers qui contiennent le mot clé) :
+
+    findstr /s /i /m foo bar
+
+#### Recherche de fichiers dans des dossiers
+
+La commande `dir` permet de rechercher des fichiers en fonction de leur nom, leur type, etc.
+
+Recherche insensible à la casse (sans prise en compte des majuscules et minuscules) de tous les fichiers ou dossiers ayant l'extension `.txt` dans le dossier courant :
+
+    dir /s *.txt
+
+Recherche insensible à la casse de tous les fichiers ou dossiers ayant l'extension `.txt` dans le sous-dossier `projects` (mais pas les sous-sous-dossiers) :
+
+    dir /s projects\*.txt
+
+## Les wildcards (joker en français)
+
+Le symbole étoile `*` permet de remplacer une suite de caractères arbitraire.
+On s'en sert la plupart du temps pour sélectionner un ensemble de fichier sans devoir taper tous leurs noms.
+
+Par exemple, la commande suivante permet de lister tous les fichiers ayant l'extension `.png` :
+
+    ls *.png
+
+Autre exemple, la commande suivante permet de copier tous les fichiers commençant par `foo` dans le dossier `bar` :
+
+    cp foo* bar/
+
+**Note : Le comportement du symbole étoile `*` est le même sous Linux, MacOS et Windows.**
+
 ## Fichiers cachés
 
-### Macos et Linux
+### MacOS et Linux
 
 Les fichiers dont le nom commence par un point sont cachés.
 

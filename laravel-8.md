@@ -249,8 +249,6 @@ Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
 ## Les vues
 
-@todo créer un template parent et un enfant avec l'héritage
-
 créer une vue parent et des vues enfants
 
 - [Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/views#creating-and-rendering-views)
@@ -275,11 +273,6 @@ Et voici la ligne pour le JS :
     <script src="{{ asset('js/app.js') }}"></script>
 
 La fonction `asset()` permet de retrouver automatiquement le dossier dans lequel sont stockés les ressources statiques compilées (c-à-d le CSS et le JS).
-
-@todo compiler un fichier CSS séparé et l'intégrer (modif config webpack)
-@todo compiler un fichier JS séparé et l'intégrer (modif config webpack)
-
-@todo ajouter des titres
 
 générer des urls de routes nommées
 
@@ -343,13 +336,27 @@ La commande suivante exécute les fichiers de migrations :
 Mais en phase de développement, il est souvent plus pratique de de détruire toutes les tables puis d'exécuter tous les fichiers de migration depuis le début.
 Pour faire ça, vous pouvez utiliser la commande suivante :
 
-    php artisan migrate:refresh
+    php artisan db:wipe && php artisan migrate
 
 Pour savoir quel fichier de migration a été exécuté, utilisez la commande suivante :
 
     php artisan migrate:status
 
 Alternativement, vous pouvez aussi examiner la table `migrations` dans la BDD.
+
+### Revenir à une version précédente de la BDD avec les fichiers de migration
+
+Il est parfois nécessaire de pouvoir revenir à une version précédente de la BDD si vous rencontrez un bug compliqué en production et que vous voulez rapidement rendre l'application de nouveau fonctionnelle.
+
+La commande suivante vous permet d'annuler le dernier fichier de migration exécuté :
+
+    php artisan migrate:rollback --step 1
+
+Si vous devez annuler plusieurs fichiers de migrations, spécifiez-en le nombre après l'option `step`.
+
+Exemple qui annule les `3` derniers fichiers de migration :
+
+    php artisan migrate:rollback --step 3
 
 ### Le fichier de migration
 
