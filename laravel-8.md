@@ -56,7 +56,7 @@ Avec `composer` :
 
     composer create-project laravel/laravel foo
 
-Avec `artisan` :
+Avec `laravel` :
 
     laravel new foo
 
@@ -249,10 +249,37 @@ Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
 ## Les vues
 
+@todo créer un template parent et un enfant avec l'héritage
+
 créer une vue parent et des vues enfants
 
 - [Views - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/views#creating-and-rendering-views)
 - [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#layouts-using-template-inheritance)
+
+### Affichage d'une variable
+
+Pour afficher une variable, vous pouvez utiliser des accolades `{}`.
+
+    {{ $foo }}
+
+### Intégration de fichiers CSS et JS dans un template Blade
+
+Les fichiers CSS et JS sont compilés (transpilés en réalité) et stockés dans le dossier `public`.
+
+Pour que votre navigateur puisse accéder aux fichiers, vous pouvez ajouter la ligne suivante dans votre template Blade :
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+
+Et voici la ligne pour le JS :
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+La fonction `asset()` permet de retrouver automatiquement le dossier dans lequel sont stockés les ressources statiques compilées (c-à-d le CSS et le JS).
+
+@todo compiler un fichier CSS séparé et l'intégrer (modif config webpack)
+@todo compiler un fichier JS séparé et l'intégrer (modif config webpack)
+
+@todo ajouter des titres
 
 générer des urls de routes nommées
 
@@ -260,11 +287,9 @@ générer des urls de routes nommées
 
 afficher des urls de routes nommées dans un template blade
 
-```
-{{ route('foo') }}
-{{ route('foo', ['id' => 123]) }}
-{{ route('foo', ['id' => 123, 'bar' => 42]) }}
-```
+    {{ route('foo') }}
+    {{ route('foo', ['id' => 123]) }}
+    {{ route('foo', ['id' => 123, 'bar' => 42]) }}
 
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix)
 
@@ -272,10 +297,8 @@ afficher des urls de routes nommées dans un template blade
 
 installer les packages js et compiler les fichiers CSS et JS avec :
 
-```
-npm install
-npm run dev
-```
+    npm install
+    npm run dev
 
 activer browsersync
 
@@ -283,20 +306,16 @@ activer browsersync
 
 Dans `webpack.mix.js` :
 
-```
-mix.browserSync('127.0.0.1:8000');
+    mix.browserSync('127.0.0.1:8000');
 
-// ou si 127.0.0.1 ne fonctionne pas
-mix.browserSync('localhost:8000');
-```
+    // ou si 127.0.0.1 ne fonctionne pas
+    mix.browserSync('localhost:8000');
 
 activer le watch
 
 [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix#watching-assets-for-changes)
 
-```
-npm run watch
-```
+    npm run watch
 
 désactiver les notifications
 
@@ -307,4 +326,126 @@ Dans `webpack.mix.js` :
 intéger des fichiers CSS et JS dans des vues
 
 [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#stacks)
+
+## Le schéma de base de données (BDD)
+
+Vous pouvez créer le schéma de BDD « à la main » en écrivant du code SQL ou en utilisant PhpMyAdmin.
+Ou alors vous pouvez utiliser le système de « migration » de Laravel.
+
+Le système de migration consiste à indiquer comment créer le schéma de BDD avec du code PHP.
+
+### Exécution des fichiers de migrations
+
+La commande suivante exécute les fichiers de migrations :
+
+    php artisan migrate
+
+Mais en phase de développement, il est souvent plus pratique de de détruire toutes les tables puis d'exécuter tous les fichiers de migration depuis le début.
+Pour faire ça, vous pouvez utiliser la commande suivante :
+
+    php artisan migrate:refresh
+
+Pour savoir quel fichier de migration a été exécuté, utilisez la commande suivante :
+
+    php artisan migrate:status
+
+Alternativement, vous pouvez aussi examiner la table `migrations` dans la BDD.
+
+### Le fichier de migration
+
+La commande suivante permet de générer un fichier de migration pour la table `foo` :
+
+    php artisan make:migration create_foo_table
+
+Un nouveau fichier apparaît : `database/migrations/2021_03_18_171447_create_foo_table.php`
+
+La fonction `up()` sert à mettre à jour la BDD.
+C'est là qu'il faut indiquer comment créer le schéma de BDD.
+
+        /**
+         * Run the migrations.
+         *
+         * @return void
+         */
+        public function up()
+        {
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+        }
+
+La fonction `id()` créé une colonne de type `UNSIGNED BIG INTEGER` avec une contrainte d'unicité et un auto-incrément.
+C-à-d une colonne de type « primary key ».
+
+La fonction `timestamps()` créé deux colonne (`created_at` et `updated_at`) dans lesquelle peuvent être stockées la date de création et de modification de l'objet.
+
+Le fonctio `down()` sert à remettre la BDD dans un état antérieur.
+Cette fonction permet de « downgrader » (par opposition avec « upgrader ») votre BDD, ce qui est utile si la nouvelle version de votre application contient des bugs.
+
+        /**
+         * Reverse the migrations.
+         *
+         * @return void
+         */
+        public function down()
+        {
+            Schema::dropIfExists('foo');
+        }
+
+### Ajout de colonnes
+
+La section suivante liste tous les types de données que vous pouvez utiliser pour créer une colonne : [Database: Migrations - Available Column Types - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations#available-column-types).
+Par exemple, les fonctions `id()` et `timestamps()` en font partie.
+
+La section suivante liste tous les modificateurs de colonne : [Database: Migrations - Column Modifiers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations#column-modifiers).
+Par exemple, ces modificateurs permettent rendre une colonne nullable ou de définir une valeur par défaut.
+
+La section suivante liste tous les indexes que l'on peut rajouter sur à une colonne : [Database: Migrations - Creating Indexes - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations#creating-indexes)
+Les indexes permettent d'accélerer la recherche (`index()`) ou d'appliquer des contraintes (`unique()`).
+
+Nous allons ajouter les colonnes suivantes à la table `foo` :
+
+- `email` : varchar 100, unique
+- `nom` : varchar, 100, nullable
+- `prenom` : varchar 100, nullable
+- `mot_de_passe` : varchar 100
+- `tel` : varchar 10, nullable
+- `adresse1` : text, nullable
+- `adresse2` : text, nullable
+- `localite` : varchar 100, nullable
+- `code_postal` : integer, nullable
+
+Voici le code :
+
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->string('email', 100)->unique();
+                $table->string('nom', 100);
+                $table->string('prenom', 100);
+                $table->string('mot_de_passe', 100);
+                $table->string('tel', 10)->nullable();
+                $table->text('adresse1', 100)->nullable();
+                $table->text('adresse2', 100)->nullable();
+                $table->string('localite', 100)->nullable();
+                $table->integer('code_postal')->nullable();
+                $table->boolean('actif');
+                $table->timestamps();
+            });
+
+### Création d'une table avec une colonne « clé étrangère »
+
+La section suivante indique comment manipuler les contraintes de clé étrangères (aussi appelées contraintes d'intégrités) : [Database: Migrations - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations#foreign-key-constraints).
+Les contraintes de clé étrangère permettent de s'assurer qu'un objet ne sera supprimé s'il est référencé quelque part ou qu'un identifiant ne sera pas utilisé s'il ne correspond à aucun objet existant.
+
+Si la table `bar` doit faire référence à la clé primaire de la table `foo`, il faut créer une colonne `foo_id` dans la table `bar` et ajouter une contrainte de clé étrangère dessus.
+Voici le code :
+
+            Schema::create('bar', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('foo_id')->references('id')->on('foo');
+                $table->timestamps();
+            });
+
+*Attention : la colonne à laquelle il est fait référence doit être une clé primaire, sinon la contrainte de clé étrangère ne fonctionnera pas.*
 
