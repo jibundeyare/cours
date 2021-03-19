@@ -315,6 +315,8 @@ La même commande mais sans l'affichage du texte trouvé (seulement la liste des
 
     findstr /s /i /m foo bar
 
+- [findstr | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr)
+
 #### Recherche de fichiers dans des dossiers
 
 La commande `dir` permet de rechercher des fichiers en fonction de leur nom, leur type, etc.
@@ -326,6 +328,8 @@ Recherche insensible à la casse (sans prise en compte des majuscules et minuscu
 Recherche insensible à la casse de tous les fichiers ou dossiers ayant l'extension `.txt` dans le sous-dossier `projects` (mais pas les sous-sous-dossiers) :
 
     dir /s projects\*.txt
+
+- [dir | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir)
 
 ## Les wildcards (joker en français)
 
@@ -350,11 +354,35 @@ Les fichiers dont le nom commence par un point sont cachés.
 
 Exemple : `.htaccess`
 
+### Windows
+
+Les fichiers cachés ont un attribut « fichier caché » que l'on peut modifier en faisant un click droit sur le fichier puis en choisissant « propriété ».
+
+On peut aussi utiliser la commande `attrib` pour changer l'attribut « caché » ou « non caché ».
+
+Pour cacher le fichier `foo` :
+
+    attrib +h foo
+
+Pour ne plus cacher le fichier `foo` :
+
+    attrib -h foo
+
+- [attrib | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/attrib)
+
 ## Path (chemin)
 
 Pour être à l'aise dans le terminal, vous devez connaître la différence entre un chemin absolu et un chemin relatif.
 
 Pour en savoir plus, voir [path.md](path.md).
+
+## Enchaîner plusieurs commandes en une seule ligne
+
+Vous pouvez utiliser la double esperluette `&&` pour enchaîner deux commandes en une seule ligne.
+
+    ls foo && ls bar
+
+**Note : Le comportement du symbole double esperluette `&&` est le même sous Linux, MacOS et Windows.**
 
 ## Terminus (le jeu)
 
@@ -381,4 +409,7 @@ Arg je suis bloqué.e dans Terminus pour trouver le mot de passe de sudo, je pen
 - [PowerShell.exe Command Line Help | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/components/console/powershell.exe-command-line-help?view=powershell-6)
 - [batch file - How do I run two commands in one line in Windows CMD? - Stack Overflow](https://stackoverflow.com/questions/8055371/how-do-i-run-two-commands-in-one-line-in-windows-cmd)
 - [windows - How to execute multiple commands in a single line - Stack Overflow](https://stackoverflow.com/questions/13719174/how-to-execute-multiple-commands-in-a-single-line)
+- [findstr | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr)
+- [dir | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir)
+- [attrib | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/attrib)
 
