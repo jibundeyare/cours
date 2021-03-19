@@ -393,7 +393,7 @@ Cette fonction permet de « downgrader » (par opposition avec « upgrader ») v
             Schema::dropIfExists('foo');
         }
 
-### Ajout de colonnes
+### Création d'une table
 
 La section suivante liste tous les types de données que vous pouvez utiliser pour créer une colonne : [Database: Migrations - Available Column Types - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations#available-column-types).
 Par exemple, les fonctions `id()` et `timestamps()` en font partie.
@@ -415,6 +415,7 @@ Nous allons ajouter les colonnes suivantes à la table `foo` :
 - `adresse2` : text, nullable
 - `localite` : varchar 100, nullable
 - `code_postal` : integer, nullable
+- `actif` : boolean, default TRUE
 
 Voici le code :
 
@@ -429,7 +430,7 @@ Voici le code :
                 $table->text('adresse2', 100)->nullable();
                 $table->string('localite', 100)->nullable();
                 $table->integer('code_postal')->nullable();
-                $table->boolean('actif');
+                $table->boolean('actif')->default(true);
                 $table->timestamps();
             });
 
@@ -448,4 +449,49 @@ Voici le code :
             });
 
 *Attention : la colonne à laquelle il est fait référence doit être une clé primaire, sinon la contrainte de clé étrangère ne fonctionnera pas.*
+
+### Modification d'une table
+
+À un moment où un autre, il se peut que vous ayez besoin de modifier la structure de votre table.
+
+Vous ne devez pas créer de nouvelle table, vous devez modifier une table existante.
+De même, il ne faudra pas ajouter de nouvelle colonne, il faudra modifier une colonne existante.
+
+Voici le code de création d'une table nommée `baz` :
+
+            Schema::create('baz', function (Blueprint $table) {
+                $table->id();
+                $table->string('nom');
+                $table->integer('total');
+                $table->boolean('actif');
+                $table->foreignId('foo_id')
+                $table->timestamps();
+            });
+
+#### Modifications de colonnes
+
+Le code suivant permet de changer la taille de la colonne `nom`, de rendre nullable la colonne `total` et de définir une valeur par défaut pour la colonne `actif` :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->string('nom', 190)->change();
+                $table->integer('total')->nullable()->change();
+                $table->boolean('actif')->default(true);
+            });
+
+#### Ajout d'indexes après création d'une table
+
+Le code suivant permet d'ajouter une contrainte d'unicité sur la colonne `nom` et un index sur la colonne `total` :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->unique('nom');
+                $table->index('total');
+            });
+
+#### Ajout de contrainte de clé étrangère après création d'une table
+
+Le code suivant permet d'ajouter une contrainte de clé étrangère sur la colonne `foo_id` :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->foreign('foo_id')->->references('id')->on('foo');
+            });
 
