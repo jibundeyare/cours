@@ -196,7 +196,7 @@ En combinant `grep` et `history`, on peut rechercher un mot clé dans l'historiq
 
 Recherche du mot clé `foo` dans l'historique des commandes tapées :
 
-    history | grep -i `foo`
+    history | grep -i foo
 
 Vous devriez obtenir un résultat du type :
 

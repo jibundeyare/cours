@@ -21,15 +21,6 @@
 - tableau (array)
 - objet / classe (object / class)
 
-## Typage strict
-
-En ajoutant la ligne suivante au début de vos fichiers, vous signalez à PHP que les type de données doivent être utilisés de façon stricte.
-
-    declare(strict_types = 1);
-
-Exemple : une fonction qui accepte un paramètre de type `float` n'acceptera qu'on lui passe un `int`.
-Il faudra explicitement convertir l'`int` en `float` avant de transmettre la valeur à la fonction.
-
 ## Valeurs vides
 
 Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()` :
@@ -76,6 +67,15 @@ Exemple de condition :
     if ($foo == 123) {
         echo 'foo contient la valeur 123';
     }
+
+## Typage strict
+
+En ajoutant la ligne suivante au début de vos fichiers, vous signalez à PHP que les type de données doivent être utilisés de façon stricte.
+
+    declare(strict_types = 1);
+
+Exemple : une fonction qui accepte un paramètre de type `int` n'acceptera pas qu'on lui passe un `float` (mais le contraire sera vrai).
+Il faudra explicitement convertir le `float` en `int` avant de transmettre la valeur à la fonction.
 
 ## Fonctions
 
