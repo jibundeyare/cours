@@ -173,7 +173,7 @@ Exemple de code en PHP :
 
 ## Code SQL
 
-Attention, avec Windows et MacOS, les noms des bases de données (BDD) et des tables ne sont pas sensibles à la casse **alors qu'ils le sont avec Linux.**
+Attention : quand on utilise MariaDB avec Windows et MacOS, les noms des bases de données (BDD) et des tables ne sont pas sensibles à la casse **alors qu'ils le sont avec Linux.**
 
 - [Identifier Case-sensitivity - MariaDB Knowledge Base](https://mariadb.com/kb/en/identifier-case-sensitivity/)
 
