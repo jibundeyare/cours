@@ -54,6 +54,24 @@ Mais je ne sais pas comment.
 
 ### Linux et MacOS
 
+En général, il est possible d'obtenir de l'aide à propos d'une commande en ajoutant l'option `--help`.
+
+Exemple :
+
+    cd --help
+
+Pour afficher le manuel détaillé d'une commande, vous pouvez utiliser la commande `man` ou `info`.
+
+Exemple :
+
+    man cd
+
+ou :
+
+    info cd
+
+*Note : pour sortir du manuel, tapez `q` comme `quit`.*
+
 Se rendre dans un dossier :
 
     cd [nom du dossier]
@@ -96,7 +114,7 @@ Afficher le contenu du dossier actuel avec les droits :
 
     ls -l
 
-Afficher le contenu du dossier avec le fichier cachés :
+Afficher le contenu du dossier avec les fichiers cachés :
 
     ls -A
 
@@ -148,9 +166,9 @@ Ajouter du contenu dans un fichier :
 
     echo "[texte]" >> [nom de fichier]
 
-Exemple : ajouter le texte `"Hello Bash!"` dans le fichier `hello.txt`
+Exemple : ajouter le texte `"Hello Universe!"` dans le fichier `hello.txt`
 
-    echo "Hello Bash!" >> hello.txt
+    echo "Hello Universe!" >> hello.txt
 
 Afficher l'arborescence des dossiers :
 
@@ -233,6 +251,12 @@ Cette section est censée reproduire à peu près la section Linux.
 Mais il y a des différences, certaines commandes ne sont pas reproduites.
 (Et puis je connais moins bien Windows.)
 
+En général, il est possible d'obtenir de l'aide à propos d'une commande en ajoutant l'option `/?`.
+
+Exemple :
+
+    cd /?
+
 Se rendre dans un dossier :
 
     cd [nom du dossier]
@@ -271,6 +295,22 @@ Afficher le contenu du dossier actuel :
 
     dir
 
+Afficher le contenu du dossier avec les fichiers cachés :
+
+    dir /a
+
+Afficher le contenu du dossier et des sous-dossiers avec les fichiers cachés :
+
+    dir /s /a
+
+Afficher les fichiers « système » d'un dossier :
+
+    dir /a:s
+
+Afficher lss fichiers « système » d'un dossier et des sous-dossiers :
+
+    dir /s /a:s
+
 Effacer tout l'écran :
 
     cls
@@ -298,6 +338,34 @@ Renomer un fichier :
 Supprimer un fichier (attention : impossibilité de récupérer le fichier par après) :
 
     del [nom de fichier]
+
+Afficher le contenu d'un fichier :
+
+    type [nom de fichier]
+
+Créer un fichier vide :
+
+    type nul >> [nom de fichier]
+
+ou :
+
+    copy nul [nom de fichier]
+
+Écraser le contenu d'un fichier :
+
+    echo [texte] > [nom de fichier]
+
+Exemple : créer un fichier nommé `hello.txt` contenant le texte `"Hello World!"`
+
+    echo Hello World! > hello.txt
+
+Ajouter du contenu dans un fichier :
+
+    echo [texte] >> [nom de fichier]
+
+Exemple : ajouter le texte `"Hello Universe!"` dans le fichier `hello.txt`
+
+    echo Hello Universe! >> hello.txt
 
 ### Recherche de texte
 
@@ -383,6 +451,32 @@ Vous pouvez utiliser la double esperluette `&&` pour enchaîner deux commandes e
     ls foo && ls bar
 
 **Note : Le comportement du symbole double esperluette `&&` est le même sous Linux, MacOS et Windows.**
+
+## Redirection de la sortie standard avec le symbole `>`
+
+Ou comment enregistrer la sortie d'une commande dans un fichier.
+
+Ceci fonctionne sous Windows, MacOS et Linux.
+
+Vous pouvez taper votre commande comme d'habitude et ajouter le symbole de redirection `>` et spécifier le fichier.
+
+Exemple pour rediriger la sortie de `ls -al` vers le fichier `list.txt` :
+
+		ls -al > list.txt
+
+## Chaînage de la sortie standard vers l'entrée standard avec le symbole « pipe » `|`
+
+Ou comment utiliser la sortie d'une commande comme entrée pour une autre commande.
+
+Cette fonctionnalité vous permet de chaîner des commandes et de traiter les données sortant d'une commande avec une autre commande.
+
+Note : « pipe » veut dire tuyau en anglais.
+
+Exemple pour compter le nombre de fichiers du répertoire courant :
+
+		ls | wc -l
+
+Explication : la commande `ls` affiche la liste des fichiers du dossier courant et la commande `wc -l` compte le nombre de lignes.
 
 ## Terminus (le jeu)
 
