@@ -138,13 +138,14 @@ Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont comp
 
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#basic-routing)
 
-Les routes sont les URL qui seront mises à disposition par l'application.
+Les routes sont des URL associées à des fonctions.
+Elles définissent les URLs mises à disposition par l'application et leurs fonctionnalités.
 
 Par exemple :
 
-- la page d'accueil sera la route `/`
-- la page « à propos » sera la route `/about`
-- la page de contact sera la route `/contact`
+- l'URL `/` affichera la page d'accueil
+- l'URL `/about` affichera la page « à propos »
+- l'URL `/product/{id}` affichera la page d'un produit (choisi grâce au paramètre `{id}` dans la barre d'adresse avec `http://example.com/product/123` par exemple)
 - ...
 
 Dans l'application, au lieu de désigner les routes par leur URL, on pourra leur donner un nom.
