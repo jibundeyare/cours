@@ -2,7 +2,7 @@
 
 Le code review c'est :
 
-- 30% du temps travail quotidien
+- 30% du temps de travail quotidien
 - un code de meilleur qualité (bug busting, code style, best practices)
 - une plus grande cohérence dans le code de l'application
 - une meilleure cohésion dans l'équipe
@@ -44,3 +44,4 @@ Mais pour éviter les conflits ou les répétitions d'erreurs, il faut des règl
 ## Doc
 
 - [[DevFest Nantes 2017] Code review : ce truc qui ne sert à rien - YouTube](https://www.youtube.com/watch?v=6aQK6GoTbxM)
+
