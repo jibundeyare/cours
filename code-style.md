@@ -171,6 +171,31 @@ Exemple de code en PHP :
         ]
     ];
 
+## Code SQL
+
+Attention, avec Windows et MacOS, les noms des bases de données (BDD) et des tables ne sont pas sensibles à la casse **alors qu'ils le sont avec Linux.**
+
+- [Identifier Case-sensitivity - MariaDB Knowledge Base](https://mariadb.com/kb/en/identifier-case-sensitivity/)
+
+Prenez donc l'habiutude de nommer toutes vos BDD, tables, colonnes, indexes, fonctions stockées, etc en caractères bas de casse (en minuscules).
+Pour le code SQL (instructions, mot clés), tapez le en majuscule.
+Ceci vous aidera à distinguer d'un coup d'œil le code SQL et vos données.
+
+Exemple de code SQL bien « stylé » :
+
+    DROP TABLE IF EXISTS `user`;
+    CREATE TABLE IF NOT EXISTS `user` (
+      `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+      `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+      `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+      `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+      `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      `modification_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      `group_id` int(10) UNSIGNED DEFAULT NULL,
+      PRIMARY KEY (`id`),
+      KEY `fk_user_group_id` (`group_id`),
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 ## Doc
 
 - [PSR-1: Basic Coding Standard - PHP-FIG](http://www.php-fig.org/psr/psr-1/)
@@ -178,4 +203,5 @@ Exemple de code en PHP :
 - [PSR-12: Extended Coding Style - PHP-FIG](https://www.php-fig.org/psr/psr-12/)
 - [Coding Standards (Symfony Docs)](http://symfony.com/doc/current/contributing/code/standards.html)
 - [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)
+- [Identifier Case-sensitivity - MariaDB Knowledge Base](https://mariadb.com/kb/en/identifier-case-sensitivity/)
 
