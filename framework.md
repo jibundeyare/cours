@@ -20,7 +20,7 @@ Un framework est à la fois une structure de fichiers et un ensemble de code sou
 - plus complexe à appréhender
 - peut poser des problèmes de compatibilité si les mises à jours sont trop fréquentes et non rétro-compatibles
 - force une structure de dossier particulière
-- plus lent à l'exécution
+- plus lent à l'exécution (à moins de mettre en place des caches)
 
 ## Avantages
 
