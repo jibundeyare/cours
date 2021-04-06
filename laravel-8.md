@@ -500,6 +500,6 @@ Le code suivant permet d'ajouter une contrainte d'unicité sur la colonne `nom` 
 Le code suivant permet d'ajouter une contrainte de clé étrangère sur la colonne `foo_id` :
 
             Schema::table('baz', function (Blueprint $table) {
-                $table->foreign('foo_id')->->references('id')->on('foo');
+                $table->foreign('foo_id')->references('id')->on('foo');
             });
 

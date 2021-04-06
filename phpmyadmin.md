@@ -4,7 +4,7 @@ Je propose un ensemble de scripts pour faciliter l'installation de phpMyAdmin et
 
 ## Export d'une base de données
 
-Dans chacune des sections, cocher les options suivantes.
+Cochez les options suivantes :
 
 ### Méthode d'exportation
 

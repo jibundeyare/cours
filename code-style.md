@@ -20,9 +20,116 @@ Pour commencer, `squizlabs/php_codesniffer` est indiqué mais par la suite, pour
 | `my_var`  | snake case            | surtout utilisé en Ruby ou Python                 |
 | `my-var`  | kebab case            | utilisé en HTML et CSS                            |
 
+## Nommage des variables
+
+Quelque soit le langage de programmation, il y a des règles (quasi) universelles.
+Les règles suivantes s'appliquent aux noms des variables mais aussi aux noms des fonctions ou des classes.
+
+### Le nom d'une variable ne peut pas commencer par un chiffre
+
+Exemple :
+
+    # mauvais
+    0_ma_variable = 123
+
+    # ok
+    ma_variable_0 = 123
+    v0 = 123
+
+### Le nom d'une variable doit commencer par un caractère minuscule
+
+**Mais le nom d'une classe doit commencer par un caractère majuscule.**
+
+*(Mais les dev microsoft ont tendance à violer cette règle.)*
+
+    # mauvais
+    Ma_variable = 123
+
+    # ok
+    ma_variable = 123
+
+### Le nom d'une variable ne peut comporter que des caractères alphanumériques et l'underscore
+
+Les caractères alphanumériques, c-à-d les lettres de `a` à `z` (en majuscule ou minuscule) et les chiffres de `0` à `9`.
+L'underscore c'est tiret du bas `_`.
+
+Ça veut dire qu'il faut éviter tous les accents (`éèêë` par exemple), les autres signes diacritiques (`ç` par exemple) et tous les caractères non alphanumériques (`@#§µ` par exemple).
+
+*(Mais en code css vous pouvez vous permettre d'utiliser le trait d'union (tiret du milieu) `-`.*
+
+    # mauvais
+    ma-variable = 123
+    ma variable = 123
+    une_probabilité = 0.123
+
+    # ok
+    ma_variable = 123
+    une_probabilite = 0.123
+
+### Nommage de variable au singulier ou au pluriel
+
+Quand on nomme une variable, on utilise toujours le singulier.
+Mais si la variable contient une collection de données (comme avec les listes ou les tableaux par exemple), on utilise le pluriel.
+
+Exemple de code en JavaScript :
+
+    // variable nommée au singulier
+    // la variable représente un seul utilisateur
+    var user = {
+        'id': 53,
+        'username': 'foo'
+    };
+
+    // variable nommée au pluriel
+    // la variable contient plusieurs utilisateurs
+    var users = [
+        {
+            'id': 53
+            'username': 'foo'
+        },
+        {
+            'id': 54
+            'username': 'bar'
+        }
+    ];
+
+Exemple de code en PHP :
+
+    // variable nommée au singulier
+    // la variable représente un seul utilisateur
+    $user = [
+        'id' => 53,
+        'username' => 'foo'
+    ];
+
+    // variable nommée au pluriel
+    // la variable contient plusieurs utilisateurs
+    $users = [
+        [
+            'id': 53
+            'username' => 'foo'
+        ],
+        [
+            'id': 54
+            'username' => 'bar'
+        ]
+    ];
+
 ## Indentation
 
-Vous allez être surpris, les règles d'indentation du code sont très simples.
+L'indentation est le décalage vers la droite d'une ligne de code.
+
+Exemple :
+
+    ligne non indentée (collée à gauche)
+        ligne indentée de 1 cran
+            ligne indentée de 2 crans
+                ligne indentée de 3 crans
+            ligne indentée de 2 crans
+        ligne indentée de 1 cran
+    ligne non indentée (collée à gauche)
+
+Vous allez être surpris car les règles d'indentation du code sont très simples.
 
 Les choses se compliquent cependant quand vous mélangez du code PHP et du code HTML.
 
@@ -34,6 +141,8 @@ Mais dès qu'on ouvre une balise HTML, la ligne suivante doit être indentée.
 Si d'autres lignes suivent, elles ont la même indentation.
 
 Quand on ferme une balise HTML, la ligne doit être désindentée.
+
+Simple non ?
 
 Exemple :
 
@@ -50,10 +159,10 @@ Exemple :
 
 Au début le code est désindenté (collé tout à gauche).
 
-Mais dès qu'on ouvre un block (un `if`, une boucle, une fonction, une classe, etc), la ligne suivante doit être indentée.
+Mais dès qu'on ouvre un bloc (un `if`, une boucle, une fonction, une classe, etc), la ligne suivante doit être indentée.
 Si d'autres lignes suivent, elles ont la même indentation.
 
-Quand on ferme le block, la ligne doit être désindentée.
+Quand on ferme le bloc, la ligne doit être désindentée.
 Si d'autres lignes suivent, elles ont la même indentation.
 
 Exemple :
@@ -93,15 +202,16 @@ Exemple :
 
 ### PHP et HTML
 
-Là, ça se complique...
+Là, ça se complique un peu...
+
 Mais en gros, l'idée c'est que les balises PHP suivent les règles d'indentation des balises HTML.
 
 Au début le code est désindenté (collé tout à gauche).
 
-Mais dès qu'on ouvre une balise HTML ou un block PHP (pas une balise PHP), la ligne suivante doit être indentée.
+Mais dès qu'on ouvre une balise HTML ou un bloc PHP (pas une balise PHP), la ligne suivante doit être indentée.
 Si d'autres lignes suivent, elles ont la même indentation.
 
-Quand on ferme une balise HTML ou un block PHP, la ligne doit être désindentée.
+Quand on ferme une balise HTML ou un bloc PHP, la ligne doit être désindentée.
 Si d'autres lignes suivent, elles ont la même indentation.
 
 Exemple :
@@ -125,51 +235,6 @@ Pour savoir ça, il vaut mieux consulter la norme officielle :
 - [PSR-1: Basic Coding Standard - PHP-FIG](http://www.php-fig.org/psr/psr-1/)
 - <del>[PSR-2: Coding Style Guide - PHP-FIG](https://www.php-fig.org/psr/psr-2/)</del>
 - [PSR-12: Extended Coding Style - PHP-FIG](https://www.php-fig.org/psr/psr-12/)
-
-## Nommage de variable au singulier ou au pluriel
-
-Quand on nomme une variable, on utilise toujours le singulier.
-Mais si la variable contient une collection de données du même type (comme avec les tableaux par exemple), on utilise le pluriel.
-
-Exemple de code en JavaScript :
-
-    // variable nommée au singulier
-    var profile = {
-        'id': 53,
-        'username': 'foo'
-    };
-
-    // variable nommée au pluriel
-    var users = [
-        {
-            'id': 53
-            'username': 'foo'
-        },
-        {
-            'id': 54
-            'username': 'bar'
-        }
-    ];
-
-Exemple de code en PHP :
-
-    // variable nommée au singulier
-    $profile = [
-        'id' => 53,
-        'username' => 'foo'
-    ];
-
-    // variable nommée au pluriel
-    $users = [
-        [
-            'id': 53
-            'username' => 'foo'
-        ],
-        [
-            'id': 54
-            'username' => 'bar'
-        ]
-    ];
 
 ## Code SQL
 
