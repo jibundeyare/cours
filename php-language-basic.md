@@ -1,5 +1,7 @@
 # PHP language basic
 
+PHP est un langage informatique conçu pour créer des applications web.
+
 ## Notions
 
 - variables (types de données simples, tableaux, objets)

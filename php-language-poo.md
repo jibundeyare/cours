@@ -1,5 +1,7 @@
 # PHP language poo
 
+PHP est un langage informatique conçu pour créer des applications web.
+
 ## Arborescence d'un projet
 
 Voir la section « Arborescence d'un projet » dans [php-application.md](php-application.md).
