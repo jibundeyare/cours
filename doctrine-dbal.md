@@ -156,6 +156,8 @@ Pour lire des données (`SELECT`) : `fetchAll()`, `fetchAssoc()` ou `executeQuer
 
 Pour écrire des données (`INSERT`, `UPDATE` et `DELETE`) : `insert()`, `update()`, `delete()` ou `executeUpdate()`.
 
+Rappel : si ces opérations ne sont pas claires, voir le concept de CRUD dans [mariadb.md](mariadb.md).
+
 ## `SELECT` (ou read, le R de CRUD) de plusieurs lignes
 
 ### Méthode `fetchAll()`

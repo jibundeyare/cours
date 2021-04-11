@@ -22,7 +22,7 @@
 - Console : à la base il s'agit du clavier qui permet de manipuler les premiers ordinateurs ; actuellement le terme désigne aussi l'interface en ligne de commande ; voir aussi CLI et Terminal
 - CRM : Customer Relationship Management (Gestion du suivi client) ; c'est une application qui permet de gérer tout l'historique des relations client : les contacts, les devis, les factures, les relances, etc
 - CRUD : Create, Read, Update et Delete (créer, lire, mettre à jour, supprimer)  
-  Ce sont toutes les opérations possibles sur une donnée stockée en BDD
+  Ce sont les quatre opérations de base qui permettent de manipuler des données
 - CSS : Cascading Style Sheet (feuille de style en cascade)
 - CTO : Chief Technology Officer (directeur technique)
 - Daemon : démon ; c'est un programme qui tourne en tâche de fond, en attendant de traiter des requêtes (exemple : serveur web, serveur de mail, serveur ssh, etc)
