@@ -251,3 +251,13 @@ Pour convertir les clé de putty au format Open SSH, vous pouvez suivre les indi
 - [visual studio code - why vscode require so much memory? How to make it more clean? - Stack Overflow](https://stackoverflow.com/questions/53658769/why-vscode-require-so-much-memory-how-to-make-it-more-clean)
 - [Reducing VSCode Memory Consumption - DEV Community 👩‍💻👨‍💻](https://dev.to/claudiodavi/reducing-vscode-memory-consumption-527k)
 
+### Trouble shooting
+
+#### Problèmes avec live share
+
+Il ne se passe rien quand je click sur « partager » ou « rejoindre ».
+
+- [VS Code x86 - No Sign In and Share Button · Issue #102 · MicrosoftDocs/live-share](https://github.com/MicrosoftDocs/live-share/issues/102)
+- [Live share not working · Issue #3297 · MicrosoftDocs/live-share](https://github.com/MicrosoftDocs/live-share/issues/3297)
+- [visual studio code - A fatal error was encountered. The library 'hostpolicy.dll' required to execute the application was not found - Stack Overflow](https://stackoverflow.com/questions/60888926/a-fatal-error-was-encountered-the-library-hostpolicy-dll-required-to-execute/67019601#67019601)
+

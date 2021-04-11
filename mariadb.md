@@ -147,7 +147,7 @@ Le CRUD désigne les quatre opérations de base qui permettent de manipuler des 
 - Update : mettre à jour les données d'un objet (opération en écriture)
 - Delete : supprimer un objet (opération en écriture)
 
-Certains rajoutent une cinquième opération et parlent de CURDS :
+Certains rajoutent une cinquième opération et parlent de CRUDS :
 
 - Search : rechercher les données d'un ou de plusieurs objets (opération en lecture)
 
