@@ -4,13 +4,6 @@ Les install scripts sont un ensemble de petits scripts censé vous aider à admi
 
 Le code source est accessible ici [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
-## Prérequis
-
-Certains scripts nécessitent la présence du package `pwgen`.
-Si vous ne l'avez pas, installez-le avec la commande :
-
-    apt install pwgen
-
 ## Installation
 
     git clone https://github.com/jibundeyare/install-scripts.git
@@ -57,11 +50,11 @@ Les processus apache et php-fpm seroint démarrés avec le compte utilisateur.
 
 L'installation :
 
-    ./install-amp.sh [nom-utilisateur] [dossier-projets] [site-web-par-défaut]
+    ./install-amp.sh [nom-utilisateur] [dossier-projets] [site-web-par-défaut] [nom-de-domaine]
 
 Exemple :
 
-    ./install-amp.sh johndoe projects www
+    ./install-amp.sh johndoe projects www localhost
 
 ## Installation de phpMyAdmin (pma)
 
@@ -77,11 +70,11 @@ Il crée aussi un compte d'administrateur de BDD pour éviter d'utiliser le comp
 
 L'installation :
 
-    ./install-phpmyadmin-from-src.sh [nom-utilisateur] [administrateur-bdd] [sous-dossier-pma] [version-pma]
+    ./install-pma-from-src.sh [nom-utilisateur] [administrateur-bdd] [sous-dossier-pma] [version-pma]
 
 Exemple :
 
-    ./install-phpmyadmin-from-src.sh johndoe dba pma_subdir 5.0.2
+    ./install-pma-from-src.sh johndoe dba pma_subdir 5.0.2
 
 Après cette installation, pma devient accessible depuis l'url `http://[nom-domaine]/pma_subdir`.
 Sur votre machine de dev cela donne [http://localhost/pma_subdir](http://localhost/pma_subdir) ou [http://127.0.0.1/pma_subdir](http://127.0.0.1/pma_subdir).
@@ -93,11 +86,11 @@ Ce script permet de resetter ce mot de passe.
 
 Le reset :
 
-    ./reset-pma-http-auth-password.sh [administrateur-bdd]
+    ./pma-reset-http-auth-password.sh [administrateur-bdd]
 
 Exemple :
 
-    ./reset-pma-http-auth-password.sh dba
+    ./pma-reset-http-auth-password.sh dba
 
 ## Création d'un site web
 
