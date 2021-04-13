@@ -35,6 +35,10 @@ Remplacez `X.Y.Z` par la version de PHP utilisée.
 
 Par défaut, le port est `8889` et non le port standard `3306`.
 
+## PhpMyAdmin
+
+Voici l'url de PhpMyAdmin : [http://localhost:8888/phpMyAdmin/](http://localhost:8888/phpMyAdmin/)
+
 ## Login et password pour MySQL et PhpMyAdmin
 
 Le login et le password par défaut sont tout les deux `root`.
