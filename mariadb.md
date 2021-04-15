@@ -138,6 +138,27 @@ Voici quelques outils en ligne qui permettent de générer des données de test 
 
 Les requêtes SQL permettent de manipuler les données.
 
+## Quelques requêtes utiles
+
+Ces requêtes sont un peu l'équivalent de `ls` et `cd` dans un terminal.
+Elles permettent de voir la structure d'une BDD.
+
+Pour lister les BDD visibles :
+
+    SHOW DATABASES;
+
+Pour choisir une BDD (example avec une BDD nommée `foo`) :
+
+    USE foo;
+
+Pour lister les tables (vous devez être dans une BDD) :
+
+    SHOW TABLES;
+
+Et enfin pour listes les colonnes d'une table (example avec une table nommée `bar`, et vous devez aussi être dans une BDD) :
+
+    SHOW COLUMNS FROM bar;
+
 ### CRUD
 
 Le CRUD désigne les quatre opérations de base qui permettent de manipuler des données :
