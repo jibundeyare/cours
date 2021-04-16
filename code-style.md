@@ -10,7 +10,32 @@ Le code style est la façon dont vous présenter du code. Le code style n'est pa
 
 Pour commencer, `squizlabs/php_codesniffer` est indiqué mais par la suite, pour travailler avec le framework Symfony `friendsofphp/php-cs-fixer` est un meilleur choix.
 
+## La longueur d'une ligne de code
+
+En général, on conseille de ne pas écrire de ligne de code dépassant 80 caractères de long.
+
+La plupart des langages proposent un moyen d'écrire la suite de son code à la ligne suivante sans qu'il ne casse.
+
+En python par exemple, on peut écrire le code assez lisible :
+
+    if foo == 'foo' and \
+       bar == 'bar' and \
+       baz == 'baz' and \
+       lorem == 'lorem' and \
+       ipsum == 'ipsum':
+        print('foo bar baz lorem ipsum')
+
+au lieu du beaucoup moins lisible :
+
+    if foo == 'foo' and bar == 'bar' and baz == 'baz' and lorem == 'lorem' and ipsum == 'ipsum':
+        print('foo bar baz lorem ipsum')
+
 ## Casse typographique
+
+La casse désigne la taille d'un caractère :
+
+- capitale (ou majuscule si vous préférez) : grand caractère
+- ou minuscule : petit caractère
 
 | Code      | Casse                 | Usage                                             |
 | ----------| --------------------- | ------------------------------------------------- |
@@ -20,14 +45,25 @@ Pour commencer, `squizlabs/php_codesniffer` est indiqué mais par la suite, pour
 | `my_var`  | snake case            | surtout utilisé en Ruby ou Python                 |
 | `my-var`  | kebab case            | utilisé en HTML et CSS                            |
 
+## Nommage des constantes
+
+En général les cconstantes sont nommées en majuscules toutes.
+Du coup, pour séparer les mots, on utilise l'underscore.
+On utilise donc le « screaming snake case ». La classe non ?
+
+Exemple de code valable à la fois en JS et en PHP :
+
+    const LOREM = 123;
+    const FOO_BAR_BAZ = 'foo bar baz';
+
 ## Nommage des variables
 
-Quelque soit le langage de programmation, il y a des règles (quasi) universelles.
+Quelque soit le langage de programmation, il y a des règles (quasi) universelles de nommage de variables.
 Les règles suivantes s'appliquent aux noms des variables mais aussi aux noms des fonctions ou des classes.
 
 ### Le nom d'une variable ne peut pas commencer par un chiffre
 
-Exemple :
+Exemple de code en Python :
 
     # mauvais
     0_ma_variable = 123
@@ -41,6 +77,8 @@ Exemple :
 **Mais le nom d'une classe doit commencer par un caractère majuscule.**
 
 *(Mais les dev microsoft ont tendance à violer cette règle.)*
+
+Exemple de code en Python :
 
     # mauvais
     Ma_variable = 123
@@ -57,6 +95,8 @@ L'underscore c'est tiret du bas `_`.
 
 *(Mais en code css vous pouvez vous permettre d'utiliser le trait d'union (tiret du milieu) `-`.*
 
+Exemple de code en Python :
+
     # mauvais
     ma-variable = 123
     ma variable = 123
@@ -66,12 +106,12 @@ L'underscore c'est tiret du bas `_`.
     ma_variable = 123
     une_probabilite = 0.123
 
-### Nommage de variable au singulier ou au pluriel
+### Le singulier et le pluriel
 
-Quand on nomme une variable, on utilise toujours le singulier.
-Mais si la variable contient une collection de données (comme avec les listes ou les tableaux par exemple), on utilise le pluriel.
+Quand on nomme une variable scalaire, on utilise toujours le singulier.
+Mais si la variable contient une collection de données (comme avec les listes, les tableaux ou les objets par exemple), on utilise le pluriel.
 
-Exemple de code en JavaScript :
+Exemple de code en JS :
 
     // variable nommée au singulier
     // la variable représente un seul utilisateur

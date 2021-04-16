@@ -121,6 +121,22 @@ Cliquez sur l'icône `+` sur la gauche de la commande, puis choisissez votre rac
 
 Vous pouvez *resetter* le raccourci clavier en faisant un click droit et en choisissant `Reset Keybinding`.
 
+## Afficher une ligne verticale à la 80ème colonne
+
+Cette ligne vreticale permet d'avoir un repère pour éviter d'écrire des lignes de code trop longues.
+
+Pour afficher cette ligne verticale, ouvrez la fenêtre « Settings » :
+
+`File` > `Preferences` > `Settings`
+
+Ensuite suivez ces étapes :
+
+1. ![img/vscode-rulers-1.png](img/vscode-rulers-1.png)
+2. ![img/vscode-rulers-2.png](img/vscode-rulers-2.png)
+3. ![img/vscode-rulers-3.png](img/vscode-rulers-3.png)
+4. ![img/vscode-rulers-4.png](img/vscode-rulers-4.png)
+5. ![img/vscode-rulers-5.png](img/vscode-rulers-5.png)
+
 ## Quelques conseils de Microsoft
 
 - [JavaScript Programming with Visual Studio Code](https://code.visualstudio.com/Docs/languages/javascript)
