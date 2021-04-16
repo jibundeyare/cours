@@ -131,13 +131,26 @@ Pour afficher cette ligne verticale, ouvrez la fenêtre « Settings » :
 
 ![vscode rulers 1](img/vscode-rulers-1.png)
 
-Puis suivez ces étapes :
+Tapez le mot clé `rulers` puis cliquez sur le `Edit in settings.json` de la première entrée :
 
 ![vscode rulers 2](img/vscode-rulers-2.png)
 
+Dans la section `"editor.rulers"`, ajoutez le bloc de code suivant :
+
+    {
+        "column": 80,
+        "color": #444444
+    }
+
+Note : vous pouvez choisir une autre couleur que `#444444`.
+
 ![vscode rulers 3](img/vscode-rulers-3.png)
 
+Ça devrait ressembler à ceci :
+
 ![vscode rulers 4](img/vscode-rulers-4.png)
+
+Au final vous devriez voir une ligne verticale à la 80ème colonne dès que vous ouvrez un fichier.
 
 ![vscode rulers 5](img/vscode-rulers-5.png)
 
