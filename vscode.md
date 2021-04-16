@@ -129,13 +129,17 @@ Pour afficher cette ligne verticale, ouvrez la fenêtre « Settings » :
 
 `File` > `Preferences` > `Settings`
 
-Ensuite suivez ces étapes :
+![vscode rulers 1](img/vscode-rulers-1.png)
 
-1. ![vscode rulers 1](img/vscode-rulers-1.png)
-2. ![vscode rulers 2](img/vscode-rulers-2.png)
-3. ![vscode rulers 3](img/vscode-rulers-3.png)
-4. ![vscode rulers 4](img/vscode-rulers-4.png)
-5. ![vscode rulers 5](img/vscode-rulers-5.png)
+Puis suivez ces étapes :
+
+![vscode rulers 2](img/vscode-rulers-2.png)
+
+![vscode rulers 3](img/vscode-rulers-3.png)
+
+![vscode rulers 4](img/vscode-rulers-4.png)
+
+![vscode rulers 5](img/vscode-rulers-5.png)
 
 ## Quelques conseils de Microsoft
 
