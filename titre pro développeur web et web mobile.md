@@ -2,6 +2,7 @@
 
 ## Infos générales sur le titre pro
 
+- [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014)
 - [RNCP31114 - TP - Développeur web et web mobile - France Compétences](https://www.francecompetences.fr/recherche/rncp/31114/)
 - [Arrêté du 6 avril 2018 relatif au titre professionnel de développeur web et web mobile - Légifrance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036805882)
 
@@ -43,6 +44,9 @@ Le rapport de stage doit être :
 - remis au moins 1 jour avant ouvré avant la session d'examen
 - présenté avec un projecteur le jour de la session d'examen
 
+Il est recommandé d'imprimer deux exemplaires du rapport de stage (un pour chaque membre du jury).
+Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
+
 > Au moins un jour ouvré avant la session d’examen, le candidat a remis à l'organisateur son dossier de projet.
 
 `RCV2_DWWM_V03_03052018.pdf`, p5
@@ -57,7 +61,17 @@ Le rapport de stage doit être :
 
 Il est remis le jour même.
 
+Il est recommandé d'imprimer deux exemplaires du dossier professionnel (un pour chaque membre du jury).
+Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
+
 Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
+
+Voici des modèles de dossier professionnel (DP) :
+
+- [1-Dossier_professionnel_version_manuscrite.pdf](files/1-Dossier_professionnel_version_manuscrite.pdf)
+- [1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx](files/1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx)
+
+Ils proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
 
 ## Les évaluations en cours de formation (ECF)
 
