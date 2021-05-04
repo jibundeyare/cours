@@ -59,19 +59,24 @@ Après la session de jury, vous pourrez laisser un exemplaire à Pop School et e
 
 ## Le dossier professionnel (DP)
 
-Il est remis le jour même.
+Pour vous aider à remplir le dossier professionnel, il existe :
 
-Il est recommandé d'imprimer deux exemplaires du dossier professionnel (un pour chaque membre du jury).
-Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
-
-Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
+- un site web [dossierprofessionnel.fr/](http://www.dossierprofessionnel.fr/)
+- un pdf [Aide_candidatFormation_dossier_professionnel.pdf](files/Aide_candidatFormation_dossier_professionnel.pdf)
 
 Voici des modèles de dossier professionnel (DP) :
 
 - [1-Dossier_professionnel_version_manuscrite.pdf](files/1-Dossier_professionnel_version_manuscrite.pdf)
 - [1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx](files/1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx)
 
-Ils proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
+Le dossier professionnel est remis le jour même.
+
+Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
+
+Il est recommandé d'imprimer deux exemplaires du dossier professionnel (un pour chaque membre du jury).
+Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
+
+Les modèles et l'aide proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
 
 ## Les évaluations en cours de formation (ECF)
 
