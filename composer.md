@@ -30,7 +30,7 @@ Ouvrir un terminal, exécuter les commandes de la page [Composer](https://getcom
     sudo mv composer.phar /usr/local/bin/composer
 
 Composer vous permet d'installer des outils exécutables en ligne de commande (comme `phpcs` ou `phpunit` par exemple).
-Mais pour pouvoir les exécuter, vous devez ajouter la ligne suivante dans votre fichier `~/.bash_profile` :
+Mais pour pouvoir les exécuter, vous devez ajouter la ligne suivante dans votre fichier `~/.profile` :
 
     PATH="$PATH:$HOME/.composer/vendor/bin"
 
