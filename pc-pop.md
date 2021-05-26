@@ -19,6 +19,9 @@ Avant de rendre votre PC, pensez à récupérer vos données personnelles :
 - vos BDD
 - vos bookmarks dans firefox ou chrome
 
+Après la restitution du PC, normalement j'attends quelques jours (voir semaines) avant de le reformater complètementet d'installer un système neuf.
+Au cas où, ça vous laisse une dernière chance de réupérer vos données.
+
 ### Les clés SSH
 
 Elles se trouvent dans le dossier `.ssh` de votre home.
