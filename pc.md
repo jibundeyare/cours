@@ -1,4 +1,4 @@
-# PC Pop School
+# PC
 
 ## Installation
 
