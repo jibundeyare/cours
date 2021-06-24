@@ -192,12 +192,10 @@ $validation = new RFCValidation();
 $validator->isValid("example@example.com", $validation);
 ```
 
-Vous pouvez utiliser la validation dans une boucle pour ajouter d'autres
+Maintenant vous pouvez utiliser la validation dans une boucle pour ajouter d'autres
 destinataires.
 
 ```diff-php
-  <?php
-
 + use Egulias\EmailValidator\EmailValidator;
 + use Egulias\EmailValidator\Validation\RFCValidation;
 
@@ -225,8 +223,6 @@ Vous pouvez aussi ajouter des destinataires de copies carbone ou de
 copies carbone cachées.
 
 ```diff-php
-  <?php
-
 + use Egulias\EmailValidator\EmailValidator;
 + use Egulias\EmailValidator\Validation\RFCValidation;
 
