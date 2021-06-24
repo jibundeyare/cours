@@ -20,7 +20,6 @@ Créez un nouveau fichier nommé `mail-smtp.php` :
 
 ```php
 <?php
-// mail-smtp.php
 
 require_once __DIR__.'/vendor/autoload.php';
 
@@ -91,7 +90,6 @@ Créez un nouveau fichier nommé `mail-mta.php` :
 
 ```php
 <?php
-// mail-mta.php
 
 require_once __DIR__.'/vendor/autoload.php';
 
@@ -198,7 +196,7 @@ Vous pouvez utiliser la validation dans une boucle pour ajouter d'autres
 destinataires.
 
 ```diff-php
-<?php
+  <?php
 
 + use Egulias\EmailValidator\EmailValidator;
 + use Egulias\EmailValidator\Validation\RFCValidation;
@@ -227,7 +225,7 @@ Vous pouvez aussi ajouter des destinataires de copies carbone ou de
 copies carbone cachées.
 
 ```diff-php
-<?php
+  <?php
 
 + use Egulias\EmailValidator\EmailValidator;
 + use Egulias\EmailValidator\Validation\RFCValidation;
