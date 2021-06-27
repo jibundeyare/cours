@@ -6,6 +6,9 @@ Cet outil peut vous être utile si vous souhaitez que votre serveur
 puisse envoyer des mails sans avoir à installer un serveur SMTP en bonne
 et due forme.
 
+Cette fiche vous montre comment installer MSMTP, le configurer et le
+tester.
+
 ## Installation
 
 ```bash
