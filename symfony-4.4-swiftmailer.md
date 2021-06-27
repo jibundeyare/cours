@@ -1,4 +1,4 @@
-# Symfony 4.4 - Les mails
+# Symfony 4.4 - Swiftmailer
 
 Cette fiche montre comment utiliser Swiftmailer pour envoyer des mails
 en utilisant directement un serveur SMTP ou un service de
