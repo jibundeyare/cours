@@ -3,8 +3,8 @@
 MSMTP est un service de transfert de mail à un serveur SMTP.
 
 Cet outil peut vous être utile si vous souhaitez que votre serveur
-puisse envoyer des mails avoir à installer un serveur SMTPen bonne et
-due forme.
+puisse envoyer des mails sans avoir à installer un serveur SMTP en bonne
+et due forme.
 
 ## Installation
 
@@ -56,4 +56,9 @@ suivante :
 ```bash
 echo "Test message" | mail -s "Test sujet" contact@example.com
 ```
+
+## Doc
+
+- [msmtp - Debian Wiki](https://wiki.debian.org/msmtp)
+- [msmtp 1.8.15](https://marlam.de/msmtp/msmtp.html)
 

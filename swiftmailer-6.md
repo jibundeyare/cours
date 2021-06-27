@@ -255,3 +255,7 @@ copies carbone cachées.
   $result = $mailer->send($message);
 ```
 
+## Doc
+
+- [Swiftmailer: A feature-rich PHP Mailer – Documentation – Swift Mailer](https://swiftmailer.symfony.com/docs/introduction.html)
+

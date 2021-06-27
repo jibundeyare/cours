@@ -117,3 +117,8 @@ symfony server
 
 Et visiter la page [http://localhost:8000/mail](http://localhost:8000/mail).
 
+## Doc
+
+- [Swift Mailer (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/email.html)
+- [Swiftmailer: A feature-rich PHP Mailer – Documentation – Swift Mailer](https://swiftmailer.symfony.com/docs/introduction.html)
+
