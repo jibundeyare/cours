@@ -1,5 +1,10 @@
 # Google two factor authentication
 
+Cette fiche vous montre comment activer l'authentification à deux
+facteurs.
+
+## Les étapes
+
 Rendez-vous dans l'onglet sécurité des paramètres de votre compte
 Google : [Compte Google](https://myaccount.google.com/security).
 

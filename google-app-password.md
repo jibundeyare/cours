@@ -1,5 +1,10 @@
 # Google app password
 
+Cette fiche vous montre comment créer un « app password », mot de passe
+d'application.
+
+## Les étapes
+
 Rendez-vous dans l'onglet sécurité des paramètres de votre compte
 Google : [Compte Google](https://myaccount.google.com/security).
 
