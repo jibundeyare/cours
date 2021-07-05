@@ -43,57 +43,67 @@ Si votre document root est votre dossier de projet (non recommandé) :
 
 Dans un terminal, si vous n'êtes pas déjà dans la dossier racine de votre projet, taper :
 
-    cd [dossier du projet web]
+```bash
+cd [dossier du projet web]
+```
 
 Pour installer le paquet :
 
-    composer require twig/twig ~3.0
+```bash
+composer require twig/twig ~3.0
+```
 
 ### Utilisation
 
 Ouvrir le fichier `public/hello-twig.php` puis ajouter :
 
-    <?php
+```php
+<?php
 
-    use Twig\Environment;
-    use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
-    // activation du système d'autoloading de Composer
-    require_once __DIR__.'/../vendor/autoload.php';
+// activation du système d'autoloading de Composer
+require_once __DIR__.'/../vendor/autoload.php';
 
-    // instanciation du chargeur de templates
-    $loader = new FilesystemLoader(__DIR__.'/../templates');
+// instanciation du chargeur de templates
+$loader = new FilesystemLoader(__DIR__.'/../templates');
 
-    // instanciation du moteur de template
-    $twig = new Environment($loader);
+// instanciation du moteur de template
+$twig = new Environment($loader);
 
-    // traitement des données
-    $greeting = 'Hello Twig!';
+// traitement des données
+$greeting = 'Hello Twig!';
 
-    // affichage du rendu d'un template
-    echo $twig->render('hello-twig.html.twig', [
-        // transmission de données au template
-        'greeting' => $greeting,
-    ]);
+// affichage du rendu d'un template
+echo $twig->render('hello-twig.html.twig', [
+    // transmission de données au template
+    'greeting' => $greeting,
+]);
+```
 
 Ouvrir le fichier `templates/hello-twig.html.twig` puis ajouter :
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <title>{{ greeting }}</title>
-        </head>
-        <body>
-            <h1>{{ greeting }}</h1>
-        </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ greeting }}</title>
+    </head>
+    <body>
+        <h1>{{ greeting }}</h1>
+    </body>
+</html>
+```
 
 ### Tester
 
 Dans le terminal, depuis le dossier racine du projet, lancer un serveur web de développement :
 
-    php -S localhost:8000 -t public
+```bash
+php -S localhost:8000 -t public
+```
 
 Dans un navigateur, ourvir l'url [http://localhost:8000/hello-twig.php](http://localhost:8000/hello-twig.php).
 
@@ -112,26 +122,30 @@ Le mode de variables strictes permet d'afficher une erreur si vous utilisez une 
 
 Modifier la partie `new Environment($loader)` et charger l'extension de debug `Twig\\Extension\\DebugExtension` juste après :
 
-    use Twig\Extension\DebugExtension;
+```php
+use Twig\Extension\DebugExtension;
 
-    // ...
+// ...
 
-    // instanciation du moteur de template
-    $twig = new Environment($loader, [
-        // activation du mode debug
-        'debug' => true,
-        // activation du mode de variables strictes
-        'strict_variables' => true,
-    ]);
+// instanciation du moteur de template
+$twig = new Environment($loader, [
+    // activation du mode debug
+    'debug' => true,
+    // activation du mode de variables strictes
+    'strict_variables' => true,
+]);
 
-    // chargement de l'extension DebugExtension
-    $twig->addExtension(new DebugExtension());
+// chargement de l'extension DebugExtension
+$twig->addExtension(new DebugExtension());
+```
 
 Maintenant il est possible d'inspecter le contenu d'une variable dans un template Twig.
 
 Exemple :
 
-    {{ dump(foo) }}
+```twig
+{{ dump(foo) }}
+```
 
 #### Pour la prod
 
@@ -147,11 +161,13 @@ Voir l'arborescence d'un projet dans [php-application.md](php-application.md).
 
 Modifier la partie `new Environment($loader)` :
 
-    // instanciation du moteur de template
-    $twig = new Environment($loader, [
-        // activation du cache
-        'cache' => __DIR__.'/../var/cache',
-    ]);
+```php
+// instanciation du moteur de template
+$twig = new Environment($loader, [
+    // activation du cache
+    'cache' => __DIR__.'/../var/cache',
+]);
+```
 
 NB Pensez à désactiver ou supprimer le chargement de l'extension de debug `Twig\Extension\DebugExtension`.
 
@@ -175,7 +191,9 @@ Il n'y a que trois types de blocs de code Twig :
 
 Noter un commentaire :
 
-    {# ceci est un commentaire #}
+```twig
+{# ceci est un commentaire #}
+```
 
 Le bloc accepte les commentaires multi-lignes.
 
@@ -187,19 +205,27 @@ NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appl
 
 Afficher la variable `foo` :
 
-    {{ foo }}
+```twig
+{{ foo }}
+```
 
 Afficher la valeur associée à la clé alpha-numérique `foo` du tableau `bar` :
 
-    {{ bar.foo }}
+```twig
+{{ bar.foo }}
+```
 
 Afficher l'attribut `foo` de la variable de type objet `bar` :
 
-    {{ bar.foo }}
+```twig
+{{ bar.foo }}
+```
 
 Afficher la valeur renvoyée par la méthode `foo` de la variable de type objet `bar` :
 
-    {{ bar.foo() }}
+```twig
+{{ bar.foo() }}
+```
 
 NB La notation est la même pour accéder à une clé d'un tableau ou à un attribut d'un objet, on utilise le point `.`.
 
@@ -209,11 +235,15 @@ Il est possible de déclarer et d'initialiser une variable en Twig comme en PHP 
 
 Exemple de déclaration et d'affectation d'une chaîne de caractères à la variable `greeting` :
 
-    {% set greeting = 'Hello' %}
+```twig
+{% set greeting = 'Hello' %}
+```
 
 Exemple de déclaration et d'affectation de la valeur de la variable `app.request.host` à la variable `myHost` :
 
-    {% set myHost = app.request.host %}
+```twig
+{% set myHost = app.request.host %}
+```
 
 ### Concaténer des chaînes de caractères
 
@@ -221,15 +251,21 @@ Il possible de concaténer des chaînes de caractères en Twig avec l'opérateur
 
 Exemple de concaténation des deux chaînes de caractères `'foo'` et `'bar'` :
 
-    {{ 'foo' ~ 'bar' }}
+```twig
+{{ 'foo' ~ 'bar' }}
+```
 
 Exemple de concaténation d'une chaîne de caractères et d'une variable :
 
-    {{ 'http://' ~ app.request.host }}
+```twig
+{{ 'http://' ~ app.request.host }}
+```
 
 Exemple de concaténation d'une chaîne de caractères et de la variable `app.request.host`, et de l'utilisation d'un filtre d'échappement :
 
-    {{ ('http://' ~ app.request.host)|e }}
+```twig
+{{ ('http://' ~ app.request.host)|e }}
+```
 
 ### Interpolation de chaînes de caractères
 
@@ -238,11 +274,15 @@ Ceci requiert d'utiliser des doubles quotes `"`.
 
 Exemple d'interpolation de la variable `app.request.host` dans une chaîne de caractères :
 
-    {{ "http://#{app.request.host}" }}
+```twig
+{{ "http://#{app.request.host}" }}
+```
 
 Exemple d'interpolation de la variable `app.request.host` dans une chaîne de caractères et de l'utilisation d'un filtre d'échappement :
 
-    {{ "http://#{app.request.host}"|e }}
+```twig
+{{ "http://#{app.request.host}"|e }}
+```
 
 ### Les structures conditionnelles (blocs `if`)
 
@@ -251,21 +291,27 @@ La seule différence est qu'il n'y a pas de parenthèses.
 
 Si la variable  `foo` est égal à `true`, afficher la variable `bar` :
 
-    {% if foo %}
-        {{ bar }}
-    {% endif %}
+```twig
+{% if foo %}
+    {{ bar }}
+{% endif %}
+```
 
 Si l'attribut `bar` de la variable  `foo` est égal à `true`, afficher la variable `baz`  :
 
-    {% if foo.bar %}
-        {{ baz }}
-    {% endif %}
+```twig
+{% if foo.bar %}
+    {{ baz }}
+{% endif %}
+```
 
 Si la clé ou l'attribut `bar` du tableau ou de l'objet `foo` existe, afficher la valeur de `foo.bar` :
 
-    {% if foo.bar is defined %}
-        {{ foo.bar }}
-    {% endif %}
+```twig
+{% if foo.bar is defined %}
+    {{ foo.bar }}
+{% endif %}
+```
 
 NB La syntaxe Twig `foo.bar is defined` est équivalente à la syntaxe PHP `isset($foo['bar'])`.
 
@@ -286,37 +332,47 @@ En français, on dirait : « pour chaque item du tableau items ».
 
 Boucler sur le tableau `items` qui contient des chaînes de caractères :
 
-    {% for item in items %}
-        {{ item }}<br />
-    {% endfor %}
+```twig
+{% for item in items %}
+    {{ item }}<br />
+{% endfor %}
+```
 
 Boucler sur le tableau `items` qui contient des tableaux avec des clé alpha-numériques :
 
-    {% for item in items %}
-        {{ item.id }}<br />
-        {{ item.name }}<br />
-    {% endfor %}
+```twig
+{% for item in items %}
+    {{ item.id }}<br />
+    {{ item.name }}<br />
+{% endfor %}
+```
 
 Boucler sur le tableau `items` qui contient des objets :
 
-    {% for item in items %}
-        {{ item.id }}<br />
-        {{ item.name }}<br />
-    {% endfor %}
+```twig
+{% for item in items %}
+    {{ item.id }}<br />
+    {{ item.name }}<br />
+{% endfor %}
+```
 
 Boucler sur le tableau `items` qui contient des objets et appeler ses méthodes :
 
-    {% for item in items %}
-        {{ item.getId() }}<br />
-        {{ item.getName() }}<br />
-    {% endfor %}
+```twig
+{% for item in items %}
+    {{ item.getId() }}<br />
+    {{ item.getName() }}<br />
+{% endfor %}
+```
 
 Récupérer « un à un » les éléments du résultat d'une requête SQL exécutée avec la méthode `executeQuery()` de `doctrine/dbal` :
 
-    {% for item in items %}
-        {{ item.id }}<br />
-        {{ item.name }}<br />
-    {% endfor %}
+```twig
+{% for item in items %}
+    {{ item.id }}<br />
+    {{ item.name }}<br />
+{% endfor %}
+```
 
 NB La notation est toujours la même : on utilise `for item in items`.
 
@@ -329,69 +385,75 @@ Ceci permet de ne pas répéter de code et de pouvoir se passer des `include()` 
 
 Définir un template parent `templates/base.html.twig` que les templates enfants pourront étendre :
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>{% block title %}{% endblock %}</title>
+```twig
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock %}</title>
 
-            {% block css_head %}
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-            <link rel="stylesheet" href="/css/main.css" />
-            {% endblock %}
+        {% block css_head %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css" />
+        {% endblock %}
 
-            {% block js_head %}
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-            <script src="/js/main.js"></script>
-            {% endblock %}
-        </head>
-        <body>
-            {% block body %}{% endblock %}
+        {% block js_head %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="/js/main.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
 
-            {% block css_body %}{% endblock %}
+        {% block css_body %}{% endblock %}
 
-            {% block js_body %}{% endblock %}
-        </body>
-    </html>
+        {% block js_body %}{% endblock %}
+    </body>
+</html>
+```
 
 Créer un template enfant `templates/foo.html.twig` qui hérite du template `templates/base.html.twig` :
 
-    {% extends 'base.html.twig' %}
+```twig
+{% extends 'base.html.twig' %}
 
-    {% block title %}Foo{% endblock %}
+{% block title %}Foo{% endblock %}
 
-    {% block body %}
-        <h1>Foo</h1>
-        <p>Vous êtes sur la page Foo</p>
-    {% endblock %}
+{% block body %}
+    <h1>Foo</h1>
+    <p>Vous êtes sur la page Foo</p>
+{% endblock %}
+```
 
 Créer un template enfant `templates/bar.html.twig` qui hérite du template `templates/base.html.twig`, et qui surcharge  les blocs `css_head` et `js_head` :
 
-    {% extends 'base.html.twig' %}
+```twig
+{% extends 'base.html.twig' %}
 
-    {% block title %}Foo{% endblock %}
+{% block title %}Foo{% endblock %}
 
-    {# surcharge du bloc css_head #}
-    {# intégration de materialize au lieu de bootstrap #}
-    {% block css_head %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="/css/main.css" />
-    {% endblock %}
+{# surcharge du bloc css_head #}
+{# intégration de materialize au lieu de bootstrap #}
+{% block css_head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link rel="stylesheet" href="/css/main.css" />
+{% endblock %}
 
-    {# surcharge du bloc js_head #}
-    {# intégration de materialize au lieu de bootstrap #}
-    {% block js_head %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="/js/main.js"></script>
-    {% endblock %}
+{# surcharge du bloc js_head #}
+{# intégration de materialize au lieu de bootstrap #}
+{% block js_head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="/js/main.js"></script>
+{% endblock %}
 
-    {% block body %}
-        <h1>Foo</h1>
-        <p>Vous êtes sur la page Foo</p>
-    {% endblock %}
+{% block body %}
+    <h1>Foo</h1>
+    <p>Vous êtes sur la page Foo</p>
+{% endblock %}
+```
 
 ### Les includes
 
@@ -403,17 +465,21 @@ On parle alors de template `partial` (partiel).
 
 Définir le bloc de code commun dans le fichier `templates/partials/_items.html.twig` :
 
-    {% if items %}
-    <ul>
-        {% for item in items %}
-        <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+```twig
+{% if items %}
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+```
 
 Utiliser le template `partial` dans le template `templates/foo.html.twig` :
 
-    {% include('partials/_items.html.twig') %}
+```twig
+{% include('partials/_items.html.twig') %}
+```
 
 ### Les filtres
 
@@ -437,31 +503,43 @@ On peut aussi échapper des variables pour :
 
 Échapper la variable `foo` qui peut être dangereuse dans du HTML :
 
-    <p>{{ foo|escape('html') }}</p>
+```twig
+<p>{{ foo|escape('html') }}</p>
+```
 
 Ou plus court :
 
-    <p>{{ foo|e('html') }}</p>
+```twig
+<p>{{ foo|e('html') }}</p>
+```
 
 NB Le filtre `escape('html')` (c-à-d `htmlentities()`) est automatiquement appliqué dès qu'une variable est affichée.
 
 Échapper la variable `foo` qui peut être dangereuse dans du code JavaScript :
 
-    var foo = '{{ foo|e('js') }}';
+```twig
+var foo = '{{ foo|e('js') }}';
+```
 
 Échapper la variable `foo` qui peut être dangereuse du CSS :
 
-    body {
-      color: {{ foo|e('css') }};
-    }
+```twig
+body {
+  color: {{ foo|e('css') }};
+}
+```
 
 Échapper la variable `foo` qui peut être dangereuse dans une URL :
 
-    <a href="{{ foo|e('url') }}>foo</a>
+```twig
+<a href="{{ foo|e('url') }}>foo</a>
+```
 
 Échapper la variable `foo` qui peut être dangereuse dans un attribut HTML :
 
-    <div id="{{ foo|e('html_attr') }}></div>
+```twig
+<div id="{{ foo|e('html_attr') }}></div>
+```
 
 #### Forcer l'affichage d'une variable sans appliquer aucun filtre
 
@@ -470,7 +548,9 @@ Attention, ceci peut être dangereux.
 
 Afficher la variable `foo` sans appliquer aucun filtre :
 
-    {{ foo|raw }}
+```twig
+{{ foo|raw }}
+```
 
 ### Formatage de nombres
 
@@ -478,26 +558,34 @@ Afficher la variable `foo` sans appliquer aucun filtre :
 
 Ajouter le `use` en début de fichier :
 
-    use Twig\Extension\CoreExtension;
+```php
+use Twig\Extension\CoreExtension;
+```
 
 Juste après la partie `new Environment($loader)`, ajouter la config pour afficher deux chiffres après la virgule, la virgule comme séparateur après la virgule et l'espace comme séparateur de milliers :
 
-    $twig->getExtension(CoreExtension::class)->setNumberFormat(2, ',', ' ');
+```php
+$twig->getExtension(CoreExtension::class)->setNumberFormat(2, ',', ' ');
+```
 
 #### Avec Symfony
 
-Dans le fichier `config/packages/twig.yam`, ajouter la config pour afficher deux chiffres après la virgule, la virgule comme séparateur après la virgule et l'espace comme séparateur de milliers :
+Dans le fichier `config/packages/twig.yaml`, ajouter la config pour afficher deux chiffres après la virgule, la virgule comme séparateur après la virgule et l'espace comme séparateur de milliers :
 
-    number_format:
-        decimals:             2
-        decimal_point:        ','
-        thousands_separator:  ' '
+```twig
+number_format:
+    decimals:             2
+    decimal_point:        ','
+    thousands_separator:  ' '
+```
 
 #### Utilisation
 
 Puis utiliser le filtre `number_format` dans les templates Twig :
 
-    {{ foo|number_format }}
+```twig
+{{ foo|number_format }}
+```
 
 ### Formatage de dates
 
@@ -505,15 +593,21 @@ Il est possible de manipuler le format d'affichage de dates (objet de type `Date
 
 Afficher la date stockée dans la variable `myDate` au format `JJ/MM/AAAA` :
 
-    {{ myDate|date("d/m/Y") }}
+```twig
+{{ myDate|date("d/m/Y") }}
+```
 
 Afficher la date stockée dans la variable `myDate` au format `MM/JJ/AAAA` :
 
-    {{ myDate|date("m/d/Y") }}
+```twig
+{{ myDate|date("m/d/Y") }}
+```
 
 Afficher la date stockée dans la variable `myDate` au format `JJ/MM/AAAA HH:MM:SS` :
 
-    {{ myDate|date("d/m/Y H:i:s") }}
+```twig
+{{ myDate|date("d/m/Y H:i:s") }}
+```
 
 ### Formatage de durée
 
@@ -521,15 +615,21 @@ Il est possible de manipuler le format d'affichage de durées (objet de type `Da
 
 Afficher la durée stockée dans la variable `connexion_duration` au format `J` (en nombre de jours):
 
-    {{ connexion_duration|date("%a") }}
+```twig
+{{ connexion_duration|date("%a") }}
+```
 
 Afficher la durée stockée dans la variable `connexion_duration` au format `JJ MM AAAA` (en nombre de jours, mois et années) :
 
-    {{ connexion_duration|date("%D %M %Y") }}
+```twig
+{{ connexion_duration|date("%D %M %Y") }}
+```
 
 Afficher la durée stockée dans la variable `connexion_duration` au format ` HHh MMm SSs JJ MM AAAA` (en nombre d'heures, minutes, secondes, jours, mois et années) :
 
-    {{ connexion_duration|date("%Hh %Im %Ss %D %M %Y") }}
+```twig
+{{ connexion_duration|date("%Hh %Im %Ss %D %M %Y") }}
+```
 
 ### Localisation de dates
 
@@ -541,7 +641,9 @@ Attention : cette fonctionnalité nécessite l'installation et l'activation du m
 
 Dans un template Twig, utiliser le filtre `localizeddate()` :
 
-    {{ myDate|localizeddate('full', 'full') }}
+```twig
+{{ myDate|localizeddate('full', 'full') }}
+```
 
 Le premier paramètre permet de formater la date, le deuxième permet de formater l'heure.
 
@@ -559,11 +661,13 @@ Si vous voulez afficher du code Twig au lieu de le faire interpréter, vous pouv
 
 Afficher du Twig sans le faire interpréter :
 
-    {% verbatim %}
-        {% for item in items %}
-            {{ item }}
-        {% endfor %}
-    {% endverbatim %}
+```twig
+{% verbatim %}
+    {% for item in items %}
+        {{ item }}
+    {% endfor %}
+{% endverbatim %}
+```
 
 ### Génération d'URL
 
@@ -571,12 +675,16 @@ Au lieu d'écrire les URL à la main, vous pouvez utiliser la fonction `path()` 
 
 Si dans un de vos contrôleurs, vous avez une route nommée `main_index` par exemple, le code suivant va créer un lien qui pointera vers cette page :
 
-    <a href="{{ path('main_index') }}">la page d'accueil</a>
+```twig
+<a href="{{ path('main_index') }}">la page d'accueil</a>
+```
 
 Si votre application possède une page de visualisation d'un objet stocké en BDD (un student par exemple), le nom de la route sera probablement quelque chose comme `student_show`.
 Le code suivant permet de générer une URL qui pointe vers cette page, en utilisant l'id de l'objet :
 
-    <a href="{{ path('student_show', { id: student.id }) }}">voir le student {{ student.firstname }} {{ student.lastname }}</a>
+```twig
+<a href="{{ path('student_show', { id: student.id }) }}">voir le student {{ student.firstname }} {{ student.lastname }}</a>
+```
 
 Pour en savoir plus, voir : [Creating and Using Templates (Symfony 3.4 Docs)](https://symfony.com/doc/3.4/templating.html#linking-to-pages).
 
