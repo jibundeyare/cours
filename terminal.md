@@ -186,6 +186,30 @@ Exemple : afficher la liste des fichiers du dossier `/root`
 
     sudo ls /root
 
+Pour copier un ou des fichiers d'une machine à une autre, vous avez la commande `scp`.
+
+Voici quelques exemples :
+
+    # copie d'un fichier de la home locale vers la home d'un serveur
+    scp ./foo 123.123.123.123:~/
+
+    # copie d'un fichier de la home locale vers la home d'un serveur avec renommage
+    scp ./foo 123.123.123.123:~/bar
+
+    # copie d'un dossier de la home locale vers la home d'un serveur
+    scp -r ./foo 123.123.123.123:~/
+
+    # copie d'un dossier de la home locale vers la home d'un serveur avec renommage
+    scp -r ./foo 123.123.123.123:~/bar
+
+    # copie d'un fichier de la home d'un serveur vers la home locale
+    # il suffit d'inverser la source et la cible
+    scp 123.123.123.123:~/foo ./
+
+    # copie d'un fichier de la home locale vers la home d'un serveur
+    # mais avec un port SSH personnalisé
+    scp -P 54321 ./foo 123.123.123.123:~/
+
 #### Recherche de texte
 
 La commande `grep` permet de rechercher un mot clé à l'intérieur d'un fichier.

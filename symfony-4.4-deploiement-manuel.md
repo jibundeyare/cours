@@ -1,6 +1,4 @@
-# WIP Symfony 4.4 - Déploiement manuel
-
-@WIP
+# Symfony 4.4 - Déploiement manuel
 
 ## Prérequis
 
@@ -165,34 +163,54 @@ npm run build
 # fichier de config sur le serveur de prod.
 nano .env.local
 
+# Vider votre cache
+php bin/console cache:clear
+# Si pour une raison obscure la commande échoue (ça arrivre parfois)
+# utilisez celle-ci(en faisant super attention aux fautes de frappes).
+rm -fr var/cache/*
+
 # Mettez à jour le schéma de BDD.
 # S'il n'y a aucune mise à jour c'est pas grave, on peut quand même exécuter
 # la commande.
 php bin/console doctrine:migrations:migrate
 
-!!! APPEND
-# Injectez les fixtures.
+# Injectez les fixtures en mode ajout (important sinon toutes les
+# données sont effacées).
 # Vous aurez certainement à adapter le nom du groupe.
 # L'option --env=dev est nécessaire car normalement les fixtures ne sont
 # disponibles que en environement de dev.
-php bin/console doctrine:fixtures:load --env=dev --group=prod
-
-# Créez un virtual host et un pool php fpm
-cd ~/install-scripts
-# Si vous avez un nom de domaine, vous pouvez créer un vhost avec un
-# sous-domaine.
-./mkwebsite.sh foo projects bar bar.example.com template-vhost-symfony.conf
-# Si vous n'avez pas de nom de domaine, vous pouvez créer un vhost avec un
-# sous-répertoire.
-# Notez que dans ce cas, le nom de domaine bar.local est ignoré par le script.
-./mkwebsite.sh foo projects bar bar.local template-subdir-symfony.conf
-
-# Redémarrez Apache.
-# Pas la peine, le script l'a déjà fait !
+# Faites attention à l'option --group, choisissez bien les données à
+# injecter (sous peine de se retrouver avec des données en double).
+php bin/console doctrine:fixtures:load --env=dev --group=foo --append
 ```
 
 Il n'y a plus qu'à tester.
 
 ## La commande `scp` pour copier des fichiers sur un serveur
 
+Cette commande permet de copier un fichier d'une machine à l'autre comme si on copiait un fichier d'un dossier à l'autre.
+Il faudra juste veiller à spcéifier sur quelle machine vous voulez copier les fichiers.
+
+Exemple pour copier le fichier `.env.prod.local` sur votre serveur et le renommer `.env.local` au passage.
+
+```bash
+scp .env.prod.local 123.123.123.123:~/projects/foo/.env.local
+```
+
+Remplacez juste `123.123.123.123` par l'adresse IP ou le nom de domaine de votre serveur.
+
+Autre exemple si vous avez personnalisé le port SSH :
+
+```bash
+scp -P 54321 .env.prod.local 123.123.123.123:~/projects/foo/.env.local
+```
+
+Contrairement à la commande `ssh` ou on utilise une petit `-p`, ici (piège) il faut utiliser un grand `-P`.
+
+## Références
+
+- [How to Deploy a Symfony Application (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/deployment.html)
+- [Configuring a Web Server (Symfony Docs)](https://symfony.com/doc/current/setup/web_server_configuration.html)
+- [DoctrineMigrationsBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html)
+- [DoctrineFixturesBundle (Symfony Bundles Docs)](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html)
 

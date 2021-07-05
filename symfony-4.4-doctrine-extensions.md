@@ -94,9 +94,9 @@ Modifiez l'entité `Foo` pour la rendre supprimable de façon non destructive :
       // ...
 ```
 
-Notez que quand l'option `hardDelete=true`, une deuxième demande de suppression va réellement supprimer l'objet de la BDD.
+Notez que quand on a l'option `hardDelete=true`, une deuxième demande de suppression va réellement supprimer l'objet de la BDD.
 Dans notre exemple, j'ai désactivé cette fonctionnalité avec un `hardDelete=false`.
-Mais en fonctione des cas, ça peut ne pas être une bonne idée (manque de flexibilité, saturation de l'espace disque).
+Mais selon les situations, ça peut ne pas être une bonne idée (manque de flexibilité, saturation de l'espace disque).
 
 Maintenant il faut activer la suppression non destructive dans la configuration.
 
