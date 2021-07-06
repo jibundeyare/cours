@@ -47,7 +47,7 @@ Activez le mode déboggage en place le code suivant dans le fichier `wp-config.p
    * ...
    * @package WordPress
    */
-
+  
 + // Force l'affichage des erreurs PHP.
 + @ini_set( 'display_errors', 'On' );
 + // Désactive l'interception des erreurs fatales
