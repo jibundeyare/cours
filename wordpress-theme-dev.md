@@ -41,7 +41,10 @@ Avant de commencer à développer votre thème, il vaut mieux activer le mode de
 Activez le mode déboggage en place le code suivant dans le fichier `wp-config.php` :
 
 ```diff-php
-  // ...
+  <?php
+  /**
+   * The base configuration for WordPress
+   * ...
    * @package WordPress
    */
 
@@ -171,7 +174,6 @@ Et un fichier `footer.php` :
 Et maintenant modifiez votre fichier `index.php` pour qu'il utilise ces fichiers :
 
 ```diff-php
-
 + get_header();
 + 
   if ( have_posts() ):
@@ -326,6 +328,10 @@ On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query
 Afficher tous les articles (`post`) :
 
 ```php
+<?php
+
+// ...
+
 // Les paramètres de la requête WP_QUery
 $args = array(
     'post_type' => array( 'post' ),
@@ -360,6 +366,10 @@ wp_reset_postdata();
 Afficher toutes les pages (`page`) :
 
 ```php
+<?php
+
+// ...
+
 // Les paramètres de la requête WP_QUery
 $args = array(
     'post_type' => array( 'page' ),
@@ -394,6 +404,10 @@ wp_reset_postdata();
 Afficher un article (`post`) correspondant à un slug donné :
 
 ```php
+<?php
+
+// ...
+
 // Les paramètres de la requête WP_QUery
 $args = array(
     'name' => 'foo',
@@ -420,6 +434,10 @@ wp_reset_postdata();
 Afficher une page (`page`) correspondant à un slug donné :
 
 ```php
+<?php
+
+// ...
+
 // Les paramètres de la requête WP_QUery
 $args = array(
     'pagename' => 'foo',
