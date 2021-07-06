@@ -111,6 +111,9 @@ Petite explications des tags :
 En dessous des méta-données, vous pouvez rajouter votre feuille de style si vous le voulez :
 
 ```diff-css
+  /*
+  Theme Name: WP Custom Theme
+  ...
   Text Domain: wp-custom-theme
   */
 + 
