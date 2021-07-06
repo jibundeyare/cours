@@ -1,7 +1,5 @@
 # Symfony 4.4 - Les formulaires
 
-@WIP
-
 ## La création d'un formulaire
 
 Vous pouvez créer un formulaire :
@@ -39,7 +37,7 @@ Si le champ est à choix multiple, on pourra aussi préciser le tri (croissant, 
 
 Dans notre exmeple, le côté possédant est l'entité `Student` et l'entité `SchoolYear` est le côté inverse de la relation.
 
-Voici comment adapter le formulaire `src/Form/StudentType.php` :
+Voici comment adapter le formulaire `src/Form/StudentType.php`, côté possédant de la relation :
 
 ```diff-php
   namespace App\Form;
@@ -72,7 +70,7 @@ Voici comment adapter le formulaire `src/Form/StudentType.php` :
   // ...
 ```
 
-Voici comment adapter le formulaire `src/Form/SchoolYearType.php` :
+Voici comment adapter le formulaire `src/Form/SchoolYearType.php`, côté inverse de la relation :
 
 ```php
   use App\Entity\SchoolYear;
