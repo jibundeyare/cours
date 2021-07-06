@@ -441,7 +441,11 @@ Et maintenant voici un exemple de formulaire imbriqué dans `src/Form/StudentTyp
 À l'affichage, vous verrez le formulaire `UserCreationType` et `StudentType` s'afficher dans un seul formulaire.
 À l'usage vous n'aurez qu'à remplir un seul formulaire et les entités user et student seront créées en même temps avec la relation.
 
-## Référénces
+## Références
 
+- [Forms (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/forms.html)
+- [Form Types Reference (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/reference/forms/types.html)
+- [by_reference (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/reference/forms/types/form.html#by-reference)
 - [php - How to avoid "Entities passed to the choice field must be managed. Maybe persist them in the entity manager?" - Stack Overflow](https://stackoverflow.com/questions/35450827/how-to-avoid-entities-passed-to-the-choice-field-must-be-managed-maybe-persist)
+- [How to Embed Forms (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/form/embedded.html)
 
