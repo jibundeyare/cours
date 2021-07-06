@@ -287,7 +287,7 @@ Maintenant, il faut changer les paramètres de Wordpress :
 
 - aller dans la page **Admin > Réglages > Lecture**
 - choisir l'option **Une page statique**
-- sélectionner la page « Accueil » comme page d'accueil et la page « Actus » comme page d'articles
+- sélectionner « Accueil » comme page d'accueil et « Actus » comme page des articles
 - enregistrer les modifications
 
 ![Réglages personnalisés de la page d'accueil](img/home-page-custom-settings.png)
@@ -321,7 +321,7 @@ Par exemple, pour la page contact, le fichier devrait être nommé `template-con
 Le reste du contenu du fichier PHP obéit aux règles habituelle d'un fichier de thème Wordpress.
 On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query()` pour afficher tout type de contenu.
 
-#### La classe `WP_Query`
+## La classe `WP_Query`
 
 Afficher tous les articles (`post`) :
 
@@ -443,6 +443,11 @@ endif;
 // Restauration des paramètres originaux de la requête de l'utilisateur
 wp_reset_postdata();
 ```
+
+**Attention : vérifiez que votre document possède bien le slug que vous avez spécifié.
+Ce slug peut changer si vous changer le mode de création des permaliens dans le backoffice.**
+
+@todo autres sujets avancés :
 
 ## Créer un custom post type et l'afficher
 
