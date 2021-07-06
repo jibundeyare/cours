@@ -217,7 +217,7 @@ Exemple avec une relation `ManyToOne` ou `ManyToMany` :
 Cette option, qui ne peut être utilisée que du côté inverse de la relation, permet de demander à Symfony d'enregistrer l'entité dans le BDD en utilisant les données et non pas une référence à l'objet.
 Cela fait une grande différence puisque dans le cas d'une entité qui est du côté inverse de la relation, oublier cette option empêche d'enregistrer les données en BDD.
 
-Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de l'entité du côté inverse de la relation), il faut utilier l'option `by_referece` pour que les données soient correctement enregistrées :
+Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de l'entité du côté inverse de la relation), il faut utilier l'option `by_reference` pour que les données soient correctement enregistrées :
 
 ```diff-php
               ->add('foo', EntityType::class, [
@@ -226,11 +226,11 @@ Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-+                 'by_referece' => false,
++                 'by_reference' => false,
               ])
 ```
 
-#### L'erreur de l'option `by_referece`
+#### L'erreur de l'option `by_reference`
 
 Si par mégarde vous ajouter l'option `'by_reference' => false,` sur un champ côté possédant, vous risquez de voir l'erreur suivante :
 
@@ -261,7 +261,7 @@ L'usage le plus est de trier les éléments par ordre alphabétique :
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
 +                 'query_builder' => function (EntityRepository $er) {
 +                     return $er->createQueryBuilder('f')
 +                         ->orderBy('s.name', 'ASC')
@@ -286,7 +286,7 @@ Affichage de cases à cocher :
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
                   'query_builder' => function (EntityRepository $er) {
                       return $er->createQueryBuilder('f')
                           ->orderBy('s.name', 'ASC')
@@ -312,7 +312,7 @@ Vous pouvez l'utiliser pour rajouter un id ou une classe custom de votre feuille
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
                   'query_builder' => function (EntityRepository $er) {
                       return $er->createQueryBuilder('f')
                           ->orderBy('s.name', 'ASC')
