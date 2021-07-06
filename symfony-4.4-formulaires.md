@@ -56,19 +56,19 @@ Voici comment adapter le formulaire `src/Form/StudentType.php` :
 -             ->add('schoolYear')
 +             // Déclaration d'un champ EntityType
 +             ->add('schoolYear', EntityType::class, [
-+                 // On précise que ce champ permet de gérer la relation avec l'entité SchoolYear
++                 // On précise que ce champ permet de gérer la relation avec une entité SchoolYear
 +                 'class' => SchoolYear::class,
-+                 // Le label qui est affiché utilisera le nom de la schoolYear
++                 // Le label qui est affiché utilisera le nom de la school year
 +                 'choice_label' => function(SchoolYear $schoolYear) {
 +                     return "{$schoolYear->getName()}";
 +                 },
-+                 // Les schoolYears doivent être triés par ordre croissant (c-à-d alphabétique) du champ name
++                 // Les school years sont triés par ordre croissant (c-à-d alphabétique) du champ name
 +                 'query_builder' => function (EntityRepository $er) {
 +                     return $er->createQueryBuilder('s')
 +                         ->orderBy('s.name', 'ASC')
 +                     ;
 +                 },
-+             ]);
++             ])
   // ...
 ```
 
@@ -84,46 +84,153 @@ Voici comment adapter le formulaire `src/Form/SchoolYearType.php` :
   use Symfony\Component\OptionsResolver\OptionsResolver;
 
   // ...
--             $builder->add('students')
-+             $builder->add('students', EntityType::class, [
+-             ->add('students')
++             // Déclaration d'un champ EntityType
++             ->add('students', EntityType::class, [
++                 // On précise que ce champ permet de gérer la relation avec des entités Student
 +                 'class' => Student::class,
++                 // Le label qui est affiché utilisera le prénom et le nom du student
 +                 'choice_label' => function(User $student) {
 +                     return "{$student->getFirstname()} {$student->getLastname()}";
 +                 },
++                 // Nécessaire du côté inverse sinon la relation n'est pas enregitrée après mise à jour.
++                 'by_reference' => false,
++                 // Les students sont triés par ordre croissant (c-à-d alphabétique) des champs firstname puis lastname.
++                 // Si vous voulez trier par lastname puis firstname, inversez les deux lignes orderBy().
++                 'query_builder' => function (EntityRepository $er) {
++                     return $er->createQueryBuilder('s')
++                         ->orderBy('s.firstname', 'ASC')
++                         ->orderBy('s.lastname', 'ASC')
++                     ;
++                 },
 +                 // Le champ est à choix multiple
 +                 'multiple' => true,
-+                 // nécessaire du côté inverse sinon la relation n'est pas enregitrée après mise à jour
-+                 'by_reference' => false,
-+             ]);
++             ])
   // ...
 ```
 
-## Les options des champs
+## La configuration du champ
+
+Je récapitule ici les différentes options qu'on peut ou doit utiliser.
+
+### Le type de champ
+
+Les champs qui permettent de définir une relation avec une ou d'autres entités, sont des champs `EntityType`.
+
+```diff-php
++ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+  use Symfony\Component\Form\AbstractType;
+  use Symfony\Component\Form\FormBuilderInterface;
+  use Symfony\Component\OptionsResolver\OptionsResolver;
+
+  // ...
+          $builder
+              // ...
+-             ->add('foo')
++             ->add('foo', EntityType::class, [
++             ])
+              // ...
+          ;
+```
 
 ### L'option `class`
 
-Cette option ...
+Cette option définit quel type d'entité le champ doit afficher.
+
+Dans cet exemple, le champ permet de choisir une relation avec une ou des entités de type `Foo` :
 
 ```diff-php
--             $builder->add('foo')
-+             $builder->add('foo', EntityType::class, [
++ use App\Entity\Foo;
+  use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+  use Symfony\Component\Form\AbstractType;
+  use Symfony\Component\Form\FormBuilderInterface;
+  use Symfony\Component\OptionsResolver\OptionsResolver;
+
+  // ...
+              ->add('foo', EntityType::class, [
 +                 'class' => Foo::class,
-+             ]);
+              ])
+          ;
 ```
 
 ### L'option `choice_label`
 
+Quand le champ s'affiche, il est représenté par :
 
-### Les options `multiple` et `expanded`
+- un menu déroulant à choix unique ou des boutons radio
+- ou par un menu déroulant à choix multiple ou des cases à cocher
 
+Du texte doit permettre la sélection d'un item.
 
-### L'option `query_builder`
+Justement, cette option permet de choisir quel attribut (ou variable) de l'entité sera utilisé lors de l'affichage du champs.
 
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
++                 'choice_label' => function(Foo $foo) {
++                     return "{$foo->getName()} {$foo->getLevel()}";
++                 },
+              ])
+          ;
+```
+
+Il y a une syntaxe simplifiée mais elle ne permet d'utiliser qu'un seul attribut à la fois :
+
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
++                 'choice_label' => 'name',
+              ])
+          ;
+```
+
+### L'option `multiple`
+
+Cette option permet de préciser si le champ est à choix multiple.
+
+Par défaut cette option est à `false`.
+C'est un problème car la valeur de l'option dépend du type de relation.
+
+Voici les différents cas :
+
+- relation `OneToOne` : on doit avoir `'multiple' => false,`
+- relation `ManyToOne` : on doit avoir `'multiple' => false,`
+- relation `OneToMany` : on doit avoir `'multiple' => true,`
+- relation `ManyToMany` : on doit avoir `'multiple' => true,`
+
+Donc pas la peine de rajouter de `'multiple' => ...` quand on a une relation de type `OneToOne` ou `ManyToOne`.
+
+Exemple avec une relation `ManyToOne` ou `ManyToMany` :
+
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
+                  'choice_label' => function(Foo $foo) {
+                      return "{$foo->getName()} {$foo->getLevel()}";
+                  },
++                 'multiple' => true,
+              ])
+```
 
 ### L'option `by_reference`
 
-Cette option permet de dire à Symfony d'enregistrer l'entité dans le BDD en utilisant les données et non pas une référence à l'objet.
+**Attention : cette option est hyper importante !**
+
+Cette option, qui ne peut être utilisée que du côté inverse de la relation, permet de demander à Symfony d'enregistrer l'entité dans le BDD en utilisant les données et non pas une référence à l'objet.
 Cela fait une grande différence puisque dans le cas d'une entité qui est du côté inverse de la relation, oublier cette option empêche d'enregistrer les données en BDD.
+
+Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de l'entité du côté inverse de la relation), il faut utilier l'option `by_referece` pour que les données soient correctement enregistrées :
+
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
+                  'choice_label' => function(Foo $foo) {
+                      return "{$foo->getName()} {$foo->getLevel()}";
+                  },
+                  'multiple' => true,
++                 'by_referece' => false,
+              ])
+```
 
 #### L'erreur de l'option `by_referece`
 
@@ -134,6 +241,207 @@ Entity of type "Proxies\__CG__\App\Entity\SchoolYear" passed to the choice field
 ```
 
 C'est parce que cette option ne peut être utilisée que du côté inverse de la relation.
+
+### L'option `query_builder`
+
+Cette option permet de trier, filtrer ou limiter le jeu de résultat qui servira à alimenter le champ.
+
+L'usage le plus est de trier les éléments par ordre alphabétique :
+
+```diff-php
+  use App\Entity\Foo;
++ use Doctrine\ORM\EntityRepository;
+  use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+  use Symfony\Component\Form\AbstractType;
+  use Symfony\Component\Form\FormBuilderInterface;
+  use Symfony\Component\OptionsResolver\OptionsResolver;
+
+  // ...
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
+                  'choice_label' => function(Foo $foo) {
+                      return "{$foo->getName()} {$foo->getLevel()}";
+                  },
+                  'multiple' => true,
+                  'by_referece' => false,
++                 'query_builder' => function (EntityRepository $er) {
++                     return $er->createQueryBuilder('f')
++                         ->orderBy('s.name', 'ASC')
++                     ;
++                 },
+              ])
+```
+
+### L'option `expanded`
+
+Cette option contrôle le mode d'affichage :
+
+- `'expanded' => false` affiche un menu déroulant
+- `'expanded' => true` affiche des boutons raidio si le champ est à choix unique et des cases à cocher si le champ est à choix multiple
+
+Affichage de cases à cocher :
+
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
+                  'choice_label' => function(Foo $foo) {
+                      return "{$foo->getName()} {$foo->getLevel()}";
+                  },
+                  'multiple' => true,
+                  'by_referece' => false,
+                  'query_builder' => function (EntityRepository $er) {
+                      return $er->createQueryBuilder('f')
+                          ->orderBy('s.name', 'ASC')
+                      ;
+                  },
++                 'expanded' => true,
+              ])
+```
+
+À mon avis cette option doit être utilisée avec l'option `attr` qui permet de rajouter des attributs à la balise HTML qui va contenir le champ.
+Cela permet d'attribuer une classe à la balise et de limiter la hauteur du champ et d'ajouter un scroll automatique en CSS.
+
+### Les options `attr` et `label_attr`
+
+L'option `attr` permet d'ajouter des attributs à la balise HTML qui va contenir le champ.
+
+Vous pouvez l'utiliser pour rajouter un id ou une classe custom de votre feuille de style :
+
+```diff-php
+              ->add('foo', EntityType::class, [
+                  'class' => Foo::class,
+                  'choice_label' => function(Foo $foo) {
+                      return "{$foo->getName()} {$foo->getLevel()}";
+                  },
+                  'multiple' => true,
+                  'by_referece' => false,
+                  'query_builder' => function (EntityRepository $er) {
+                      return $er->createQueryBuilder('f')
+                          ->orderBy('s.name', 'ASC')
+                      ;
+                  },
+                  'expanded' => true,
++                 'attr' => [
++                     'class' => 'checkboxes-with-scroll',
++                 ],
+              ])
+```
+
+L'option `label_attr` permet d'ajouter des attributs à la balise HTML qui va contenir le label (le nom) du champ.
+
+Je trouve cette option pratique pour masquer avec une classe bootstrap (`d-none`) le titre d'un formulaire imbriqué :
+
+```php
+            ->add('bar', BarType::class, [
+                'label_attr' => [
+                    'class' => 'd-none',
+                ],
+            ])
+```
+
+*Dans tous les cas évitez de rajouter du style CSS inline, c'est cracra.*
+
+## Les formulaires imbriqués
+
+Si vous avez un objet composite, c-à-d un objet composé d'autres objets, vous devez d'abord créer les sous-objets avant de créer l'objet principal.
+Les formulaires imbriqués vous permettent de faire ces différentes opérations en une seule en proposant un formulaire qui contient d'autres formulaires. Le cas typique d'usage de cette fonctionnalité est la création simultanée d'un compte user et d'un profil.
+
+Imaginons que nous voulons créer un nouveau student.
+Ce student doit avoir un compte utilisateur et un profil student.
+
+Pour éviter de devoir créer d'abord le user puis créer le student et choisir le compte user auquel il se rattache, on peut utiliser un formulaire imbriqué.
+
+Exemple de formulaire de création d'un nouveau compte user dans le fichier `src/Form/UserCreationType.php` :
+
+```php
+<?php
+
+namespace App\Form;
+
+use App\Entity\User;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+class UserCreationType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('email')
+            ->add('roles', ChoiceType::class, [
+                'choices'  => [
+                    'admin' => 'ROLE_ADMIN',
+                    'student' => 'ROLE_STUDENT',
+                ],
+                'multiple' => true,
+                'expanded' => true,
+            ])
+            ->add('plainPassword', RepeatedType::class, [
+                'mapped' => false,
+                'type' => PasswordType::class,
+                'options' => ['attr' => [
+                    'class' => 'password-field',
+                    'autocomplete' => 'new-password'
+                ]],
+                'first_options'  => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Répétez le mot de passe'],
+                'required' => true,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Entrez un mot de passe',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Le mot de passe doit faire au moins {{ limit }} caractères',
+                        // taille maximum autorisée par Symfony pour des raison de sécurité
+                        'max' => 4096,
+                    ]),
+                ],
+            ])
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => User::class,
+        ]);
+    }
+}
+```
+
+Et maintenant voici un exemple de formulaire imbriqué dans `src/Form/StudentType.php` :
+
+```diff-php
+  use App\Entity\Student;
++ use App\Entity\User;
++ use App\Form\UserCreationType;
+  use Doctrine\ORM\EntityRepository;
+  use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+  use Symfony\Component\Form\AbstractType;
+  use Symfony\Component\Form\FormBuilderInterface;
+  use Symfony\Component\OptionsResolver\OptionsResolver;
+
+  // ...
+          $builder
++             ->add('user', UserCreationType::class, [
++                 'label_attr' => [
++                     'class' => 'd-none',
++                 ]
++             ])
+              ->add('firstname')
+              ->add('lastname')
+              // ...
+
+```
+
+À l'affichage, vous verrez le formulaire `UserCreationType` et `StudentType` s'afficher dans un seul formulaire.
+À l'usage vous n'aurez qu'à remplir un seul formulaire et les entités user et student seront créées en même temps avec la relation.
 
 ## Référénces
 
