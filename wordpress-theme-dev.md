@@ -524,7 +524,7 @@ Et on peut faire pareil dans le fichier `page.php` pour le template d'une page, 
 
 get_header();
 
-// Affichage d'un article sans la boucle
+// Affichage d'une page sans la boucle
 if ( have_posts() ):
     the_post();
     ?>
@@ -539,14 +539,14 @@ get_footer();
 ```
 
 Quand vous avez fait ça, il y a un dernière chose à faire en complément : adapter le fichier `index.php`.
-Il ne sera appelé que si vous demandez un post en passant par les catégories, les étiquettes, l'auteur ou la date.
+À cause des fichiers de template que vous avez rajouté, le fichier `index.php` ne sera appelé que si vous demandez des posts en passant par des meta-données (les catégories, les étiquettes, l'auteur, la date, etc).
 
-On peut corriger la balise `h1` qui n'était pas adaptée et ajouter un titre qui sera généré par Wordpress en fonction du contexte :
+On va pouvoir afficher un titre généré par Wordpress en fonction du contexte de la requête et corriger la balise `h1` qui n'était pas adaptée dans la liste des articles :
 
 ```php
   get_header();
   
-+ the_archive_title( '<h1 class="page-title">', '</h1>' );
++ the_archive_title( '<h1>', '</h1>' );
 + 
   if ( have_posts() ):
       while (have_posts()):
