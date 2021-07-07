@@ -1,7 +1,5 @@
 # Symfony 4.4 - Les formulaires
 
-@WIP
-
 ## La création d'un formulaire
 
 Vous pouvez créer un formulaire :
@@ -39,7 +37,7 @@ Si le champ est à choix multiple, on pourra aussi préciser le tri (croissant, 
 
 Dans notre exmeple, le côté possédant est l'entité `Student` et l'entité `SchoolYear` est le côté inverse de la relation.
 
-Voici comment adapter le formulaire `src/Form/StudentType.php` :
+Voici comment adapter le formulaire `src/Form/StudentType.php`, côté possédant de la relation :
 
 ```diff-php
   namespace App\Form;
@@ -72,7 +70,7 @@ Voici comment adapter le formulaire `src/Form/StudentType.php` :
   // ...
 ```
 
-Voici comment adapter le formulaire `src/Form/SchoolYearType.php` :
+Voici comment adapter le formulaire `src/Form/SchoolYearType.php`, côté inverse de la relation :
 
 ```php
   use App\Entity\SchoolYear;
@@ -219,7 +217,7 @@ Exemple avec une relation `ManyToOne` ou `ManyToMany` :
 Cette option, qui ne peut être utilisée que du côté inverse de la relation, permet de demander à Symfony d'enregistrer l'entité dans le BDD en utilisant les données et non pas une référence à l'objet.
 Cela fait une grande différence puisque dans le cas d'une entité qui est du côté inverse de la relation, oublier cette option empêche d'enregistrer les données en BDD.
 
-Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de l'entité du côté inverse de la relation), il faut utilier l'option `by_referece` pour que les données soient correctement enregistrées :
+Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de l'entité du côté inverse de la relation), il faut utilier l'option `by_reference` pour que les données soient correctement enregistrées :
 
 ```diff-php
               ->add('foo', EntityType::class, [
@@ -228,11 +226,11 @@ Si l'entité `Foo` est l'entité possédante (et que mon formulaire est celui de
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-+                 'by_referece' => false,
++                 'by_reference' => false,
               ])
 ```
 
-#### L'erreur de l'option `by_referece`
+#### L'erreur de l'option `by_reference`
 
 Si par mégarde vous ajouter l'option `'by_reference' => false,` sur un champ côté possédant, vous risquez de voir l'erreur suivante :
 
@@ -263,7 +261,7 @@ L'usage le plus est de trier les éléments par ordre alphabétique :
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
 +                 'query_builder' => function (EntityRepository $er) {
 +                     return $er->createQueryBuilder('f')
 +                         ->orderBy('s.name', 'ASC')
@@ -288,7 +286,7 @@ Affichage de cases à cocher :
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
                   'query_builder' => function (EntityRepository $er) {
                       return $er->createQueryBuilder('f')
                           ->orderBy('s.name', 'ASC')
@@ -314,7 +312,7 @@ Vous pouvez l'utiliser pour rajouter un id ou une classe custom de votre feuille
                       return "{$foo->getName()} {$foo->getLevel()}";
                   },
                   'multiple' => true,
-                  'by_referece' => false,
+                  'by_reference' => false,
                   'query_builder' => function (EntityRepository $er) {
                       return $er->createQueryBuilder('f')
                           ->orderBy('s.name', 'ASC')
@@ -443,7 +441,11 @@ Et maintenant voici un exemple de formulaire imbriqué dans `src/Form/StudentTyp
 À l'affichage, vous verrez le formulaire `UserCreationType` et `StudentType` s'afficher dans un seul formulaire.
 À l'usage vous n'aurez qu'à remplir un seul formulaire et les entités user et student seront créées en même temps avec la relation.
 
-## Référénces
+## Références
 
+- [Forms (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/forms.html)
+- [Form Types Reference (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/reference/forms/types.html)
+- [by_reference (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/reference/forms/types/form.html#by-reference)
 - [php - How to avoid "Entities passed to the choice field must be managed. Maybe persist them in the entity manager?" - Stack Overflow](https://stackoverflow.com/questions/35450827/how-to-avoid-entities-passed-to-the-choice-field-must-be-managed-maybe-persist)
+- [How to Embed Forms (Symfony 4.4 Docs)](https://symfony.com/doc/4.4/form/embedded.html)
 

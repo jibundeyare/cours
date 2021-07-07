@@ -41,7 +41,10 @@ Avant de commencer à développer votre thème, il vaut mieux activer le mode de
 Activez le mode déboggage en place le code suivant dans le fichier `wp-config.php` :
 
 ```diff-php
-  // ...
+  <?php
+  /**
+   * The base configuration for WordPress
+   * ...
    * @package WordPress
    */
 
@@ -108,6 +111,9 @@ Petite explications des tags :
 En dessous des méta-données, vous pouvez rajouter votre feuille de style si vous le voulez :
 
 ```diff-css
+  /*
+  Theme Name: WP Custom Theme
+  ...
   Text Domain: wp-custom-theme
   */
 + 
@@ -171,7 +177,6 @@ Et un fichier `footer.php` :
 Et maintenant modifiez votre fichier `index.php` pour qu'il utilise ces fichiers :
 
 ```diff-php
-
 + get_header();
 + 
   if ( have_posts() ):
@@ -185,7 +190,7 @@ Et maintenant modifiez votre fichier `index.php` pour qu'il utilise ces fichiers
 
 Si vous rechargez la home de votre site, vous verrez que le code source affiche un document HTML complet.
 
-## Page d'accueil personnalisée
+## Une page d'accueil personnalisée
 
 Par défaut, la page d'accueil de Wordpress affiche la liste des articles.
 Autrement dit, quand on appel l'URL `http://example.com/`, Wordpress utilise le fichier `index.php` pour afficher le contenu de la page.
@@ -287,7 +292,7 @@ Maintenant, il faut changer les paramètres de Wordpress :
 
 - aller dans la page **Admin > Réglages > Lecture**
 - choisir l'option **Une page statique**
-- sélectionner la page « Accueil » comme page d'accueil et la page « Actus » comme page d'articles
+- sélectionner « Accueil » comme page d'accueil et « Actus » comme page des articles
 - enregistrer les modifications
 
 ![Réglages personnalisés de la page d'accueil](img/home-page-custom-settings.png)
@@ -321,83 +326,149 @@ Par exemple, pour la page contact, le fichier devrait être nommé `template-con
 Le reste du contenu du fichier PHP obéit aux règles habituelle d'un fichier de thème Wordpress.
 On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query()` pour afficher tout type de contenu.
 
-#### WP_Query
+## La classe `WP_Query`
 
 Afficher tous les articles (`post`) :
 
 ```php
-// WP_Query arguments
+<?php
+
+// ...
+
+// Les paramètres de la requête WP_QUery
 $args = array(
     'post_type' => array( 'post' ),
 );
 
-// The Query
+// Exécution de la requête WP_Query
 $query = new WP_Query( $args );
 
-// The Loop
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
+// Affichage du résultat de la requête WP_Query avec la boucle
+if ( $query->have_posts() ):
+    while ( $query->have_posts() ):
         $query->the_post();
-        // do something
-    }
-} else {
-    // no posts found
-}
+        ?>
+        <article>
+            <h1><?php the_title(); ?></h1>
+            <div><?php the_content(); ?></div>
+        </article>
+        <?php
+    endwhile;
+else:
+        ?>
+        <p>
+            Aucun article trouvé
+        </p>
+        <?php
+endif;
 
-// Restore original Post Data
+// Restauration des paramètres originaux de la requête de l'utilisateur
+wp_reset_postdata();
+```
+
+Afficher toutes les pages (`page`) :
+
+```php
+<?php
+
+// ...
+
+// Les paramètres de la requête WP_QUery
+$args = array(
+    'post_type' => array( 'page' ),
+);
+
+// Exécution de la requête WP_Query
+$query = new WP_Query( $args );
+
+// Affichage du résultat de la requête WP_Query avec la boucle
+if ( $query->have_posts() ):
+    while ( $query->have_posts() ):
+        $query->the_post();
+        ?>
+        <article>
+            <h1><?php the_title(); ?></h1>
+            <div><?php the_content(); ?></div>
+        </article>
+        <?php
+    endwhile;
+else:
+        ?>
+        <p>
+            Aucune page trouvée
+        </p>
+        <?php
+endif;
+
+// Restauration des paramètres originaux de la requête de l'utilisateur
 wp_reset_postdata();
 ```
 
 Afficher un article (`post`) correspondant à un slug donné :
 
 ```php
-// WP_Query arguments
+<?php
+
+// ...
+
+// Les paramètres de la requête WP_QUery
 $args = array(
     'name' => 'foo',
 );
 
-// The Query
+// Exécution de la requête WP_Query
 $query = new WP_Query( $args );
 
-// The Loop
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        // do something
-    }
-} else {
-    // no posts found
-}
+// Affichage du résultat de la requête WP_Query sans la boucle
+if ( $query->have_posts() ):
+    $query->the_post();
+    ?>
+    <article>
+        <h1><?php the_title(); ?></h1>
+        <div><?php the_content(); ?></div>
+    </article>
+    <?php
+endif;
 
-// Restore original Post Data
+// Restauration des paramètres originaux de la requête de l'utilisateur
 wp_reset_postdata();
 ```
 
 Afficher une page (`page`) correspondant à un slug donné :
 
 ```php
-// WP_Query arguments
+<?php
+
+// ...
+
+// Les paramètres de la requête WP_QUery
 $args = array(
     'pagename' => 'foo',
     'post_type' => array( 'post' ),
 );
 
-// The Query
+// Exécution de la requête WP_Query
 $query = new WP_Query( $args );
 
-// The Loop
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        // do something
-    }
-} else {
-    // no posts found
-}
+// Affichage du résultat de la requête WP_Query sans la boucle
+if ( $query->have_posts() ):
+    $query->the_post();
+    ?>
+    <article>
+        <h1><?php the_title(); ?></h1>
+        <div><?php the_content(); ?></div>
+    </article>
+    <?php
+endif;
 
-// Restore original Post Data
+// Restauration des paramètres originaux de la requête de l'utilisateur
 wp_reset_postdata();
 ```
+
+**Attention : vérifiez que votre document possède bien le slug que vous avez spécifié.
+Ce slug peut changer si vous changer le mode de création des permaliens dans le backoffice.**
+
+@todo autres sujets avancés :
 
 ## Créer un custom post type et l'afficher
 
