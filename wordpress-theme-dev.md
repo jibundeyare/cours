@@ -185,6 +185,7 @@ Ce header est dynamique car Wordpress va remplacer le contenu des blocs PHP par 
 Et un fichier `footer.php` :
 
 ```php
+<?php wp_footer(); ?>
 </body>
 </html>
 ```
