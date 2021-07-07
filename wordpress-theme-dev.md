@@ -157,12 +157,22 @@ Ajoutez un fichier `header.php` :
 
 ```php
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html lang="<?php bloginfo( 'language' ); ?>">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><?php wp_title(); ?></title>
+    <?php
+    if (is_front_page()):
+        ?>
+        <title>Accueil | <?php bloginfo( 'name' ); ?></title>
+        <?php
+    else:
+        ?>
+        <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
+        <?php
+    endif;
+    ?>
     <link rel="shortcut icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/img/icons8-bulle.svg" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php wp_head(); ?>
@@ -194,6 +204,120 @@ Et maintenant modifiez votre fichier `index.php` pour qu'il utilise ces fichiers
 ```
 
 Si vous rechargez la home de votre site, vous verrez que le code source affiche un document HTML complet.
+
+## Le fichier `functions.php`
+
+Ce fichier permet de :
+
+- intégrer des packages installés avec composer
+- ajouter des paramètres de sécurité
+- ajouter des paramètres de localisation
+- contrôler les fichiers CSS et les fichiers JS que le thème va charger
+- déclarer des fonctionnalités spéciales dans le thème
+
+Voici un fichier `functions.php` minimaliste :
+
+```php
+<?php
+
+/**
+ * composer
+ */
+
+// chargement de l'autoloading de composer
+require get_template_directory().'/vendor/autoload.php';
+
+/**
+ * sécurité
+ */
+
+// désactive l'édition de fichier dans l'admin
+define( 'DISALLOW_FILE_EDIT', true );
+
+/**
+ * localisation
+ */
+
+// choix du fuseau horaire
+date_default_timezone_set( 'Europe/Paris' );
+// choix du réglage régional
+setlocale( LC_ALL, 'fr', 'fr_FR', 'fr_FR.utf8', 'fr_FR.ISO_8859-1' );
+
+/**
+ * CSS
+ */
+
+// cette fonction se charge d'intégrer les feuilles de style du thème
+function my_theme_enqueue_styles() {
+    // chargement d'un fichier CSS
+    wp_enqueue_style( 'my-theme-main', get_stylesheet_directory_uri().'/css/main.css', [] );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+/**
+ * JS
+ */
+
+// cette fonction se charge d'intégrer les scripts JS du thème
+function my_theme_enqueue_script() {
+    // chargement d'un fichier JS
+    wp_enqueue_script( 'my-theme-main', get_stylesheet_directory_uri().'/js/main.js', [] );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_script' );
+
+/**
+ * fonctionnalités du thème
+ */
+
+// activation de la fonctionnalité des balises HTML5
+add_theme_support( 'html5' );
+// activation de la fonctionnalité du titre du site
+add_theme_support( 'title-tag' );
+// activation de la fonctionnalité des vignettes
+add_theme_support( 'post-thumbnails' );
+```
+
+Si vous voulez charger des fichiers CSS ou JS depuis un autre nom de domaine c'est tout à fait possible.
+
+Voici un exemple qui montre comment charger Bootstrap depuis un CDN :
+
+```diff-php
+  /**
+   * CSS
+   */
+  
+  // cette fonction se charge d'intégrer les feuilles de style du thème
+  function my_theme_enqueue_styles() {
++     // chargement de Bootstrap
++     wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', [] );
++ 
+      // chargement d'un fichier CSS
+-     wp_enqueue_style( 'my-theme-main', get_stylesheet_directory_uri().'/css/main.css', [] );
++     wp_enqueue_style( 'my-theme-main', get_stylesheet_directory_uri().'/css/main.css', ['bootstrap'] );
+  }
+  add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+  
+  /**
+   * JS
+   */
+  
+  // cette fonction se charge d'intégrer les scripts JS du thème
+  function my_theme_enqueue_script() {
++     // chargement de Bootstrap
++     wp_enqueue_script( 'my-theme-main', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [] );
++ 
+      // chargement d'un fichier JS
+-     wp_enqueue_script( 'my-theme-main', get_stylesheet_directory_uri().'/js/main.js', [] );
++     wp_enqueue_script( 'my-theme-main', get_stylesheet_directory_uri().'/js/main.js', ['bootstrap'] );
+  }
+  add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_script' );
+```
+
+Dans les fonctions `wp_enqueue_style()` et `wp_enqueue_script()`, le premier paramètre permet de donner un alias à la resource (c-à-d le fichier CSS ou JS) que l'on veut charger.
+Cela permet de spcécifier dans le troisième paramètre (un tableau vide `[]` par défaut) une liste de resources qui sont des dépendances.
+
+Concrètement, le fait d'avoir `['foo']` comme troisième paramètre vous assure que la resource que vous voulez charger sera chargée **après** la resource `'foo'`.
+Comme c'est un tableau, vous pouvez spécifier plusieurs ressources, par exemple `['bootstrap', 'fontawesome']`.
 
 ## Une page d'accueil personnalisée
 
@@ -231,7 +355,7 @@ Voici un contenu possible du fichier `front-page.php` :
 
 get_header();
 
-// Affichage de la page d'accueil
+// Affichage de la page d'accueil sans la boucle
 if ( have_posts() ):
     the_post();
     ?>
@@ -252,6 +376,8 @@ Voici un contenu possible du fichier `home.php` :
 
 get_header();
 
+// Afichage de la page actus
+
 // Les paramètres de la requête WP_QUery
 $args = array(
     // Sélection de pages (au lieu de posts)
@@ -263,7 +389,7 @@ $args = array(
 // Exécution de la requête WP_Query
 $query = new WP_Query( $args );
 
-// Affichage du résultat de la requête WP_Query avec la boucle
+// Affichage du résultat de la requête WP_Query sans la boucle
 if ( $query->have_posts() ):
     $query->the_post();
     ?>
@@ -283,6 +409,7 @@ if ( have_posts() ):
         the_post();
         ?>
         <article>
+            <?php // Notez que le titre est dans un lien clickable ?>
             <h2><a href="<?= get_permalink(); ?>"><?php the_title(); ?></a></h2>
             <div><?php the_content(); ?></div>
         </article>
@@ -301,6 +428,154 @@ Maintenant, il faut changer les paramètres de Wordpress :
 - enregistrer les modifications
 
 ![Réglages personnalisés de la page d'accueil](img/home-page-custom-settings.png)
+
+## Afficher la date de publication d'un article
+
+```diff-php
+      <article>
+          <h1><?php the_title(); ?></h1>
++         <div><?php the_time( get_option( 'date_format' ) ); ?></div>
+          <div><?php the_content(); ?></div>
+      </article>
+```
+
+
+## Afficher la vignette d'un article
+
+Pour afficher la vignette d'un article, il faut d'abord s'assurer que le thème a bien activé la fonctionnalité avec `add_theme_support( 'post-thumbnails' );` dans le fichier `functions.php`.
+
+Si vous voulez afficher la vignette dans un article, elle ne doit pas être clickable :
+
+```diff-php
+      <article>
+          <h1><?php the_title(); ?></h1>
+          <div><?php the_time( get_option( 'date_format' ) ); ?></div>
++         <?php
++         if ( has_post_thumbnail() ):
++             the_post_thumbnail( 'medium' );
++         endif;
++         ?>
+          <div><?php the_content(); ?></div>
+      </article>
+```
+
+Mais si vous voulez afficher la vignette dans une boucle, il vaut mieux la rendre clickable :
+
+```diff-php
+          <article>
+              <?php // Notez que le titre est dans un lien clickable ?>
+              <h2><a href="<?= get_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <div><?php the_time( get_option( 'date_format' ) ); ?></div>
++             <?php
++             if ( has_post_thumbnail() ):
++                 ?>
++                 <a href="<?php the_permalink(); ?>" alt="<?php the_title_attribute(); ?>">
++                     <?php the_post_thumbnail( 'medium' ); ?>
++                 </a>
++                 <?php
++             endif;
++             ?>
+              <div><?php the_content(); ?></div>
+          </article>
+```
+
+**Attention : notez qu'avec les réglages par défaut, les pages n'ont pas vignettes.**
+
+## Les templates de page et d'article
+
+Une page et un article se différencient pour ces raisons :
+
+- une page ne peut pas avoir d'étiquettes (des tags)
+- une page ne peut pas avoir de catégorie
+- une page ne peut pas avoir de vignette
+- en général la date de publication d'une page n'est pas une information intéressante
+
+Sachant cela, on peut partir du fichier `index.php` pour créer dans le fichier `single.php` le template d'un article :
+
+```php
+<?php
+
+get_header();
+
+// Affichage d'un article sans la boucle
+if ( have_posts() ):
+    the_post();
+    ?>
+    <article>
+        <h1><?php the_title(); ?></h1>
+        <div><?php the_time( get_option( 'date_format' ) ); ?></div>
+        <?php
+        if ( has_post_thumbnail() ):
+            the_post_thumbnail( 'medium' );
+        endif;
+        ?>
+        <div><?php the_content(); ?></div>
+    </article>
+    <?php
+endif;
+
+get_footer();
+```
+
+Et on peut faire pareil dans le fichier `page.php` pour le template d'une page, mais en enlevant la date et la vignette :
+
+```php
+<?php
+
+get_header();
+
+// Affichage d'un article sans la boucle
+if ( have_posts() ):
+    the_post();
+    ?>
+    <article>
+        <h1><?php the_title(); ?></h1>
+        <div><?php the_content(); ?></div>
+    </article>
+    <?php
+endif;
+
+get_footer();
+```
+
+Quand vous avez fait ça, il y a un dernière chose à faire en complément : adapter le fichier `index.php`.
+Il ne sera appelé que si vous demandez un post en passant par les catégories, les étiquettes, l'auteur ou la date.
+
+On peut corriger la balise `h1` qui n'était pas adaptée et ajouter un titre qui sera généré par Wordpress en fonction du contexte :
+
+```php
+  get_header();
+  
++ the_archive_title( '<h1 class="page-title">', '</h1>' );
++ 
+  if ( have_posts() ):
+      while (have_posts()):
+          the_post();
+          ?>
+          <article>
+-             <h1><?php the_title(); ?></h1>
++             <h2><?php the_title(); ?></h2>
+              <div><?php the_time( get_option( 'date_format' ) ); ?></div>
+              <?php
+              if ( has_post_thumbnail() ):
+                  the_post_thumbnail( 'medium' );
+              endif;
+              ?>
+              <div><?php the_content(); ?></div>
+          </article>
+          <?php
+      endwhile;
+  endif;
+  
+  get_footer();
+```
+
+## L'API des thèmes Wordpress
+
+Vous trouverez une liste complète des fonctions que vous pouvez appeler pour récupérer des données dans cette page : [List of Template Tags | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/references/list-of-template-tags/).
+
+Pour savoir dans quel contexte le template s'affiche, on peut utiliser des « fonctions conditionnelles ».
+Vous trouverez la liste complète de ces fonctions dans cette page : [List of Conditional Tags | Theme Developer Handbook | WordPress Developer Resources](https://developer.wordpress.org/themes/references/list-of-conditional-tags/).
 
 ## Créer un template de page
 
