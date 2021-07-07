@@ -39,6 +39,12 @@ WP-CLI project config:
 WP-CLI version:	2.5.0
 ```
 
+## Mise à jour de WP CLI
+
+```bash
+sudo wp cli update
+```
+
 ## Installer un nouveau Wordpress
 
 Nous allons créer un projet nommé "My WP Project".
