@@ -636,11 +636,11 @@ if ( $query->have_posts() ):
         <?php
     endwhile;
 else:
-        ?>
-        <p>
-            Aucun article trouvé
-        </p>
-        <?php
+    ?>
+    <p>
+        Aucun article trouvé
+    </p>
+    <?php
 endif;
 
 // Restauration des paramètres originaux de la requête de l'utilisateur
@@ -674,11 +674,11 @@ if ( $query->have_posts() ):
         <?php
     endwhile;
 else:
-        ?>
-        <p>
-            Aucune page trouvée
-        </p>
-        <?php
+    ?>
+    <p>
+        Aucune page trouvée
+    </p>
+    <?php
 endif;
 
 // Restauration des paramètres originaux de la requête de l'utilisateur
