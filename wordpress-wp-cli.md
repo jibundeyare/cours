@@ -15,7 +15,7 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 Testez pour voir si la commande est bien installée :
 
 ```bash
-wp
+wp --info
 ```
 
 Si vous optenez quelque chose comme ça, c'est que ça fonctionne :
