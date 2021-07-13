@@ -106,8 +106,8 @@ php bin/console doctrine:migrations:migrate
 # Injectez les fixtures.
 # Vous aurez certainement à adapter le nom du groupe.
 # L'option --env=dev est nécessaire car normalement les fixtures ne sont
-# disponibles que en environement de dev.
-php bin/console doctrine:fixtures:load --env=dev --group=prod
+# disponibles qu'en environement de dev.
+php bin/console doctrine:fixtures:load --env=dev --group=required
 
 # Créez un virtual host et un pool php fpm
 cd ~/install-scripts
@@ -178,9 +178,11 @@ php bin/console doctrine:migrations:migrate
 # données sont effacées).
 # Vous aurez certainement à adapter le nom du groupe.
 # L'option --env=dev est nécessaire car normalement les fixtures ne sont
-# disponibles que en environement de dev.
+# disponibles qu'en environement de dev.
 # Faites attention à l'option --group, choisissez bien les données à
 # injecter (sous peine de se retrouver avec des données en double).
+# Attention aussi à l'option `--append`, sans elle vous risquer d'effacer toutes
+# les données de la prod, ce qui serait super grave !!!
 php bin/console doctrine:fixtures:load --env=dev --group=foo --append
 ```
 
@@ -189,7 +191,7 @@ Il n'y a plus qu'à tester.
 ## La commande `scp` pour copier des fichiers sur un serveur
 
 Cette commande permet de copier un fichier d'une machine à l'autre comme si on copiait un fichier d'un dossier à l'autre.
-Il faudra juste veiller à spcéifier sur quelle machine vous voulez copier les fichiers.
+Il faudra juste veiller à spécifier sur quelle machine vous voulez copier le fichier.
 
 Exemple pour copier le fichier `.env.prod.local` sur votre serveur et le renommer `.env.local` au passage.
 
@@ -205,7 +207,7 @@ Autre exemple si vous avez personnalisé le port SSH :
 scp -P 54321 .env.prod.local 123.123.123.123:~/projects/foo/.env.local
 ```
 
-Contrairement à la commande `ssh` ou on utilise une petit `-p`, ici (piège) il faut utiliser un grand `-P`.
+Contrairement à la commande `ssh` qui utilise un petit `-p`, avec `scp` (piège) il faut utiliser un grand `-P`.
 
 ## Références
 
