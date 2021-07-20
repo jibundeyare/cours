@@ -25,6 +25,12 @@ Si votre base de données contient des données school year, un rapide coup d'œ
 Object of class App\Entity\SchoolYear could not be converted to string
 ```
 
+ou :
+
+```
+Object of class Proxies\__CG__\App\Entity\SchoolYear could not be converted to string
+```
+
 Ne vous inquiétez pas, c'est normal.
 C'est juste que Symfony a besoin d'informations supplémentaires pour pouvoir afficher correctement le champ `schoolYear` dans le formulaire.
 
