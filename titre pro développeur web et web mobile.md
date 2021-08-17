@@ -14,6 +14,21 @@
 2. Développeur web et web mobile
 3. cliquer sur CHERCHER
 
+Les deux documents les plus importants du titre pro sont :
+
+- `RCV2_DWWM_V03_03052018.pdf` : celui-ci décrit les modalités de l'examen (type d'évaluations, durée, contenu des documents, etc)
+- `REAC_DWWM_V03_03052018.pdf` : celui-là décrit les compétences nécessaires pour valider l'examen
+
+## Les documents que vous devez produire
+
+Vous devez créer trois documents :
+
+- un résumé du rapport de stage (résumé du dossier de projet)
+- un rapport de stage (dossier de projet)
+- un dossier professionnel (le DP)
+
+**Un autre document sera remis directement par l'établissement à votre jury : les évaluations en cours de formation (les ECF).**
+
 ## Durée de l'examen
 
 C'est 01h30 max.
@@ -22,7 +37,9 @@ C'est 01h30 max.
 
 `RCV2_DWWM_V03_03052018.pdf`, p13
 
-## Le résumé du rapport de stage (dossier de projet)
+## Le résumé du rapport de stage (résumé du dossier de projet)
+
+C'est à vous de rédiger ce document.
 
 Le résumé doit :
 
@@ -39,13 +56,15 @@ Le résumé doit :
 
 ## Le rapport de stage (dossier de projet)
 
+C'est à vous de rédiger ce document.
+
 Le rapport de stage doit être :
 
 - remis au moins 1 jour avant ouvré avant la session d'examen
 - présenté avec un projecteur le jour de la session d'examen
 
 Il est recommandé d'imprimer deux exemplaires du rapport de stage (un pour chaque membre du jury).
-Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
+Après la session de jury, vous pourrez laisser un exemplaire à l'établissement et en garder un pour vous.
 
 > Au moins un jour ouvré avant la session d’examen, le candidat a remis à l'organisateur son dossier de projet.
 
@@ -55,36 +74,7 @@ Après la session de jury, vous pourrez laisser un exemplaire à Pop School et e
 
 `RCV2_DWWM_V03_03052018.pdf`, p5
 
-**Attention : lire aussi la section « Le contenu du rapport de stage » plus bas.**
-
-## Le dossier professionnel (DP)
-
-Pour vous aider à remplir le dossier professionnel, il existe :
-
-- un site web [dossierprofessionnel.fr/](http://www.dossierprofessionnel.fr/)
-- un pdf [Aide_candidatFormation_dossier_professionnel.pdf](files/Aide_candidatFormation_dossier_professionnel.pdf)
-
-Voici des modèles de dossier professionnel (DP) :
-
-- [1-Dossier_professionnel_version_manuscrite.pdf](files/1-Dossier_professionnel_version_manuscrite.pdf)
-- [1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx](files/1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx)
-
-Le dossier professionnel est remis le jour même.
-
-Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
-
-Il est recommandé d'imprimer deux exemplaires du dossier professionnel (un pour chaque membre du jury).
-Après la session de jury, vous pourrez laisser un exemplaire à Pop School et en garder un pour vous.
-
-Les modèles et l'aide proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
-
-## Les évaluations en cours de formation (ECF)
-
-Elles sont remises le jour même.
-
-Il n'y a aucune date limite dans `RCV2_DWWM_V03_03052018.pdf`.
-
-## Le contenu du rapport de stage
+### Le contenu du rapport de stage (dossier de projet)
 
 Tout ce que le rapport de stage doit contenir :
 
@@ -113,6 +103,42 @@ Tout ce que le rapport de stage doit contenir :
 > La longueur du dossier de projet hors annexes est de 30 à 35 pages, soit environ 48750 caractères espaces non compris.
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
+
+## Le DP (dossier professionnel)
+
+C'est à vous de rédiger ce document.
+
+Le DP est remis le jour même.
+**Aucune date limite n'est spécifiée dans `RCV2_DWWM_V03_03052018.pdf`.**
+
+Il est recommandé d'imprimer deux exemplaires du DP (un pour chaque membre du jury).
+Après la session de jury, vous pourrez laisser un exemplaire à l'établissement et en garder un pour vous.
+
+Pour vous aider à remplir le DP, il existe :
+
+- un site web [dossierprofessionnel.fr/](http://www.dossierprofessionnel.fr/)
+- un pdf [Aide_candidatFormation_dossier_professionnel.pdf](files/Aide_candidatFormation_dossier_professionnel.pdf)
+
+Voici des DP vides et prêts à être remplis :
+
+- [1-Dossier_professionnel_version_manuscrite.pdf](files/1-Dossier_professionnel_version_manuscrite.pdf)
+- [1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx](files/1-Dossier_professionnel_version_traitement_de_texte_11_09_2017.docx)
+
+**Attention : il se peut que la version `docx` bug si vous utilisez libre office.**
+
+Les DP vides et l'aide proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
+
+### Le contenu du DP (dossier professionnel)
+
+Les exemples de pratique professionnelle peuvent être répartis par activité types (c-à-d front-end et back-end).
+Vous n'êtes pas obligés de décomposer vos exemples pour chacune des compétences (maquetter une application, réaliser une interface, etc).
+
+## Les ECF (évaluations en cours de formation)
+
+Ce document est rédigé par votre formateur.
+
+Les ECF sont remises le jour même.
+**Aucune date limite n'est spécifiée dans `RCV2_DWWM_V03_03052018.pdf`.**
 
 ## Le passage à l'oral
 
