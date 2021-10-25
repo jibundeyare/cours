@@ -20,9 +20,9 @@ Dans le menu `File` > `Preferences` > `Settings` > tapez `telemetry` dans le cha
 
 Voici quelques plugins recommandés pour faire du développement web en JS, PHP et Python :
 
-- Name: Better PHPUnit  
-  Id: calebporzio.better-phpunit  
-  Publisher: calebporzio
+- Name: PHPUnit Test Explorer  
+  Id: recca0120.vscode-phpunit  
+  Publisher: recca0120
 - Name: Code Runner  
   Id: formulahendry.code-runner  
   Publisher: Jun Han
@@ -58,10 +58,6 @@ Voici quelques plugins recommandés pour faire du développement web en JS, PHP 
 - Name: PHP Namespace Resolver  
   Id: mehedidracula.php-namespace-resolver  
   Publisher: Mehedi Hassan
-- Name: phpcs  
-  Id: ikappas.phpcs  
-  Publisher: Ioannis Kappas  
-  Note: `composer global require squizlabs/php_codesniffer`
 - Name: Prettier - Code formatter  
   Id: esbenp.prettier-vscode  
   Publisher: Esben Petersen
@@ -87,6 +83,56 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 6. taper `twig` dans le champ Key et `html` dans le champ Value
 
 Vous pouvez fermer l'onglet.
+
+## Formatage automatique du code HTML
+
+Allez dans :
+
+`File` > `Preferences` > `Settings`
+
+Ensuite, tout en haut à droite, vous trouverez trois icônes :
+
+![vscode-settings-top-right-icons.png](vscode-settings-top-right-icons.png)
+
+Cliquez sur l'icône du milieu ![vscode-settings-top-right-icons-json-button.png](vscode-settings-top-right-icons-json-button.png) pour voir le configuration au format JSON comme ci-dessous :
+
+```
+{
+    "breadcrumbs.enabled": true,
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    // ...
+    "workbench.colorTheme": "Visual Studio Dark",
+    "html.format.contentUnformatted": "",
+    "html.format.unformatted": ""
+}
+```
+
+À la fin du fichier, modifiez le fichier comme ci-dessous :
+
+```diff-json
+  {
+      "breadcrumbs.enabled": true,
+      "emmet.includeLanguages": {
+          "twig": "html"
+      },
+      // ...
+      "workbench.colorTheme": "Visual Studio Dark",
+      "html.format.contentUnformatted": "",
+-     "html.format.unformatted": ""
++     "html.format.unformatted": "",
++     "[html]": {
++         "editor.defaultFormatter": "vscode.html-language-features"
++     }
+  }
+```
+
+Maintenant vous pouvez utiliser les raccourcis claviers suivants pour auto formater le code :
+
+- linux : ctrl + shift + i
+- windows : shift + alt + f
+- macos : shift + option + f
 
 ## Le plugin `phpcs` affiche trop d'erreurs et de warnings dans l'onglet `Problems`
 
