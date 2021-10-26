@@ -130,9 +130,9 @@ Cliquez sur l'icône du milieu ![vscode-settings-top-right-icons-json-button.png
 
 Maintenant vous pouvez utiliser les raccourcis claviers suivants pour auto formater le code :
 
-- linux : ctrl + shift + i
-- windows : shift + alt + f
-- macos : shift + option + f
+- linux : `ctrl + shift + i`
+- windows : `shift + alt + f`
+- macos : `shift + alt + f` ou `shift + option + f`
 
 ## Le plugin `phpcs` affiche trop d'erreurs et de warnings dans l'onglet `Problems`
 
