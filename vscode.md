@@ -84,6 +84,11 @@ Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trou
 
 Vous pouvez fermer l'onglet.
 
+## Search and replace
+
+Linux et Windows : `ctrl + h`
+Macos : `shift + command + h`
+
 ## Formatage automatique du code HTML
 
 Allez dans :
