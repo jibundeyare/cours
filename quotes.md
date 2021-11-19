@@ -1,5 +1,11 @@
 # Quotes
 
+## JavaScript
+
+> "Atwood's Law: any application that can be written in JavaScript, will eventually be written in JavaScript." - Jeff Atwood
+
+> "Loi d'Atwood : toute application qui peut être écrite en JavaScript, finira par être écrite en JavaScript." - Jeff Atwood
+
 ## Debugging
 
 > "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." - Brian Kernighan
