@@ -1,12 +1,12 @@
 # Entreprenariat
 
-TNS : travailler non salarié
+TNS : travailleur non salarié
 
 À Lille :
 
-- SMART https://www.smartfr.fr/ : coopérative mais avec un fonctionnement de portage, intéressant pour les activités artistiques
-- Reactif http://www.reactifconsultants.com/ : portage salarial, les frais les plus bas (2%), plutôt sérieuse
-- Grands ensembles http://grandsensemble.org/ : cae, même initiateur que SMART
+- SMART https://www.smartfr.fr/ : coopérative mais avec un fonctionnement d'entreprise de portage salarial, intéressant pour les activités artistiques
+- Reactif http://www.reactifconsultants.com/ : entreprise de portage salarial, les frais les plus bas (2%), plutôt sérieuse
+- Grands ensembles http://grandsensemble.org/ : CAE, même initiateur que SMART
 - Opteos https://www.opteos.fr/ : petite CAE très dynamique socialement (conférences, rencontres, entraide)
 
 À Lens :
