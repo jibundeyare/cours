@@ -351,6 +351,7 @@ Pour des cas d'usage typiques, voir :
 - [gitflow-solo-basic.md](gitflow-solo-basic.md)
 - [gitflow-solo-advanced.md](gitflow-solo-advanced.md)
 - [gitflow-github-flow-basic.md](gitflow-github-flow-basic.md)
+- [gitflow-github-flow-advanced.md](gitflow-github-flow-advanced.md)
 
 ### Création du repo en local
 
