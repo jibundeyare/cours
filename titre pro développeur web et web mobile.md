@@ -23,9 +23,9 @@ Les deux documents les plus importants du titre pro sont :
 
 Vous devez créer trois documents :
 
-- un résumé du rapport de stage (résumé du dossier de projet)
-- un rapport de stage (dossier de projet)
-- un dossier professionnel (le DP)
+- un résumé du rapport de stage (résumé du dossier de projet) remis au moins 10 jours ouvrés avant la session d'examen
+- un rapport de stage (dossier de projet) remis au moins 1 jour ouvré avant la session d'examen
+- un dossier professionnel (le DP) remis le jour même
 
 **Un autre document sera remis directement par l'établissement à votre jury : les évaluations en cours de formation (les ECF).**
 
@@ -60,7 +60,7 @@ C'est à vous de rédiger ce document.
 
 Le rapport de stage doit être :
 
-- remis au moins 1 jour avant ouvré avant la session d'examen
+- remis au moins 1 jour ouvré avant la session d'examen
 - présenté avec un projecteur le jour de la session d'examen
 
 Il est recommandé d'imprimer deux exemplaires du rapport de stage (un pour chaque membre du jury).
