@@ -34,7 +34,7 @@ Vous devez créer plusieurs documents :
 ## Déroulé de l'examen
 
 La durée totale est de **01h30 max**.
-Dans la fait, la durée moyenne est de 50 min.
+Dans les faits, la durée moyenne est de 50 min.
 
 > Durée totale de présence du jury pendant l’épreuve du candidat : 01 h 30 min
 
