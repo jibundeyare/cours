@@ -21,21 +21,49 @@ Les deux documents les plus importants du titre pro sont :
 
 ## Les documents que vous devez produire
 
-Vous devez créer trois documents :
+Vous devez créer plusieurs documents :
 
 - un résumé du rapport de stage (résumé du dossier de projet) remis au moins 10 jours ouvrés avant la session d'examen
 - un rapport de stage (dossier de projet) remis au moins 1 jour ouvré avant la session d'examen
+- une traduction de contenu en anglais à joindre dans le rapport de stage
 - un dossier professionnel (le DP) remis le jour même
+- des slides qui vous serviront lors la présentation orale devant le jury
 
 **Un autre document sera remis directement par l'établissement à votre jury : les évaluations en cours de formation (les ECF).**
 
-## Durée de l'examen
+## Déroulé de l'examen
 
-C'est 01h30 max.
+La durée totale est de **01h30 max**.
+Dans la fait, la durée moyenne est de 50 min.
 
 > Durée totale de présence du jury pendant l’épreuve du candidat : 01 h 30 min
 
 `RCV2_DWWM_V03_03052018.pdf`, p13
+
+Voici le déroulé de l'examen :
+
+- **Présentation** d'un projet réalisé en amont de la session, **durée 35 min**  
+  Lors de la session d’examen, le candidat présente son projet à l’aide d’un
+support de présentation.
+- **Entretien technique**, **durée 40 min**  
+  Le jury questionne le candidat sur la base de son dossier de projet et de sa présentation orale.  
+  Un questionnement complémentaire lui permet d’évaluer les compétences qui ne sont pas couvertes par le projet.
+- **Entretien final**, **durée 15 min**  
+  Y compris le temps d’échange avec le candidat sur le dossier professionnel. Le jury évalue la compréhension, la vision et la culture professionnelle du métier. Il dispose de l’ensemble du dossier du candidat dont son dossier professionnel (DP).
+
+`RCV2_DWWM_V03_03052018.pdf`, p5, p6
+
+Pendant la présentation, vous pouvez faire la démo de votre projet.
+Mais cette démo ne doit pas durer plus de 10 min.
+
+Vous pouvez aussi faire une « pseudo démo » en enchaînant des captures d'écran.
+Pour le jury, ça revient presque au même.
+
+Conseil : testez votre démo avant pour être sûr que tout s'enchaîne comme prévu.
+
+> Cette présentation inclut, au choix du candidat, une illustration ou une démonstration de l’interface de l’application. Une combinaison des deux est possible. Leur durée cumulée dans la présentation ne doit pas excéder 10 minutes.
+
+`RCV2_DWWM_V03_03052018.pdf`, p7, p8
 
 ## Le résumé du rapport de stage (résumé du dossier de projet)
 
@@ -104,6 +132,18 @@ Tout ce que le rapport de stage doit contenir :
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
 
+## La traduction de contenu en anglais
+
+Pendant la réalisation de votre projet, vous allez certainement consulter de la documentation, des articles de blog ou des forums en anglais.
+
+Vous devrez joindre à votre rapport de stage un extrait du document anglais et fournir une traduction française de 750 signes (espaces compris).
+
+- une traduction de 750 signes (espaces compris) d'un article en anglais qui vous a servi pendant la phase de réalisation du projet ou la phase de veille
+
+> Extrait du site anglophone [...] accompagné de la traduction en français effectuée par le candidat sans traducteur automatique (environ 750 signes).
+
+`RCV2_DWWM_V03_03052018.pdf`, p7
+
 ## Le DP (dossier professionnel)
 
 C'est à vous de rédiger ce document.
@@ -167,3 +207,17 @@ Tout ce qui doit être dit pendant l'oral :
 
 `RCV2_DWWM_V03_03052018.pdf`, p7, p8
 
+## Les slides pour la présentation orale devant le jury
+
+Règle numéro 1 : il faut absolument éviter de mettre trop de texte dans des slides.
+
+Voici des exemples de contenu idéal :
+
+- le titre des parties
+- des captures d'écran pour illustrer votre propos (logo de l'entreprise, organigramme de l'entreprise, wireframe, schéma de BDD, message d'erreur, etc)
+- quelques informations importantes (technos utilisées, chiffres clés comme la fréquentation d'un site ou le nombre de clients, etc)
+- vos coordonnées à la fin des slides
+
+Vous pouvez reprendre le contenu de votre rapport de stage mais vous pouvez aussi dire des choses à l'oral que vous ne laisserez pas dans le rapport de stage.
+C'est à vous de choisir de façon à vous mettre en valeur ou pouvoir improviser face à votre public pendant la présentation.
+.
