@@ -207,6 +207,10 @@ Tout ce qui doit être dit pendant l'oral :
 
 `RCV2_DWWM_V03_03052018.pdf`, p7, p8
 
+Conseil : si vous avez des notes écrites, évitez les longues phrases.
+Ne lisez pas vos notes d'un ton monotone, le jury ne va pas aimer.
+Essayez d'être naturel et de faire des phrases avec vos mots à vous, ce sera plus agréable pour tout le monde.
+
 ## Les slides pour la présentation orale devant le jury
 
 Règle numéro 1 : il faut absolument éviter de mettre trop de texte dans des slides.
@@ -221,3 +225,9 @@ Voici des exemples de contenu idéal :
 Vous pouvez reprendre le contenu de votre rapport de stage mais vous pouvez aussi dire des choses à l'oral que vous ne laisserez pas dans le rapport de stage.
 C'est à vous de choisir de façon à vous mettre en valeur ou pouvoir improviser face à votre public pendant la présentation.
 .
+
+Conseil : vous pouvez ajoutez vos notes dans vos slides ou les imprimer sur papier pour les avoir sous la main au cas où.
+
+**ATTENTION** : faites une copie de vos slides quelque part sur internet et sur une clé USB, au format slide et au format PDF.
+Comme ça, si jamais vous avez un pépin (casse, vol, absence de connexion, attaque de martiens), il vous restera une solution.
+
