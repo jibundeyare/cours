@@ -1,9 +1,14 @@
 # Lexique
 
+- A11Y : accessibility (accessibilité) ; rendre une application accessible pour des personnes ayant un handicap ou du matériel informatique limité
 - Adresse MAC : voir MAC Address
+- AMP Stack : Apache MariaDB PHP Stack ; trois applications qui forment la base d'un service web
 - API : Application Programming Interface
 - Array : tableau, type de données
 - Attribut : en POO, un attribut désigne une variable
+- AWS : Amazon Web Services (Services Web Amazon) ; leader mondial des services d'hébergement et de calcul en ligne
+- AWS EC2 : AWS Elastic Compute Cloud (Cloud de calcul élastique) ; services de machines virtuelles en ligne
+- AWS S3 : AWS Simple Storage Service (Service simple de stockage) ; services de stockage de données en ligne
 - BATX : Baidu, Alibaba, Tencent, Xiaomi ; de grandes multinationales chinoises du net ; voir aussi FAANG, GAFAM et NATU
 - BC : backward compatibility (rétro-compatibilité)
 - BC break : backward compatibility break (situation de non rétro-compatibilité)
@@ -60,11 +65,16 @@
 - KB : Knowledge Base (base de donnaissance)
 - KDB : Knowledge Data Base (base de donnaissance)
 - KISS : Keep It Simple Stupid (ne complique pas les choses, imbécile) ; principe qui consiste à éviter de compléxifier du code ou une procédure au-delà du raisonnable
-- L10N : localisation ; traduire une application dans une langue (la rendre adaptée à une zone culturelle et linguistique) ; voir I18N
+- LAMP : Linux AMP ; voir aussi AMP Stack
+- L10N : localisation ; traduction d'une application dans une langue (pour la rendre adaptée à une zone culturelle et linguistique) ; voir I18N
 - Lead dev : lead developper ; développeur principal d'une équipe
 - Library : librairie, ensemble de fonctions ou classes écrites par un autre développeur et que l'on va réutiliser pour son projet
 - LTS : Long Term Support ; support au long terme
 - MAC address : Media Access Control address ; c'est une adresse unique que possède toutes les cartes réseaux ; cette adresse permet d'identifier une machine
+- MAMP : MacOS AMP ; voir aussi AMP Stack
+- MEAN Stack : MongoDB Express Angular NodeJS Stack ; une version JavaScript de la stack AMP ; voir aussi AMP Stack, MERN Stack et MEVN Stack
+- MERN Stack : MongoDB Express ReactJS NodeJS Stack ; la version JavaScript de la stack AMP ; voir aussi AMP Stack, MEAN Stack et MEVN Stack
+- MEVN Stack : MongoDB Express VueJs NodeJS Stack ; la version JavaScript de la stack AMP ; voir aussi AMP Stack, MEAN Stack et MERN Stack
 - Méthode : en POO, une méthode désigne une fonction
 - Membre : en POO, un membre désigne une variable
 - Merge request : synonyme de pull request
@@ -74,6 +84,7 @@
 - NATU : Netflix Airbnb Tesla Uber ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et GAFAM
 - Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers
 - OOP : Object Oriented Programming ; voir POO
+- OVH : leader en France des services d'hébergement et de calcul en ligne ; initiales de « Oles Van Herman » surnom d'étudiant d'Octave Klaba, le fondateur de la société
 - Package : un librairie ou un programme installable
 - Paquet : voir package
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
@@ -113,6 +124,7 @@
 - Variable scalaire : c'est une variable qui ne contient qu'une seule valeur contrairement à une liste, un tableau, un dictionnaire ou un objet par exemple ; exemple : bool, float, integer, string
 - VM : Virtual Machine (machine virtuelle)
 - VPN : Virtual Private Network (réseau privé virtuel) ; c'est un système qui permet à un utilisateur d'être connecté à un réseau privé (celui d'une entreprise par exemple) comme s'il était physiquement sur place, alors qu'en réalité il y est connecté en passant par internet
+- WAMP : Windows AMP ; voir aussi AMP Stack
 - Web browser : navigateur web (Chrome, Edge, Firefox, Internet Explorer, Lynx, Opera, Safari, etc)
 - WIP : Work In Progress (travail en cours)
 - Wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
