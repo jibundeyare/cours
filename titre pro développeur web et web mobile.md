@@ -29,7 +29,9 @@ Vous devez créer plusieurs documents :
 - un dossier professionnel (le DP) remis le jour même
 - des slides qui vous serviront lors la présentation orale devant le jury
 
-**Un autre document sera remis directement par l'établissement à votre jury : les évaluations en cours de formation (les ECF).**
+**Conseil : quand vous rédigez votre rapport de stage, le résumé ou les slides, pensez à répondre aux questions QQOQCCP (pour « Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »)**
+
+Les Évaluations en Cours de Formation (les ECF) seront remises directement par l'établissement à votre jury.
 
 ## Déroulé de l'examen
 
@@ -144,7 +146,7 @@ Vous devrez joindre à votre rapport de stage un extrait du document anglais et 
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
 
-## Le DP (dossier professionnel)
+## Le DP (Dossier Professionnel)
 
 C'est à vous de rédiger ce document.
 
@@ -168,12 +170,12 @@ Voici des DP vides et prêts à être remplis :
 
 Les DP vides et l'aide proviennent de la page [Titres professionnels délivrés par le ministère du Travail](https://travail-emploi.gouv.fr/formation-professionnelle/certification-competences-pro/titres-professionnels-373014), lien « Textes réglementaires / documents techniques ».
 
-### Le contenu du DP (dossier professionnel)
+### Le contenu du DP (Dossier Professionnel)
 
 Les exemples de pratique professionnelle peuvent être répartis par activité types (c-à-d front-end et back-end).
 Vous n'êtes pas obligés de décomposer vos exemples pour chacune des compétences (maquetter une application, réaliser une interface, etc).
 
-## Les ECF (évaluations en cours de formation)
+## Les ECF (Évaluations en Cours de Formation)
 
 Ce document est rédigé par votre formateur.
 
