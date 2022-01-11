@@ -19,6 +19,11 @@ Les deux documents les plus importants du titre pro sont :
 - `RCV2_DWWM_V03_03052018.pdf` : celui-ci décrit les modalités de l'examen (type d'évaluations, durée, contenu des documents, etc)
 - `REAC_DWWM_V03_03052018.pdf` : celui-là décrit les compétences nécessaires pour valider l'examen
 
+Vous pouvez retrouver une copie de ces documents ci-dessous :
+
+- [RCV2_DWWM_V03_03052018.pdf](files/RCV2_DWWM_V03_03052018.pdf)
+- [REAC_DWWM_V03_03052018.pdf](files/REAC_DWWM_V03_03052018.pdf)
+
 ## Les documents que vous devez produire
 
 Vous devez créer plusieurs documents :
