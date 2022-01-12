@@ -91,7 +91,16 @@ Les breakpoints de Bootstrap 4 :
 - Small devices : landscape phones (≥576px)
 - Medium devices : tablets (≥768px)
 - Large devices : desktops (≥992px)
- - Extra large devices : large desktops (≥1200px)
+- Extra large devices : large desktops (≥1200px)
+
+Les breakpoints de Bootstrap 5 :
+
+- Extra small devices : portrait phones (<576px)
+- Small devices : landscape phones (≥576px)
+- Medium devices : tablets (≥768px)
+- Large devices : desktops (≥992px)
+- Extra large devices : large desktops (≥1200px)
+- Extra extra large devices : extra large desktops (≥1400px)
 
 Le [responsive meta tag de base de MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics) :
 
@@ -113,6 +122,12 @@ Pour augmenter les performances, il est possible de précharger des resources.
 - [Link types - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)
 - [Preloading content with rel="preload" - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
 
+## Veille
+
+- [Alsacréations](https://www.alsacreations.com/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [CatsWhoCode](https://catswhocode.com/)
+
 ## Doc
 
 - [HTML elements reference - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
@@ -120,8 +135,6 @@ Pour augmenter les performances, il est possible de précharger des resources.
 - [Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)
 - [Element Index | HTML5 Doctor](http://html5doctor.com/element-index/)
 - [What Web Can Do Today](https://whatwebcando.today/)
-- [CSS-Tricks](https://css-tricks.com/)
-- [Alsacréations : Actualités et tutoriels web, HTML, CSS, JavaScript](https://www.alsacreations.com/)
 
 - [Specificity - CSS | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 - [At-rule - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
