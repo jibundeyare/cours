@@ -1,5 +1,5 @@
-# Mariadb (anciennement MySQL)
 
+# MariaDB
 
 Pour information je propose un ensemble de scripts pour faciliter la gestion de virtual hosts et de base de données avec Apache, Mariadb, PHP et PhpMyAdmin sur Debian : [https://github.com/jibundeyare/install-scripts](https://github.com/jibundeyare/install-scripts).
 
@@ -7,10 +7,12 @@ Ce cours théorique aborde quelques notions élémentaires à connaître à prop
 
 Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb).
 
-## MariaDB
+## Qu'est-ce que MariaDB ?
 
-MariaDB est le successeur officiel, open source et libre de MySQL (acquis par la société Oracle).
-MariaDB a été créé par les principaux développeur de MySQL.
+MariaDB est un service de base de données (BDD).
+
+C'est le successeur officiel, open source et libre de MySQL (qui a été racheté par la société Oracle).
+MariaDB a été créé par les développeur principaux de MySQL.
 MariaDB remplace MySQL dans la plupart des distibutions Linux.
 
 ## Concepts importants
