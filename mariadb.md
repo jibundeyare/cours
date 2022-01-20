@@ -52,20 +52,23 @@ Pour récapituler, du plus grand au plus petit contenant, on a :
 1. le service (MariaDB dans notre cas)
 2. les BDD
 3. les tables
-4. les clonnes
+4. les colonnes
 
 ### Index
 
-Dans une base de données, un index permet de retrouver rapidement des données.
-L'utilisation d'un index simplifie et accélère les opérations de recherche, de tri, de jointure ou d'agrégation.
+Une BDD peut contenir beaucoup de données.
+Mais rechercher une donnée en particulier, c-à-d rechercher aiguille dans une botte de foin, peut prendre beaucoup de temps.
+C'est pourquoi, pour accélérer la recherche, on a inventé les indexes.
+
+L'utilisation d'un index accélère les opérations de recherche, de tri, de jointure ou d'agrégation.
 
 ### Contraintes
 
 Les contraintes permettent de :
 
 - rendre obligatoire l'insertion de données dans une colonne (contrainte `NOT NULL`)
-- s'assurer qu'il n'y a pas de doublons (contrainte d'unicité)
-- s'assurer qu'une données entrée dans une colonne est valide (contrainte d'intégrité)
+- s'assurer qu'il n'y a pas de doublons (contrainte d'unicité, c-à-d donnée unique dans la table)
+- s'assurer qu'une donnée entrée dans une colonne est valide (contrainte d'intégrité)
 
 ### Clés primaires
 
@@ -373,7 +376,7 @@ Mais chaque entreprise peut avoir plusieurs voitures de fonction.
 
 ### Relation `one to many`
 
-![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
+![relation-one-to-many.png](img/relation-one-to-many.png)
 
 C'est la même relation que `many to one` mais du point de vue de l'autre objet.
 
@@ -390,7 +393,12 @@ Et chaque objet `baz` peut être rattaché à plusieurs objets `foo`.
 Exemple : chaque voiture de location peut être réservée (successivement) par plusieurs clients.
 Et chaque client peut réserver (successivement) plusieurs voitures de location.
 
-## Des requêtes SQL plus complexes
+## Des requêtes SQL avec jointure
+
+Pour comprendre les requêtes avec jointure, un support visuel peut aider :
+
+- [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+- [sql rejoint le diagramme de venn](https://webdevdesigner.com/q/sql-joins-as-venn-diagram-94788/)
 
 ### Sélection de données avec jointure
 
@@ -459,7 +467,6 @@ ATTENTION : dans un `WHERE`, utiliser la colonne `id` est toujours la meilleure 
 - [SQLZOO](https://zh.sqlzoo.net/)
 - [Learn - MariaDB.org](https://mariadb.org/learn/)
 - [mysql - What's the difference between utf8_general_ci and utf8_unicode_ci - Stack Overflow](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996)
-- [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 
 ### Mot de passe `root` perdu
 
