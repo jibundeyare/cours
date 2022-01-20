@@ -17,6 +17,43 @@ MariaDB remplace MySQL dans la plupart des distibutions Linux.
 
 ## Concepts importants
 
+Voici un schéma de la structure d'une BDD :
+
+![mariadb-structure.png](img/mariadb-structure.png)
+
+### Base de données (BDD)
+
+Ça porte à confusion mais on appelle BDD, à la fois le service (c-à-d MariaDB), et le contenant auquel le service donne accès.
+
+Au final, ce qu'il faut comprendre c'est que une BDD n'est rien d'autre qu'un contenant.
+
+Notez qu'on peut stocker plusieurs BDD dans MariaDB.
+
+### Table
+
+Une table est aussi un contenant.
+
+En général il y a plusieurs tables par BDD.
+
+Une table ressemble fortement à un tableau Excel.
+
+### Colonne
+
+Une colonne est aussi un contenant.
+
+Et comme avec les tableaux Excel, une table contient une ou plusieurs colonnes.
+
+Ces colonnes permettent de définir le type de donnée qu'une colonne peut stocker.
+
+Voir la section « Types de donnée » de [algorithmique.md](algorithmique.md) pour avoir une idée des différents types de donnée qui existent.
+
+Pour récapituler, du plus grand au plus petit contenant, on a :
+
+1. le service (MariaDB dans notre cas)
+2. les BDD
+3. les tables
+4. les clonnes
+
 ### Index
 
 Dans une base de données, un index permet de retrouver rapidement des données.
