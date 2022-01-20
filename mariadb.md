@@ -5,7 +5,7 @@ Pour information je propose un ensemble de scripts pour faciliter la gestion de 
 
 Ce cours théorique aborde quelques notions élémentaires à connaître à propos de MySQL.
 
-Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mysql](https://github.com/jibundeyare/src-mysql).
+Pour compléter ce cours, il existe un support pratique : [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb).
 
 ## MariaDB
 
