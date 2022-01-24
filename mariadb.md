@@ -139,6 +139,17 @@ Exemple : le mot clé `user` est réservé au langage SQL. Mais en utilisant des
 
 ## Modélisation ou conception de BDD
 
+### Les méthodes
+
+Pour modéliser votre base de données (c-à-d dessiner son schéma), il existe deux méthodes très connues :
+
+1. MERISE qui est une méthode française très utilisée en France
+2. UML qui est une méthode américaine très utilisée dans le reste du monde (dont la France !)
+
+L'idéal est de connaître les deux.
+
+### Les outils
+
 Pour modéliser votre base de données (c-à-d dessiner son schéma), il existe bon nombre d'outils payants ou gratuits.
 
 Voici quelques outils gratuits :
@@ -356,7 +367,7 @@ Dans les descriptions ci-dessous, je vais prendre l'exemple de voitures pour ill
 
 ### Relation `one to one`
 
-![Diagramme de classe Foo Bar](img/class-diagram-foo-1-1-bar.png)
+![Relation one to one](img/relation-one-to-one.png)
 
 Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
 Et chaque objet `bar` ne peut être rattaché qu'à un seul objet `foo`.
@@ -366,7 +377,8 @@ Et chaque permis de condiure ne peut être rattaché qu'à un seul condicteur.
 
 ### Relation `many to one`
 
-![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
+![Relation many to one](img/relation-many-to-one.png)
+
 
 Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
 Mais chaque objet `bar` peut être rattaché à plusieurs objets `foo`.
@@ -376,7 +388,7 @@ Mais chaque entreprise peut avoir plusieurs voitures de fonction.
 
 ### Relation `one to many`
 
-![relation-one-to-many.png](img/relation-one-to-many.png)
+![Relation one to many](img/relation-one-to-many.png)
 
 C'est la même relation que `many to one` mais du point de vue de l'autre objet.
 
@@ -385,7 +397,7 @@ Mais chaque voiture de fonction ne peut être rattaché qu'à une seule entrepri
 
 ### Relation `many to many`
 
-![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
+![Relation many to many](img/relation-many-to-many.png)
 
 Chaque objet `foo` peut être rattaché à plusieurs objets `baz`.
 Et chaque objet `baz` peut être rattaché à plusieurs objets `foo`.
