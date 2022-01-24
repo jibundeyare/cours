@@ -95,8 +95,9 @@ Note : si votre application Symfony se trouve dans un bundle (`AppBundle` par ex
 
 ### Relations cardinales entre entités
 
-Il existe trois types de relations cardinales entre entités :
+Il existe quatre types de relations cardinales entre entités :
 
+- `one to one`
 - `one to many`
 - `many to one`
 - `many to many`
@@ -105,7 +106,7 @@ Voir [code-style.md](code-style.md) pour les questions de nommage de variable au
 
 ### Relation `one to many`
 
-![Diagramme de classe Bar Foo](img/class-diagram-bar-1-m-foo.png)
+![Relation one to many](img/relation-one-to-many.png)
 
 Une entité `Foo` ne peut avoir plusieurs entités `Bar`.
 Mais une entité `Bar` ne peut avoir qu'une seule entité `Foo`.
@@ -229,7 +230,7 @@ La relation du point de vue de `Bar` :
 
 ### Relation `many to one`
 
-![Diagramme de classe Foo Bar](img/class-diagram-foo-m-1-bar.png)
+![Relation many to one](img/relation-many-to-one.png)
 
 Une entité `Foo` ne peut avoir qu'une seule entité `Bar`.
 Mais une entité `Bar` peut avoir plusieurs entités `Foo`.
@@ -355,7 +356,7 @@ La relation du point de vue de `Bar` :
 
 ### Relation `many to many`
 
-![Diagramme de classe Foo Baz](img/class-diagram-foo-m-m-baz.png)
+![Relation many to many](img/relation-many-to-many.png)
 
 Une entité `Foo` peut avoir plusieurs entités `Baz`.
 Et une entité `Baz` peut avoir plusieurs entités `Foo`.
