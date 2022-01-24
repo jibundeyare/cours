@@ -102,7 +102,9 @@ Il existe quatre types de relations cardinales entre entités :
 - `many to one`
 - `many to many`
 
-Voir [code-style.md](code-style.md) pour les questions de nommage de variable au singulier ou au pluriel.
+Voir aussi la section « Relations cardinales entre objets » de [mardiadb.md](mariadb.md).
+
+Pour les questions de nommage de variable au singulier ou au pluriel, voir [code-style.md](code-style.md).
 
 ### Relation `one to many`
 
