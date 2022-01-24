@@ -647,7 +647,7 @@ Si l'on veut que la variable `quantity` de l'entité `Foo` soit initialisée ave
 
 ## Repository et Entity Manager
 
-### Récupérer un ou des objets enregistrées
+### Récupérer un ou des objets enregistrés
 
 ```php
 <?php
@@ -693,7 +693,7 @@ Attention : si votre application Symfony se trouve dans un bundle, vous devez pr
 
 ### `ArrayCollection` ou la liste d'objets
 
-Quand vous récupérez des objets à l'aides des méthodes `findAll()` ou `findBy()` par exemmple, vous récupérez un objet de la classe `ArrayCollection`.
+Quand vous récupérez des objets à l'aides des méthodes `findAll()` ou `findBy()` par exemple, vous récupérez un objet de la classe `ArrayCollection`.
 La classe `ArrayCollection` est comme un tableau mais avec beaucoup plus de fonctionnalités.
 
 Par exemple cette classe permet de vérifier si on objet est présent dans la liste, de savoir à quel indexe il se trouve, d'appliquer une fonction sur tous les objets de la liste, etc.
@@ -789,14 +789,14 @@ $entityManager->flush();
 
 ## Récupérer les données d'une requête DQL
 
-- `$query = $em->createQuery($dql)` créé une requête DQL (de type `SELECT`)
+- `$query = $em->createQuery($dql)` crée une requête DQL (de type `SELECT`)
 
-- `$query->getResult()` renvoit un tableau d'objets. Renvoit un tableau vide si aucun objet n'est trouvé.
-- `$query->getSingleResult()` renvoit un objet. Si aucun objet ou plusieurs objets sont trouvés, une exception est levée.
-- `$query->getOneOrNullResult()` renvoit un objet ou la valeur `null` si aucun objet n'est trouvé. Si plusieurs objets sont trouvés, une exception est levée.
+- `$query->getResult()` renvoie un tableau d'objets. Renvoie un tableau vide si aucun objet n'est trouvé.
+- `$query->getSingleResult()` renvoie un objet. Si aucun objet ou plusieurs objets sont trouvés, une exception est levée.
+- `$query->getOneOrNullResult()` renvoie un objet ou la valeur `null` si aucun objet n'est trouvé. Si plusieurs objets sont trouvés, une exception est levée.
 
-- `$query->getScalarResult()` renvoit un tableau de valeurs scalaires (comme des `int`, des `float` ou des `string` par exemple). Renvoit un tableau vide si aucun objet n'est trouvé.
-- `$query->getSingleScalarResult()` renvoit une valeur scalaire. Si aucune valeur ou plusieurs valeurs sont trouvées, une exception est levée.
+- `$query->getScalarResult()` renvoie un tableau de valeurs scalaires (comme des `int`, des `float` ou des `string` par exemple). Renvoie un tableau vide si aucun objet n'est trouvé.
+- `$query->getSingleScalarResult()` renvoie une valeur scalaire. Si aucune valeur ou plusieurs valeurs sont trouvées, une exception est levée.
 
 ## Doc
 
