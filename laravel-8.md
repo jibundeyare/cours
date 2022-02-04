@@ -9,6 +9,14 @@ Un projet « témoin » accompagne ce cours : [https://github.com/jibundeyare/sr
 - la commande `composer`
 - la commande `npm`
 
+## Quelques concepts généraux
+
+Un peu de théorie ne fait pas de mal.
+Prenez le temps de lire au moins les deux pages suivantes, (conseillées dans la section « Next Steps » de l'installation [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/installation#next-steps)) :
+
+- [Request Lifecycle](https://laravel.com/docs/8.x/lifecycle)
+- [Directory Structure](https://laravel.com/docs/8.x/structure)
+
 ## La commande `artisan`
 
 La commande `artisan` est outil qui fait partie de l'écosystème Laravel.
@@ -38,14 +46,6 @@ Fermez votre terminal puis lancez-en un autre.
 Testez en tapant la commande `artisan`.
 
 Si vous obtenez une erreur du type `command not found`, vérifiez que vous avez bien réalisé toutes les étapes de la procédure d'installation de Composer dans [composer.md](composer.md).
-
-## Quelques concepts généraux
-
-Un peu de théorie ne fait pas de mal.
-Prenez le temps de lire au moins les deux pages suivantes, (conseillées dans la section « Next Steps » de l'installation [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/installation#next-steps)) :
-
-- [Request Lifecycle](https://laravel.com/docs/8.x/lifecycle)
-- [Directory Structure](https://laravel.com/docs/8.x/structure)
 
 ## Création d'une application avec le framework Laravel
 
