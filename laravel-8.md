@@ -73,7 +73,7 @@ Lancez le serveur web de développement :
 
     php artisan serve
 
-Maintenant testez l'instalation ouvrez le lien suivant et savourez : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Maintenant pour tester l'instalation ouvrez le lien suivant et savourez : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 *Important : à partir d'ici, tous les chemins indiqués seront des chemins relatifs au dossier d'installation du framework.*
 
