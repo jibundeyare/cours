@@ -20,6 +20,9 @@ Dans le menu `File` > `Preferences` > `Settings` > tapez `telemetry` dans le cha
 
 Voici quelques plugins recommandés pour faire du développement web en JS, PHP et Python :
 
+- Name: French Language Pack for Visual Studio Code  
+  Id: MS-CEINTL.vscode-language-pack-fr  
+  Publisher: Microsoft
 - Name: PHPUnit Test Explorer  
   Id: recca0120.vscode-phpunit  
   Publisher: recca0120
@@ -73,86 +76,10 @@ Voici quelques plugins recommandés pour faire du développement web en JS, PHP 
 
 Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trouver avec exactitude.
 
-## Activer la coloration syntaxique du HTML dans les fichiers Twig
-
-1. File
-2. Preferences
-3. Settings
-4. taper `emmet.includeLanguages` dans la barre de recherche
-5. Add Item
-6. taper `twig` dans le champ Key et `html` dans le champ Value
-
-Vous pouvez fermer l'onglet.
-
 ## Search and replace
 
 Linux et Windows : `ctrl + h`
 Macos : `shift + command + h`
-
-## Formatage automatique du code HTML
-
-Allez dans :
-
-`File` > `Preferences` > `Settings`
-
-Ensuite, tout en haut à droite, vous trouverez trois icônes :
-
-![vscode-settings-top-right-icons.png](vscode-settings-top-right-icons.png)
-
-Cliquez sur l'icône du milieu ![vscode-settings-top-right-icons-json-button.png](vscode-settings-top-right-icons-json-button.png) pour voir le configuration au format JSON comme ci-dessous :
-
-```
-{
-    "breadcrumbs.enabled": true,
-    "emmet.includeLanguages": {
-        "twig": "html"
-    },
-    // ...
-    "workbench.colorTheme": "Visual Studio Dark",
-    "html.format.contentUnformatted": "",
-    "html.format.unformatted": ""
-}
-```
-
-À la fin du fichier, modifiez le fichier comme ci-dessous :
-
-```diff-json
-  {
-      "breadcrumbs.enabled": true,
-      "emmet.includeLanguages": {
-          "twig": "html"
-      },
-      // ...
-      "workbench.colorTheme": "Visual Studio Dark",
-      "html.format.contentUnformatted": "",
--     "html.format.unformatted": ""
-+     "html.format.unformatted": "",
-+     "[html]": {
-+         "editor.defaultFormatter": "vscode.html-language-features"
-+     }
-  }
-```
-
-Maintenant vous pouvez utiliser les raccourcis claviers suivants pour auto formater le code :
-
-- linux : `ctrl + shift + i`
-- windows : `shift + alt + f`
-- macos : `shift + alt + f` ou `shift + option + f`
-
-## Le plugin `phpcs` affiche trop d'erreurs et de warnings dans l'onglet `Problems`
-
-Il est possible de réhausser le niveau minimum d'erreurs et de warnings à afficher.
-
-`File` > `Preferences` > `Settings` > `phpcs`
-
-Puis faire passer le niveau du paramètre :
-
-- `Error Severity` de `5` à `6`
-- `Warning Severity` de `5` à `6`
-
-![vscode phpcs error severity](img/vscode-phpcs-error-severity.png)
-
-![vscode phpcs warning severity](img/vscode-phpcs-warning-severity.png)
 
 ## Afficher le terminal avec un raccourci clavier
 
@@ -204,6 +131,103 @@ Note : vous pouvez choisir une autre couleur que `#444444`.
 Au final vous devriez voir une ligne verticale à la 80ème colonne dès que vous ouvrez un fichier.
 
 ![vscode rulers 5](img/vscode-rulers-5.png)
+
+## Affichage des espaces
+
+Allez dans :
+
+`File` > `Preferences` > `Settings`
+
+Puis tapez le mot clé `space`.
+
+Dans le menu déroulant de la section `Editor: Render Whitespace`, vous pouvez choisir `all` pour afficher tous les caractères d'espace (espace, tabulation).
+
+## Formatage « à la demande » du code HTML
+
+Apputez sur la touche `F1` puis entrez le mot clé `format` dans la barre de recherche.
+
+Choisissez une des deux options :
+
+- `Format Document (Forced)` : formate le document avec le formateur par défaut
+- `Format Document...` : format le document avec le formateur de votre choix
+
+Astuce : il est vivement conseillé d'installer le plugin `Prettier`.
+
+## Formatage automatique du code HTML
+
+Allez dans :
+
+`File` > `Preferences` > `Settings`
+
+Ensuite, tout en haut à droite, vous trouverez trois icônes :
+
+![vscode-settings-top-right-icons.png](vscode-settings-top-right-icons.png)
+
+Cliquez sur l'icône du milieu ![vscode-settings-top-right-icons-json-button.png](vscode-settings-top-right-icons-json-button.png) pour voir le configuration au format JSON comme ci-dessous :
+
+```
+{
+    "breadcrumbs.enabled": true,
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    // ...
+    "workbench.colorTheme": "Visual Studio Dark",
+    "html.format.contentUnformatted": "",
+    "html.format.unformatted": ""
+}
+```
+
+À la fin du fichier, modifiez le fichier comme ci-dessous :
+
+```diff-json
+  {
+      "breadcrumbs.enabled": true,
+      "emmet.includeLanguages": {
+          "twig": "html"
+      },
+      // ...
+      "workbench.colorTheme": "Visual Studio Dark",
+      "html.format.contentUnformatted": "",
+-     "html.format.unformatted": ""
++     "html.format.unformatted": "",
++     "[html]": {
++         "editor.defaultFormatter": "vscode.html-language-features"
++     }
+  }
+```
+
+Maintenant vous pouvez utiliser les raccourcis claviers suivants pour auto formater le code :
+
+- linux : `ctrl + shift + i`
+- windows : `shift + alt + f`
+- macos : `shift + alt + f` ou `shift + option + f`
+
+## Activer la coloration syntaxique du HTML dans les fichiers Twig
+
+1. File
+2. Preferences
+3. Settings
+4. taper `emmet.includeLanguages` dans la barre de recherche
+5. Add Item
+6. taper `twig` dans le champ Key et `html` dans le champ Value
+
+Vous pouvez fermer l'onglet.
+
+## Le plugin `phpcs` affiche trop d'erreurs et de warnings dans l'onglet `Problems`
+
+Il est possible de réhausser le niveau minimum d'erreurs et de warnings à afficher.
+
+`File` > `Preferences` > `Settings` > `phpcs`
+
+Puis faire passer le niveau du paramètre :
+
+- `Error Severity` de `5` à `6`
+- `Warning Severity` de `5` à `6`
+
+![vscode phpcs error severity](img/vscode-phpcs-error-severity.png)
+
+![vscode phpcs warning severity](img/vscode-phpcs-warning-severity.png)
 
 ## Quelques conseils de Microsoft
 

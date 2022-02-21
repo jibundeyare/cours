@@ -35,6 +35,15 @@ Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()`
 - `[]` ou `array()` : un tableau vide
 - `null` : la valeur nulle
 
+## Affectation
+
+Une affectation est comme une affirmation.
+On affirme que telle variable va contenir telle valeur.
+
+Exemple d'affectation :
+
+    $foo = 123;
+
 ## Opérateurs
 
 - `=` : affectation
@@ -49,14 +58,63 @@ Toutes ces valeurs renvoient `true` si on les utilise avec la fonction `empty()`
 - `&&` : « et » logique
 - `||` : « ou » logique
 
-## Affectation
+### Un peu de sucre dans votre PHP ? (syntactic sugar)
 
-Une affectation est comme une affirmation.
-On affirme que telle variable va contenir telle valeur.
+#### Opérateur ternaire
 
-Exemple d'affectation :
+L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, renvoyer ceci, sinon renvoyer cela ».
+Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
 
-    $foo = 123;
+Exemple avec un bloc `if` :
+
+    if ($erreur) {
+        $message = 'il y a une erreur';
+    } else {
+        $message = 'tout va bien';
+    }
+
+Même exemple avec l'opérateur ternaire :
+
+    $message = $erreur ? 'il y a une erreur' : 'tout va bien';
+
+L'opérateur permet aussi une simplification du type « S'il y a une valeur la renvoyer, sinon renvoyer autre chose ».
+
+    $erreur = 'il y a une erreur';
+    $message = $erreur ?: 'tout va bien';
+
+#### Opérateur combiné (spaceship operator en anglais)
+
+L'opérateur combiné permet de comparer l'ordre de deux valeurs.
+
+    // renvoie -1
+    $result = 3 <=> 7;
+
+    // renvoie 0
+    $result = 11 <=> 11;
+
+    // renvoie 1
+    $result = 19 <=> 5;
+
+Cela fonctionne aussi avec des chaînes de caractères.
+
+    // renvoie -1
+    $result = 'aaa' <=> 'bbb';
+
+    // renvoie 0
+    $result = 'ppp' <=> 'ppp';
+
+    // renvoie 1
+    $result = 'zzz' <=> 'aaa';
+
+#### Opérateur de fusion null (null coalescing operator en anglais)
+
+L'opérateur de fusion null permet d'utiliser une variable en prévoyant une valeur par défaut au cas où elle ne serait pas définie.
+
+Dit autrement ça permet de se prémunir contre des erreurs dues à des variables nulles.
+
+    // $message prend la valeur de $_POST['message'] si la clé 'message' existe
+    // sinon $message prend la valeur 'foo'
+    $message = $_POST['message'] ?? 'foo';
 
 ## Conditions
 
@@ -179,28 +237,6 @@ Voici le même exemple mais codé « pas comme il faut » :
     <?php } else { ?>
         <span>User</span>
     <?php } ?>
-
-### Opérateur ternaire
-
-L'opérateur ternaire permet d'exécuter une séquence du type « Si oui, renvoyer ceci, sinon renvoyer cela ».
-Cette séquence peut être écrite avec un bloc `if` et `else` mais l'opérateur ternaire peut être utilisé sur une seule ligne, ce qui est pratique.
-
-Exemple avec un bloc `if` :
-
-    if ($erreur) {
-        $message = 'il y a une erreur';
-    } else {
-        $message = 'tout va bien';
-    }
-
-Même exemple avec l'opérateur ternaire :
-
-    $message = $erreur ? 'il y a une erreur' : 'tout va bien';
-
-L'opérateur permet aussi une simplification du type « S'il y a une valeur la renvoyer, sinon renvoyer autre chose ».
-
-    $erreur = 'il y a une erreur';
-    $message = $erreur ?: 'tout va bien';
 
 ## Timeout
 
