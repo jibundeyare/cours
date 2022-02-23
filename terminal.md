@@ -118,6 +118,10 @@ Afficher le contenu du dossier avec les fichiers cachés :
 
     ls -A
 
+Afficher le contenu du dossier de façon récursive :
+
+    ls -R
+
 Effacer tout l'écran :
 
     clear
