@@ -28,7 +28,7 @@
 
 > "There are only two hard things in Computer Science: cache invalidation and naming things." - Phil Karlton
 
-> "Il n'y a que deux choses difficile en science de l'informatique : l'invalidation de cache et le nommage des choses." - Phil Karlton
+> "Il n'y a que deux choses difficiles en science de l'informatique : l'invalidation de cache et le nommage des choses." - Phil Karlton
 
 ## Optimisation
 
@@ -41,8 +41,6 @@
 > "You’re not the customer, you’re the product." - Tom Johnson
 
 > "Vous n'êtes pas le client, vous êtes le produit." - Tom Johnson
-
-For a detailed story of those two quotes, see [You’re Not the Customer; You’re the Product – Quote Investigator](https://quoteinvestigator.com/2017/07/16/product/).
 
 > "If you are not paying for it, you’re not the customer; you’re the product being sold." - Andrew Lewis
 

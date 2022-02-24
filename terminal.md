@@ -429,18 +429,26 @@ Recherche insensible à la casse de tous les fichiers ou dossiers ayant l'extens
 
 ## Les wildcards (joker en français)
 
-Le symbole étoile `*` permet de remplacer une suite de caractères arbitraire.
+Le symbole étoile `*` permet de faire correspondre une suite de caractères arbitraire.
 On s'en sert la plupart du temps pour sélectionner un ensemble de fichier sans devoir taper tous leurs noms.
 
-Par exemple, la commande suivante permet de lister tous les fichiers ayant l'extension `.png` :
+Par exemple, la commande suivante permet de lister tous les fichiers commençant par `foo` :
 
-    ls *.png
+    ls foo*
 
-Autre exemple, la commande suivante permet de copier tous les fichiers commençant par `foo` dans le dossier `bar` :
+Autre exemple, la commande suivante permet de déplacer tous les fichiers ayant l'extension `.jpg` dans le dossier `bar` :
 
-    cp foo* bar/
+    mv *.jpg bar/
 
 **Note : Le comportement du symbole étoile `*` est le même sous Linux, MacOS et Windows.**
+
+Il existe aussi le symbole point d'interrogation `?` qui permet de faire correspondre un et un seul caractère arbitraire.
+On s'en sert de la même façon que l'étoile `*` mais quand on sait d'avance le nombre de caractères qui doivent correspondre.
+C'est souvent le cas avec des fichiers numérotés comme `image01.jpg`, `image02.jpg`, `image03.jpg`, ...
+
+Par exemple, la commande suivante permet de déplacer les fichiers `image01.jpg`, `image-1.jpg` ou `image_a.jpg` dans le dossier `bar`, mais pas `image-foo.jpg` (car la partie `-foo` fait plus que 2 caractères) :
+
+    mv image??.jpg bar/
 
 ## Fichiers cachés
 
