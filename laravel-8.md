@@ -556,13 +556,15 @@ Ou alors vous pouvez utiliser le système de « migration » de Laravel.
 
 Le système de migration consiste à indiquer comment créer le schéma de BDD avec du code PHP.
 
+Pour cette partie, la page suivante vous donnera toutes les infos utiles : [Database: Migrations - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/migrations).
+
 ### Exécution des fichiers de migrations
 
 La commande suivante exécute les fichiers de migrations :
 
     php artisan migrate
 
-Mais en phase de développement, il est souvent plus pratique de de détruire toutes les tables puis d'exécuter tous les fichiers de migration depuis le début.
+Mais en phase de développement, il est souvent plus pratique de détruire toutes les tables puis d'exécuter tous les fichiers de migration depuis le début.
 Pour faire ça, vous pouvez utiliser la commande suivante :
 
     php artisan db:wipe && php artisan migrate
@@ -643,14 +645,9 @@ Les indexes permettent d'accélerer la recherche (`index()`) ou d'appliquer des 
 Nous allons ajouter les colonnes suivantes à la table `foo` :
 
 - `email` : varchar 100, unique
-- `nom` : varchar, 100, nullable
-- `prenom` : varchar 100, nullable
-- `mot_de_passe` : varchar 100
-- `tel` : varchar 10, nullable
-- `adresse1` : text, nullable
-- `adresse2` : text, nullable
-- `localite` : varchar 100, nullable
-- `code_postal` : integer, nullable
+- `nom` : varchar, 100
+- `description` : text, nullable
+- `rang` : integer, nullable
 - `actif` : boolean, default TRUE
 
 Voici le code :
@@ -659,13 +656,8 @@ Voici le code :
                 $table->id();
                 $table->string('email', 100)->unique();
                 $table->string('nom', 100);
-                $table->string('prenom', 100);
-                $table->string('mot_de_passe', 100);
-                $table->string('tel', 10)->nullable();
-                $table->text('adresse1', 100)->nullable();
-                $table->text('adresse2', 100)->nullable();
-                $table->string('localite', 100)->nullable();
-                $table->integer('code_postal')->nullable();
+                $table->text('description')->nullable();
+                $table->integer('rang')->nullable();
                 $table->boolean('actif')->default(true);
                 $table->timestamps();
             });
@@ -690,28 +682,78 @@ Voici le code :
 
 À un moment où un autre, il se peut que vous ayez besoin de modifier la structure de votre table.
 
-Vous ne devez pas créer de nouvelle table, vous devez modifier une table existante.
-De même, il ne faudra pas ajouter de nouvelle colonne, il faudra modifier une colonne existante.
+Cette fois-ci, vous ne devez pas créer de nouvelle table, vous devez modifier une table existante.
 
-Voici le code de création d'une table nommée `baz` :
+Pour modifier une colonne, de façon générale il faut ajouter l'appel à cette fonction `change()` comme on va le voir.
+
+Il n'est pas possible de modifier un index mais vous pouvez le renommer avec `$table->renameIndex('from', 'to')`.
+Si vous voulez modifier un index, il faudra le supprimer et le recréer.
+
+Pour supprimer une colonne ou un index, vous trouverez toutes les fonctions ci-dessous :
+
+- [Dropping Columns](https://laravel.com/docs/8.x/migrations#dropping-columns)
+- [Dropping Indexes](https://laravel.com/docs/8.x/migrations#dropping-indexes)
+- [Dropping Foreign Keys](https://laravel.com/docs/8.x/migrations#dropping-foreign-keys)
+
+Partons du code de création d'une table nommée `baz` :
 
             Schema::create('baz', function (Blueprint $table) {
                 $table->id();
                 $table->string('nom');
                 $table->integer('total');
                 $table->boolean('actif');
-                $table->foreignId('foo_id')
                 $table->timestamps();
             });
 
-#### Modifications de colonnes
+#### Suppression d'une table
 
-Le code suivant permet de changer la taille de la colonne `nom`, de rendre nullable la colonne `total` et de définir une valeur par défaut pour la colonne `actif` :
+Suppression de la table `foo` :
+
+            Schema::dropIfExists('foo');
+
+ATTENTION : s'il y a des contraintes de clé étrangère, cette action peut échouer.
+
+#### Ajout ou modification de colonnes
+
+Le code ci-dessous permet de :
+
+- changer la taille de la colonne `nom`
+- rendre nullable la colonne `total`
+- définir une valeur par défaut pour la colonne `actif`
+- ajouter une colonne et une contrainte de clé étrangère
+
+Voici le code de modification :
 
             Schema::table('baz', function (Blueprint $table) {
+                // modification de colonnes
                 $table->string('nom', 190)->change();
                 $table->integer('total')->nullable()->change();
-                $table->boolean('actif')->default(true);
+                $table->boolean('actif')->default(true)->change();
+
+                // ajout d'une colonne et d'une contrainte de clé étrangère
+                $table->foreignId('foo_id')
+            });
+
+Et voici le code qui fait l'opération inverse :
+
+            Schema::table('baz', function (Blueprint $table) {
+                // suppression d'une colonne et d'une contrainte de clé étrangère
+                $table->dropForeign(['foo_id']);
+                $table->dropIndex(['foo_id']);
+                $table->dropColumn('foo_id');
+
+                // modification de colonnes
+                $table->string('nom')->change();
+                $table->integer('total')->change();
+                $table->boolean('actif')->change();
+            });
+
+#### Suppression de colonnes
+
+Suppression de la colonne `description` de la table `baz` :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->dropColumn('description');
             });
 
 #### Ajout d'indexes après création d'une table
@@ -723,11 +765,182 @@ Le code suivant permet d'ajouter une contrainte d'unicité sur la colonne `nom` 
                 $table->index('total');
             });
 
+#### Suppression d'indexes
+
+Le code suivant permet de supprimer des indexes :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->dropUnique(['nom']);
+                $table->dropIndex(['total']);
+            });
+
 #### Ajout de contrainte de clé étrangère après création d'une table
 
 Le code suivant permet d'ajouter une contrainte de clé étrangère sur la colonne `foo_id` :
 
             Schema::table('baz', function (Blueprint $table) {
-                $table->foreign('foo_id')->references('id')->on('foo');
+                $table->foreignId('foo_id')->references('id')->on('foo');
             });
+
+#### Suppression de contrainte de clé étrangère
+
+Le code suivant permet de supprimer des clés étrangères :
+
+            Schema::table('baz', function (Blueprint $table) {
+                $table->dropForeign(['foo_id']);
+                $table->dropColumn('foo_id');
+            });
+
+### Exemple de relations cardinales
+
+#### Relation `one to one`
+
+- un `foo` ne peut avoir qu'un seul `bar`
+- un `bar` ne peut avoir qu'un seul `foo`
+
+La création de la table `foo` :
+
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+La création de la table `bar` :
+
+            Schema::create('bar', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+L'ajout de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('foo', function (Blueprint $table) {
+                $table->foreignId('bar_id')->unique()->references('id')->on('bar');
+            });
+
+Note : nous aurions aussi pu ajouter la contrainte à la table `bar` au lieu de la table `foo`. Cela ne fait aucune différence du point de vue des fonctionnalités. Le côté où il y a la contrainte (ici la table `foo`) est appelé le coté « possédant ».
+
+La suppression de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('foo', function (Blueprint $table) {
+                $table->dropForeign(['bar_id']);
+                $table->dropColumn('bar_id');
+            });
+
+La suppression des tables :
+
+            Schema::dropIfExists('foo');
+            Schema::dropIfExists('bar');
+
+#### Relation `one to many`
+
+- un `foo` peut avoir plusieurs `bar`
+- un `bar` ne peut avoir qu'un seul `foo`
+
+La création de la table `foo` :
+
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+La création de la table `bar` :
+
+            Schema::create('bar', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+L'ajout de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('bar', function (Blueprint $table) {
+                $table->foreignId('foo_id')->references('id')->on('foo');
+            });
+
+La suppression de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('bar', function (Blueprint $table) {
+                $table->dropForeign(['foo_id']);
+                $table->dropColumn('foo_id');
+            });
+
+La suppression des tables :
+
+            Schema::dropIfExists('foo');
+            Schema::dropIfExists('bar');
+
+#### Relation `many to one`
+
+- un `foo` ne peut avoir qu'un seul `bar`
+- un `bar` peut avoir plusieurs `foo`
+
+La création de la table `foo` :
+
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+La création de la table `bar` :
+
+            Schema::create('bar', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+L'ajout de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('foo', function (Blueprint $table) {
+                $table->foreignId('bar_id')->references('id')->on('bar');
+            });
+
+La suppression de la colonne et de la contrainte de clé étrangère :
+
+            Schema::table('foo', function (Blueprint $table) {
+                $table->dropForeign(['bar_id']);
+                $table->dropColumn('bar_id');
+            });
+
+La suppression des tables :
+
+            Schema::dropIfExists('foo');
+            Schema::dropIfExists('bar');
+
+#### Relation `many to many`
+
+Pour la relation `many to many` nous sommes obligés de créer une table de jointure.
+
+- un `foo` peut avoir plusieurs `bar`
+- un `bar` peut avoir plusieurs `foo`
+
+La création de la table `foo` :
+
+            Schema::create('foo', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+La création de la table `bar` :
+
+            Schema::create('bar', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+
+La création de la table de jointure `bar_foo` :
+
+            Schema::create('bar_foo', function (Blueprint $table) {
+                $table->foreignId('bar_id')->references('id')->on('bar');
+                $table->foreignId('foo_id')->references('id')->on('foo');
+            });
+
+ATTENTION : les tables de jointure ne doivent pas avoir de clé primaire (fonction `id()`) ou de système d'horodatage (fonction `timestamps()`).
+
+NOTE : une convention est de nommer les tables de jointure en utilisant le nom des tables reliées et en les mettant dans l'ordre alphabétique (d'où le nom `bar_foo`).
+
+La suppression des tables :
+
+            Schema::dropIfExists('bar_foo');
+            Schema::dropIfExists('foo');
+            Schema::dropIfExists('bar');
 
