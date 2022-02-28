@@ -15,4 +15,6 @@ Mes supports de cours de python sont ici : [https://github.com/jibundeyare/src-p
 - [Our Documentation | Python.org](https://www.python.org/doc/)
 - [Python Tutorials – Real Python](https://realpython.com/)
 - [Apprendre à programmer en Python | Cours complet (2019) - Pierre Giraud](https://www.pierre-giraud.com/python-apprendre-programmer-cours/)
+- [Ressources Python](https://inforef.be/swi/python.htm)  
+  Un livre super quali téléchargeable gratuitement
 
