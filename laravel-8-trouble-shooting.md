@@ -1,5 +1,36 @@
 # Laravel 8 trouble shooting
 
+## Les contraintes de clés étrangères ne sont pas appliquées dans la BDD
+
+Si vous utilisez MariaDB ou MySQL, la cause la plus probable est que vos tables utilisent le moteur de stockage `MyISAM` au lieu de `InnoDB`.
+
+Pour régler ce problème, vous devez configurer votre BDD pour qu'elle utilise `InnoDB` par défaut.
+(Désolé, je n'ai pas de tuto pour ça, vous devez faire la recherche par vous même.)
+
+Sinon vous pouvez demander à Laravel d'utiliser le moteur de stockage `InnoDB` par défaut lors des requêtes de création de table.
+
+Ouvrez le fichier `config/database.php` et affectez la valeur 'InnoDB' à la clé `engine` (ligne `60`) :
+
+```diff-php
+              'prefix_indexes' => true,
+              'strict' => true,
+-             'engine' => null,
++             'engine' => 'InnoDB',
+              'options' => extension_loaded('pdo_mysql') ? array_filter([
+                  PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+              ]) : [],
+```
+
+Pour que ce réglage prenne effet, vous devez détruire votre BDD et la recréer avec la commande suivant :
+
+```bash
+php artisan db:wipe && php artisan migrate
+```
+
+## Les relations entre les tables n'apparaissent pas dans la fenêtre concepteur de PhpMyAdmin
+
+Voir l'erreur « Les contraintes de clés étrangères ne sont pas appliquées dans la BDD » ci dessus.
+
 ## Erreur `1071 Specified key was too long` (`1071 La clé est trop longue`)
 
 Cette erreur arrive quand on essaye de créer un index ou une contrainte (avec MariaDB ou MySQL) sur un champ `varchar`, et qu'on utilise un codage de caractères `utf8mb4` avec le moteur de stockage `InnoDB`.
@@ -75,7 +106,7 @@ devient :
 
 ## Erreur `1709 Index column size too large`
 
-Même cause et même conséquences que l'erreur `La clé est trop longue` ci-dessus.
+Même cause et même conséquences que l'erreur `1071 La clé est trop longue` ci-dessus.
 
     [Illuminate\Database\QueryException]
       SQLSTATE[HY000]: General error: 1709 Index column size too large. The maximum column size is 767 bytes. (SQL: alter table `foo` add unique `foo_name_unique`(`name`))
