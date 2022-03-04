@@ -142,6 +142,50 @@ en :
 
 Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont compatibles.
 
+## Le déboggage
+
+Laravel fournit deux fonctions utiles pour le déboggage :
+
+- la fonction `dump()` qui affiche le contenu d'une variable avec jolie coloration syntaxique
+- la fonction `dd()` (pour « dump and die ») qui fait comme `dump()` mais stop l'exécution juste après
+
+Exemple :
+
+```php
+foreach ($users as $user) {
+    dump($user);
+}
+exit()
+```
+
+Ou encore :
+
+```php
+dd($foo);
+```
+
+Il est aussi possible de faire du logging en utilisant la classe `Illuminate\Support\Facades\Log`.
+Par défaut, le logging va enregistrer les informations dans le fichier `storage/logs/laravel.log`.
+Ceci est idéal pour débogger une application en production car on veut évuter que les utilisateurs voient les messages.
+
+Exemple :
+
+```php
+use Illuminate\Support\Facades\Log;
+
+// ...
+
+Log::debug($foo);
+```
+
+Ceci va enregistrer le contenu de la variable `$foo` dans le fichier `storage/logs/laravel.log`.
+
+Exemple de données du fichier `storage/logs/laravel.log` :
+
+```
+[2022-03-04 11:22:19] local.DEBUG: {"id":1,"nom":"foo","description":"","created_at":null,"updated_at":null}
+```
+
 ## Les routes nommées
 
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#basic-routing)
