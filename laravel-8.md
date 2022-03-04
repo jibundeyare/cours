@@ -168,7 +168,24 @@ Il est aussi possible de faire du logging en utilisant la classe `Illuminate\Sup
 Par défaut, le logging va enregistrer les informations dans le fichier `storage/logs/laravel.log`.
 Ceci est idéal pour débogger une application en production car on veut évuter que les utilisateurs voient les messages.
 
-Exemple :
+Voici la liste des méthodes disponibles pour enregistrer des données dans le fichier `storage/logs/laravel.log` :
+
+```php
+use Illuminate\Support\Facades\Log;
+
+// ...
+
+Log::emergency($message);
+Log::alert($message);
+Log::critical($message);
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
+```
+
+Exemple d'utilisation :
 
 ```php
 use Illuminate\Support\Facades\Log;
