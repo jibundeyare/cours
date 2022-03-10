@@ -151,3 +151,9 @@ Sélectionner tous les `input` de type `checkbox` dont le `name` n'est pas `frui
 - [javascript - How to use querySelectorAll only for elements that have a specific attribute set? - Stack Overflow](https://stackoverflow.com/questions/10777684/how-to-use-queryselectorall-only-for-elements-that-have-a-specific-attribute-set)
 
 - [Understanding JavaScript Modules: Bundling & Transpiling — SitePoint](https://www.sitepoint.com/javascript-modules-bundling-transpiling/)
+
+### WTF
+
+- [JavaScript is weird. JS works in misterious ways | by Adrian Legaspi | The Startup | Medium](https://medium.com/swlh/javascript-is-weird-554c3dac0c98)
+- [wtfjs - a little code blog about that language we love despite giving us so much to hate](https://wtfjs.com/)
+

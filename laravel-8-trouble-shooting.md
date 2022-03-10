@@ -38,8 +38,10 @@ Les index et les contraintes sont limités à une longueur de `767` octets.
 Le champ en question ne fait que `255` caractères de long, mais avec `utf8mb4`, `1 caractère == 4 octets`.
 Avec un champ de `255` caractères, nous avons donc un index ou une contrainte qui fait `4 * 255 caractères == 1020 octets`.
 
-    [Illuminate\Database\QueryException]
-      SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table users add unique users_email_unique(email))
+```
+[Illuminate\Database\QueryException]
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table users add unique users_email_unique(email))
+```
 
 Pour corriger ce problème, la solution la plus simple est de réduire la taille du champ `varchar`.
 La longueur maximum est `767 / 4 == 191.75`, c-à-d, à peu près `190` caractères.
@@ -98,18 +100,24 @@ Vous pouvez préciser la taille du champ « manuellement ».
 
 Par exemple, le code :
 
-    $table->string('email')->unique();
+```php
+$table->string('email')->unique();
+```
 
 devient :
 
-    $table->string('email', 190)->unique();
+```php
+$table->string('email', 190)->unique();
+```
 
 ## Erreur `1709 Index column size too large`
 
 Même cause et même conséquences que l'erreur `1071 La clé est trop longue` ci-dessus.
 
-    [Illuminate\Database\QueryException]
-      SQLSTATE[HY000]: General error: 1709 Index column size too large. The maximum column size is 767 bytes. (SQL: alter table `foo` add unique `foo_name_unique`(`name`))
+```
+[Illuminate\Database\QueryException]
+  SQLSTATE[HY000]: General error: 1709 Index column size too large. The maximum column size is 767 bytes. (SQL: alter table `foo` add unique `foo_name_unique`(`name`))
+```
 
 Éviemment, la solution est aussi la même.
 Voir ci-dessus.
@@ -127,9 +135,11 @@ Si vous utilisez Eloquent pour insérer ou mettre à jour des données, les colo
 Si vous n'utilisez pas Eloquent, il va falloir le faire à la main (en PHP).
 Ou demander à la BDD de le faire :
 
-                // @warning remplace $table->timestamps();
-                $table->timestamp('created_at')->useCurrent();
-                $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+```php
+// @warning remplace $table->timestamps();
+$table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+```
 
 Et le tour est joué.
 

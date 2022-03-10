@@ -2,6 +2,18 @@
 
 Un projet « témoin » accompagne ce cours : [https://github.com/jibundeyare/src-laravel-8](https://github.com/jibundeyare/src-laravel-8).
 
+## Durée de SAV
+
+| Version | PHP (*)   | Release             | Bug Fixes Until  | Security Fixes Until |
+|---------|-----------|---------------------|------------------|----------------------|
+| 8       | 7.3 - 8.1 | September 8th, 2020 | July 26th, 2022  | January 24th, 2023   |
+| 9       | 8.0 - 8.1 | February 8th, 2022  | August 8th, 2023 | February 8th, 2024   |
+| 10      | 8.0 - 8.1 | February 7th, 2023  | August 7th, 2024 | February 7th, 2025   |
+
+Source : [Release Notes - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/releases#support-policy).
+
+Voir aussi le site [Laravel Versions](https://laravelversions.com/).
+
 ## Prérequis
 
 - PHP
@@ -24,15 +36,21 @@ Elle permet notamment de créer un nouveau projet ou de démarrer un serveur web
 
 Pour connaître la liste des commandes de `artisan`, (depuis un dossier projet) vous pouvez taper :
 
-    php artisan list
+```bash
+php artisan list
+```
 
 Et pour avoir des infos sur une commande, (depuis un dossier projet) vous pouvez taper :
 
-    php artisan une-commande --help
+```bash
+php artisan une-commande --help
+```
 
 Par exemple, pour avoir des infos sur la commande `make:controller`, vous pouvez taper :
 
-    php artisan make:controller --help
+```bash
+php artisan make:controller --help
+```
 
 ### **(Optionnel)** Installation globale de la commande `artisan`
 
@@ -40,7 +58,9 @@ Une installation globale veut dire que la commande est disponible depuis n'impor
 
 Vous pouvez 'installer globalement la commande avec `composer` :
 
-    composer global require laravel/installer
+```bash
+composer global require laravel/installer
+```
 
 Fermez votre terminal puis lancez-en un autre.
 Testez en tapant la commande `artisan`.
@@ -58,20 +78,28 @@ Les commandes suivantes vont créer un sous-dossier nommé `foo` dans le dossier
 
 Avec `composer` :
 
-    composer create-project laravel/laravel foo
+```bash
+composer create-project laravel/laravel foo
+```
 
 Ou avec `laravel` :
 
-    laravel new foo
+```bash
+laravel new foo
+```
 
 Installez les dépendances du front-end :
 
-    cd foo
-    npm install
+```bash
+cd foo
+npm install
+```
 
 Lancez le serveur web de développement :
 
-    php artisan serve
+```bash
+php artisan serve
+```
 
 Maintenant pour tester l'instalation ouvrez le lien suivant et savourez : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
@@ -85,27 +113,24 @@ Maintenant pour tester l'instalation ouvrez le lien suivant et savourez : [http:
 
 Dans le fichier `config/app.php`, changez la ligne :
 
-    'timezone' => 'UTC',
-
-par :
-
-    'timezone' => 'Europe/Paris',
-
-Puis la ligne :
-
-    'locale' => 'en',
-
-par :
-
-    'locale' => 'fr',
+```diff-php
+- 'timezone' => 'UTC',
++ 'timezone' => 'Europe/Paris',
+```
 
 Puis la ligne :
 
-    'faker_locale' => 'en_US',
+```diff-php
+- 'locale' => 'en',
++ 'locale' => 'fr',
+```
 
-par :
+Puis la ligne :
 
-    'faker_locale' => 'fr_FR',
+```diff-php
+- 'faker_locale' => 'en_US',
++ 'faker_locale' => 'fr_FR',
+```
 
 ### L'accès à la base de données (BDD)
 
@@ -124,21 +149,17 @@ Imaginons que vous ayez les codes d'accès suivants à une BDD MariaDB :
 
 Vous pouvez adaptez les lignes suivantes à vos besoins :
 
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=laravel
-    DB_USERNAME=root
-    DB_PASSWORD=
-
-en :
-
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=laravel_8
-    DB_USERNAME=foo
-    DB_PASSWORD=123
+```diff-ini
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+- DB_DATABASE=laravel
++ DB_DATABASE=laravel_8
+- DB_USERNAME=root
++ DB_USERNAME=foo
+- DB_PASSWORD=
++ DB_PASSWORD=123
+```
 
 Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont compatibles.
 
@@ -199,7 +220,7 @@ Ceci va enregistrer le contenu de la variable `$foo` dans le fichier `storage/lo
 
 Exemple de données du fichier `storage/logs/laravel.log` :
 
-```
+```log
 [2022-03-04 11:22:19] local.DEBUG: {"id":1,"nom":"foo","description":"","created_at":null,"updated_at":null}
 ```
 
@@ -222,7 +243,9 @@ D'où le concept de « route nommée ».
 
 À tout moment, vous pouver utiliser la commande suivante pour afficher la liste des routes :
 
-    php artisan route:list
+```bash
+php artisan route:list
+```
 
 Une URL peut être constituée d'une partie fixe et d'une partie variable.
 La partie variable peut être récupérée par l'application et réutilisée (pour requêter la BDD par exemple).
@@ -240,56 +263,70 @@ La création de routes se fait dans le fichier `routes/web.php`.
 
 Vous pouvez supprimer la route par défaut :
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+```php
+Route::get('/', function () {
+    return view('welcome');
+});
+```
 
 Et ajouter une route qui sera associée à la fonction `index()` de la classe `MainController` :
 
-    use App\Http\Controllers\MainController;
+```php
+use App\Http\Controllers\MainController;
 
-    // ...
+// ...
 
-    // ajouter la route '/' associée avec l'action MainController::index()
-    // MainController est une classe et index est une méthode de cette classe
-    // cette route est nommée 'main.index'
-    Route::get('/', [MainController::class, 'index'])->name('main.index');
+// ajouter la route '/' associée avec l'action MainController::index()
+// MainController est une classe et index est une méthode de cette classe
+// cette route est nommée 'main.index'
+Route::get('/', [MainController::class, 'index'])->name('main.index');
+```
 
 ### Création d'une route pour une autre page
 
 Vous pouvez ajouter d'autres routes qui seront associées à d'autres fonctions de la classe `MainController`:
 
-    use App\Http\Controllers\MainController;
+```php
+use App\Http\Controllers\MainController;
 
-    // ...
+// ...
 
-    // ajouter la route '/about' associée avec l'action MainController::about()
-    // MainController est une classe et about est une méthode de cette classe
-    // cette route est nommée 'main.about'
-    Route::get('/about', [MainController::class, 'about'])->name('main.about');
+// ajouter la route '/about' associée avec l'action MainController::about()
+// MainController est une classe et about est une méthode de cette classe
+// cette route est nommée 'main.about'
+Route::get('/about', [MainController::class, 'about'])->name('main.about');
+```
 
 ### Création de routes accessible avec d'autres méthodes HTTP
 
-    Route::get('/about', [MainController::class, 'about'])->name('main.about');
+```php
+Route::get('/about', [MainController::class, 'about'])->name('main.about');
+```
 
 Dans le code ci-dessus, le mot clé `get` veut dire que cette route n'est accessible qu'avec la méthode HTTP `GET`.
 
 Mais il existe d'autres méthodes si l'on veut que la route soir accessible avec d'autres méthodes HTTP :
 
-    Route::get('/foo', [MainController::class, 'foo'])->name('main.foo');
-    Route::post('/foo', [MainController::class, 'foo'])->name('main.foo');
-    Route::put('/foo', [MainController::class, 'foo'])->name('main.foo');
-    Route::patch('/foo', [MainController::class, 'foo'])->name('main.foo');
-    Route::delete('/foo', [MainController::class, 'foo'])->name('main.foo');
-    Route::options('/foo', [MainController::class, 'foo'])->name('main.foo');
+```php
+Route::get('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::post('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::put('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::patch('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::delete('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::options('/foo', [MainController::class, 'foo'])->name('main.foo');
+```
 
 Si nous voulons qu'une route soit accessible avec plusieurs méthodes HTTP, nous pouvons utiliser la méthode `match()` :
 
-    Route::match(['get', 'post'], '/foo', [MainController::class, 'foo'])->name('main.foo')
+```php
+Route::match(['get', 'post'], '/foo', [MainController::class, 'foo'])->name('main.foo')
+```
 
 Si c'est absolument nécessaire, il est aussi possible de rendre une route accessible avec n'importe quelle méthode HTTP :
 
-    Route::any('/foo', [MainController::class, 'foo'])->name('main.foo')
+```php
+Route::any('/foo', [MainController::class, 'foo'])->name('main.foo')
+```
 
 ### Création d'une route pour une ressource
 
@@ -305,12 +342,14 @@ Le résultat est que Laravel va automatiquement créer des routes pour pouvoir c
 
 Voici comment ajouter des routes par défaut associées à une ressource de type 'foo' :
 
-    use App\Http\Controllers\FooController;
+```php
+use App\Http\Controllers\FooController;
 
-    // ...
+// ...
 
-    // ajouter des routes par défaut associées avec le contrôleur FooController
-    Route::resource('foo', FooController::class);
+// ajouter des routes par défaut associées avec le contrôleur FooController
+Route::resource('foo', FooController::class);
+```
 
 Et voici un tableau des routes par défaut qui seront associées à la ressource de type 'foo' :
 
@@ -328,8 +367,10 @@ Et voici un tableau des routes par défaut qui seront associées à la ressource
 
 Il est possible de configurer des redirection directement dans le fichier `routes/web.php` :
 
-    // redirection de la page « à propos » vers la page « contact »
-    Route::redirect('/about', '/contact');
+```php
+// redirection de la page « à propos » vers la page « contact »
+Route::redirect('/about', '/contact');
+```
 
 ## Les contrôleurs
 
@@ -342,14 +383,18 @@ Ce sont ces composants qui vont déterminer « ce que l'application fait ».
 
 Nous allons créer un premier contrôleur qui affichera la page d'accueil :
 
-    php artisan make:controller MainController
+```bash
+php artisan make:controller MainController
+```
 
 Vous pouvez ouvrir le fichier `app/Http/Controllers/MainController.php` et ajouter le code suivant à la place du placeholder `//` :
 
-        public function index()
-        {
-            return view('welcome');
-        }
+```php
+public function index()
+{
+    return view('welcome');
+}
+```
 
 ## Choisir la vue qui sera utilisée par le contrôleur
 
@@ -357,24 +402,28 @@ Il est possible de choisir n'importe quelle vue, pourvu qu'elle soit présente d
 
 Vous pouvez ouvrir le fichier `app/Http/Controllers/MainController.php` et remplacer la vue par défaut par celle de votre choix :
 
-        public function index()
-        {
-            // affichage de la vue resources/views/main/index.blade.php
-            return view('main.index');
-        }
+```php
+public function index()
+{
+    // affichage de la vue resources/views/main/index.blade.php
+    return view('main.index');
+}
+```
 
 ## Transmission de variables à une vue
 
 Pour transmettre des variables à une vue, vous devez rajouter un tableau en paramètre dans l'appel de la fonction `view()` :
 
-        // création d'une variable en PHP
-        $message = 'Hello Laravel!';
+```php
+// création d'une variable en PHP
+$message = 'Hello Laravel!';
 
-        // affichage de la vue resources/views/main/index.blade.php
-        // envoi de la variable $message dans la vue
-        return view('main.index', [
-            'message' => $message,
-        ]);
+// affichage de la vue resources/views/main/index.blade.php
+// envoi de la variable $message dans la vue
+return view('main.index', [
+    'message' => $message,
+]);
+```
 
 Remarque : la variable PHP se nomme `$message`. Mais comme nous avons choisi la clé `message` dans le tableau, dans la vue aussi la variable s'appellera `$message`.
 
@@ -384,10 +433,11 @@ Voir la page suivante pour en savoir plus sur la façon de transmettre des varia
 
 Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
-    php artisan make:controller -r FooController
+```bash
+php artisan make:controller -r FooController
+```
 
-- créer des actions
-[Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/controllers#single-action-controllers)
+- créer des actions [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/controllers#single-action-controllers)
 
 ## Les vues
 
@@ -395,7 +445,9 @@ Nous allons créer un contrôleur pour une ressource de type 'foo' :
 
 Pour afficher une variable, vous pouvez utiliser des accolades `{}`.
 
-    {{ $foo }}
+```php
+{{ $foo }}
+```
 
 Remarque : bien sûr ceci ne fonctionne que si la variable `foo` a été transmise à la vue lors de l'appel de la fonction `view()` dans le contrôleur.
 
@@ -405,36 +457,42 @@ Remarque : bien sûr ceci ne fonctionne que si la variable `foo` a été transmi
 
 Pour afficher l'url des routes nommées dans une vue, vous devez utiliser la fonction `route()` :
 
-    {{ route('foo') }}
-    {{ route('foo', ['id' => 123]) }}
-    {{ route('foo', ['id' => 123, 'bar' => 42]) }}
+```php
+{{ route('foo') }}
+{{ route('foo', ['id' => 123]) }}
+{{ route('foo', ['id' => 123, 'bar' => 42]) }}
+```
 
 Ces blocs vont générer les urls correspondant à la route nommée.
 Le tableau avec les couples clé valeur représente des paramètres qui seront rattachés à l'url.
 
 Vous pouvez l'utiliser pour créer un lien clickable par exemple :
 
-    <a href="{{ route('foo') }}">Aller vers la page foo</a>
+```php
+<a href="{{ route('foo') }}">Aller vers la page foo</a>
+```
 
 ### Création d'une vue simple
 
 Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/views/main/index.blade.php` :
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
-    </head>
-    <body>
-        <h1>Accueil</h1>
-        <p>
-            Vous êtes sur la page d'accueil.
-        </p>
-    </body>
-    </html>
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+    <h1>Accueil</h1>
+    <p>
+        Vous êtes sur la page d'accueil.
+    </p>
+</body>
+</html>
+```
 
 Testez maintenant votre vue dans votre navigateur : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
@@ -447,30 +505,38 @@ Les fichiers CSS et JS se trouvent dans les dossiers suivants :
 
 Pour que ces fichiers deviennent accessibles via le serveur web, vous devez les compiler et les stocker dans le dossier `public` avec la commande suivante :
 
-    npm run dev
+```bash
+npm run dev
+```
 
 Vous devrez relancer cette commande chaque fois que vous modifierez vos fichiers CSS ou JS.
 
 Dernière chose, vous devez les intégrer dans vos vues en ajoutant la ligne suivante pour le CSS dans votre vue Blade :
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+```php
+<link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+```
 
 Et voici la ligne pour le JS :
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+```php
+<script src="{{ asset('js/app.js') }}" defer></script>
+```
 
 La fonction `asset()` permet de retrouver automatiquement le dossier dans lequel sont stockés les ressources statiques compilées (c-à-d le CSS et le JS).
 
 Voici à quoi devrait ressemble votre balide `head` après modification :
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
+```php
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+</head>
+```
 
 Pour en savoir plus sur l'intégration de code CSS et de code JS, voir la page suivante : [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix)
 
@@ -484,29 +550,37 @@ Puis vous devrez préciser dans le fichier `webpack.mix.js` quels sont les fichi
 
 Le code ci-dessous montre comment compiler les fichier `resources/css/foo.css` et `resources/js/foo.js` en plus des fichiers par défaut :
 
-    mix.js('resources/js/app.js', 'public/js')
-        .postCss('resources/css/app.css', 'public/css', [
-            //
-        ])
-        .js('resources/js/foo.js', 'public/js')
-        .postCss('resources/css/foo.css', 'public/css', [
-            //
-        ]);
+```js
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
+        //
+    ])
+    .js('resources/js/foo.js', 'public/js')
+    .postCss('resources/css/foo.css', 'public/css', [
+        //
+    ]);
+```
 
 Il ne vous reste plus qu'à insérer les balises `link` et `script` dans la vue de votre page :
 
-    <link rel="stylesheet" href="{{ asset('css/foo.css') }}">
-    <script src="{{ asset('js/foo.js') }}" defer></script>
+```php
+<link rel="stylesheet" href="{{ asset('css/foo.css') }}">
+<script src="{{ asset('js/foo.js') }}" defer></script>
+```
 
 ### Complilation automatique des fichiers CSS et JS
 
 Si vous en avez assez recompilation vos fichier à chaque fois, vous pouver lancer la recomplilation automatique :
 
-    npm run watch
+```bash
+npm run watch
+```
 
 Et si vous trouvez qu'il y a trop de notifications, vous pouvez les désactiver en ajoutant le code suivant à la fin du fichier `webpack.mix.js` (présent à la racine du projet) :
 
-    mix.disableNotifications();
+```js
+mix.disableNotifications();
+```
 
 ### Intégration d'images dans une vue Blade
 
@@ -514,7 +588,9 @@ Pour intégrer une image dans votre vue, vous devez d'abord créer un dossier `p
 
 Ensuite vous pouvez utiliser la fonction `asset()` comme ci-dessous pour composer l'url de l'image :
 
-    <img src="{{ asset('img/foo.jpg') }}" alt="Description de l'image">
+```php
+<img src="{{ asset('img/foo.jpg') }}" alt="Description de l'image">
+```
 
 Le code `asset('img/foo.jpg')` va générer l'url `http://127.0.0.1:8000/img/foo.jpg` tant que vous travaillez sur votre poste.
 Quand vous mettrez votre code en production sur le serveur `example.com`, l'url de l'image deviendra `http://example.com/img/foo.jpg`.
@@ -527,40 +603,42 @@ Voir la page suivante pour en savoir plus sur la façon de créer une vue parent
 
 Vous pouvez créer le fichier `resources/views/base.blade.php` :
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mon site web - @yield('title')</title>
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site web - @yield('title')</title>
 
-        @section('css')
-        <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+    @section('css')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
+    @show
+
+    @section('js')
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    @show
+</head>
+<body>
+    <header>
+        @section('banner')
+            <img src="{{ asset('img/banner.jpg') }}" alt="Description de la bannière par défaut">
         @show
+    </header>
 
-        @section('js')
-        <script src="{{ asset('js/app.js') }}" defer></script>
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <footer>
+        @section('footer')
+            Copyright 2022
         @show
-    </head>
-    <body>
-        <header>
-            @section('banner')
-                <img src="{{ asset('img/banner.jpg') }}" alt="Description de la bannière par défaut">
-            @show
-        </header>
-
-        <div class="container">
-            @yield('content')
-        </div>
-
-        <footer>
-            @section('footer')
-                Copyright 2022
-            @show
-        </footer>
-    </body>
-    </html>
+    </footer>
+</body>
+</html>
+```
 
 Les instructions `@yield()` sont des instructions que nous pourrons remplacer par le contenu de notre choix dans des vues enfant.
 
@@ -571,21 +649,23 @@ Si les vues enfants ne remplacent pas ces contenus, ce sont les valeurs par déf
 
 Vous pouvez remplacer le contenu du fichier `resources/views/main/index.blade.php` avec :
 
-    @extends('base')
+```php
+@extends('base')
 
-    @section('title', 'Accueil')
+@section('title', 'Accueil')
 
-    @section('css')
-        @parent
-        <link rel="stylesheet" href="{{ asset('css/homepage.css') }} ">
-    @endsection
+@section('css')
+    @parent
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }} ">
+@endsection
 
-    @section('content')
-        <h1>Accueil</h1>
-        <p>
-            Vous êtes sur la page d'accueil
-        </p>
-    @endsection
+@section('content')
+    <h1>Accueil</h1>
+    <p>
+        Vous êtes sur la page d'accueil
+    </p>
+@endsection
+```
 
 L'instruction `@extends()` précise quelle vue sera utilisée comme vue parent. Ici c'est la vue `resources/views/base.blade.php` qui est ciblée.
 
@@ -601,10 +681,12 @@ Si le bloc remplace une instruction `@yield()` dans la vue parent, il n'y a pas 
 
 Dans `webpack.mix.js` :
 
-    mix.browserSync('127.0.0.1:8000');
+```js
+mix.browserSync('127.0.0.1:8000');
 
-    // ou si 127.0.0.1 ne fonctionne pas
-    mix.browserSync('localhost:8000');
+// ou si 127.0.0.1 ne fonctionne pas
+mix.browserSync('localhost:8000');
+```
 
 intéger des fichiers CSS et JS dans des vues
 
@@ -623,16 +705,22 @@ Pour cette partie, la page suivante vous donnera toutes les infos utiles : [Data
 
 La commande suivante exécute les fichiers de migrations :
 
-    php artisan migrate
+```bash
+php artisan migrate
+```
 
 Mais en phase de développement, il est souvent plus pratique de détruire toutes les tables puis d'exécuter tous les fichiers de migration depuis le début.
 Pour faire ça, vous pouvez utiliser la commande suivante :
 
-    php artisan db:wipe && php artisan migrate
+```bash
+php artisan db:wipe && php artisan migrate
+```
 
 Pour savoir quel fichier de migration a été exécuté, utilisez la commande suivante :
 
-    php artisan migrate:status
+```bash
+php artisan migrate:status
+```
 
 Alternativement, vous pouvez aussi examiner la table `migrations` dans la BDD.
 
@@ -642,37 +730,45 @@ Il est parfois nécessaire de pouvoir revenir à une version précédente de la 
 
 La commande suivante vous permet d'annuler le dernier fichier de migration exécuté :
 
-    php artisan migrate:rollback --step 1
+```bash
+php artisan migrate:rollback --step 1
+```
 
 Si vous devez annuler plusieurs fichiers de migrations, spécifiez-en le nombre après l'option `step`.
 
 Exemple qui annule les `3` derniers fichiers de migration :
 
-    php artisan migrate:rollback --step 3
+```bash
+php artisan migrate:rollback --step 3
+```
 
 ### Le fichier de migration
 
 La commande suivante permet de générer un fichier de migration pour la table `foo` :
 
-    php artisan make:migration create_foo_table
+```bash
+php artisan make:migration create_foo_table
+```
 
 Un nouveau fichier apparaît : `database/migrations/2021_03_18_171447_create_foo_table.php`
 
 La fonction `up()` sert à mettre à jour la BDD.
 C'est là qu'il faut indiquer comment créer le schéma de BDD.
 
-        /**
-         * Run the migrations.
-         *
-         * @return void
-         */
-        public function up()
-        {
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
-        }
+```php
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('foo', function (Blueprint $table) {
+        $table->id();
+        $table->timestamps();
+    });
+}
+```
 
 La fonction `id()` créé une colonne de type `UNSIGNED BIG INTEGER` avec une contrainte d'unicité et un auto-incrément.
 C-à-d une colonne de type « primary key ».
@@ -682,15 +778,17 @@ La fonction `timestamps()` créé deux colonne (`created_at` et `updated_at`) da
 Le fonctio `down()` sert à remettre la BDD dans un état antérieur.
 Cette fonction permet de « downgrader » (par opposition avec « upgrader ») votre BDD, ce qui est utile si la nouvelle version de votre application contient des bugs.
 
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
-        public function down()
-        {
-            Schema::dropIfExists('foo');
-        }
+```php
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('foo');
+}
+```
 
 ### Création d'une table
 
@@ -713,15 +811,17 @@ Nous allons ajouter les colonnes suivantes à la table `foo` :
 
 Voici le code :
 
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->string('email', 100)->unique();
-                $table->string('nom', 100);
-                $table->text('description')->nullable();
-                $table->integer('rang')->nullable();
-                $table->boolean('actif')->default(true);
-                $table->timestamps();
-            });
+```php
+Schema::create('foo', function (Blueprint $table) {
+    $table->id();
+    $table->string('email', 100)->unique();
+    $table->string('nom', 100);
+    $table->text('description')->nullable();
+    $table->integer('rang')->nullable();
+    $table->boolean('actif')->default(true);
+    $table->timestamps();
+});
+```
 
 ### Création d'une table avec une colonne « clé étrangère »
 
@@ -731,11 +831,13 @@ Les contraintes de clé étrangère permettent de s'assurer qu'un objet ne sera 
 Si la table `bar` doit faire référence à la clé primaire de la table `foo`, il faut créer une colonne `foo_id` dans la table `bar` et ajouter une contrainte de clé étrangère dessus.
 Voici le code :
 
-            Schema::create('bar', function (Blueprint $table) {
-                $table->id();
-                $table->foreignId('foo_id')->references('id')->on('foo');
-                $table->timestamps();
-            });
+```php
+Schema::create('bar', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('foo_id')->references('id')->on('foo');
+    $table->timestamps();
+});
+```
 
 *Attention : la colonne à laquelle il est fait référence doit être une clé primaire, sinon la contrainte de clé étrangère ne fonctionnera pas.*
 
@@ -758,13 +860,15 @@ Pour supprimer une colonne ou un index, vous trouverez toutes les fonctions ci-d
 
 Partons du code de création d'une table nommée `baz` :
 
-            Schema::create('baz', function (Blueprint $table) {
-                $table->id();
-                $table->string('nom');
-                $table->integer('total');
-                $table->boolean('actif');
-                $table->timestamps();
-            });
+```php
+Schema::create('baz', function (Blueprint $table) {
+    $table->id();
+    $table->string('nom');
+    $table->integer('total');
+    $table->boolean('actif');
+    $table->timestamps();
+});
+```
 
 #### Suppression d'une table
 
@@ -785,72 +889,86 @@ Le code ci-dessous permet de :
 
 Voici le code de modification :
 
-            Schema::table('baz', function (Blueprint $table) {
-                // modification de colonnes
-                $table->string('nom', 190)->change();
-                $table->integer('total')->nullable()->change();
-                $table->boolean('actif')->default(true)->change();
+```php
+Schema::table('baz', function (Blueprint $table) {
+    // modification de colonnes
+    $table->string('nom', 190)->change();
+    $table->integer('total')->nullable()->change();
+    $table->boolean('actif')->default(true)->change();
 
-                // ajout d'une colonne et d'une contrainte de clé étrangère
-                $table->foreignId('foo_id')
-            });
+    // ajout d'une colonne et d'une contrainte de clé étrangère
+    $table->foreignId('foo_id')
+});
+```
 
 Et voici le code qui fait l'opération inverse :
 
-            Schema::table('baz', function (Blueprint $table) {
-                // suppression d'une colonne et d'une contrainte de clé étrangère
-                $table->dropForeign(['foo_id']);
-                $table->dropIndex(['foo_id']);
-                $table->dropColumn('foo_id');
+```php
+Schema::table('baz', function (Blueprint $table) {
+    // suppression d'une colonne et d'une contrainte de clé étrangère
+    $table->dropForeign(['foo_id']);
+    $table->dropIndex(['foo_id']);
+    $table->dropColumn('foo_id');
 
-                // modification de colonnes
-                $table->string('nom')->change();
-                $table->integer('total')->change();
-                $table->boolean('actif')->change();
-            });
+    // modification de colonnes
+    $table->string('nom')->change();
+    $table->integer('total')->change();
+    $table->boolean('actif')->change();
+});
+```
 
 #### Suppression de colonnes
 
 Suppression de la colonne `description` de la table `baz` :
 
-            Schema::table('baz', function (Blueprint $table) {
-                $table->dropColumn('description');
-            });
+```php
+Schema::table('baz', function (Blueprint $table) {
+    $table->dropColumn('description');
+});
+```
 
 #### Ajout d'indexes après création d'une table
 
 Le code suivant permet d'ajouter une contrainte d'unicité sur la colonne `nom` et un index sur la colonne `total` :
 
-            Schema::table('baz', function (Blueprint $table) {
-                $table->unique('nom');
-                $table->index('total');
-            });
+```php
+Schema::table('baz', function (Blueprint $table) {
+    $table->unique('nom');
+    $table->index('total');
+});
+```
 
 #### Suppression d'indexes
 
 Le code suivant permet de supprimer des indexes :
 
-            Schema::table('baz', function (Blueprint $table) {
-                $table->dropUnique(['nom']);
-                $table->dropIndex(['total']);
-            });
+```php
+Schema::table('baz', function (Blueprint $table) {
+    $table->dropUnique(['nom']);
+    $table->dropIndex(['total']);
+});
+```
 
 #### Ajout de contrainte de clé étrangère après création d'une table
 
 Le code suivant permet d'ajouter une contrainte de clé étrangère sur la colonne `foo_id` :
 
-            Schema::table('baz', function (Blueprint $table) {
-                $table->foreignId('foo_id')->references('id')->on('foo');
-            });
+```php
+Schema::table('baz', function (Blueprint $table) {
+    $table->foreignId('foo_id')->references('id')->on('foo');
+});
+```
 
 #### Suppression de contrainte de clé étrangère
 
 Le code suivant permet de supprimer des clés étrangères :
 
-            Schema::table('baz', function (Blueprint $table) {
-                $table->dropForeign(['foo_id']);
-                $table->dropColumn('foo_id');
-            });
+```php
+Schema::table('baz', function (Blueprint $table) {
+    $table->dropForeign(['foo_id']);
+    $table->dropColumn('foo_id');
+});
+```
 
 ### Exemple de relations cardinales
 
@@ -861,37 +979,47 @@ Le code suivant permet de supprimer des clés étrangères :
 
 La création de la table `foo` :
 
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('foo', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 La création de la table `bar` :
 
-            Schema::create('bar', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('bar', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 L'ajout de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('foo', function (Blueprint $table) {
-                $table->foreignId('bar_id')->unique()->references('id')->on('bar');
-            });
+```php
+Schema::table('foo', function (Blueprint $table) {
+    $table->foreignId('bar_id')->unique()->references('id')->on('bar');
+});
+```
 
 Note : nous aurions aussi pu ajouter la contrainte à la table `bar` au lieu de la table `foo`. Cela ne fait aucune différence du point de vue des fonctionnalités. Le côté où il y a la contrainte (ici la table `foo`) est appelé le coté « possédant ».
 
 La suppression de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('foo', function (Blueprint $table) {
-                $table->dropForeign(['bar_id']);
-                $table->dropColumn('bar_id');
-            });
+```php
+Schema::table('foo', function (Blueprint $table) {
+    $table->dropForeign(['bar_id']);
+    $table->dropColumn('bar_id');
+});
+```
 
 La suppression des tables :
 
-            Schema::dropIfExists('foo');
-            Schema::dropIfExists('bar');
+```php
+Schema::dropIfExists('foo');
+Schema::dropIfExists('bar');
+```
 
 #### Relation `one to many`
 
@@ -900,35 +1028,45 @@ La suppression des tables :
 
 La création de la table `foo` :
 
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('foo', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 La création de la table `bar` :
 
-            Schema::create('bar', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('bar', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 L'ajout de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('bar', function (Blueprint $table) {
-                $table->foreignId('foo_id')->references('id')->on('foo');
-            });
+```php
+Schema::table('bar', function (Blueprint $table) {
+    $table->foreignId('foo_id')->references('id')->on('foo');
+});
+```
 
 La suppression de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('bar', function (Blueprint $table) {
-                $table->dropForeign(['foo_id']);
-                $table->dropColumn('foo_id');
-            });
+```php
+Schema::table('bar', function (Blueprint $table) {
+    $table->dropForeign(['foo_id']);
+    $table->dropColumn('foo_id');
+});
+```
 
 La suppression des tables :
 
-            Schema::dropIfExists('foo');
-            Schema::dropIfExists('bar');
+```php
+Schema::dropIfExists('foo');
+Schema::dropIfExists('bar');
+```
 
 #### Relation `many to one`
 
@@ -937,35 +1075,45 @@ La suppression des tables :
 
 La création de la table `foo` :
 
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('foo', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 La création de la table `bar` :
 
-            Schema::create('bar', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('bar', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 L'ajout de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('foo', function (Blueprint $table) {
-                $table->foreignId('bar_id')->references('id')->on('bar');
-            });
+```php
+Schema::table('foo', function (Blueprint $table) {
+    $table->foreignId('bar_id')->references('id')->on('bar');
+});
+```
 
 La suppression de la colonne et de la contrainte de clé étrangère :
 
-            Schema::table('foo', function (Blueprint $table) {
-                $table->dropForeign(['bar_id']);
-                $table->dropColumn('bar_id');
-            });
+```php
+Schema::table('foo', function (Blueprint $table) {
+    $table->dropForeign(['bar_id']);
+    $table->dropColumn('bar_id');
+});
+```
 
 La suppression des tables :
 
-            Schema::dropIfExists('foo');
-            Schema::dropIfExists('bar');
+```php
+Schema::dropIfExists('foo');
+Schema::dropIfExists('bar');
+```
 
 #### Relation `many to many`
 
@@ -976,24 +1124,30 @@ Pour la relation `many to many` nous sommes obligés de créer une table de join
 
 La création de la table `foo` :
 
-            Schema::create('foo', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('foo', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 La création de la table `bar` :
 
-            Schema::create('bar', function (Blueprint $table) {
-                $table->id();
-                $table->timestamps();
-            });
+```php
+Schema::create('bar', function (Blueprint $table) {
+    $table->id();
+    $table->timestamps();
+});
+```
 
 La création de la table de jointure `bar_foo` :
 
-            Schema::create('bar_foo', function (Blueprint $table) {
-                $table->foreignId('bar_id')->references('id')->on('bar');
-                $table->foreignId('foo_id')->references('id')->on('foo');
-            });
+```php
+Schema::create('bar_foo', function (Blueprint $table) {
+    $table->foreignId('bar_id')->references('id')->on('bar');
+    $table->foreignId('foo_id')->references('id')->on('foo');
+});
+```
 
 ATTENTION : les tables de jointure ne doivent pas avoir de clé primaire (fonction `id()`) ou de système d'horodatage (fonction `timestamps()`).
 
@@ -1001,7 +1155,9 @@ NOTE : une convention est de nommer les tables de jointure en utilisant le nom d
 
 La suppression des tables :
 
-            Schema::dropIfExists('bar_foo');
-            Schema::dropIfExists('foo');
-            Schema::dropIfExists('bar');
+```php
+Schema::dropIfExists('bar_foo');
+Schema::dropIfExists('foo');
+Schema::dropIfExists('bar');
+```
 
