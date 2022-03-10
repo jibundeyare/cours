@@ -9,6 +9,11 @@
 - [Google app password](google-app-password.html)
 - [Google two factor authentication](google-two-factor-authentication.html)
 
+## Laravel 8
+
+- [Laravel 8](laravel-8.html)
+- [Laravel 8 trouble shooting](laravel-8-trouble-shooting.html)
+
 ## PHP vanilla
 
 - [Swiftmailer 6](swiftmailer-6.html)
