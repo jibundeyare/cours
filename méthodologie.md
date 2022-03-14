@@ -9,10 +9,20 @@
 - version écrite longue : [Study Less, Study Smart - @TomFrankly’s detailed notes](https://www.evernote.com/shard/s33/client/snv?noteGuid=978feb82-1f4b-4e6b-afb7-ccad8375e28e&noteKey=a5e49b16353adea8&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs33%2Fsh%2F978feb82-1f4b-4e6b-afb7-ccad8375e28e%2Fa5e49b16353adea8&title=Study%2BLess%252C%2BStudy%2BSmart%2B-%2B%2540TomFrankly%25E2%2580%2599s%2Bdetailed%2Bnotes)
 - version écrite longue : [Study Less Study Smart - handwritten notes - Album on Imgur](https://imgur.com/a/TjzD1)
 
+### La méthode SQ3R
+
+SQ3R = Survey, Question, Read, Recite and Review
+
+[What is the sq3r study method and how to use it? | MIUC](https://miuc.org/sq3r-study-method/)
 
 ## Comment font les meilleurs étudiants ?
 
 - [What do top students do differently? | Douglas Barton | TEDxYouth@Tallinn - YouTube](https://www.youtube.com/watch?v=Na8m4GPqA30)
+
+Deux idées importantes :
+
+1. fixer des plages horaires pour les temps de loisir
+2. s'entraîner avec les supports qui serviront lors de l'évaluation
 
 ## Learning how to learn (apprendre à apprendre)
 
@@ -37,10 +47,54 @@
 - dessins
 - mind mapping
 
+Outils de dessin :
+
+- [Excalidraw | Hand-drawn look & feel • Collaborative • Secure](https://excalidraw.com/)
+- [Apps/Dia - GNOME Wiki!](https://wiki.gnome.org/Apps/Dia)
+
+Outils de mind mapping :
+
+- [mindmaps](https://www.mindmaps.app/) outil online très minimaliste
+- [Main Page - FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) outil offline et très complet
+
 ## GTD vs ZTD
 
 - [Getting Things Done® - David Allen's GTD® Methodology](https://gettingthingsdone.com/)
 - [Zen To Done (ZTD): The Simple Productivity System : zen habits](https://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/)
+
+Traduction française de ZTD :
+
+- [https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/](https://habitudes-zen.net/2009/zen-to-done-ztd-lultime-systeme-simple-de-productivite/)
+
+## Pomodoro
+
+[Pomodoro Technique - Wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique)
+
+Le matin, avant de commencer à travailler :
+
+- découper les tâches de la journée une ou plusieurs tranches de 25 miniutes
+- si une tâche demande plus de quatre tranches de 25 minutes, la diviser en sous-tâches
+
+- travailler sur la première tâche pendant 25 minutes (et ne pas se laisser distraire)
+- faire 5 minutes de pause (une vraie pause)
+- refaire ça quatre fois en tout
+- au bout de quatre itérations, faire une pause plus longue de 15 min ~ 30 min
+
+Le soir, après la journée :
+
+- noter les tâcles les qui ont débordé
+- noter les tâches qu'on a réalisé dans le temps prévu
+
+Au bout d'une semaine ou plusieurs semaines :
+
+- estimer sa progression dans l'estimation du temps requis pour une tâche et en tirer des conclusions
+
+Conseils :
+
+- pour ne pas se laisser distraire : mettre offline tous les services de communication
+- dédier une tranche de 25 minutes spécialement aux besoins de communication
+
+Je recommande l'outil [Tomate Mécanique – Applications sur Google Play](https://play.google.com/store/apps/details?id=net.phlam.android.clockworktomato) qui est gratuit et sans publicité.
 
 ## Kanban
 
@@ -49,9 +103,10 @@
 La méthode présentée ici est seulement inspirée de la méthode de production de Toyota.
 Ce n'est pas une implémentation stricte, du coup le nom est un peu usurpé.
 
-Pour utiliser cette méthode, il faut un tableau avec quatre colonnes :
+Pour utiliser cette méthode, il faut un tableau avec six colonnes :
 
-- À faire (backlog)
+- Backlog
+- À faire
 - En cours
 - À valider
 - Archivé
@@ -80,35 +135,9 @@ En fin de semaine, après le travail :
 
 L'outil en ligne [Trello](https://trello.com/) est très adapté pour la méthode Kanban.
 
-## Pomodoro
+## Le « Minimum Viable Product » (MVP)
 
-[Pomodoro Technique - Wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique)
-
-Le matin, avant de commencer à travailler :
-
-- découper les tâches de la journée une ou plusieurs tranches de 25 miniutes
-- si une tâche demande plus de quatre tranches de 25 minutes, la diviser en sous-tâches
-
-- travailler sur la première tâche pendant 25 minutes (et ne pas se laisser distraire)
-- faire 5 minutes de pause (une vraie pause)
-- refaire ça quatre fois en tout
-- au bout de quatre itérations, faire une pause plus longue de 15 min ~ 30 mmin
-
-Le soir, après la journée :
-
-- noter les tâcles hes qui ont débordé
-- noter les tâches qu'on a réalisé dans le temps prévu
-
-Au bout d'une semaine ou plusieurs semaines :
-
-- estimer sa progression dans l'estimation du temps requis pour une tâche et en tirer des conclusions
-
-Conseils :
-
-- pour ne pas se laisser distraire : mettre offline tous les services de communication
-- dédier une tranche de 25 minutes spécialement aux besoins de communication
-
-Je recommande l'outil [Tomate Mécanique – Applications sur Google Play](https://play.google.com/store/apps/details?id=net.phlam.android.clockworktomato) qui est gratuit et sans publicité.
+[Making sense of MVP (Minimum Viable Product) - and why I prefer Earliest Testable/Usable/Lovable - Crisp's Blog](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)
 
 ## Méthode Scrum
 
@@ -130,24 +159,9 @@ Scrum : mélée de rugby, en anglais.
   Si le PO valide, ça veut dire que le client a validé
 - developper, lead developper
 
-### Planning poker
+### Cycle de livraison, itération ou sprint
 
-Le planning poker est utilisé pour estimer la difficulté d'un tâche.
-
-Le niveau de difficulté est représenté par une des valeurs de la suite de Fibonacci : 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, +infini, pause.
-Le niveau le plus facile est `0`, le niveau le plus dur est `+infini`. La pause veut dire qu'une pause est nécessaire pour réfléchir.
-
-Règles du jeu :
-
-1. on expose une tâche à accomplir
-2. chacun évalue le niveau de difficulté et choisit un carte qu'il pose face cachée sur la table
-3. au signale, tout le monde retourne sa carte en même temps
-4. on compare les différences
-   si les niveaux ne sont pas homogènes, chacun explique son point de vue puis on retourne au point 2
-   si les niveaux sont homogènes, on note le niveau moyen de difficulté sur la tâche
-5. on recommence pour la tâche suivante
-
-### Durée d'un cycle, itéartion ou sprint
+Un cycle de livraison est un laps de temps durant lequel on planifie, on créé puis on livre une partie du produit final.
 
 Durée recommandée :
 
@@ -185,4 +199,25 @@ Durée recommandée :
   - on fait un rapide bilan de ce qui a bien marché et ce qui n'a pas marché
   - on vérifie l'écart entre le niveau réel de difficulté et de durée de chaque tâche avec les valeurs estimée  
     cela doit permettre de faire de meilleurs estimations la prochaine fois
+
+### User story
+
+Exemple : [US-102 - Tunnel candidat 1 - Formulaire candidater.pdf](files/US-102 - Tunnel candidat 1 - Formulaire candidater.pdf)
+
+### Planning poker
+
+Le planning poker est utilisé pour estimer la difficulté d'un tâche.
+
+Le niveau de difficulté est représenté par une des valeurs de la suite de Fibonacci : 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, +infini, pause.
+Le niveau le plus facile est `0`, le niveau le plus dur est `+infini`. La pause veut dire qu'une pause est nécessaire pour réfléchir.
+
+Règles du jeu :
+
+1. on expose une tâche à accomplir
+2. chacun évalue le niveau de difficulté et choisit un carte qu'il pose face cachée sur la table
+3. au signale, tout le monde retourne sa carte en même temps
+4. on compare les différences
+   si les niveaux ne sont pas homogènes, chacun explique son point de vue puis on retourne au point 2
+   si les niveaux sont homogènes, on note le niveau moyen de difficulté sur la tâche
+5. on recommence pour la tâche suivante
 
