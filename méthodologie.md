@@ -112,26 +112,33 @@ Pour utiliser cette méthode, il faut un tableau avec six colonnes :
 - Archivé
 - Annulé
 
-En début de semaine, avant de commencer à travailler :
+En début de projet :
 
-- on recense les tâches à accomplir
+- on recense toutes les tâches qu'on voudrait accomplir
+- on les ajoute dans la colonne « Backlog »
+
+En début de cycle de livraison, avant de commencer à travailler :
+
+- on sélectionne des tâches à réaliser dans le backlog
 - on estime approximativement le temps nécessaire pour chaque tâche
-- on ajoute les tâches dans la colonne « À faire »
+- on déplace les tâches dans la colonne « À faire »
 
 On attaque le travail :
 
-- on choisi la tâche qu'on veut accomplir et on la met dans la colonne « En cours »
+- on choisit la tâche qu'on veut accomplir et on la met dans la colonne « En cours »
 - dès qu'on a fini la tâche, on la met dans la colonne « À valider »
 - on recommence avec une autre tâche jusqu'à ce qu'il n'y en ait plus
 - si une tâche pose problème, on la remet dans la colonne « À faire »
 
-En fin de semaine, après le travail :
+En fin de cycle de livraison, après le travail :
 
 - s'il reste des choses dans la colonne « À faire », on étudie s'il y a un problème
-- s'il y a un problème et qu'on peut trouver une solution, on laisse la tâche dans la colonne « À faire », sinon on la met dans la colonne « Annulé »
-- on valide tout ce qui est dans la colonne « À valider »
-- si c'est bon, on déplace dans la colonne « Archivé »
-- si on ne peut pas valider, on remet dans la colonne « À faire »
+- s'il y a un problème et qu'on peut trouver une solution, on laisse la tâche dans la colonne « À faire »  
+  sinon on peut replacer la tâche dans la colonne « Backlog » et attendre de trouver une solution ou déplacer la tâche dans la colonne « Annulé »
+- le client doit valider tout ce qui est dans la colonne « À valider »
+- si c'est bon, on déplace les tâches dans la colonne « Archivé »
+- si le client ne valide pas, on déplace la tâche dans la colonne « À faire »  
+  sinon on peut replacer la tâche dans la colonne « Backlog » ou déplacer la tâche dans la colonne « Annulé »
 
 L'outil en ligne [Trello](https://trello.com/) est très adapté pour la méthode Kanban.
 
