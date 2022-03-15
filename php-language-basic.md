@@ -16,7 +16,7 @@ PHP est un langage informatique conçu pour créer des applications web.
 ## Types de données
 
 - nombre entier (integer)
-- nombre à virgule flottant (float)
+- nombre à virgule flottante (float)
 - booléen (boolean)
 - chaîne de caractères (string)
 - valeur nulle (null value)

@@ -502,7 +502,7 @@ Afficher la variable `foo` sans appliquer aucun filtre :
 
 ### Formatage de nombres
 
-Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgules flottant seulement deux chiffres après la virgule avec un espace aux milliers :
+Juste après la partie `new Twig_Environment($loader)`, demander d'afficher les nombres à virgule flottante seulement deux chiffres après la virgule avec un espace aux milliers :
 
     $twig->getExtension('Twig_Extension_Core')->setNumberFormat(2, ',', ' ');
 

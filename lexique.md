@@ -47,7 +47,7 @@
 - ETL : Extract, Transform and Load (extraction, tranformation et chargement de données)
 - FAANG : Facebook, Apple, Amazon, Netflix, Alphabet (la maison mère de Google) ; de grandes multinationales occidentales du net ; voir aussi BATX, GAFAM et NATU
 - Feedbacks : retours d'expérience des utilisateurs
-- Float : nombre à virgule flottant, type de données
+- Float : nombre à virgule flottante, type de données
 - Fork : une fourchette ; on parle d'un fork pour dire d'un projet qu'il est basé sur un autre projet ; exemples : Maria DB est un fork de MySQL, Libre Office est un fork d'Open Office
 - Framework : c'est un outil de développement comprenant une librairie et une façon particulière d'organiser le code (imposée pour l'auteur du framework)
 - GAFAM : Google, Apple, Facebook, Amazon, Microsoft ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et NATU
