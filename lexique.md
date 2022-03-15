@@ -15,6 +15,8 @@
 - BDD : Base De Données
 - Boolean : variable booléenne, type de données ; c'est une variable qui ne peut avoir que deux valeur : vraie (true) ou fausse (false)
 - Bots : logiciel autonome (agent autonome) qui peuvent servir à spammer des canaux de communication ou à parcourir automatiquement des sites web et des services web à la recherche de failles de sécurité ; mais les bots peuvent aussi être utilisés pour faire le bien (agent conversationnel qui répond aux questions d'usagers par exemple)
+- BREAD : Browse, Read, Edit, Add et Delete (naviguer, lire, modifier, ajouter et supprimer)  
+  Ce sont les cinq opérations de base qu'une application doit proposer à l'utilisateur pour permettre de manipuler des données
 - Browser : voir Web browser
 - Brute force attack : attaque en force brute ; ce type d'attaque consiste à essayer toutes les combinaisons de mots de passe possible et n'est efficace qu'avec une énorme capacité de calcul ou un grand nombre de machines travaillant en parallèle
 - CA : Certificate Authority (autorité de certification) ; c'est généralement une structure de type entreprise ou fondation qui fournit un service de certification d'authenticité aux acteurs de l'internet
