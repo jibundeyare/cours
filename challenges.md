@@ -90,3 +90,7 @@ Je ne touche pas à ce genre de came ;)
 
 - [LeetCode - The World's Leading Online Programming Learning Platform](https://leetcode.com/)
 
+## Non testé mais prometteur
+
+- [Hard, no-nonsense programming challenges | hackattic](https://hackattic.com/)
+
