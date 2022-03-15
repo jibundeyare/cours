@@ -43,8 +43,15 @@ Deux idées importantes :
 
 ## La prise de note
 
+Une méthode de prise de note intéressante : [LA METHODE CORNELL : La prise de note EFFICACE - YouTube](https://www.youtube.com/watch?v=Yn-gTD-05x4&ab_channel=Potiondevie)
+
+Ne pas tout noter bien sûr !
+
+Contentez-vous de :
+
 - mots clé
-- dessins
+- abréviation, symboles
+- shémas, dessins
 - mind mapping
 
 Outils de dessin :
