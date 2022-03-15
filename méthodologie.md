@@ -103,6 +103,12 @@ Conseils :
 
 Je recommande l'outil [Tomate Mécanique – Applications sur Google Play](https://play.google.com/store/apps/details?id=net.phlam.android.clockworktomato) qui est gratuit et sans publicité.
 
+## Pair programming
+
+- [Programmation en binôme — Wikipédia](https://fr.wikipedia.org/wiki/Programmation_en_bin%C3%B4me)
+- [Cinq façons de concevoir le pair programming | by Paul-Yves Lucas | Captain Contrat Tech | Medium](https://medium.com/captain-contrat-tech/cinq-types-de-pair-programming-4e4cc149ce28)
+- [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html)
+
 ## Kanban
 
 [Kanban - Wikipedia](https://en.wikipedia.org/wiki/Kanban)
