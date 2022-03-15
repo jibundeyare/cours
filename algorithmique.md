@@ -9,6 +9,11 @@ Les pages suivantes présentent l'algorithmique de façon plus détaillée :
 - [Mémo Pseudo-codes](http://www.isn.codelab.info/ressources/algorithmique/memo-pseudo-codes/)
 - [Structure de contrôle — Wikipédia](https://fr.wikipedia.org/wiki/Structure_de_contr%C3%B4le)
 
+## Exemples
+
+Le site [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code) propose des algorithme dans pleins de languages différents.
+Son nom est un clin d'œil à la [Pierre de Rosette — Wikipédia](https://fr.wikipedia.org/wiki/Pierre_de_Rosette) qui a permis de déchiffrer les hiéroglyphes, une écriture de l'Égypte antique.
+
 ## Variables
 
 Les variables permettent de stocker des données en mémoire le temps d'effectuer des opérations avec (affichage, calcul, transformation, recherche, remplacement, etc).
