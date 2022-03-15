@@ -56,6 +56,9 @@ Type de données simple :
 
 - [Pourquoi 0.1 + 0.2 n'est pas égal à 0.3 en informatique ??? - YouTube](https://www.youtube.com/watch?v=CDYiwshriWw&ab_channel=Grafikart.fr)
 - [Floating Point Visually Explained](https://fabiensanglard.net/floating_point_visually_explained/)
+- [How to Round Numbers in Python – Real Python](https://realpython.com/python-rounding/#the-decimal-class) pour plus d'infos
+- [15. Floating Point Arithmetic: Issues and Limitations — Python 3.10.2 documentation](https://docs.python.org/3/tutorial/floatingpoint.html)
+- [decimal — Decimal fixed point and floating point arithmetic — Python 3.10.2 documentation](https://docs.python.org/3/library/decimal.html)
 
 Autre types de données :
 
