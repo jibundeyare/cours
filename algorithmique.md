@@ -52,7 +52,10 @@ Type de données simple :
 - chaîne de caractères (texte)
 - valeur nulle
 
-Sur la gestion des nombres à virgule flottante [Pourquoi 0.1 + 0.2 n'est pas égal à 0.3 en informatique ??? - YouTube](https://www.youtube.com/watch?v=CDYiwshriWw&ab_channel=Grafikart.fr)
+À propos des nombres à virgule flottante :
+
+- [Pourquoi 0.1 + 0.2 n'est pas égal à 0.3 en informatique ??? - YouTube](https://www.youtube.com/watch?v=CDYiwshriWw&ab_channel=Grafikart.fr)
+- [Floating Point Visually Explained](https://fabiensanglard.net/floating_point_visually_explained/)
 
 Autre types de données :
 
