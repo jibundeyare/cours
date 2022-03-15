@@ -42,10 +42,12 @@ Les variables ont des types de données.
 Type de données simple :
 
 - nombre entier
-- nombre à virgule flottant
+- nombre à virgule flottante
 - booléen (vrai / faux)
 - chaîne de caractères (texte)
 - valeur nulle
+
+Sur la gestion des nombres à virgule flottante [Pourquoi 0.1 + 0.2 n'est pas égal à 0.3 en informatique ??? - YouTube](https://www.youtube.com/watch?v=CDYiwshriWw&ab_channel=Grafikart.fr)
 
 Autre types de données :
 
