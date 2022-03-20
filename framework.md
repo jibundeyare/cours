@@ -11,7 +11,7 @@ Un framework est à la fois une structure de fichiers et un ensemble de code sou
 ## Quelques microframeworks
 
 - [Lumen](https://lumen.laravel.com/) (version light de Laravel)
-- *[Silex](https://silex.symfony.com/) (version light de Symfony, obsolète depuis juin 2018)*
+- <strike>[Silex](https://silex.symfony.com/)</strike> (version light de Symfony, obsolète depuis juin 2018)*
 - [Slim](https://www.slimframework.com/)
 
 ## Inconvénients
