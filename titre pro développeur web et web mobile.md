@@ -34,7 +34,7 @@ Vous devez créer plusieurs documents :
 - un dossier professionnel (le DP) remis le jour même
 - des slides qui vous serviront lors la présentation orale devant le jury
 
-**Conseil : quand vous rédigez votre rapport de stage, le résumé ou les slides, pensez à répondre aux questions QQOQCCP (pour « Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »)**
+**Conseil : quand vous rédigez votre rapport de stage, le résumé ou les slides, commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »)**
 
 Les Évaluations en Cours de Formation (les ECF) seront remises directement par l'établissement à votre jury.
 
@@ -89,6 +89,21 @@ Le résumé doit :
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
 
+### Le contenu du résumé de rapport de stage (résumé dossier de projet)
+
+Il n'y a pas de directives particulière dans le RCV2 pour la rédaction du résumé.
+
+Commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »).
+
+Dans tous les cas, pensez obligatoirement à préciser :
+
+- le nom de la structure dans laquelle vous faites votre stage
+- le nom du projet que vous réasliez (ça peut être aussi simple que « le site web »)
+- le nom de votre référent de stage dans la structure
+- le nom de votre référent de stage dans votre organisme de formation
+- si possible l'adresse complète de la structure, sinon au moins la ville 
+- les dates de début et de fin de stage
+
 ## Le rapport de stage (dossier de projet)
 
 C'est à vous de rédiger ce document.
@@ -138,6 +153,17 @@ Tout ce que le rapport de stage doit contenir :
 > La longueur du dossier de projet hors annexes est de 30 à 35 pages, soit environ 48750 caractères espaces non compris.
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
+
+Même conseil que pour le résumé, commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »).
+
+Dans tous les cas, pensez obligatoirement à préciser :
+
+- le nom de la structure dans laquelle vous faites votre stage
+- le nom du projet que vous réasliez (ça peut être aussi simple que « le site web »)
+- le nom de votre référent de stage dans la structure
+- le nom de votre référent de stage dans votre organisme de formation
+- si possible l'adresse complète de la structure, sinon au moins la ville 
+- les dates de début et de fin de stage
 
 ## La traduction de contenu en anglais
 
@@ -220,7 +246,9 @@ Essayez d'être naturel et de faire des phrases avec vos mots à vous, ce sera p
 
 ## Les slides pour la présentation orale devant le jury
 
-Règle numéro 1 : il faut absolument éviter de mettre trop de texte dans des slides.
+Toujours le même conseil, commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »).
+
+Ensuite, règle numéro 1 : il faut absolument éviter de mettre trop de texte dans les slides.
 
 Voici des exemples de contenu idéal :
 
