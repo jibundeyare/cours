@@ -162,6 +162,70 @@ Voici quelques outils gratuits :
 
 Personnellement, je vous recommande le papier et le crayon.
 
+### Exemple d'analyse
+
+Analyse de la BDD Student [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb) :
+
+![Analyse de la BDD Student](img/mariadb-analyse.excalidraw.png)
+
+## Relations cardinales entre objets
+
+Il existe quatre types de relations cardinales entre objets :
+
+- `one to one`
+- `many to one`
+- `one to many`
+- `many to many`
+
+Pour déterminer le type de relation cardinale entre deux types d'objets (des `foo` et `bar` par exemple), vous devez vous poser la question suivante pour chaque objet :
+
+> Chaque `foo` peut avoir combien de `bar` ?
+
+> Chaque `bar` peut avoir combien de `foo` ?
+
+Dans les descriptions ci-dessous, je vais prendre l'exemple de voitures pour illustrer le propos.
+
+**Rappelez-vous que la relation cardinale dépend du point vue et essayez de ne pas vous emmêler les pinceaux.**
+
+### Relation `one to one`
+
+![Relation one to one](img/relation-one-to-one.png)
+
+Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
+Et chaque objet `bar` ne peut être rattaché qu'à un seul objet `foo`.
+
+Exemple : chaque conducteur ne peut avoir qu'un seul permis de conduire.
+Et chaque permis de condiure ne peut être rattaché qu'à un seul condicteur.
+
+### Relation `many to one`
+
+![Relation many to one](img/relation-many-to-one.png)
+
+C'est la même relation que `one to many` mais du point de vue de l'autre objet.
+
+Exemple : chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+Mais chaque entreprise peut avoir plusieurs voitures de fonction.
+
+### Relation `one to many`
+
+![Relation one to many](img/relation-one-to-many.png)
+
+Chaque objet `foo` peut être rattaché à plusieurs objets `bar`.
+Mais chaque objet `bar` ne peut être rattaché qu'à un seul objet `foo`.
+
+Exemple : chaque entreprise peut avoir plusieurs voitures de fonction.
+Mais chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
+
+### Relation `many to many`
+
+![Relation many to many](img/relation-many-to-many.png)
+
+Chaque objet `foo` peut être rattaché à plusieurs objets `baz`.
+Et chaque objet `baz` peut être rattaché à plusieurs objets `foo`.
+
+Exemple : chaque voiture de location peut être réservée (successivement) par plusieurs clients.
+Et chaque client peut réserver (successivement) plusieurs voitures de location.
+
 ## Création ou implémentation d'un schéma de BDD avec PhpMyAdmin
 
 Une fois que vous avez votre schéma, il faut l'implémenter (le créer pour de vrai).
@@ -179,38 +243,13 @@ Ces vidéos vous montrent toutes les étapes pour créer une BDD, des tables et 
 Quand votre BDD est créé, vous pouvez commencer à ajouter du contenu dedans.
 
 Si vous n'avez pas de données réelles, il existe des outils qui vous permettent de générer des données de test.
-Ces données de test s'appellent des fixtures.
+Ces données de test s'appellent des fixtures ou des seeds.
 
 Voici quelques outils en ligne qui permettent de générer des données de test (fixtures) :
 
 - [Mockaroo - Random Data Generator and API Mocking Tool | JSON / CSV / SQL / Excel](https://mockaroo.com/)
 - [generatedata.com](http://www.generatedata.com/)
 - [Dummy data for MYSQL database](http://filldb.info/)
-
-## Les requêtes SQL
-
-Les requêtes SQL permettent de manipuler les données.
-
-## Quelques requêtes utiles
-
-Ces requêtes sont un peu l'équivalent de `ls` et `cd` dans un terminal.
-Elles permettent de voir la structure d'une BDD.
-
-Pour lister les BDD visibles :
-
-    SHOW DATABASES;
-
-Pour choisir une BDD (example avec une BDD nommée `foo`) :
-
-    USE foo;
-
-Pour lister les tables (vous devez être dans une BDD) :
-
-    SHOW TABLES;
-
-Et enfin pour listes les colonnes d'une table (example avec une table nommée `bar`, et vous devez aussi être dans une BDD) :
-
-    SHOW COLUMNS FROM bar;
 
 ### CRUD
 
@@ -235,6 +274,31 @@ Chaque opération correspond à un type de requête SQL.
 | Read ou Search   | SELECT      |
 | Update           | UPDATE      |
 | Delete           | DELETE      |
+
+## Les requêtes SQL
+
+Les requêtes SQL permettent de manipuler les données.
+
+### Quelques requêtes utiles
+
+Ces requêtes sont un peu l'équivalent de `ls` et `cd` dans un terminal.
+Elles permettent de voir la structure d'une BDD.
+
+Pour lister les BDD visibles :
+
+    SHOW DATABASES;
+
+Pour choisir une BDD (example avec une BDD nommée `foo`) :
+
+    USE foo;
+
+Pour lister les tables (vous devez être dans une BDD) :
+
+    SHOW TABLES;
+
+Et enfin pour listes les colonnes d'une table (example avec une table nommée `bar`, et vous devez aussi être dans une BDD) :
+
+    SHOW COLUMNS FROM bar;
 
 ### Lecture de données
 
@@ -345,65 +409,6 @@ Quelques exemples :
     DELETE FROM `user`;
 
 Attention : quand on supprime en SQL, il n'est pas possible de récupérer les données. Toutes perte est définitive !
-
-## Relations cardinales entre objets
-
-Il existe quatre types de relations cardinales entre objets :
-
-- `one to one`
-- `many to one`
-- `one to many`
-- `many to many`
-
-Pour déterminer le type de relation cardinale entre deux types d'objets (des `foo` et `bar` par exemple), vous devez vous poser la question suivante pour chaque objet :
-
-> Chaque `foo` peut avoir combien de `bar` ?
-
-> Chaque `bar` peut avoir combien de `foo` ?
-
-Dans les descriptions ci-dessous, je vais prendre l'exemple de voitures pour illustrer le propos.
-
-**Rappelez-vous que la relation cardinale dépend du point vue et essayez de ne pas vous emmêler les pinceaux.**
-
-### Relation `one to one`
-
-![Relation one to one](img/relation-one-to-one.png)
-
-Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
-Et chaque objet `bar` ne peut être rattaché qu'à un seul objet `foo`.
-
-Exemple : chaque conducteur ne peut avoir qu'un seul permis de conduire.
-Et chaque permis de condiure ne peut être rattaché qu'à un seul condicteur.
-
-### Relation `many to one`
-
-![Relation many to one](img/relation-many-to-one.png)
-
-
-Chaque objet `foo` ne peut être rattaché qu'à un seul objet `bar`.
-Mais chaque objet `bar` peut être rattaché à plusieurs objets `foo`.
-
-Exemple : chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
-Mais chaque entreprise peut avoir plusieurs voitures de fonction.
-
-### Relation `one to many`
-
-![Relation one to many](img/relation-one-to-many.png)
-
-C'est la même relation que `many to one` mais du point de vue de l'autre objet.
-
-Exemple : chaque entreprise peut avoir plusieurs voitures de fonction.
-Mais chaque voiture de fonction ne peut être rattaché qu'à une seule entreprise.
-
-### Relation `many to many`
-
-![Relation many to many](img/relation-many-to-many.png)
-
-Chaque objet `foo` peut être rattaché à plusieurs objets `baz`.
-Et chaque objet `baz` peut être rattaché à plusieurs objets `foo`.
-
-Exemple : chaque voiture de location peut être réservée (successivement) par plusieurs clients.
-Et chaque client peut réserver (successivement) plusieurs voitures de location.
 
 ## Des requêtes SQL avec jointure
 
