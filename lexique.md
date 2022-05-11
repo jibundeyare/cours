@@ -35,7 +35,8 @@
 - Daemon : démon ; c'est un programme qui tourne en tâche de fond, en attendant de traiter des requêtes (exemple : serveur web, serveur de mail, serveur ssh, etc)
 - Database : BDD
 - DAW : Digital Audio Workstation (Station de travail Audio Numérique)
-- DB : Database
+- DB : Database (base de données)
+- DBMS : Database Management System ; voir aussi SGBDR
 - Design Pattern : motif de conception ; c'est la façon de structurer du code ; on peut parler d'architecture logicielle
 - DOM : Document Object Model ; représentation en mémoire d'un document HTML ; c'est le code HTML tel que interprêté par le navigateur web
 - DRY : Don't Repeat Yourself (ne te répète pas) ; principe qui consiste à éviter de répéter du code ou des tâches en améliorant la qualité de son code ou en automatisant les procédures
@@ -106,6 +107,7 @@
 - SDK : Software Development Kit (kit de développement logiciel) ; c'est un ensemble de fichiers (compilateur, linkeur, librairies, etc) qui permettent de développer des logiciels ; par exemple : SDK Windows, SDK iOS, SDK Android, JDK ; voir JDK
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée ; voir aussi Getter
+- SGBDR : Système de Gestion de Base de Données Relationnelle ; voir aussi DBMS
 - Signed : valeur numérique avec signe, c-à-d positive ou négative  
   Dans un contexte de cryptographie, désigne un document numériquement signé
 - SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
