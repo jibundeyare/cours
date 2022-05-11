@@ -162,6 +162,20 @@ Voici quelques outils gratuits :
 
 Personnellement, je vous recommande le papier et le crayon.
 
+### Merise
+
+Voici les documents que vous devez produire pour faire une analyse avec la méthode Merise :
+
+1. un dictionnaire des données : une liste complète des données avec le nom des colonnes, le type et la taille des données
+2. un modèle conceptuel des données (MCD) : un schéma indiquant le nom des entités, leurs attributs et les relations avec les cardinalités
+3. un modèle physique des données (MPD) : un schéma qui reprend le MCD mais qui indique les relations avec des clés étrangères et des tables de jointures
+4. un modèle logique des données (MLD) : une liste des tables et de leurs colonnes ; cette liste est prête à être transformée en code SQL
+
+Pour un cours complet, voir :
+
+- [bases de données relationnelles avec MERISE](https://ineumann.developpez.com/tutoriels/merise/initiation-merise/)
+- [Analyse des données - Méthode MERISE](https://sqlpro.developpez.com/cours/modelisation/merise/)
+
 ### Exemple d'analyse
 
 Analyse de la BDD Student [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb) :
