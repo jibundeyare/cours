@@ -178,9 +178,21 @@ Pour un cours complet, voir :
 
 ### Exemple d'analyse
 
-Analyse de la BDD Student [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb) :
+#### Analyse UML (brouillon) de la BDD Student [https://github.com/jibundeyare/src-mariadb](https://github.com/jibundeyare/src-mariadb) :
 
 ![Analyse de la BDD Student](img/mariadb-analyse.excalidraw.png)
+
+#### Analyse Merise
+
+Le dictionnaire de données : [mariadb-merise-dictionnaire-donnees.ods](files/mariadb-merise-dictionnaire-donnees.ods).
+
+Le MCD :
+
+![MCD](img/mariadb-merise-mcd.excalidraw.png)
+
+Le MPD :
+
+![MPD](img/mariadb-merise-mpd.excalidraw.png)
 
 ## Relations cardinales entre objets
 
@@ -430,6 +442,12 @@ Pour comprendre les requêtes avec jointure, un support visuel peut aider :
 
 - [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 - [sql rejoint le diagramme de venn](https://webdevdesigner.com/q/sql-joins-as-venn-diagram-94788/)
+
+Vous pouvez aussi voir comment les données sont agglomérées en examinant le fichier excel suivant : [mariadb-jointures.ods](files/mariadb-jointures.ods)
+
+Le diagramme de Venn suivant montre les différentes partie de la jointure :
+
+![Diagramme de Venn](img/mariadb-diagramme-venn.excalidraw.png)
 
 ### Sélection de données avec jointure
 
