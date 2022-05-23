@@ -16,7 +16,9 @@ Et rappelez-vous que PHP 5.6 est officiellement obsolète depuis le 01/01/2019.
 Composer vous permet d'installer des outils exécutables en ligne de commande (comme `phpcs` ou `phpunit` par exemple).
 Mais pour pouvoir les exécuter, vous devez ajouter la ligne suivante dans votre variable d'environnement :
 
-    %USERPROFILE%\AppData\Roaming\Composer\vendor\bin
+```
+%USERPROFILE%\AppData\Roaming\Composer\vendor\bin
+```
 
 Pour en savoir un peu plus sur les variables d'environnement, voir [variables-environnement.md](variables-environnement.md).
 
@@ -26,13 +28,17 @@ Au prochain démarrage de votre terminal, les outils du dossier `~/.composer/ven
 
 Ouvrir un terminal, exécuter les commandes de la page [Composer](https://getcomposer.org/download/) puis :
 
-    sudo mkdir -p /usr/local/bin
-    sudo mv composer.phar /usr/local/bin/composer
+```bash
+$ sudo mkdir -p /usr/local/bin
+$ sudo mv composer.phar /usr/local/bin/composer
+```
 
 Composer vous permet d'installer des outils exécutables en ligne de commande (comme `phpcs` ou `phpunit` par exemple).
 Mais pour pouvoir les exécuter, vous devez ajouter la ligne suivante dans votre fichier `~/.profile` :
 
-    PATH="$PATH:$HOME/.composer/vendor/bin"
+```bash
+PATH="$PATH:$HOME/.composer/vendor/bin"
+```
 
 Au prochain démarrage de votre terminal, les outils du dossier `~/.composer/vendor/bin` seront disponibles.
 
@@ -52,89 +58,181 @@ L'autoloading est un système qui permet de charger automatiquement un fichier P
 
 Si on veut que notre application puisse charger automatiquement les fichiers PHP du dossier `src/`, il faut ajouter une clé `autoload` dans le fichier `composer.json` :
 
-    "autoload": {
-        "psr-4": {"": "src/"}
+```json
+"autoload": {
+    "psr-4": {
+        "": "src/"
     }
+}
+```
 
 puis demander à Composer de générer un nouveau fichier d'autoloading :
 
-    composer dump-autoload
+```bash
+composer dump-autoload
+```
 
 et enfin inclure le code d'autoloading dans notre application en y ajoutant la ligne suivante :
 
-    require_once __DIR__.'../vendor/autoload.php';
+```bash
+require_once __DIR__.'../vendor/autoload.php';
+```
 
 Si les fichiers PHP du dossier `src/` sont dans le namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
 
-    "autoload": {
-        "psr-4": {"Foo\\": "src/"}
+```json
+"autoload": {
+    "psr-4": {
+        "Foo\\": "src/"
     }
+}
+```
+
+NB Ajoutez bien une virgule `,` après la dernière accolade fermante `}` si le bloc `autoload` n'est pas le dernier.
+
+## Forcer la version de PHP
+
+Si la version de PHP sur votre poste de dev et sur la prod sont différentes, vous pouvez :
+
+1. faire un peu d'admin sys et installer les deux versions sur votre poste de dev
+2. ou faire croire à Composer que vous utilisez une version spécifique de PHP.
+
+Nous allons voir comment réaliser la deuxième solution.
+
+Dans le fichier `composer.json`, rajoutez le bloc ci-dessous :
+
+```json
+"config": {
+    "platform": {
+        "php": "X.Y.Z"
+    }
+}
+```
+
+Et spécifiez la version de PHP que vous voulez à la place de `X.Y.Z`.
+
+Exemple :
+
+```json
+"config": {
+    "platform": {
+        "php": "7.4.20"
+    }
+}
+```
+
+NB Ajoutez bien une virgule `,` après la dernière accolade fermante `}` si le bloc `config` n'est pas le dernier.
+
+Après ça lancez la commande `composer update` pour mettre à jour vos packages par rapport à la contrainte de version de PHP.
+Si Composer vous dit qu'aucun package répondant aux contraintes n'est installable, dans le fichirer `composer.json` downgradez le numéro de version majeur du package qui pose problème et relancez `composer update`.
+Downgradez jusqu'à ce que ça passe.
+
+```diff-json
+  "require": {
+-     "symfony/var-dumper": "^6.0",
++     "symfony/var-dumper": "^5.0",
+-     "symfony/yaml": "^6.0"
++     "symfony/yaml": "^5.0"
+  }
+```
 
 ## Commandes
 
 Tester l'installation :
 
-    composer -v
+```bash
+$ composer -v
+```
 
 Chercher un paquet :
 
-    composer search  [mot-clé]
+```bash
+$ composer search  [mot-clé]
+```
 
 Obtenir des infos sur un paquet non installé :
 
-    composer info -a [nom du paquet]
+```bash
+$ composer info -a [nom du paquet]
+```
 
 Installer un paquet :
 
-    composer require [nom du paquet]
+```bash
+$ composer require [nom du paquet]
+```
 
 Par exemple, installer symfony/var-dumper :
 
-    composer require symfoy/var-dumper
+```bash
+$ composer require symfoy/var-dumper
+```
 
 Installer un paquet pour l'environnement de développement :
 
-    composer require --dev [nom du paquet]
+```bash
+$ composer require --dev [nom du paquet]
+```
 
 Installer une version précise d'un paquet :
 
-    composer require [nom du paquet] [numéro de version]
+```bash
+$ composer require [nom du paquet] [numéro de version]
+```
 
 Par exemple, installer précisément la version `1.3.0` de twig :
 
-    composer require twig/twig 1.30
+```bash
+$ composer require twig/twig 1.30
+```
 
 Installer une version minimum d'un paquet :
 
-    composer require [nom du paquet] ~[numéro de version]
+```bash
+$ composer require [nom du paquet] ~[numéro de version]
+```
 
 Par exemple, installer la version `1.35` minimum (mais pas la version `2.x`) de twig :
 
-    composer require twig/twig ~1.35
+```bash
+$ composer require twig/twig ~1.35
+```
 
 Supprimer un paquet installé :
 
-    composer remove [nom du paquet]
+```bash
+$ composer remove [nom du paquet]
+```
 
 Installer les paquets requis (« required ») dans le fichier `composer.json` ou  le fichier `composer.lock` :
 
-    composer install
+```bash
+$ composer install
+```
 
 Mettre à jour tous les paquets installés :
 
-    composer update
+```bash
+$ composer update
+```
 
 Mettre à jour un paquet installé :
 
-    composer update [nom du paquet]
+```bash
+$ composer update [nom du paquet]
+```
 
 Générer un nouveau fichier d'autoloading :
 
-    composer dump-autoload
+```bash
+$ composer dump-autoload
+```
 
 Mettre à jour composer :
 
-    composer self-update
+```bash
+$ composer self-update
+```
 
 ## Symfony Flex
 
@@ -149,6 +247,34 @@ Le site [packagist.org](https://packagist.org/) est un annuaire communautaire de
 C'est donc aussi un moteur de recherche de packages PHP qui peut remplacer la commande `composer search [mot-clé]`.
 
 Si vous créer un package et souhaitez le diffuser, il faudra déclarer son existence sur ce site pour que la communauté PHP puisse le trouver et l'installer avec Composer.
+
+## Trouble shooting
+
+### `composer install` refuse d'installer les composants
+
+Vous venez de cloner un repository git et vous lancez la commande `composer install`.
+Mais au lieu d'installer les packages, composer se plaint de ne rien pouvoir faire car les packages ne sont pas compatibles : `Your lock file does not contain a compatible set of packages.`.
+
+Exemple de message d'erreur :
+
+```bash
+$ composer install
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Your lock file does not contain a compatible set of packages. Please run composer update.
+
+  Problem 1
+    - laminas/laminas-code is locked to version 3.4.1 and an update of this package was not requested.
+    - laminas/laminas-code 3.4.1 requires php ^7.1 -> your php version (8.0.6) does not satisfy that requirement.
+  Problem 2
+    - laminas/laminas-code 3.4.1 requires php ^7.1 -> your php version (8.0.6) does not satisfy that requirement.
+    - friendsofphp/proxy-manager-lts v1.0.5 requires laminas/laminas-code ~3.4.1|^4.0 -> satisfiable by laminas/laminas-code[3.4.1].
+    - friendsofphp/proxy-manager-lts is locked to version v1.0.5 and an update of this package was not requested.
+```
+
+Ne paniquez pas, les indications sont dans le message d'erreur : `Please run composer update.`.
+
+Faites donc un petit `composer update`, ça devrait régler l'affaire.
 
 ## Doc
 
