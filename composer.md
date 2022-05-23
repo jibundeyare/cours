@@ -74,7 +74,7 @@ composer dump-autoload
 
 et enfin inclure le code d'autoloading dans notre application en y ajoutant la ligne suivante :
 
-```bash
+```php
 require_once __DIR__.'../vendor/autoload.php';
 ```
 
