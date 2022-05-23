@@ -69,7 +69,7 @@ Si on veut que notre application puisse charger automatiquement les fichiers PHP
 puis demander à Composer de générer un nouveau fichier d'autoloading :
 
 ```bash
-composer dump-autoload
+$ composer dump-autoload
 ```
 
 et enfin inclure le code d'autoloading dans notre application en y ajoutant la ligne suivante :
