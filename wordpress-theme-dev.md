@@ -545,6 +545,8 @@ Quand vous avez fait ça, il y a un dernière chose à faire en complément : ad
 On va pouvoir afficher un titre généré par Wordpress en fonction du contexte de la requête et corriger la balise `h1` qui n'était pas adaptée dans la liste des articles :
 
 ```php
+  <?php
+
   get_header();
   
 + the_archive_title( '<h1>', '</h1>' );
