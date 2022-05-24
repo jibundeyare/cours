@@ -78,7 +78,7 @@ et enfin inclure le code d'autoloading dans notre application en y ajoutant la l
 require_once __DIR__.'../vendor/autoload.php';
 ```
 
-Si les fichiers PHP du dossier `src/` sont dans le namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
+Si les fichiers PHP du dossier `src/` sont dans un namespace particulier (`Foo` par exemple), l'autoloading doit être adapté :
 
 ```json
 "autoload": {
