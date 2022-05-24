@@ -137,6 +137,10 @@ En ajoutant la ligne suivante au début de vos fichiers, vous signalez à PHP qu
 Exemple : une fonction qui accepte un paramètre de type `int` n'acceptera pas qu'on lui passe un `float` (mais le contraire sera vrai).
 Il faudra explicitement convertir le `float` en `int` avant de transmettre la valeur à la fonction.
 
+## Type hinting
+
+Pour en savoir plus, voir la documentation (mais elle est vraiment pas terrible) : [PHP: Type declarations - Manual](https://www.php.net/manual/en/language.types.declarations.php).
+
 ## Fonctions
 
 Une fonction doit d'abord être définie.
