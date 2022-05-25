@@ -2,6 +2,8 @@
 
 WP CLI est un outil qui permet de manipuler un site Wordpress depuis le terminal.
 
+[WP-CLI | WP-CLI](https://wp-cli.org/)
+
 ## Installation
 
 On télécharge le binaire et on l'installe :
