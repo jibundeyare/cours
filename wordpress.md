@@ -152,17 +152,9 @@ Exemple avec twentyseventeen :
 
 Voir le repo [https://github.com/jibundeyare/src-wordpress-child-theme](https://github.com/jibundeyare/src-wordpress-child-theme) pour plus de détails.
 
-## Ressources iconographiques
+## Graphisme
 
-- [Unsplash | Free High-Resolution Photos](https://unsplash.com/)
-- [Trouvez l’inspiration. | Flickr](https://www.flickr.com/)
-- [Recherche d'images avancée Google](https://www.google.fr/advanced_image_search)
-  Changer le filtre `droits d'usage` :
-  - non filtré par licence
-  - libre de droits d'usage ou de distribution
-  - libre de droits d'usage ou de distribution, y compris à des fins commerciales
-  - libre de droits d'usage, de distribution ou de modification
-  - libre de droits d'usage, de distribution ou de modification, y compris à des fins commerciales
+Voir [grahpisme.md](graphisme.md).
 
 ## Lorem ipsum
 
