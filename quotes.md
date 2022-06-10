@@ -8,6 +8,14 @@ Comment dessiner un hibou
 
 Source : [How To Draw An Owl | Better world by better software](https://glebbahmutov.com/blog/how-to-draw-an-owl/)
 
+## Gestion de projet
+
+Comment gérer un projet informatique
+
+![Comment ...](img/gestion-projet.jpg)
+
+Source : @todo
+
 ## JavaScript
 
 > "Atwood's Law: any application that can be written in JavaScript, will eventually be written in JavaScript." - Jeff Atwood
