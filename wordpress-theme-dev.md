@@ -44,10 +44,11 @@ Activez le mode déboggage en place le code suivant dans le fichier `wp-config.p
   <?php
   /**
    * The base configuration for WordPress
-   * ...
-   * @package WordPress
+  ...
+   * @link https://wordpress.org/support/article/debugging-in-wordpress/
    */
-
+- define( 'WP_DEBUG', false );
++ // define( 'WP_DEBUG', false );
 + // Force l'affichage des erreurs PHP.
 + @ini_set( 'display_errors', 'On' );
 + // Désactive l'interception des erreurs fatales
@@ -57,7 +58,7 @@ Activez le mode déboggage en place le code suivant dans le fichier `wp-config.p
 + // Affiche les erreurs de Wordpress
 + define( 'WP_DEBUG_DISPLAY', true );
 + 
-  // ** MySQL settings - You can get this info from your web host ** //
+  /* Add any custom values between this line and the "stop editing" line. */
 ```
 
 ## Le fichier `style.css`
@@ -138,7 +139,7 @@ if ( have_posts() ):
         the_post();
         ?>
         <article>
-            <h1><?php the_title(); ?></h1>
+            <h2><?php the_title(); ?></h2>
             <div><?php the_content(); ?></div>
         </article>
         <?php
