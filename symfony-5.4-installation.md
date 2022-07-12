@@ -5,8 +5,8 @@
 Création d'une BDD nommée `src_symfony_5_4` avec les install scripts :
 
 ```bash
-cd ~/install-scripts
-./mkdb.sh src_symfony_5_4
+$ cd ~/install-scripts
+$ ./mkdb.sh src_symfony_5_4
 ```
 
 Si vous ne voulez pas utilisez les install scripts, vous pouvez créer la BDD avec PhpMyAdmin ou même avec mariadb directement dans le terminal.
@@ -107,7 +107,7 @@ Configuration de la langue dans le fichier `config/packages/translation.yaml` :
 Installation de `doctrine/fixtures-bundle` :
 
 ```bash
-composer require orm-fixtures --dev
+$ composer require orm-fixtures --dev
 ```
 
 Installation de `fakerphp/faker` :
@@ -165,19 +165,19 @@ $ chmod +x bin/dofilo.sh
 Installation du package `libnss3-tools` (seulement avec Debian ou Ubuntu) :
 
 ```bash
-sudo apt install libnss3-tools
+$ sudo apt install libnss3-tools
 ```
 
 Installation de certificats auto-signés :
 
 ```bash
-symfony server:ca:install
+$ symfony server:ca:install
 ```
 
 Lancement du serveur web de développement :
 
 ```bash
-symfony serve
+$ symfony serve
 ```
 
 Ouvrez le lien suivant avec votre navigateur : [https://127.0.0.1:8000](https://127.0.0.1:8000)
