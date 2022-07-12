@@ -9,6 +9,10 @@ cd ~/install-scripts
 ./mkdb.sh src_symfony_5_4
 ```
 
+Si vous ne voulez pas utilisez les install scripts, vous pouvez créer la BDD avec PhpMyAdmin ou même avec mariadb directement dans le terminal.
+
+Dernière possibilité, si votre compte maraidb du projet a suffisamment de privilèges, vous pourrez créer la BDD plus tard avec la commande `php bin/console do:da:cr` (voir plus bas).
+
 ## Création du dossier du projet
 
 Création du projet :
