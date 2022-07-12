@@ -156,3 +156,27 @@ Rendre exécutable
 $ chmod +x bin/dofilo.sh
 ```
 
+## Démarrage du serveur web
+
+Installation du package `libnss3-tools` (seulement avec Debian ou Ubuntu) :
+
+```bash
+sudo apt install libnss3-tools
+```
+
+Installation de certificats auto-signés :
+
+```bash
+symfony server:ca:install
+```
+
+Lancement du serveur web de développement :
+
+```bash
+symfony serve
+```
+
+Ouvrez le lien suivant avec votre navigateur : [https://127.0.0.1:8000](https://127.0.0.1:8000)
+
+Si vous voyez une page avec le texte « Welcome to Symfony 5.4.10 » (ou une version plus récente), c'est que ça fonctionne, bravo !
+
