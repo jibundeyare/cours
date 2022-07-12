@@ -17,9 +17,9 @@ composer recipes
 # Si des recipes sont marqués avec un "update available" on peut lancer
 # l'exécution des recipes.
 # Example d'exécution du recipe du package foo/bar.
- composer recipes:install foo/bar --force -v
+composer recipes:install foo/bar --force -v
 
-# Pour visualiser les actions qui ont été réalisé, on peut se servirde git.
+# Pour visualiser les actions qui ont été réalisé, on peut se servir de git.
 git diff
 
 # Si tout est en ordre, on peut commiter.
