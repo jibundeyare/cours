@@ -21,13 +21,13 @@ Voici une liste des fonctionnalités souhaitées :
 
 ![Schéma en UML de la BDD du projet blog](img/projet-blog-uml.excalidraw.png)
 
-L'image a été conçue avec l'outil [Excalidraw](https://excalidraw.com/).
-Voici le fichier source : [projet-blog-uml.excalidraw](img/projet-blog-uml.excalidraw).
+Source : [projet-blog-uml.excalidraw](img/projet-blog-uml.excalidraw).
+L'image conçue avec [Excalidraw](https://excalidraw.com/).
 
 ## Schéma MLD en MERISE
 
 ![Schéma MLD en MERISE de la BDD du projet blog](img/projet-blog-merise-mld.excalidraw.png)
 
-L'image a été conçue avec l'outil [Excalidraw](https://excalidraw.com/).
-Voici le fichier source : [projet-blog-merise-mld.excalidraw](img/projet-blog-merise-mld.excalidraw).
+Source : [projet-blog-merise-mld.excalidraw](img/projet-blog-merise-mld.excalidraw).
+L'image conçue avec [Excalidraw](https://excalidraw.com/).
 
