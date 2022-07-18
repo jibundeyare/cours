@@ -24,7 +24,7 @@ Voici une liste des fonctionnalités souhaitées :
 Source : [projet-student-uml.excalidraw](img/projet-student-uml.excalidraw).
 L'image conçue avec [Excalidraw](https://excalidraw.com/).
 
-## Schéma MLD en MERISE
+## Schéma MCD en MERISE
 
 ![Schéma MLD en MERISE de la BDD du projet student](img/projet-student-merise-mld.excalidraw.png)
 

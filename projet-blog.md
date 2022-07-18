@@ -24,7 +24,7 @@ Voici une liste des fonctionnalités souhaitées :
 Source : [projet-blog-uml.excalidraw](img/projet-blog-uml.excalidraw).
 L'image conçue avec [Excalidraw](https://excalidraw.com/).
 
-## Schéma MLD en MERISE
+## Schéma MCD en MERISE
 
 ![Schéma MLD en MERISE de la BDD du projet blog](img/projet-blog-merise-mld.excalidraw.png)
 
