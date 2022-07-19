@@ -43,14 +43,14 @@ Les entités permettent de définir quels sont les propriétés et les méthodes
 
 ## Utiliser l'entity manager
 
-Voici comment récupérer une instance de l'entity manager ou du repository de l'entité Foo :
+### Récupération des instances via la méthode 1
+
+Voici une première méthode pour récupérer une instance de l'entity manager ou du repository de l'entité Foo via une instance de doctrine :
 
 ```php
   namespace App\Controller;
 
-+ // import de l'entité Foo
 + use App\Entity\Foo;
-+ // import de doctrine
 + use Doctrine\Persistence\ManagerRegistry;
   use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
   use Symfony\Component\HttpFoundation\Response;
@@ -62,11 +62,13 @@ Voici comment récupérer une instance de l'entity manager ou du repository de l
 -     public function index(): Response
 +     public function index(ManagerRegistry $doctrine): Response
       {
-+         // Récupération de l'entity manager via doctrine
++         // Récupération de l'entity manager via une instance de doctrine
 +         $manager = $doctrine->getManager();
 +
-+         // Récupération du repository de l'entité Foo via doctrine
++         // Récupération du repository de l'entité Foo via une instance de doctrine
 +         $repository = $doctrine->getRepository(Foo::class);
++
++         // les variables $manager et $repository contiennent l'instance de l'entity manager et du repository de l'entité Foo
 +
           return $this->render('foo/index.html.twig', [
               'controller_name' => 'FooController',
@@ -74,6 +76,36 @@ Voici comment récupérer une instance de l'entity manager ou du repository de l
       }
   }
 ```
+
+### Récupération des instances via la méthode 2
+
+Au lieu de récupérer l'instance de l'entity manager et du repository de l'entité Foo via une instance de doctrine, voici une deuxième méthode qui les récupère via le système de « auto-wiring » de Symfony :
+
+```php
+  namespace App\Controller;
+
++ use App\Repository\FooRepository;
++ use Doctrine\ORM\EntityManagerInterface;
+  use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+  use Symfony\Component\HttpFoundation\Response;
+  use Symfony\Component\Routing\Annotation\Route;
+
+  class FooController extends AbstractController
+  {
+      #[Route('/foo', name: 'app_foo')]
+-     public function index(): Response
++     public function foo(EntityManagerInterface $manager, FooRepository $repository): Response
+      {
++         // les variables $manager et $repository contiennent l'instance de l'entity manager et du repository de l'entité Foo
++
+          return $this->render('foo/index.html.twig', [
+              'controller_name' => 'FooController',
+          ]);
+      }
+  }
+```
+
+### Utilisation des instances
 
 Création et enregistrement d'un nouvel objet :
 
@@ -142,7 +174,7 @@ Voici comment récupérer une instance du repository de l'entité Foo :
 -     public function index(): Response
 +     public function index(ManagerRegistry $doctrine): Response
       {
-+         // Récupération du repository de l'entité Foo via doctrine
++         // Récupération du repository de l'entité Foo via une instance de doctrine
 +         $repository = $doctrine->getRepository(Foo::class);
 +
           return $this->render('foo/index.html.twig', [
