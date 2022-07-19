@@ -41,3 +41,150 @@ Dans Symfony il s'agit ni plus moins que de classes PHP aggrémentées d'annoati
 Quand nous récupérons des données de la BDD, ces données sont fournies sous forme d'objets (au sens de la POO).
 Les entités permettent de définir quels sont les propriétés et les méthodes ces objets.
 
+## L'entity manager
+
+Voici comment récupérer une instance de l'entity manager ou du repository de l'entité Foo :
+
+```php
+  namespace App\Controller;
+
++ // import de l'entité Foo
++ use App\Entity\Foo;
++ // import de doctrine
++ use Doctrine\Persistence\ManagerRegistry;
+  use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+  use Symfony\Component\HttpFoundation\Response;
+  use Symfony\Component\Routing\Annotation\Route;
+
+  class FooController extends AbstractController
+  {
+      #[Route('/foo', name: 'app_foo')]
+-     public function index(): Response
++     public function index(ManagerRegistry $doctrine): Response
+      {
++         // Récupération de l'entity manager via doctrine
++         $manager = $doctrine->getManager();
++
++         // Récupération du repository de l'entité Foo via doctrine
++         $repository = $doctrine->getRepository(Foo::class);
++
+          return $this->render('foo/index.html.twig', [
+              'controller_name' => 'FooController',
+          ]);
+      }
+  }
+```
+
+Création et enregistrement d'un nouvel objet :
+
+```php
+// Création d'un nouvel objet
+$foo = new Foo();
+// Affectation des valeurs du nouvel objet
+$foo->setName('foo bar baz');
+$foo->setSize(42);
+
+// Ordre d'enregistrement de l'objet
+$manager->persist($foo);
+
+// Exécution de l'ordre d'enregistrement
+$manager->flush();
+```
+
+Modification et enregistrement d'un objet existant :
+
+```php
+// Récupération d'un objet à partir de son id
+$foo = $repository->find(123);
+
+// Affectation des valeurs de l'objet
+$foo->setName('foo bar baz');
+$foo->setSize(42);
+
+// L'appel de la fonction $manager->persist() n'est pas nécessaire car doctrine sait déjà que l'objet doit être enregistré en BDD
+
+// Enregistrement de la mise à jour de l'objet
+$manager->flush();
+```
+
+Suppression d'un objet existant :
+
+
+```php
+// Récupération d'un objet à partir de son id
+$foo = $repository->find(123);
+
+// Ordre de suppression de l'objet
+$manager->remove($foo);
+
+// Exécution de l'ordre de suppression
+$manager->flush();
+```
+
+## Les repository
+
+Voici comment récupérer une instance du repository de l'entité Foo :
+
+```php
+  namespace App\Controller;
+
++ // import de l'entité Foo
++ use App\Entity\Foo;
++ // import de doctrine
++ use Doctrine\Persistence\ManagerRegistry;
+  use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+  use Symfony\Component\HttpFoundation\Response;
+  use Symfony\Component\Routing\Annotation\Route;
+
+  class FooController extends AbstractController
+  {
+      #[Route('/foo', name: 'app_foo')]
+-     public function index(): Response
++     public function index(ManagerRegistry $doctrine): Response
+      {
++         // Récupération du repository de l'entité Foo via doctrine
++         $repository = $doctrine->getRepository(Foo::class);
++
+          return $this->render('foo/index.html.twig', [
+              'controller_name' => 'FooController',
+          ]);
+      }
+  }
+```
+
+Récupération de tous les objets :
+
+```php
+$foos = $repository->findAll();
+```
+
+Récupération d'un objet à partir de son id :
+
+```php
+$foo = $repository->find(123);
+```
+
+Récupération d'un objet à partir de la valeur d'une propriété :
+
+```php
+$foo = $repository->findOneBy(['name' => 'foo bar baz']);
+```
+
+Récupération d'un objet à partir de la valeur de plusieurs propriétés :
+
+```php
+$foo = $repository->findOneBy([
+    'name' => 'foo bar baz',
+    'size' => 42,
+]);
+```
+
+Récupération de plusieurs objets à partir de la valeur d'une propriété, avec tri ascendant par valeur d'une propriété :
+
+```php
+$foos = $repository->findBy(
+    ['name' => 'foo bar baz'],
+    ['size => 'ASC']
+);
+```
+
