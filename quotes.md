@@ -2,11 +2,17 @@
 
 ## Apprendre
 
-Comment dessiner un hibou
+### Comment dessiner un hibou
 
 ![How to draw an owl](img/how-to-draw-an-owl.jpg)
 
 Source : [How To Draw An Owl | Better world by better software](https://glebbahmutov.com/blog/how-to-draw-an-owl/)
+
+### Comment dessiner un cheval
+
+![How to draw a horse](img/tumblr_lxc8ghQU2T1qincqxo1_1280.jpg)
+
+Source : [Van Oktop](https://oktop.tumblr.com/post/15352780846)
 
 ## Gestion de projet
 
