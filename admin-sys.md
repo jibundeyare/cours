@@ -65,6 +65,10 @@ Exemple pour créer un utilisateur nommé `foo` qui pourra utiliser `sudo` et do
 **Attention** : il est fortement recommandé de n'utiliser que des lettres minuscules et des chiffres arabes.
 Évitez absolument d'utiliser des accents ou des caractères spéciaux (point d'exclamation, dièse, etc).
 
+**Attention** : dans certains cas les permissions du dossier créé peuvent poser problème. Voici des droits par défauts qui souvent utilisés :
+
+    sudo chmod 755 /home/foo
+
 ## Attribuer ou changer le mot de passe d'un utilisateur
 
 Changez `user` par le nom de l'utilisateur dont vous voulez changer le mot de passe :
