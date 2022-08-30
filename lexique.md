@@ -112,6 +112,7 @@
   Dans un contexte de cryptographie, désigne un document numériquement signé
 - SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
 - Snippet : voir Code snippet
+- SPA : Single Page Application (application en une seule page) ; dans ce type d'application, les liens ne pointent pas vers de nouvelles pages, ils rechargent une partie de la page courante
 - SQL : Structured Query Language (langage de requête structurée) ; c'est le langage qui permet de manipuler les données contenues dans une BDD ; voir aussi BDD et CRUD
 - SS2I : Voir SSII
 - SSII : Société de Services en Ingénierie Informatique ; voir aussi ICT et ESN
