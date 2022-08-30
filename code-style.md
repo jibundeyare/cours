@@ -40,7 +40,7 @@ La casse désigne la taille d'un caractère :
 | Code      | Casse                 | Usage                                             |
 | ----------| --------------------- | ------------------------------------------------- |
 | `myVar`   | camel case            | pour les noms de variables et de fonctions        |
-| `MyVar`   | camel case            | pour les noms de classes, interfaces et mixins    |
+| `MyVar`   | pascal case           | pour les noms de classes, interfaces et mixins    |
 | `MY_VAR`  | screaming snake case  | pour les constantes                               |
 | `my_var`  | snake case            | surtout utilisé en Ruby ou Python                 |
 | `my-var`  | kebab case            | utilisé en HTML et CSS                            |
