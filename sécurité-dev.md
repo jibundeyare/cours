@@ -101,6 +101,10 @@ La base de données de vulnérabilité de Snyke recense des failles pour les lan
 - [ninsuo/slides: Let's make web security subjects simple and enjoyable.](https://github.com/ninsuo/slides)
 - [Symfony Paris 2017: Les retours de l'équipe Novaway](https://www.novaway.fr/blog/tech/symfony-live-paris-2017-retours#twitter-widget-11)
 
+### JS
+
+- [5 ways to prevent code injection in JavaScript and Node.js](https://snyk.io/blog/5-ways-to-prevent-code-injection-in-javascript-and-node-js/)
+
 ### Attaque XSS et solutions
 
 - [Cross-site Scripting (XSS) - OWASP](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
