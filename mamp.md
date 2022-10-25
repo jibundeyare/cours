@@ -68,3 +68,11 @@ Les logs d'erreurs PHP sont stockés dans :
 
     /Applications/MAMP/logs/php_error.log
 
+## Trouble shooting
+
+### L'erreur `SQLSTATE[HY000] [1045] Access denied for user 'foo'@'localhost' (using password: YES)`
+
+Vérifiez le numéro de port dans votre code d'accès.
+
+MAMP n'utilise pas le numéro de port standard `3306`, il utilise `8889`, sinon c'est trop facile.
+
