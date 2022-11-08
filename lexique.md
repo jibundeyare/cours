@@ -90,6 +90,7 @@
 - OVH : leader en France des services d'hébergement et de calcul en ligne ; initiales de « Oles Van Herman » surnom d'étudiant d'Octave Klaba, le fondateur de la société
 - Package : un librairie ou un programme installable
 - Paquet : voir package
+- Pixel : désigne un point d'une image ou d'un écran ; provient de la contraction de « picture element » qui donne « pic el » puis « pixel »
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
 - POO : Programmation Orientée Objet
 - POP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence d'IMAP, les messages sont rappatriés du serveur vers le client puis supprimés du serveur ; voir aussi IMAP et SMTP
