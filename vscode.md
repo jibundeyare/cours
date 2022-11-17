@@ -372,3 +372,9 @@ Il ne se passe rien quand je click sur « partager » ou « rejoindre ».
 - [Live share not working · Issue #3297 · MicrosoftDocs/live-share](https://github.com/MicrosoftDocs/live-share/issues/3297)
 - [visual studio code - A fatal error was encountered. The library 'hostpolicy.dll' required to execute the application was not found - Stack Overflow](https://stackoverflow.com/questions/60888926/a-fatal-error-was-encountered-the-library-hostpolicy-dll-required-to-execute/67019601#67019601)
 
+#### Impossible de dézoomer
+
+1. Appuyer sur les touches « Ctrl + Shift + P »
+2. Tapez "reset zoom"
+3. Appuyer sur la touche « Entrer »
+
