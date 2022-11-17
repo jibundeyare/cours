@@ -73,6 +73,9 @@ Voici quelques plugins recommandés pour faire du développement web en JS, PHP 
 - Name: Twig  
   Id: whatwedo.twig  
   Publisher: whatwedo
+- Name: Laravel Blade Snippets
+- Id: onecentlin.laravel-blade
+  Publisher: onecentlin
 
 Vous pouvez copier-coller l'id du plugin dans le champ de recherche pour le trouver avec exactitude.
 
