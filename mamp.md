@@ -31,6 +31,20 @@ Le fichier `php.ini` utilisé est dans :
 
 Remplacez `X.Y.Z` par la version de PHP utilisée.
 
+## Rendre composer et php accessible dans le terminal
+
+Ajoutez la ligne suivante dans votre fichier `~/.profile` :
+
+```bash
+PATH="$PATH:/Applications/MAMP/bin/php:/Applications/MAMP/bin/php/phpX.Y.Z/bin"
+```
+
+Remplacez `X.Y.Z` par la version de PHP utilisée.
+
+## Rendre vscode accessible dans le terminal pour MacOS
+
+Voir [vscode.md](vscode.md)
+
 ## Port de MySQL
 
 Par défaut, le port est `8889` et non le port standard `3306`.

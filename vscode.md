@@ -232,6 +232,12 @@ Puis faire passer le niveau du paramètre :
 
 ![vscode phpcs warning severity](img/vscode-phpcs-warning-severity.png)
 
+## Rendre vscode accessible dans le terminal pour MacOS
+
+1. Ouvrir la palette de commande avec « Command + Shift + P » ou « F1 »
+2. Tapez `Shell` dans la palette de commande
+3. Sélectionnez `Shell Command: Install code in PATH` depuis la liste
+
 ## Quelques conseils de Microsoft
 
 - [JavaScript Programming with Visual Studio Code](https://code.visualstudio.com/Docs/languages/javascript)

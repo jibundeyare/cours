@@ -46,11 +46,11 @@ L'interface est un peu complexe au début mais on voit qu'il y a du gros potenti
 Même délire que codewars.
 Mais vous devrez faire un tout petit peu d'admin sys avant de pouvoir commencer à résoudre des énigmes.
 
-## Pour les maso qui aiment les math
+## Autres thèmes
 
 ### Project Euler
 
-[https://projecteuler.net/](https://projecteuler.net/)
+Pour les maso qui aiment les math : [https://projecteuler.net/](https://projecteuler.net/).
 
 Que des problèmes de matheux.
 Il faut avoir une pensée analytique et pas seulement faire de brute force.
@@ -58,15 +58,18 @@ Des challenges tout en finesse donc.
 Perso, j'adore ce site.
 J'aimerai avoir plus de temps à y consacrer.
 
-## Pour les fans du Père Noël
-
 ### Advent of Code (le calendrier de l'Avent du code)
 
-- [https://adventofcode.com/2015](https://adventofcode.com/2015)
-- [https://adventofcode.com/2016](https://adventofcode.com/2016)
-- [https://adventofcode.com/2017](https://adventofcode.com/2017)
-- [https://adventofcode.com/2018](https://adventofcode.com/2018)
-- [https://adventofcode.com/2019](https://adventofcode.com/2019)
+Pour les fans du Père Noël :
+
+- [Advent of Code 2015](https://adventofcode.com/2015)
+- [Advent of Code 2016](https://adventofcode.com/2016)
+- [Advent of Code 2017](https://adventofcode.com/2017)
+- [Advent of Code 2018](https://adventofcode.com/2018)
+- [Advent of Code 2019](https://adventofcode.com/2019)
+- [Advent of Code 2020](https://adventofcode.com/2020)
+- [Advent of Code 2021](https://adventofcode.com/2021)
+- [Advent of Code 2022](https://adventofcode.com/2022)
 
 C'est calendrier de l'avant du code.
 Ces challenges sont tout de suite assez balaises, clairement au dessus du niveau débutant.
@@ -75,22 +78,31 @@ Perso je suis arrivé jusqu'au jour 4 de 2019.
 Comme pour projecteuler, j'aimerai avoir plus de temps à y consacrer.
 Si vous faites ne fut-ce que le premier jour, c'est déjà super !
 
-## Pire que les maths : l'admin sys et réseau !
+### Root me
+
+Pire que les maths : admin sys, réseau et crypto !
 
 [Root Me : plateforme d'apprentissage dédiée au Hacking et à la Sécurité de l'Information](https://www.root-me.org/)
 
-No comment.
-Je ne touche pas à ce genre de came ;)
+### Kaggle
 
-## Non testé mais recommandé par des apprenants
+Compétitions de machine learning : [Kaggle: Your Home for Data Science](https://www.kaggle.com/).
 
+## Autres sites non testés
+
+- [LeetCode - The World's Leading Online Programming Learning Platform](https://leetcode.com/)  
+  Plateforme qui a une bonne réputation
 - [CodeCombat - Jeux de codage pour apprendre Python et JavaScript | CodeCombat](https://codecombat.com/)
+- [Hard, no-nonsense programming challenges | hackattic](https://hackattic.com/)  
+  Totalement inconnu du grand public mais propose des problèmes réalistes
+- [Free Javascript challenges online | JSchallenger](https://www.jschallenger.com/)  
+  Que du JS, pour démarrer l'algo
+- [Pyrates](https://py-rates.fr/)  
+  Pour démarrer l'algo en python avec juste un navigateur web
+- [Codeforces](https://codeforces.com/)  
+  Attention, challenges de haut niveau, pas accessible à tout le monde
+- [Practice | GeeksforGeeks | A computer science portal for geeks](https://practice.geeksforgeeks.org/)
+- [Competitive Programming | Participate & Learn | CodeChef](https://www.codechef.com/)
 
-## Non testé mais connu
-
-- [LeetCode - The World's Leading Online Programming Learning Platform](https://leetcode.com/)
-
-## Non testé mais prometteur
-
-- [Hard, no-nonsense programming challenges | hackattic](https://hackattic.com/)
+Cette page Wikipedia propose une liste de sites de challenges : [Competitive programming - Wikipedia](https://en.wikipedia.org/wiki/Competitive_programming).
 
