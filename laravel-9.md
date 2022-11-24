@@ -132,6 +132,18 @@ Puis la ligne :
 + 'faker_locale' => 'fr_FR',
 ```
 
+Pour afficher, dans une vue, le code langue que vous venez de configurer vous pouvez utiliser la fonction `config()` :
+
+```blade
+{{ config('app.locale') }}
+```
+
+Dans la balise `html` de votre vue, vous obtiendrez quelques chose comme :
+
+```blade
+<html lang="{{ config('app.locale') }}">
+```
+
 ### L'accès à la base de données (BDD)
 
 - [Configuration - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/configuration)
@@ -232,7 +244,7 @@ Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/
 
 ```php
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -346,7 +358,7 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
 
 ```php
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
