@@ -135,13 +135,13 @@ Puis la ligne :
 Pour afficher, dans une vue, le code langue que vous venez de configurer vous pouvez utiliser la fonction `config()` :
 
 ```blade
-{{ config('app.locale') }}
+{{ app()->getLocale() }}
 ```
 
 Dans la balise `html` de votre vue, vous obtiendrez quelques chose comme :
 
 ```blade
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ app()->getLocale() }}">
 ```
 
 ### L'accès à la base de données (BDD)
@@ -244,7 +244,7 @@ Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/
 
 ```php
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -358,7 +358,7 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
 
 ```php
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
