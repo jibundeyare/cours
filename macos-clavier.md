@@ -2,11 +2,12 @@
 
 **Note : touche `option` == touche `alt`**
 
-- `\` => alt shift /
-- `~` => alt n
-- `|` => alt shift L
-- `[` => alt shift (
-- `{` => alt (
+- `\` => `alt shift /` ou `alt option /`
+- `~` => `alt n`
+- `|` => `alt shift L` ou `alt option L`
+- `[` => `alt shift (` ou `alt option (`
+- `{` => `alt (`
+- pour taper une backtick, il y a une touche dédiée
 
 ## Bonus : le logo d'Apple
 
