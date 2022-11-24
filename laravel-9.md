@@ -610,12 +610,8 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site web - @yield('title')</title>
 
-    @section('css')
-    <link rel="stylesheet" href="{{ asset('css/app.css') }} ">
-    @show
-
-    @section('js')
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @show
 </head>
 <body>
@@ -652,9 +648,9 @@ Vous pouvez remplacer le contenu du fichier `resources/views/main/index.blade.ph
 
 @section('title', 'Accueil')
 
-@section('css')
+@section('vite')
     @parent
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }} ">
+    @vite(['resources/css/homepage.css'])
 @endsection
 
 @section('content')
@@ -672,23 +668,6 @@ Les blocs `@section()` permettent de remplacer le contenu d'un bloc `@section()`
 Si le bloc remplace un bloc `@section()` dans la vue parent, il est possible d'utiliser le mot clé `@parent` à l'intérieur du bloc pour afficher la valeur par défaut spécifiée dans la vue parent.
 
 Si le bloc remplace une instruction `@yield()` dans la vue parent, il n'y a pas de valeur par défaut.
-
-### Activer browsersync (le rechargement automatique de la page)
-
-[Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix#browsersync-reloading)
-
-Dans `webpack.mix.js` :
-
-```js
-mix.browserSync('127.0.0.1:8000');
-
-// ou si 127.0.0.1 ne fonctionne pas
-mix.browserSync('localhost:8000');
-```
-
-intéger des fichiers CSS et JS dans des vues
-
-[Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#stacks)
 
 ## Le schéma de base de données (BDD)
 
