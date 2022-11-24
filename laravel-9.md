@@ -224,6 +224,225 @@ Exemple de données du fichier `storage/logs/laravel.log` :
 [2022-03-04 11:22:19] local.DEBUG: {"id":1,"nom":"foo","description":"","created_at":null,"updated_at":null}
 ```
 
+## Les vues
+
+### Création d'une vue simple
+
+Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/views/main/index.blade.php` :
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+    <h1>Accueil</h1>
+    <p>
+        Vous êtes sur la page d'accueil.
+    </p>
+</body>
+</html>
+```
+
+Testez maintenant votre vue dans votre navigateur : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Vite
+
+L'intégration de fichiers CSS et JS se fait avec un outil nommé Vite.
+
+Pour en savoir plus sur l'intégration de fichiers CSS et JS dans les vues, voir la page suivante : [Asset Bundling (Vite) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/9.x/vite)
+
+Pour en savoir plus sur Vite, voir la page suivante : [Vite | Next Generation Frontend Tooling](https://vitejs.dev/)
+
+### Intégration de fichiers CSS et JS dans une vue Blade
+
+Les fichiers CSS et JS se trouvent dans les dossiers suivants :
+
+- `resources/css`
+- `resources/js`
+
+Pour que ces fichiers deviennent accessibles via le serveur web, vous devez lancer un serveur de fichiers statique avec la commande suivante :
+
+```bash
+npm run dev
+```
+
+Ensuite vous devez intégrer les fichiers CSS et JS en ajoutant la ligne suivante dans votre vue Blade :
+
+```php
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+```
+
+La balise `@vite()` permet de générer automatiquement les balises `link` et `script` en fonction de la configuration de Vite qui est stockée dans le fichier `vite.config.js` à la racine du projet.
+
+Voici à quoi devrait ressemble votre balide `head` après modification :
+
+```php
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Accueil</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+```
+
+### Utilisation de fichier CSS et JS spécifique pour certaines pages
+
+Parfois, il est nécessaire de pouvoir utiliser un fichier CSS ou JS seulement sur une page en particulier.
+
+Pour pouvoir faire ça, vous devrez d'abord créer votre fichier CSS ou votre fichier JS.
+
+Puis vous devrez préciser dans le fichier `vite.config.js` quels sont les fichiers à compiler.
+
+Le code ci-dessous montre comment compiler les fichier `resources/css/foo.css` et `resources/js/foo.js` en plus des fichiers par défaut :
+
+```js
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                'resources/css/app.css',
+                'resources/css/foo.css',
+                'resources/js/foo.js'
+                'resources/js/app.js',
+            ],
+            refresh: true,
+        }),
+    ],
+});
+```
+
+Il ne vous reste plus qu'à insérer la balise `@vite()` dans la vue de votre page :
+
+```php
+@vite(['resources/css/foo.css', 'resources/js/foo.js'])
+```
+
+### Intégration d'images dans une vue Blade
+
+Pour intégrer une image dans votre vue, vous devez d'abord créer un dossier `public/img` puis la copier dedans.
+
+Ensuite vous pouvez utiliser la fonction `asset()` comme ci-dessous pour composer l'url de l'image :
+
+```php
+<img src="{{ asset('img/foo.jpg') }}" alt="Description de l'image">
+```
+
+Le code `asset('img/foo.jpg')` va générer l'url `http://127.0.0.1:8000/img/foo.jpg` tant que vous travaillez sur votre poste.
+Quand vous mettrez votre code en production sur le serveur `example.com`, l'url de l'image deviendra `http://example.com/img/foo.jpg`.
+
+### Création d'une vue parent
+
+La méthode préférée pour créer vos vues blades est de créer une vue parent et des vues enfants grâce à la fonctionnalité de l'héritage.
+
+Voir la page suivante pour en savoir plus sur la façon de créer une vue parent et des vues enfant : [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#layouts-using-template-inheritance)
+
+Vous pouvez créer le fichier `resources/views/base.blade.php` :
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site web - @yield('title')</title>
+
+    @section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @show
+</head>
+<body>
+    <header>
+        @section('banner')
+            <img src="{{ asset('img/banner.jpg') }}" alt="Description de la bannière par défaut">
+        @show
+    </header>
+
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <footer>
+        @section('footer')
+            Copyright 2022
+        @show
+    </footer>
+</body>
+</html>
+```
+
+Les instructions `@yield()` sont des instructions que nous pourrons remplacer par le contenu de notre choix dans des vues enfant.
+
+Les blocs `@section() @show` sont des blocs qui contiennent une valeur par défaut.
+Si les vues enfants ne remplacent pas ces contenus, ce sont les valeurs par défaut qui seront affichées.
+
+### Création d'une vue enfant
+
+Vous pouvez remplacer le contenu du fichier `resources/views/main/index.blade.php` avec :
+
+```php
+@extends('base')
+
+@section('title', 'Accueil')
+
+@section('vite')
+    @parent
+    @vite(['resources/css/homepage.css'])
+@endsection
+
+@section('content')
+    <h1>Accueil</h1>
+    <p>
+        Vous êtes sur la page d'accueil
+    </p>
+@endsection
+```
+
+L'instruction `@extends()` précise quelle vue sera utilisée comme vue parent. Ici c'est la vue `resources/views/base.blade.php` qui est ciblée.
+
+Les blocs `@section()` permettent de remplacer le contenu d'un bloc `@section()` ou d'une instruction `@yield()` qui se trouve dans la vue parent.
+
+Si le bloc remplace un bloc `@section()` dans la vue parent, il est possible d'utiliser le mot clé `@parent` à l'intérieur du bloc pour afficher la valeur par défaut spécifiée dans la vue parent.
+
+Si le bloc remplace une instruction `@yield()` dans la vue parent, il n'y a pas de valeur par défaut.
+
+### Affichage d'une variable
+
+Pour afficher une variable, vous pouvez utiliser des accolades `{}`.
+
+```php
+{{ $foo }}
+```
+
+Remarque : bien sûr ceci ne fonctionne que si la variable `foo` a été transmise à la vue lors de l'appel de la fonction `view()` dans le contrôleur.
+
+### Générer les urls de routes nommées
+
+[Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#named-routes)
+
+Pour afficher l'url des routes nommées dans une vue, vous devez utiliser la fonction `route()` :
+
+```php
+{{ route('foo') }}
+{{ route('foo', ['id' => 123]) }}
+{{ route('foo', ['id' => 123, 'bar' => 42]) }}
+```
+
+Ces blocs vont générer les urls correspondant à la route nommée.
+Le tableau avec les couples clé valeur représente des paramètres qui seront rattachés à l'url.
+
+Vous pouvez l'utiliser pour créer un lien clickable par exemple :
+
+```php
+<a href="{{ route('foo') }}">Aller vers la page foo</a>
+```
+
 ## Les routes nommées
 
 [Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#basic-routing)
@@ -438,217 +657,6 @@ php artisan make:controller -r FooController
 ```
 
 - créer des actions [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/controllers#single-action-controllers)
-
-## Les vues
-
-### Affichage d'une variable
-
-Pour afficher une variable, vous pouvez utiliser des accolades `{}`.
-
-```php
-{{ $foo }}
-```
-
-Remarque : bien sûr ceci ne fonctionne que si la variable `foo` a été transmise à la vue lors de l'appel de la fonction `view()` dans le contrôleur.
-
-### Générer les urls de routes nommées
-
-[Routing - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/routing#named-routes)
-
-Pour afficher l'url des routes nommées dans une vue, vous devez utiliser la fonction `route()` :
-
-```php
-{{ route('foo') }}
-{{ route('foo', ['id' => 123]) }}
-{{ route('foo', ['id' => 123, 'bar' => 42]) }}
-```
-
-Ces blocs vont générer les urls correspondant à la route nommée.
-Le tableau avec les couples clé valeur représente des paramètres qui seront rattachés à l'url.
-
-Vous pouvez l'utiliser pour créer un lien clickable par exemple :
-
-```php
-<a href="{{ route('foo') }}">Aller vers la page foo</a>
-```
-
-### Création d'une vue simple
-
-Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/views/main/index.blade.php` :
-
-```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-</head>
-<body>
-    <h1>Accueil</h1>
-    <p>
-        Vous êtes sur la page d'accueil.
-    </p>
-</body>
-</html>
-```
-
-Testez maintenant votre vue dans votre navigateur : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-### Intégration de fichiers CSS et JS dans une vue Blade
-
-L'intégration des ressources se fait avec un plugin npm nommée Vite.
-
-Les fichiers CSS et JS se trouvent dans les dossiers suivants :
-
-- `resources/css`
-- `resources/js`
-
-Pour que ces fichiers deviennent accessibles via le serveur web, vous devez un serveur de fichiers statique avec la commande suivante :
-
-```bash
-npm run dev
-```
-
-Ensuite vous devez intégrer les fichiers CSS et JS en ajoutant la ligne suivante dans votre vue Blade :
-
-```php
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-```
-
-La balise `@vite()` permet de générer automatiquement les balises `link` et `script` en fonction de la configuration de Vite qui est stockée dans le fichier `vite.config.js` à la racine du projet.
-
-Voici à quoi devrait ressemble votre balide `head` après modification :
-
-```php
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Accueil</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-```
-
-Pour en savoir plus sur l'intégration de code CSS et de code JS, voir la page suivante : [Compiling Assets (Mix) - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/mix)
-
-### Utilisation de fichier CSS et JS spécifique pour certaines pages
-
-Parfois, il est nécessaire de pouvoir utiliser un fichier CSS ou JS seulement sur une page en particulier.
-
-Pour pouvoir faire ça, vous devrez d'abord créer votre fichier CSS ou votre fichier JS.
-
-Puis vous devrez préciser dans le fichier `webpack.mix.js` quels sont les fichiers à compiler.
-
-Le code ci-dessous montre comment compiler les fichier `resources/css/foo.css` et `resources/js/foo.js` en plus des fichiers par défaut :
-
-```js
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ])
-    .js('resources/js/foo.js', 'public/js')
-    .postCss('resources/css/foo.css', 'public/css', [
-        //
-    ]);
-```
-
-Il ne vous reste plus qu'à insérer les balises `link` et `script` dans la vue de votre page :
-
-```php
-<link rel="stylesheet" href="{{ asset('css/foo.css') }}">
-<script src="{{ asset('js/foo.js') }}" defer></script>
-```
-
-### Intégration d'images dans une vue Blade
-
-Pour intégrer une image dans votre vue, vous devez d'abord créer un dossier `public/img` puis la copier dedans.
-
-Ensuite vous pouvez utiliser la fonction `asset()` comme ci-dessous pour composer l'url de l'image :
-
-```php
-<img src="{{ asset('img/foo.jpg') }}" alt="Description de l'image">
-```
-
-Le code `asset('img/foo.jpg')` va générer l'url `http://127.0.0.1:8000/img/foo.jpg` tant que vous travaillez sur votre poste.
-Quand vous mettrez votre code en production sur le serveur `example.com`, l'url de l'image deviendra `http://example.com/img/foo.jpg`.
-
-### Création d'une vue parent
-
-La méthode préférée pour créer vos vues blades est de créer une vue parent et des vues enfants grâce à la fonctionnalité de l'héritage.
-
-Voir la page suivante pour en savoir plus sur la façon de créer une vue parent et des vues enfant : [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#layouts-using-template-inheritance)
-
-Vous pouvez créer le fichier `resources/views/base.blade.php` :
-
-```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site web - @yield('title')</title>
-
-    @section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @show
-</head>
-<body>
-    <header>
-        @section('banner')
-            <img src="{{ asset('img/banner.jpg') }}" alt="Description de la bannière par défaut">
-        @show
-    </header>
-
-    <div class="container">
-        @yield('content')
-    </div>
-
-    <footer>
-        @section('footer')
-            Copyright 2022
-        @show
-    </footer>
-</body>
-</html>
-```
-
-Les instructions `@yield()` sont des instructions que nous pourrons remplacer par le contenu de notre choix dans des vues enfant.
-
-Les blocs `@section() @show` sont des blocs qui contiennent une valeur par défaut.
-Si les vues enfants ne remplacent pas ces contenus, ce sont les valeurs par défaut qui seront affichées.
-
-### Création d'une vue enfant
-
-Vous pouvez remplacer le contenu du fichier `resources/views/main/index.blade.php` avec :
-
-```php
-@extends('base')
-
-@section('title', 'Accueil')
-
-@section('vite')
-    @parent
-    @vite(['resources/css/homepage.css'])
-@endsection
-
-@section('content')
-    <h1>Accueil</h1>
-    <p>
-        Vous êtes sur la page d'accueil
-    </p>
-@endsection
-```
-
-L'instruction `@extends()` précise quelle vue sera utilisée comme vue parent. Ici c'est la vue `resources/views/base.blade.php` qui est ciblée.
-
-Les blocs `@section()` permettent de remplacer le contenu d'un bloc `@section()` ou d'une instruction `@yield()` qui se trouve dans la vue parent.
-
-Si le bloc remplace un bloc `@section()` dans la vue parent, il est possible d'utiliser le mot clé `@parent` à l'intérieur du bloc pour afficher la valeur par défaut spécifiée dans la vue parent.
-
-Si le bloc remplace une instruction `@yield()` dans la vue parent, il n'y a pas de valeur par défaut.
 
 ## Le schéma de base de données (BDD)
 
