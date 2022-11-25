@@ -518,10 +518,14 @@ Explication : la commande `ls` affiche la liste des fichiers du dossier courant 
 
 [Terminus](http://luffah.xyz/bidules/Terminus/)
 
-Arg je suis bloqué.e dans Terminus pour trouver le mot de passe de sudo, je pense qu'il y a un problème dans le jeu avec la commande grep.
+### Arg je suis bloqué.e dans Terminus pour trouver le mot de passe de sudo, je pense qu'il y a un problème dans le jeu avec la commande grep !
 
 > Dans "PlusDeFichiersNoyau"
 > grep password *.txt
+
+### Arg je suis bloqué.e dans Terminus avec ce fichu levier, je ne sais pas quoi faire !
+
+Indice : il faut utiliser le levier comme un fichier exécutable.
 
 ## Doc
 
