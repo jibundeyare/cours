@@ -2,6 +2,15 @@
 
 Git est un outil de gestion de code source. Il permet d'enregistrer du code source à un instant T et de le restituer plus tard, si nécessaire. Il permet également d'entretenir en parallèle plusieurs versions d'un même code source. Cette dernière faculté permet une collaboration plus fluide entre plusieurs développeur travaillant sur un même projet.
 
+## Pourquoi utiliser git ?
+
+Git est utile pour :
+
+- avoir une sauvegarde sur internet de son travail
+- avoir un historique de son travail (et pouvoir revenir en arrière)
+- travailler en équipe (ou tout simplement partager son code)
+- gérer facilement des variantes d'une application
+
 ## Travail en solo ou en groupe
 
 - pour travailler en solo avec une méthode simple, voir [gitflow-solo-basic.md](gitflow-solo-basic.md)
