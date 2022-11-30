@@ -3,7 +3,7 @@
 Le clavier est le principal outil du dévelppeur.
 Il faut le connaître, le maîtriser et l'aimer.
 
-Entraîner-vous à taper le plus vite possible :
+Entraînez-vous à taper le plus vite possible :
 
 - [ZType – Typing Game - Type to Shoot](https://zty.pe/)
 - [TypeRacer - Play Typing Games and Race Friends](https://play.typeracer.com/)
