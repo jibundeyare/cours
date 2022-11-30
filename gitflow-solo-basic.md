@@ -26,15 +26,17 @@ Simple ça veut dire, par exemple :
     git commit
     # todo: rédigez votre message de commit
 
-## Création du repo sur github / framagit / bitbucket
+## Création du repo sur Github
 
     # s'il y a lieu, créez un compte sur le site
     # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)
-    # sur le site, copiez l'url du repo au format SSH (de la forme `git@github.com:[login]/[nom-du-repo].git`)
-    # exemple avec le login `foo` et le repo `bar` : git@github.com:foo/bar.git
-    # revenez dans le terminal
+    # sur le site, sélectionnez le protocole SSH
+    # remarquez que le chemin d'accès du repo est de la forme `git@github.com:[login]/[nom-du-repo].git`
+    # exemple : avec le login `foo` et le repo `bar` ça donne git@github.com:foo/bar.git
+    # dans le terminal, adaptez [login] et [nom-du-repo] et tapez
     git remote add origin git@github.com:[login]/[nom-du-repo].git
-    git push -u origin master
+    git branch -M main
+    git push -u origin main
 
 ## Enregistrer son travail
 

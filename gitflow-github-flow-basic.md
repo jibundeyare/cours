@@ -85,6 +85,7 @@ On peut reprendre le travail.
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # l'option --force-with-lease est nécessaire si on a rebasé sa branche sur master avant de reprendre le travail
     git push --force-with-lease
@@ -104,6 +105,7 @@ On peut reprendre le travail.
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # l'option --force-with-lease n'est pas nécessaire si on n'a pas rebasé sa branche sur master avant de travailler
     git push
@@ -138,6 +140,7 @@ Voici les étapes :
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # pousser le code sur github
     git push

@@ -13,7 +13,7 @@ Complexe veut dire, par exemple :
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
-## Création du repo sur github / framagit / bitbucket
+## Création du repo sur Github
 
 Voir [gitflow-solo-basic.md](gitflow-solo-basic.md).
 
@@ -51,7 +51,7 @@ Cette action est nécessaire à chaque fois qu'un merge a eu lieu dans la branch
     # voir la liste des conflits
     git status
     # todo: résoudre les conflits en modifiant les fichiers
-    # utilisez `git mergetool` si vous avez configuré un outil de fusion
+    # todo: utilisez `git mergetool` si vous avez configuré un outil de fusion
     git add [nom-de-fichier]
     # todo: répêter `git add` autant de fois que nécessaire
     git rebase --continue
@@ -67,6 +67,7 @@ On peut reprendre le travail.
     # si vous avez un doute, vérifiez le code qui sera commité
     git diff --staged
     git commit
+    # todo: rédigez votre message de commit
 
 ## Enregistrer le travail fait dans une branche
 
@@ -87,4 +88,43 @@ S'il y a des conflits, c'est qu'il n'ont pas été gérés correctement dans la 
     git checkout master
     git merge [nom-de-branche]
     git push
+
+## Corriger un bug urgent
+
+Si vous devez corriger un bug urgent, il faut créer une branche appelée `hotfix` en repartant de la brance master.
+
+    git checkout master
+    git checkout -b hotfix
+    # todo: corriger le bug
+    git add [nom-de-fichier]
+    # todo: répêter `git add` autant de fois que nécessaire
+    git status
+    # si on a un doute, vérifier le code qui sera commité
+    git diff --staged
+    git commit
+    # todo: rédigez votre message de commit
+    git checkout master
+    git merge hotfix
+    git push
+
+Maintenant que vous avez corrigé le bug, vous devez appliquer la correction sur toutes les branches de fonctionnalités.
+
+    git checkout [nom-de-branche]
+    # rebasez la branche courante sur la branche master
+    git rebase master
+    # s'il y a des conflits, il faut :
+    # - vérifier quels fichiers posent problèmes
+    # - résoudre les conflits
+    # - ajouter les fichiers dans la zone de staging
+    # - terminer le rebase
+    # voir la liste des conflits
+    git status
+    # todo: résoudre les conflits en modifiant les fichiers
+    # todo: utilisez `git mergetool` si vous avez configuré un outil de fusion
+    git add [nom-de-fichier]
+    # todo: répêter `git add` autant de fois que nécessaire
+    git rebase --continue
+    # note: chaque rebase se comporte comme un commit, mais les messages de commit sont déjà remplis
+
+La correction est appliquée, vous pouvez reprendre votre travail normalement.
 

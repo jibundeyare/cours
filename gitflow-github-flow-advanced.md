@@ -90,7 +90,7 @@ Voici les étapes :
     git status
 
     # todo: résolvez les conflits en modifiant les fichiers
-    # utilisez `git mergetool` si vous avez configuré un outil de fusion
+    # todo: utilisez `git mergetool` si vous avez configuré un outil de fusion
 
     # répêtez `git add` autant de fois que nécessaire
     git add [nom-de-fichier]
@@ -114,6 +114,7 @@ On peut reprendre le travail.
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # l'option --force-with-lease est nécessaire si on a rebasé sa branche sur dev avant de reprendre le travail
     git push --force-with-lease
@@ -133,6 +134,7 @@ On peut reprendre le travail.
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # l'option --force-with-lease n'est pas nécessaire si on n'a pas rebasé sa branche sur dev avant de travailler
     git push
@@ -167,6 +169,7 @@ Voici les étapes :
 
     # si tout est bon, vous pouvez commiter
     git commit
+    # todo: rédigez votre message de commit
 
     # pousser le code sur github
     git push

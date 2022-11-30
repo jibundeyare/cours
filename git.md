@@ -16,6 +16,7 @@ Git est utile pour :
 - pour travailler en solo avec une méthode simple, voir [gitflow-solo-basic.md](gitflow-solo-basic.md)
 - pour travailler en solo avec une méthode plus évoluée, voir [gitflow-solo-advanced.md](gitflow-solo-advanced.md)
 - pour travailler en groupe avec une méthode simple, voir [gitflow-github-flow-basic.md](gitflow-github-flow-basic.md)
+- pour travailler en groupe avec une méthode plus évluée, voir [gitflow-github-flow-advanced.md](gitflow-github-flow-advanced.md)
 
 ## Installation
 
