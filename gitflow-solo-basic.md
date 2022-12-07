@@ -15,11 +15,11 @@ Simple ça veut dire, par exemple :
     mkdir [dossier-du-projet]
     # allez dans le dossier du projet
     cd [dossier-du-projet]
-    # créez un fichier `README.md` dans le dossier du projet
-    nano README.md
-    # todo: rédigez le contenu de la doc
+    # ouvrez le dossier avec vscode
+    code .
     # initialisez le repo git
     git init
+    # todo: créez un fichier `README.md` à la racine du projet
     # ajoutez le fichier `README.md` dans la zone de staging
     git add README.md
     # créez un premier commit
