@@ -28,13 +28,13 @@ Vous pouvez retrouver une copie de ces documents ci-dessous :
 
 Vous devez créer plusieurs documents :
 
-- un résumé du rapport de stage (résumé du dossier de projet) remis au moins 10 jours ouvrés avant la session d'examen
-- un rapport de stage (dossier de projet) remis au moins 1 jour ouvré avant la session d'examen
-- une traduction de contenu en anglais à joindre dans le rapport de stage
+- un résumé du dossier de projet (résumé du rapport de stage) remis au moins 10 jours ouvrés avant la session d'examen
+- un dossier de projet (rapport de stage) remis au moins 1 jour ouvré avant la session d'examen
+- une traduction de contenu en anglais à joindre dans le dossier de projet (rapport de stage)
 - un dossier professionnel (le DP) remis le jour même
 - des slides qui vous serviront lors la présentation orale devant le jury
 
-**Conseil : quand vous rédigez votre rapport de stage, le résumé ou les slides, commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »)**
+**Conseil : quand vous rédigez votre dossier de projet (rapport de stage), le résumé ou les slides, commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ? »)**
 
 Les Évaluations en Cours de Formation (les ECF) seront remises directement par l'établissement à votre jury.
 
@@ -53,7 +53,7 @@ Voici le déroulé de l'examen :
   Lors de la session d’examen, le candidat présente son projet à l’aide d’un
 support de présentation.
 - **Entretien technique**, **durée 40 min**  
-  Le jury questionne le candidat sur la base de son dossier de projet et de sa présentation orale.  
+  Le jury questionne le candidat sur la base de son dossier de projet (rapport de stage) et de sa présentation orale.  
   Un questionnement complémentaire lui permet d’évaluer les compétences qui ne sont pas couvertes par le projet.
 - **Entretien final**, **durée 15 min**  
   Y compris le temps d’échange avec le candidat sur le dossier professionnel. Le jury évalue la compréhension, la vision et la culture professionnelle du métier. Il dispose de l’ensemble du dossier du candidat dont son dossier professionnel (DP).
@@ -72,7 +72,7 @@ Conseil : testez votre démo avant pour être sûr que tout s'enchaîne comme pr
 
 `RCV2_DWWM_V03_03052018.pdf`, p7, p8
 
-## Le résumé du rapport de stage (résumé du dossier de projet)
+## Le résumé du dossier de projet (résumé du rapport de stage)
 
 C'est à vous de rédiger ce document.
 
@@ -89,7 +89,7 @@ Le résumé doit :
 
 `RCV2_DWWM_V03_03052018.pdf`, p7
 
-### Le contenu du résumé de rapport de stage (résumé dossier de projet)
+### Le contenu du résumé du dossier de projet (résumé du rapport de stage)
 
 Il n'y a pas de directives particulière dans le RCV2 pour la rédaction du résumé.
 
@@ -104,19 +104,19 @@ Dans tous les cas, pensez obligatoirement à préciser :
 - si possible l'adresse complète de la structure, sinon au moins la ville 
 - les dates de début et de fin de stage
 
-## Le rapport de stage (dossier de projet)
+## Le dossier de projet (rapport de stage)
 
 C'est à vous de rédiger ce document.
 
-Le rapport de stage doit être :
+Le dossier de projet (rapport de stage) doit être :
 
 - remis au moins 1 jour ouvré avant la session d'examen
 - présenté avec un projecteur le jour de la session d'examen
 
-Il est recommandé d'imprimer deux exemplaires du rapport de stage (un pour chaque membre du jury).
+Il est recommandé d'imprimer deux exemplaires du dossier de projet (rapport de stage), un pour chaque membre du jury.
 Après la session de jury, vous pourrez laisser un exemplaire à l'établissement et en garder un pour vous.
 
-> Au moins un jour ouvré avant la session d’examen, le candidat a remis à l'organisateur son dossier de projet.
+> Au moins un jour ouvré avant la session d’examen, le candidat a remis à l'organisateur son dossier de projet (rapport de stage).
 
 `RCV2_DWWM_V03_03052018.pdf`, p5
 
@@ -124,9 +124,9 @@ Après la session de jury, vous pourrez laisser un exemplaire à l'établissemen
 
 `RCV2_DWWM_V03_03052018.pdf`, p5
 
-### Le contenu du rapport de stage (dossier de projet)
+### Le contenu du dossier de projet (rapport de stage)
 
-Tout ce que le rapport de stage doit contenir :
+Tout ce que le dossier de projet (rapport de stage) doit contenir :
 
 > Contenu du dossier de projet
 >
@@ -169,7 +169,7 @@ Dans tous les cas, pensez obligatoirement à préciser :
 
 Pendant la réalisation de votre projet, vous allez certainement consulter de la documentation, des articles de blog ou des forums en anglais.
 
-Vous devrez joindre à votre rapport de stage un extrait du document anglais et fournir une traduction française de 750 signes (espaces compris).
+Vous devrez joindre à votre dossier de projet (rapport de stage) un extrait du document anglais et fournir une traduction française de 750 signes (espaces compris).
 
 - une traduction de 750 signes (espaces compris) d'un article en anglais qui vous a servi pendant la phase de réalisation du projet ou la phase de veille
 
@@ -257,7 +257,7 @@ Voici des exemples de contenu idéal :
 - quelques informations importantes (technos utilisées, chiffres clés comme la fréquentation d'un site ou le nombre de clients, etc)
 - vos coordonnées à la fin des slides
 
-Vous pouvez reprendre le contenu de votre rapport de stage mais vous pouvez aussi dire des choses à l'oral que vous ne laisserez pas dans le rapport de stage.
+Vous pouvez reprendre le contenu de votre dossier de projet (rapport de stage) mais vous pouvez aussi dire des choses à l'oral que vous ne laisserez pas dans le dossier de projet (rapport de stage).
 C'est à vous de choisir de façon à vous mettre en valeur ou pouvoir improviser face à votre public pendant la présentation.
 .
 
