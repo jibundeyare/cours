@@ -311,7 +311,7 @@ Pour pouvoir faire ça, vous devrez d'abord créer votre fichier CSS ou votre fi
 
 Puis vous devrez préciser dans le fichier `vite.config.js` quels sont les fichiers à compiler.
 
-Le code ci-dessous montre comment compiler les fichier `resources/css/foo.css` et `resources/js/foo.js` en plus des fichiers par défaut :
+Le code ci-dessous dans le fichier `vite.config.js` montre comment compiler les fichier `resources/css/foo.css` et `resources/js/foo.js` en plus des fichiers par défaut :
 
 ```js
 export default defineConfig({
@@ -320,8 +320,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/foo.css',
-                'resources/js/foo.js'
                 'resources/js/app.js',
+                'resources/js/foo.js'
             ],
             refresh: true,
         }),
