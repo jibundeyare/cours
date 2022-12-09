@@ -28,26 +28,40 @@ Simple ça veut dire, par exemple :
 
 ## Création du repo sur Github
 
-    # s'il y a lieu, créez un compte sur le site
-    # sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier)
-    # sur le site, sélectionnez le protocole SSH
-    # remarquez que le chemin d'accès du repo est de la forme `git@github.com:[login]/[nom-du-repo].git`
-    # exemple : avec le login `foo` et le repo `bar` ça donne git@github.com:foo/bar.git
-    # dans le terminal, adaptez [login] et [nom-du-repo] et tapez
+S'il y a lieu, créez un compte sur le site.
+Sur le site, créez un nouveau repo (attention à donner le même nom que celui du dossier).
+
+Attention : sur le site, sélectionnez le protocole SSH.
+Remarquez que le chemin d'accès du repo est de la forme `git@github.com:[login]/[nom-du-repo].git`.
+Exemple : avec le login `foo` et le repo `bar` ça donne `git@github.com:foo/bar.git`.
+
+Dans le terminal, adaptez [login] et [nom-du-repo] et tapez :
+
     git remote add origin git@github.com:[login]/[nom-du-repo].git
     git branch -M main
     git push -u origin main
 
 ## Enregistrer son travail
 
-    # todo: créez, modifier ou supprimez des fichiers sources
+Créez, modifier ou supprimez des fichiers sources.
+
+    # optionnel: vérifier l'état du repo
+    git status
+    # optionnel: vérifiez le code qui sera commité
+    git diff
+    
     # ajoutez les fichiers dans la zone de staging
     git add [nom-du-fichier]
     # répêtez `git add` autant de fois que nécessaire
+    
+    # optionnel: vérifier l'état du repo
     git status
-    # si vous avez un doute, vérifiez le code qui sera commité
+    # optionnel: vérifiez le code qui sera commité
     git diff --staged
+    
+    # créez un commit
     git commit
     # todo: rédigez votre message de commit
+    # envoyez votre commit sur github
     git push
 
