@@ -44,7 +44,7 @@ Avec un champ de `255` caractères, nous avons donc un index ou une contrainte q
 ```
 
 Pour corriger ce problème, la solution la plus simple est de réduire la taille du champ `varchar`.
-La longueur maximum est `767 / 4 == 191.75`, c-à-d, à peu près `190` caractères.
+La longueur maximum est `767 / 4 == 191.75`, c-à-d, à peu près `191` caractères.
 
 Pour changer la taille d'un champ, deux cas se présentent :
 
@@ -87,6 +87,7 @@ Ouvrez le fichier `app/Providers/AppServiceProvider.php` et modifiez la méthode
        */
       public function boot()
       {
+-         //
 +         Schema::defaultStringLength(191);
       }
   }
@@ -101,13 +102,15 @@ Vous pouvez préciser la taille du champ « manuellement ».
 Par exemple, le code :
 
 ```php
-$table->string('email')->unique();
+$table->string('foo')->unique();
+$table->string('bar')->index();
 ```
 
 devient :
 
 ```php
-$table->string('email', 190)->unique();
+$table->string('foo', 191)->unique();
+$table->string('bar', 191)->index();
 ```
 
 ## Erreur `1709 Index column size too large`
