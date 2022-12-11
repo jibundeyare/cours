@@ -81,6 +81,16 @@ git restore --staged [nom-du-fichier]
 
 Cette commande ne modifie pas le contenu du fichier.
 
+## Problème : je veux annuler tous les ajouts
+
+La commande suivante permet d'annuler tous les `git add [nom-du-fichier]` (fichier ou dossier) en une seule fois :
+
+```bash
+git restore --staged .
+```
+
+Cette commande ne modifie pas le contenu du fichier.
+
 ## Problème : j'ai modifié un fichier mais je voudrais le remettre dans l'état du dernier commit
 
 **Attention : cette commande modifie le contenu du fichier.
