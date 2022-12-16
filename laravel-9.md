@@ -786,6 +786,8 @@ Nous allons ajouter les colonnes suivantes à la table `foo` :
 - `description` : text, nullable
 - `rang` : integer, nullable
 - `actif` : boolean, default TRUE
+- `date_naissance` : date
+- `heure_naissance` : time
 
 Voici le code :
 
@@ -797,6 +799,8 @@ Schema::create('foo', function (Blueprint $table) {
     $table->text('description')->nullable();
     $table->integer('rang')->nullable();
     $table->boolean('actif')->default(true);
+    $table->date('date_naissance');
+    $table->time('heure_naissance');
     $table->timestamps();
 });
 ```
@@ -1137,5 +1141,40 @@ La suppression des tables :
 Schema::dropIfExists('bar_foo');
 Schema::dropIfExists('foo');
 Schema::dropIfExists('bar');
+```
+
+## Le modèle de données
+
+```bash
+php artisan make:model Foo
+php artisan make:seeder FooSeeder
+```
+
+```diff-php
+  <?php
+
+  namespace App\Models;
+
+  use Illuminate\Database\Eloquent\Factories\HasFactory;
+  use Illuminate\Database\Eloquent\Model;
+
+  class Foo extends Model
+  {
+      use HasFactory;
+
++     /**
++      * The table associated with the model.
++      *
++      * @var string
++      */
++     protected $table = 'foo';
++
++     /**
++      * The primary key associated with the table.
++      *
++      * @var string
++      */
++     protected $primaryKey = 'id';
+  }
 ```
 
