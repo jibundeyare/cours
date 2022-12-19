@@ -23,6 +23,8 @@ git init
 # todo: créez un fichier `README.md` à la racine du projet
 # ajoutez le fichier `README.md` dans la zone de staging
 git add README.md
+# ou si vous voulez ajouter tous les fichiers du repo
+git add .
 # créez un premier commit
 git commit
 # todo: rédigez votre message de commit
@@ -55,9 +57,13 @@ git status
 # optionnel: vérifiez le code qui a changé
 git diff
 
-# ajoutez les fichiers dans la zone de staging
+# ajoutez un fichier entier dans la zone de staging
+# cette commande fonctionne avec tous les fichiers (nouveaux, modifiés ou supprimés)
 git add [nom-du-fichier]
 # todo: répétez `git add` autant de fois que nécessaire
+# ou si vous voulez choisir quelle lignes de code ajouter
+# cette commande ne fonctionne qu'avec les fichiers modifiés ou supprimés
+git add -p
 
 # optionnel: vérifier l'état du repo
 git status
