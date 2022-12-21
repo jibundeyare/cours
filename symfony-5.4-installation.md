@@ -190,21 +190,27 @@ Instanciation de doctrine et de faker dans le fichier de fixtures de test :
   use Doctrine\Persistence\ObjectManager;
 + use Faker\Factory as FakerFactory;
 + use Faker\Generator as FakerGenerator;
++ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
   class AppFixtures extends Fixture
   {
-+     public function __construct(ManagerRegistry $doctrine)
++     private $doctrine;
++     private $faker;
++     private $hasher;
++
++     public function __construct(ManagerRegistry $doctrine, UserPasswordHasherInterface $hasher)
 +     {
 +         $this->doctrine = $doctrine;
++         $this->faker = FakerFactory::create('fr_FR');
++         $this->hasher = $hasher;
++
 +     }
 +
       public function load(ObjectManager $manager): void
       {
-+         $faker = FakerFactory::create('fr_FR');
-+
-          // $product = new Product();
-          // $manager->persist($product);
-
+-         // $product = new Product();
+-         // $manager->persist($product);
+-
           $manager->flush();
       }
   }
