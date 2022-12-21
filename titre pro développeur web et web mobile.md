@@ -24,7 +24,7 @@ Vous pouvez retrouver une copie de ces documents ci-dessous :
 - [RCV2_DWWM_V03_03052018.pdf](files/RCV2_DWWM_V03_03052018.pdf)
 - [REAC_DWWM_V03_03052018.pdf](files/REAC_DWWM_V03_03052018.pdf)
 
-## Les documents que vous devez produire
+## Les documents que vous devez produire (les livrables)
 
 Vous devez créer plusieurs documents :
 
