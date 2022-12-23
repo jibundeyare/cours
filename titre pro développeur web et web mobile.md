@@ -38,6 +38,8 @@ Vous devez créer plusieurs documents :
 
 Les Évaluations en Cours de Formation (les ECF) seront remises directement par l'établissement à votre jury.
 
+Conseil : exportez votre travail au format PDF, vous serez sûr qu'il sera lisible sur toutes les plateformes.
+
 ## Déroulé de l'examen
 
 La durée totale est de **01h30 max**.
@@ -97,12 +99,19 @@ Commencez simplement par répondre aux questions QQOQCCP (« Qui ? Quoi ? Où ? 
 
 Dans tous les cas, pensez obligatoirement à préciser :
 
+- votre nom et prénom
 - le nom de la structure dans laquelle vous faites votre stage
-- le nom du projet que vous réasliez (ça peut être aussi simple que « le site web »)
+- l'adresse complète de la structure
+- le nom du projet que vous réalisez (ça peut être aussi simple que « un site vitrine »)
 - le nom de votre référent de stage dans la structure
 - le nom de votre référent de stage dans votre organisme de formation
-- si possible l'adresse complète de la structure, sinon au moins la ville 
 - les dates de début et de fin de stage
+
+Conseils :
+
+- mettez un titre à votre résumé (comme « Résumé de dossier de projet de Foo Bar », Foo Bar étant votre nom)
+- enregistrez votre résumé au format PDF
+- nommez le fichier `Résumé de dossier de projet - Prénom Nom.pdf`
 
 ## Le dossier de projet (rapport de stage)
 
@@ -158,12 +167,18 @@ Même conseil que pour le résumé, commencez simplement par répondre aux quest
 
 Dans tous les cas, pensez obligatoirement à préciser :
 
+- votre nom et prénom
 - le nom de la structure dans laquelle vous faites votre stage
-- le nom du projet que vous réasliez (ça peut être aussi simple que « le site web »)
+- l'adresse complète de la structure
+- le nom du projet que vous réalisez (ça peut être aussi simple que « le site web »)
 - le nom de votre référent de stage dans la structure
 - le nom de votre référent de stage dans votre organisme de formation
-- si possible l'adresse complète de la structure, sinon au moins la ville 
 - les dates de début et de fin de stage
+
+Conseils :
+
+- enregistrez votre résumé au format PDF
+- nommez le fichier `Dossier de projet - Prénom Nom.pdf`
 
 ## La traduction de contenu en anglais
 
