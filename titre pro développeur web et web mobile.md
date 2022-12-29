@@ -219,7 +219,13 @@ Les DP vides et l'aide proviennent de la page [Titres professionnels délivrés 
 ### Le contenu du DP (Dossier Professionnel)
 
 Les exemples de pratique professionnelle peuvent être répartis par activité types (c-à-d front-end et back-end).
+Vous pouvez choisir des exemples provenant de la formation ou de votre stage (mais privilégiez des exemples de votre stage).
 Vous n'êtes pas obligés de décomposer vos exemples pour chacune des compétences (maquetter une application, réaliser une interface, etc).
+
+> Ce document présente au jury des exemples de votre pratique professionnelle.
+> Ils sont issus de votre formation en centre, ou de périodes en entreprise.
+
+`Aide_candidatFormation_dossier_professionnel.pdf`, p3
 
 ## Les ECF (Évaluations en Cours de Formation)
 
