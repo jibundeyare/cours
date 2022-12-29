@@ -9,8 +9,8 @@ L'outil en ligne de commande `symfony-cli` permet de créer un nouveau projet ou
 Installation de `symfony-cli` avec Debian ou Ubuntu :
 
 ```bash
-curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
-sudo apt install symfony-cli
+$ curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
+$ sudo apt install symfony-cli
 ```
 
 Si vous avez une autre ditrib linux, vérifiez les instructions sur la page officielle : [Download Symfony Framework and Components](https://symfony.com/download).
@@ -156,7 +156,7 @@ $ composer require javiereguiluz/easyslugger --dev
 Installation de `knplabs/knp-paginator-bundle` :
 
 ```bash
-composer require knplabs/knp-paginator-bundle
+$ composer require knplabs/knp-paginator-bundle
 ```
 
 ## Préparation de fixtures de test
