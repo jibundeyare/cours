@@ -159,6 +159,9 @@ Installation de `knplabs/knp-paginator-bundle` :
 $ composer require knplabs/knp-paginator-bundle
 ```
 
+Si `composer` râle au moment de l'installation de `knplabs/knp-paginator-bundle`, autorisez `composer` à choisir tout seul une version qui convient avec `knplabs/knp-paginator-bundle:*`.
+Si ça ne passe toujours pas, choisissez vous-même une version qui pourrait convenir avec `knplabs/knp-paginator-bundle:^5.9.0` par exemple.
+
 ## Préparation de fixtures de test
 
 Création de fixtures de test :
