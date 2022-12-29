@@ -24,6 +24,31 @@ Vous pouvez retrouver une copie de ces documents ci-dessous :
 - [RCV2_DWWM_V03_03052018.pdf](files/RCV2_DWWM_V03_03052018.pdf)
 - [REAC_DWWM_V03_03052018.pdf](files/REAC_DWWM_V03_03052018.pdf)
 
+## Les compétences validées par le titre pro
+
+Elles sont divisées en deux parties :
+
+1. Activité type front-end
+2. Activité type back-end
+
+### Front-end
+
+Les compétences professionnelles sont :
+
+1. Maquetter une application
+2. Réaliser une interface utilisateur web statique et adaptable (c-à-d HTML et CSS responsive)
+3. Développer une interface utilisateur web dynamique (c-à-d JS)
+4. Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce (c-à-d Wordpress)
+
+### Back-end
+
+Les compétences professionnelles sont :
+
+5. Créer une base de données
+6. Développer les composants d’accès aux données (c-à-d utiliser une librairie d'accès à une BDD comme Doctrine)
+7. Développer la partie back-end d’une application web ou web mobile (c-à-d créer un back office et implémenter un système de sécurité par mot de passe)
+8. Élaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce (c-à-d créer un thème ou un plugin Wordpress « from scratch »)
+
 ## Les documents que vous devez produire (les livrables)
 
 Vous devez créer plusieurs documents :
