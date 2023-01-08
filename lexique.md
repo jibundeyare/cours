@@ -57,6 +57,7 @@
 - ICT : Ingénierie et Conseils en Technologie ; voir aussi ESN et SSII
 - GUI : Graphical User Interface (interface utilisateur graphique)
 - Id : identifiant (unique) ; l'identifiant permet de désigner un élément stocké en BDD de façon précise et sans ambiguïté
+- IIFE : Immediately Invoked Function Expression ; fonction qui est définie et appelée en même temps ; ces fonctions sont aussi appelées Self-Executing Anonymous Function (fonction anonyme auto-exécutante)
 - IMAP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence de POP, les messages sont stockés sur le serveur ; voir aussi POP et SMTP
 - Integer : nombre entier, type de données
 - IP : Internet Protocol (protocole inter-réseau) ; protocole de communication de réseau informatique ; ce protocole ne se préoccupe pas du contenu des paquets, il fournit juste une méthode pour les mener à destination ; ce protocole fonctionne peut fonctionner en tandem avec le protocole TCP pour former le protocole TCP/IP utilisé dans Internet
@@ -86,6 +87,7 @@
 - MVC : Model View Controller (modèle vue contrôleur)
 - NATU : Netflix Airbnb Tesla Uber ; de grandes multinationales occidentales du net ; voir aussi BATX, FAANG et GAFAM
 - Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers
+- OEM : Original Equipment Manufacturer (fabricant d'équipement d'origine) ; Le terme OEM désigne un fabricant de matériel (cartes mères, périphériques, etc) qui fournit de plus gros constructeurs (HP, DELL, etc) ; un logiciel OEM est un logiciel vendu en même temps qu'un ordinateur neuf (système d'exploitation, antivirus, etc) et qui ne peut être vendus séparément
 - OOP : Object Oriented Programming ; voir POO
 - OVH : leader en France des services d'hébergement et de calcul en ligne ; initiales de « Oles Van Herman » surnom d'étudiant d'Octave Klaba, le fondateur de la société
 - Package : un librairie ou un programme installable
