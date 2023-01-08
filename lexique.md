@@ -89,6 +89,7 @@
 - Not invented here : pas inventé chez nous ; syndrôme fréquent chez les informaticiens qui consiste à réécrire soi-même du code au lieu d'utiliser une solution déjà créée par un tiers
 - OEM : Original Equipment Manufacturer (fabricant d'équipement d'origine) ; Le terme OEM désigne un fabricant de matériel (cartes mères, périphériques, etc) qui fournit de plus gros constructeurs (HP, DELL, etc) ; un logiciel OEM est un logiciel vendu en même temps qu'un ordinateur neuf (système d'exploitation, antivirus, etc) et qui ne peut être vendus séparément
 - OOP : Object Oriented Programming ; voir POO
+- OS : Operating System (Système d'exploitation) ; C'est la base de la base en terme de logiciel, sans celui-ci nu ordinateur ne peut fonctionner
 - OVH : leader en France des services d'hébergement et de calcul en ligne ; initiales de « Oles Van Herman » surnom d'étudiant d'Octave Klaba, le fondateur de la société
 - Package : un librairie ou un programme installable
 - Paquet : voir package
