@@ -139,11 +139,13 @@ git commit --amend
 
 Attention : cette technique est valable que vous ayez déjà utilisé `git push` ou non.
 
-Vous pouvez créer un nouveau commit qui supprime tout ce que vous avez ajouté avec :
+Vous pouvez créer un nouveau commit qui annule tout ce que vous avez fait dans le précédent commit avec :
 
 ```bash
 git revert HEAD
 ```
 
-Notez que le code que vous avez ajouté dans le précédent commit reste présent dans l'historique.
+Note : si vous avez ajouté du code dans le commit précédent, il restera présent dans l'historique.
+Cette méthode n'est donc pas adaptée pour supprimer un mot de passe commité et pushé par erreur.
+Il est possible de modifier son historique mais ce type de technique dépasse le cadre de cette simple fiche.
 
