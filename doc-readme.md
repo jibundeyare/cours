@@ -8,7 +8,7 @@ Pourtant c'est avant tout la documentation qui conditionne le succès d'un proje
 
 Pour le format de la doc :
 
-- rédigez votre documentation au format markdown
+- rédigez votre documentation au format markdown [Markdown Guide](https://www.markdownguide.org/)
 - sinon utilisez un autre format comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
 
 Pour en savoir plus sur la syntaxe de Markdown, voir [markdown.md](markdown.md).
@@ -54,18 +54,22 @@ Voici un modèle de fichier `README.md` en français :
 
     ## Installation
 
-        git clone https://github.com/editeur/projet.git
-        cd projet
-        # adaptez les paramètres
-        echo "DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name" > .env.local
-        composer install
-        php bin/console doctrine:database:create
-        php bin/console doctrine:migrations:migrate
-        php bin/console doctrine:fixtures:load
+    ```
+    git clone https://github.com/editeur/projet.git
+    cd projet
+    # adaptez les paramètres
+    echo "DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name" > .env.local
+    composer install
+    php bin/console doctrine:database:create
+    php bin/console doctrine:migrations:migrate
+    php bin/console doctrine:fixtures:load
+    ```
 
     Pour charger les données nécessaires au bon fonctionnement :
 
-        php bin/console doctrine:fixtures:load --group=prod
+    ```
+    php bin/console doctrine:fixtures:load --group=prod
+    ```
 
     ## Utilisation
 
@@ -73,7 +77,9 @@ Voici un modèle de fichier `README.md` en français :
 
     Depuis la racine du projet, lancez un serveur web :
 
-        symfony serve
+    ```
+    symfony serve
+    ```
 
     Puis ouvrez le lien [http://localhost:8000](http://localhost:8000).
 
@@ -86,15 +92,21 @@ Voici un modèle de fichier `README.md` en français :
 
     Pour lancer tous les tests :
 
-        php bin/phpunit
+    ```
+    php bin/phpunit
+    ```
 
     Pour lancer les tests liés au front-office :
 
-        php bin/phpunit tests/Front
+    ```
+    php bin/phpunit tests/Front
+    ```
 
     Pour lancer les tests liés au back-office :
 
-        php bin/phpunit tests/Back
+    ```
+    php bin/phpunit tests/Back
+    ```
 
     ## Bugs
 
@@ -122,5 +134,9 @@ Voici un modèle de fichier `README.md` en français :
 
 ## Doc
 
+- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [AsciiDoc](http://asciidoc.org/)
+- [Sphinx](http://www.sphinx-doc.org/en/master/)
 - [Choose an open source license | Choose a License](https://choosealicense.com/)
 
