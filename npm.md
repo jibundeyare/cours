@@ -106,4 +106,5 @@ ls ~/.npm-global
 
 - [npm Documentation](https://docs.npmjs.com/)
 - [package.json | npm Documentation](https://docs.npmjs.com/files/package.json)
+- [Resolving EACCES permissions errors when installing packages globally | npm Docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 
