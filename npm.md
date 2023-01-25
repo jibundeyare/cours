@@ -63,6 +63,45 @@ Heureusement, l'option `npx --no-install` permet d'empêcher ce comportement par
 
 Astuce : j'ai rajouté `alias npx='npx --no-install'` dans mon fichier `~/.bashrc` pour ne pas avoir à taper `--no-install` à chaque fois.
 
+## Installation de package globaux ou  l'erreur `EACCES permissions errors when installing packages globally`
+
+Si vous essayez d'installer un package global sans ajouter `sudo` devant, vous verrez l'erreur `EACCES permissions errors when installing packages globally`.
+
+Personnellement je vous déconseille d'installer des packages npm avec la commande `sudo`, vu qu'il est possible de faire autrement.
+L'astuce est de configurer un dossier global dans sa home.
+
+Voici la procédure :
+
+```bash
+# création du répertoire d'installation pour les packages globaux
+mkdir -p ~/.npm-global
+
+# configuration de npm
+npm config set prefix '~/.npm-global'
+# vérification
+cat ~/.npmrc
+
+# configuration de la variable d'environnement pour nodejs
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile
+# vérification
+cat ~/.profile
+
+# chargement du nouveau fichier ~/.profile
+source ~/.profile
+```
+
+Maintenant vous pouvez installer des packages globaux sans utiliser `sudo` :
+
+```bash
+npm install -g sass
+```
+
+Vous pouvez vérifier que le package s'est bien installé dans le dossier `~/.npm-global` :
+
+```bash
+ls ~/.npm-global
+```
+
 ## Doc
 
 - [npm Documentation](https://docs.npmjs.com/)
