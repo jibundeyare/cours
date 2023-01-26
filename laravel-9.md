@@ -132,16 +132,10 @@ Puis la ligne :
 + 'faker_locale' => 'fr_FR',
 ```
 
-Pour afficher, dans une vue, le code langue que vous venez de configurer vous pouvez utiliser la fonction `config()` :
+Pour utiliser le code langue dans la balise `html` d'une vue blade vous pouvez utiliser le code suivant :
 
 ```blade
-{{ app()->getLocale() }}
-```
-
-Dans la balise `html` de votre vue, vous obtiendrez quelques chose comme :
-
-```blade
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 ```
 
 ### L'accès à la base de données (BDD)
@@ -174,67 +168,6 @@ Vous pouvez adaptez les lignes suivantes à vos besoins :
 ```
 
 Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont compatibles.
-
-## Le déboggage
-
-Laravel fournit deux fonctions utiles pour le déboggage :
-
-- la fonction `dump()` qui affiche le contenu d'une variable avec jolie coloration syntaxique
-- la fonction `dd()` (pour « dump and die ») qui fait comme `dump()` mais stop l'exécution juste après
-
-Exemple :
-
-```php
-foreach ($users as $user) {
-    dump($user);
-}
-exit()
-```
-
-Ou encore :
-
-```php
-dd($foo);
-```
-
-Il est aussi possible de faire du logging en utilisant la classe `Illuminate\Support\Facades\Log`.
-Par défaut, le logging va enregistrer les informations dans le fichier `storage/logs/laravel.log`.
-Ceci est idéal pour débogger une application en production car on veut évuter que les utilisateurs voient les messages.
-
-Voici la liste des méthodes disponibles pour enregistrer des données dans le fichier `storage/logs/laravel.log` :
-
-```php
-use Illuminate\Support\Facades\Log;
-
-// ...
-
-Log::emergency($message);
-Log::alert($message);
-Log::critical($message);
-Log::error($message);
-Log::warning($message);
-Log::notice($message);
-Log::info($message);
-Log::debug($message);
-```
-
-Exemple d'utilisation :
-
-```php
-use Illuminate\Support\Facades\Log;
-
-// ...
-
-Log::debug($foo);
-```
-
-Ceci va enregistrer le contenu de la variable `$foo` dans le fichier `storage/logs/laravel.log`.
-
-Exemple de données du fichier `storage/logs/laravel.log` :
-
-```log
-[2022-03-04 11:22:19] local.DEBUG: {"id":1,"nom":"foo","description":"","created_at":null,"updated_at":null}
-```
 
 ## Les vues
 
@@ -358,7 +291,7 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
 
 ```php
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -670,6 +603,88 @@ php artisan make:controller -r FooController
 
 - créer des actions [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/controllers#single-action-controllers)
 
+## Le déboggage
+
+Laravel fournit deux fonctions utiles pour le déboggage :
+
+- la fonction `dump()` qui affiche le contenu d'une variable avec jolie coloration syntaxique
+- la fonction `dd()` (pour « dump and die ») qui fait comme `dump()` mais stop l'exécution juste après
+
+Exemple :
+
+```php
+foreach ($users as $user) {
+    dump($user);
+}
+exit()
+```
+
+Ou encore :
+
+```php
+dd($foo);
+```
+
+Il est aussi possible de faire du logging en utilisant la classe `Illuminate\Support\Facades\Log`.
+Par défaut, le logging va enregistrer les informations dans le fichier `storage/logs/laravel.log`.
+Ceci est idéal pour débogger une application en production car on veut évuter que les utilisateurs voient les messages.
+
+Voici la liste des méthodes disponibles pour enregistrer des données dans le fichier `storage/logs/laravel.log` :
+
+```php
+use Illuminate\Support\Facades\Log;
+
+// ...
+
+Log::emergency($message);
+Log::alert($message);
+Log::critical($message);
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
+```
+
+Exemple d'utilisation :
+
+```php
+use Illuminate\Support\Facades\Log;
+
+// ...
+
+Log::debug($foo);
+```
+
+Ceci va enregistrer le contenu de la variable `$foo` dans le fichier `storage/logs/laravel.log`.
+
+Exemple de données du fichier `storage/logs/laravel.log` :
+
+```log
+[2022-03-04 11:22:19] local.DEBUG: {"id":1,"nom":"foo","description":"","created_at":null,"updated_at":null}
+```
+
+## Le code style
+
+Il n'est pas toujours facile de respecter le code style spécifique à un projet PHP.
+
+Laravel propose un outil en ligne de commande qui peut corriger automatiquement certaines erreurs.
+
+La commande suivante affiche seulement les erreurs trouvées sans les corriger :
+
+```bash
+vendor/bin/pint --test
+```
+
+La commande suivante corrige les erreurs trouvées :
+
+```bash
+vendor/bin/pint
+```
+
+Au besoin, cet outil peut-être personnalisé.
+Voir [Laravel Pint](https://laravel.com/docs/9.x/pint)
+
 ## Le schéma de base de données (BDD)
 
 Vous pouvez créer le schéma de BDD « à la main » en écrivant du code SQL ou en utilisant PhpMyAdmin.
@@ -728,7 +743,7 @@ La commande suivante permet de générer un fichier de migration pour la table `
 php artisan make:migration create_foo_table
 ```
 
-Un nouveau fichier apparaît : `database/migrations/2021_03_18_171447_create_foo_table.php`
+Un nouveau fichier apparaît : `database/migrations/2021_03_18_171447_create_foo_table.php`.
 
 La fonction `up()` sert à mettre à jour la BDD.
 C'est là qu'il faut indiquer comment créer le schéma de BDD.
@@ -1145,10 +1160,22 @@ Schema::dropIfExists('bar');
 
 ## Le modèle de données
 
+Dans le modèle de données, les entités représentent des tables.
+Mais il y a une exception : les tables de jointures n'ont pas besoin d'être représentées par des entités.
+C'est normal car contrairement aux tables les entités peuvent inclure une ou plusieurs autres entités.
+
+De même les clé étrangères ne sont pas représentées dans une entité.
+Comme une entité peut inclure une ou plusieurs autres entités, il suffit de récupérer la clé primaire de cette ou ces autres entités.
+
+La commande suivante permet de créer une entité nommée `Foo` :
+
 ```bash
 php artisan make:model Foo
-php artisan make:seeder FooSeeder
 ```
+
+Un nouveau fichier apparaît : `app/Models/Foo.php`.
+
+Vous pouvez spécifier à quelle table l'entité correspond et indiquer le nom de la clé primaire :
 
 ```diff-php
   <?php
