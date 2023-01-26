@@ -52,21 +52,6 @@ Par exemple, pour avoir des infos sur la commande `make:controller`, vous pouvez
 php artisan make:controller --help
 ```
 
-### **(Optionnel)** Installation globale de la commande `artisan`
-
-Une installation globale veut dire que la commande est disponible depuis n'importe quel dossier en tapant seulement `artisan` (pas la peine de taper `php artisan`).
-
-Vous pouvez 'installer globalement la commande avec `composer` :
-
-```bash
-composer global require laravel/installer
-```
-
-Fermez votre terminal puis lancez-en un autre.
-Testez en tapant la commande `artisan`.
-
-Si vous obtenez une erreur du type `command not found`, vérifiez que vous avez bien réalisé toutes les étapes de la procédure d'installation de Composer dans [composer.md](composer.md).
-
 ## Création d'une application avec le framework Laravel
 
 [Installation - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x#installation-via-composer)
