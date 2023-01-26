@@ -12,11 +12,11 @@ BEM (Block, Element, Modifier) is a component-based approach to web development.
 
 ![Nested structure](img/bem-nested-structure.png)
 
-![Block](bem-block.png)
+![Block](img/bem-block.png)
 
-![Element](bem-element.png)
+![Element](img/bem-element.png)
 
-![Modifier](bem-modifier.png)
+![Modifier](img/bem-modifier.png)
 
 ## Naming convention
 
