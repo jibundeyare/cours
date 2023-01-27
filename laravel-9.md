@@ -123,6 +123,28 @@ Pour utiliser le code langue dans la balise `html` d'une vue blade vous pouvez u
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 ```
 
+### La langue des messages (localisation)
+
+Laravel ne propose pas de traduction des messages.
+Pour que les messages d'erreurs apparaissent en français, il faut installer des packages dédiés.
+
+Voici les commandes à taper pour activer l'affichage de messages en français :
+
+```bash
+composer require laravel-lang/publisher laravel-lang/lang laravel-lang/attributes --dev
+php artisan vendor:publish --provider="LaravelLang\Publisher\ServiceProvider"
+php artisan lang:add fr
+```
+
+Si vous voulez supprimer les traductions française que vous venez d'installer, vous pouver utiliser la commande suivante :
+
+```bash
+php artisan lang:rm fr --force
+```
+
+Pour plus de détails sur le fonctionnement de ce package, veuillez consulter sa documentation officielle :
+[Laravel Lang Publisher | Laravel Lang Publisher](https://publisher.laravel-lang.com/).
+
 ### L'accès à la base de données (BDD)
 
 - [Configuration - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/configuration)
@@ -162,7 +184,7 @@ Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/
 
 ```php
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -220,6 +242,34 @@ Voici à quoi devrait ressemble votre balide `head` après modification :
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 ```
+
+### Intégration des fichiers CSS et JS du framework Boostrap dans une vue Blade
+
+Vous devez consulter la documentation de Bootstrap pour récupérer les liens de la version la plus récente du framework.
+
+Exemple avec Bootstrap 5.3 :
+
+- allez sur la page [Get started with Bootstrap · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- copiez-collez les balises `link` et `script` de la section « Include Bootstrap’s CSS and JS » de la doc
+- ajoutez l'attribut `defer` à la balise `script`
+
+Voici le résultat :
+
+```php
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+```
+
+Attention : l'ordre des balises est important.
+Vos fichiers CSS et JS doivent toujours être rajoutés après ceux de Bootstrap.
+Sinon vous ne pourrez pas « avoir le dernier mot » et surcharger la feuille de style de Bootstrap (c-à-d la personnaliser).
 
 ### Utilisation de fichier CSS et JS spécifique pour certaines pages
 
@@ -282,6 +332,9 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site web - @yield('title')</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
 
     @section('vite')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -517,7 +570,7 @@ Et voici un tableau des routes par défaut qui seront associées à la ressource
 Il est possible de configurer des redirection directement dans le fichier `routes/web.php` :
 
 ```php
-// redirection de la page « à propos » vers la page « contact »
+// redirection de l'url `/about` vers l'url `/contact`
 Route::redirect('/about', '/contact');
 ```
 
