@@ -510,18 +510,24 @@ Dans le code ci-dessus, le mot clé `get` veut dire que cette route n'est access
 Mais il existe d'autres méthodes si l'on veut que la route soir accessible avec d'autres méthodes HTTP :
 
 ```php
-Route::get('/foo', [MainController::class, 'foo'])->name('main.foo');
-Route::post('/foo', [MainController::class, 'foo'])->name('main.foo');
-Route::put('/foo', [MainController::class, 'foo'])->name('main.foo');
-Route::patch('/foo', [MainController::class, 'foo'])->name('main.foo');
-Route::delete('/foo', [MainController::class, 'foo'])->name('main.foo');
-Route::options('/foo', [MainController::class, 'foo'])->name('main.foo');
+Route::get('/foo', [MainController::class, 'index'])->name('main.foo.index');
+
+Route::get('/foo/{id}', [MainController::class, 'show'])->name('main.foo.show');
+
+Route::get('/foo/create', [MainController::class, 'create'])->name('main.foo.create');
+Route::post('/foo', [MainController::class, 'store'])->name('main.foo.store');
+
+Route::get('/foo/{id}/edit', [MainController::class, 'edit'])->name('main.foo.edit');
+Route::put('/foo/{id}', [MainController::class, 'update'])->name('main.foo.update');
+Route::patch('/foo/{id}', [MainController::class, 'update'])->name('main.foo.update');
+
+Route::delete('/foo/{id}', [MainController::class, 'destroy'])->name('main.foo.destroy');
 ```
 
 Si nous voulons qu'une route soit accessible avec plusieurs méthodes HTTP, nous pouvons utiliser la méthode `match()` :
 
 ```php
-Route::match(['get', 'post'], '/foo', [MainController::class, 'foo'])->name('main.foo')
+Route::match(['put', 'patch'], '/foo', [MainController::class, 'update'])->name('main.foo.update');
 ```
 
 Si c'est absolument nécessaire, il est aussi possible de rendre une route accessible avec n'importe quelle méthode HTTP :
@@ -560,10 +566,10 @@ Et voici un tableau des routes par défaut qui seront associées à la ressource
 | GET       | /foo            | index   | foo.index   |
 | GET       | /foo/create     | create  | foo.create  |
 | POST      | /foo            | store   | foo.store   |
-| GET       | /foo/{foo}      | show    | foo.show    |
-| GET       | /foo/{foo}/edit | edit    | foo.edit    |
-| PUT/PATCH | /foo/{foo}      | update  | foo.update  |
-| DELETE    | /foo/{foo}      | destroy | foo.destroy |
+| GET       | /foo/{id}       | show    | foo.show    |
+| GET       | /foo/{id}/edit  | edit    | foo.edit    |
+| PUT/PATCH | /foo/{id}       | update  | foo.update  |
+| DELETE    | /foo/{id}       | destroy | foo.destroy |
 
 ### Les redirections
 
