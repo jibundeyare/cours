@@ -168,8 +168,8 @@ Voici les documents que vous devez produire pour faire une analyse avec la méth
 
 1. un dictionnaire des données : une liste complète des données avec le nom des colonnes, le type et la taille des données
 2. un modèle conceptuel des données (MCD) : un schéma indiquant le nom des entités, leurs attributs et les relations avec les cardinalités
-3. un modèle physique des données (MPD) : un schéma qui reprend le MCD mais qui indique les relations avec des clés étrangères et des tables de jointures
-4. un modèle logique des données (MLD) : une liste des tables et de leurs colonnes ; cette liste est prête à être transformée en code SQL
+3. un modèle logique des données (MLD) : un schéma qui reprend le MCD mais qui indique les relations avec des clés étrangères et des tables de jointures
+4. un modèle physique des données (MPD) : une liste des tables et de leurs colonnes ; cette liste est prête à être transformée en code SQL
 
 Pour un cours complet, voir :
 
