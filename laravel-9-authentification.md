@@ -56,6 +56,9 @@ Et adaptez la `HOME` :
 +     public const HOME = '/foo';
 ```
 
+Note : vous avez le droit de renseigner une URL complète comme `https://example.com/foo`.
+L'URL ne doit pas nécessairement rediriger vers le même nom de domaine, comme `https://google.com`.
+
 ## Obtenir des informations sur l'utilisateur dans un contrôleur
 
 `app/Http/Controllers/FooController.php`
@@ -200,5 +203,14 @@ class UserSeeder extends Seeder
         }
     }
 }
+```
+
+## Déconnexion
+
+```blade
+<form action="{{ route('logout') }}" method="POST">
+    @csrf
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">déconnexion</a>
+</form>
 ```
 
