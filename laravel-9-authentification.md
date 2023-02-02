@@ -23,6 +23,21 @@ Les routes suivantes sont disponibles :
 
 Toutes les routes sont dans le fichier : `routes/auth.php`.
 
+## Trouble shooting
+
+### Le fichier `welcome.blade.php` est manquant
+
+```
+ErrorException
+
+file_get_contents(/home/daishi/projects/laravel-9/resources/views/welcome.blade.php): Failed to open stream: No such file or directory
+```
+
+La commande `php artisan breeze:install` ne fonctionne que si le fichier `welcome.blade.php` est présent.
+
+[laravel/welcome.blade.php at 9.x · laravel/laravel](https://github.com/laravel/laravel/blob/9.x/resources/views/welcome.blade.php)
+[raw.githubusercontent.com/laravel/laravel/9.x/resources/views/welcome.blade.php](https://raw.githubusercontent.com/laravel/laravel/9.x/resources/views/welcome.blade.php)
+
 ## Choisir où l'utilisateur est redirigé après authentification
 
 Ouvrez le fichier suivant : `app/Providers/RouteServiceProvider.php`.
@@ -40,7 +55,6 @@ Et adaptez la `HOME` :
 -     public const HOME = '/dashboard';
 +     public const HOME = '/foo';
 ```
-
 
 ## Obtenir des informations sur l'utilisateur dans un contrôleur
 
@@ -101,7 +115,7 @@ class FooController extends Controller
 @else
     L'utilisateur n'est pas authentifié
 @endauth
- 
+
 @guest
     L'utilisateur n'est pas authentifié
 @else
@@ -122,6 +136,7 @@ class FooController extends Controller
 ```php
 // seuls les utilisateurs authentifiés peuvent accéder à cette route
 Route::get('/foo', function () {
+    return view('foo');
 })->middleware('auth');
 
 // seuls les utilisateurs authentifiés peuvent accéder à cette route
