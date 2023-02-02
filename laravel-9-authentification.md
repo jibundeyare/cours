@@ -186,7 +186,7 @@ Voici ce que vous pouvez faire dans une vue Blade :
 
 Pour se déconnecter, il ne suffit pas de créer un lien qui pointe vers la route `logout`.
 Il faut créer un formulaire qui envoie les données avec la méthode `POST`.
-Ceci permet d'empêcher les attaques de type CSRF.
+Ceci permet de se prémunir contre les attaques de type CSRF.
 
 Vous pouvez rajouter ce formulaire dans votre barre de navigation.
 

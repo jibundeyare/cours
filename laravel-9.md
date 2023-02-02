@@ -92,6 +92,37 @@ Maintenant pour tester l'instalation ouvrez le lien suivant et savourez : [http:
 
 ## Configuration
 
+### Création du fichier de config `.env`
+
+Laravel est livré avec un exemple de fichier de configuration.
+Nous allons le copier et l'adapter.
+
+Tapez la commande suivante à la racine de votre projet :
+
+```bash
+cp .env.example .env
+```
+
+Dans le fichier `.env` à la racine de votre projet, adaptez le nom de votre application :
+
+```diff-bash
+- APP_NAME=Laravel
++ APP_NAME="Mon projet Laravel"
+  APP_ENV=local
+  APP_KEY=
+  APP_DEBUG=true
+  APP_URL=http://localhost
+```
+
+Générez une nouvelle clé secrète :
+
+```bash
+php artisan key:generate
+```
+
+Notez que la valeur du champ `APP_KEY` change après la dernière commande.
+C'est la clé secrète de l'application.
+
 ### La langue (locale)
 
 [Localization - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/localization#configuring-the-locale)
@@ -117,7 +148,7 @@ Puis la ligne :
 + 'faker_locale' => 'fr_FR',
 ```
 
-Pour utiliser le code langue dans la balise `html` d'une vue blade vous pouvez utiliser le code suivant :
+Pour utiliser le code langue dans la balise `html` d'une vue Blade vous pouvez utiliser le code suivant :
 
 ```blade
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -156,7 +187,7 @@ Imaginons que vous ayez les codes d'accès suivants à une BDD MariaDB :
 
 - host : 127.0.0.1
 - port : 3306
-- database : laravel_8
+- database : laravel_9
 - username : foo
 - password : 123
 
@@ -167,7 +198,7 @@ Vous pouvez adaptez les lignes suivantes à vos besoins :
   DB_HOST=127.0.0.1
   DB_PORT=3306
 - DB_DATABASE=laravel
-+ DB_DATABASE=laravel_8
++ DB_DATABASE=laravel_9
 - DB_USERNAME=root
 + DB_USERNAME=foo
 - DB_PASSWORD=
@@ -201,6 +232,14 @@ Vous pouvez créer le dossier `resources/views/main` puis le fichier `resources/
 ```
 
 Testez maintenant votre vue dans votre navigateur : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Ajouter des commentaires dans une vue Blade
+
+La syntaxe ressemble à celle de HTML :
+
+```blade
+{{-- ceci est un commentaire --}}
+```
 
 ### Vite
 
@@ -318,7 +357,7 @@ Quand vous mettrez votre code en production sur le serveur `example.com`, l'url 
 
 ### Création d'une vue parent
 
-La méthode préférée pour créer vos vues blades est de créer une vue parent et des vues enfants grâce à la fonctionnalité de l'héritage.
+La méthode préférée pour créer vos vues Blade est de créer une vue parent et des vues enfants grâce à la fonctionnalité de l'héritage.
 
 Voir la page suivante pour en savoir plus sur la façon de créer une vue parent et des vues enfant : [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade#layouts-using-template-inheritance)
 
@@ -331,7 +370,7 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site web - @yield('title')</title>
+    <title>{{ config('app.name') }} - @yield('title')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
@@ -359,6 +398,8 @@ Vous pouvez créer le fichier `resources/views/base.blade.php` :
 </body>
 </html>
 ```
+
+L'appel de fonction `config('app.name')` permet de récupérer le nom de l'application tel qu'il est écrit dans le fichier `.env`.
 
 Les instructions `@yield()` sont des instructions que nous pourrons remplacer par le contenu de notre choix dans des vues enfant.
 
@@ -399,11 +440,27 @@ Si le bloc remplace une instruction `@yield()` dans la vue parent, il n'y a pas 
 
 Pour afficher une variable, vous pouvez utiliser des accolades `{}`.
 
-```php
+```blade
 {{ $foo }}
 ```
 
 Remarque : bien sûr ceci ne fonctionne que si la variable `foo` a été transmise à la vue lors de l'appel de la fonction `view()` dans le contrôleur.
+
+### Afficher une variable telle quelle « sans filtre »
+
+Par défaut, quand on affiche une variable dans une vue Blade avec `{{ $foo }}`, une fonction nommée `htmlspecialchars()` est appliquée sur le contenu de la variable avant affichage.
+Cette fonction permet de s'assurer que du code HTML présent dans une variable ne soit pas interprêté par la navigateur mais seulement affiché.
+
+Dans certains cas, il est nécessaire d'afficher le contenu d'une variable sans changer son contenu avec la fonction `htmlspecialchars()`.
+
+Le code suivant permet d'afficher une variable telle quelle « sans filtre » :
+
+```blade
+{!! $foo !!}
+```
+
+ATTENTION : si vous affichez une variable de cette façon, vous devez vous assurer qu'elle ne contient pas de code HTML malicieux.
+Sinon il s'agit d'une faille de sécurité majeure.
 
 ### Générer les urls de routes nommées
 
