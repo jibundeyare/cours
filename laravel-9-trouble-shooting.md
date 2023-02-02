@@ -146,3 +146,13 @@ $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
 
 Et le tour est joué.
 
+## Mon formulaire génère une erreur `419 Page expired`
+
+Ajoutez l'instruction `@csrf` dans votre formulaire :
+
+```blade
+<form action="{{ route('foo') }}" method="post">
+    @csrf
+</form>
+```
+
