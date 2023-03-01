@@ -430,10 +430,10 @@ get_header();
 
 // Les paramètres de la requête WP_QUery
 $args = array(
-    // Sélection de pages (au lieu de posts)
-    'post_type' => 'page',
-    // Sélection d'une page par son slug
+    // Sélection d'un document par son slug
     'pagename' => 'actus',
+    // Sélection du type de document
+    'post_type' => 'page',
 );
 
 // Exécution de la requête WP_Query
@@ -669,7 +669,8 @@ Afficher tous les articles (`post`) :
 
 // Les paramètres de la requête WP_QUery
 $args = array(
-    'post_type' => array( 'post' ),
+    // Sélection du type de document
+    'post_type' => 'post',
 );
 
 // Exécution de la requête WP_Query
@@ -707,7 +708,8 @@ Afficher toutes les pages (`page`) :
 
 // Les paramètres de la requête WP_QUery
 $args = array(
-    'post_type' => array( 'page' ),
+    // Sélection du type de document
+    'post_type' => 'page',
 );
 
 // Exécution de la requête WP_Query
@@ -745,7 +747,9 @@ Afficher un article (`post`) correspondant à un slug donné :
 
 // Les paramètres de la requête WP_QUery
 $args = array(
+    // Sélection d'un document par son slug
     'name' => 'foo',
+    // Le type de document par défaut est 'post'
 );
 
 // Exécution de la requête WP_Query
@@ -775,8 +779,10 @@ Afficher une page (`page`) correspondant à un slug donné :
 
 // Les paramètres de la requête WP_QUery
 $args = array(
+    // Sélection d'un document par son slug
     'pagename' => 'foo',
-    'post_type' => array( 'post' ),
+    // Sélection du type de document
+    'post_type' => 'page',
 );
 
 // Exécution de la requête WP_Query
