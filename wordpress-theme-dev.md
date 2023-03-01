@@ -428,7 +428,7 @@ get_header();
 
 // Afichage de la page actus
 
-// Les paramètres de la requête WP_QUery
+// Les paramètres de la requête WP_Query
 $args = array(
     // Sélection d'un document par son slug
     'pagename' => 'actus',
@@ -491,6 +491,14 @@ Maintenant, il faut changer les paramètres de Wordpress :
 
 
 ## Afficher la vignette d'un article
+
+Dès qu'une image est stockée via le back office, Wordpress créé des copies redimensionnées de l'image en question.
+Voici le nom de toutes toutes les tailles d'images disponible quand vous voulez afficher une vignette :
+
+- `original`
+- `large` : 1024 x 1024 max
+- `medium` : 300 x 300 max
+- `thumbnail` : 150 x 150
 
 Pour afficher la vignette d'un article, il faut d'abord s'assurer que le thème a bien activé la fonctionnalité avec `add_theme_support( 'post-thumbnails' );` dans le fichier `functions.php`.
 
@@ -660,17 +668,17 @@ On peut utiliser la boucle pour afficher la page demandée ou utiliser `WP_Query
 
 ## La classe `WP_Query`
 
-Afficher tous les articles (`post`) :
+Les requêtes `WP_Query` ont toujours la forme suivante :
 
 ```php
 <?php
 
 // ...
 
-// Les paramètres de la requête WP_QUery
+// Les paramètres de la requête WP_Query
 $args = array(
-    // Sélection du type de document
-    'post_type' => 'post',
+    // Paramètres à personnaliser
+    // ...
 );
 
 // Exécution de la requête WP_Query
@@ -699,121 +707,163 @@ endif;
 wp_reset_postdata();
 ```
 
-Afficher toutes les pages (`page`) :
+Utiliser correctement `WP_Query` consiste juste à trouver les bons paramètres dans la partie à personnaliser.
+
+C'est pourquoi je n'indiquerai ci-dessous que la partie `$args = array( /* ... */ );` et pas le reste.
+
+### Tous les articles (`post`), triés par ordre descendant de date de publication
 
 ```php
-<?php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par date de publication
+    'sortby' => 'date',
+    // Trier par ordre descendant
+    'sort' => 'DESC',
+);
+```
 
-// ...
+### Les 5 derniers articles (`post`), triés par ordre descendant de date de publication
 
-// Les paramètres de la requête WP_QUery
+```php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par date de publication
+    'sortby' => 'date',
+    // Trier par ordre descendant
+    'sort' => 'DESC',
+    // Nombre de documents à afficher
+    'posts_per_page' => 5,
+    // Ne pas rechercher plus du document
+    'no_found_rows' => true,
+);
+```
+
+### Tous les articles (`post`) d'une catégorie, triés par ordre alphabétique du titre
+
+```php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
+    // Sélection de la catégorie par slug
+    'category_name' => 'foo',
+);
+```
+
+### Tous les articles (`post`) ayant **une étiquette**, triés par ordre alphabétique du titre
+
+```php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
+    // Sélection de l'étiquette par slug
+    'tag' => 'foo',
+);
+```
+
+### Tous les articles (`post`) ayant **une des étiquettes**, triés par ordre alphabétique du titre
+
+```php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
+    // Sélection des étiquettes par slug
+    'tag' => 'foo,bar,baz',
+);
+```
+
+### Tous les articles (`post`) ayant **toutes les étiquettes**, triés par ordre alphabétique du titre
+
+```php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'post',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
+    // Sélection des étiquettes par slug
+    'tag' => 'foo+bar+baz',
+);
+```
+
+### Toutes les pages (`page`), triées par ordre alphabétique du titre
+
+```php
+// Les paramètres de la requête WP_Query
 $args = array(
     // Sélection du type de document
     'post_type' => 'page',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
 );
-
-// Exécution de la requête WP_Query
-$query = new WP_Query( $args );
-
-// Affichage du résultat de la requête WP_Query avec la boucle
-if ( $query->have_posts() ):
-    while ( $query->have_posts() ):
-        $query->the_post();
-        ?>
-        <article>
-            <h1><?php the_title(); ?></h1>
-            <div><?php the_content(); ?></div>
-        </article>
-        <?php
-    endwhile;
-else:
-    ?>
-    <p>
-        Aucune page trouvée
-    </p>
-    <?php
-endif;
-
-// Restauration des paramètres originaux de la requête de l'utilisateur
-wp_reset_postdata();
 ```
 
-Afficher un article (`post`) correspondant à un slug donné :
+### Les 5 premières pages (`page`), triées par ordre alphabétique du titre
 
 ```php
-<?php
+// Les paramètres de la requête WP_Query
+$args = array(
+    // Sélection du type de document
+    'post_type' => 'page',
+    // Trier par titre
+    'sortby' => 'title',
+    // Trier par ordre ascendant
+    'sort' => 'ASC',
+    // Nombre de documents à afficher
+    'posts_per_page' => 5,
+    // Ne pas rechercher plus du document
+    'no_found_rows' => true,
+);
+```
 
-// ...
+### Un article (`post`) correspondant à un slug donné
 
-// Les paramètres de la requête WP_QUery
+```php
+// Les paramètres de la requête WP_Query
 $args = array(
     // Sélection d'un document par son slug
     'name' => 'foo',
     // Le type de document par défaut est 'post'
 );
-
-// Exécution de la requête WP_Query
-$query = new WP_Query( $args );
-
-// Affichage du résultat de la requête WP_Query sans la boucle
-if ( $query->have_posts() ):
-    $query->the_post();
-    ?>
-    <article>
-        <h1><?php the_title(); ?></h1>
-        <div><?php the_content(); ?></div>
-    </article>
-    <?php
-endif;
-
-// Restauration des paramètres originaux de la requête de l'utilisateur
-wp_reset_postdata();
 ```
 
-Afficher une page (`page`) correspondant à un slug donné :
+### Une page (`page`) correspondant à un slug donné
 
 ```php
-<?php
-
-// ...
-
-// Les paramètres de la requête WP_QUery
+// Les paramètres de la requête WP_Query
 $args = array(
     // Sélection d'un document par son slug
     'pagename' => 'foo',
     // Sélection du type de document
     'post_type' => 'page',
 );
-
-// Exécution de la requête WP_Query
-$query = new WP_Query( $args );
-
-// Affichage du résultat de la requête WP_Query sans la boucle
-if ( $query->have_posts() ):
-    $query->the_post();
-    ?>
-    <article>
-        <h1><?php the_title(); ?></h1>
-        <div><?php the_content(); ?></div>
-    </article>
-    <?php
-endif;
-
-// Restauration des paramètres originaux de la requête de l'utilisateur
-wp_reset_postdata();
 ```
 
 **Attention : vérifiez que votre document possède bien le slug que vous avez spécifié.
 Ce slug peut changer si vous changer le mode de création des permaliens dans le backoffice.**
-
-@todo autres sujets avancés :
-
-## Créer un custom post type et l'afficher
-
-1. Créer le custom post type
-2. Activer la page d'archive pour ce custom post type
-3. Créer le fichier `archive-$posttype.php`
-4. Créer le fichier `single-$posttype.php`
 
 ## Références
 
@@ -854,8 +904,6 @@ La class `WP_Query` :
 - [Shortcode API « WordPress Codex](https://codex.wordpress.org/Shortcode_API)
 - [Function Reference/get the tag list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_tag_list)
 - [Function Reference/get the category list « WordPress Codex](https://codex.wordpress.org/Function_Reference/get_the_category_list)
-- [Post Types « WordPress Codex](https://codex.wordpress.org/Post_Types)
-- [Custom Fields « WordPress Codex](https://codex.wordpress.org/Custom_Fields)
 
 ## Tutoriels
 
