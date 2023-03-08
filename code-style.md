@@ -37,13 +37,13 @@ La casse désigne la taille d'un caractère :
 - capitale (ou majuscule si vous préférez) : grand caractère
 - ou minuscule : petit caractère
 
-| Code      | Casse                 | Usage                                             |
-| ----------| --------------------- | ------------------------------------------------- |
-| `myVar`   | camel case            | pour les noms de variables et de fonctions        |
-| `MyVar`   | pascal case           | pour les noms de classes, interfaces et mixins    |
-| `MY_VAR`  | screaming snake case  | pour les constantes                               |
-| `my_var`  | snake case            | surtout utilisé en Ruby ou Python                 |
-| `my-var`  | kebab case            | utilisé en HTML et CSS                            |
+| Code      | Casse                 | Usage                       | Langages                            |
+| ----------| --------------------- | --------------------------- | ------------------------------------|
+| `myVar`   | camel case            | variables, fonctions        | C, C++, Java, JS, PHP               |
+| `MyVar`   | pascal case           | classes, interfaces, mixins | C, C++, Java, JS, PHP, Python, Ruby |
+| `MY_VAR`  | screaming snake case  | constantes                  | la plupart des langages             |
+| `my_var`  | snake case            | variables, fonctions        | Bash, Python, Ruby, SQL             |
+| `my-var`  | kebab case            | sélecteurs                  | CSS, HTML                           |
 
 ## Nommage des constantes
 
@@ -63,7 +63,7 @@ Les règles suivantes s'appliquent aux noms des variables mais aussi aux noms de
 
 ### Le nom d'une variable ne peut pas commencer par un chiffre
 
-Exemple de code en Python :
+Exemple en Python :
 
     # mauvais
     0_ma_variable = 123
@@ -78,7 +78,7 @@ Exemple de code en Python :
 
 *(Mais les dev microsoft ont tendance à violer cette règle.)*
 
-Exemple de code en Python :
+Exemple en Python :
 
     # mauvais
     Ma_variable = 123
@@ -95,7 +95,7 @@ L'underscore c'est tiret du bas `_`.
 
 *(Mais en code css vous pouvez vous permettre d'utiliser le trait d'union (tiret du milieu) `-`.*
 
-Exemple de code en Python :
+Exemple en Python :
 
     # mauvais
     ma-variable = 123
@@ -111,7 +111,7 @@ Exemple de code en Python :
 Quand on nomme une variable scalaire, on utilise toujours le singulier.
 Mais si la variable contient une collection de données (comme avec les listes, les tableaux ou les objets par exemple), on utilise le pluriel.
 
-Exemple de code en JS :
+Exemple en JS :
 
     // variable nommée au singulier
     // la variable représente un seul utilisateur
@@ -133,7 +133,7 @@ Exemple de code en JS :
         }
     ];
 
-Exemple de code en PHP :
+Exemple en PHP :
 
     // variable nommée au singulier
     // la variable représente un seul utilisateur
@@ -268,7 +268,7 @@ Exemple :
         ?> <!-- cette ligne n'est pas indentée parce qu'elle ne suit pas un bloc PHP ouvrant -->
     </div>
 
-## L'emplacement des accolades `{` et `}` end PHP
+## L'emplacement des accolades `{` et `}` en PHP
 
 Pour savoir ça, il vaut mieux consulter la norme officielle :
 
@@ -301,6 +301,12 @@ Exemple de code SQL bien « stylé » :
       KEY `fk_user_group_id` (`group_id`),
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+## La notation hongroise
+
+Ceci est une curiosité, surtout utilisée en C++.
+
+Essayez de trouver du code utilisant cette notation, vous ne serez pas déçu..
+
 ## Doc
 
 - [PSR-1: Basic Coding Standard - PHP-FIG](http://www.php-fig.org/psr/psr-1/)
@@ -309,4 +315,6 @@ Exemple de code SQL bien « stylé » :
 - [Coding Standards (Symfony Docs)](http://symfony.com/doc/current/contributing/code/standards.html)
 - [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)
 - [Identifier Case-sensitivity - MariaDB Knowledge Base](https://mariadb.com/kb/en/identifier-case-sensitivity/)
+
+- [Notation hongroise — Wikipédia](https://fr.wikipedia.org/wiki/Notation_hongroise)
 
