@@ -21,6 +21,11 @@ C'est l'entité qui possède la mention `inversedBy` dans l'annotation de la rel
 
 Pour trouver **le côté inverse** d'une relation, il faut repérer l'entité qui possède la mention `mappedBy` dans l'annotation de la relation.
 
+### Comment repérer le côté possédant / le côté inverse dans la BDD ?
+
+C'est la table qui contient la colonne de clé étrangère qui est **le côté possédant**.
+Et logiquement la table qui ne contient **pas** la colonne de clé étrangère est **le côté inverse**.
+
 ## Références
 
 - [https://symfony.com/doc/current/doctrine/associations.html](https://symfony.com/doc/current/doctrine/associations.html)
