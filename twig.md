@@ -420,7 +420,7 @@ Créer un template enfant `templates/foo.html.twig` qui hérite du template `tem
 ```twig
 {% extends 'base.html.twig' %}
 
-{% block title %}Foo{% endblock %}
+{% block title %}Foo - {{ parent() }}{% endblock %}
 
 {% block body %}
     <h1>Foo</h1>
@@ -428,12 +428,19 @@ Créer un template enfant `templates/foo.html.twig` qui hérite du template `tem
 {% endblock %}
 ```
 
+L'instruction `extends` permet de préciser que le template actuel est un template enfant et qu'il utilise le template parent spécifié.
+
+L'instruction `block` permet de créer un block qui peut être remplacé (surchargé) ou complété par un template enfant.
+
+La fonction `parent()` permet de récupérer le code qui est à l'intérieur d'un block parent.
+Ceci permet de compléter un block parent au lieu de le remplacer (surcharger).
+
 Créer un template enfant `templates/bar.html.twig` qui hérite du template `templates/base.html.twig`, et qui surcharge  les blocs `css_head` et `js_head` :
 
 ```twig
 {% extends 'base.html.twig' %}
 
-{% block title %}Foo{% endblock %}
+{% block title %}Foo - {{ parent() }}{% endblock %}
 
 {# surcharge du bloc css_head #}
 {# intégration de materialize au lieu de bootstrap #}
