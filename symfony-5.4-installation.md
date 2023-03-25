@@ -183,27 +183,24 @@ $ php bin/console make:fixtures
  Docs: https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
 ```
 
-Instanciation de doctrine et de faker dans le fichier de fixtures de test :
+Instanciation de faker dans le fichier de fixtures de test :
 
 ```diff-php
   namespace App\DataFixtures;
 
   use Doctrine\Bundle\FixturesBundle\Fixture;
-+ use Doctrine\Persistence\ManagerRegistry;
   use Doctrine\Persistence\ObjectManager;
 + use Faker\Factory as FakerFactory;
-+ use Faker\Generator as FakerGenerator;
 + use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-  class AppFixtures extends Fixture
+  class TestFixtures extends Fixture
   {
-+     private $doctrine;
 +     private $faker;
 +     private $hasher;
++     private $manager;
 +
-+     public function __construct(ManagerRegistry $doctrine, UserPasswordHasherInterface $hasher)
++     public function __construct(UserPasswordHasherInterface $hasher)
 +     {
-+         $this->doctrine = $doctrine;
 +         $this->faker = FakerFactory::create('fr_FR');
 +         $this->hasher = $hasher;
 +
@@ -214,13 +211,16 @@ Instanciation de doctrine et de faker dans le fichier de fixtures de test :
 -         // $product = new Product();
 -         // $manager->persist($product);
 -
-          $manager->flush();
+-         $manager->flush();
++         $this->manager = $manager;
       }
   }
 ```
 
-Si vous voulez lire des données de la BDD, vous pouvez récupérer un repository avec l'instruction `$this->doctrine->getRepository(Foo::class)`.
+Si vous voulez lire des données de la BDD, vous pouvez récupérer un repository avec l'instruction `$this->manager->getRepository(Foo::class)`.
 N'oubliez d'ajouter pas un `use App\Entity\Foo;` au début de fichier et adapatez le nom de classe à la place de `Foo`.
+
+Au besoin vous pouvez aussi intégrer ce code dans le fichier de fixtures par défaut `src/DataFixtures/AppFixtures.php`.
 
 Création du script `bin/dofilo.sh` :
 
