@@ -162,7 +162,48 @@ $ composer require knplabs/knp-paginator-bundle
 Si `composer` râle au moment de l'installation de `knplabs/knp-paginator-bundle`, autorisez `composer` à choisir tout seul une version qui convient avec `knplabs/knp-paginator-bundle:*`.
 Si ça ne passe toujours pas, choisissez vous-même une version qui pourrait convenir avec `knplabs/knp-paginator-bundle:^5.9.0` par exemple.
 
-## Préparation de fixtures de test
+## Préparation des fixtures de prod et de test
+
+Instanciation de faker et du hasher de mot de passe dans le fichier de fixtures de prod `src/DataFixtures/AppFixtures` :
+
+```diff-php
+  namespace App\DataFixtures;
+
+  use Doctrine\Bundle\FixturesBundle\Fixture;
++ use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
+  use Doctrine\Persistence\ObjectManager;
++ use Faker\Factory as FakerFactory;
++ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
+- class AppFixtures extends Fixture
++ class AppFixtures extends Fixture implements FixtureGroupInterface
+  {
++     private $faker;
++     private $hasher;
++     private $manager;
++
++     public function __construct(UserPasswordHasherInterface $hasher)
++     {
++         $this->faker = FakerFactory::create('fr_FR');
++         $this->hasher = $hasher;
++
++     }
++
++     public static function getGroups(): array
++     {
++         return ['prod', 'test'];
++     }
++
+      public function load(ObjectManager $manager): void
+      {
+-         // $product = new Product();
+-         // $manager->persist($product);
+-
+-         $manager->flush();
++         $this->manager = $manager;
+      }
+  }
+```
 
 Création de fixtures de test :
 
@@ -183,17 +224,19 @@ $ php bin/console make:fixtures
  Docs: https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
 ```
 
-Instanciation de faker dans le fichier de fixtures de test :
+Instanciation de faker et du hasher de mot de passe dans le fichier de fixtures de test `src/DataFixtures/TestFixtures` :
 
 ```diff-php
   namespace App\DataFixtures;
 
   use Doctrine\Bundle\FixturesBundle\Fixture;
++ use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
   use Doctrine\Persistence\ObjectManager;
 + use Faker\Factory as FakerFactory;
 + use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-  class TestFixtures extends Fixture
+- class TestFixtures extends Fixture
++ class TestFixtures extends Fixture implements FixtureGroupInterface
   {
 +     private $faker;
 +     private $hasher;
@@ -204,6 +247,11 @@ Instanciation de faker dans le fichier de fixtures de test :
 +         $this->faker = FakerFactory::create('fr_FR');
 +         $this->hasher = $hasher;
 +
++     }
++
++     public static function getGroups(): array
++     {
++         return ['test'];
 +     }
 +
       public function load(ObjectManager $manager): void
@@ -220,8 +268,6 @@ Instanciation de faker dans le fichier de fixtures de test :
 Si vous voulez lire des données de la BDD, vous pouvez récupérer un repository avec l'instruction `$this->manager->getRepository(Foo::class)`.
 N'oubliez d'ajouter pas un `use App\Entity\Foo;` au début de fichier et adapatez le nom de classe à la place de `Foo`.
 
-Au besoin vous pouvez aussi intégrer ce code dans le fichier de fixtures par défaut `src/DataFixtures/AppFixtures.php`.
-
 Création du script `bin/dofilo.sh` :
 
 ```bash
@@ -230,7 +276,7 @@ Création du script `bin/dofilo.sh` :
 php bin/console doctrine:database:drop --force --if-exists
 php bin/console doctrine:database:create --no-interaction
 php bin/console doctrine:migrations:migrate --no-interaction
-php bin/console doctrine:fixtures:load --no-interaction
+php bin/console doctrine:fixtures:load --no-interaction --group=test
 ```
 
 Rendre le script exécutable :
