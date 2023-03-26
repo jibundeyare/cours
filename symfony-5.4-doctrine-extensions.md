@@ -1,4 +1,4 @@
-# Symfony 4.4 - Doctrine extensions
+# Symfony 5.4 - Doctrine extensions
 
 Le package `doctrine-extensions` permet de rajouter des fonctionnalités courantes mais embêtantes à implémnter soi-même.
 
@@ -175,8 +175,11 @@ $foos = $fooRepository->findAll();
 
 ## Références
 
-- [Installation (Stof DoctrineExtensions Bundle Docs)](https://symfony.com/doc/current/bundles/StofDoctrineExtensionsBundle/installation.html)
+- [StofDoctrineExtensionsBundle Documentation](https://symfony.com/bundles/StofDoctrineExtensionsBundle/current/index.html)
+- [Installation (StofDoctrineExtensionsBundle Documentation)](https://symfony.com/bundles/StofDoctrineExtensionsBundle/current/installation.html)
+- [Configuration (StofDoctrineExtensionsBundle Documentation)](https://symfony.com/bundles/StofDoctrineExtensionsBundle/current/configuration.html)
 - [doctrine-extensions/DoctrineExtensions: Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/doctrine-extensions/DoctrineExtensions)
+- [stof/StofDoctrineExtensionsBundle: Integration bundle for DoctrineExtensions by l3pp4rd in Symfony](https://github.com/stof/StofDoctrineExtensionsBundle)
 
 L'horodatage :
 
@@ -185,6 +188,5 @@ L'horodatage :
 La suppression non destructive :
 
 - [DoctrineExtensions/softdeleteable.md at main · doctrine-extensions/DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/softdeleteable.md)
-- [StofDoctrineExtensionsBundle/softdeleteable-filter.rst at master · stof/StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle/blob/master/docs/softdeleteable-filter.rst)
-
+- [SoftDeleteable Filter (StofDoctrineExtensionsBundle Documentation)](https://symfony.com/bundles/StofDoctrineExtensionsBundle/current/softdeleteable-filter.html)
 
