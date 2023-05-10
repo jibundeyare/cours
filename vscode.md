@@ -16,6 +16,14 @@ Pour désactiver la télémétrie :
 
 Dans le menu `File` > `Preferences` > `Settings` > tapez `telemetry` dans le champ de recherche > décochez `Telemetry: Enable Telemetry` et `Code-runner: Enable App Insights`
 
+## Les raccourcis clavier
+
+- pour Windows : [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+- pour Linux : [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+- pour Mac OS : [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+
+Si vous voulez les personnaliser, voici la documentation en ligne : [Visual Studio Code Key Bindings](https://code.visualstudio.com/docs/getstarted/keybindings).
+
 ## Plugins
 
 Voici quelques plugins recommandés pour faire du développement web en JS, PHP et Python :
