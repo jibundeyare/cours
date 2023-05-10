@@ -6,6 +6,7 @@
 
 | Touches                      | Action                                                   | Contexte |
 |------------------------------|----------------------------------------------------------|----------|
+| `TAB`                        | auto-complétion                                          | CLI      |
 | `HOME`                       | aller en début de ligne                                  | CLI, GUI |
 | `END`                        | aller en fin de ligne                                    | CLI, GUI |
 | `PAGE_UP`                    | scroller d'une page vers le haut                         | CLI, GUI |
@@ -21,13 +22,17 @@
 | `CTRL C`                     | copier                                                   | GUI      |
 | `CTRL X`                     | couper                                                   | GUI      |
 | `CTRL V`                     | coller                                                   | GUI      |
+| `CTRL F`                     | rechercher                                               | GUI      |
+| `CTRL H`                     | remplacer                                                | GUI      |
 | `SHIFT INSERT`               | coller                                                   | CLI      |
+| `CTRL SHIFT C`               | copier                                                   | CLI      |
+| `CTRL SHIFT V`               | coller                                                   | CLI      |
 | `CTRL S`                     | enregistrer                                              | GUI      |
 | `CTRL SHIFT S`               | enregistrer sous ...                                     | GUI      |
 | `CTRL O`                     | ouvrir                                                   | GUI      |
-| `CTRL A`                     | sélectionner le texte de tout le document                | GUI      |
 | `CTRL HOME`                  | aller au début du document                               | GUI      |
 | `CTRL END`                   | aller à la fin du document                               | GUI      |
+| `CTRL A`                     | sélectionner le texte de tout le document                | GUI      |
 | `CTRL SHIFT LEFT` (flèche)   | sélectionner le texte à gauche                           | GUI      |
 | `CTRL SHIFT RIGHT` (flèche)  | sélectionner le texte à droite                           | GUI      |
 | `CTRL SHIFT UP` (flèche)     | sélectionner le texte de la ligne précédent              | GUI      |
@@ -38,8 +43,12 @@
 | `CTRL SHIFT END`             | sélectionner le texte jusqu'à la fin du document         | GUI      |
 | `CTRL SHIFT PAGE_UP`         | sélectionner le texte jusqu'à la page précédente         | GUI      |
 | `CTRL SHIFT PAGE_DOWN`       | sélectionner le texte jusqu'à la page suivante           | GUI      |
+| `CTRL W`                     | ferme la fenêtre                                         | GUI      |
 | `F12`                        | dans un navigateur, afficher le panneau de développement | Browser  |
 | `CTRL SHIFT DELETE`          | supprimer le cache du navigateur                         | Browser  |
 | `CTRL R`                     | recharger la page                                        | Browser  |
 | `CTRL SHIFT R`               | recharger la page en vidant le cache                     | Browser  |
+| `CTRL +`                     | zoomer                                                   | Browser  |
+| `CTRL -`                     | dézoomer                                                 | Browser  |
+| `CTRL 0`                     | zoom normal                                              | Browser  |
 
