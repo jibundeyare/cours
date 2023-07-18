@@ -164,6 +164,21 @@ La commande `git config --global difftool.prompt false` permet en plus de zapper
 
 Pour plus de détails, voir les liens dans la section [Diff et merge](#diff-et-merge) de la doc, ci-dessous.
 
+#### Afficher le graphe des commits
+
+La commande suivante permet d'afficher le graphe de tous les commits :
+
+    git log --graph --all
+
+Mais elle est un peu longue à taper.
+Heureusement, il est possible d'ajouter un alias :
+
+    git config --global alias.graph "log --graph --all"
+
+Dorénavant, il suffira de taper la commande suivante pour obtenir le graph :
+
+    git graph
+
 #### Vérifier la configuration
 
 La commande suivante permet d'afficher la configuration de git :
@@ -171,7 +186,7 @@ La commande suivante permet d'afficher la configuration de git :
     cat ~/.gitconfig
 
 Vous devriez voir quelque chose qui ressemble au résultat ci-dessous.
-Ici l'utilisateur s'appelle `Foo Bar`, son email est `foo.bar@example.com` et il utilise `vscode` pour fusionner son code et visualiser les différences.
+Ici l'utilisateur s'appelle `Foo Bar`, son email est `foo.bar@example.com`, il utilise `vscode` pour fusionner son code et visualiser les différences et il a ajouté l'alias pour visualiser les graphes.
 
     [user]
     	email = foo.bar@example.com
@@ -184,6 +199,8 @@ Ici l'utilisateur s'appelle `Foo Bar`, son email est `foo.bar@example.com` et il
     	tool = vscode
     [difftool "vscode"]
     	cmd = code --wait --diff $LOCAL $REMOTE
+    [alias]
+      graph = log --graph --all
 
 #### Accès SSH
 
