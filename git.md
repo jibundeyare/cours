@@ -428,11 +428,11 @@ Pas de panique, on peut changer le repo `origin` quand on veut.
 
 Pour lier le repo local à un repo distant en HTTPS
 
-    git remote set-utl origin https://github.com/[login]/[nom-du-repo].git
+    git remote set-url origin https://github.com/[login]/[nom-du-repo].git
 
 Ou pour lier le repo local à un repo distant en SSH
 
-    git remote set-utl origin git@github.com:[login]/[nom-du-repo].git
+    git remote set-url origin git@github.com:[login]/[nom-du-repo].git
 
 ### Enregistrer des modifications
 
