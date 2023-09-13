@@ -33,7 +33,8 @@ Ouvrez le fichier `config/packages/stof_doctrine_extensions.yaml` et ajoutez l'a
 
 ```diff-yaml
   stof_doctrine_extensions:
-      default_locale: fr_FR
+-     default_locale: en_US
++     default_locale: fr_FR
 +     orm:
 +         default:
 +             timestampable: true
@@ -47,9 +48,7 @@ Maintenant dans l'exemple ci-dessous, je vais modifier l'entité `Foo` pour la r
   use Doctrine\ORM\Mapping as ORM;
 + use Gedmo\Timestampable\Traits\TimestampableEntity;
 
-  /**
-   * @ORM\Entity(repositoryClass=FooRepository::class)
-   */
+  #[ORM\Entity(repositoryClass: FooRepository::class)]
   class Foo
   {
 +     use TimestampableEntity;
@@ -83,8 +82,9 @@ Ouvrez le fichier `config/packages/stof_doctrine_extensions.yaml` et ajoutez l'a
 ```diff-yaml
   stof_doctrine_extensions:
       default_locale: fr_FR
-+     orm:
-+         default:
+      orm:
+          default:
+              timestampable: true
 +             softdeleteable: true
 
 ```
@@ -96,19 +96,19 @@ Maintenant modifiez l'entité `Foo` pour la rendre supprimable de façon non des
   use Doctrine\ORM\Mapping as ORM;
 + use Gedmo\Mapping\Annotation as Gedmo;
 + use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
+  use Gedmo\Timestampable\Traits\TimestampableEntity;
 
-  /**
-+  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false, hardDelete=false)
-   * @ORM\Entity(repositoryClass=FooRepository::class)
-   */
++ #[Gedmo\SoftDeleteable(fieldName: "deletedAt", timeAware: false, hardDelete: false)]
+  #[ORM\Entity(repositoryClass: FooRepository::class)]
   class Foo
   {
 +     use SoftDeleteableEntity;
+      use TimestampableEntity;
       // ...
 ```
 
-Notez que quand on a l'option `hardDelete=true`, une deuxième demande de suppression va réellement supprimer l'objet de la BDD.
-Dans notre exemple, j'ai désactivé cette fonctionnalité avec un `hardDelete=false`.
+Notez que quand on a l'option `hardDelete: true`, une deuxième demande de suppression va réellement supprimer l'objet de la BDD.
+Dans notre exemple, j'ai désactivé cette fonctionnalité avec un `hardDelete: false`.
 Mais selon les situations, ça peut ne pas être une bonne idée (manque de flexibilité, saturation de l'espace disque).
 
 Comme avec l'horodatage nous avons modifié une entité.
@@ -142,9 +142,7 @@ Maintenant une demande de suppression d'un objet de type `Foo` devrait remplir l
 Testez la fonctionnalité avec le code suivant dans un contrôleur :
 
 ```php
-    /**
-     * @Route("/{id}/softdelete", name="foo_softdelete", methods={"GET"})
-     */
+    #[@Route("/{id}/softdelete", name: "foo_softdelete", methods: ["GET"])]
     public function softdelete(Foo $foo): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
