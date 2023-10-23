@@ -96,13 +96,13 @@ Macos : `shift + command + h`
 
 Personnellement, j'aime bien utiliser la combinaison de touches `CTRL ALT t` mais une autre combinaison de touches est possible.
 
-`File` > `Preferences` > `Keyboard Shortcuts` > `workbench.action.terminal.focus`
+`File` > `Preferences` > `Keyboard Shortcuts` > `workbench.action.terminal.toggleTerminal`
 
 Ne vous faites pas avoir, ne changez pas le raccourci clavier d'autres commandes qui ressemblent.
 Celle que nous cherchons, c'est :
 
-    Terminal: Focus Terminal
-    workbench.action.terminal.focus
+    Terminal: Toggle Terminal
+    workbench.action.terminal.toggleTerminal
 
 Cliquez sur l'icône `+` sur la gauche de la commande, puis choisissez votre raccourci clavier et validez avec `Enter`.
 
