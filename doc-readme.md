@@ -9,7 +9,7 @@ Pourtant c'est avant tout la documentation qui conditionne le succès d'un proje
 Pour le format de la doc :
 
 - rédigez votre documentation au format Markdown  
-  [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/) ou [Markdown Guide](https://www.markdownguide.org/)
+  [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/), [Markdown Guide](https://www.markdownguide.org/) ou [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)
 - sinon utilisez un autre format comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
 
 Pour en savoir plus sur la syntaxe de Markdown, voir [markdown.md](markdown.md).
