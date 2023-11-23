@@ -8,7 +8,8 @@ Pourtant c'est avant tout la documentation qui conditionne le succès d'un proje
 
 Pour le format de la doc :
 
-- rédigez votre documentation au format markdown [Markdown Guide](https://www.markdownguide.org/)
+- rédigez votre documentation au format Markdown  
+  [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/) ou [Markdown Guide](https://www.markdownguide.org/)
 - sinon utilisez un autre format comme [AsciiDoc](http://asciidoc.org/) ou [Sphinx](http://www.sphinx-doc.org/en/master/)
 
 Pour en savoir plus sur la syntaxe de Markdown, voir [markdown.md](markdown.md).
@@ -39,7 +40,7 @@ Voici le genre d'informations qui doit figurer dans votre documentation :
 
 ## Gabarit / modèle / template de `README.md`
 
-Voici un modèle de fichier `README.md` en français :
+Voici un modèle de fichier `README.md` en français et au format Markdown :
 
     # Nom du projet
 
@@ -134,8 +135,10 @@ Voici un modèle de fichier `README.md` en français :
 
 ## Doc
 
-- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+- [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/)
 - [Markdown Guide](https://www.markdownguide.org/)
+- [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [AsciiDoc](http://asciidoc.org/)
 - [Sphinx](http://www.sphinx-doc.org/en/master/)
 - [Choose an open source license | Choose a License](https://choosealicense.com/)

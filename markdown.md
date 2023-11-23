@@ -18,6 +18,7 @@ Pour savoir quel type d'information doit figurer dans un bon fichier `README.md`
 ## Doc
 
 - [Daring Fireball: Markdown](https://daringfireball.net/projects/markdown/)
+- [Markdown Guide](https://www.markdownguide.org/)
 - [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [Basic writing and formatting syntax - GitHub Help](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
@@ -25,3 +26,4 @@ Pour savoir quel type d'information doit figurer dans un bon fichier `README.md`
 - [Creating and highlighting code blocks - GitHub Help](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks)
 - [Autolinked references and URLs - GitHub Help](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls)
 - [thisdavej/copy-excel-paste-markdown: Copy a table in Excel (or other spreadsheet programs) and paste it as a Markdown table](https://github.com/thisdavej/copy-excel-paste-markdown)
+
