@@ -8,7 +8,7 @@
 
 ## Où se trouvent les PDF qui décrivent le titre pro ?
 
-- [banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx](https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx)
+[banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx](https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/EGPRecherche.aspx)
 
 1. Recherche par l'intitulé d'un titre
 2. Développeur web et web mobile
