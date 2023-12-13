@@ -5,7 +5,7 @@
 - AMP Stack : Apache MariaDB PHP Stack ; trois applications qui forment la base d'un service web
 - API : Application Programming Interface
 - Array : tableau, type de données
-- Attribut : en POO, un attribut désigne une variable
+- Attribut : en POO, un attribut désigne une variable ; voir aussi Membre et Propriété
 - AWS : Amazon Web Services (Services Web Amazon) ; leader mondial des services d'hébergement et de calcul en ligne
 - AWS EC2 : AWS Elastic Compute Cloud (Cloud de calcul élastique) ; services de machines virtuelles en ligne
 - AWS S3 : AWS Simple Storage Service (Service simple de stockage) ; services de stockage de données en ligne
@@ -80,7 +80,7 @@
 - MERN Stack : MongoDB Express ReactJS NodeJS Stack ; la version JavaScript de la stack AMP ; voir aussi AMP Stack, MEAN Stack et MEVN Stack
 - MEVN Stack : MongoDB Express VueJs NodeJS Stack ; la version JavaScript de la stack AMP ; voir aussi AMP Stack, MEAN Stack et MERN Stack
 - Méthode : en POO, une méthode désigne une fonction
-- Membre : en POO, un membre désigne une variable
+- Membre : en POO, un membre désigne une variable ; voir aussi Attribut et Propriété
 - Merge request : synonyme de pull request
 - Mobile first : d'abord les téléphones mobiles ; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
@@ -91,29 +91,31 @@
 - OOP : Object Oriented Programming ; voir POO
 - OS : Operating System (Système d'exploitation) ; C'est la base de la base en terme de logiciel, sans celui-ci nu ordinateur ne peut fonctionner
 - OVH : leader en France des services d'hébergement et de calcul en ligne ; initiales de « Oles Van Herman » surnom d'étudiant d'Octave Klaba, le fondateur de la société
+- PaaS : Platform as a Service (service de plateforme) ; l'idée est de rendre une plateforme (un os, un environnement de test, un framework, etc) disponible en ligne dès la création d'un compte client
 - Package : un librairie ou un programme installable
 - Paquet : voir package
+- PEBKAC : Problem Exists Between Chair And Keyboard (Il y a un problème entre le siège et le clavier) ; C'est l'idée que le problème ne provient pas de la machine ou du logiciel mais de l'utilisateur
 - Pixel : désigne un point d'une image ou d'un écran ; provient de la contraction de « picture element » qui donne « pic el » puis « pixel »
 - POC : Proof Of Concept (preuve fonctionnelle du concept)
 - POO : Programmation Orientée Objet
 - POP : c'est un protocole de communication qui permet de récupérer des messages électroniques ; à la différence d'IMAP, les messages sont rappatriés du serveur vers le client puis supprimés du serveur ; voir aussi IMAP et SMTP
 - PR : Pull Request
+- Propriété : en POO, une propriété désigne une variable ; voir aussi Attribut et Membre
 - Protocole de communication : c'est une « langue » commune parlée par deux machines ou programmes ; FTP, SSH ou HTTP sont des protocoles de communication
-- Repo : repository  
-  En général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches
+- Repo : repository ; en général il s'agit d'un repository git, c'est-à-dire un ensemble comprenant du code source, l'historique des changements et éventuellement différentes branches
 - Retex : retours d'expérience ; voir aussi feedbacks
 - RFC : Request For Comments (demande de commentaires, demande d'avis) ; série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques &ast;
 - Rolling release : publication continue ; un logiciel en publication continue est continuellement mis à jour ; c'est un mode de publication qui est opposé à celui de publication par versions successives
 - RTFM : Read The Fucking Manual (lis le putain de manuel) ; c'est une réponse un peu désagréable qu'on donne aux personnes qui posent des questions basiques montrant qu'elles n'ont pas lu la documentation
 - Runtime errors : erreurs en cours d'exécution ; contrairement aux erreurs de compilation, on ne peut détecter ces erreurs qu'en exécutant le logiciel
 - Runtime libraries : librairies ; il s'agit d'un ensemble de fichiers qui permettent à un logiciel qui a été développé avec un SDK de fonctionner ; dans le monde de Windows, il arrive souvent que des fichiers de type `.dll` manquent, ce sont des fichiers qui font partie du « runtime library »
+- SaaS : Software as a Service (service d'application) ; l'idée est de rendre une application (un éditeur de code, une application de design, etc) disponible en ligne dès la création d'un compte client
 - Scalar : voir variable scalaire
 - SDK : Software Development Kit (kit de développement logiciel) ; c'est un ensemble de fichiers (compilateur, linkeur, librairies, etc) qui permettent de développer des logiciels ; par exemple : SDK Windows, SDK iOS, SDK Android, JDK ; voir JDK
 - SEO : Search Engin Optimisation (optimisation pour les moteur de recherches)
 - Setter : en POO, un setter désigne une méthode (fonction) qui permet de modifier la valeur d'une variable privée ; voir aussi Getter
 - SGBDR : Système de Gestion de Base de Données Relationnelle ; voir aussi DBMS
-- Signed : valeur numérique avec signe, c-à-d positive ou négative  
-  Dans un contexte de cryptographie, désigne un document numériquement signé
+- Signed : valeur numérique avec signe, c-à-d une valeur positive ou négative ; dans un contexte de cryptographie, désigne un document numériquement signé
 - SMTP : c'est un protocole de communication qui permet d'envoyer des messages électroniques ; voir aussi IMAP et POP
 - Snippet : voir Code snippet
 - SPA : Single Page Application (application en une seule page) ; dans ce type d'application, les liens ne pointent pas vers de nouvelles pages, ils rechargent une partie de la page courante
@@ -128,6 +130,7 @@
 - TLDR : Too Long Didn't Read (trop long, j'ai pas lu)
 - TLS : c'est un protocole de communication qui permet de sécuriser les échanges sur internet ; il supplante SSL ; voir aussi SSL
 - TTY : TeleTYpe, TeleTYpewriter (machine à écrire à distance) ; historiquement, successeur du télégraphe ; de nos jours, le TTY désigne un terminal logiciel comme `x-term` par exemple
+- UML : Unified Modeling Language (language de modélisation unifié) ; on dit language mais il s'agit surtout de schémas (language visuel) qui permettent de représenter tout ce qui constitue une application (une BDD, des classes, des cas d'utilisation, etc)
 - URI : Uniform Resource Identifier (identifiant uniforme de ressource) ; la plupart du temps, c'est l'adresse d'une page web
 - Unsigned : valeur numérique sans signe, c-à-d toujours positive
 - Variable scalaire : c'est une variable qui ne contient qu'une seule valeur contrairement à une liste, un tableau, un dictionnaire ou un objet par exemple ; exemple : bool, float, integer, string
