@@ -205,6 +205,14 @@ Vous pouvez adaptez les lignes suivantes à vos besoins :
 + DB_PASSWORD=123
 ```
 
+Assurez-vous aussi que les tables seront créées avec le moteur de stockage `InnoDB` et pas `MyIsam`.
+Dans le fichier `config/database.php`, changez la ligne :
+
+```diff-php
+-             'engine' => null,
++             'engine' => 'InnoDB',
+```
+
 Rappel : MariaDB est le successeur de MySQL. Actuellement les deux BDD sont compatibles.
 
 ## Les vues
