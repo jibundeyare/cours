@@ -1,6 +1,6 @@
 # Wamp Server
 
-Allez sur le site [WampServer](http://www.wampserver.com/).
+Allez sur le site [WampServer](https://www.wampserver.com/).
 
 1. cliquez sur le lien « TÉLÉCHARGER »
 2. cliquez sur le lien « WAMPSERVER 64 BITS (X64) 3.2.6 » (ou une version supérieure)
@@ -27,12 +27,12 @@ Si tout est en place, le lien suivant devrait afficher la page d'accueil de Wamp
 
 Si Wamp démarre mais que Apache ou MySQL ne démarre pas, c'est problablement qu'il vous manque des DLL, vous pouvez téléchargez un fichier zip contenant toutes les DLL nécessaires à Wamp depuis la page suivante :
 
-[http://wampserver.aviatechno.net/](http://wampserver.aviatechno.net/)
+[http://wampserver.aviatechno.net/](https://wampserver.aviatechno.net/)
 
 Allez tout en bas de la page et cliquez sur le lien :
 
-- [All VC Redistribuable Packages (x86_x64) (32 & 64bits)](http://wampserver.aviatechno.net/files/vcpackages/all_vc_redist_x86_x64.zip) si votre PC fonctionne en 64 bit
-- [All VC Redistribuable Packages (x86) (32bits)](http://wampserver.aviatechno.net/files/vcpackages/all_vc_redist_x86.zip) si votre PC fonctionne en 32 bit
+- [All VC Redistribuable Packages (x86_x64) (32 & 64bits)](https://wampserver.aviatechno.net/files/vcpackages/all_vc_redist_x86_x64.zip) si votre PC fonctionne en 64 bit
+- [All VC Redistribuable Packages (x86) (32bits)](https://wampserver.aviatechno.net/files/vcpackages/all_vc_redist_x86.zip) si votre PC fonctionne en 32 bit
 
 C'est franchement long mais il faut installer toutes les DLL.
 Oui, toutes.
