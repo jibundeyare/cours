@@ -1,9 +1,10 @@
 # Lexique
 
 - A11Y : accessibility (accessibilité) ; rendre une application accessible pour des personnes ayant un handicap ou du matériel informatique limité
+- ABI : Application Binary Interface ; comme une API mais au niveau du code compilé
 - Adresse MAC : voir MAC Address
 - AMP Stack : Apache MariaDB PHP Stack ; trois applications qui forment la base d'un service web
-- API : Application Programming Interface
+- API : Application Programming Interface ; liste des fonctions et variables qui permettent de manipuler un système complet ou une librairie de fonctionnalités
 - Array : tableau, type de données
 - Attribut : en POO, un attribut désigne une variable ; voir aussi Membre et Propriété
 - AWS : Amazon Web Services (Services Web Amazon) ; leader mondial des services d'hébergement et de calcul en ligne
