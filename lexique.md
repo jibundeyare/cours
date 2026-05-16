@@ -142,6 +142,8 @@
 - WIP : Work In Progress (travail en cours)
 - Wireframe : fil de fer, maquette d'une page web sans aucun design ; les images et les icônes sont remplacées par des rectangles avec une croix à l'intérieur : équivalent de zoning
 - WYSIWYG : What You See Is What You Get (éditeur visuel)
+- Y2K : le bug de l'an 2000 ; les programmes qui stockaient l'année avec deux chiffres passait de 99 à 00, c-à-d de 1999 à 1900
+- Y2038 : le bug de l'année 2038 ; à cause du Unix time, le compte des secondes depuis le 01/01/1970 00:00:00, fait avec un entier 32 bit signé, passe du 19/01/2038 03:14:07 (c-à-d 01/01/1970 00:00:00 + 2147483647 secondes) au 13/12/1901 20:45:52 (c-à-d 01/01/1970 00:00:00 - 2147483648 secondes), le 32 ème bit étant utilisé pour indiqué le signe de l'entier (1000 0000 0000 0000 == 2147483648 (non signé) ou -2147483648 (signé))
 - Zoning : voir wireframe
 
 &ast; définition issue de Wikipedia
