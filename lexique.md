@@ -83,6 +83,7 @@
 - Méthode : en POO, une méthode désigne une fonction
 - Membre : en POO, un membre désigne une variable ; voir aussi Attribut et Propriété
 - Merge request : synonyme de pull request
+- Mojibake : problème d'affichage de texte dû à une confusion d'encodage ; par exemple le mot `résumé` devient `rÃ©sumÃ©` quand l'encodage UTF-8 est interprêté comme du ISO 8859-1 (aussi appelé Latin-1)
 - Mobile first : d'abord les téléphones mobiles ; principe de web-design qui consiste à faire le design des petits écrans en premier et ensuite celui d'écrans de plus en plus grands
 - Modem : MODulateur-DÉModulateur ; c'est un appareil capable de transformer des signaux analogiques en signaux digitaux et vice versa pour permettre à une machine de communiquer via un réseau analogique (le réseau téléphonique par exemple)
 - MVC : Model View Controller (modèle vue contrôleur)
